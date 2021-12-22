@@ -93,8 +93,9 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-													<?php echo form_dropdown('job_title_parent_id', $multilevel,'','onchange="show_extra_combo(this,1)", class="form-control select2me"');?>
-													<div id='extra-combo'></div>
+													<?php echo form_dropdown('job_title_parent_id', $corejobtitle_parent, $data['job_title_parent_id'], 'id ="job_title_parent_id", class="form-control select2me"');?>
+
+
 													<label class="control-label">Parent Name</label>
 											</div>
 										</div>
@@ -132,10 +133,7 @@
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="job_title_top_parent_id" id="job_title_top_parent_id"/>
-								<input type="hidden" name="job_title_has_child" id="job_title_has_child" value="0"/>
-								<input type="hidden" name="job_title_parent_id" id="job_title_parent_id"/>
-								<input type="hidden" name="jobtitle_token" id="jobtitle_token" class="form-control" value="<?php echo $jobtitle_token?>" onChange="function_elements_add(this.name, this.value);">
+								<input type="hidden" name="job_title_token" id="job_title_token" class="form-control" value="<?php echo $job_title_token?>" onChange="function_elements_add(this.name, this.value);">
 								<?php echo form_close(); ?>
 							</div>
 						</div>

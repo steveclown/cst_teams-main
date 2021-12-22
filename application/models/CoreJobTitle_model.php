@@ -11,22 +11,18 @@
 		{
 			$this->db->select('core_job_title.job_title_id, core_job_title.job_title_code, core_job_title.job_title_name, core_job_title.job_title_parent_id');
 			$this->db->from('core_job_title');
-			$this->db->where('core_job_title.data_state', 0);
-			return $this->db->get()->result_array();
+			$this->db->where('core_job_title.data_state', 0);fv
+			$result = $this->db->get()->result_array();
+			return $result;
 		}
 		
-		public function getChildCoreJobTitle($job_title_parent_id)
+		public function getCoreJobTitle_Parent()
 		{
-			$data = array();
+			$this->db->select('core_job_title.job_title_id, core_job_title.job_title_name');
 			$this->db->from('core_job_title');
-			$this->db->where('job_title_parent_id', $job_title_parent_id);
-			$result = $this->db->get();
-			//print_r($result); exit;
-			foreach($result->result() as $row)
-			{
-				$data[$row->job_title_id] = $row->job_title_name;
-			}
-			return $data;
+			$this->db->where('core_job_title.data_state', 0);
+			$result = $this->db->get()->result_array();
+			return $result;
 		}
 	
 		public function getJobTitleName($id){

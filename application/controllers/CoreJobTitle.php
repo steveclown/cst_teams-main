@@ -29,33 +29,20 @@
 		
 		function addCoreJobTitle(){
 			$unique 		= $this->session->userdata('unique');
-			$jobtitle_token	= $this->session->userdata('CoreJobTitleToken-'.$unique['unique']);
+			$job_title_token	= $this->session->userdata('CoreJobTitleToken-'.$unique['unique']);
 			
-			if(empty($jobtitle_token)){
-				$jobtitle_token = md5(date("YmdHis"));
-				$this->session->set_userdata('CoreJobTitleToken-'.$unique['unique'], $jobtitle_token);
+			if(empty($job_title_token)){
+				$job_title_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreJobTitleToken-'.$unique['unique'], $job_title_token);
 			}
 
-			$data['multilevel'] 					= array(''=>'- None -') + $this->CoreJobTitle_model->getChildCoreJobTitle(0);
+			$data['main_view']['corejobtitle_parent']		= create_double($this->CoreJobTitle_model->getCoreJobTitle_Parent(),'job_title_id','job_title_name');
+
 			$data['main_view']['content']			= 'CoreJobTitle/FormAddCoreJobTitle_view';
 			$this->load->view('MainPage_view',$data);
 		}
 			
-		public function showChildCoreJobTitle(){
-			$id = $this->uri->segment(3);
-			$combo_level = $this->uri->segment(4);
-			$childs = $this->CoreJobTitle_model->getChildCoreJobTitle($id);
-			if(count($childs) > 0)
-			{
-				$combo_level ++;
-				$childs = array(''=>'- None -') + $childs;
-				echo form_dropdown('job_title_parent[]',$childs,'','class="form-control select2me" onchange="show_extra_combo(this,'.$combo_level.')"');
-			}	
-			else
-			{
-				echo "";
-			}
-		}
+		
 		  
 		public function processAddCoreJobTitle(){
 			$auth 		= $this->session->userdata('auth');
@@ -65,15 +52,17 @@
 				'job_title_code' 				=> $this->input->post('job_title_code',true),
 				'job_title_parent_id' 			=> $this->input->post('job_title_parent_id',true),
 				'job_title_name' 				=> $this->input->post('job_title_name',true),
-				'job_title_top_parent_id'		=> $this->input->post('job_title_parent_id',true),
-				'job_title_has_child' 			=> $this->input->post('job_title_has_child',true),
 				'job_title_remark' 				=> $this->input->post('job_title_remark',true),
 				'created_id' 					=> $auth['user_id'],
 				'created_on' 					=> date("Y-m-d H:i:s"),
 				'data_state'					=> '0'
 			);
 
-			$jobtitle_token 			= $this->CoreJobTitle_model->getJobTitleToken($data['jobtitle_token']);
+			print_r("data ");
+			print_r($data);
+			exit;
+
+			$job_title_token 			= $this->CoreJobTitle_model->getJobTitleToken($data['job_title_token']);
 
 			// print_r($data); exit;
 			$this->form_validation->set_rules('job_title_code', 'Code', 'required');
@@ -82,7 +71,7 @@
 			$this->form_validation->set_rules('job_title_remark', 'Remark', 'required');
 			
 			if($this->form_validation->run()==true){
-				if($jobtitle_token == 0){
+				if($job_title_token == 0){
 					if($this->CoreJobTitle_model->saveNewCoreJobTitle($data)){
 						$auth = $this->session->userdata('auth');
 						$this->fungsi->set_log($auth['user_id'], $job_title_id, '3122', 'Application.CoreRegion.processAddCoreRegion', $job_title_id, 'Add New Core Job Title');
