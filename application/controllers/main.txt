@@ -1,0 +1,1107 @@
+		function EmploymentData(){
+			// $employee_id = $this->input->post('employee_id');
+			$employee_id = 17;
+			$data = $this->main_model->EmploymentData($employee_id);
+			print_r($data);exit;
+			echo json_encode($data);
+		}
+		
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------Insurance---------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+		function PersonalData(){
+			$employee_id = $this->input->post('employee_id');
+			$data = $this->main_model->PersonalData($employee_id);
+			//print_r($data);exit;
+			echo json_encode($data);
+		}
+		
+		function getallowanceDetail(){
+			$employee_allowance_id = $this->input->post('employee_allowance_id');
+			$data = $this->main_model->getallowanceDetail($employee_allowance_id);
+			// print_r($data);exit;
+			echo json_encode($data);
+		}
+		
+		function getOrganizationDetail(){
+			$employee_id = $this->input->post('employee_id');
+			// $employee_id = 17;
+			$data = $this->main_model->getOrganizationDetail($employee_id);
+			$data2 = array(
+				'region_id' 		=> $this->main_model->getRegionName($data[region_id]),
+				'shift_id' 			=> $this->main_model->getShiftName($data[shift_id]),
+				'location_id' 		=> $this->main_model->getLocationName($data[location_id]),
+				'class_id' 			=> $this->main_model->getClassName($data[class_id]),
+				'grade_id' 			=> $this->main_model->getGradeName($data[grade_id]),
+				'job_title_id' 		=> $this->main_model->getJobTitleName($data[job_title_id]),
+				'section_id' 		=> $this->main_model->getSectionName($data[section_id]),
+				'division_id' 		=> $this->main_model->getDivisionName($data[division_id]),
+			);
+			// print_r($data2);exit;
+			echo json_encode($data2);
+		}
+		
+		function getfoto(){
+			$employee_id = $this->input->post('employee_id');
+			$gambar = $this->main_model->getEmployeePicture($employee_id);
+			$data = "<img src='".base_url()."img/employee/$gambar' height='200' width='300'>";
+			echo $data;
+		}
+		
+		function getleavelist(){
+			$employee_id = $this->input->post('employee_id');
+			// $employee_id = 17;
+			$kazoku = $this->main_model->getListLeave($employee_id);
+			$dataheader = "<table class='table table-striped table-bordered table-hover' id='sample_4'>
+							<thead>
+							<tr>
+								<th style='text-align:center !important;'>
+									 Leave Name
+								</th>
+								<th style='text-align:center !important;'>
+									 Period
+								</th>
+								<th style='text-align:center !important;'>
+									 Days
+								</th>
+								<th style='text-align:center !important;'>
+									 Taken
+								</th>
+								<th style='text-align:center !important;'>
+									 Last Balance
+								</th>
+								<th style='text-align:center !important;'>
+									Action
+								</th>
+							</tr>
+							</thead>
+							<tbody>";
+			$datafooter = "</tbody>
+							</table>";
+			foreach ($kazoku as $key=>$val){
+				$databody .= "
+						<tr class='odd gradeX'>
+							<td>
+								".$this->main_model->getAnnualLeave($val[annual_leave_id])."
+							</td>
+							<td style='text-align:right !important;'>
+								$val[employee_leave_period]
+							</td>
+							<td style='text-align:center !important;'>
+								$val[employee_leave_days]
+							</td>
+							<td style='text-align:center !important;'>
+								$val[employee_leave_taken]
+							</td>
+							<td style='text-align:center !important;'>
+								$val[employee_leave_last_balance]
+							</td>
+							<td>
+								<a class='btn green' data-toggle='modal' href='#modalleavedata' onClick='detailleavedata($val[employee_leave_id])'><i class='fa fa-pencil'></i> Edit</a>
+								<a class='btn red' data-toggle='modal' href='#modalleavedatadelete' onClick='deleteleave($val[employee_leave_id])'><i class='fa fa-trash-o'></i> Delete</a>
+							</td>
+						</tr>
+				";
+			}
+			echo $dataheader.$databody.$datafooter;
+		}
+		
+		function getLeaveDetail(){
+			$employee_leave_id = $this->input->post('employee_leave_id');
+			$data = $this->main_model->getLeaveDetail($employee_leave_id);
+			echo json_encode($data);
+		}
+		
+		function getsalaryhistorydetail(){
+			$salary_increment_id = $this->input->post('salary_increment_id');
+			$data = $this->main_model->getsalaryhistorydetail($salary_increment_id);
+			echo json_encode($data);
+		}
+		
+		function getlistpayment(){
+			$employee_id = $this->input->post('employee_id');
+			$payment = $this->main_model->getlistpayment($employee_id);
+			echo json_encode($payment);
+		}
+		
+		function processpayment(){
+			$data = array(
+				'employee_id' 					=> $this->input->post('payment_employee_ID',true),
+				'employee_bank_name'			=> $this->input->post('payment_employee_bank_name',true),
+				'employee_bank_acct_no'			=> $this->input->post('payment_employee_bank_acct_no',true),
+				'employee_bank_acct_name'		=> $this->input->post('payment_employee_bank_acct_name',true)
+			);
+			
+			$this->form_validation->set_rules('payment_employee_bank_name', 'Bank Name', 'required');
+			// print_r($data);exit;
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->updatepayment($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','payment');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','payment');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','payment');
+				redirect('main');
+			}
+			// print_r($data);exit;
+		}
+		
+		function renamefile(){
+			//fungsi file renaming
+			$pathdirectory=$this->configuration->PhotoDirectory;
+			
+			$filenamelawas=$this->input->post('old_employee_picture',true);
+			$breaker=explode('.',$filenamelawas);
+			$ekstensifile=$breaker[1];
+			
+			$kode=$this->input->post('employee_code',true);
+			$filenameanyar=$kode.".".$ekstensifile;
+
+			$namafilelama=$pathdirectory.$filenamelawas;
+			$namafilebaru=$pathdirectory.$filenameanyar;
+			
+			rename($namafilelama, $namafilebaru);
+
+			return $filenameanyar;
+		}
+		
+		function gambaredit(){
+				// fungsi upload gambar
+				$fileName 			= $_FILES['employee_picture']['name'];
+				$fileSize 			= $_FILES['employee_picture']['size'];
+				$fileError 			= $_FILES['employee_picture']['error'];
+				
+				if($fileSize > 0){
+					$parse		= explode('.',$fileName);
+					$image_types = array('gif', 'jpg', 'jpeg', 'png', 'jpe', 'bmp', 'JPG');
+					if (!in_array($parse[count($parse)-1], $image_types)){
+						$message = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								filetype <b>".$parse[count($parse)-1]."</b> not allowed !!!
+							</div> ";
+						$this->session->set_userdata('message',$message);
+						redirect('main');
+					}
+				}
+				
+				if (round($fileSize/1024,2) > 1024){
+					$message = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+							filesize not allowed, max file 1024 Kb!!!
+						</div> ";
+					$this->session->set_userdata('message',$message);
+					redirect('main');
+				}
+				if($fileSize > 0 || $fileError == 0){
+					try {
+						$employee_code=$this->input->post('employee_code',true);
+						$newfilename=$employee_code.".".$parse[1];
+						
+						$config['upload_path'] 		= $this->configuration->PhotoDirectory;
+						$config['allowed_types'] 	= 'gif|jpg|png|jpeg|JPG|bmp|jpe';
+						$config['overwrite'] 		= false;
+						$config['remove_spaces'] 	= true;
+						$config['file_name'] 		= $newfilename;
+						
+						$this->load->library('upload', $config);
+						
+						if ( ! $this->upload->do_upload('employee_picture')){
+							$msg = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+									".$this->upload->display_errors('', '')."
+								</div> ";
+							$this->session->set_userdata('message',$msg);
+							redirect('main');
+						}
+					}catch (Exception $msg){
+						$message = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Error in uploading due".$msg->getMessage()."
+							</div> ";
+						$this->session->set_userdata('message',$message);
+						redirect('main');
+					}
+				}
+				return $newfilename;
+			}
+		
+		function determine(){
+			//fungsi untuk kondisi pengeditan
+			$fileName 			= $_FILES['employee_picture']['name'];
+			$fileError 			= $_FILES['employee_picture']['error'];
+			
+			if($fileName==''){
+				$retur=$this->renamefile();
+				return $retur;
+			}else{
+				$retur=$this->renamefile();
+				$photodir=$this->configuration->PhotoDirectory;
+				$kill=$photodir.$retur;
+				unlink($kill);
+				$baru=$this->gambaredit();
+				return $baru;
+			}
+		}
+		
+		function processPersonalData(){
+			$data = array(
+				'employee_id' 					=> $this->input->post('employee_id',true),
+				'employee_code'					=> $this->input->post('employee_code',true),
+				'employee_name'					=> $this->input->post('employee_name',true),
+				'employee_nick_name'			=> $this->input->post('employee_nick_name',true),
+				'employee_address'				=> $this->input->post('employee_address',true),
+				'employee_city'					=> $this->input->post('employee_city',true),
+				'employee_zip_code'				=> $this->input->post('employee_zip_code',true),
+				'employee_rt'					=> $this->input->post('employee_rt',true),
+				'employee_rw'					=> $this->input->post('employee_rw',true),
+				'employee_kecamatan'			=> $this->input->post('employee_kecamatan',true),
+				'employee_kelurahan'			=> $this->input->post('employee_kelurahan',true),
+				'employee_home_phone'			=> $this->input->post('employee_home_phone',true),
+				'employee_mobile_phone'			=> $this->input->post('employee_mobile_phone',true),
+				'employee_email_address'		=> $this->input->post('employee_email_address',true),
+				'employee_gender'				=> $this->input->post('employee_gender',true),
+				'date_of_birth'					=> $this->input->post('date_of_birth',true),
+				'place_of_birth'				=> $this->input->post('place_of_birth',true),
+				'employee_religion'				=> $this->input->post('employee_religion',true),
+				'employee_id_number'			=> $this->input->post('employee_id_number',true),
+				'employee_residence_address'	=> $this->input->post('employee_residence_address',true),
+				'employee_residence_city'		=> $this->input->post('employee_residence_city',true),
+				'employee_residence_zip_code'	=> $this->input->post('employee_residence_zip_code',true),
+				'employee_residence_rt'			=> $this->input->post('employee_residence_rt',true),
+				'employee_residence_rw'			=> $this->input->post('employee_residence_rw',true),
+				'employee_residence_kecamatan'	=> $this->input->post('employee_residence_kecamatan',true),
+				'employee_residence_kelurahan'	=> $this->input->post('employee_residence_kelurahan',true),
+				'marital_status_id'				=> $this->input->post('marital_status_id',true),
+				'number_of_children'			=> $this->input->post('number_of_children',true),
+				'employee_heir_name'			=> $this->input->post('employee_heir_name',true),
+				'employee_heir_occupation'		=> $this->input->post('employee_heir_occupation',true),
+				'employee_blood_type'			=> $this->input->post('employee_blood_type',true),
+				'employee_driving_licenseA'		=> $this->input->post('employee_driving_licenseA',true),
+				'employee_driving_licenseB'		=> $this->input->post('employee_driving_licenseB',true),
+				'employee_driving_licenseB1'	=> $this->input->post('employee_driving_licenseB1',true),
+				'employee_picture'				=> $this->determine(),
+				'data_state'					=> '0'
+			);
+			
+			$this->form_validation->set_rules('employee_code', 'Employee Code', 'required|alpha_numeric');
+			$this->form_validation->set_rules('employee_name', 'Employee Name', 'required');
+			
+			// print_r($data);exit;
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->updatePersonalData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('PersonalData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','personaldata');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('PersonalData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','personaldata');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('PersonalData',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','personaldata');
+				redirect('main');
+			}
+			// print_r($data);exit;
+		}
+
+		function processEmploymentData(){
+		
+			$data = array(
+				'employee_id' 					=> $this->input->post('employee_idE',true),
+				'employee_status' 				=> $this->input->post('employee_status',true),
+				'employee_working_status' 		=> $this->input->post('employee_working_status',true),
+				'employee_status_due_date' 		=> tgltodb($this->input->post('employee_status_due_date',true)),
+				'employee_overtime_status' 		=> $this->input->post('employee_overtime_status',true),
+				'data_state'					=> '0'
+			);
+			
+			//print_r($data);exit;
+			
+			$this->form_validation->set_rules('employee_status', 'Employee Status', 'required');
+			$this->form_validation->set_rules('employee_working_status', 'Employee Working Status', 'required');
+			$this->form_validation->set_rules('employee_status_due_date', 'Employee Status Due Date', 'required');
+			$this->form_validation->set_rules('employee_overtime_status', 'Employee Overtime Status', 'required');
+									
+			if($this->form_validation->run()==true){
+				if($this->main_model->updateEmploymentData($data)==true){
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmploymentData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','employment');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmploymentData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','employment');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmploymentData',$data);		
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','employment');
+				redirect('main');
+			}
+			
+		}
+		
+		function processEmployeeallowance(){
+			$data = array(
+					'employee_allowance_id' 				=> $this->input->post('employee_allowance_id',true),
+					'allowance_status_id' 					=> $this->input->post('allowance_status_id',true),
+					'employee_id' 						=> $this->input->post('employee_idF',true),
+					'employee_allowance_name' 				=> $this->input->post('employee_allowance_name',true),
+					'employee_allowance_address' 			=> $this->input->post('employee_allowance_address',true),
+					'employee_allowance_city' 				=> $this->input->post('employee_allowance_city',true),
+					'employee_allowance_zip_code' 			=> $this->input->post('employee_allowance_zip_code',true),
+					'employee_allowance_rt' 				=> $this->input->post('employee_allowance_rt',true),
+					'employee_allowance_rw' 				=> $this->input->post('employee_allowance_rw',true),
+					'employee_allowance_kecamatan' 		=> $this->input->post('employee_allowance_kecamatan',true),
+					'employee_allowance_kelurahan' 		=> $this->input->post('employee_allowance_kelurahan',true),
+					'employee_allowance_home_phone' 		=> $this->input->post('employee_allowance_home_phone',true),
+					'employee_allowance_mobile_phone1' 	=> $this->input->post('employee_allowance_mobile_phone1',true),
+					'employee_allowance_mobile_phone2' 	=> $this->input->post('employee_allowance_mobile_phone2',true),
+					'employee_allowance_gender' 			=> $this->input->post('employee_allowance_gender',true),
+					'employee_allowance_date_of_birth' 	=> $this->input->post('employee_allowance_date_of_birth',true),
+					'employee_allowance_place_of_birth' 	=> $this->input->post('employee_allowance_place_of_birth',true),
+					'employee_allowance_education' 		=> $this->input->post('employee_allowance_education',true),
+					'employee_allowance_occupation' 		=> $this->input->post('employee_allowance_occupation',true),
+					'marital_status_id' 				=> $this->input->post('employee_marital_status_id',true),
+					'has_coverage_claim' 				=> $this->input->post('has_coverage_claim',true),
+					'employee_allowance_coverage_ratio' 	=> $this->input->post('employee_allowance_coverage_ratio',true),
+					'employee_allowance_remark' 			=> $this->input->post('employee_allowance_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			$this->form_validation->set_rules('employee_allowance_name', 'Allowance Name', 'required');
+			
+			// print_r($data);exit;
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->updateEmployeeallowance($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('Employeeallowance',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','allowance');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('Employeeallowance',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','allowance');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('Employeeallowance',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','allowance');
+				redirect('main');
+			}
+			// print_r($data);exit;
+		}
+		
+		function processInsertEmployeeallowance(){
+			$data = array(
+					'allowance_status_id' 					=> $this->input->post('insert_allowance_status_id',true),
+					'employee_id' 						=> $this->input->post('insert_employee_idF',true),
+					'employee_allowance_name' 				=> $this->input->post('insert_employee_allowance_name',true),
+					'employee_allowance_address' 			=> $this->input->post('insert_employee_allowance_address',true),
+					'employee_allowance_city' 				=> $this->input->post('insert_employee_allowance_city',true),
+					'employee_allowance_zip_code' 			=> $this->input->post('insert_employee_allowance_zip_code',true),
+					'employee_allowance_rt' 				=> $this->input->post('insert_employee_allowance_rt',true),
+					'employee_allowance_rw' 				=> $this->input->post('insert_employee_allowance_rw',true),
+					'employee_allowance_kecamatan' 		=> $this->input->post('insert_employee_allowance_kecamatan',true),
+					'employee_allowance_kelurahan' 		=> $this->input->post('insert_employee_allowance_kelurahan',true),
+					'employee_allowance_home_phone' 		=> $this->input->post('insert_employee_allowance_home_phone',true),
+					'employee_allowance_mobile_phone1' 	=> $this->input->post('insert_employee_allowance_mobile_phone1',true),
+					'employee_allowance_mobile_phone2' 	=> $this->input->post('insert_employee_allowance_mobile_phone2',true),
+					'employee_allowance_gender' 			=> $this->input->post('insert_employee_allowance_gender',true),
+					'employee_allowance_date_of_birth' 	=> $this->input->post('insert_employee_allowance_date_of_birth',true),
+					'employee_allowance_place_of_birth' 	=> $this->input->post('insert_employee_allowance_place_of_birth',true),
+					'employee_allowance_education' 		=> $this->input->post('insert_employee_allowance_education',true),
+					'employee_allowance_occupation' 		=> $this->input->post('insert_employee_allowance_occupation',true),
+					'marital_status_id' 				=> $this->input->post('insert_employee_marital_status_id',true),
+					'has_coverage_claim' 				=> $this->input->post('insert_employee_allowance_has_coverage_claim',true),
+					'employee_allowance_coverage_ratio' 	=> $this->input->post('insert_employee_allowance_coverage_ratio',true),
+					'employee_allowance_remark' 			=> $this->input->post('insert_employee_allowance_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			$this->form_validation->set_rules('insert_employee_allowance_name', 'Allowance Name', 'required');
+			
+			// print_r($data);exit;
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->insertEmployeeallowance($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('Employeeallowance',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','allowance');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('Employeeallowance',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','allowance');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('Employeeallowance',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','allowance');
+				redirect('main');
+			}
+			// print_r($data);exit;
+		}
+		
+		
+		
+		function deleteEmployeeallowance(){
+			$data = array(
+					'employee_allowance_id' 					=> $this->input->post('delete_employee_allowance_id',true),
+			);
+			
+			$this->form_validation->set_rules('delete_employee_allowance_id', 'Allowance Name', 'required');
+			
+			// print_r($data);exit;
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->deleteEmployeeallowance($data[employee_allowance_id])==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Deleted
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('Employeeallowance',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','allowance');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('Employeeallowance',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','allowance');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('Employeeallowance',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','allowance');
+				redirect('main');
+			}
+			// print_r($data);exit;
+		}
+		
+		function processEmployeeLeaveData(){
+			$data = array(
+					'employee_leave_id' 				=> $this->input->post('employee_leave_id',true),
+					'employee_id' 						=> $this->input->post('employee_idL',true),
+					'annual_leave_id' 					=> $this->input->post('annual_leave_id',true),
+					'employee_leave_period' 			=> tgltodb($this->input->post('employee_leave_period',true)),
+					'employee_leave_days' 				=> $this->input->post('employee_leave_days',true),
+					'employee_leave_taken' 				=> $this->input->post('employee_leave_taken',true),
+					'employee_leave_last_balance' 		=> $this->input->post('employee_leave_last_balance',true),
+					'employee_leave_remark' 			=> $this->input->post('employee_leave_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			$this->form_validation->set_rules('employee_leave_period', 'Leave Period', 'required');
+			$this->form_validation->set_rules('employee_leave_days', 'Leave Days', 'required|numeric');
+			$this->form_validation->set_rules('employee_leave_taken', 'Leave Taken', 'required|numeric');
+			$this->form_validation->set_rules('employee_leave_last_balance', 'Leave Last Balance|numeric', 'required');
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->updateEmployeeLeaveData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeLeaveData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','leave');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeLeaveData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','leave');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeLeaveData',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','leave');
+				redirect('main');
+			}
+		}
+		
+		function processInsertLeaveData(){
+
+			$data = array(
+					'employee_id' 						=> $this->input->post('insert_employee_idL',true),
+					'annual_leave_id' 					=> $this->input->post('insert_annual_leave_id',true),
+					'employee_leave_period' 			=> tgltodb($this->input->post('insert_employee_leave_period', true)),
+					'employee_leave_days' 				=> $this->input->post('insert_employee_leave_days',true),
+					'employee_leave_taken' 				=> $this->input->post('insert_employee_leave_taken',true),
+					'employee_leave_last_balance' 		=> $this->input->post('insert_employee_leave_last_balance',true),
+					'employee_leave_remark' 			=> $this->input->post('insert_employee_leave_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			// print_r($data);exit;
+			$this->form_validation->set_rules('insert_employee_leave_period', 'Leave Period', 'required');
+			$this->form_validation->set_rules('insert_employee_leave_days', 'Leave Days', 'required|numeric');
+			$this->form_validation->set_rules('insert_employee_leave_taken', 'Leave Taken', 'required|numeric');
+			$this->form_validation->set_rules('insert_employee_leave_last_balance', 'Leave Last Balance', 'required|numeric');
+			
+			if($this->form_validation->run()==true){	
+				if($this->main_model->insertEmployeeLeaveData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeLeaveData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','leave');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeLeaveData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','leave');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeLeaveData',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','leave');
+				redirect('main');
+			}		
+			//print_r($data);exit;
+		}
+		
+		function deleteEmployeeLeaveData(){
+			$data = array(
+					'employee_leave_id'		=> $this->input->post('delete_employee_leave_id', true)
+			);
+			
+			$this->form_validation->set_rules('delete_employee_leave_id', 'Employee Leave Name', 'required');
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->deleteEmployeeLeaveData($data[employee_leave_id])==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Deleted
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeLeaveData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','leave');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeLeaveData',$data);
+					$this->session->set_userdata('tabatas','employee');
+					$this->session->set_userdata('tabbawah','leave');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeLeaveData',$data);
+				$this->session->set_userdata('tabatas','employee');
+				$this->session->set_userdata('tabbawah','leave');
+				redirect('main');
+			}
+		}
+		
+		
+
+
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------Deduction---------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+		function getDeductionDetail(){
+			$employee_deduction_id = $this->input->post('employee_deduction_id');
+			$data = $this->main_model->getDeductionDetail($employee_deduction_id);
+			echo json_encode($data);
+		}
+		
+		function getdeductionlist(){
+			$employee_id = $this->input->post('employee_id');
+			$kazoku = $this->main_model->getListDeduction($employee_id);
+			$dataheader = "<table class='table table-striped table-bordered table-hover' id='sample_4'>
+							<thead>
+							<tr>
+								<th style='text-align:center !important;'>
+									 Deduction Name
+								</th>
+								<th style='text-align:center !important;'>
+									 Period
+								</th>
+								<th style='text-align:center !important;'>
+									 Amount
+								</th>
+								<th style='text-align:center !important;'>
+									Action
+								</th>
+							</tr>
+							</thead>
+							<tbody>";
+			$datafooter = "</tbody>
+							</table>";
+			foreach ($kazoku as $key=>$val){
+				$databody .= "
+						<tr class='odd gradeX'>
+							<td>
+								".$this->main_model->getDeduction($val[deduction_id])."
+							</td>
+							<td style='text-align:right !important;'>
+								$val[employee_deduction_period]
+							</td>
+							<td style='text-align:center !important;'>
+								$val[employee_deduction_amount]
+							</td>
+							<td>
+								<a class='btn green' data-toggle='modal' href='#modaldeductiondata' onClick='detaildeductiondata($val[employee_deduction_id])'><i class='fa fa-pencil'></i> Edit</a>
+								<a class='btn red' data-toggle='modal' href='#modaldeductiondatadelete' onClick='deletededuction($val[employee_deduction_id])'><i class='fa fa-trash-o'></i> Delete</a>
+							</td>
+						</tr>
+				";
+			}
+			echo $dataheader.$databody.$datafooter;
+		}
+		
+		function processEmployeeDeductionData(){
+			$data = array(
+					'employee_deduction_id' 		=> $this->input->post('employee_deduction_id',true),
+					'employee_id' 					=> $this->input->post('employee_idDeduction',true),
+					'deduction_id' 					=> $this->input->post('deduction_id',true),
+					'employee_deduction_period' 	=> tgltodb($this->input->post('employee_deduction_period',true)),
+					'employee_deduction_amount' 		=> $this->input->post('employee_deduction_amount',true),
+					'employee_deduction_remark' 	=> $this->input->post('employee_deduction_remark',true),
+					'data_state'					=> '0'
+			);
+			
+			$this->form_validation->set_rules('employee_deduction_period', 'Deduction Period', 'required');
+			$this->form_validation->set_rules('employee_deduction_amount', 'Deduction Amount', 'required|numeric');
+			$this->form_validation->set_rules('employee_deduction_remark', 'Deduction Remark', 'filterspecialchar');
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->updateEmployeeDeductionData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeDeductionData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','deduction');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeDeductionData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','deduction');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeDeductionData',$data);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','deduction');
+				redirect('main');
+			}
+		}
+		
+		function processInsertDeductionData(){
+
+			$data = array(
+					'employee_id' 						=> $this->input->post('insert_employee_idDeduction',true),
+					'deduction_id' 						=> $this->input->post('insert_deduction_id',true),
+					'employee_deduction_period' 		=> tgltodb($this->input->post('insert_employee_deduction_period', true)),
+					'employee_deduction_amount' 			=> $this->input->post('insert_employee_deduction_amount',true),
+					'employee_deduction_remark' 		=> $this->input->post('insert_employee_deduction_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			// print_r($data);exit;
+			$this->form_validation->set_rules('insert_employee_deduction_period', 'Deduction Period', 'required');
+			$this->form_validation->set_rules('insert_employee_deduction_amount', 'Deduction Amount', 'required|numeric');
+			$this->form_validation->set_rules('employee_deduction_remark', 'Deduction Remark', 'filterspecialchar');
+			
+			if($this->form_validation->run()==true){	
+				if($this->main_model->insertEmployeeDeductionData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeDeductionData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','deduction');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeDeductionData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','deduction');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeDeductionData',$data);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','deduction');
+				redirect('main');
+			}		
+			//print_r($data);exit;
+		}
+		
+		function deleteEmployeeDeductionData(){
+			$data = array(
+					'employee_deduction_id'		=> $this->input->post('delete_employee_deduction_id', true)
+			);
+			
+			$this->form_validation->set_rules('delete_employee_deduction_id', 'Employee Deduction Name', 'required');
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->deleteEmployeeDeductionData($data[employee_deduction_id])==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Deleted
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeDeductionData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','deduction');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeDeductionData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','deduction');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeDeductionData',$data);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','deduction');
+				redirect('main');
+			}
+		}		
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------Insurance---------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+		function getInsuranceDetail(){
+			$employee_insurance_id = $this->input->post('employee_insurance_id');
+			$data = $this->main_model->getinsuranceDetail($employee_insurance_id);
+			// print_r($data);exit;
+			echo json_encode($data);
+		}
+
+		function getinsurancepremi(){
+			$data = array (
+					'insurance_id' 			=> $this->input->post('insurance_id',true),
+			);
+			
+			// $data = array (
+					// 'insurance_id' 			=> 1,
+			// );
+			
+			$paranoid = $this->main_model->getinsurancepremiolang($data['insurance_id']);
+			$choseitem = "<option value=''>--Choose Item--</option>";
+			foreach($paranoid as $key=>$val){
+				$databody .="<option value='$val[insurance_premi_id]'>$val[insurance_premi_code]</option>";
+			}
+			echo $choseitem.$databody;
+		}
+		
+		function getinsurancelist(){
+			$employee_id = $this->input->post('employee_id');
+			$kazoku = $this->main_model->getListInsurance($employee_id);
+			$dataheader = "<table class='table table-striped table-bordered table-hover' id='sample_4'>
+							<thead>
+							<tr>
+								<th style='text-align:center !important;'>
+									 Insurance Name
+								</th>
+								<th style='text-align:center !important;'>
+									 Premi Name
+								</th>
+								<th style='text-align:center !important;'>
+									 Period
+								</th>
+								<th style='text-align:center !important;'>
+									 Premi Amount
+								</th>
+								<th style='text-align:center !important;'>
+									Action
+								</th>
+							</tr>
+							</thead>
+							<tbody>";
+			$datafooter = "</tbody>
+							</table>";
+			foreach ($kazoku as $key=>$val){
+				$databody .= "
+						<tr class='odd gradeX'>
+							<td>
+								".$this->main_model->getInsurance($val[insurance_id])."
+							</td>
+							<td style='text-align:right !important;'>
+								".$this->main_model->getInsurancePremi($val[insurance_premi_id])."
+							</td>
+							<td style='text-align:center !important;'>
+								$val[employee_insurance_period]
+							</td>
+							<td style='text-align:center !important;'>
+								$val[employee_insurance_premi_amount]
+							</td>
+							<td>
+								<a class='btn green' data-toggle='modal' href='#modalinsurancedata' onClick='detailinsurancedata($val[employee_insurance_id])'><i class='fa fa-pencil'></i> Edit</a>
+								<a class='btn red' data-toggle='modal' href='#modalinsurancedatadelete' onClick='deleteinsurance($val[employee_insurance_id])'><i class='fa fa-trash-o'></i> Delete</a>
+							</td>
+						</tr>
+				";
+			}
+			echo $dataheader.$databody.$datafooter;
+		}
+		
+		function processEmployeeInsuranceData(){
+			$data = array(
+					'employee_insurance_id' 		=> $this->input->post('employee_insurance_id',true),
+					'insurance_id' 						=> $this->input->post('insurance_id',true),
+					'insurance_premi_id' 				=> $this->input->post('insurance_premi_id',true),
+					'employee_id' 						=> $this->input->post('employee_idInsurance',true),
+					'employee_insurance_period' 		=> tgltodb($this->input->post('employee_insurance_period', true)),
+					'employee_insurance_premi_amount' 	=> $this->input->post('employee_insurance_premi_amount',true),
+					'employee_insurance_remark' 		=> $this->input->post('employee_insurance_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			// print_r($data);exit;
+			$this->form_validation->set_rules('insurance_id', 'Insurance Name', 'required');
+			$this->form_validation->set_rules('insurance_premi_id', 'Insurance Premi', 'required');
+			$this->form_validation->set_rules('employee_insurance_period', 'Insurance Period', 'numeric');
+			$this->form_validation->set_rules('employee_insurance_premi_amount', 'Insurance Premi Amount', 'numeric');
+			$this->form_validation->set_rules('employee_insurance_remark', 'Insurance Remark', 'filterspecialchar');
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->updateEmployeeInsuranceData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeInsuranceData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','insurance');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeInsuranceData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','insurance');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeInsuranceData',$data);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','insurance');
+				redirect('main');
+			}
+		}
+		
+		function processInsertInsuranceData(){
+
+			$data = array(
+					'insurance_id' 						=> $this->input->post('insert_insurance_id',true),
+					'insurance_premi_id' 				=> $this->input->post('insert_insurance_premi_id',true),
+					'employee_id' 						=> $this->input->post('insert_employee_idInsurance',true),
+					'employee_insurance_period' 		=> tgltodb($this->input->post('insert_employee_insurance_period', true)),
+					'employee_insurance_premi_amount' 	=> $this->input->post('insert_employee_insurance_premi_amount',true),
+					'employee_insurance_remark' 		=> $this->input->post('insert_employee_insurance_remark',true),
+					'data_state'						=> '0'
+			);
+			
+			// print_r($data);exit;
+			$this->form_validation->set_rules('insert_insurance_id', 'Insurance Name', 'required');
+			$this->form_validation->set_rules('insert_insurance_premi_id', 'Insurance Premi', 'required');
+			$this->form_validation->set_rules('insert_employee_insurance_period', 'Insurance Period', 'numeric');
+			$this->form_validation->set_rules('insert_employee_insurance_premi_amount', 'Insurance Premi Amount', 'numeric');
+			$this->form_validation->set_rules('insert_employee_insurance_remark', 'Insurance Remark', 'filterspecialchar');
+			
+			if($this->form_validation->run()==true){	
+				if($this->main_model->insertEmployeeInsuranceData($data)==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Saved
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeInsuranceData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','insurance');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeInsuranceData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','insurance');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeInsuranceData',$data);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','insurance');
+				redirect('main');
+			}		
+			//print_r($data);exit;
+		}
+		
+		function deleteEmployeeInsuranceData(){
+			$data = array(
+					'employee_insurance_id'		=> $this->input->post('delete_employee_insurance_id', true)
+			);
+			
+			$this->form_validation->set_rules('delete_employee_insurance_id', 'Employee Insurance Name', 'required');
+			
+			if($this->form_validation->run()==true){
+				if($this->main_model->deleteEmployeeInsuranceData($data[employee_insurance_id])==true){
+					// $auth 	= $this->session->userdata('auth');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.division.Edit',$auth['username'],'Edit division');
+					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['division_id']);
+					$msg = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>                
+								Data Deleted
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeInsuranceData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','insurance');
+					redirect('main');
+				}else{
+					$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+					$this->session->set_userdata('message',$msg);
+					$this->session->set_userdata('EmployeeInsuranceData',$data);
+					$this->session->set_userdata('tabatas','payroll');
+					$this->session->set_userdata('tabbawah','insurance');
+					redirect('main');
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				$this->session->set_userdata('EmployeeInsuranceData',$data);
+				$this->session->set_userdata('tabatas','payroll');
+				$this->session->set_userdata('tabbawah','insurance');
+				redirect('main');
+			}
+		}		
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------

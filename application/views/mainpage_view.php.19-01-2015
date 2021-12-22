@@ -1,0 +1,342 @@
+<?php
+	//header
+	date_default_timezone_set("Asia/Jakarta");
+	$auth 	= $this->session->userdata('auth');
+	if(is_array($auth)){
+		$this->load->view('header');
+	$employee = create_double($this->MainPage_model->getEmployee(),'employee_id','employee_name');
+	// $employee = array('0' => 'select employee','1' => 'wina isti r', '2' => 'retnosari th', '3' => 'vena kurnia sari', '4' => 'Taufiq Dio');
+	
+?>
+
+<!-- BEGIN BODY -->
+<!-- BEGIN HORIZANTAL MENU -->
+		<div class="hor-menu hidden-sm hidden-xs">
+			<ul class="nav navbar-nav">
+				<?php
+					$menu = $this->MainPage_model->getParentMenu($auth['user_group_level']);
+					// print_r($menu); exit;
+					foreach($menu as $key=>$val){
+						$datamenu = $this->MainPage_model->getDataParentmenu($val['detect']);
+						if($datamenu['id_menu'] == '1'){
+							echo'
+							<li class="classic-menu-dropdown">
+								<a href="'.base_url().$datamenu['id'].'">
+								<i class="fa '.$datamenu['image'].'"></i>
+										
+											'.$datamenu['text'].'
+										</a>
+								</a>
+							</li>
+						';
+						}else{
+							$class 		= $this->uri->segment(1);
+							if($class==''){$class='MainPage';}
+							$active		= $this->MainPage_model->getActive($class);
+							$compare 	= $datamenu['id_menu'];
+							if($active==$compare){$stat = 'active';}else{$stat='';}
+							echo'
+								<li class="classic-menu-dropdown '.$stat.'">
+									<a data-toggle="dropdown" data-hover="dropdown" data-close-others="true" href="">
+										<i class="fa '.$datamenu['image'].'"></i>
+										
+											'.$datamenu['text'].'
+										
+										<span class="fa fa-angle-down">
+										</span>
+									</a>
+									<ul class="dropdown-menu">
+							';
+							$datasubmenu= $this->MainPage_model->getParentSubMenu2($auth['user_group_level'],$val['detect']);
+							foreach($datasubmenu as $key2=>$val2){
+								$idmenucari = substr($val2['id_menu'],0,2);
+								$countsubmenu=count($this->MainPage_model->getSubMenu2($idmenucari));
+								if($countsubmenu > 1){
+									$submenuopen=$this->MainPage_model->getDataParentmenu($idmenucari);
+									$class2 		= $this->uri->segment(1);
+									if($class==''){$class='MainPage';}
+									$active2		= $this->MainPage_model->getActive2($class);
+									$compare2 		= $submenuopen['id_menu'];
+									if($active2==$compare2){$stat2 = 'active';}else{$stat2='';}
+									echo'
+									<li class="dropdown-submenu '.$stat2.'">
+											<a href="'.base_url().$submenuopen['id'].'">
+											'.$submenuopen['text'].'
+											</a>
+											<ul class="dropdown-menu">
+										';
+											
+										$datasubmenu2= $this->MainPage_model->getParentSubMenu3($auth['user_group_level'],$submenuopen['id_menu']);	
+										// print_r($datasubmenu2); exit;
+										foreach($datasubmenu2 as $key3=>$val3){
+												$idmenucari2 = substr($val3['id_menu'],0,3);
+												$countsubmenu2=count($this->MainPage_model->getSubMenu2($idmenucari2));
+												if($countsubmenu2 > 2){
+													$submenuopen2=$this->MainPage_model->getDataParentmenu($idmenucari2);
+													$class3 		= $this->uri->segment(1);
+													if($class3==''){$class2='MainPage';}
+													$active3		= $this->MainPage_model->getActive3($class);
+													$compare3 		= $submenuopen2['id_menu'];
+													if($active3==$compare3){$stat3 = 'active';}else{$stat3='';}
+													echo'
+													<li class="dropdown-submenu '.$stat3.'">
+														<a href="'.base_url().$submenuopen2['id'].'">
+														'.$submenuopen2['text'].'
+														</a>
+														<ul class="dropdown-menu">	
+														';
+													$datasubmenu3= $this->MainPage_model->getParentSubMenu($auth['user_group_level'],$submenuopen2['id_menu']);	
+														foreach($datasubmenu3 as $key4=>$val4){
+																echo'
+																<li >
+																	<a href="'.base_url().$val4['id'].'">
+																	'.$val4['text'].'
+																	</a>
+																	</li>
+																';
+																}
+																echo'	
+														</ul>	
+													</li>
+													';
+												}
+												else{
+												$submenuopen3=$this->MainPage_model->getDataParentmenu($val3['id_menu']);
+													echo'
+													<li>
+													<a href="'.base_url().$submenuopen3['id'].'">
+													'.$submenuopen3['text'].'
+													</a>
+													</li>
+													';
+												}
+										}
+										echo'	
+										</ul>
+									</li>
+									';
+								}else{
+									$submenuopen2=$this->MainPage_model->getDataParentmenu($val2['id_menu']);
+										$judul=$submenuopen2['text'];
+										
+										echo'
+											<li >
+												<a href="'.base_url().$submenuopen2['id'].'">
+													'.$judul.'
+												</a>
+											</li>
+										';
+								}
+							}
+							echo'	
+								</ul>
+								</li>
+							';
+						}
+					}
+					?>
+				
+				
+			</ul>
+		</div>
+		<!-- END HORIZANTAL MENU -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<ul class="nav navbar-nav pull-right">
+					
+			<!-- BEGIN USER LOGIN DROPDOWN -->
+			<li class="dropdown user">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" src="<?php echo base_url() ?>img/avatar_small.png"/>
+					<span class="username">
+						<?php  $auth = $this->session->userdata('auth');
+						echo $auth['username'];?>
+					</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="<?php echo base_url() ?>validationprocess/logout">
+							<i class="fa fa-key"></i> Log Out
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- END USER LOGIN DROPDOWN -->
+		</ul>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END TOP NAVIGATION BAR -->
+	
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+			
+	<ul class="page-sidebar-menu visible-sm visible-xs" data-auto-scroll="true" data-slide-speed="200">
+	<?php
+					$menu = $this->MainPage_model->getParentMenu($auth['user_group_level']);
+					// print_r($menu); exit;
+					foreach($menu as $key=>$val){
+						$datamenu = $this->MainPage_model->getDataParentmenu($val['detect']);
+						if($datamenu['id_menu'] == '1'){
+							echo'
+							<li >
+								<a href="'.base_url().$datamenu['id'].'">
+								<i class="fa '.$datamenu['image'].'"></i>
+										
+											'.$datamenu['text'].'
+										</a>
+								</a>
+							</li>
+						';
+						}else{
+							$class 		= $this->uri->segment(1);
+							if($class==''){$class='MainPage';}
+							$active		= $this->MainPage_model->getActive($class);
+							$compare 	= $datamenu['id_menu'];
+							if($active==$compare){$stat = 'active';}else{$stat='';}
+							echo'
+								<li>
+									<a data-toggle="dropdown" data-hover="dropdown" data-close-others="true" href="">
+										<i class="fa '.$datamenu['image'].'"></i>
+										
+											'.$datamenu['text'].'
+										
+										<span class="arrow">
+										</span>
+									</a>
+									<ul class="sub-menu">
+							';
+							$datasubmenu= $this->MainPage_model->getParentSubMenu2($auth['user_group_level'],$val['detect']);
+							foreach($datasubmenu as $key2=>$val2){
+								$idmenucari = substr($val2['id_menu'],0,2);
+								$countsubmenu=count($this->MainPage_model->getSubMenu2($idmenucari));
+								if($countsubmenu > 1){
+									$submenuopen=$this->MainPage_model->getDataParentmenu($idmenucari);
+									$class2 		= $this->uri->segment(1);
+									if($class==''){$class='MainPage';}
+									$active2		= $this->MainPage_model->getActive2($class);
+									$compare2 		= $submenuopen['id_menu'];
+									if($active2==$compare2){$stat2 = 'active';}else{$stat2='';}
+									echo'
+									<li >
+											<a href="'.base_url().$submenuopen['id'].'">
+											'.$submenuopen['text'].'
+											<span class="arrow">
+											</span>
+											</a>
+											<ul class="sub-menu">
+										';
+											
+										$datasubmenu2= $this->MainPage_model->getParentSubMenu($auth['user_group_level'],$submenuopen['id_menu']);	
+										// print_r($datasubmenu2); exit;
+										foreach($datasubmenu2 as $key3=>$val3){
+												$idmenucari2 = substr($val3['id_menu'],0,3);
+												$countsubmenu2=count($this->MainPage_model->getSubMenu2($idmenucari2));
+												if($countsubmenu2 > 2){
+													$submenuopen2=$this->MainPage_model->getDataParentmenu($idmenucari2);
+													$class3 		= $this->uri->segment(1);
+													if($class3==''){$class2='MainPage';}
+													$active3		= $this->MainPage_model->getActive3($class);
+													$compare3 		= $submenuopen['id_menu'];
+													if($active3==$compare3){$stat3 = 'active';}else{$stat3='';}
+													echo'
+													<li >
+														<a href="'.base_url().$submenuopen2['id'].'">
+														'.$submenuopen2['text'].'
+														<span class="arrow">
+														</span>
+														</a>
+														<ul class="sub-menu">	
+														';
+													$datasubmenu3= $this->MainPage_model->getParentSubMenu($auth['user_group_level'],$submenuopen2['id_menu']);	
+														// if($idmenucari =='81'){
+														// print_r($datasubmenu2); 
+														// exit;}
+														foreach($datasubmenu3 as $key4=>$val4){
+																echo'
+																<li>
+																	<a href="'.$val4['id'].'">
+																	'.$val4['text'].'
+																	</a>
+																	</li>
+																';
+																}
+																echo'	
+														</ul>	
+													</li>
+													';
+												}
+												else{
+												$submenuopen3=$this->MainPage_model->getDataParentmenu($val3['id_menu']);
+													echo'
+													<li>
+													<a href="'.base_url().$submenuopen3['id'].'">
+													'.$submenuopen3['text'].'
+													</a>
+													</li>
+													';
+												}
+										}
+										echo'	
+										</ul>
+									</li>
+									';
+								}else{
+									$submenuopen2=$this->MainPage_model->getDataParentmenu($val2['id_menu']);
+										$judul=$submenuopen2['text'];
+										
+										echo'
+											<li >
+												<a href="'.base_url().$submenuopen2['id'].'">
+													'.$judul.'
+												</a>
+											</li>
+										';
+								}
+							}
+							echo'	
+								</ul>
+								</li>
+							';
+						}
+					}
+					?>
+		
+	</ul>
+		</div>
+	</div>
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+		<?php
+		//content
+		$this->load->view($main_view['content'],$main_view);
+		?>
+		</div>
+	</div>
+	<!-- END CONTENT -->	
+</div>
+<!-- END CONTAINER -->
+<div class="footer">
+	<div class="footer-inner">
+		<?php
+	//menu
+		$this->load->view('footer');
+	}else{
+		redirect('validationprocess');
+	}
+?>
+	</div>
+	<div class="footer-tools">
+		<span class="go-top">
+			<i class="fa fa-angle-up"></i>
+		</span>
+	</div>
+</div>
+<!-- END FOOTER -->	

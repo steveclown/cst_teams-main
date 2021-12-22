@@ -1,0 +1,652 @@
+<?php	
+class main_model extends CI_Model {
+
+	public function salescustomerprice_model(){
+		parent::__construct();
+		$this->CI = get_instance();
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------New Employee--------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getregion(){
+	$this->db->select('region_id, region_name')->from('core_region');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getbranch(){
+	$this->db->select('branch_id, branch_name')->from('core_branch');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getdivision(){
+	$this->db->select('division_id, division_name')->from('core_division');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getdepartment(){
+	$this->db->select('department_id, department_name')->from('core_department');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getsection(){
+	$this->db->select('section_id, section_name')->from('core_section');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getjobtitle(){
+	$this->db->select('job_title_id, job_title_name')->from('core_job_title');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getgrades(){
+	$this->db->select('grade_id, grade_name')->from('core_grade');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getclasss(){
+	$this->db->select('class_id, class_name')->from('core_class');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getlocation(){
+	$this->db->select('location_id, location_name')->from('core_location');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getshift(){
+	$this->db->select('shift_id, shift_name')->from('core_shift');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getmaritalstatus(){
+	$this->db->select('marital_status_id, marital_status_name')->from('core_marital_status');
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+	
+	public function savenewemployee($data){
+	$query = $this->db->insert('hro_employee_data',$data);
+		if ($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Combo Main----------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getListEmployee($name){
+	$table_name = "hro_employee_data";
+	$this->db->select('employee_id, employee_name')->from($table_name);
+	$this->db->where('data_state', '0');
+		if($name != ''){
+			$this->db->like('employee_name', $name, 'both'); 
+		}
+	$this->db->order_by('employee_name', 'asc');
+	return $this->db->get()->result_array();
+	}
+
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Employment Data-----------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function EmploymentData($id){
+	$this->db->select('a.employee_id, a.employee_status, a.employee_working_status, a.employee_status_due_date, a.data_state, b.employee_overtime_status')->from('hro_employee_employment as a');
+	$this->db->join('hro_employee_data as b', 'a.employee_id=b.employee_id');
+	$this->db->where('a.employee_id', $id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function updateEmploymentData($data){
+	//print_r($data);exit;
+	$this->db->set('a.employee_status', $data['employee_status']);
+	$this->db->set('a.employee_working_status', $data['employee_working_status']);
+	$this->db->set('a.employee_status_due_date', $data['employee_status_due_date']);
+	$this->db->set('b.employee_overtime_status', $data['employee_overtime_status']);
+	$this->db->where('a.employee_id', $data['employee_id']);
+	//$this->db->where('a.employee_id=b.employee_id');
+	$query = $this->db->update('hro_employee_data as b, hro_employee_employment as a');
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Personal Data-------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getMaritalStatusName(){
+	$table_name = "core_marital_status";
+	$this->db->select('marital_status_id, marital_status_name')->from($table_name);
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+	
+	public function getListWorkex(){
+		$table_name = "hro_employee_working_experience";
+		$this->db->select('employee_working_experience_id, employee_id, company_name, company_address, working_experience_job_title, working_experience_from_period, working_experience_to_period, working_experience_remark, data_state, created_by, created_on')->from($table_name);
+		$this->db->where('data_state', '0');
+		return $this->db->get()->result_array();
+	}
+
+	public function PersonalData($id){
+	$this->db->select('*')->from('hro_employee_data');
+	$this->db->where('employee_id',$id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function getEmployeePicture($id){
+	$this->db->select('employee_picture')->from('hro_employee_data');
+	$this->db->where('employee_id',$id);
+	$result=$this->db->get()->row_array();
+	return $result['employee_picture'];
+	}
+	
+	public function updatePersonalData($data){
+	$this->db->where('employee_id',$data['employee_id']);
+	$query = $this->db->update('hro_employee_data', $data);
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}		
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Salary History------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getListSalaryHistory($employee_id){
+	$table_name="transaction_salary_increment";
+	$this->db->select('salary_increment_id, status, employee_id, salary_increment_date, grade_id, class_id, salary_increment_remark')->from($table_name);
+	$this->db->where('data_state', '0');
+	$this->db->where('employee_id', $employee_id);
+	return $this->db->get()->result_array();
+	}
+	
+	public function getsalaryhistorydetail($id){
+	$this->db->select('*')->from('transaction_salary_increment');
+	$this->db->where('salary_increment_id', $id);
+	}
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	
+	
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Payment-------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getlistpayment($id){
+	$this->db->select('employee_id, employee_bank_name, employee_bank_acct_no, employee_bank_acct_name')->from('hro_employee_data');
+	$this->db->where('employee_id',$id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function updatepayment($data){
+	$this->db->where('employee_id',$data['employee_id']);
+	$query = $this->db->update('hro_employee_data', $data);
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Family Data---------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getFamilyDetail($id){
+	$this->db->select('*')->from('hro_employee_family');
+	$this->db->where('employee_family_id',$id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function insertEmployeeFamilyData($data){
+	return $this->db->insert('hro_employee_family',$data);
+	}
+	
+	public function updateEmployeeFamilyData($data){
+	$this->db->where('employee_family_id',$data['employee_family_id']);
+	$query = $this->db->update('hro_employee_family', $data);
+		if($query){                  
+		return true;
+		}else{
+		return false;
+		} 
+	}	
+	
+	public function deleteEmployeeFamilyData($id){
+	$this->db->where("employee_family_id",$id);
+	$query = $this->db->update('hro_employee_family', array("data_state"=>'1'));
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+	public function getListFamily($employee_id){
+	$table_name = "hro_employee_family";
+	$this->db->select('employee_family_id, employee_id, employee_family_name, family_status_id')->from($table_name);
+	$this->db->where('data_state', '0');
+	$this->db->where('employee_id', $employee_id);
+	return $this->db->get()->result_array();
+	}
+	
+	public function getFamilyStatusName(){
+	$table_name = "core_family_status";
+	$this->db->select('family_status_id, family_status_name')->from($table_name);
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+	
+	public function getFamilyStatus($id){
+	$table_name = "core_family_status";
+	$this->db->select('family_status_name')->from($table_name);
+	$this->db->where('family_status_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[family_status_name];
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Leave---------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getAnnualLeaveName(){
+	$table_name = "core_annual_leave";
+	$this->db->select('annual_leave_id, annual_leave_name')->from($table_name);
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getAnnualLeave($id){
+		$this->db->select('annual_leave_name')->from('core_annual_leave');
+		$this->db->where('annual_leave_id',$id);
+		$result = $this->db->get()->row_array();
+		if(!empty($result['annual_leave_name'])){
+			return $result['annual_leave_name'];
+		} else {
+			return "Not Defined";
+		}
+	}
+
+	public function insertEmployeeLeaveData($data){
+	return $this->db->insert('hro_employee_leave', $data);
+	}
+	
+	public function getLeaveDetail($id){
+	$this->db->select('*')->from('hro_employee_leave');
+	$this->db->where('employee_leave_id', $id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function getListLeave($employee_id){
+	$table_name="hro_employee_leave";
+	$this->db->select('employee_leave_id, employee_id, annual_leave_id, employee_leave_period, employee_leave_days, employee_leave_taken, employee_leave_last_balance, employee_leave_remark')->from($table_name);
+	$this->db->where('data_state', '0');
+	$this->db->where('employee_id', $employee_id);
+	return $this->db->get()->result_array();
+	}
+
+	public function updateEmployeeLeaveData($data){
+	$this->db->where('employee_leave_id', $data['employee_leave_id']);
+	$query = $this->db->update('hro_employee_leave', $data);
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+		
+	public function deleteEmployeeLeaveData($id){
+	$this->db->where('employee_leave_id', $id);
+	$query = $this->db->update('hro_employee_leave', array("data_state"=>'1'));
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Allowance-----------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function deleteEmployeeAllowanceData($id){
+	$this->db->where("employee_allowance_id",$id);
+	$query = $this->db->update('hro_employee_allowance', array("data_state"=>'1'));
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+	public function getAllowanceDetail($id){
+	$this->db->select('*')->from('hro_employee_allowance');
+	$this->db->where('employee_allowance_id', $id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function getAllowanceName(){
+	$table_name = "core_allowance";
+	$this->db->select('allowance_id, allowance_name')->from($table_name);
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getAllowance($allowance_id){
+	$table_name = "core_allowance";
+	$this->db->select('allowance_name')->from($table_name);
+	$this->db->where('allowance_id', $allowance_id);
+	$result = $this->db->get()->row_array();
+	return $result[allowance_name];
+	}
+	
+	public function getListAllowance($employee_id){
+	$table_name="hro_employee_allowance";
+	$this->db->select('employee_allowance_id, allowance_id, employee_id, employee_allowance_period, employee_allowance_amount, employee_allowance_remark')->from($table_name);
+	$this->db->where('data_state', '0');
+	$this->db->where('employee_id', $employee_id);
+	return $this->db->get()->result_array();
+	}
+	
+	public function insertEmployeeAllowanceData($data){
+	return $this->db->insert('hro_employee_allowance', $data);
+	}
+	
+	public function updateEmployeeAllowanceData($data){
+	$this->db->where('employee_allowance_id',$data['employee_allowance_id']);
+	$query = $this->db->update('hro_employee_allowance', $data);
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Deduction-----------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getDeductionDetail($id){
+	$this->db->select('*')->from('hro_employee_deduction');
+	$this->db->where('employee_deduction_id', $id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function getDeductionName(){
+	$table_name = "core_deduction";
+	$this->db->select('deduction_id, deduction_name')->from($table_name);
+	$this->db->where('data_state', '0');
+	return $this->db->get()->result_array();
+	}
+
+	public function getDeduction($deduction_id){
+	$table_name = "core_deduction";
+	$this->db->select('deduction_name')->from($table_name);
+	$this->db->where('deduction_id', $deduction_id);
+	$result = $this->db->get()->row_array();
+	return $result[deduction_name];
+	}
+	
+	public function getListDeduction($employee_id){
+	$table_name="hro_employee_deduction";
+	$this->db->select('employee_deduction_id, deduction_id, employee_id, employee_deduction_period, employee_deduction_amount, employee_deduction_remark')->from($table_name);
+	$this->db->where('data_state', '0');
+	$this->db->where('employee_id', $employee_id);
+	return $this->db->get()->result_array();
+	}
+	
+	public function insertEmployeeDeductionData($data){
+	return $this->db->insert('hro_employee_deduction', $data);
+	}
+	
+	public function updateEmployeeDeductionData($data){
+	$this->db->where('employee_deduction_id',$data['employee_deduction_id']);
+	$query = $this->db->update('hro_employee_deduction', $data);
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+	public function deleteEmployeeDeductionData($id){
+	$this->db->where("employee_deduction_id",$id);
+	$query = $this->db->update('hro_employee_deduction', array("data_state"=>'1'));
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+	
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Organization--------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	public function getClass($id){
+		$this->db->select('class_name')->from('core_class');
+		$this->db->where('class_id', $id);
+		$result = $this->db->get()->row_array();
+		if(!empty($result['class_name'])){
+			return $result['class_name'];
+		} else {
+			return "Not Defined";
+		}
+	}
+
+	public function getGrade($id){
+		$this->db->select('grade_name')->from('core_grade');
+		$this->db->where('grade_id', $id);
+		$result = $this->db->get()->row_array();
+		if(!empty($result['grade_name'])){
+			return $result['grade_name'];
+		} else {
+			return "Not Defined";
+		}
+	}
+
+	public function getOrganizationDetail($id){
+	$this->db->select('tax_id, branch_id, division_id, department_id, section_id, job_title_id, grade_id, class_id, location_id, shift_id, region_id')->from('hro_employee_data');
+	$this->db->where('employee_id',$id);
+	return $this->db->get()->row_array();
+	}
+	
+	public function getRegionName($id){
+	$table_name="core_region";
+	$this->db->select('region_name')->from($table_name);
+	$this->db->where('region_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[region_name];
+	}
+	
+	public function getShiftName(){
+	$table_name="core_shift";
+	$this->db->select('shift_name')->from($table_name);
+	$this->db->where('shift_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[shift_name];
+	}
+	
+	public function getLocationName(){
+	$table_name="core_location";
+	$this->db->select('location_name')->from($table_name);
+	$this->db->where('location_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[location_name];
+	}
+
+	public function getClassName(){
+	$table_name="core_class";
+	$this->db->select('class_name')->from($table_name);
+	$this->db->where('class_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[class_name];
+	}
+	
+	public function getGradeName(){
+	$table_name="core_grade";
+	$this->db->select('grade_name')->from($table_name);
+	$this->db->where('grade_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[grade_name];
+	}
+
+	public function getJobTitleName(){
+	$table_name="core_job_title";
+	$this->db->select('job_title_name')->from($table_name);
+	$this->db->where('job_title_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[job_title_name];
+	}
+
+	public function getSectionName(){
+	$table_name="core_section";
+	$this->db->select('section_name')->from($table_name);
+	$this->db->where('section_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[section_name];
+	}
+
+	public function getDivisionName(){
+	$table_name="core_division";
+	$this->db->select('division_name')->from($table_name);
+	$this->db->where('division_id', $id);
+	$result = $this->db->get()->row_array();
+	return $result[division_name];
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+//------------------------------------------Insurance-----------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+	public function getInsuranceDetail($id){
+	$this->db->select('*')->from('hro_employee_insurance');
+	$this->db->where('employee_insurance_id',$id);
+	return $this->db->get()->row_array();
+	}
+
+	public function getinsurancepremiolang($insurance_premi_id){
+		$this->db->select('insurance_premi_id,insurance_premi_code')->from('core_insurance_premi');
+		$this->db->where('insurance_premi_id', $insurance_premi_id);
+		$result = $this->db->get()->result_array();
+		return $result;
+	}
+	
+	public function getinsurancepremi($insurance_premi_id){
+		$this->db->select('insurance_premi_id,insurance_premi_code')->from('core_insurance_premi');
+		$this->db->where('insurance_premi_id', $insurance_premi_id);
+		$result = $this->db->get()->row_array();
+		return $result[insurance_premi_code];
+	}
+	
+	public function getInsuranceName(){
+		$table_name="core_insurance";
+		$this->db->select('insurance_id, insurance_name')->from($table_name);
+		$this->db->where('data_state', '0');
+		return $this->db->get()->result_array();
+	}
+	
+	public function getInsurancePremiCode(){
+		$table_name="core_insurance_premi";
+		$this->db->select('insurance_premi_id, insurance_premi_code')->from($table_name);
+		$this->db->where('data_state', '0');
+		return $this->db->get()->result_array();;
+	}
+
+	public function getInsurance($id){
+		$this->db->select('insurance_name')->from('core_insurance');
+		$this->db->where('insurance_id', $id);
+		$result = $this->db->get()->row_array();
+		if(!empty($result['insurance_name'])){
+			return $result['insurance_name'];
+		} else {
+			return "Not Defined";
+		}
+	}
+	
+	public function getListInsurance($employee_id){
+		$table_name="hro_employee_insurance";
+		$this->db->select('employee_insurance_id, insurance_id, insurance_premi_id, employee_insurance_period, employee_insurance_premi_amount, employee_insurance_remark')->from($table_name);
+		$this->db->where('data_state', '0');
+		$this->db->where('employee_id', $employee_id);
+		return $this->db->get()->result_array();
+	}
+	
+	public function insertEmployeeInsuranceData($data){
+	return $this->db->insert('hro_employee_insurance', $data);
+	}
+	
+	public function updateEmployeeInsuranceData($data){
+	$this->db->where('employee_insurance_id',$data['employee_insurance_id']);
+	$query = $this->db->update('hro_employee_insurance', $data);
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+	public function deleteEmployeeInsuranceData($id){
+	$this->db->where("employee_insurance_id",$id);
+	$query = $this->db->update('hro_employee_insurance', array("data_state"=>'1'));
+		if($query){
+		return true;
+		}else{
+		return false;
+		}
+	}
+	
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+	}
+
+?>

@@ -1,0 +1,140 @@
+<?php
+	Class transactionalhospitalclaim extends CI_Controller{
+		public function __construct(){
+			parent::__construct();
+			$this->load->model('transactionalhospitalclaim_model');
+			$this->load->helper('sistem');
+			$this->load->library('fungsi');
+			$this->load->library('configuration');
+		}
+		
+		public function index(){
+			$this->lists();
+		}
+		
+		public function lists(){
+			$data['main_view']['transactionalhospitalclaim']		= $this->transactionalhospitalclaim_model->get_list();
+			$data['main_view']['content']	= 'transactionalhospitalclaim/listtransactionalhospitalclaim_view';
+			$this->load->view('mainpage_view',$data);
+		}
+		
+		function Add(){
+			$data['main_view']['content']		= 'transactionalhospitalclaim/Addtransactionalhospitalclaim_view';
+			$data['main_view']['employee']		= create_double($this->transactionalhospitalclaim_model->getemployee(),'employee_id','employee_name');
+			$data['main_view']['hospitalcoverage']	= create_double($this->transactionalhospitalclaim_model->gethospitalcoverage(),'hospital_coverage_id','hospital_coverage_name');
+			$this->load->view('mainpage_view',$data);
+		}
+		
+		function processAddtransactionalhospitalclaim(){
+			$auth = $this->session->userdata('auth');
+			$data = array(
+				'status' 							=> $this->input->post('status',true),
+				'employee_id' 						=> $this->input->post('employee_id',true),
+				'hospital_coverage_id'	 			=> $this->input->post('hospital_coverage_id',true),
+				'hospital_claim_date' 				=> $this->input->post('hospital_claim_date',true),
+				'hospital_claim_opening_balance' 	=> $this->input->post('hospital_claim_opening_balance',true),
+				'hospital_claim_amount'			 	=> $this->input->post('hospital_claim_amount',true),
+				'hospital_claim_last_balance' 		=> $this->input->post('hospital_claim_last_balance',true),
+				'hospital_claim_remark' 				=> $this->input->post('hospital_claim_remark',true),
+				'data_state'						=> '0',
+				'created_by'						=> $auth['username'],
+				'created_on'						=> date("Y-m-d H:i:s")
+			);
+			
+			$this->form_validation->set_rules('employee_id', 'Employee Name', 'required');
+			$this->form_validation->set_rules('hospital_coverage_id', 'Hospital Coverage name', 'required');
+			if($this->form_validation->run()==true){
+				if($this->transactionalhospitalclaim_model->saveNewtransactionalhospitalclaim($data)){
+					$auth = $this->session->userdata('auth');
+					$this->fungsi->set_log($auth['username'],'1003','Application.transactionalhospitalclaim.processAddtransactionalhospitalclaim',$auth['username'],'Add New Transactional Hospital Claim');
+					$msg = "<div class='alert alert-success'>                
+								Add Data Transactional Hospital Claim Successfully
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->unset_userdata('Addtransactionalhospitalclaim');
+					redirect('transactionalhospitalclaim/Add');
+				}else{
+					$msg = "<div class='alert alert-danger'>                
+								Add Data Transactional Hospital Claim UnSuccessful
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('transactionalhospitalclaim/Add');
+				}
+			}else{
+				$data['password']='';
+				$this->session->set_userdata('Addtransactionalhospitalclaim',$data);
+				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				redirect('transactionalhospitalclaim/Add');
+			}
+		}
+		
+		function Edit(){
+			$data['main_view']['result']		= $this->transactionalhospitalclaim_model->getDetail($this->uri->segment(3));
+			$data['main_view']['content']		= 'transactionalhospitalclaim/edittransactionalhospitalclaim_view';
+			$data['main_view']['employee']		= create_double($this->transactionalhospitalclaim_model->getemployee(),'employee_id','employee_name');
+			$data['main_view']['hospitalcoverage']		= create_double($this->transactionalhospitalclaim_model->gethospitalcoverage(),'hospital_coverage_id','hospital_coverage_name');
+			$this->load->view('mainpage_view',$data);
+		}
+		
+		function processEdittransactionalhospitalclaim(){
+			
+			$data = array(
+				'hospital_claim_id' 					=> $this->input->post('hospital_claim_id',true),
+				'status' 							=> $this->input->post('status',true),
+				'employee_id' 						=> $this->input->post('employee_id',true),
+				'hospital_coverage_id'	 			=> $this->input->post('hospital_coverage_id',true),
+				'hospital_claim_date' 				=> $this->input->post('hospital_claim_date',true),
+				'hospital_claim_opening_balance' 	=> $this->input->post('hospital_claim_opening_balance',true),
+				'hospital_claim_amount'			 	=> $this->input->post('hospital_claim_amount',true),
+				'hospital_claim_last_balance' 		=> $this->input->post('hospital_claim_last_balance',true),
+				'hospital_claim_remark' 				=> $this->input->post('hospital_claim_remark',true),
+				'data_state'						=> '0'
+			);
+			
+			$this->session->set_userdata('Edit',$data);
+			$this->form_validation->set_rules('employee_id', 'Employee Name', 'required');
+			$this->form_validation->set_rules('hospital_coverage_id', 'Hospital Coverage Name', 'required');
+			if($this->form_validation->run()==true){
+				if($this->transactionalhospitalclaim_model->saveEdittransactionalhospitalclaim($data)==true){
+					$auth 	= $this->session->userdata('auth');
+					$this->fungsi->set_log($auth['username'],'1077','Application.transactionalhospitalclaim.Edit',$auth['username'],'Edit Transactional Hospital Claim');
+					$this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['hospital_claim_id']);
+					$msg = "<div class='alert alert-success'>                
+								Edit Transactional Hospital Claim Successfully
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('transactionalhospitalclaim/Edit/'.$data['hospital_claim_id']);
+				}else{
+					$msg = "<div class='alert alert-danger'>                
+								Edit Transactional Hospital Claim UnSuccessful
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('transactionalhospitalclaim/Edit/'.$data['hospital_claim_id']);
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				redirect('transactionalhospitalclaim/Edit/'.$data['hospital_claim_id']);
+			}
+		}
+		
+		function delete(){
+			if($this->transactionalhospitalclaim_model->delete($this->uri->segment(3))){
+				$auth = $this->session->userdata('auth');
+				$this->fungsi->set_log($auth['username'],'1005','Application.transactionalhospitalclaim.delete',$auth['username'],'Delete transactionalhospitalclaim');
+				$msg = "<div class='alert alert-success'>                
+							Delete Data Transactional Hospital Claim Successfully
+						</div> ";
+				$this->session->set_userdata('message',$msg);
+				redirect('transactionalhospitalclaim');
+			}else{
+				$msg = "<div class='alert alert-danger'>                
+							Delete Data Transactional Hospital Claim UnSuccessful
+						</div> ";
+				$this->session->set_userdata('message',$msg);
+				redirect('transactionalhospitalclaim');
+			}
+		}
+	}
+?>

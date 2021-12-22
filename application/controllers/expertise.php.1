@@ -1,0 +1,122 @@
+<?php
+	Class Expertise extends CI_Controller{
+		public function __construct(){
+			parent::__construct();
+			$this->load->model('expertise_model');
+			$this->load->helper('sistem');
+			$this->load->library('fungsi');
+			$this->load->library('configuration');
+		}
+		
+		public function index(){
+			$this->lists();
+		}
+		
+		public function lists(){
+			$data['main_view']['expertise']		= $this->expertise_model->get_list();
+			$data['main_view']['content']	= 'expertise/listexpertise_view';
+			$this->load->view('mainpage_view',$data);
+		}
+		
+		function Add(){
+			$data['main_view']['content']	= 'expertise/formaddexpertise_view';
+			$this->load->view('mainpage_view',$data);
+		}
+		
+		function processaddexpertise(){
+			$data = array(
+				'expertise_code' 		=> $this->input->post('expertise_code',true),
+				'expertise_name' 		=> $this->input->post('expertise_name',true),
+				'expertise_remark' 		=> $this->input->post('expertise_remark',true),
+				'data_state'		=> '0'
+			);
+			
+			$this->form_validation->set_rules('expertise_code', 'Expertise Code', 'required|alpha_numeric');
+			$this->form_validation->set_rules('expertise_name', 'Expertise Name', 'required');
+			if($this->form_validation->run()==true){
+				if($this->expertise_model->savenewexpertise($data)){
+					$auth = $this->session->userdata('auth');
+					$this->fungsi->set_log($auth['username'],'1003','Application.expertise.processAddlanguage',$auth['username'],'Add New expertise');
+					$msg = "<div class='alert alert-success'>                
+								Add Data Expertise Successfully
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					$this->session->unset_userdata('Addeducation');
+					redirect('expertise/Add');
+				}else{
+					$msg = "<div class='alert alert-error'>                
+								Add Data Expertise UnSuccessful
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('expertise/Add');
+				}
+			}else{
+				$data['password']='';
+				$this->session->set_userdata('addexpertise',$data);
+				$msg = validation_errors("<div class='alert alert-error'>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				redirect('expertise/Add');
+			}
+		}
+		
+		function Edit(){
+			$data['main_view']['result']	= $this->expertise_model->getDetail($this->uri->segment(3));
+			$data['main_view']['content']	= 'expertise/formeditexpertise_view';
+			$this->load->view('mainpage_view',$data);
+		}
+		
+		function processeditexpertise(){
+			$data = array(
+				'expertise_id' 			=> $this->input->post('expertise_id',true),
+				'expertise_code' 		=> $this->input->post('expertise_code',true),
+				'expertise_name' 		=> $this->input->post('expertise_name',true),
+				'expertise_remark' 		=> $this->input->post('expertise_remark',true),
+				'data_state'		=> '0'
+			);
+			$this->session->set_userdata('Edit',$data);
+			$this->form_validation->set_rules('expertise_code', 'Expertise Code', 'required|alpha_numeric');
+			$this->form_validation->set_rules('expertise_name', 'Expertise Name', 'required');
+			if($this->form_validation->run()==true){
+				if($this->expertise_model->saveeditexpertise($data)==true){
+					$auth 	= $this->session->userdata('auth');
+					$this->fungsi->set_log($auth['username'],'1077','Application.expertise.Edit',$auth['username'],'Edit expertise');
+					$this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['expertise_id']);
+					$msg = "<div class='alert alert-success'>                
+								Edit Expertise Successfully
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('expertise/Edit/'.$data['expertise_id']);
+				}else{
+					$msg = "<div class='alert alert-error'>                
+								Edit Expertise UnSuccessful
+							</div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('expertise/Edit/'.$data['expertise_id']);
+				}
+			}else{
+				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
+				$this->session->set_userdata('message',$msg);
+				redirect('expertise/Edit/'.$data['expertise_id']);
+			}
+		}
+		
+				
+		function delete(){
+			if($this->expertise_model->delete($this->uri->segment(3))){
+				$auth = $this->session->userdata('auth');
+				$this->fungsi->set_log($auth['username'],'1005','Application.expertise.delete',$auth['username'],'Delete expertise');
+				$msg = "<div class='alert alert-success'>                
+							Delete Data Expertise Successfully
+						</div> ";
+				$this->session->set_userdata('message',$msg);
+				redirect('expertise');
+			}else{
+				$msg = "<div class='alert alert-error'>                
+							Delete Data Expertise UnSuccessful
+						</div> ";
+				$this->session->set_userdata('message',$msg);
+				redirect('expertise');
+			}
+		}
+	}
+?>

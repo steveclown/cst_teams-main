@@ -1,0 +1,233 @@
+<script>
+function deductiondata(value){
+			$.ajax({
+				type: "POST",
+				url : "<?php echo site_url('main/getdeductionlist');?>",
+				data: {'employee_id' : value},
+				success: function(msg){
+					// alert(msg);
+					$('#deduction_list').html(msg);
+				}
+			});
+		   // alert(value);
+		   // alert(data['employee_picture']);
+		   // alert(data['employee_id']);
+}
+
+function deletededuction(value){
+	// alert(value);
+	$("#delete_employee_deduction_id").val(value);
+}
+
+function detaildeductiondata(value){
+$.ajax({
+	   type : "POST",
+	   url  : "<?php echo base_url(); ?>main/getDeductionDetail",
+	   data : "employee_deduction_id=" + value,
+	   dataType: "json",
+	   success: function(data){
+	   $("#employee_deduction_id").val(data['employee_deduction_id']);
+	   $("#employee_idDeduction").val(data['employee_id']);
+	   $("#deduction_id").val(data['deduction_id']);
+	   $("#employee_deduction_period").val(data['employee_deduction_period']);
+	   $("#employee_deduction_amount").val(data['employee_deduction_amount']);
+	   $("#employee_deduction_remark").val(data['employee_deduction_remark']);	   
+	   }
+	});
+}
+</script>
+
+<div class="portlet-body form">
+	<div class="form-body">
+		<h3 class="form-section"><a class="btn blue" data-toggle="modal" href="#modaldeductiondatainsert"><i class="fa fa-pencil"></i> Add Deduction</a></h3>
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<!-- BEGIN EXAMPLE TABLE PORTLET-->
+				<div class="portlet box grey">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-user"></i>List Employee Deduction
+						</div>
+						<div class="actions">
+						</div>						
+					</div>
+					<div class="portlet-body">
+						<div id="deduction_list" ></div>
+					</div>
+				</div>
+				<!-- END EXAMPLE TABLE PORTLET-->
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN FORM-->
+	<?php
+ echo form_open('main/processEmployeeDeductionData',array('id' => 'myform', 'class' => 'horizontal-form'));
+	$EmployeeDeductionData = $this->session->userdata('EmployeeDeductionData');
+	?>
+	<!-- /.modal -->
+	<div class="modal fade bs-modal-lg" id="modaldeductiondata" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Edit Employee Deduction Data</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Deduction Name</label>
+							<select class="form-control" name="deduction_id" id="deduction_id">
+									<?php 
+									foreach ($deduction as $key=>$val){
+										echo"
+										<option value='$val[deduction_id]'>$val[deduction_name]</option>
+										";
+									}
+									?>
+								</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Period</label><span class="required">*</span></label>							
+							<input class="form-control form-control input-medium date-picker" data-date-format="yyyy-mm-dd" type="text" name="employee_deduction_period" id="employee_deduction_period" value="<?php echo $EmployeeDeductionData['employee_deduction_period'];?>"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Amount</label><span class="required">*</span></label>
+							<input type="text" name="employee_deduction_amount" id="employee_deduction_amount" value="<?php echo $EmployeeDeductionData['employee_deduction_amount'];?>" class="form-control">							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Remark</label>
+							<div class="input-icon right">
+								<i class="fa"></i>
+								<textarea name="employee_deduction_remark" id="employee_deduction_remark" class="form-control"></textarea>
+								<!-- <input type="textarea" class="form-control" name="employee_deduction_remark" id="employee_deduction_remark" value="<?php echo set_value('employee_deduction_remark',$data['employee_deduction_remark']);?>"/> -->
+								<?php //echo form_textarea(array('name'=>'employee_deduction_remark','id'=>'employee_deduction_remark','value'=>set_value('employee_deduction_remark',$data['employee_deduction_remark']), ''))?>
+							</div>
+						</div>	
+					</div>						
+					
+					<input type="hidden" name="employee_deduction_id" id="employee_deduction_id" value="<?php echo $EmployeeDeductionData['employee_deduction_id'];?>">
+					<input type="hidden" name="employee_idDeduction" id="employee_idDeduction" value="<?php echo $EmployeeDeductionData['employee_id'];?>">
+					
+					<div class="modal-footer">
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn blue"><i class="fa fa-check"></i> Save</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+	</div>
+<?php
+$this->session->unset_userdata('EmployeeDeductionData');
+echo form_close(); 
+?>
+<!-- BEGIN FORM-->
+<?php echo form_open('main/processInsertDeductionData',array('id' => 'myform', 'class' => 'horizontal-form'));
+?>
+	<!-- /.modal -->
+	<div class="modal fade bs-modal-lg" id="modaldeductiondatainsert" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Add Employee Deduction Data Insert</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Deduction Name</label><span class="required">*</span></label>
+							<select class="form-control" name="insert_deduction_id" id="insert_deduction_id">
+									<?php 
+									foreach ($deduction as $key=>$val){
+										echo"
+										<option value='$val[deduction_id]'>$val[deduction_name]</option>
+										";
+									}
+									?>
+								</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Deduction Period</label><span class="required">*</span></label>
+							<input class="form-control form-control input-medium date-picker" data-date-format="yyyy-mm-dd" type="text" name="insert_employee_deduction_period" id="insert_employee_deduction_period" value="<?php echo $EmployeeDeductionData['insert_employee_deduction_period'];?>"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Deduction Amount</label><span class="required">*</span></label>
+							<input type="text" name="insert_employee_deduction_amount" id="insert_employee_deduction_amount" value="<?php echo $EmployeeDeductionData['insert_employee_deduction_amount'];?>" class="form-control">
+							<span class="help-block">
+								Please input only numbers.
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Remark</label>
+							<div class="input-icon right">
+								<i class="fa"></i>
+								<textarea name="insert_employee_deduction_remark" id="insert_employee_deduction_remark" class="form-control"></textarea>
+								<!--<input type="textarea" class="form-control" name="insert_employee_deduction_remark" id="insert_employee_deduction_remark" value="<?php //echo set_value('insert_employee_deduction_remark',$data['insert_employee_deduction_remark']);?>"/> -->
+								<?php // echo form_textarea(array('name'=>'insert_employee_deduction_remark','id'=>'insert_employee_deduction_remark','value'=>set_value('insert_employee_deduction_remark',$data['insert_employee_deduction_remark']), ''))?>
+							</div>	
+						</div>	
+					</div>
+					
+					<input type="hidden" name="insert_employee_idDeduction" id="insert_employee_idDeduction" value="<?php echo $EmployeeDeductionData['insert_employee_id'];?>">
+				
+					<div class="modal-footer">
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn blue"><i class="fa fa-check"></i> Save</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	</div>
+	<!-- /.modal -->
+<?php
+$this->session->unset_userdata('EmployeeDeductionData');
+echo form_close(); 
+?>
+
+<!-- BEGIN FORM-->
+<?php echo form_open('main/deleteEmployeeDeductionData',array('id' => 'myform', 'class' => 'horizontal-form'));
+?>
+	<!-- /.modal -->
+	<div class="modal fade bs-modal-sm" id="modaldeductiondatadelete" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Delete Deduction Data</h4>
+				</div>
+				<div class="modal-body">
+					Are you sure you want to delete this entry ?
+				</div>
+				
+				<input type="hidden" name="delete_employee_deduction_id" id="delete_employee_deduction_id">
+				<div class="modal-footer">
+					<button type="button" class="btn default" data-dismiss="modal">Cancel</button>
+					<button type="submit" class="btn red"><i class='fa fa-trash-o'></i> Delete</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+<?php
+echo form_close(); 
+?>
+</div>
+

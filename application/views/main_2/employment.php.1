@@ -1,0 +1,64 @@
+<script>
+function employmentdata(value){
+	// alert(value);
+	$.ajax({
+		type : "POST",
+		url  : "<?php echo base_url(); ?>main/EmploymentData",
+		data : "employee_id=" + value,
+		dataType: "json",
+		success: function(data){			
+		// alert(data);
+			$("#employee_idEmployment").val(data['employee_id']);
+			$("#employment_employee_status").val(data['employee_status']);
+			$("#employment_employee_working_status").val(data['employee_working_status']);
+			$("#employment_employee_status_due_date").val(data['employee_status_due_date']);
+			$("#employment_employee_overtime_status").val(data['employee_overtime_status']);
+		}
+	});
+}
+</script>
+<div class="portlet-body form">
+	<!-- BEGIN FORM-->
+	<?php
+	echo form_open('main/processEmploymentData',array('id' => 'myform', 'class' => 'horizontal-form'));	
+	?>
+	<div class="form-body">
+		<h3 class="form-section">Employment Data</h3>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label">Employee Status</label>
+					<?php echo form_dropdown('employment_employee_status', $status, set_value('employment_employee_status',$EmploymentData['employment_employee_status']),'id="employment_employee_status", class="form-control"');?>
+				</div>
+			</div>
+			<!--/span-->
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label">Employee Working Status</label>
+					<?php echo form_dropdown('employment_employee_working_status', $workingstatus, set_value('employment_employee_working_status',$EmploymentData['employment_employee_working_status']),'id="employment_employee_working_status", class="form-control"');?>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label">Employee Status Due Date</label>
+					<input class="form-control form-control input-medium date-picker" data-date-format="yyyy-mm-dd" type="text" name="employment_employee_status_due_date" id="employment_employee_status_due_date" value="<?php echo $EmploymentData['employment_employee_status_due_date'];?>"/>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label">Employee Overtime Status</label>
+					<?php echo form_dropdown('employment_employee_overtime_status', $overtimestatus, set_value('employment_employee_overtime_status',$EmploymentData['employment_employee_overtime_status']),'id="employment_employee_overtime_status", class="form-control"');?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" name="employee_idEmployment" id="employee_idEmployment" value="<?php echo $EmploymentData['employment_employee_idE'];?>">
+	<div class="form-actions right">
+		<button type="submit" class="btn blue"><i class="fa fa-check"></i> Save</button>
+	</div>
+<?php
+echo form_close(); 
+?>
+</div>

@@ -1,0 +1,402 @@
+<script>
+function familydata(value){
+			$.ajax({
+				type: "POST",
+				url : "<?php echo site_url('main/getfamilylist');?>",
+				data: {'employee_id' : value},
+				success: function(msg){
+					// alert(msg);
+					$('#family_list').html(msg);
+				}
+			});
+		   // alert(value);
+		   // alert(data['employee_picture']);
+		   // alert(data['employee_id']);
+}
+
+function deletefamily(value){
+	// alert(value);
+	$("#delete_employee_family_id").val(value);
+}
+
+function detailfamily(value){
+	// alert(value);
+	$.ajax({
+	   type : "POST",
+	   url  : "<?php echo base_url(); ?>main/getFamilyDetail",
+	   data : "employee_family_id=" + value,
+	   dataType: "json",
+	   success: function(data){
+			$("#employee_family_id").val(data['employee_family_id']);
+			$("#family_status_id").val(data['family_status_id']);
+			$("#employee_idF").val(data['employee_id']);
+			$("#employee_family_name").val(data['employee_family_name']);
+			$("#employee_family_address").val(data['employee_family_address']);
+			$("#employee_family_city").val(data['employee_family_city']);
+			$("#employee_family_zip_code").val(data['employee_family_zip_code']);
+			$("#employee_family_rt").val(data['employee_family_rt']);
+			$("#employee_family_rw").val(data['employee_family_rw']);
+			$("#employee_family_kecamatan").val(data['employee_family_kecamatan']);
+			$("#employee_family_kelurahan").val(data['employee_family_kelurahan']);
+			$("#employee_family_home_phone").val(data['employee_family_home_phone']);
+			$("#employee_family_mobile_phone1").val(data['employee_family_mobile_phone1']);
+			$("#employee_family_mobile_phone2").val(data['employee_family_mobile_phone2']);
+			$("#employee_family_gender").val(data['employee_family_gender']);
+			$("#employee_family_date_of_birth").val(data['employee_family_date_of_birth']);
+			$("#employee_family_place_of_birth").val(data['employee_family_place_of_birth']);
+			$("#employee_family_education").val(data['employee_family_education']);
+			$("#employee_family_occupation").val(data['employee_family_occupation']);
+			$("#marital_status_id").val(data['marital_status_id']);
+			$("#has_coverage_claim").val(data['has_coverage_claim']);
+			$("#employee_family_coverage_ratio").val(data['employee_family_coverage_ratio']);
+			$("#employee_family_remark").val(data['employee_family_remark']);
+			
+		   }
+		});
+}
+
+</script>
+<div class="portlet-body form">
+		<div class="form-body">
+			<h3 class="form-section"><a class="btn blue" data-toggle="modal" href="#modalfamilydatainsert"><i class="fa fa-pencil"></i> Add Family</a></h3>
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+						<div class="portlet box grey">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-user"></i>List Family
+								</div>
+								<div class="actions">
+									
+								</div>
+							</div>
+							<div class="portlet-body">
+									<div id="family_list" ></div>
+							</div>
+						</div>
+						<!-- END EXAMPLE TABLE PORTLET-->
+					</div>
+				</div>
+			</div>
+	<!-- BEGIN FORM-->
+	<?php echo form_open('main/processEmployeeFamilyData',array('id' => 'myform', 'class' => 'horizontal-form'));
+	$EmployeeFamilyData = $this->session->userdata('EmployeeFamilyData');
+	?>
+		<!-- /.modal -->
+		<div class="modal fade bs-modal-lg" id="modalfamilydata" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+						<h4 class="modal-title">Edit Family Data</h4>
+					</div>
+					<div class="modal-body">
+						<h3 class="form-section">Personal Data</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<label class="control-label">Name<span class="required">*</span></label>
+								<input type="text" name="employee_family_name" id="employee_family_name" value="<?php echo $EmployeeFamilyData['employee_family_name'];?>" class="form-control" placeholder="Name">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Gender<span class="required">*</span></label>
+								<?php echo form_dropdown('employee_family_gender', $employee_family_gender, set_value('employee_family_gender',$EmployeeFamilyData['employee_family_gender']),'id="employee_family_gender", class="form-control"');?>
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Date Of Birth<span class="required">*</span></label>
+								<input class="form-control form-control input-medium date-picker" data-date-format="yyyy-mm-dd" type="text" name="employee_family_date_of_birth" id="employee_family_date_of_birth" value="<?php echo $EmployeeFamilyData['employee_family_date_of_birth'];?>"/>
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Place Of Birth<span class="required">*</span></label>
+								<input type="text" name="employee_family_place_of_birth" id="employee_family_place_of_birth" value="<?php echo $EmployeeFamilyData['employee_family_place_of_birth'];?>" class="form-control" placeholder="Place Of Birth">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Education<span class="required">*</span></label>
+								<input type="text" name="employee_family_education" id="employee_family_education" value="<?php echo $EmployeeFamilyData['employee_family_education'];?>" class="form-control" placeholder="Education">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Occupation<span class="required">*</span></label>
+								<input type="text" name="employee_family_occupation" id="employee_family_occupation" value="<?php echo $EmployeeFamilyData['employee_family_occupation'];?>" class="form-control" placeholder="Occupation">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Marital Status<span class="required">*</span></label>
+									<select class="form-control" name="employee_marital_status_id" id="employee_marital_status_id">
+										<?php 
+										foreach ($maritalstatus as $key=>$val){
+											echo"
+											<option value='$val[marital_status_id]'>$val[marital_status_name]</option>
+											";
+										}
+										?>
+									</select>
+								<?php // echo form_dropdown('employee_marital_status_id', $employee_marital_status_id, set_value('employee_marital_status_id',$EmployeeFamilyData['employee_marital_status_id']),'id="employee_marital_status_id", class="form-control"');?>
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Family Status<span class="required">*</span></label>
+									<select class="form-control" name="family_status_id" id="family_status_id">
+										<?php 
+										foreach ($familystatus as $key=>$val){
+											echo"
+											<option value='$val[family_status_id]'>$val[family_status_name]</option>
+											";
+										}
+										?>
+									</select>
+								<?php // echo form_dropdown('employee_marital_status_id', $employee_marital_status_id, set_value('employee_marital_status_id',$EmployeeFamilyData['employee_marital_status_id']),'id="employee_marital_status_id", class="form-control"');?>
+							</div>
+						</div>
+						
+						<h3 class="form-section">Address</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<label class="control-label">Address<span class="required">*</span></label>
+								<input type="text" name="employee_family_address" id="employee_family_address" value="<?php echo $EmployeeFamilyData['employee_family_address'];?>" class="form-control" placeholder="Address">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">City<span class="required">*</span></label>
+								<input type="text" name="employee_family_city" id="employee_family_city" value="<?php echo $EmployeeFamilyData['employee_family_city'];?>" class="form-control" placeholder="City">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Zip Code<span class="required">*</span></label>
+								<input type="text" name="employee_family_zip_code" id="employee_family_zip_code" value="<?php echo $EmployeeFamilyData['employee_family_zip_code'];?>" class="form-control" placeholder="Zip Code">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">RT<span class="required">*</span></label>
+								<input type="text" name="employee_family_rt" id="employee_family_rt" value="<?php echo $EmployeeFamilyData['employee_family_rt'];?>" class="form-control" placeholder="RT">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">RW<span class="required">*</span></label>
+								<input type="text" name="employee_family_rw" id="employee_family_rw" value="<?php echo $EmployeeFamilyData['employee_family_rw'];?>" class="form-control" placeholder="RW">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Kecamatan<span class="required">*</span></label>
+								<input type="text" name="employee_family_kecamatan" id="employee_family_kecamatan" value="<?php echo $EmployeeFamilyData['employee_family_kecamatan'];?>" class="form-control" placeholder="Kecamatan">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Kelurahan<span class="required">*</span></label>
+								<input type="text" name="employee_family_kelurahan" id="employee_family_kelurahan" value="<?php echo $EmployeeFamilyData['employee_family_kelurahan'];?>" class="form-control" placeholder="Kelurahan">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Home Phone<span class="required">*</span></label>
+								<input type="text" name="employee_family_home_phone" id="employee_family_home_phone" value="<?php echo $EmployeeFamilyData['employee_family_home_phone'];?>" class="form-control" placeholder="Home Phone">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Cellular 1<span class="required">*</span></label>
+								<input type="text" name="employee_family_mobile_phone1" id="employee_family_mobile_phone1" value="<?php echo $EmployeeFamilyData['employee_family_mobile_phone1'];?>" class="form-control" placeholder="Cellular 1">
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Cellular 2<span class="required">*</span></label>
+								<input type="text" name="employee_family_mobile_phone2" id="employee_family_mobile_phone2" value="<?php echo $EmployeeFamilyData['employee_family_mobile_phone2'];?>" class="form-control" placeholder="Cellular 2">
+							</div>
+						</div>
+						<!-- 
+						<h3 class="form-section">Has Claim</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<label class="control-label">Has Claim<span class="required">*</span></label>
+								<?php echo form_dropdown('employee_family_has_coverage_claim', $employee_family_has_coverage_claim, set_value('employee_family_has_coverage_claim',$EmployeeFamilyData['employee_family_has_coverage_claim']),'id="employee_family_has_coverage_claim", class="form-control"');?>
+							</div>
+							<div class="col-md-6">
+								<label class="control-label">Coverage Ratio<span class="required">*</span></label>
+								<input type="text" name="employee_family_coverage_ratio" id="employee_family_coverage_ratio" value="<?php echo $EmployeeFamilyData['employee_family_coverage_ratio'];?>" class="form-control" placeholder="City">
+							</div>
+							<div class="col-md-12">
+								<label class="control-label">Remark<span class="required">*</span></label>
+								<textarea class="form-control" rows="3" name="employee_family_remark" id="employee_family_remark"></textarea>
+							</div>
+						</div>
+						-->
+					</div>
+					
+					<input type="hidden" name="employee_family_id" id="employee_family_id" value="<?php echo $EmployeeFamilyData['employee_family_id'];?>">
+					<input type="hidden" name="employee_idF" id="employee_idF" value="<?php echo $EmployeeFamilyData['employee_id'];?>">
+					
+					<div class="modal-footer">
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn blue"><i class="fa fa-check"></i> Save</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+<?php
+$this->session->unset_userdata('EmployeeFamilyData');
+echo form_close(); 
+?>
+<!-- BEGIN FORM-->
+<?php echo form_open('main/processInsertEmployeeFamilyData',array('id' => 'myform', 'class' => 'horizontal-form'));
+?>
+	<!-- /.modal -->
+	<div class="modal fade bs-modal-lg" id="modalfamilydatainsert" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Add Family Data Insert</h4>
+				</div>
+				<div class="modal-body">
+					<h3 class="form-section">Personal Data</h3>
+					<div class="row">
+						<div class="col-md-12">
+							<label class="control-label">Name<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_name" id="insert_employee_family_name" value="<?php echo $EmployeeFamilyData['insert_employee_family_name'];?>" class="form-control" placeholder="Name">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Gender<span class="required">*</span></label>
+							<?php echo form_dropdown('insert_employee_family_gender', $insert_employee_family_gender, set_value('insert_employee_family_gender',$EmployeeFamilyData['insert_employee_family_gender']),'id="insert_employee_family_gender", class="form-control"');?>
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Date Of Birth<span class="required">*</span></label>
+							<input class="form-control form-control input-medium date-picker" data-date-format="yyyy-mm-dd" type="text" name="insert_employee_family_date_of_birth" id="insert_employee_family_date_of_birth" value="<?php echo $EmployeeFamilyData['insert_employee_family_date_of_birth'];?>"/>
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Place Of Birth<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_place_of_birth" id="insert_employee_family_place_of_birth" value="<?php echo $EmployeeFamilyData['insert_employee_family_place_of_birth'];?>" class="form-control" placeholder="Place Of Birth">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Education<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_education" id="insert_employee_family_education" value="<?php echo $EmployeeFamilyData['insert_employee_family_education'];?>" class="form-control" placeholder="Education">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Occupation<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_occupation" id="insert_employee_family_occupation" value="<?php echo $EmployeeFamilyData['insert_employee_family_occupation'];?>" class="form-control" placeholder="Occupation">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Marital Status<span class="required">*</span></label>
+								<select class="form-control" name="insert_employee_marital_status_id" id="insert_employee_marital_status_id">
+									<?php 
+									foreach ($maritalstatus as $key=>$val){
+										echo"
+										<option value='$val[marital_status_id]'>$val[marital_status_name]</option>
+										";
+									}
+									?>
+								</select>
+							<?php // echo form_dropdown('insert_employee_marital_status_id', $insert_employee_marital_status_id, set_value('insert_employee_marital_status_id',$EmployeeFamilyData['insert_employee_marital_status_id']),'id="insert_employee_marital_status_id", class="form-control"');?>
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Family Status<span class="required">*</span></label>
+								<select class="form-control" name="insert_family_status_id" id="insert_family_status_id">
+									<?php 
+									foreach ($familystatus as $key=>$val){
+										echo"
+										<option value='$val[family_status_id]'>$val[family_status_name]</option>
+										";
+									}
+									?>
+								</select>
+							<?php // echo form_dropdown('insert_employee_marital_status_id', $insert_employee_marital_status_id, set_value('insert_employee_marital_status_id',$EmployeeFamilyData['insert_employee_marital_status_id']),'id="insert_employee_marital_status_id", class="form-control"');?>
+						</div>
+					</div>
+					
+					<h3 class="form-section">Address</h3>
+					<div class="row">
+						<div class="col-md-12">
+							<label class="control-label">Address<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_address" id="insert_employee_family_address" value="<?php echo $EmployeeFamilyData['insert_employee_family_address'];?>" class="form-control" placeholder="Address">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">City<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_city" id="insert_employee_family_city" value="<?php echo $EmployeeFamilyData['insert_employee_family_city'];?>" class="form-control" placeholder="City">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Zip Code<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_zip_code" id="insert_employee_family_zip_code" value="<?php echo $EmployeeFamilyData['insert_employee_family_zip_code'];?>" class="form-control" placeholder="Zip Code">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">RT<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_rt" id="insert_employee_family_rt" value="<?php echo $EmployeeFamilyData['insert_employee_family_rt'];?>" class="form-control" placeholder="RT">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">RW<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_rw" id="insert_employee_family_rw" value="<?php echo $EmployeeFamilyData['insert_employee_family_rw'];?>" class="form-control" placeholder="RW">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Kecamatan<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_kecamatan" id="insert_employee_family_kecamatan" value="<?php echo $EmployeeFamilyData['insert_employee_family_kecamatan'];?>" class="form-control" placeholder="Kecamatan">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Kelurahan<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_kelurahan" id="insert_employee_family_kelurahan" value="<?php echo $EmployeeFamilyData['insert_employee_family_kelurahan'];?>" class="form-control" placeholder="Kelurahan">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Home Phone<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_home_phone" id="insert_employee_family_home_phone" value="<?php echo $EmployeeFamilyData['insert_employee_family_home_phone'];?>" class="form-control" placeholder="Home Phone">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Cellular 1<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_mobile_phone1" id="insert_employee_family_mobile_phone1" value="<?php echo $EmployeeFamilyData['insert_employee_family_mobile_phone1'];?>" class="form-control" placeholder="Cellular 1">
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Cellular 2<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_mobile_phone2" id="insert_employee_family_mobile_phone2" value="<?php echo $EmployeeFamilyData['insert_employee_family_mobile_phone2'];?>" class="form-control" placeholder="Cellular 2">
+						</div>
+					</div>
+					<!-- 
+					<h3 class="form-section">Has Claim</h3>
+					<div class="row">
+						<div class="col-md-6">
+							<label class="control-label">Has Claim<span class="required">*</span></label>
+							<?php // echo form_dropdown('insert_employee_family_has_coverage_claim', $insert_employee_family_has_coverage_claim, set_value('insert_employee_family_has_coverage_claim',$EmployeeFamilyData['insert_employee_family_has_coverage_claim']),'id="insert_employee_family_has_coverage_claim", class="form-control"');?>
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Coverage Ratio<span class="required">*</span></label>
+							<input type="text" name="insert_employee_family_coverage_ratio" id="insert_employee_family_coverage_ratio" value="<?php // echo $EmployeeFamilyData['insert_employee_family_coverage_ratio'];?>" class="form-control" placeholder="City">
+						</div>
+						<div class="col-md-12">
+							<label class="control-label">Remark<span class="required">*</span></label>
+							<textarea class="form-control" rows="3" name="insert_employee_family_remark" id="insert_employee_family_remark"></textarea>
+						</div>
+					</div>
+					-->
+				</div>
+				
+				<input type="hidden" name="insert_employee_idF" id="insert_employee_idF" value="<?php echo $EmployeeFamilyData['insert_employee_id'];?>">
+				
+				<div class="modal-footer">
+					<button type="button" class="btn default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn blue"><i class="fa fa-check"></i> Save</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+<?php
+echo form_close(); 
+?>
+
+<!-- BEGIN FORM-->
+<?php echo form_open('main/deleteEmployeeFamilyData',array('id' => 'myform', 'class' => 'horizontal-form'));
+?>
+	<!-- /.modal -->
+	<div class="modal fade bs-modal-sm" id="modalfamilydatadelete" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Delete Family</h4>
+				</div>
+				<div class="modal-body">
+				Are you sure you want to delete this entry ?
+				</div>
+				
+				<input type="hidden" name="delete_employee_family_id" id="delete_employee_family_id">
+				
+				<div class="modal-footer">
+					<button type="button" class="btn default" data-dismiss="modal">Cancel</button>
+					<button type="submit" class="btn red"><i class='fa fa-trash-o'></i> Delete</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+<?php
+echo form_close(); 
+?>
+</div>

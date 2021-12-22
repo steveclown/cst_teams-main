@@ -1,0 +1,438 @@
+<script>
+function personaldata(value){
+	// alert ("Personal Data");
+	// alert (value+"Personal Data");
+	// alert (value);
+	// var employee_id = value;
+	// alert (employee_id);
+	// document.getElementById("employee_idD").value = value;
+	$.ajax({
+	   type : "POST",
+	   url  : "<?php echo base_url(); ?>main/PersonalData",
+	   data : "employee_id=" + value,
+	   dataType: "json",
+	   success: function(data){
+			$("#employee_idD").val(data['employee_id']);
+			$("#employee_code").val(data['employee_code']);
+			$("#employee_name").val(data['employee_name']);
+			$("#employee_nick_name").val(data['employee_nick_name']);
+			$("#employee_gender").val(data['employee_gender']);
+			$("#date_of_birth").val(data['date_of_birth']);
+			$("#place_of_birth").val(data['place_of_birth']);
+			$("#employee_religion").val(data['employee_religion']);
+			$("#employee_blood_type").val(data['employee_blood_type']);
+			$("#marital_status_id").val(data['marital_status_id']);
+			$("#employee_heir_name").val(data['employee_heir_name']);
+			$("#employee_heir_occupation").val(data['employee_heir_occupation']);
+			$("#employee_address").val(data['employee_address']);
+			$("#employee_city").val(data['employee_city']);
+			$("#employee_zip_code").val(data['employee_zip_code']);
+			$("#employee_rt").val(data['employee_rt']);
+			$("#employee_rw").val(data['employee_rw']);
+			$("#employee_kelurahan").val(data['employee_kelurahan']);
+			$("#employee_kecamatan").val(data['employee_kecamatan']);
+			$("#employee_home_phone").val(data['employee_home_phone']);
+			$("#employee_mobile_phone").val(data['employee_mobile_phone']);
+			$("#employee_email_address").val(data['employee_email_address']);
+			$("#employee_id_number").val(data['employee_id_number']);
+			$("#employee_residence_address").val(data['employee_residence_address']);
+			$("#employee_residence_city").val(data['employee_residence_city']);
+			$("#employee_residence_zip_code").val(data['employee_residence_zip_code']);
+			$("#employee_residence_rt").val(data['employee_residence_rt']);
+			$("#employee_residence_rw").val(data['employee_residence_rw']);
+			$("#employee_residence_kelurahan").val(data['employee_residence_kelurahan']);
+			$("#employee_residence_kecamatan").val(data['employee_residence_kecamatan']);
+			$("#employee_bank_name").val(data['employee_bank_name']);
+			$("#employee_bank_acct_no").val(data['employee_bank_acct_no']);
+			$("#employee_bank_acct_name").val(data['employee_bank_acct_name']);
+			$("#employee_driving_licenseA").val(data['employee_driving_licenseA']);
+			$("#employee_driving_licenseB").val(data['employee_driving_licenseB']);
+			$("#employee_driving_licenseB1").val(data['employee_driving_licenseB1']);
+			// $("#employee_picture").val(data['employee_picture']);
+			$("#old_employee_picture").val(data['employee_picture']);
+			
+			//alert($("#employee_idD").val());
+			$.ajax({
+				type: "POST",
+				url : "<?php echo site_url('main/getfoto');?>",
+				data: {'employee_id' : data['employee_id']},
+				success: function(msg){
+					$('#old_employee_picture_tampil').html(msg);
+				}
+			});
+
+	   }
+	});
+}
+</script>
+<div class="portlet-body form">
+	<!-- BEGIN FORM-->
+	<?php echo form_open_multipart('main/processPersonalData',array('id' => 'myform', 'class' => 'horizontal-form'));
+	$PersonalData = $this->session->userdata('PersonalData');
+	?>
+		<div class="form-body">
+			<h3 class="form-section">Personal Data</h3>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="control-label">Employee Code</label>
+						<input type="text" name="employee_code" id="employee_code" value="<?php echo $PersonalData['employee_code'];?>" class="form-control" placeholder="Employee Code">
+						<span class="help-block">
+							 Please input only alpha-numerical characters.
+						</span>
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Employee Name<span class="required">*</span></label>
+						<input type="text" name="employee_name" id="employee_name" value="<?php echo $PersonalData['employee_name'];?>" class="form-control" placeholder="Employee Name">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Nick Name</label>
+						<input type="text" name="employee_nick_name" id="employee_nick_name" value="<?php echo $PersonalData['employee_nick_name'];?>" class="form-control" placeholder="Nick Name">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Gender</label>
+						<?php echo form_dropdown('employee_gender', $gender, set_value('employee_gender',$PersonalData['employee_gender']),'id="employee_gender", class="form-control"');?>
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Date of Birth<span class="required">*</span></label>
+						<input class="form-control form-control input-medium date-picker" data-date-format="yyyy-mm-dd" type="text" name="date_of_birth" id="date_of_birth" value="<?php echo $PersonalData['date_of_birth'];?>"/>
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Place Of Birth</label>
+						<input type="text" name="place_of_birth" id="place_of_birth" value="<?php echo $PersonalData['place_of_birth'];?>" class="form-control" placeholder="Place Of Birth">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Religion</label>
+						<?php echo form_dropdown('employee_religion', $religion, set_value('employee_religion',$PersonalData['employee_religion']),'id="employee_religion", class="form-control"');?>
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Blood Type</label>
+						<?php echo form_dropdown('employee_blood_type', $bloodtype, set_value('employee_blood_type',$PersonalData['employee_blood_type']),'id="employee_blood_type", class="form-control"');?>
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Picture</label><br>
+						<a class="btn default" data-toggle="modal" href="#basic">Preview</a>
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<h3 class="form-section">Family</h3>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Marital Status</label>
+							<select class="form-control" name="marital_status_id" id="marital_status_id">
+								<?php 
+								foreach ($maritalstatus as $key=>$val){
+									echo"
+									<option value='$val[marital_status_id]'>$val[marital_status_name]</option>
+									";
+								}
+								?>
+							</select>
+						<?php // echo form_dropdown('marital_status_id', $maritalstatus ,set_value('marital_status_id',$PersonalData['marital_status_id']),'id="marital_status_id", class="form-control"');?>
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Heir Name</label>
+						<input type="text" name="employee_heir_name" id="employee_heir_name" value="<?php echo $PersonalData['employee_heir_name'];?>" class="form-control" placeholder="Heir Name">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Heir Occupation</label>
+						<input type="text" name="employee_heir_occupation" id="employee_heir_occupation" value="<?php echo $PersonalData['employee_heir_occupation'];?>" class="form-control" placeholder="Heir Occupation">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<h3 class="form-section">Current Address</h3>
+			<div class="row">
+				<div class="col-md-12 ">
+					<div class="form-group">
+						<label>Address</label>
+						<input type="text" name="employee_address" id="employee_address" value="<?php echo $PersonalData['employee_address'];?>" class="form-control" placeholder="Address">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>City</label>
+						<input type="text" name="employee_city" id="employee_city" value="<?php echo $PersonalData['employee_city'];?>" class="form-control" placeholder="City">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Zip Code</label>
+						<input type="text" name="employee_zip_code" id="employee_zip_code" value="<?php echo $PersonalData['employee_zip_code'];?>" class="form-control" placeholder="Zip Code">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<!--/row-->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>RT</label>
+						<input type="text" name="employee_rt" id="employee_rt" value="<?php echo $PersonalData['employee_rt'];?>" class="form-control" placeholder="RT">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Kelurahan</label>
+						<input type="text" name="employee_kelurahan" id="employee_kelurahan" value="<?php echo $PersonalData['employee_kelurahan'];?>" class="form-control" placeholder="Kelurahan">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>RW</label>
+						<input type="text" name="employee_rw" id="employee_rw" value="<?php echo $PersonalData['employee_rw'];?>" class="form-control" placeholder="RW">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Kecamatan</label>
+						<input type="text" name="employee_kecamatan" id="employee_kecamatan" value="<?php echo $PersonalData['employee_kecamatan'];?>" class="form-control" placeholder="Kecamatan">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<h3 class="form-section">Contact Person</h3>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Home Phone</label>
+						<input type="text" name="employee_home_phone" id="employee_home_phone" value="<?php echo $PersonalData['employee_home_phone'];?>" class="form-control" placeholder="Home Phone">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Mobile Phone</label>
+						<input type="text" name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $PersonalData['employee_mobile_phone'];?>" class="form-control" placeholder="Mobile Phone">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Email</label>
+						<input type="text" name="employee_email_address" id="employee_email_address" value="<?php echo $PersonalData['employee_email_address'];?>" class="form-control" placeholder="Email Address">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<h3 class="form-section">Residential Address</h3>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label>Residence ID</label>
+						<input type="text" name="employee_id_number" id="employee_id_number" value="<?php echo $PersonalData['employee_id_number'];?>" class="form-control" placeholder="Residence ID">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label>Residence Address</label>
+						<input type="text" name="employee_residence_address" id="employee_residence_address" value="<?php echo $PersonalData['employee_residence_address'];?>" class="form-control" placeholder="Residence Address">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Residence City</label>
+						<input type="text" name="employee_residence_city" id="employee_residence_city" value="<?php echo $PersonalData['employee_residence_city'];?>" class="form-control" placeholder="Residence City">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Residence Zip Code</label>
+						<input type="text" name="employee_residence_zip_code" id="employee_residence_zip_code" value="<?php echo $PersonalData['employee_residence_zip_code'];?>" class="form-control" placeholder="Residence Zip Code">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Residence RT</label>
+						<input type="text" name="employee_residence_rt" id="employee_residence_rt" value="<?php echo $PersonalData['employee_residence_rt'];?>" class="form-control" placeholder="Residence RT">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Residence Kelurahan</label>
+						<input type="text" name="employee_residence_kelurahan" id="employee_residence_kelurahan" value="<?php echo $PersonalData['employee_residence_kelurahan'];?>" class="form-control" placeholder="Residence Kelurahan">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Residence RW</label>
+						<input type="text" name="employee_residence_rw" id="employee_residence_rw" value="<?php echo $PersonalData['employee_residence_rw'];?>" class="form-control" placeholder="Residence RW">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Residence Kecamatan</label>
+						<input type="text" name="employee_residence_kecamatan" id="employee_residence_kecamatan" value="<?php echo $PersonalData['employee_residence_kecamatan'];?>" class="form-control" placeholder="Residence Kecamatan">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<h3 class="form-section">Driving License</h3>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Driving License A</label>
+						<input type="text" name="employee_driving_licenseA" id="employee_driving_licenseA" value="<?php echo $PersonalData['employee_driving_licenseA'];?>" class="form-control" placeholder="Driving License A">
+					</div>
+				</div>
+				<!--/span-->
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Driving License B</label>
+						<input type="text" name="employee_driving_licenseB" id="employee_driving_licenseB" value="<?php echo $PersonalData['employee_driving_licenseB'];?>" class="form-control" placeholder="Driving License B">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Driving License B1</label>
+						<input type="text" name="employee_driving_licenseB1" id="employee_driving_licenseB1" value="<?php echo $PersonalData['employee_driving_licenseB1'];?>" class="form-control" placeholder="Driving License B1">
+					</div>
+				</div>
+				<!--/span-->
+			</div>
+		</div>
+		<div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+						<h4 class="modal-title">Picture</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<span class="help-block">
+								 Current Picture
+							</span>
+							<span type="text" name="old_employee_picture_tampil" id="old_employee_picture_tampil" ></span>
+							<span class="help-block">
+								 Input New Picture
+							</span>
+							<div class="fileinput fileinput-new" data-provides="fileinput">
+								<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+									<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+								</div>
+								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+								</div>
+								<div>
+									<span class="btn default btn-file">
+										<span class="fileinput-new">
+											 Select image
+										</span>
+										<span class="fileinput-exists">
+											 Change
+										</span>
+										<input type="file" name="employee_picture"  id="employee_picture"/>
+									</span>
+									<a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
+										 Remove
+									</a>
+									<span class="help-block">
+									Max File Size : 1024 KB
+									</span>
+								</div>
+							</div>
+						</div>
+						<!-- <input type="file" name="employee_picture"  id="employee_picture"/> -->
+							<?php
+								// if($result['employee_picture']!=''){
+									// echo "<br><img src='".base_url().$path.$result['employee_picture']."' height='150' width='150'>";
+								// }
+							?>
+						<!--  <span class="help-block">
+							 Max File Size : 1024 KB
+						</span> -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						<!-- <button type="button" class="btn blue">Save changes</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="employee_id" id="employee_idD" value="<?php echo $PersonalData['employee_id'];?>">
+		<input type="hidden" name="old_employee_picture" id="old_employee_picture" value="<?php echo $PersonalData['old_employee_picture'];?>">
+		<div class="form-actions right">
+			<button type="submit" class="btn blue"><i class="fa fa-check"></i> Save</button>
+		</div>
+	<!-- END FORM-->
+</div>
+<?php
+$this->session->unset_userdata('PersonalData');
+echo form_close(); 
+?>

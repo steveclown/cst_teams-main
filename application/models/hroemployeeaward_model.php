@@ -1,0 +1,190 @@
+<?php
+	class hroemployeeaward_model extends CI_Model {
+		var $table = "transaction_employee_award";
+		
+		public function hroemployeeaward_model(){
+			parent::__construct();
+			$this->CI = get_instance();
+		}
+		
+		public function getCoreDivision(){
+			$this->db->select('core_division.division_id, core_division.division_name');
+			$this->db->from('core_division');
+			$this->db->where('core_division.data_state',0);
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+
+		public function getCoreDepartment(){
+			$this->db->select('core_department.department_id, core_department.department_name');
+			$this->db->from('core_department');
+			$this->db->where('core_department.data_state',0);
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+
+		public function getCoreSection(){
+			$this->db->select('core_section.section_id, core_section.section_name');
+			$this->db->from('core_section');
+			$this->db->where('core_section.data_state',0);
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+
+		public function getHROEmployeeData($employee_id){
+			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_name, hro_employee_data.division_id, hro_employee_data.department_id, hro_employee_data.section_id');
+			$this->db->from('hro_employee_data');
+			$this->db->where('hro_employee_data.data_state',0);
+			$this->db->where('hro_employee_data.employee_id', $employee_id);
+			$result = $this->db->get();
+			return $result->row_array();
+		}
+
+		public function getHROEmployeeData_Filter($region_id, $branch_id, $location_id){
+			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_name');
+			$this->db->from('hro_employee_data');
+			$this->db->where('hro_employee_data.data_state',0);
+			$this->db->where('hro_employee_data.region_id', $region_id);
+			$this->db->where('hro_employee_data.branch_id', $branch_id);
+			$this->db->where('hro_employee_data.location_id', $location_id);
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+
+		public function getHROEmployeeData_Award($region_id, $branch_id, $location_id, $employee_id, $division_id, $department_id, $section_id){
+			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_name, hro_employee_data.division_id, hro_employee_data.department_id, hro_employee_data.section_id');
+			$this->db->from('hro_employee_data');
+			$this->db->where('hro_employee_data.data_state',0);
+			$this->db->where('hro_employee_data.region_id', $region_id);
+			$this->db->where('hro_employee_data.branch_id', $branch_id);
+			$this->db->where('hro_employee_data.location_id', $location_id);
+
+			if ($employee_id != ''){
+				$this->db->where('hro_employee_data.employee_id', $employee_id);
+			}
+
+			if ($division_id != ''){
+				$this->db->where('hro_employee_data.division_id', $division_id);
+			}
+
+			if ($department_id != ''){
+				$this->db->where('hro_employee_data.department_id', $department_id);
+			}
+
+			if ($section_id != ''){
+				$this->db->where('hro_employee_data.section_id', $section_id);
+			}
+
+
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+
+		public function getEmployeeName($id){
+			$this->db->select('hro_employee_data.employee_name');
+			$this->db->from('hro_employee_data');
+			$this->db->where('hro_employee_data.employee_id',$id);
+			$result = $this->db->get()->row_array();
+			if(!isset($result['employee_name'])){
+				return '-';
+			}else{
+				return $result['employee_name'];
+			}
+		}
+
+		public function getDivisionName($division_id){
+			$this->db->select('core_division.division_name');
+			$this->db->from('core_division');
+			$this->db->where('core_division.division_id', $division_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['division_name'];
+		}
+
+
+		public function getDepartmentName($department_id){
+			$this->db->select('core_department.department_name');
+			$this->db->from('core_department');
+			$this->db->where('core_department.department_id', $department_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['department_name'];
+		}
+
+		public function getSectionName($section_id){
+			$this->db->select('core_section.section_name');
+			$this->db->from('core_section');
+			$this->db->where('core_section.section_id', $section_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['section_name'];
+		}
+
+		public function getCoreAward(){
+			$this->db->select('core_award.award_id, core_award.award_name');
+			$this->db->from('core_award');
+			$this->db->where('core_award.data_state',0);
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+
+		public function getAwardName($award_id){
+			$this->db->select('core_award.award_name');
+			$this->db->from('core_award');
+			$this->db->where('core_award.award_id', $award_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['award_name'];
+		}
+		
+		public function saveNewHROEmployeeAward($data){
+			return $this->db->insert('hro_employee_award',$data);
+		}
+
+		public function getHROEmployeeAward_Data($employee_id){
+			$this->db->select('hro_employee_award.employee_award_id, hro_employee_award.employee_id, hro_employee_award.award_id, hro_employee_award.employee_award_date, hro_employee_award.employee_award_description, hro_employee_award.employee_award_remark');
+			$this->db->from('hro_employee_award');
+			$this->db->where('hro_employee_award.data_state',0);
+			$this->db->where('hro_employee_award.employee_id', $employee_id);
+			$this->db->order_by('hro_employee_award.employee_award_id', DESC);
+			$result = $this->db->get();
+			return $result->result_array();
+		}
+		
+		public function getDetail($id){
+			$this->db->select('*')->from($this->table);
+			$this->db->where('employee_award_id',$id);
+			return $this->db->get()->row_array();
+		}
+
+		public function saveEdithroemployeeaward($data){
+			$this->db->where('employee_award_id',$data['employee_award_id']);
+			$query = $this->db->update($this->table, $data);
+			if($query){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		public function deleteHROEmployeeAward($employee_id){
+			$this->db->where("hro_employee_award.employee_id", $employee_id);
+			$query = $this->db->update('hro_employee_award', array("data_state"=>1));
+			if($query){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		public function deleteHROEmployeeAward_Data($employee_award_id){
+			$this->db->where("hro_employee_award.employee_award_id", $employee_award_id);
+			$query = $this->db->update('hro_employee_award', array("data_state"=>1));
+			if($query){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	}
+?>
