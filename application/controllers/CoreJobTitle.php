@@ -56,7 +56,7 @@
 				echo "";
 			}
 		}
-		
+		  
 		public function processAddCoreJobTitle(){
 			$auth 		= $this->session->userdata('auth');
 			$unique 	= $this->session->userdata('unique');
