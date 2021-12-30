@@ -1,7 +1,13 @@
 <?php
-	class HroEmployeeData extends CI_Controller{
+	class HroEmployeeData extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'hroemployeedata';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('HroEmployeeData_model');
 			$this->load->helper('sistem');
@@ -11,7 +17,12 @@
 		}
 
 		public function index(){
-			$auth = $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addHroEmployeeData-'.$unique['unique']);
+			$this->session->unset_userdata('HroEmployeeDataToken-'.$unique['unique']);
+
+			$auth 						= $this->session->userdata('auth');
 			$region_id 					= $auth['region_id'];
 			$branch_id 					= $auth['branch_id'];
 			$location_id 				= $auth['location_id'];
@@ -26,12 +37,12 @@
 				$sesi['section_id']			= '';
 			}
 
-			$data['Main_view']['coredivision']			= create_double($this->HroEmployeeData_model->getCoreDivision(),'division_id','division_name');
-			$data['Main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
-			$data['Main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
+			$data['main_view']['coredivision']			= create_double($this->HroEmployeeData_model->getCoreDivision(),'division_id','division_name');
+			$data['main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
+			$data['main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
 
-			$data['Main_view']['HroEmployeeData']		= $this->HroEmployeeData_model->getHROEmployeeData($region_id, $branch_id, $location_id, /*$payroll_employee_level,*/ $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
-			$data['Main_view']['content']				= 'HroEmployeeData/listHroEmployeeData_view';
+			$data['main_view']['HroEmployeeData']		= $this->HroEmployeeData_model->getHROEmployeeData($region_id, $branch_id, $location_id, /*$payroll_employee_level,*/ $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
+			$data['main_view']['content']				= 'HroEmployeeData/ListHroEmployeeData_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -46,55 +57,63 @@
 		}
 
 		public function addHROEmployeeData(){
-			$data['Main_view']['coremaritalstatus']		= create_double($this->HroEmployeeData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
-			$data['Main_view']['coredivision']			= create_double($this->HroEmployeeData_model->getCoreDivision(),'division_id','division_name');
-			$data['Main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
-			$data['Main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
+			$unique 			= $this->session->userdata('unique');
+			$employee_token		= $this->session->userdata('HroEmployeeDataToken-'.$unique['unique']);
 
-			$data['Main_view']['corejobtitle']			= create_double($this->HroEmployeeData_model->getCoreJobTitle(),'job_title_id','job_title_name');
-			$data['Main_view']['coregrade']				= create_double($this->HroEmployeeData_model->getCoreGrade(),'grade_id','grade_name');
-			$data['Main_view']['coreclass']				= create_double($this->HroEmployeeData_model->getCoreClass(),'class_id','class_name');
+			if(empty($employee_token)){
+				$employee_token = md5(date("YmdHis"));
+				$this->session->set_userdata('HroEmployeeDataToken-'.$unique['unique'], $employee_token);
+			}
 
-			$data['Main_view']['path']					= $this->configuration->PhotoDirectory();
-			$data['Main_view']['gender']				= $this->configuration->Gender();
-			$data['Main_view']['religion']				= $this->configuration->Religion();
-			$data['Main_view']['bloodtype']				= $this->configuration->BloodType();
-			$data['Main_view']['workingstatus']			= $this->configuration->WorkingStatus();
-			$data['Main_view']['employeestatus']		= $this->configuration->EmployeeStatus();
-			$data['Main_view']['overtimestatus']		= $this->configuration->OvertimeStatus();	
-			$data['Main_view']['idtype']				= $this->configuration->IDType();
-			$data['Main_view']['payrollemployeelevel']	= $this->configuration->PayrollEmployeeLevel();
-			$data['Main_view']['coreunit']				= create_double($this->HroEmployeeData_model->getCoreUnit(),'unit_id','unit_name');
-			$data['Main_view']['corebank']				= create_double($this->HroEmployeeData_model->getCoreBank(), 'bank_id', 'bank_name');
+			$data['main_view']['coremaritalstatus']		= create_double($this->HroEmployeeData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
+			$data['main_view']['coredivision']			= create_double($this->HroEmployeeData_model->getCoreDivision(),'division_id','division_name');
+			$data['main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
+			$data['main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
 
-			$data['Main_view']['content']				= 'HroEmployeeData/formaddHroEmployeeData_view';
+			$data['main_view']['corejobtitle']			= create_double($this->HroEmployeeData_model->getCoreJobTitle(),'job_title_id','job_title_name');
+			$data['main_view']['coregrade']				= create_double($this->HroEmployeeData_model->getCoreGrade(),'grade_id','grade_name');
+			$data['main_view']['coreclass']				= create_double($this->HroEmployeeData_model->getCoreClass(),'class_id','class_name');
+
+			$data['main_view']['path']					= $this->configuration->PhotoDirectory();
+			$data['main_view']['gender']				= $this->configuration->Gender();
+			$data['main_view']['religion']				= $this->configuration->Religion();
+			$data['main_view']['bloodtype']				= $this->configuration->BloodType();
+			$data['main_view']['workingstatus']			= $this->configuration->WorkingStatus();
+			$data['main_view']['employeestatus']		= $this->configuration->EmployeeStatus();
+			$data['main_view']['overtimestatus']		= $this->configuration->OvertimeStatus();	
+			$data['main_view']['idtype']				= $this->configuration->IDType();
+			$data['main_view']['payrollemployeelevel']	= $this->configuration->PayrollEmployeeLevel();
+			$data['main_view']['coreunit']				= create_double($this->HroEmployeeData_model->getCoreUnit(),'unit_id','unit_name');
+			$data['main_view']['corebank']				= create_double($this->HroEmployeeData_model->getCoreBank(), 'bank_id', 'bank_name');
+
+			$data['main_view']['content']				= 'HroEmployeeData/FormAddHroEmployeeData_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		public function editHROEmployeeData(){
 			$employee_id 								= $this->uri->segment(3);
-			$data['Main_view']['HroEmployeeData']		= $this->HroEmployeeData_model->getHROEmployeeData_Detail($employee_id);
-			$data['Main_view']['coremaritalstatus']		= create_double($this->HroEmployeeData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
-			$data['Main_view']['coredivision']			= create_double($this->HroEmployeeData_model->getCoreDivision(),'division_id','division_name');
-			$data['Main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
-			$data['Main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
+			$data['main_view']['HroEmployeeData']		= $this->HroEmployeeData_model->getHROEmployeeData_Detail($employee_id);
+			$data['main_view']['coremaritalstatus']		= create_double($this->HroEmployeeData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
+			$data['main_view']['coredivision']			= create_double($this->HroEmployeeData_model->getCoreDivision(),'division_id','division_name');
+			$data['main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
+			$data['main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
 
-			$data['Main_view']['corejobtitle']			= create_double($this->HroEmployeeData_model->getCoreJobTitle(),'job_title_id','job_title_name');
-			$data['Main_view']['coregrade']				= create_double($this->HroEmployeeData_model->getCoreGrade(),'grade_id','grade_name');
-			$data['Main_view']['coreclass']				= create_double($this->HroEmployeeData_model->getCoreClass(),'class_id','class_name');
-			$data['Main_view']['coreunit']				= create_double($this->HroEmployeeData_model->getCoreUnit(),'unit_id','unit_name');
-			$data['Main_view']['corebank']				= create_double($this->HroEmployeeData_model->getCoreBank(), 'bank_id', 'bank_name');
+			$data['main_view']['corejobtitle']			= create_double($this->HroEmployeeData_model->getCoreJobTitle(),'job_title_id','job_title_name');
+			$data['main_view']['coregrade']				= create_double($this->HroEmployeeData_model->getCoreGrade(),'grade_id','grade_name');
+			$data['main_view']['coreclass']				= create_double($this->HroEmployeeData_model->getCoreClass(),'class_id','class_name');
+			$data['main_view']['coreunit']				= create_double($this->HroEmployeeData_model->getCoreUnit(),'unit_id','unit_name');
+			$data['main_view']['corebank']				= create_double($this->HroEmployeeData_model->getCoreBank(), 'bank_id', 'bank_name');
 
-			$data['Main_view']['path']					= $this->configuration->PhotoDirectory();
-			$data['Main_view']['gender']				= $this->configuration->Gender();
-			$data['Main_view']['religion']				= $this->configuration->Religion();
-			$data['Main_view']['bloodtype']				= $this->configuration->BloodType();
-			$data['Main_view']['workingstatus']			= $this->configuration->WorkingStatus();
-			$data['Main_view']['employeestatus']		= $this->configuration->EmployeeStatus();
-			$data['Main_view']['overtimestatus']		= $this->configuration->OvertimeStatus();	
-			$data['Main_view']['idtype']				= $this->configuration->IDType();
-			$data['Main_view']['payrollemployeelevel']	= $this->configuration->PayrollEmployeeLevel();
-			$data['Main_view']['content']				= 'HroEmployeeData/formeditHroEmployeeData_view';
+			$data['main_view']['path']					= $this->configuration->PhotoDirectory();
+			$data['main_view']['gender']				= $this->configuration->Gender();
+			$data['main_view']['religion']				= $this->configuration->Religion();
+			$data['main_view']['bloodtype']				= $this->configuration->BloodType();
+			$data['main_view']['workingstatus']			= $this->configuration->WorkingStatus();
+			$data['main_view']['employeestatus']		= $this->configuration->EmployeeStatus();
+			$data['main_view']['overtimestatus']		= $this->configuration->OvertimeStatus();	
+			$data['main_view']['idtype']				= $this->configuration->IDType();
+			$data['main_view']['payrollemployeelevel']	= $this->configuration->PayrollEmployeeLevel();
+			$data['main_view']['content']				= 'HroEmployeeData/formeditHroEmployeeData_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -128,6 +147,7 @@
 
 		function processAddHROEmployeeData(){
 			$auth 			= $this->session->userdata('auth');
+			$unique 		= $this->session->userdata('unique');
 			$region_id 		= $auth['region_id'];
 			$branch_id 		= $auth['branch_id'];
 			$location_id	= $auth['location_id'];
@@ -213,11 +233,13 @@
 						'employee_employment_status_duedate'	=> tgltodb($this->input->post('employee_employment_status_duedate',true)),
 						'payroll_employee_level'				=> $this->input->post('payroll_employee_level',true),
 						'employee_remark'						=> $this->input->post('employee_remark',true),
-						// 'created_id'							=> $created_id,
+						'employee_token'						=> $this->input->post('employee_token',true),
+						'created_id' 							=> $auth['user_id'],
 						'created_on'							=> date("YmdHis"),
 						'data_state'							=> 0
 					);
 			
+			$employee_token 			= $this->HroEmployeeData_model->getHroEmployeeDataToken($data['employee_token']);
 			
 			$this->form_validation->set_rules('employee_code', 'Employee Code', 'required');
 			$this->form_validation->set_rules('employee_name', 'Employee Name', 'required');
@@ -230,33 +252,43 @@
 			$this->form_validation->set_rules('marital_status_id', 'Marital Status Name', 'required');
 			
 			if($this->form_validation->run()==true){
+				if ($employee_token == 0){
 					if($this->HroEmployeeData_model->saveNewHROEmployeeData($data)){
-						$auth 	= $this->session->userdata('auth');
-							$this->fungsi->set_log($auth['username'],'1077','Application.HROEmployeeData.processAddHROEmployeeData',$auth['username'],'Add Employee Data');
+
+						$this->fungsi->set_log($auth['user_id'], $employee_id, '3122', 'Application.CoreHroEmployeeData.processAddCoreHroEmployeeData', $employee_id, 'Add New Core HroEmployeeData');
+
 						$msg = "<div class='alert alert-success'>                
-									Tambah Data karyawan Berhasil
+									Tambah Data HroEmployeeData Baru Berhasil
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
-						$this->session->unset_userdata('addHROEmployeeData');
-						redirect('HroEmployeeData/AddHROEmployeeData');
+						$this->session->unset_userdata('addCoreHroEmployeeData-'.$unique['unique']);
+						$this->session->unset_userdata('CoreHroEmployeeDataToken-'.$unique['unique']);
+						redirect('hroemployeedata/add');
 					}else{
 						$msg = "<div class='alert alert-danger'>                
-									Tambah Data karyawan Gagal
+									Tambah Data HroEmployeeData Baru Gagal
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
-						redirect('HroEmployeeData/AddHROEmployeeData');
+						$this->session->set_userdata('addCoreHroEmployeeData',$data);
+						redirect('hroemployeedata/add');
 					}
-				// }
-			}
-			else{
-				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
+				} else {
+					$msg = "<div class='alert alert-danger'>                
+						Tambah Data HroEmployeeData Baru Sudah Ada
+							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('hroemployeedata/add');
+				}
+			}else{
+				$this->session->set_userdata('addCoreHroEmployeeData',$data);
+				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeData/AddHROEmployeeData');
+				redirect('hroemployeedata/add');
 			}
 		}
 		
 		function processEditHroEmployeeData(){
-			$auth = $this->session->userdata('auth');
+			$auth 			= $this->session->userdata('auth');
 			$region_id 		= $auth['region_id'];
 			$branch_id 		= $auth['branch_id'];
 			$location_id 	= $auth['location_id'];
@@ -346,9 +378,8 @@
 							'employee_employment_status_date'		=> tgltodb($this->input->post('employee_employment_status_date',true)),
 							'employee_employment_status_duedate'	=> tgltodb($this->input->post('employee_employment_status_duedate',true)),
 							'employee_remark'						=> $this->input->post('employee_remark',true),
-							// 'created_id'							=> $created_id,
-							'created_on'							=> date("YmdHis"),
-							'data_state'							=> 0,
+							'updated_id' 							=> $auth['user_id'],
+							'updated_on' 							=> date("Y-m-d H:i:s"),
 						);
 			
 			

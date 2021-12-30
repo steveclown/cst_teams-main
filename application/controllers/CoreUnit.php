@@ -1,7 +1,13 @@
 <?php
-	Class CoreUnit extends CI_Controller{
+	Class CoreUnit extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'unit';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreUnit_model');
 			$this->load->helper('sistem');
@@ -11,122 +17,168 @@
 		}
 
 		public function index(){
-			$data['Main_view']['CoreUnit']		= $this->CoreUnit_model->getCoreUnit();
-			$data['Main_view']['content']		= 'CoreUnit/listCoreUnit_view';
+			$data['main_view']['CoreUnit']		= $this->CoreUnit_model->getCoreUnit();
+			$data['main_view']['content']		= 'CoreUnit/listCoreUnit_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
-		public function addCoreUnit(){
-			$data['Main_view']['coresection']			= create_double($this->CoreUnit_model->getCoreSection(),'section_id','section_name');
-			$data['Main_view']['content']				= 'CoreUnit/formaddCoreUnit_view';
+		function addCoreUnit(){
+			$unique 			= $this->session->userdata('unique');
+			$unit_token		= $this->session->userdata('CoreUnitToken-'.$unique['unique']);
+
+			if(empty($unit_token)){
+				$unit_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreUnitToken-'.$unique['unique'], $unit_token);
+			}
+
+			$data['main_view']['coresection']	= create_double($this->CoreUnit_model->getCoreSection(),'section_id','section_name');
+
+			$data['main_view']['content']		= 'CoreUnit/FormAddCoreUnit_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
-		public function processAddCoreUnit(){
-			
+		function processAddCoreUnit(){
+			$auth 		= $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
 			$data = array(
-				'unit_code' 		=> $this->input->post('unit_code',true),
-				'unit_name' 		=> $this->input->post('unit_name',true),
-				'section_id'		=> $this->input->post('section_id',true),
-				'data_state'		=> 0
-				
+				'section_id' 				=> $this->input->post('section_id',true),
+				'unit_code' 			=> $this->input->post('unit_code',true),
+				'unit_name' 			=> $this->input->post('unit_name',true),
+				'unit_token' 			=> $this->input->post('unit_token',true),
+				'created_id' 				=> $auth['user_id'],
+				'created_on' 				=> date("Y-m-d H:i:s"),
+				'data_state'				=> 0
 			);
+
+			$unit_token 			= $this->CoreUnit_model->getUnitToken($data['unit_token']);
 			
-			$this->form_validation->set_rules('unit_code', 'Unit Code', 'required');
-			$this->form_validation->set_rules('unit_name', 'Unit name', 'required');
-			$this->form_validation->set_rules('section_id', 'Section name', 'required');
-			
+			$this->form_validation->set_rules('section_id', 'Nama Devisi', 'required');
+			$this->form_validation->set_rules('unit_code', 'Kode Cabang', 'required');
+			$this->form_validation->set_rules('unit_name', 'Nama Cabang', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreUnit_model->insertCoreUnit($data)){
-					$auth = $this->session->userdata('auth');
+				if ($unit_token == 0){
+					if($this->CoreUnit_model->insertCoreUnit($data)){
+						$unit_id 		= $this->CoreUnit_model->getUnitID($data['unit_id']);
 
-					/*$this->fungsi->set_log($auth['username'],'1003','Application.CoreUnit.processaddCoreUnit',$auth['username'],'Add New Department');*/
 
-					$msg = "<div class='alert alert-success'>                
-								Add Data Unit Successfully
-							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-					$this->session->set_userdata('message',$msg);
-					$this->session->unset_userdata('addCoreUnit');
-					redirect('CoreUnit/addCoreUnit');
-				}else{
+						$this->fungsi->set_log($auth['user_id'], $unit_id, '3122', 'Application.CoreUnit.processAddCoreUnit', $unit_id, 'Add New Core Unit');
+
+						$msg = "<div class='alert alert-success'>                
+									Tambah Data Unit Baru Berhasil
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->unset_userdata('addCoreUnit-'.$unique['unique']);
+						$this->session->unset_userdata('CoreUnitToken-'.$unique['unique']);
+						redirect('unit/add');
+					}else{
+						$msg = "<div class='alert alert-danger'>                
+									Tambah Data Unit Baru Gagal
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->set_userdata('addCoreUnit',$data);
+						redirect('unit/add');
+					}
+				} else {
 					$msg = "<div class='alert alert-danger'>                
-								Add Data Department UnSuccessful
+						Tambah Data Unit Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					$this->session->set_userdata('addCoreUnit',$data);
-					redirect('CoreUnit/addCoreUnit');
+					redirect('unit/add');
 				}
 			}else{
-				$data['password']='';
 				$this->session->set_userdata('addCoreUnit',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreUnit/addCoreUnit');
+				redirect('unit/add');
 			}
 		}
 		
 		public function editCoreUnit(){
 			$unit_id 							= $this->uri->segment(3);
-			$data['Main_view']['coresection']	= create_double($this->CoreUnit_model->getCoreSection(),'section_id','section_name');
-			$data['Main_view']['CoreUnit']		= $this->CoreUnit_model->getCoreUnit_Detail($unit_id);
-			$data['Main_view']['content']		= 'CoreUnit/formeditCoreUnit_view';
+			$data['main_view']['coresection']	= create_double($this->CoreUnit_model->getCoreSection(),'section_id','section_name');
+			$data['main_view']['coreunit']		= $this->CoreUnit_model->getCoreUnit_Detail($unit_id);
+			$data['main_view']['content']		= 'CoreUnit/FormEditCoreUnit_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
-		public function processEditCoreUnit(){
-			
+		public function reset_edit(){
+			$unique 		= $this->session->userdata('unique');
+			$unit_id		= $this->uri->segment(3);
+
+			redirect('unit/edit/'.$unit_id);
+		}
+		
+		function processEditCoreUnit(){
+			$auth 		= $this->session->userdata('auth');
+
 			$data = array(
-				'unit_id' 		=> $this->input->post('unit_id',true),
-				'unit_code' 	=> $this->input->post('unit_code',true),
-				'unit_name' 	=> $this->input->post('unit_name',true),
-				'section_id'	=> $this->input->post('section_id',true),
-				'data_state'	=> 0
+				'unit_id' 			=> $this->input->post('unit_id',true),
+				'section_id' 		=> $this->input->post('section_id',true),
+				'unit_code' 			=> $this->input->post('unit_code',true),
+				'unit_name' 			=> $this->input->post('unit_name',true),
+				'updated_id' 			=> $auth['user_id'],
+				'updated_on' 			=> date("Y-m-d H:i:s"),
 			);
 			
-			$this->session->set_userdata('edit',$data);
+			$this->form_validation->set_rules('section_id', 'Nama Department', 'required');
 			$this->form_validation->set_rules('unit_code', 'Unit Code', 'required');
-			$this->form_validation->set_rules('unit_name', 'Unit name', 'required');
-			
+			$this->form_validation->set_rules('unit_name', 'Unit Name', 'required');
+
+
 			if($this->form_validation->run()==true){
 				if($this->CoreUnit_model->updateCoreUnit($data)==true){
-					$auth 	= $this->session->userdata('auth');
-					// $this->fungsi->set_log($auth['username'],'1077','Application.CoreUnit.edit',$auth['username'],'Edit CoreUnit');
-					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['CoreUnit_id']);
+					
+					$this->fungsi->set_log($auth['user_id'], $data['unit_id'], '3122', 'Application.CoreUnit.processEditCoreUnit', $data['unit_id'], 'Edit Core Unit');
+
+
 					$msg = "<div class='alert alert-success'>                
-								Edit Unit Successfully
+								Edit Data Unit Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreUnit/editCoreUnit/'.$data['unit_id']);
+					redirect('unit/edit/'.$data['unit_id']);
 				}else{
-					$msg = "<div class='alert alert-danger'>
-								Edit Unit UnSuccessful
+					$msg = "<div class='alert alert-danger'>                
+								Edit Data Unit Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreUnit/editCoreUnit/'.$data['unit_id']);
+					redirect('unit/edit/'.$data['unit_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreUnit/editCoreUnit/'.$data['unit_id']);
+				redirect('unit/edit/'.$data['unit_id']);
 			}
 		}
 
-		public function deleteCoreUnit(){
-			$unit_id = $this->uri->segment(3);
-			if($this->CoreUnit_model->deleteCoreUnit($unit_id)){
-				$auth = $this->session->userdata('auth');
-				/*$this->fungsi->set_log($auth['username'],'1005','Application.CoreUnit.delete',$auth['username'],'Delete CoreUnit');*/
+		function deleteCoreUnit(){
+			$auth 			= $this->session->userdata('auth');
+			$unit_id 	= $this->uri->segment(3);
+
+			$data = array(
+				'unit_id' 			=> $unit_id,
+				'deleted_id' 		=> $auth['user_id'],
+				'deleted_on' 		=> date("Y-m-d H:i:s"),
+				'data_state'		=> 1
+			);
+
+			if($this->CoreUnit_model->deleteCoreUnit($data)){
+				
+				$this->fungsi->set_log($auth['user_id'], $data['unit_id'], '3122', 'Application.CoreUnit.deleteCoreUnit', $data['unit_id'], 'Delete Core Unit');
+
 				$msg = "<div class='alert alert-success'>                
-							Delete Data Unit Successfully
+							Hapus Data Unit Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreUnit');
+				redirect('unit');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-							Delete Data Unit UnSuccessful
+					Hapus Data Unit Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreUnit');
+				redirect('unit');
 			}
 		}
 	}

@@ -18,8 +18,8 @@
 			$location_id	= $auth['location_id'];
 			$user_group_id	= $auth['user_group_level'];
 
-			$data['Main_view']['systemuser']	= $this->SystemUser_model->getSystemUser($region_id, $branch_id, $location_id, $user_group_id);
-			$data['Main_view']['content']		= 'SystemUser/ListSystemUser_view';
+			$data['main_view']['systemuser']	= $this->SystemUser_model->getSystemUser($region_id, $branch_id, $location_id, $user_group_id);
+			$data['main_view']['content']		= 'SystemUser/ListSystemUser_view';
 			$this->load->view('MainPage_view',$data);
 		}
 

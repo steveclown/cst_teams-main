@@ -48,9 +48,23 @@ $this->session->unset_userdata('message');
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-									echo form_open('CoreEducation/processAddCoreEducation',array('class' => 'horizontal-form'));
-									$data = $this->session->userdata('addeducation');
-									 ?>
+										echo form_open('education/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreEducation-'.$unique['unique']);
+										$education_token	= $this->session->userdata('CoreEducationToken-'.$unique['unique']);
+
+										if(empty($data['education_code'])){
+											$data['education_code'] 					= '';
+										}
+
+										if(empty($data['education_name'])){
+											$data['education_name'] 					= '';
+										}
+									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
@@ -65,6 +79,7 @@ $this->session->unset_userdata('message');
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
                                                 <input type="text" class="form-control" name="education_name" id="education_name" value="<?php echo $data['education_name']?>" >
+												<input type="hidden" name="education_token" id="education_token" class="form-control" value="<?php echo $education_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label for="form_control">Nama Pendidikan
 													<span class="required">*</span>
 												</label>
@@ -74,7 +89,7 @@ $this->session->unset_userdata('message');
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input ">
-												<?php echo form_dropdown('education_type', $CoreEducationtype, $data['education_type'], 'id ="education_type", class="form-control select2me"');?>
+												<?php echo form_dropdown('education_type', $coreeducationtype, $data['education_type'], 'id ="education_type", class="form-control select2me"');?>
 												<label for="form_control">Tipe Pendidikan
 													<span class="required">*</span>
 												</label>
@@ -85,7 +100,7 @@ $this->session->unset_userdata('message');
 									<div class = "row">
 										<div class="col-md-12">
 											<div class="form-group form-md-line-input">
-												<textarea class="form-control" rows="3 name="education_remark" id="education_remark"></textarea><?php echo set_value('education_remark',$data['education_remark']);?>
+												<textarea class="form-control" rows="3" name="education_remark" id="education_remark"></textarea><?php echo set_value('education_remark',$data['education_remark']);?>
 												<label for="form_control_1">Keterangan</label>
 											</div>
 										</div>

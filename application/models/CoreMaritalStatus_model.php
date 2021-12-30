@@ -15,7 +15,26 @@
 			return $this->db->get()->result_array();
 		}
 		
-		public function saveNewCoreMaritalStatus($data){
+		public function getMaritalStatusToken($marital_status_token)
+		{	
+			$this->db->select('core_marital_status.marital_status_token');
+			$this->db->from('core_marital_status');
+			$this->db->where('core_marital_status.marital_status_token', $marital_status_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getMaritalStatusID($created_id){
+			$this->db->select('core_marital_status.marital_status_id');
+			$this->db->from('core_marital_status');
+			$this->db->where('core_marital_status.created_id', $created_id);
+			$this->db->order_by('core_marital_status.marital_status_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['marital_status_id'];
+		}
+
+		public function insertCoreMaritalStatus($data){
 			return $this->db->insert('core_marital_status',$data);
 		}
 		
@@ -26,9 +45,9 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreMaritalStatus($data){
-			$this->db->where('core_marital_status.marital_status_id',$data['marital_status_id']);
-			$query = $this->db->update('core_marital_status', $data);
+		public function updateCoreMaritalStatus($data){
+			$this->db->where('marital_status_id',$data['marital_status_id']);
+			$query = $this->db->update($this->table, $data);
 			if($query){
 				return true;
 			}else{
@@ -36,9 +55,9 @@
 			}
 		}
 		
-		public function deleteCoreMaritalStatus($MaritalStatusID){
-			$this->db->where("core_marital_status.marital_status_id", $MaritalStatusID);
-			$query = $this->db->update('core_marital_status', array("data_state"=>1));
+		public function deleteCoreMaritalStatus($data){
+			$this->db->where("core_marital_status.marital_status_id", $data['marital_status_id']);
+			$query = $this->db->update('core_marital_status', $data);
 			if($query){
 				return true;
 			}else{

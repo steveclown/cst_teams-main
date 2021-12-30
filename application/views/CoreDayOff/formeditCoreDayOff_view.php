@@ -1,9 +1,9 @@
 <script>
 	function ulang(){
-		document.getElementById("dayoff_code").value = "<?php echo $CoreDayOff['dayoff_code'] ?>";
-		document.getElementById("dayoff_name").value = "<?php echo $CoreDayOff['dayoff_name'] ?>";
-		document.getElementById("dayoff_id").value = "<?php echo $CoreDayOff['dayoff_id'] ?>";
-		document.getElementById("department_id").value = "<?php echo $CoreDayOff['department_id'] ?>";
+		document.getElementById("dayoff_code").value = "<?php echo $coredayoff['dayoff_code'] ?>";
+		document.getElementById("dayoff_name").value = "<?php echo $coredayoff['dayoff_name'] ?>";
+		document.getElementById("dayoff_id").value = "<?php echo $coredayoff['dayoff_id'] ?>";
+		document.getElementById("department_id").value = "<?php echo $coredayoff['department_id'] ?>";
 	}
 	
 </script>
@@ -17,13 +17,13 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreDayOff">
+								<a href="<?php echo base_url();?>coredayoff">
 									Daftar libur
 								</a>
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreDayOff/editCoreDayOff/<?php echo $CoreDayOff['dayoff_id']?>">
+								<a href="<?php echo base_url();?>coredayoff/editcoredayoff/<?php echo $coredayoff['dayoff_id']?>">
 									Edit libur
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -46,7 +46,7 @@
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreDayOff" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>coredayoff" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>
@@ -54,12 +54,12 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('CoreDayOff/processEditCoreDayOff',array('id' => 'myform', 'class' => 'horizontal-form')); 
+										echo form_open('coredayoff/processEditcoredayoff',array('id' => 'myform', 'class' => 'horizontal-form')); 
 									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="dayoff_code" id="dayoff_code" value="<?php echo $CoreDayOff['dayoff_code']?>" class="form-control" >
+												<input type="text" name="dayoff_code" id="dayoff_code" value="<?php echo $coredayoff['dayoff_code']?>" class="form-control" >
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -73,7 +73,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="dayoff_name" id="dayoff_name" value="<?php echo $CoreDayOff['dayoff_name']?>" class="form-control">
+												<input type="text" name="dayoff_name" id="dayoff_name" value="<?php echo $coredayoff['dayoff_name']?>" class="form-control">
 												<label class="control-label">Nama Libur
 													<span class="required">
 														*
@@ -87,7 +87,7 @@
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="dayoff_id" value="<?php echo $CoreDayOff['dayoff_id']; ?>"/>
+								<input type="hidden" name="dayoff_id" value="<?php echo $coredayoff['dayoff_id']; ?>"/>
 								<?php echo form_close(); ?>
 							</div>
 						</div>

@@ -66,7 +66,7 @@
 						<tbody>
 							<?php
 								$no = 1;
-								foreach ($CoreAnnualLeave as $key => $val){
+								foreach ($coreannualleave as $key => $val){
 									
 									echo"
 										<tr>									

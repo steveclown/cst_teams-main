@@ -15,7 +15,26 @@
 			return $this->db->get()->result_array();
 		}
 		
-		public function saveNewCoreAnnualleave($data){
+		public function getAnnualLeaveToken($annual_leave_token)
+		{	
+			$this->db->select('core_annual_leave.annual_leave_token');
+			$this->db->from('core_annual_leave');
+			$this->db->where('core_annual_leave.annual_leave_token', $annual_leave_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getAnnualLeaveID($created_id){
+			$this->db->select('core_annual_leave.annual_leave_id');
+			$this->db->from('core_annual_leave');
+			$this->db->where('core_annual_leave.created_id', $created_id);
+			$this->db->order_by('core_annual_leave.annual_leave_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['annual_leave_id'];
+		}
+		
+		public function insertCoreAnnualLeave($data){
 			return $this->db->insert('core_annual_leave',$data);
 		}
 		
@@ -26,9 +45,9 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreAnnualleave($data){
-			$this->db->where('annual_leave_id', $data['annual_leave_id']);
-			$query = $this->db->update('core_annual_leave', $data);
+		public function updateCoreAnnualLeave($data){
+			$this->db->where('annual_leave_id',$data['annual_leave_id']);
+			$query = $this->db->update($this->table, $data);
 			if($query){
 				return true;
 			}else{
@@ -36,9 +55,9 @@
 			}
 		}
 		
-		public function deleteCoreAnnualLeave($AnnualLeaveID){
-			$this->db->where("annual_leave_id",$AnnualLeaveID);
-			$query = $this->db->update('core_annual_leave', array("data_state"=>1));
+		public function deleteCoreAnnualLeave($data){
+			$this->db->where("core_annual_leave.annual_leave_id", $data['annual_leave_id']);
+			$query = $this->db->update('core_annual_leave', $data);
 			if($query){
 				return true;
 			}else{

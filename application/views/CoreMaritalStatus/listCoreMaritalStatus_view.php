@@ -57,7 +57,7 @@
 							<tbody>
 								<?php
 									$no=1;
-									foreach ($CoreMaritalStatus as $key=>$val){
+									foreach ($coremaritalstatus as $key=>$val){
 										
 										echo"
 											<tr>

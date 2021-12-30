@@ -1,6 +1,6 @@
 
 <?php
-	$this->load->view('hroemployeeemployment/formaddhroemployeeemployment_view');
+	$this->load->view('hroemployeeemployment/FormAddHroEmployeeEmployment_view');
 		 
 /*	print_r("hroemployeeemployment_data ");
 	print_r($hroemployeeemployment_data); */
@@ -42,13 +42,13 @@
 											foreach ($hroemployeeemployment_data as $key=>$val){
 												echo"
 													<tr>
-														<td>".$this->configuration->WorkingStatus[$val['employee_employment_working_status']]."</td>
+														<td>".$this->configuration->WorkingStatus()[$val['employee_employment_working_status']]."</td>
 														<td>".tgltoview($val['employee_hire_date'])."</td>
-														<td>".$this->configuration->EmployeeStatus[$val['employee_employment_status']]."</td>
-														<td>".$this->configuration->HomeEarlyStatus[$val['employee_employment_homeearly_status']]."</td>
+														<td>".$this->configuration->EmployeeStatus()[$val['employee_employment_status']]."</td>
+														<td>".$this->configuration->HomeEarlyStatus()[$val['employee_employment_homeearly_status']]."</td>
 														<td>".tgltoview($val['employee_employment_status_date'])."</td>
 														<td>".tgltoview($val['employee_employment_status_duedate'])."</td>
-														<td>".$this->configuration->OvertimeStatus[$val['employee_employment_overtime_status']]."</td>
+														<td>".$this->configuration->OvertimeStatus()[$val['employee_employment_overtime_status']]."</td>
 														<td>
 														<a href='".$this->config->item('base_url').'hroemployeeemployment/deleteHROEmployeeEmployment_Data/'.$val['employee_employment_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Delete

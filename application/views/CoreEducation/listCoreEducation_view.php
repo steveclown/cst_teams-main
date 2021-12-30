@@ -62,14 +62,14 @@
 								<tbody>
 									<?php
 										$no=1;
-										foreach ($CoreEducation as $key=>$val){	
+										foreach ($coreeducation as $key=>$val){	
 											
 											echo"
 												<tr>
 													<td>".$no."</td>
 													<td>".$val['education_code']."</td>
 													<td>".$val['education_name']."</td>		
-													<td>".$CoreEducationtype[$val['education_type']]."</td>
+													<td>".$coreeducationtype[$val['education_type']]."</td>
 													
 													<td>
 														<a href='".$this->config->item('base_url').'CoreEducation/editCoreEducation/'.$val['education_id']."' class='btn default btn-xs purple'>

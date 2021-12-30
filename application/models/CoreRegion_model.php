@@ -13,7 +13,7 @@
 			$this->db->from('core_region');
 			$this->db->where('core_region.data_state', 0);
 			$result = $this->db->get()->result_array();
-			return$result;
+			return $result;
 		}
 
 		public function getRegionToken($region_token)
@@ -22,7 +22,7 @@
 			$this->db->from('core_region');
 			$this->db->where('core_region.region_token', $region_token);
 			$result = $this->db->get()->num_rows();
-			return$result;
+			return $result;
 		}
 		
 		public function insertCoreRegion($data){

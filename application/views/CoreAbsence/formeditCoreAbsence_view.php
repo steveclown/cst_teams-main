@@ -1,9 +1,9 @@
 <script>
 	function ulang(){
-		document.getElementById("absence_code").value 	= "<?php echo $CoreAbsence['absence_code'] ?>";
-		document.getElementById("absence_name").value 	= "<?php echo $CoreAbsence['absence_name'] ?>";
-		document.getElementById("absence_id").value	 	= "<?php echo $CoreAbsence['absence_id'] ?>";
-		document.getElementById("deduction_id").value 	= "<?php echo $CoreAbsence['deduction_id'] ?>";
+		document.getElementById("absence_code").value 	= "<?php echo $coreabsence['absence_code'] ?>";
+		document.getElementById("absence_name").value 	= "<?php echo $coreabsence['absence_name'] ?>";
+		document.getElementById("absence_id").value	 	= "<?php echo $coreabsence['absence_id'] ?>";
+		document.getElementById("deduction_id").value 	= "<?php echo $coreabsence['deduction_id'] ?>";
 	}
 	
 	function function_elements_add(name, value){
@@ -44,7 +44,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreAbsence/editCoreAbsence/<?php echo $CoreAbsence['absence_id']?>">
+								<a href="<?php echo base_url();?>CoreAbsence/editCoreAbsence/<?php echo $coreabsence['absence_id']?>">
 									Edit Absensi
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -81,7 +81,7 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<?php
-													echo form_dropdown('deduction_id', $corededuction,set_value('deduction_id',$CoreAbsence['deduction_id']),'id="deduction_id" class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
+													echo form_dropdown('deduction_id', $corededuction,set_value('deduction_id',$coreabsence['deduction_id']),'id="deduction_id" class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 												?>
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
@@ -98,7 +98,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="absence_code" id="absence_code" value="<?php echo $CoreAbsence['absence_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" name="absence_code" id="absence_code" value="<?php echo $coreabsence['absence_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -112,7 +112,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="absence_name" id="absence_name" value="<?php echo $CoreAbsence['absence_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" name="absence_name" id="absence_name" value="<?php echo $coreabsence['absence_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Absensi
 													<span class="required">
 														*
@@ -126,7 +126,7 @@
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="absence_id" value="<?php echo $CoreAbsence['absence_id']; ?>"/>
+								<input type="hidden" name="absence_id" value="<?php echo $coreabsence['absence_id']; ?>"/>
 								<?php echo form_close(); ?>
 							</div>
 						</div>

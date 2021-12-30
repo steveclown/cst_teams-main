@@ -52,8 +52,22 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('CoreUnit/processAddCoreUnit',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('addunit');
+										echo form_open('unit/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreUnit-'.$unique['unique']);
+										$unit_token	= $this->session->userdata('CoreUnitToken-'.$unique['unique']);
+
+										if(empty($data['unit_code'])){
+											$data['unit_code'] 					= '';
+										}
+
+										if(empty($data['unit_name'])){
+											$data['unit_name'] 					= '';
+										}
 									?>
 									<div class="row">
 										<div class="col-md-6">
@@ -84,6 +98,7 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="unit_name" id="unit_name" value="<?php echo $data['unit_name']?>" class="form-control">
+												<input type="hidden" name="unit_token" id="unit_token" class="form-control" value="<?php echo $unit_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Satuan
 													<span class="required">
 														*

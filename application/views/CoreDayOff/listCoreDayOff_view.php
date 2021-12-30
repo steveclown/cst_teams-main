@@ -62,7 +62,7 @@
 						<tbody>
 							<?php
 								$no=1;
-								foreach ($CoreDayOff as $key=>$val){
+								foreach ($coredayoff as $key=>$val){
 									
 									echo"
 										<tr>	

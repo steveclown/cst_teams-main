@@ -1,6 +1,6 @@
 <?php
 	class CoreHomeEarly_model extends CI_Model {
-		var $table = "core_homeearly";
+		var $table = "core_home_early";
 		
 		public function __construct(){
 			parent::__construct();
@@ -25,7 +25,26 @@
 			return $result;
 		}
 		
-		public function saveNewCoreHomeEarly($data){
+		public function getHomeEarlyToken($home_early_token)
+		{	
+			$this->db->select('core_home_early.home_early_token');
+			$this->db->from('core_home_early');
+			$this->db->where('core_home_early.home_early_token', $home_early_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getHomeEarlyID($created_id){
+			$this->db->select('core_home_early.home_early_id');
+			$this->db->from('core_home_early');
+			$this->db->where('core_home_early.created_id', $created_id);
+			$this->db->order_by('core_home_early.home_early_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['home_early_id'];
+		}
+
+		public function insertCoreHomeEarly($data){
 			return $this->db->insert('core_home_early',$data);
 		}
 		
@@ -36,19 +55,19 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreHomeEarly($data){
+		public function updateCoreHomeEarly($data){
 			$this->db->where('home_early_id',$data['home_early_id']);
-			$query = $this->db->update('core_home_early', $data);
+			$query = $this->db->update($this->table, $data);
 			if($query){
 				return true;
 			}else{
 				return false;
 			}
 		}
-
-		public function deleteCoreHomeEarly($home_early_id){
-			$this->db->where("home_early_id",$home_early_id);
-			$query = $this->db->update('core_home_early', array("data_state"=>1));
+		
+		public function deleteCoreHomeEarly($data){
+			$this->db->where("core_home_early.home_early_id", $data['home_early_id']);
+			$query = $this->db->update('core_home_early', $data);
 			if($query){
 				return true;
 			}else{

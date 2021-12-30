@@ -70,8 +70,23 @@
 			<div class="portlet-body form">
 				<div class="form-body">
 					<?php 
-						echo form_open('CoreAward/processAddCoreAward',array('id' => 'myform', 'class' => 'horizontal-form')); 
-						$data = $this->session->userdata('addaward');
+						echo form_open('award/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+							echo $this->session->userdata('message');
+							$this->session->unset_userdata('message');
+
+							$unique 		= $this->session->userdata('unique');
+							$data 			= $this->session->userdata('addCoreAward-'.$unique['unique']);
+							$award_token	= $this->session->userdata('CoreAwardToken-'.$unique['unique']);
+
+							if(empty($data['award_code']))
+							{
+								$data['award_code'] 					= '';
+							}
+
+							if(empty($data['award_name'])){
+							$data['award_name'] 					= '';
+							}
 					?>
 					<div class="row">
 						<div class="col-md-6">
@@ -86,6 +101,9 @@
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
 								<input type="text" class="form-control" name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo set_value('award_name',$data['award_name']);?>"/>
+								
+								<input type="hidden" name="award_token" id="award_token" class="form-control" value="<?php echo $award_token?>" onChange="function_elements_add(this.name, this.value);">
+								
 								<label class="control-label">Nama Penghargaan<span class="required">*</span></label>
 							</div>
 						</div>

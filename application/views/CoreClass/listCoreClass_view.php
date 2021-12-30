@@ -70,7 +70,7 @@
 						<tbody>
 							<?php
 								$no=1;
-								foreach ($CoreClass as $key=>$val){
+								foreach ($coreclass as $key=>$val){
 									
 									echo"
 										<tr>

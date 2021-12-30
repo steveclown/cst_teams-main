@@ -105,7 +105,23 @@
 									<div class="form-body">
 										<?php 
 											echo form_open('HroEmployeeData/processAddHROEmployeeData',array('id' => 'myform', 'class' => 'horizontal-form')); 
-											$data = $this->session->userdata('addHroEmployeeData');
+
+											echo $this->session->userdata('message');
+											$this->session->unset_userdata('message');
+											
+											$unique 		= $this->session->userdata('unique');
+											$data 			= $this->session->userdata('addHroEmployeeData-'.$unique['unique']);
+											$employee_token	= $this->session->userdata('HroEmployeeDataToken-'.$unique['unique']);
+
+
+											if(empty($data['employee_code']))
+											{
+												$data['employee_code'] 					= '';
+											}
+
+											if(empty($data['employee_name'])){
+											$data['employee_name'] 					= '';
+											}
 
 											if(empty($data['employee_date_of_birth'])){
 												$data['employee_date_of_birth']= date('Y-m-d');
@@ -354,6 +370,9 @@
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
 													<input type="text" name="employee_code" id="employee_code" value="<?php echo $data['employee_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+
+													<input type="hidden" name="employee_token" id="employee_token" class="form-control" value="<?php echo $employee_token?>" onChange="function_elements_add(this.name, this.value);">
+													
 													<span class="help-block">
 														Mohon hanya diisi karakter huruf dan angka.
 													</span>

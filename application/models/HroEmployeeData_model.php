@@ -142,6 +142,25 @@
 			}
 		}
 
+		public function getHroEmployeeDataToken($employee_token)
+		{	
+			$this->db->select('hro_employee_data.employee_token');
+			$this->db->from('hro_employee_data');
+			$this->db->where('hro_employee_data.employee_token', $employee_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getHroEmployeeDataID($created_id){
+			$this->db->select('hro_employee_data.employee_id');
+			$this->db->from('hro_employee_data');
+			$this->db->where('hro_employee_data.created_id', $created_id);
+			$this->db->order_by('hro_employee_data.employee_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['employee_id'];
+		}
+
 		public function saveNewHROEmployeeData($data){
 			return $this->db->insert('hro_employee_data', $data);
 		}

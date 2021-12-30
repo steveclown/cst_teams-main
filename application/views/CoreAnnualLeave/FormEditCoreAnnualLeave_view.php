@@ -1,9 +1,9 @@
 
 <script>
 function ulang(){
-	document.getElementById("annual_leave_code").value = "<?php echo $CoreAnnualLeave['annual_leave_code'] ?>";
-	document.getElementById("annual_leave_name").value = "<?php echo $CoreAnnualLeave['annual_leave_name'] ?>";
-	document.getElementById("annual_leave_id").value = "<?php echo $CoreAnnualLeave['annual_leave_id'] ?>";
+	document.getElementById("annual_leave_code").value = "<?php echo $coreannualleave['annual_leave_code'] ?>";
+	document.getElementById("annual_leave_name").value = "<?php echo $coreannualleave['annual_leave_name'] ?>";
+	document.getElementById("annual_leave_id").value = "<?php echo $coreannualleave['annual_leave_id'] ?>";
 }
 </script>
 
@@ -24,7 +24,7 @@ function ulang(){
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreAnnualLeave/edit/<?php echo $CoreAnnualLeave['annual_leave_id']?>">
+								<a href="<?php echo base_url();?>CoreAnnualLeave/edit/<?php echo $coreannualleave['annual_leave_id']?>">
 									Edit Cuti tahunan
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -60,7 +60,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_code" id="annual_leave_code" value="<?php echo $CoreAnnualLeave['annual_leave_code']?>" class="form-control">
+												<input type="text" name="annual_leave_code" id="annual_leave_code" value="<?php echo $coreannualleave['annual_leave_code']?>" class="form-control">
 												<span class="help-block">
 													Please input only alpha-numerical characters.
 												</span>
@@ -74,7 +74,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_name" id="annual_leave_name" value="<?php echo $CoreAnnualLeave['annual_leave_name']?>" class="form-control">
+												<input type="text" name="annual_leave_name" id="annual_leave_name" value="<?php echo $coreannualleave['annual_leave_name']?>" class="form-control">
 												<label class="control-label">Nama Cuti tahunan</label>
 											</div>
 										</div>
@@ -83,7 +83,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_days" id="annual_leave_days" value="<?php echo $CoreAnnualLeave['annual_leave_days']?>" class="form-control" >
+												<input type="text" name="annual_leave_days" id="annual_leave_days" value="<?php echo $coreannualleave['annual_leave_days']?>" class="form-control" >
 												<span class="help-block">
 													Please input only numbers.
 												</span>
@@ -93,7 +93,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<?php echo form_dropdown('annual_leave_type', $annualleavetype ,set_value('annual_leave_type',$CoreAnnualLeave['annual_leave_type']),'id="annual_leave_type", class="form-control select2me"');?>
+												<?php echo form_dropdown('annual_leave_type', $annualleavetype ,set_value('annual_leave_type',$coreannualleave['annual_leave_type']),'id="annual_leave_type", class="form-control select2me"');?>
 												<label class="control-label col-md-3">Tipe Cuti tahunan</label>
 											</div>
 										</div>
@@ -102,12 +102,12 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-12">
 											<div class="form-group form-md-line-input">
-												<textarea rows="3" name="annual_leave_remark" id="annual_leave_remark" class="form-control" placeholder="Remark"><?php echo $CoreAnnualLeave['annual_leave_remark'];?></textarea>
+												<textarea rows="3" name="annual_leave_remark" id="annual_leave_remark" class="form-control" placeholder="Remark"><?php echo $coreannualleave['annual_leave_remark'];?></textarea>
 												<label class="control-label">Keterangan</label>
 											</div>
 										</div>
 									</div>
-										<input type="hidden" name="annual_leave_id" value="<?php echo $CoreAnnualLeave['annual_leave_id']; ?>"/>
+										<input type="hidden" name="annual_leave_id" value="<?php echo $coreannualleave['annual_leave_id']; ?>"/>
 								</div>
 								<div class="form-actions right">
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>

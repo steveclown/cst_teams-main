@@ -1,8 +1,8 @@
 <script>
 	function ulang(){
-		document.getElementById("expertise_code").value = "<?php echo $CoreExpertise['expertise_code'] ?>";
-		document.getElementById("expertise_name").value = "<?php echo $CoreExpertise['expertise_name'] ?>";
-		document.getElementById("expertise_id").value = "<?php echo $CoreExpertise['expertise_id'] ?>";
+		document.getElementById("expertise_code").value = "<?php echo $coreexpertise['expertise_code'] ?>";
+		document.getElementById("expertise_name").value = "<?php echo $coreexpertise['expertise_name'] ?>";
+		document.getElementById("expertise_id").value = "<?php echo $coreexpertise['expertise_id'] ?>";
 	}
 </script>
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
@@ -21,7 +21,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreExpertise/editCoreExpertise/<?php $CoreExpertise['expertise_id']?>">
+								<a href="<?php echo base_url();?>CoreExpertise/editCoreExpertise/<?php $coreexpertise['expertise_id']?>">
 									Edit Keahlian
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -57,7 +57,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="expertise_code" id="expertise_code" value="<?php echo set_value('expertise_code',$CoreExpertise['expertise_code']);?>"/>
+									<input type="text" class="form-control" name="expertise_code" id="expertise_code" value="<?php echo set_value('expertise_code',$coreexpertise['expertise_code']);?>"/>
 									<span class="help-block">
 										Mohon hanya diisi karakter huruf dan angka.
 									</span>
@@ -71,7 +71,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$CoreExpertise['expertise_name']);?>"/>
+									<input type="text" class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$coreexpertise['expertise_name']);?>"/>
 									<label class="control-label">Nama Keahlian
 										<span class="required">
 											*
@@ -84,7 +84,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-12">
 								<div class="form-group form-md-line-input">
-									<textarea rows="3" class="form-control" name="expertise_remark" id="expertise_remark"> <?php echo set_value('expertise_remark',$CoreExpertise['expertise_remark']);?> </textarea>
+									<textarea rows="3" class="form-control" name="expertise_remark" id="expertise_remark"> <?php echo set_value('expertise_remark',$coreexpertise['expertise_remark']);?> </textarea>
 									<label class="control-label">Keterangan
 									</label>	
 								</div>
@@ -95,7 +95,7 @@ $this->session->unset_userdata('message');
 						<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 						<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 					</div>
-					<input type="hidden" name="expertise_id" value="<?php echo $CoreExpertise['expertise_id']; ?>"/>
+					<input type="hidden" name="expertise_id" value="<?php echo $coreexpertise['expertise_id']; ?>"/>
 					<?php echo form_close(); ?>
 				</div>
 			</div>

@@ -69,8 +69,24 @@
 							</div>
 							<div class="portlet-body form">
 								<div class="form-body">
-									<?php echo form_open('CoreLanguage/processAddCoreLanguage',array('class' => 'horizontal-form')); ?>
-									
+									<?php 
+										echo form_open('language/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreLanguage-'.$unique['unique']);
+										$language_token	= $this->session->userdata('CoreLanguageToken-'.$unique['unique']);
+
+										if(empty($data['language_code'])){
+											$data['language_code'] 					= '';
+										}
+
+										if(empty($data['language_name'])){
+											$data['language_name'] 					= '';
+										}
+									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
@@ -85,6 +101,7 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" class="form-control" name="language_name" id="language_name" value="<?php echo $data['language_name']?>" >
+												<input type="hidden" name="language_token" id="language_token" class="form-control" value="<?php echo $language_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label for="form_control">Nama Bahasa
 													<span class="required">*</span>
 												</label>

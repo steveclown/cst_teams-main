@@ -75,10 +75,25 @@
 							</div>
 							<div class="portlet-body form">
 								<div class="form-body">
-								<?php 
-									echo form_open('CoreAbsence/processAddCoreAbsence',array('id' => 'myform', 'class' => 'horizontal-form')); 
-									$data = $this->session->userdata('addCoreAbsence');
-								?>
+									<?php 
+										echo form_open('absence/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+											echo $this->session->userdata('message');
+											$this->session->unset_userdata('message');
+
+											$unique 		= $this->session->userdata('unique');
+											$data 			= $this->session->userdata('addCoreAbsence-'.$unique['unique']);
+											$absence_token	= $this->session->userdata('CoreAbsenceToken-'.$unique['unique']);
+
+											if(empty($data['absence_code']))
+											{
+												$data['absence_code'] 					= '';
+											}
+
+											if(empty($data['absence_name'])){
+											$data['absence_name'] 					= '';
+										}
+									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
@@ -114,6 +129,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="absence_name" id="absence_name" value="<?php echo $data['absence_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								
+												<input type="hidden" name="absence_token" id="absence_token" class="form-control" value="<?php echo $absence_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<label class="control-label">Nama Absensi
 													<span class="required">
 														*

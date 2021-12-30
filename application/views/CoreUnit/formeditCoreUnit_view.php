@@ -58,7 +58,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<?php echo form_dropdown('section_id', $coresection, $CoreUnit['section_id'], 'id ="division_id", class="form-control select2me"');?>
+												<?php echo form_dropdown('section_id', $coresection, $coreunit['section_id'], 'id ="division_id", class="form-control select2me"');?>
 												<label class="control-label">Nama Bagian
 													<span class="required">
 														*
@@ -70,7 +70,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="unit_code" id="unit_code" value="<?php echo $CoreUnit['unit_code'];?>" class="form-control">
+												<input type="text" name="unit_code" id="unit_code" value="<?php echo $coreunit['unit_code'];?>" class="form-control">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -83,7 +83,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="unit_name" id="unit_name" value="<?php echo $CoreUnit['unit_name'];?>" class="form-control">
+												<input type="text" name="unit_name" id="unit_name" value="<?php echo $coreunit['unit_name'];?>" class="form-control">
 												<label class="control-label">Nama Satuan
 													<span class="required">
 													*
@@ -97,7 +97,7 @@
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="unit_id" value="<?php echo $CoreUnit['unit_id']; ?>"/>
+								<input type="hidden" name="unit_id" value="<?php echo $coreunit['unit_id']; ?>"/>
 								<?php echo form_close(); ?>
 							</div>
 						</div>

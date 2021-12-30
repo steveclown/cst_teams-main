@@ -60,7 +60,7 @@
 								<tbody>
 									<?php
 									$no=1;
-										foreach ($CoreExpertise as $key=>$val){
+										foreach ($coreexpertise as $key=>$val){
 											
 											echo"
 												<tr>				

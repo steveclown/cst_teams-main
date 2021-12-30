@@ -73,10 +73,25 @@
 							</div>
 							<div class="portlet-body form">
 								<div class="form-body">
-								<?php 
-									echo form_open('CoreLate/processAddCoreLate',array('id' => 'myform', 'class' => 'horizontal-form')); 
-									$data = $this->session->userdata('addCoreLate');
-								?>
+									<?php 
+										echo form_open('late/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+											echo $this->session->userdata('message');
+											$this->session->unset_userdata('message');
+
+											$unique 		= $this->session->userdata('unique');
+											$data 			= $this->session->userdata('addCoreLate-'.$unique['unique']);
+											$late_token	= $this->session->userdata('CoreLateToken-'.$unique['unique']);
+
+											if(empty($data['late_code']))
+											{
+												$data['late_code'] 					= '';
+											}
+
+											if(empty($data['late_name'])){
+											$data['late_name'] 					= '';
+										}
+									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
@@ -112,6 +127,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="late_name" id="late_name" value="<?php echo $data['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												
+												<input type="hidden" name="late_token" id="late_token" class="form-control" value="<?php echo $late_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<label class="control-label">Nama Terlambat
 													<span class="required">
 														*

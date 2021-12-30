@@ -87,7 +87,7 @@
 								<tbody>
 									<?php
 										$no=1;
-										foreach ($CoreWarning as $key=>$val){
+										foreach ($corewarning as $key=>$val){
 											echo"
 												<tr>
 													<td>".$no."</td>									

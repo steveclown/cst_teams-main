@@ -58,7 +58,7 @@
 						<tbody>
 							<?php
 								$no=1;
-								foreach ($CoreSeparationReason as $key=>$val){
+								foreach ($coreseparationreason as $key=>$val){
 									
 									echo"
 										<tr>	

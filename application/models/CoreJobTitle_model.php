@@ -11,7 +11,7 @@
 		{
 			$this->db->select('core_job_title.job_title_id, core_job_title.job_title_code, core_job_title.job_title_name, core_job_title.job_title_parent_id');
 			$this->db->from('core_job_title');
-			$this->db->where('core_job_title.data_state', 0);fv
+			$this->db->where('core_job_title.data_state', 0);
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -44,15 +44,29 @@
 			return $result['job_title_top_parent_id'];
 		}
 
-		public function getJobTitleToken($jobtitle_token)
+		public function getJobTitleToken($job_title_token)
 		{	
 			$this->db->select('core_job_title.job_title_token');
 			$this->db->from('core_job_title');
-			$this->db->where('core_job_title.job_title_token', $jobtitle_token);
+			$this->db->where('core_job_title.job_title_token', $sjob_title_token);
 			$result = $this->db->get()->num_rows();
 			return$result;
 		}
+
+		public function getJobTitleID($created_id){
+			$this->db->select('core_job_title.job_title_id');
+			$this->db->from('core_job_title');
+			$this->db->where('core_job_title.created_id', $created_id);
+			$this->db->order_by('core_job_title.job_title_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['job_title_id'];
+		}
 		
+		public function insertCoreJobTitle($data){
+			return $this->db->insert('core_job_title',$data);
+		}
+
 		public function saveNewCoreJobTitle($data){
 			$row= $this->getTop($data['job_title_parent_id']);
 			if ($row==''){
@@ -95,13 +109,13 @@
 			return $result['job_title_has_child'];
 		}
 		
-		public function deleteCoreJobTitle($id){
-			$this->db->where("job_title_id",$id);
-			$query = $this->db->update($this->table, array("data_state"=>1));
+		public function deleteCoreJobTitle($data){
+			$this->db->where("core_job_title.job_title_id", $data['job_title_id']);
+			$query = $this->db->update('core_job_title', $data);
 			if($query){
-			return true;
+				return true;
 			}else{
-			return false;
+				return false;
 			}
 		}
 	}

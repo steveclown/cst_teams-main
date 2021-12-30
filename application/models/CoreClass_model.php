@@ -15,8 +15,27 @@
 			return $this->db->get()->result_array();
 		}
 		
-		public function saveNewCoreClass($data){
+		public function getClassToken($class_token)
+		{	
+			$this->db->select('core_class.class_token');
+			$this->db->from('core_class');
+			$this->db->where('core_class.class_token', $class_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+		
+		public function insertCoreClass($data){
 			return $this->db->insert('core_class',$data);
+		}
+
+		public function getClassID($created_id){
+			$this->db->select('core_class.class_id');
+			$this->db->from('core_class');
+			$this->db->where('core_class.created_id', $created_id);
+			$this->db->order_by('core_class.class_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['class_id'];
 		}
 		
 		public function getCoreClass_Detail($ClassID){
@@ -46,9 +65,9 @@
 			return $result->result_array();
 		}
 		
-		public function saveEditCoreClass($data){
-			$this->db->where('class_id',$data['class_id']);
-			$query = $this->db->update($this->table, $data);
+		public function updateCoreClass($data){
+			$this->db->where('core_class.class_id', $data['class_id']);
+			$query = $this->db->update('core_class', $data);
 			if($query){
 				return true;
 			}else{
@@ -56,13 +75,13 @@
 			}
 		}
 		
-		public function deleteCoreClass($ClassID){
-			$this->db->where("class_id",$ClassID);
-			$query = $this->db->update($this->table, array("data_state"=>'1'));
+		public function deleteCoreClass($data){
+			$this->db->where("core_class.class_id", $data['class_id']);
+			$query = $this->db->update('core_class', $data);
 			if($query){
-			return true;
+				return true;
 			}else{
-			return false;
+				return false;
 			}
 		}
 	

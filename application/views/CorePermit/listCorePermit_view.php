@@ -63,7 +63,7 @@
 						<tbody>
 							<?php
 								$no = 1;
-								foreach ($CorePermit as $key=>$val){
+								foreach ($corepermit as $key=>$val){
 									
 									echo"
 										<tr>		

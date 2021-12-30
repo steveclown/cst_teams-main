@@ -62,7 +62,7 @@
 						<tbody>
 							<?php
 								$no=1;
-								foreach ($CoreLate as $key=>$val){
+								foreach ($corelate as $key=>$val){
 									
 									echo"
 										<tr>		

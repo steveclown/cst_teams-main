@@ -55,8 +55,22 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('CoreAnnualLeave/processAddCoreAnnualLeave',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('AddAnnualLeave');
+										echo form_open('annualleave/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreAnnualLeave-'.$unique['unique']);
+										$annual_leave_token	= $this->session->userdata('CoreAnnualLeaveToken-'.$unique['unique']);
+
+										if(empty($data['annual_leave_code'])){
+											$data['annual_leave_code'] 					= '';
+										}
+
+										if(empty($data['annual_leave_name'])){
+											$data['annual_leave_name'] 					= '';
+										}
 									?>
 									<div class = "row">
 										<div class="col-md-6">
@@ -85,6 +99,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="annual_leave_days" id="annual_leave_days" value="<?php echo $data['annual_leave_days']?>" class="form-control">
+												
+												<input type="hidden" name="annual_leave_token" id="annual_leave_token" class="form-control" value="<?php echo $annual_leave_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<span class="help-block">
 													Please input only numbers.
 												</span>

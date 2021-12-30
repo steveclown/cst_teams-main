@@ -1,8 +1,8 @@
 <script>
 	function ulang(){
-		document.getElementById("warning_code").value = "<?php echo $CoreWarning['warning_code'] ?>";
-		document.getElementById("warning_name").value = "<?php echo $CoreWarning['warning_name'] ?>";
-		document.getElementById("warning_id").value = "<?php echo $CoreWarning['warning_id'] ?>";
+		document.getElementById("warning_code").value = "<?php echo $corewarning['warning_code'] ?>";
+		document.getElementById("warning_name").value = "<?php echo $corewarning['warning_name'] ?>";
+		document.getElementById("warning_id").value = "<?php echo $corewarning['warning_id'] ?>";
 	}
 	
 	function warningcode(inputname) {
@@ -19,7 +19,7 @@
 	
 	function warningname(inputname) {
 		//var letter = /^[0-9a-zA-Z]+$+ +/;  
-		var letter = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/
+		var letter = /^[0-9a-zA-Z]+$/; 
 		if(inputname.value.match(letter)){
 			return true;
 		}else{
@@ -62,7 +62,7 @@
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					<a href="<?php echo base_url();?>CoreWarning/editCoreWarning/<?php echo $CoreWarning['warning_id'];?>">
+					<a href="<?php echo base_url();?>CoreWarning/editCoreWarning/<?php echo $corewarning['warning_id'];?>">
 						Edit Peringatan
 					</a>
 					<i class="fa fa-angle-right"></i>
@@ -99,7 +99,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="warning_code" id="warning_code" onChange="warningcode(warning_code);" value="<?php echo $CoreWarning['warning_code'];?>" class="form-control">
+									<input type="text" name="warning_code" id="warning_code" onChange="warningcode(warning_code);" value="<?php echo $corewarning['warning_code'];?>" class="form-control">
 									<span class="help-block">
 										 mohon hanya diisi karakter huruf dan angka.
 									</span>
@@ -108,7 +108,7 @@ $this->session->unset_userdata('message');
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo $CoreWarning['warning_name'];?>" class="form-control">
+									<input type="text" name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo $corewarning['warning_name'];?>" class="form-control">
 									<label class="control-label">Nama Peringatan<span class="required">*</span></label>
 								</div>
 							</div>
@@ -117,12 +117,12 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-12">
 								<div class="form-group form-md-line-input">
-									<textarea rows="3" name="warning_remark" id="warning_remark" class="form-control" placeholder="Remark"><?php echo $CoreWarning['warning_remark'];?></textarea>		
+									<textarea rows="3" name="warning_remark" id="warning_remark" class="form-control" placeholder="Remark"><?php echo $corewarning['warning_remark'];?></textarea>		
 									<label class="control-label">Keterangan</label>
 								</div>
 							</div>
 						</div>
-						<input type="hidden" name="warning_id" value="<?php echo $CoreWarning['warning_id']; ?>"/>
+						<input type="hidden" name="warning_id" value="<?php echo $corewarning['warning_id']; ?>"/>
 					</div>
 					<div class="form-actions right">
 						<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>

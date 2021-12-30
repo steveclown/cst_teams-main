@@ -53,8 +53,22 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('CoreGrade/processAddCoreGrade',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('addgrade');
+										echo form_open('grade/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreGrade-'.$unique['unique']);
+										$grade_token	= $this->session->userdata('CoreGradeToken-'.$unique['unique']);
+
+										if(empty($data['grade_code'])){
+											$data['grade_code'] 					= '';
+										}
+
+										if(empty($data['grade_name'])){
+											$data['grade_name'] 					= '';
+										}
 									?>
 									<div class = "row">
 										<div class="col-md-6">
@@ -73,6 +87,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="grade_name" id="grade_name" value="<?php echo $data['grade_name'];?>" class="form-control" >
+												
+												<input type="hidden" name="grade_token" id="grade_token" class="form-control" value="<?php echo $grade_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<label class="control-label">Nama Mutu
 													<span class="required">
 														*

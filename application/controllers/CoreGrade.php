@@ -1,7 +1,13 @@
 <?php
-	Class CoreGrade extends CI_Controller{
+	Class CoreGrade extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'grade';
+
+			$this->cekLogin();
+			$this->accessMenu($menu); 
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreGrade_model');
 			$this->load->helper('sistem');
@@ -11,110 +17,168 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreGrade']		= $this->CoreGrade_model->getCoreGrade();
-			$data['Main_view']['content']		= 'CoreGrade/listCoreGrade_view';
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addCoreGrade-'.$unique['unique']);
+			$this->session->unset_userdata('CoreGradeToken-'.$unique['unique']);
+
+			$data['main_view']['coregrade']		= $this->CoreGrade_model->getCoreGrade();
+			$data['main_view']['content']			= 'CoreGrade/ListCoreGrade_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function addCoreGrade(){
-			$data['Main_view']['content']		= 'CoreGrade/formaddCoreGrade_view';
+			$unique 		= $this->session->userdata('unique');
+			$grade_token	= $this->session->userdata('CoreGradeToken-'.$unique['unique']);
+
+			if(empty($grade_token)){
+				$grade_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreGradeToken-'.$unique['unique'], $grade_token);
+			}
+
+			$data['main_view']['content']		= 'CoreGrade/FormAddCoreGrade_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function processAddCoreGrade(){
+			$auth 		= $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
 			$data = array(
 				'grade_code' 		=> $this->input->post('grade_code',true),
 				'grade_name' 		=> $this->input->post('grade_name',true),
 				'grade_remark' 		=> $this->input->post('grade_remark',true),
+				'grade_token' 		=> $this->input->post('grade_token',true),
+				'created_id' 		=> $auth['user_id'],
+				'created_on' 		=> date("Y-m-d H:i:s"),
 				'data_state'		=> 0
 			);
+
+			$grade_token 			= $this->CoreGrade_model->getGradeToken($data['grade_token']);
 			
 			$this->form_validation->set_rules('grade_code', 'Grade Code', 'required');
 			$this->form_validation->set_rules('grade_name', 'Grade Name', 'required');
-			$this->form_validation->set_rules('grade_remark', 'Remark', 'required');
-			
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreGrade_model->saveNewCoreGrade($data)){
-					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.CoreGrade.processaddCoreGrade',$auth['username'],'Add new CoreGrade');
-					$msg = "<div class='alert alert-success'>                
-								Add Data Grade Successfully
-							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-					$this->session->set_userdata('message',$msg);
-					$this->session->unset_userdata('addCoreGrade');
-					redirect('CoreGrade/addCoreGrade');
-				}else{
+				if ($grade_token == 0){
+					if($this->CoreGrade_model->insertCoreGrade($data)){
+						$grade_id 		= $this->CoreGrade_model->getGradeID($data['grade_id']);
+
+
+						$this->fungsi->set_log($auth['user_id'], $grade_id, '3122', 'Application.CoreGrade.processAddCoreGrade', $grade_id, 'Add New Core Grade');
+
+						$msg = "<div class='alert alert-success'>                
+									Tambah Data Grade Baru Berhasil
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->unset_userdata('addCoreGrade-'.$unique['unique']);
+						$this->session->unset_userdata('CoreGradeToken-'.$unique['unique']);
+						redirect('grade/add');
+					}else{
+						$msg = "<div class='alert alert-danger'>                
+									Tambah Data Grade Baru Gagal
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->set_userdata('addCoreGrade',$data);
+						redirect('grade/add');
+					}
+				} else {
 					$msg = "<div class='alert alert-danger'>                
-								Add Data Grade UnSuccessful
+						Tambah Data Grade Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					$this->session->set_userdata('addCoreGrade',$data);
-					redirect('CoreGrade/addCoreGrade');
+					redirect('grade/add');
 				}
 			}else{
 				$this->session->set_userdata('addCoreGrade',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreGrade/addCoreGrade');
+				redirect('grade/add');
 			}
 		}
 		
 		function editCoreGrade(){
-			$data['Main_view']['CoreGrade']	= $this->CoreGrade_model->getCoreGrade_Detail($this->uri->segment(3));
-			$data['Main_view']['content']	= 'CoreGrade/formeditCoreGrade_view';
+			$grade_id 							= $this->uri->segment(3);
+			$data['main_view']['coregrade']		= $this->CoreGrade_model->getCoreGrade_Detail($grade_id);
+			$data['main_view']['content']		= 'CoreGrade/FormEditCoreGrade_view';
 			$this->load->view('MainPage_view',$data);
+		}
+
+		public function reset_edit(){
+			$unique 	= $this->session->userdata('unique');
+			$grade_id	= $this->uri->segment(3);
+
+			redirect('grade/edit/'.$grade_id);
 		}
 		
 		function processEditCoreGrade(){
+			$auth 		= $this->session->userdata('auth');
+
 			$data = array(
-				'grade_id' 			=> $this->input->post('grade_id',true),
+				'grade_id'	 		=> $this->input->post('grade_id',true),
 				'grade_code' 		=> $this->input->post('grade_code',true),
 				'grade_name' 		=> $this->input->post('grade_name',true),
-				'grade_remark' 		=> $this->input->post('grade_remark',true),
-				'data_state'		=> 0
+				'updated_id' 		=> $auth['user_id'],
+				'updated_on' 		=> date("Y-m-d H:i:s"),
 			);
+			
 			$this->form_validation->set_rules('grade_code', 'Grade Code', 'required');
 			$this->form_validation->set_rules('grade_name', 'Grade Name', 'required');
-			$this->form_validation->set_rules('grade_remark', 'Remark', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreGrade_model->saveEditCoreGrade($data)==true){
-					$auth 	= $this->session->userdata('auth');
-					// $this->fungsi->set_log($auth['username'],'1077','Application.CoreGrade.edit',$auth['username'],'Edit CoreGrade');
-					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['CoreGrade_id']);
+				if($this->CoreGrade_model->updateCoreGrade($data)==true){
+					
+					$this->fungsi->set_log($auth['user_id'], $data['grade_id'], '3122', 'Application.CoreGrade.processEditCoreGrade', $data['grade_id'], 'Edit Core Grade');
+
+
 					$msg = "<div class='alert alert-success'>                
-								Edit Grade Successfully
+								Edit Data Grade Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreGrade/editCoreGrade/'.$data['grade_id']);
+					redirect('grade/edit/'.$data['grade_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
-								Edit Grade UnSuccessful
+								Edit Data Grade Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreGrade/editCoreGrade/'.$data['grade_id']);
+					redirect('grade/edit/'.$data['grade_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreGrade/editCoreGrade/'.$data['grade_id']);
+				redirect('grade/edit/'.$data['grade_id']);
 			}
 		}
 		
+		
 		function deleteCoreGrade(){
-			if($this->CoreGrade_model->deleteCoreGrade($this->uri->segment(3))){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreGrade.delete',$auth['username'],'Delete CoreGrade');
+			$auth 		= $this->session->userdata('auth');
+			$grade_id 	= $this->uri->segment(3);
+
+			$data = array(
+				'grade_id' 			=> $grade_id,
+				'deleted_id' 		=> $auth['user_id'],
+				'deleted_on' 		=> date("Y-m-d H:i:s"),
+				'data_state'		=> 1
+			);
+
+			if($this->CoreGrade_model->deleteCoreGrade($data)){
+				
+				$this->fungsi->set_log($auth['user_id'], $data['grade_id'], '3122', 'Application.CoreGrade.deleteCoreGrade', $data['grade_id'], 'Delete Core Grade');
+
 				$msg = "<div class='alert alert-success'>                
-							Delete Grade Successfully
+							Hapus Data Grade Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreGrade');
+				redirect('grade');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-							Delete Grade Successfully
+					Hapus Data Grade Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreGrade');
+				redirect('grade');
 			}
 		}
 	}

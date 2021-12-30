@@ -1,7 +1,8 @@
 <script>
-	function reset_session(){
-	 	/*alert('asd');*/
-		document.location = base_url+"hroemployeeemployment/reset_session";
+	base_url = '<?php echo base_url()?>';
+
+	function reset_add(){
+		document.location = base_url+"hroemployeeemployment/reset_add/<?php echo $hroemployeedata['employee_id']?>";
 	}
 
 	function function_elements_add(name, value){
@@ -25,13 +26,20 @@
 			}
 		});
 	}
+
 </script>
-
-
 <?php 
-	date_default_timezone_set('Asia/Jakarta');
-	echo form_open('hroemployeeemployment/processAddHROEmployeeEmployment',array('id' => 'myform', 'class' => 'horizontal-form')); 
+	$year_now 	=	date('Y');
+	if(!is_array($sesi)){
+		$sesi['month']			= date('m');
+		$sesi['year']			= $year_now;
+	}
+	
+	for($i=($year_now-2); $i<($year_now+2); $i++){
+		$year[$i] = $i;
+	} 
 ?>
+
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<div class = "page-bar">
 						<ul class="page-breadcrumb">
@@ -43,21 +51,23 @@
 							</li>
 							<li>
 								<a href="<?php echo base_url();?>hroemployeeemployment">
-									Employment List
+									Employee Employment List
 								</a>
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>hroemployeeemployment/AddHROEmployeeEmployment/<?php echo $hroemployeedata['employee_id']?>">
-									Add Employee Data
+								<a href="<?php echo base_url();?>hroemployeeemployment/addHROEmployeeEmployment/<?php echo $hroemployeedata['employee_id']?>">
+									Add Employee Employment
 								</a>
 								<i class="fa fa-angle-right"></i>
 							</li>
 						</ul>
 					</div>
 					<h1 class="page-title">
-						Form Add Employee Employment - <?php echo $hroemployeedata['employee_name']?> -
+						Form Add Employee Employment - <?php echo $hroemployeedata['employee_name'];?> -
 					</h1>
+					<!-- END PAGE TITLE & BREADCRUMB-->
+			
 
 <div class="row">
 	<div class="col-md-12">
@@ -71,8 +81,8 @@
 					<a href="javascript:;" class='expand'></a>
 				</div>
 			</div>
-			<div class="portlet-body display-hide">
-				<div class="form-body form">
+			<div class="portlet-body display-hide form">
+				<div class="form-body ">
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
@@ -83,7 +93,7 @@
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->hroemployeeemployment_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -92,14 +102,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->hroemployeeemployment_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->hroemployeeemployment_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -109,92 +119,119 @@
 		</div>
 	</div>
 </div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="portlet box blue">
+			<div class="portlet-title">
+				<div class="caption">
+					Form Add
+				</div>
+				<div class="actions">
+					<a href="<?php echo base_url();?>hroemployeeemployment" class="btn btn-default sm">
+						<i class="fa fa-angle-left"></i>
+						Back
+					</a>
+				</div>
+			</div>
+			<div class="portlet-body form">
+				<div class="form-body">
+					<div class="tabbable-line boxless tabbable-reversed ">
+						<ul class="nav nav-tabs">
+							<?php
+								if($data['active_tab']=="" || $data['active_tab']=="employeeappraisal"){
+									$tabemployeeappraisal = "<li class='active'><a href='#tabemployeeappraisal' name='employeeappraisal' data-toggle='tab' onClick='function_state_add(this.name);'><b>Employee Appraisal</b></a></li>";
+								}else{
+									$tabemployeeappraisal = "<li><a href='#tabemployeeappraisal' data-toggle='tab' name='employeeappraisal' onClick='function_state_add(this.name);'><b>Employee Appraisal</b></a></li>";
+								}
 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="portlet box blue">
-							<div class="portlet-title">
-								<div class="caption">
-									Form Add
-								</div>
-								<div class="actions">
-									<a href="<?php echo base_url();?>hroemployeeemployment" class="btn btn-default sm">
-										<i class="fa fa-angle-left"></i>
-										Back
-									</a>
-								</div>
-							</div>
-							<div class="portlet-body form">
-								<div class="form-body">
+								/*if($data['active_tab']=="employeepermit"){
+									$tabemployeepermit = "<li class='active'><a href='#tabemployeepermit' name='employeepermit' data-toggle='tab' onClick='function_state_add(this.name)'><b>Employee Permit</b></a></li>";
+								}else{
+									$tabemployeepermit = "<li><a href='#tabemployeepermit' data-toggle='tab' name='employeepermit' onClick='function_state_add(this.name)'><b>Employee Permit</b></a></li>";
+								}
 
-										<div class = "row">
-											<div class = "col-md-6">
-												<div class="form-group form-md-line-input">
-													<?php echo form_dropdown('employee_employment_working_status', $workingstatus ,set_value('employee_employment_working_status',$hroemployeedata['employee_employment_working_status']),'id="employee_employment_working_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
-													<label class="control-label">Working Status</label>
-												</div>
-											</div>
+								if($data['active_tab']=="employeeabsence"){
+									$tabemployeeabsence = "<li class='active'><a href='#tabemployeeabsence' name='employeeabsence' data-toggle='tab' onClick='function_state_add(this.name)'><b>Employee Absence</b></a></li>";
+								}else{
+									$tabemployeeabsence = "<li><a href='#tabemployeeabsence' data-toggle='tab' name='employeeabsence' onClick='function_state_add(this.name)'><b>Employee Absence</b></a></li>";
+								}
 
-											<div class = "col-md-6">
-												<div class="form-group form-md-line-input">
-													<?php echo form_dropdown('employee_employment_overtime_status', $overtimestatus ,set_value('employee_employment_overtime_status',$hroemployeedata['employee_employment_overtime_status']),'id="employee_employment_overtime_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
-													<label class="control-label">Overtime Status</label>
-												</div>
-											</div>
-										</div>
+								if($data['active_tab']=="employeeovertime"){
+									$tabemployeeovertime = "<li class='active'><a href='#tabemployeeovertime' name='employeeovertime' data-toggle='tab' onClick='function_state_add(this.name)'><b>Employee Overtime</b></a></li>";
+								}else{
+									$tabemployeeovertime = "<li><a href='#tabemployeeovertime' name='employeeovertime' data-toggle='tab' onClick='function_state_add(this.name)'><b>Employee Overtime</b></a></li>";
+								}
 
-										<div class = "row">
-											<div class = "col-md-6">
-												<div class="form-group form-md-line-input">
-													<?php echo form_dropdown('employee_employment_status', $employeestatus ,set_value('employee_employment_status',$hroemployeedata['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
-													<label class="control-label">Employment Status</label>
-												</div>
-											</div>
+								if($data['active_tab']=="employeeleave"){
+									$tabemployeeleave = "<li class='active'><a href='#tabemployeeleave' name='employeeleave' data-toggle='tab' onClick='function_state_add(this.name)'><b>Employee Leave</b></a></li>";
+								}else{
+									$tabemployeeleave = "<li><a href='#tabemployeeleave' name='employeeleave' data-toggle='tab' onClick='function_state_add(this.name)'><b>Employee Leave</b></a></li>";
+								}*/
+								
+								echo $tabemployeeappraisal;
+								/*echo $tabemployeepermit;
+								echo $tabemployeeabsence;
+								echo $tabemployeeovertime;
+								echo $tabemployeeleave;*/
 
-											<div class = "col-md-6">
-												<div class="form-group form-md-line-input">
-													<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_hire_date" id="employee_hire_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata['employee_hire_date']);?>"/>
-													<label class="control-label">Hire Date
-														<span class="required">
-															*
-														</span>
-													</label>
-												</div>
-											</div>
-										</div>
+							?>
+						</ul>
+						<div class="tab-content">
+							<?php
+								if($data['active_tab']=="" || $data['active_tab']=="employeeappraisal"){
+									$statemployeeappraisal = "active";
+								}else{
+									$statemployeeappraisal = "";
+								}
 
-										<div class = "row">
-											<div class = "col-md-6">
-												<div class="form-group form-md-line-input">
-													<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_employment_status_date" id="employee_employment_status_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata['employee_employment_status_date']);?>"/>
-													<label class="control-label">Employment Status Date
-														<span class="required">
-															*
-														</span>
-													</label>
-												</div>
-											</div>
+								/*if($data['active_tab']=="employeepermit"){
+									$statemployeepermit = "active";
+								}else{
+									$statemployeepermit = "";
+								}
 
-											<div class = "col-md-6">
-												<div class="form-group form-md-line-input">
-													<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_employment_status_duedate" id="employee_employment_status_duedate" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata['employee_employment_status_duedate']);?>"/>
-													<label class="control-label">Employement Status Due Date
-														<span class="required">
-															*
-														</span>
-													</label>
-												</div>
-											</div>
-										</div>
-								</div>
-								<div class="form-actions right">
-									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Reset</button>
-									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Save</button>
-								</div>
-							</div>
+								if($data['active_tab']=="employeeabsence"){
+									$statemployeeabsence = "active";
+								}else{
+									$statemployeeabsence = "";
+								}
+
+								if($data['active_tab']=="employeeovertime"){
+									$statemployeeovertime = "active";
+								}else{
+									$statemployeeovertime = "";
+								}
+
+								if($data['active_tab']=="employeeleave"){
+									$statemployeeleave = "active";
+								}else{
+									$statemployeeleave = "";
+								}*/
+								
+								echo"<div class='tab-pane ".$statemployeeappraisal."' id='tabemployeeappraisal'>";
+									$this->load->view("hroemployeeemployment/formaddhroemployeeappraisal_view");
+								echo"</div>";
+
+								/*echo"<div class='tab-pane ".$statemployeepermit."' id='tabemployeepermit'>";
+									$this->load->view("hroemployeeemployment/formaddhroemployeepermit_view");
+								echo"</div>";
+
+								echo"<div class='tab-pane ".$statemployeeabsence."' id='tabemployeeabsence'>";
+									$this->load->view("hroemployeeemployment/formaddhroemployeeabsence_view");
+								echo"</div>";
+
+								echo"<div class='tab-pane ".$statemployeeovertime."' id='tabemployeeovertime'>";
+									$this->load->view("hroemployeeemployment/formaddpayrollovertimerequest_view");
+								echo"</div>";
+
+								echo"<div class='tab-pane ".$statemployeeleave."' id='tabemployeeleave'>";
+									$this->load->view("hroemployeeemployment/formaddpayrollleaverequest_view");
+								echo"</div>";*/
+							?>
 						</div>
 					</div>
 				</div>
-
-<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $hroemployeedata['employee_id']?>" class="form-control" readonly>
-<?php echo form_close(); ?>
+			</div>
+		</div>
+	</div>
+</div>

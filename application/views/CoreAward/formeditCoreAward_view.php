@@ -1,8 +1,8 @@
 <script>
 	function ulang(){
-		document.getElementById("award_code").value = "<?php echo $CoreAward['award_code'] ?>";
-		document.getElementById("award_name").value = "<?php echo $CoreAward['award_name'] ?>";
-		document.getElementById("award_id").value = "<?php echo $CoreAward['award_id'] ?>";
+		document.getElementById("award_code").value = "<?php echo $coreaward['award_code'] ?>";
+		document.getElementById("award_name").value = "<?php echo $coreaward['award_name'] ?>";
+		document.getElementById("award_id").value = "<?php echo $coreaward['award_id'] ?>";
 	}
 	
 	function warningawardcode(inputname) {
@@ -19,7 +19,7 @@
 	
 	function warningawardname(inputname) {
 		//var letter = /^[0-9a-zA-Z]+$+ +/;  
-		var letter = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/
+		var letter = /^[0-9a-zA-Z]+$/;
 		if(inputname.value.match(letter)){
 			return true;
 		}else{
@@ -62,7 +62,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreAward/editCoreAward/<?php echo $CoreAward['award_id'];?>">
+								<a href="<?php echo base_url();?>CoreAward/editCoreAward/<?php echo $coreaward['award_id'];?>">
 									Edit Penghargaan
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -98,7 +98,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="award_code" id="award_code" onChange="warningawardcode(award_code);" value="<?php echo $CoreAward['award_code'];?>" class="form-control" >
+									<input type="text" name="award_code" id="award_code" onChange="warningawardcode(award_code);" value="<?php echo $coreaward['award_code'];?>" class="form-control" >
 									<span class="help-block">
 										Mohon hanya isi dengan karakter huruf dan angka.
 									</span>
@@ -108,7 +108,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo $CoreAward['award_name'];?>" class="form-control" >
+									<input type="text" name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo $coreaward['award_name'];?>" class="form-control" >
 									<label class="control-label">Nama Penghargaan<span class="required">*</span></label>
 								</div>
 							</div>
@@ -117,12 +117,12 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-12">
 								<div class="form-group form-md-line-input">
-									<textarea rows="3" name="award_remark" id="award_remark" class="form-control" ><?php echo $CoreAward['award_remark'];?></textarea>		
+									<textarea rows="3" name="award_remark" id="award_remark" class="form-control" ><?php echo $coreaward['award_remark'];?></textarea>		
 									<label class="control-label">Keterangan<span class="required">*</span></label>
 								</div>
 							</div>
 						</div>
-						<input type="hidden" name="award_id" value="<?php echo $CoreAward['award_id']; ?>"/>
+						<input type="hidden" name="award_id" value="<?php echo $coreaward['award_id']; ?>"/>
 					</div>
 					<div class="form-actions right">
 						<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>

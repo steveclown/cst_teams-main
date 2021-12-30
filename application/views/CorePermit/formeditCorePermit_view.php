@@ -1,9 +1,9 @@
 <script>
 	function ulang(){
-		document.getElementById("permit_code").value 	= "<?php echo $CorePermit['permit_code'] ?>";
-		document.getElementById("permit_name").value 	= "<?php echo $CorePermit['permit_name'] ?>";
-		document.getElementById("permit_id").value 		= "<?php echo $CorePermit['permit_id'] ?>";
-		document.getElementById("deduction_id").value 	= "<?php echo $CorePermit['deduction_id'] ?>";
+		document.getElementById("permit_code").value 	= "<?php echo $corepermit['permit_code'] ?>";
+		document.getElementById("permit_name").value 	= "<?php echo $corepermit['permit_name'] ?>";
+		document.getElementById("permit_id").value 		= "<?php echo $corepermit['permit_id'] ?>";
+		document.getElementById("deduction_id").value 	= "<?php echo $corepermit['deduction_id'] ?>";
 	}
 	
 	function function_elements_add(name, value){
@@ -44,7 +44,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CorePermit/editCorePermit/<?php echo $CorePermit['permit_id']?>">
+								<a href="<?php echo base_url();?>CorePermit/editCorePermit/<?php echo $corepermit['permit_id']?>">
 									Edit izin
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -80,7 +80,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<?php echo form_dropdown('deduction_id', $corededuction, $CorePermit['deduction_id'], 'id ="deduction_id", class="form-control select2me"  onChange="function_elements_add(this.name, this.value);"');?>
+												<?php echo form_dropdown('deduction_id', $corededuction, $corepermit['deduction_id'], 'id ="deduction_id", class="form-control select2me"  onChange="function_elements_add(this.name, this.value);"');?>
 												<label class="control-label ">Nama Deduksi
 													<span class="required">
 														*
@@ -93,7 +93,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="permit_code" id="permit_code" value="<?php echo $CorePermit['permit_code']?>" class="form-control" >
+												<input type="text" name="permit_code" id="permit_code" value="<?php echo $corepermit['permit_code']?>" class="form-control" >
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -107,7 +107,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="permit_name" id="permit_name" value="<?php echo $CorePermit['permit_name']?>" class="form-control">
+												<input type="text" name="permit_name" id="permit_name" value="<?php echo $corepermit['permit_name']?>" class="form-control">
 												<label class="control-label">Nama Izin
 													<span class="required">
 														*
@@ -121,7 +121,7 @@
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="permit_id" value="<?php echo $CorePermit['permit_id']; ?>"/>
+								<input type="hidden" name="permit_id" value="<?php echo $corepermit['permit_id']; ?>"/>
 								<?php echo form_close(); ?>
 							</div>
 						</div>

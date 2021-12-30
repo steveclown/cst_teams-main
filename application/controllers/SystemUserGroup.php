@@ -11,8 +11,8 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['systemusergroup']		= $this->SystemUserGroup_model->getSystemUserGroup();
-			$data['Main_view']['content']				= 'SystemUserGroup/ListSystemUserGroup_view';
+			$data['main_view']['systemusergroup']		= $this->SystemUserGroup_model->getSystemUserGroup();
+			$data['main_view']['content']				= 'SystemUserGroup/ListSystemUserGroup_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		

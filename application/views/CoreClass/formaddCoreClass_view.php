@@ -56,9 +56,23 @@
 							</div>
 							<div class="portlet-body form">
 								<div class="form-body">
-									<?php 
-										echo form_open('CoreClass/processAddCoreClass',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('addclass');
+								<?php 
+										echo form_open('class/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreClass-'.$unique['unique']);
+										$class_token	= $this->session->userdata('CoreClassToken-'.$unique['unique']);
+
+										if(empty($data['class_code'])){
+											$data['class_code'] 					= '';
+										}
+
+										if(empty($data['class_name'])){
+											$data['class_name'] 					= '';
+										}
 									?>
 									<div class = "row">
 										<div class="col-md-6">
@@ -115,6 +129,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $data['standard_salary_range2']?>" class="form-control">
+												
+												<input type="hidden" name="class_token" id="class_token" class="form-control" onChange="function_elements_add(this.name, this.value);" value="<?php echo $class_token?>">
+												
 												<span class="help-block">
 													Diisi angka
 												</span>

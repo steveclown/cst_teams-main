@@ -12,7 +12,7 @@
 		
 		public function index(){
 			$auth = $this->session->userdata('auth');
-			$data['Main_view']['content']					= 'HroEmployeeAttendance/formaddHroEmployeeAttendance_view';
+			$data['main_view']['content']					= 'HroEmployeeAttendance/formaddHroEmployeeAttendance_view';
 			$this->load->view('MainPage_view',$data);
 		}
 

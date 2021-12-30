@@ -1,9 +1,9 @@
 <script>
 	function ulang(){
-		document.getElementById("late_code").value 		= "<?php echo $CoreLate['late_code'] ?>";
-		document.getElementById("late_name").value 		= "<?php echo $CoreLate['late_name'] ?>";
-		document.getElementById("late_id").value 		= "<?php echo $CoreLate['late_id'] ?>";
-		document.getElementById("deduction_id").value 	= "<?php echo $CoreLate['deduction_id'] ?>";
+		document.getElementById("late_code").value 		= "<?php echo $corelate['late_code'] ?>";
+		document.getElementById("late_name").value 		= "<?php echo $corelate['late_name'] ?>";
+		document.getElementById("late_id").value 		= "<?php echo $corelate['late_id'] ?>";
+		document.getElementById("deduction_id").value 	= "<?php echo $corelate['deduction_id'] ?>";
 	}
 	
 	function function_elements_add(name, value){
@@ -44,7 +44,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreLate/editCoreLate/<?php echo $CoreLate['late_id']?>">
+								<a href="<?php echo base_url();?>CoreLate/editCoreLate/<?php echo $corelate['late_id']?>">
 									Edit Terlambat
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -81,7 +81,7 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<?php
-													echo form_dropdown('deduction_id', $corededuction,set_value('deduction_id',$CoreLate['deduction_id']),'id="deduction_id" class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
+													echo form_dropdown('deduction_id', $corededuction,set_value('deduction_id',$corelate['deduction_id']),'id="deduction_id" class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 												?>
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
@@ -98,7 +98,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="late_code" id="late_code" value="<?php echo $CoreLate['late_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" name="late_code" id="late_code" value="<?php echo $corelate['late_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -112,7 +112,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="late_name" id="late_name" value="<?php echo $CoreLate['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" name="late_name" id="late_name" value="<?php echo $corelate['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Terlambat
 													<span class="required">
 														*
@@ -126,7 +126,7 @@
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="late_id" value="<?php echo $CoreLate['late_id']; ?>"/>
+								<input type="hidden" name="late_id" value="<?php echo $corelate['late_id']; ?>"/>
 								<?php echo form_close(); ?>
 							</div>
 						</div>

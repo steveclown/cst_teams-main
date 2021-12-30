@@ -52,9 +52,23 @@ $this->session->unset_userdata('message');
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-									echo form_open('CoreExpertise/processAddCoreExpertise',array('class' => 'horizontal-form'));
-									$data = $this->session->userdata('addexpertise');
-									 ?>
+										echo form_open('expertise/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreExpertise-'.$unique['unique']);
+										$expertise_token	= $this->session->userdata('CoreExpertiseToken-'.$unique['unique']);
+
+										if(empty($data['expertise_code'])){
+											$data['expertise_code'] 					= '';
+										}
+
+										if(empty($data['expertise_name'])){
+											$data['expertise_name'] 					= '';
+										}
+									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
@@ -73,6 +87,7 @@ $this->session->unset_userdata('message');
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$data['expertise_name']);?>"/>
+												<input type="hidden" name="expertise_token" id="expertise_token" class="form-control" value="<?php echo $expertise_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Keahlian
 													<span class="required">
 														*

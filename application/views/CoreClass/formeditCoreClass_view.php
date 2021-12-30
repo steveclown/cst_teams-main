@@ -1,11 +1,11 @@
 <script>
 function ulang(){
-	document.getElementById("class_code").value = "<?php echo $CoreClass['class_code'] ?>";
-	document.getElementById("class_name").value = "<?php echo $CoreClass['class_name'] ?>";
-	document.getElementById("grade_id").value = "<?php echo $CoreClass['grade_id'] ?>";
-	document.getElementById("standard_salary_range1").value = "<?php echo $CoreClass['standard_salary_range1'] ?>";
-	document.getElementById("standard_salary_range2").value = "<?php echo $CoreClass['standard_salary_range2'] ?>";
-	document.getElementById("class_remark").value = "<?php echo $CoreClass['class_remark'] ?>";
+	document.getElementById("class_code").value = "<?php echo $coreclass['class_code'] ?>";
+	document.getElementById("class_name").value = "<?php echo $coreclass['class_name'] ?>";
+	document.getElementById("grade_id").value = "<?php echo $coreclass['grade_id'] ?>";
+	document.getElementById("standard_salary_range1").value = "<?php echo $coreclass['standard_salary_range1'] ?>";
+	document.getElementById("standard_salary_range2").value = "<?php echo $coreclass['standard_salary_range2'] ?>";
+	document.getElementById("class_remark").value = "<?php echo $coreclass['class_remark'] ?>";
 }
 </script>
 		
@@ -25,7 +25,7 @@ function ulang(){
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>CoreClass/editCoreClass/<?php echo $CoreClass['class_id'];?>">
+								<a href="<?php echo base_url();?>CoreClass/editCoreClass/<?php echo $coreclass['class_id'];?>">
 									Edit Kelas
 								</a>
 								<i class="fa fa-angle-right"></i>
@@ -63,7 +63,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<?php echo form_dropdown('grade_id', $coregrade, $CoreClass['grade_id'], 'id ="grade_id", class="form-control select2me"');?>
+												<?php echo form_dropdown('grade_id', $coregrade, $coreclass['grade_id'], 'id ="grade_id", class="form-control select2me"');?>
 												<label class="control-label">Nama Tingkatan
 													<span class="required">
 														*
@@ -76,7 +76,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_code" id="class_code" value="<?php echo $CoreClass['class_code'];?>" class="form-control">
+												<input type="text" name="class_code" id="class_code" value="<?php echo $coreclass['class_code'];?>" class="form-control">
 												<span class="help-block">
 													Diisi karakter angka dan huruf
 												</span>
@@ -89,7 +89,7 @@ function ulang(){
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_name" id="class_name" value="<?php echo $CoreClass['class_name']?>" class="form-control">
+												<input type="text" name="class_name" id="class_name" value="<?php echo $coreclass['class_name']?>" class="form-control">
 												<label class="control-label">Nama Kelas
 													<span class="required">
 														*
@@ -103,7 +103,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="standard_salary_range1" id="standard_salary_range1" value="<?php echo $CoreClass['standard_salary_range1']?>" class="form-control">
+												<input type="text" name="standard_salary_range1" id="standard_salary_range1" value="<?php echo $coreclass['standard_salary_range1']?>" class="form-control">
 												<span class="help-block">
 													 Diisi huruf
 												</span>
@@ -117,7 +117,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $CoreClass['standard_salary_range2']?>" class="form-control">
+												<input type="text" name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $coreclass['standard_salary_range2']?>" class="form-control">
 												<span class="help-block">
 													 Diisi huruf
 												</span>
@@ -133,7 +133,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-12">
 											<div class="form-group form-md-line-input">
-												<textarea rows="3" name="class_remark" id="class_remark" class="form-control"><?php echo $CoreClass['class_remark'];?></textarea>
+												<textarea rows="3" name="class_remark" id="class_remark" class="form-control"><?php echo $coreclass['class_remark'];?></textarea>
 												<label class="control-label">Keterangan</label>
 											</div>
 										</div>
@@ -143,7 +143,7 @@ function ulang(){
 									<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 									<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 								</div>
-								<input type="hidden" name="class_id" value="<?php echo $CoreClass['class_id']; ?>"/>
+								<input type="hidden" name="class_id" value="<?php echo $coreclass['class_id']; ?>"/>
 								<?php echo form_close(); ?>
 							</div>
 						</div>

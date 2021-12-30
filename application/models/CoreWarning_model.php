@@ -15,7 +15,26 @@
 			return $this->db->get()->result_array();
 		}
 		
-		public function saveNewCoreWarning($data){
+		public function getWarningToken($warning_token)
+		{	
+			$this->db->select('core_warning.warning_token');
+			$this->db->from('core_warning');
+			$this->db->where('core_warning.warning_token', $warning_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getWarningID($created_id){
+			$this->db->select('core_warning.warning_id');
+			$this->db->from('core_warning');
+			$this->db->where('core_warning.created_id', $created_id);
+			$this->db->order_by('core_warning.warning_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['warning_id'];
+		}
+
+		public function insertCoreWarning($data){
 			return $this->db->insert('core_warning',$data);
 		}
 		
@@ -26,8 +45,8 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreWarning($data){
-			$this->db->where('core_warning.warning_id',$data['warning_id']);
+		public function updateCoreWarning($data){
+			$this->db->where('warning_id',$data['warning_id']);
 			$query = $this->db->update($this->table, $data);
 			if($query){
 				return true;
@@ -36,9 +55,9 @@
 			}
 		}
 		
-		public function deleteCoreWarning($WarningID){
-			$this->db->where("warning_id",$WarningID);
-			$query = $this->db->update($this->table, array("data_state"=>1));
+		public function deleteCoreWarning($data){
+			$this->db->where("core_warning.warning_id", $data['warning_id']);
+			$query = $this->db->update('core_warning', $data);
 			if($query){
 				return true;
 			}else{

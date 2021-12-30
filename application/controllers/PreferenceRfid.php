@@ -12,9 +12,9 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['RfidMode']			= $this->configuration->RfidMode();
-			$data['Main_view']['PreferenceRfid']	= $this->PreferenceRfid_model->getPreferenceRfid();
-			$data['Main_view']['content']			= 'PreferenceRfid/ListPreferenceRfid_view';
+			$data['main_view']['RfidMode']			= $this->configuration->RfidMode();
+			$data['main_view']['PreferenceRfid']	= $this->PreferenceRfid_model->getPreferenceRfid();
+			$data['main_view']['content']			= 'PreferenceRfid/ListPreferenceRfid_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		

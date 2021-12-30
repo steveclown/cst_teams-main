@@ -1,7 +1,13 @@
 <?php
-	Class CoreClass extends CI_Controller{
+	Class CoreClass extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'class';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreClass_model');
 			$this->load->helper('sistem');
@@ -11,122 +17,176 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreClass']		= $this->CoreClass_model->getCoreClass();
-			$data['Main_view']['content']		= 'CoreClass/listCoreClass_view';
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addCoreClass-'.$unique['unique']);
+			$this->session->unset_userdata('CoreClassToken-'.$unique['unique']);
+
+			$data['main_view']['coreclass']		= $this->CoreClass_model->getCoreClass();
+			$data['main_view']['content']		= 'CoreClass/ListCoreClass_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function addCoreClass(){
-			$data['Main_view']['content']		= 'CoreClass/formaddCoreClass_view';
-			$data['Main_view']['coregrade']		= create_double($this->CoreClass_model->getCoreGrade(),'grade_id','grade_name');
+			$unique		= $this->session->userdata('uniqui');
+			$class_token	= $this->session->userdata('CoreClassToken-'.$unique['unique']);
+
+			if(empty($class_token)){
+				$class_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreClassToken-'.$unique['unique'],$class_token);
+			}
+
+			$data['main_view']['coregrade']		= create_double($this->CoreClass_model->getCoreGrade(),'grade_id','grade_name');
+
+			$data['main_view']['content']		= 'CoreClass/FormAddCoreClass_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function processAddCoreClass(){
+			$auth 		= $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
 			$data = array(
-				'class_code' 				=> $this->input->post('class_code',true),
-				'class_name' 				=> $this->input->post('class_name',true),
-				'grade_id' 					=> $this->input->post('grade_id',true),
-				'standard_salary_range1' 	=> $this->input->post('standard_salary_range1',true),
-				'standard_salary_range2' 	=> $this->input->post('standard_salary_range2',true),
-				'class_remark' 				=> $this->input->post('class_remark',true),
-				'data_state'				=> 0
+				'grade_id' 						=> $this->input->post('grade_id',true),
+				'class_code' 					=> $this->input->post('class_code',true),
+				'class_name' 					=> $this->input->post('class_name',true),
+				'standard_salary_range1' 		=> $this->input->post('standard_salary_range1',true),
+				'standard_salary_range2'		=> $this->input->post('standard_salary_range2',true),
+				'class_remark' 					=> $this->input->post('class_remark',true),
+				'class_token' 					=> $this->input->post('class_token',true),
+				'created_id' 					=> $auth['user_id'],
+				'created_on' 					=> date("Y-m-d H:i:s"),
+				'data_state'					=> 0
 			);
+
+			$class_token 			= $this->CoreClass_model->getClassToken($data['class_token']);
 			
-			$this->form_validation->set_rules('class_code', 'Class Code', 'required');
-			$this->form_validation->set_rules('class_name', 'Class Name', 'required');
-			$this->form_validation->set_rules('standard_salary_range1', 'Standard Salary Range 1', 'required');
-			$this->form_validation->set_rules('standard_salary_range2', 'Standard Salary Range 2', 'required');
-			$this->form_validation->set_rules('grade_id', 'Grade Name', 'required');
+			$this->form_validation->set_rules('grade_id', 'Nama Class', 'required');
+			$this->form_validation->set_rules('class_code', 'Kode Cabang', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreClass_model->saveNewCoreClass($data)){
-					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.CoreClass.processaddCoreClass',$auth['username'],'Add New CoreClass');
-					$msg = "<div class='alert alert-success'>                
-								Add Data Class Successfully
+				if ($class_token == 0){
+					if($this->CoreClass_model->insertCoreClass($data)){
+						$class_id 		= $this->CoreClass_model->getClassID($data['class_id']);
+
+
+						$this->fungsi->set_log($auth['user_id'], $class_id, '3122', 'Application.CoreClass.processAddCoreClass', $class_id, 'Add New Core Class');
+
+						$msg = "<div class='alert alert-success'>                
+									Tambah Data Class Baru Berhasil
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->unset_userdata('addCoreClass-'.$unique['unique']);
+						$this->session->unset_userdata('CoreClassToken-'.$unique['unique']);
+						redirect('class/add');
+					}else{
+						$msg = "<div class='alert alert-danger'>                
+									Tambah Data Class Baru Gagal
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->set_userdata('addCoreClass',$data);
+						redirect('class/add');
+					}
+				} else {
+					$msg = "<div class='alert alert-danger'>                
+						Tambah Data Class Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					$this->session->unset_userdata('addCoreClass');
-					redirect('CoreClass/addCoreClass');
-				}else{
-					$msg = "<div CoreClass='alert alert-danger'>                
-								Add Data Class UnSuccessful
-							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-					$this->session->set_userdata('message',$msg);
-					$this->session->set_userdata('addCoreClass',$data);
-					redirect('CoreClass/addCoreClass');
+					redirect('class/add');
 				}
 			}else{
-				$data['password']='';
 				$this->session->set_userdata('addCoreClass',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreClass/addCoreClass');
+				redirect('class/add');
 			}
 		}
 		
 		function editCoreClass(){
-			$data['Main_view']['CoreClass']		= $this->CoreClass_model->getCoreClass_Detail($this->uri->segment(3));
-			$data['Main_view']['coregrade']		= create_double($this->CoreClass_model->getCoreGrade(),'grade_id','grade_name');
-			$data['Main_view']['content']		= 'CoreClass/formeditCoreClass_view';
+			$data['main_view']['coreclass']		= $this->CoreClass_model->getCoreClass_Detail($this->uri->segment(3));
+			$data['main_view']['coregrade']		= create_double($this->CoreClass_model->getCoreGrade(),'grade_id','grade_name');
+			$data['main_view']['content']		= 'CoreClass/FormEditCoreClass_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
+		public function reset_edit(){
+			$unique 	= $this->session->userdata('unique');
+			$class_id	= $this->uri->segment(3);
+
+			redirect('class/edit/'.$class_id);
+		}
+		
 		function processEditCoreClass(){
+			$auth 		= $this->session->userdata('auth');
+
 			$data = array(
-				'class_id' 					=> $this->input->post('class_id',true),
-				'class_code' 				=> $this->input->post('class_code',true),
-				'class_name' 				=> $this->input->post('class_name',true),
-				'grade_id' 					=> $this->input->post('grade_id',true),
-				'standard_salary_range1' 	=> $this->input->post('standard_salary_range1',true),
-				'standard_salary_range2' 	=> $this->input->post('standard_salary_range2',true),
-				'class_remark' 				=> $this->input->post('class_remark',true),
-				'data_state'				=> 0
+				'class_id' 				=> $this->input->post('class_id',true),
+				'grade_id' 				=> $this->input->post('grade_id',true),
+				'class_code' 			=> $this->input->post('class_code',true),
+				'class_name' 			=> $this->input->post('class_name',true),
+				'standard_salary_range1'=> $this->input->post('standard_salary_range1',true),
+				'standard_salary_range2'=> $this->input->post('standard_salary_range2',true),
+				'class_remark' 			=> $this->input->post('class_remark',true),
+				'updated_id' 			=> $auth['user_id'],
+				'updated_on' 			=> date("Y-m-d H:i:s"),
 			);
 			
-			$this->session->set_userdata('edit',$data);
 			$this->form_validation->set_rules('class_code', 'Class Code', 'required');
 			$this->form_validation->set_rules('class_name', 'Class Name', 'required');
-			$this->form_validation->set_rules('grade_id', 'Grade Name', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreClass_model->saveEditCoreClass($data)==true){
-					$auth 	= $this->session->userdata('auth');
-					// $this->fungsi->set_log($auth['username'],'1077','Application.CoreClass.edit',$auth['username'],'Edit CoreClass');
-					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['CoreClass_id']);
+				if($this->CoreClass_model->updateCoreClass($data)==true){
+					
+					$this->fungsi->set_log($auth['user_id'], $data['class_id'], '3122', 'Application.CoreClass.processEditCoreClass', $data['class_id'], 'Edit Core Class');
+
+
 					$msg = "<div class='alert alert-success'>                
-								Edit Class Successfully
+								Edit Data Class Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreClass/editCoreClass/'.$data['class_id']);
+					redirect('class/edit/'.$data['class_id']);
 				}else{
-					$msg = "<div CoreClass='alert alert-danger'>                
-								Edit Class UnSuccessful
+					$msg = "<div class='alert alert-danger'>                
+								Edit Data Class Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreClass/editCoreClass/'.$data['class_id']);
+					redirect('class/edit/'.$data['class_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreClass/editCoreClass/'.$data['class_id']);
+				redirect('class/edit/'.$data['class_id']);
 			}
 		}
 		
 		function deleteCoreClass(){
-			if($this->CoreClass_model->deleteCoreClass($this->uri->segment(3))){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreClass.delete',$auth['username'],'Delete CoreClass');
+			$auth 		= $this->session->userdata('auth');
+			$class_id 	= $this->uri->segment(3);
+
+			$data = array(
+				'class_id' 		=> $class_id,
+				'deleted_id' 		=> $auth['user_id'],
+				'deleted_on' 		=> date("Y-m-d H:i:s"),
+				'data_state'		=> 1
+			);
+
+			if($this->CoreClass_model->deleteCoreClass($data)){
+				
+				$this->fungsi->set_log($auth['user_id'], $data['class_id'], '3122', 'Application.CoreClass.deleteCoreClass', $data['class_id'], 'Delete Core Class');
+
 				$msg = "<div class='alert alert-success'>                
-							Delete Data Class Successfully
+							Hapus Data Class Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreClass');
+				redirect('class');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-							Delete Data Class UnSuccessful
+					Hapus Data Class Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreClass');
+				redirect('class');
 			}
 		}
 	}

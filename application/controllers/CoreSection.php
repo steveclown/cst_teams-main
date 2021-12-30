@@ -64,9 +64,9 @@
 			$unique 	= $this->session->userdata('unique');
 
 			$data = array(
-				'department_id' 				=> $this->input->post('department_id',true),
-				'section_code' 			=> $this->input->post('section_code',true),
-				'section_name' 			=> $this->input->post('section_name',true),
+				'department_id' 			=> $this->input->post('department_id',true),
+				'section_code' 				=> $this->input->post('section_code',true),
+				'section_name' 				=> $this->input->post('section_name',true),
 				'section_token' 			=> $this->input->post('section_token',true),
 				'created_id' 				=> $auth['user_id'],
 				'created_on' 				=> date("Y-m-d H:i:s"),
@@ -127,7 +127,7 @@
 		}
 
 		public function reset_edit(){
-			$unique 		= $this->session->userdata('unique');
+			$unique 	= $this->session->userdata('unique');
 			$section_id	= $this->uri->segment(3);
 
 			redirect('section/edit/'.$section_id);

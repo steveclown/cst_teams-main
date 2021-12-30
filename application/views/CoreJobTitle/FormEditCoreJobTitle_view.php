@@ -1,9 +1,9 @@
 <script>
 	function ulang(){
-		document.getElementById("job_title_code").value 		= "<?php echo $CoreJobTitle['job_title_code'] ?>";
-		document.getElementById("job_title_name").value 		= "<?php echo $CoreJobTitle['job_title_name'] ?>";
-		document.getElementById("job_title_parent_id").value 	= "<?php echo $CoreJobTitle['job_title_parent_id'] ?>";
-		document.getElementById("job_title_remark").value 		= "<?php echo $CoreJobTitle['job_title_remark'] ?>";
+		document.getElementById("job_title_code").value 		= "<?php echo $corejobtitle['job_title_code'] ?>";
+		document.getElementById("job_title_name").value 		= "<?php echo $corejobtitle['job_title_name'] ?>";
+		document.getElementById("job_title_parent_id").value 	= "<?php echo $corejobtitle['job_title_parent_id'] ?>";
+		document.getElementById("job_title_remark").value 		= "<?php echo $corejobtitle['job_title_remark'] ?>";
 	}
 	
 	function openform(){
@@ -35,7 +35,7 @@
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					<a href="<?php echo base_url();?>CoreJobTitle/editCoreJobTitle/<?php echo $CoreJobTitle['job_title_id']?>">
+					<a href="<?php echo base_url();?>CoreJobTitle/editCoreJobTitle/<?php echo $corejobtitle['job_title_id']?>">
 						Edit Job Title
 					</a>
 					<i class="fa fa-angle-right"></i>
@@ -73,7 +73,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="job_title_parent_id" class="form-control" id="job_title_parent_id" readonly value="<?php echo $this->CoreJobTitle_model->getJobTitleName($CoreJobTitle['job_title_parent_id']);?>"/>
+									<input type="text" name="job_title_parent_id" class="form-control" id="job_title_parent_id" readonly value="<?php echo $this->CoreJobTitle_model->getJobTitleName($corejobtitle['job_title_parent_id']);?>"/>
 									<label class="control-label">Parent Name</label>
 								</div>
 							</div>
@@ -81,7 +81,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="job_title_code" id="job_title_code" class="form-control" value="<?php echo $CoreJobTitle['job_title_code']?>">
+									<input type="text" name="job_title_code" id="job_title_code" class="form-control" value="<?php echo $corejobtitle['job_title_code']?>">
 									<span class="help-block">
 										 Mohon hanya diisi karakter huruf dan angka.
 									</span>
@@ -90,7 +90,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="job_title_name" id="job_title_name" class="form-control" value="<?php echo $CoreJobTitle['job_title_name']?>">
+									<input type="text" name="job_title_name" id="job_title_name" class="form-control" value="<?php echo $corejobtitle['job_title_name']?>">
 									<label class="control-label">Nama Judul Pekerjaan</label>
 								</div>
 							</div>
@@ -99,7 +99,7 @@
 						<div class = "row">
 							<div class="col-md-12">
 								<div class="form-group form-md-line-input">
-									<textarea class="form-control" rows="3" name="job_title_remark" id="job_title_remark" value="<?php echo $CoreJobTitle['job_title_remark'];?>"><?php echo $CoreJobTitle['job_title_remark'];?></textarea>
+									<textarea class="form-control" rows="3" name="job_title_remark" id="job_title_remark" value="<?php echo $corejobtitle['job_title_remark'];?>"><?php echo $corejobtitle['job_title_remark'];?></textarea>
 									<label class="control-label">Keterangan</label>						
 								</div>
 							</div>
@@ -109,8 +109,8 @@
 						<button type="button" class="btn red" onClick="ulang();"><i class="fa fa-times"></i> Batal</button>
 						<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 					</div>
-					<input type="hidden" name="job_title_id" id="job_title_id" value="<?php echo $CoreJobTitle['job_title_id'];?>"/>
-					<input type="hidden" name="job_title_parent_id" id="job_title_parent" value="<?php echo $CoreJobTitle['job_title_parent_id'];?>"/>
+					<input type="hidden" name="job_title_id" id="job_title_id" value="<?php echo $corejobtitle['job_title_id'];?>"/>
+					<input type="hidden" name="job_title_parent_id" id="job_title_parent" value="<?php echo $corejobtitle['job_title_parent_id'];?>"/>
 					<?php echo form_close(); ?>
 				</div>
 			</div>

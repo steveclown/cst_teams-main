@@ -55,8 +55,23 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('CoreOvertimeType/processAddCoreOvertimeType',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('AddOvertimeType');
+										echo form_open('overtime-type/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+											echo $this->session->userdata('message');
+											$this->session->unset_userdata('message');
+
+											$unique 		= $this->session->userdata('unique');
+											$data 			= $this->session->userdata('addCoreOvertimeType-'.$unique['unique']);
+											$overtime_type_token	= $this->session->userdata('CoreOvertimeTypeToken-'.$unique['unique']);
+
+											if(empty($data['overtime_type_code']))
+											{
+												$data['overtime_type_code'] 					= '';
+											}
+
+											if(empty($data['overtime_type_name'])){
+											$data['overtime_type_name'] 					= '';
+										}
 									?>
 									<div class = "row">
 										<div class="col-md-6">
@@ -144,6 +159,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="overtime_type_day_off_ratio2" id="overtime_type_day_off_ratio2" value="<?php echo $data['overtime_type_day_off_ratio2']?>" class="form-control" >
+												
+												<input type="hidden" name="overtime_type_token" id="overtime_type_token" class="form-control" value="<?php echo $overtime_type_token?>" onChange="function_elements_add(this.name, this.value);">	
+
 												<label class="control-label">Ratio Libur 2</label>
 											</div>
 										</div>

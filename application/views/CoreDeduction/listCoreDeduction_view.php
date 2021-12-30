@@ -66,7 +66,7 @@
 							<tbody>
 								<?php
 									$no=1;
-									foreach ($CoreDeduction as $key=>$val){
+									foreach ($corededuction as $key=>$val){
 										
 										echo"
 											<tr>	

@@ -58,7 +58,7 @@
 								<tbody>
 									<?php
 										$no = 1;
-										foreach ($CoreLanguage as $key=>$val){
+										foreach ($corelanguage as $key=>$val){
 											echo"
 												<tr>	
 													<td>".$no."</td>							

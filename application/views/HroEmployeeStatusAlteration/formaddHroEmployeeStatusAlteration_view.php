@@ -147,11 +147,18 @@
 						if (empty($data['employee_employment_status'])){
 							$data['employee_employment_status'] = "";
 						}
+
 					?>
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<?php echo form_dropdown('employee_employment_status', $employeeemploymentstatus ,set_value('employee_employment_status',$data['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
+								<?php 
+								if ($hroemployeestatusalteration_last==true) {
+									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeestatusalteration_last['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
+								} else{
+									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeedata['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
+								}
+								?>
 								<label class="control-label">Status Pekerjaan</label>
 							</div>
 						</div>
@@ -176,7 +183,7 @@
 					<div class = "row">
 						<div class = "col-md-12">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="status_alteration_description" id="status_alteration_description" value="<?php echo $data['status_alteration_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" name="status_alteration_description" id="status_alteration_description" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Deskripsi</label>
 							</div>
 						</div>
@@ -185,7 +192,7 @@
 					<div class = "row">
 						<div class = "col-md-12">
 							<div class="form-group form-md-line-input">
-								<textarea rows="3" name="status_alteration_remark" id="status_alteration_remark" class="form-control"><?php echo $data['status_alteration_remark'];?></textarea>
+								<textarea rows="3" name="status_alteration_remark" id="status_alteration_remark" class="form-control"></textarea>
 								<label class="control-label">Keterangan</label>
 							</div>
 						</div>
@@ -201,3 +208,67 @@
 		</div>
 	</div>
 </div>
+
+<!-- TABLE RECORD -->
+
+<div class="row">
+	<div class="col-md-12">	
+		<div class="portlet box blue">
+			<div class="portlet-title">
+				<div class="caption">
+					List
+				</div>
+				
+			</div>
+			<div class="portlet-body ">
+				<!-- BEGIN FORM-->
+				<div class="form-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table class="table table-bordered table-advance table-hover">
+									<thead>
+										<tr>
+											<th>Status Pekerjaan</th>
+											<th>Tanggal Perubahan Status</th>
+											<th>Tanggal Perubahan Status Terakhir</th>
+											<th>Deskripsi</th>
+											<th>Keterangan</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+
+									<?php
+										if(!is_array($hroemployeestatusalteration)){
+											echo "<tr><th colspan='7' style='text-align  : center !important;'>Data is Empty</th></tr>";
+										} else {
+											foreach ($hroemployeestatusalteration as $key=>$g){
+												echo"
+													<tr>
+														<td>".$this->configuration->EmployeeStatus()[$g['employee_employment_status']]."</td>
+														<td>".tgltoview($g['status_alteration_date'])."</td>
+														<td>".tgltoview($g['status_alteration_last_date'])."</td>
+														<td>".$g['status_alteration_description']."</td>
+														<td>".$g['status_alteration_remark']."</td>
+														<td>
+														<a href='".$this->config->item('base_url').'hroemployeestatusalteration/deleteHROEmployeeStatusAlteration/'.$g['status_alteration_id'].'/'.$g['employee_employment_status'].'/'.$g['employee_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+															<i class='fa fa-trash-o'></i> Delete</a>";
+														echo"
+													</tr>
+													
+												";
+											}
+										}
+									?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

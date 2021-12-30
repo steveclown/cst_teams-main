@@ -18,7 +18,7 @@
 	
 	function warningname(inputname) {
 		//var letter = /^[0-9a-zA-Z]+$+ +/;  
-		var letter = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/
+		var letter = /^[0-9a-zA-Z]+$/;
 		if(inputname.value.match(letter)){
 			return true;
 		}else{
@@ -90,9 +90,24 @@
 			</div>
 			<div class="portlet-body form">
 				<div class="form-body">
-					<?php
-						echo form_open('CoreWarning/processAddCoreWarning',array('class' => 'horizontal-form')); 
-						$data = $this->session->userdata('Addwarning');
+					<?php 
+						echo form_open('warning/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+							echo $this->session->userdata('message');
+							$this->session->unset_userdata('message');
+
+							$unique 		= $this->session->userdata('unique');
+							$data 			= $this->session->userdata('addCoreWarning-'.$unique['unique']);
+							$warning_token	= $this->session->userdata('CoreWarningToken-'.$unique['unique']);
+
+							if(empty($data['warning_code']))
+							{
+								$data['warning_code'] 					= '';
+							}
+
+							if(empty($data['warning_name'])){
+							$data['warning_name'] 					= '';
+						}
 					?>
 					<div class = "row">
 						<div class="col-md-6">
@@ -108,6 +123,7 @@
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">	
 								<input type="text" class="form-control" name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo set_value('warning_name',$data['warning_name']);?>"/>
+								<input type="hidden" name="warning_token" id="warning_token" class="form-control" value="<?php echo $warning_token?>" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Nama Peringatan<span class="required">*</span></label>
 							</div>
 						</div>

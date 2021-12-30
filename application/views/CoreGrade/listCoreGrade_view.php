@@ -60,7 +60,7 @@
 						<tbody>
 							<?php
 								$no=1;
-								foreach ($CoreGrade as $key=>$val){									
+								foreach ($coregrade as $key=>$val){									
 									echo"
 										<tr>				
 											<td>".$no."</td>					

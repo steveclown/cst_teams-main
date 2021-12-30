@@ -25,7 +25,26 @@
 			return $this->db->get()->result_array();
 		}
 		
-		public function saveNewCoreLate($data){
+		public function getLateToken($late_token)
+		{	
+			$this->db->select('core_late.late_token');
+			$this->db->from('core_late');
+			$this->db->where('core_late.late_token', $late_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getLateID($created_id){
+			$this->db->select('core_late.late_id');
+			$this->db->from('core_late');
+			$this->db->where('core_late.created_id', $created_id);
+			$this->db->order_by('core_late.late_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['late_id'];
+		}
+
+		public function insertCoreLate($data){
 			return $this->db->insert('core_late',$data);
 		}
 		
@@ -36,9 +55,9 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreLate($data){
+		public function updateCoreLate($data){
 			$this->db->where('late_id',$data['late_id']);
-			$query = $this->db->update('core_late', $data);
+			$query = $this->db->update($this->table, $data);
 			if($query){
 				return true;
 			}else{
@@ -46,9 +65,9 @@
 			}
 		}
 
-		public function deleteCoreLate($late_id){
-			$this->db->where("late_id",$late_id);
-			$query = $this->db->update('core_late', array("data_state"=>1));
+		public function deleteCoreLate($data){
+			$this->db->where("core_late.late_id", $data['late_id']);
+			$query = $this->db->update('core_late', $data);
 			if($query){
 				return true;
 			}else{

@@ -1,7 +1,13 @@
 <?php
-	Class CoreSeparationReason extends CI_Controller{
+	Class CoreSeparationReason extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'separationreason';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreSeparationReason_model');
 			$this->load->helper('sistem');
@@ -11,13 +17,25 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreSeparationReason']		= $this->CoreSeparationReason_model->getCoreSeparationReason();
-			$data['Main_view']['content']					= 'CoreSeparationReason/listCoreSeparationReason_view';
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addCoreSeparationReason-'.$unique['unique']);
+			$this->session->unset_userdata('CoreSeparationReasonToken-'.$unique['unique']);
+			
+			$data['main_view']['coreseparationreason']		= $this->CoreSeparationReason_model->getCoreSeparationReason();
+			$data['main_view']['content']					= 'CoreSeparationReason/ListCoreSeparationReason_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function addCoreSeparationReason(){
-			$data['Main_view']['content']					= 'CoreSeparationReason/formaddCoreSeparationReason_view';
+			$unique 						= $this->session->userdata('unique');
+			$separation_reason_token		= $this->session->userdata('CoreSeparationReasonToken-'.$unique['unique']);
+
+			if(empty($separation_reason_token)){
+				$separation_reason_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreSeparationReasonToken-'.$unique['unique'], $separation_reason_token);
+			}
+			$data['main_view']['content']					= 'CoreSeparationReason/FormAddCoreSeparationReason_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -29,35 +47,57 @@
 		}
 		
 		function processAddCoreSeparationReason(){
+			$auth 		= $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
 			$data = array(
-				'separation_reason_name' 		=> $this->input->post('separation_reason_name',true),
-				'data_state'					=> 0
+				'separation_reason_name' 				=> $this->input->post('separation_reason_name',true),
+				'separation_reason_token' 				=> $this->input->post('separation_reason_token',true),
+				'created_id' 				=> $auth['user_id'],
+				'created_on' 				=> date("Y-m-d H:i:s"),
+				'data_state'				=> 0
 			);
+
+			$separation_reason_token 			= $this->CoreSeparationReason_model->getSeparationReasonToken($data['separation_reason_token']);
 			
-			$this->form_validation->set_rules('separation_reason_name', 'Separation Reason Name', 'required');
+			$this->form_validation->set_rules('separation_reason_name', 'Nama Cabang', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreSeparationReason_model->saveNewCoreSeparationReason($data)){
-					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.CoreSeparationReason.processAddCoreSeparationReason',$auth['username'],'Add New SeparationReason');
-					$msg = "<div class='alert alert-success'>                
-								Add Data SeparationReason Successfully
-							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-					$this->session->set_userdata('message',$msg);
-					$this->session->unset_userdata('addCoreSeparationReason');
-					redirect('CoreSeparationReason/addCoreSeparationReason');
-				}else{
+				if ($separation_reason_token == 0){
+					if($this->CoreSeparationReason_model->insertCoreSeparationReason($data)){
+						$separation_reason_id 		= $this->CoreSeparationReason_model->getSeparationReasonID($data['separation_reason_id']);
+
+
+						$this->fungsi->set_log($auth['user_id'], $separation_reason_id, '3122', 'Application.CoreSeparationReason.processAddCoreSeparationReason', $separation_reason_id, 'Add New Core SeparationReason');
+
+						$msg = "<div class='alert alert-success'>                
+									Tambah Data SeparationReason Baru Berhasil
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->unset_userdata('addCoreSeparationReason-'.$unique['unique']);
+						$this->session->unset_userdata('CoreSeparationReasonToken-'.$unique['unique']);
+						redirect('separationreason/add');
+					}else{
+						$msg = "<div class='alert alert-danger'>                
+									Tambah Data SeparationReason Baru Gagal
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->set_userdata('addCoreSeparationReason',$data);
+						redirect('separationreason/add');
+					}
+				} else {
 					$msg = "<div class='alert alert-danger'>                
-								Add Data SeparationReason UnSuccessful
+						Tambah Data SeparationReason Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					$this->session->set_userdata('addCoreSeparationReason',$data);
-					redirect('CoreSeparationReason/addCoreSeparationReason');
+					redirect('separationreason/add');
 				}
 			}else{
 				$this->session->set_userdata('addCoreSeparationReason',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreSeparationReason/addCoreSeparationReason');
+				redirect('separationreason/add');
 			}
 		}
 
@@ -70,57 +110,76 @@
 		}
 
 		function editCoreSeparationReason(){
-			$data['Main_view']['CoreSeparationReason']		= $this->CoreSeparationReason_model->getCoreSeparationReason_Detail($this->uri->segment(3));
-			$data['Main_view']['content']					= 'CoreSeparationReason/formeditCoreSeparationReason_view';
+			$data['main_view']['coreseparationreason']		= $this->CoreSeparationReason_model->getCoreSeparationReason_Detail($this->uri->segment(3));
+			$data['main_view']['content']					= 'CoreSeparationReason/formeditCoreSeparationReason_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function processEditCoreSeparationReason(){
+			$auth 		= $this->session->userdata('auth');
+
 			$data = array(
-				'separation_reason_id' 			=> $this->input->post('separation_reason_id',true),
-				'separation_reason_name' 		=> $this->input->post('separation_reason_name',true),
-				'data_state'					=> 0
+				'separation_reason_id' 				=> $this->input->post('separation_reason_id',true),
+				'separation_reason_name' 			=> $this->input->post('separation_reason_name',true),
+				'updated_id' 			=> $auth['user_id'],
+				'updated_on' 			=> date("Y-m-d H:i:s"),
 			);
-			$this->form_validation->set_rules('separation_reason_name', 'Separation Reason Name', 'required');
+			
+			$this->form_validation->set_rules('separation_reason_name', 'SeparationReason Name', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreSeparationReason_model->saveEditCoreSeparationReason($data)==true){
-					$auth 	= $this->session->userdata('auth');
-					// $this->fungsi->set_log($auth['username'],'1077','Application.CoreSeparationReason.edit',$auth['username'],'Edit SeparationReason');
-					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['CoreSeparationReason_id']);
+				if($this->CoreSeparationReason_model->updateCoreSeparationReason($data)==true){
+					
+					$this->fungsi->set_log($auth['user_id'], $data['separation_reason_id'], '3122', 'Application.CoreSeparationReason.processEditCoreSeparationReason', $data['separation_reason_id'], 'Edit Core SeparationReason');
+
+
 					$msg = "<div class='alert alert-success'>                
-								Edit SeparationReason Successfully
+								Edit Data SeparationReason Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreSeparationReason/editCoreSeparationReason/'.$data['separation_reason_id']);
+					redirect('separationreason/edit/'.$data['separation_reason_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
-								Edit SeparationReason UnSuccessful
+								Edit Data SeparationReason Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreSeparationReason/editCoreSeparationReason/'.$data['separation_reason_id']);
+					redirect('separationreason/edit/'.$data['separation_reason_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreSeparationReason/editCoreSeparationReason/'.$data['separation_reason_id']);
+				redirect('separationreason/edit/'.$data['separation_reason_id']);
 			}
 		}
 		
+				
 		function deleteCoreSeparationReason(){
-			if($this->CoreSeparationReason_model->deleteCoreSeparationReason($this->uri->segment(3))){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreSeparationReason.delete',$auth['username'],'Delete CoreSeparationReason');
+			$auth 			= $this->session->userdata('auth');
+			$separation_reason_id 	= $this->uri->segment(3);
+
+			$data = array(
+				'separation_reason_id' 		=> $separation_reason_id,
+				'deleted_id' 		=> $auth['user_id'],
+				'deleted_on' 		=> date("Y-m-d H:i:s"),
+				'data_state'		=> 1
+			);
+
+			if($this->CoreSeparationReason_model->deleteCoreSeparationReason($data)){
+				
+				$this->fungsi->set_log($auth['user_id'], $data['separation_reason_id'], '3122', 'Application.CoreSeparationReason.deleteCoreSeparationReason', $data['separation_reason_id'], 'Delete Core SeparationReason');
+
 				$msg = "<div class='alert alert-success'>                
-							Delete SeparationReason Successfully
+							Hapus Data SeparationReason Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreSeparationReason');
+				redirect('separationreason');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-							Delete SeparationReason Successfully
+					Hapus Data SeparationReason Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreSeparationReason');
+				redirect('separationreason');
 			}
 		}
 	}

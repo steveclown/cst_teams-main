@@ -73,7 +73,7 @@
 						<tbody>
 							<?php
 								$no=1;
-								foreach ($CoreOvertimeType as $key=>$val){
+								foreach ($coreovertimetype as $key=>$val){
 									
 									echo"
 										<tr>

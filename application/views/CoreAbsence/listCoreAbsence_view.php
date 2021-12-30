@@ -63,7 +63,7 @@
 						<tbody>
 							<?php
 								$no = 1;
-								foreach ($CoreAbsence as $key=>$val){
+								foreach ($coreabsence as $key=>$val){
 									
 									echo"
 										<tr>		

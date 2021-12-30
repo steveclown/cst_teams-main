@@ -53,8 +53,23 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 								<?php 
-									echo form_open('CoreDayOff/processAddCoreDayOff',array('id' => 'myform', 'class' => 'horizontal-form')); 
-									$data = $this->session->userdata('addCoreDayOff');
+									echo form_open('day-off/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreDayOff-'.$unique['unique']);
+										$dayoff_token	= $this->session->userdata('CoreDayOffToken-'.$unique['unique']);
+
+										if(empty($data['dayoff_code']))
+										{
+											$data['dayoff_code'] 					= '';
+										}
+
+										if(empty($data['dayoff_name'])){
+										$data['dayoff_name'] 					= '';
+									}
 								?>
 									<div class = "row">
 										<div class="col-md-6">
@@ -73,6 +88,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="dayoff_name" id="dayoff_name" value="<?php echo $data['dayoff_name']?>" class="form-control">
+												
+												<input type="hidden" name="dayoff_token" id="dayoff_token" class="form-control" value="<?php echo $dayoff_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<label class="control-label">Nama libur
 													<span class="required">
 														*

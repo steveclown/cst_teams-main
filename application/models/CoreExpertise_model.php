@@ -15,7 +15,26 @@
 			return $this->db->get()->result_array();			
 		}
 		
-		public function saveNewCoreExpertise($data){
+		public function getExpertiseToken($expertise_token)
+		{	
+			$this->db->select('core_expertise.expertise_token');
+			$this->db->from('core_expertise');
+			$this->db->where('core_expertise.expertise_token', $expertise_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getExpertiseID($created_id){
+			$this->db->select('core_expertise.expertise_id');
+			$this->db->from('core_expertise');
+			$this->db->where('core_expertise.created_id', $created_id);
+			$this->db->order_by('core_expertise.expertise_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['expertise_id'];
+		}
+
+		public function insertCoreExpertise($data){
 			return $this->db->insert('core_expertise',$data);
 		}
 		
@@ -26,8 +45,8 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreExpertise($data){
-			$this->db->where('core_expertise.expertise_id',$data['expertise_id']);
+		public function updateCoreExpertise($data){
+			$this->db->where('expertise_id',$data['expertise_id']);
 			$query = $this->db->update($this->table, $data);
 			if($query){
 				return true;
@@ -36,13 +55,13 @@
 			}
 		}
 		
-		public function deleteCoreExpertise($ExpertiseID){
-			$this->db->where("expertise_id",$ExpertiseID);
-			$query = $this->db->update($this->table, array("data_state"=>1));
+		public function deleteCoreExpertise($data){
+			$this->db->where("core_expertise.expertise_id", $data['expertise_id']);
+			$query = $this->db->update('core_expertise', $data);
 			if($query){
-			return true;
+				return true;
 			}else{
-			return false;
+				return false;
 			}
 		}
 	}

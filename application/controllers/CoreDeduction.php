@@ -1,7 +1,12 @@
 <?php
-	Class CoreDeduction extends CI_Controller{
+	Class CoreDeduction extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'deduction';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreDeduction_model');
 			$this->load->helper('sistem');
@@ -19,17 +24,17 @@
 			$this->session->unset_userdata('editarrayCoreDeductionallowance-'.$unique['unique']);	
 			$this->session->unset_userdata('editarrayCoreDeductionallowancefirst-'.$unique['unique']);
 
-			$data['Main_view']['CoreDeduction']		= $this->CoreDeduction_model->getCoreDeduction();
-			$data['Main_view']['deductiontype']		= $this->configuration->DeductionType();
-			$data['Main_view']['content']			= 'CoreDeduction/listCoreDeduction_view';
+			$data['main_view']['corededuction']		= $this->CoreDeduction_model->getCoreDeduction();
+			$data['main_view']['deductiontype']		= $this->configuration->DeductionType();
+			$data['main_view']['content']			= 'CoreDeduction/ListCoreDeduction_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		public function addCoreDeduction(){
-			$data['Main_view']['deductiontype']						= $this->configuration->DeductionType();
-			$data['Main_view']['deductionpremiattendancestatus']	= $this->configuration->WorkingStatus();
-			$data['Main_view']['coreallowance']						= create_double($this->CoreDeduction_model->getCoreAllowance(),'allowance_id','allowance_name');
-			$data['Main_view']['content']							= 'CoreDeduction/formaddCoreDeduction_view';
+			$data['main_view']['deductiontype']						= $this->configuration->DeductionType();
+			$data['main_view']['deductionpremiattendancestatus']	= $this->configuration->WorkingStatus();
+			$data['main_view']['coreallowance']						= create_double($this->CoreDeduction_model->getCoreAllowance(),'allowance_id','allowance_name');
+			$data['main_view']['content']							= 'CoreDeduction/FormAddCoreDeduction_view';
 			
 			$this->load->view('MainPage_view',$data);
 		}
@@ -189,9 +194,9 @@
 		
 		public function showdetail(){
 			$overtime_rate_id									= $this->uri->segment(3);
-			$data['Main_view']['assignmentovertimerate']		= $this->assignmentovertimerate_model->getAssignmentOvertimeRate_Detail($overtime_rate_id);
-			$data['Main_view']['assignmentovertimeratetitle']	= $this->assignmentovertimerate_model->getAssignmentOvertimeRateTitle_Detail($overtime_rate_id);
-			$data['Main_view']['content']						= 'assignmentovertimerate/formdetailassignmentovertimerate_view';
+			$data['main_view']['assignmentovertimerate']		= $this->assignmentovertimerate_model->getAssignmentOvertimeRate_Detail($overtime_rate_id);
+			$data['main_view']['assignmentovertimeratetitle']	= $this->assignmentovertimerate_model->getAssignmentOvertimeRateTitle_Detail($overtime_rate_id);
+			$data['main_view']['content']						= 'assignmentovertimerate/formdetailassignmentovertimerate_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -274,15 +279,15 @@
 				$this->session->set_userdata('editCoreDeduction-'.$unique['unique'],$dataheader);
 			}
 
-			$data['Main_view']['CoreDeduction']						= $this->session->userdata('CoreDeductionedit-'.$deduction_id.$unique['unique']);
+			$data['main_view']['CoreDeduction']						= $this->session->userdata('CoreDeductionedit-'.$deduction_id.$unique['unique']);
 
-			$data['Main_view']['coreallowance']						= create_double($this->CoreDeduction_model->getCoreAllowance(),'allowance_id','allowance_name');
+			$data['main_view']['coreallowance']						= create_double($this->CoreDeduction_model->getCoreAllowance(),'allowance_id','allowance_name');
 
-			$data['Main_view']['deductiontype']						= $this->configuration->DeductionType();
+			$data['main_view']['deductiontype']						= $this->configuration->DeductionType();
 
-			$data['Main_view']['deductionpremiattendancestatus']	= $this->configuration->WorkingStatus();
+			$data['main_view']['deductionpremiattendancestatus']	= $this->configuration->WorkingStatus();
 
-			$data['Main_view']['content']							= 'CoreDeduction/formeditCoreDeduction_view';
+			$data['main_view']['content']							= 'CoreDeduction/formeditCoreDeduction_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -411,8 +416,8 @@
 		public function deleteCoreDeduction(){
 			$deduction_id = $this->uri->segment(3);
 			if($this->CoreDeduction_model->deleteCoreDeduction($deduction_id)){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreDeduction.delete',$auth['username'],'Delete Deduction');
+				// $auth = $this->session->userdata('auth');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.CoreDeduction.delete',$auth['username'],'Delete Deduction');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Deduction Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";

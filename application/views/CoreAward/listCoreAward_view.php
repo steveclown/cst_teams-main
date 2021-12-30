@@ -63,7 +63,7 @@
 								<tbody>
 									<?php
 										$no=1;
-										foreach ($CoreAward as $key=>$val){									
+										foreach ($coreaward as $key=>$val){									
 											echo"
 												<tr>
 													<td>".$no."</td>									

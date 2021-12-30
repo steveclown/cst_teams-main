@@ -55,13 +55,31 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('CoreSeparationReason/processAddCoreSeparationReason',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('addseparation_reason');
+										echo form_open('separationreason/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+											echo $this->session->userdata('message');
+											$this->session->unset_userdata('message');
+
+											$unique 		= $this->session->userdata('unique');
+											$data 			= $this->session->userdata('addCoreSeparationReason-'.$unique['unique']);
+											$separation_reason_token	= $this->session->userdata('CoreSeparationReasonToken-'.$unique['unique']);
+
+											if(empty($data['separation_reason_code']))
+											{
+												$data['separation_reason_code'] 					= '';
+											}
+
+											if(empty($data['separation_reason_name'])){
+											$data['separation_reason_name'] 					= '';
+										}
 									?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="separation_reason_name" id="separation_reason_name" value="<?php echo $data['separation_reason_name'];?>" class="form-control" >
+												
+												<input type="hidden" name="separation_reason_token" id="separation_reason_token" class="form-control" value="<?php echo $separation_reason_token?>" onChange="function_elements_add(this.name, this.value);">
+
 												<label class="control-label">Nama alasan pemisahan
 													<span class="required">
 														*

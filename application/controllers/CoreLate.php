@@ -1,7 +1,13 @@
 <?php
-	Class CoreLate extends CI_Controller{
+	Class CoreLate extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'late';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreLate_model');
 			$this->load->helper('sistem');
@@ -11,14 +17,27 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreLate']			= $this->CoreLate_model->getCoreLate();
-			$data['Main_view']['content']			= 'CoreLate/listCoreLate_view';
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addCoreLate-'.$unique['unique']);
+			$this->session->unset_userdata('CoreLateToken-'.$unique['unique']);
+
+			$data['main_view']['corelate']			= $this->CoreLate_model->getCoreLate();
+			$data['main_view']['content']			= 'CoreLate/ListCoreLate_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		public function addCoreLate(){
-			$data['Main_view']['corededuction']		= create_double($this->CoreLate_model->getCoreDeduction(),'deduction_id','deduction_name');
-			$data['Main_view']['content']			= 'CoreLate/formaddCoreLate_view';
+			$unique 			= $this->session->userdata('unique');
+			$late_token			= $this->session->userdata('CoreLateToken-'.$unique['unique']);
+
+			if(empty($late_token)){
+				$late_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreLateToken-'.$unique['unique'], $late_token);
+			}
+
+			$data['main_view']['corededuction']		= create_double($this->CoreLate_model->getCoreDeduction(),'deduction_id','deduction_name');
+			$data['main_view']['content']			= 'CoreLate/FormAddCoreLate_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -46,105 +65,146 @@
 			// echo $name;
 		}
 		
-		public function processAddCoreLate(){
+		function processAddCoreLate(){
+			$auth 		= $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
 			$data = array(
-				'deduction_id'			=> $this->input->post('deduction_id',true),
-				'late_code' 			=> $this->input->post('late_code',true),
-				'late_name' 			=> $this->input->post('late_name',true),
-				'data_state'			=> 0
+				'late_code' 				=> $this->input->post('late_code',true),
+				'late_name' 				=> $this->input->post('late_name',true),
+				'deduction_id' 				=> $this->input->post('deduction_id',true),
+				'late_token' 				=> $this->input->post('late_token',true),
+				'created_id' 				=> $auth['user_id'],
+				'created_on' 				=> date("Y-m-d H:i:s"),
+				'data_state'				=> 0
 			);
+
+			$late_token 			= $this->CoreLate_model->getLateToken($data['late_token']);
 			
-			$this->form_validation->set_rules('deduction_id', 'Deduction Name', 'required');
-			$this->form_validation->set_rules('late_code', 'Late Code', 'required|alpha_numeric');
-			$this->form_validation->set_rules('late_name', 'Late Name', 'required');
+			$this->form_validation->set_rules('late_code', 'Kode Terlambat', 'required');
+			$this->form_validation->set_rules('late_name', 'Nama Terlambat', 'required');
+
 
 			if($this->form_validation->run()==true){
-				if($this->CoreLate_model->saveNewCoreLate($data)){
-					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.CoreLate.processAddCoreLate',$auth['user_id'],'Add New Late');
-					$msg = "<div class='alert alert-success'>                
-								Add Data Late Successfully
-							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-					$this->session->set_userdata('message',$msg);
-					$this->session->unset_userdata('addCoreLate');
-					redirect('CoreLate/addCoreLate');
-				}else{
+				if ($late_token == 0){
+					if($this->CoreLate_model->insertCoreLate($data)){
+						$late_id 		= $this->CoreLate_model->getLateID($data['late_id']);
+
+
+						$this->fungsi->set_log($auth['user_id'], $late_id, '3122', 'Application.CoreLate.processAddCoreLate', $late_id, 'Add New Core Late');
+
+						$msg = "<div class='alert alert-success'>                
+									Tambah Data Late Baru Berhasil
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->unset_userdata('addCoreLate-'.$unique['unique']);
+						$this->session->unset_userdata('CoreLateToken-'.$unique['unique']);
+						redirect('late/add');
+					}else{
+						$msg = "<div class='alert alert-danger'>                
+									Tambah Data Late Baru Gagal
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->set_userdata('addCoreLate',$data);
+						redirect('late/add');
+					}
+				} else {
 					$msg = "<div class='alert alert-danger'>                
-								Add Data Late UnSuccessful
+						Tambah Data Late Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					$this->session->set_userdata('addCoreLate',$data);
-					redirect('CoreLate/addCoreLate');
+					redirect('late/add');
 				}
 			}else{
 				$this->session->set_userdata('addCoreLate',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLate/addCoreLate');
+				redirect('late/add');
 			}
 		}
 		
 		public function editCoreLate(){
 			$late_id = $this->uri->segment(3);
-			$data['Main_view']['corededuction']		= create_double($this->CoreLate_model->getCoreDeduction(),'deduction_id','deduction_name');
-			$data['Main_view']['CoreLate']		= $this->CoreLate_model->getCoreLate_Detail($late_id);
-			$data['Main_view']['content']			= 'CoreLate/formeditCoreLate_view';
+			$data['main_view']['corededuction']		= create_double($this->CoreLate_model->getCoreDeduction(),'deduction_id','deduction_name');
+			$data['main_view']['corelate']			= $this->CoreLate_model->getCoreLate_Detail($late_id);
+			$data['main_view']['content']			= 'CoreLate/FormEditCoreLate_view';
 			$this->load->view('MainPage_view',$data);
 		}
-		public function processEditCoreLate(){
-			
+
+		public function reset_edit(){
+			$unique 	= $this->session->userdata('unique');
+			$late_id	= $this->uri->segment(3);
+
+			redirect('late/edit/'.$late_id);
+		}
+
+		function processEditCoreLate(){
+			$auth 		= $this->session->userdata('auth');
+
 			$data = array(
 				'late_id' 				=> $this->input->post('late_id',true),
-				'deduction_id' 			=> $this->input->post('deduction_id',true),
 				'late_code' 			=> $this->input->post('late_code',true),
 				'late_name' 			=> $this->input->post('late_name',true),
-				'data_state'			=> 0
+				'deduction_id' 			=> $this->input->post('deduction_id',true),
+				'updated_id' 			=> $auth['user_id'],
+				'updated_on' 			=> date("Y-m-d H:i:s"),
 			);
-
-			$this->form_validation->set_rules('deduction_id', 'Deduction Name', 'required');
-			$this->form_validation->set_rules('late_code', 'Late Code', 'required|alpha_numeric');
-			$this->form_validation->set_rules('late_name', 'Late Name', 'required');
 			
+			$this->form_validation->set_rules('late_code', 'Late Code', 'required');
+			$this->form_validation->set_rules('late_name', 'Late Name', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreLate_model->saveEditCoreLate($data)==true){
-					$auth 	= $this->session->userdata('auth');
-					// $this->fungsi->set_log($auth['user_id'],'1077','Application.CoreLate.editCoreLate',$auth['user_id'],'Edit Late');
-					// $this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['late_id']);
+				if($this->CoreLate_model->updateCoreLate($data)==true){
+					
+					$this->fungsi->set_log($auth['user_id'], $data['late_id'], '3122', 'Application.CoreLate.processEditCoreLate', $data['late_id'], 'Edit Core Late');
+
+
 					$msg = "<div class='alert alert-success'>                
-								Edit Late Successfully
+								Edit Data Late Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLate/editCoreLate/'.$data['late_id']);
+					redirect('late/edit/'.$data['late_id']);
 				}else{
-					$msg = "<div class='alert alert-danger'>
-								Edit Late UnSuccessful
+					$msg = "<div class='alert alert-danger'>                
+								Edit Data Late Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLate/editCoreLate/'.$data['late_id']);
+					redirect('late/edit/'.$data['late_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLate/editCoreLate/'.$data['late_id']);
+				redirect('late/edit/'.$data['late_id']);
 			}
 		}
 
-		public function deleteCoreLate(){
-			$deduction_id = $this->uri->segment(3);
-			if($this->CoreLate_model->deleteCoreLate($deduction_id)){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.CoreLate.deleteCoreLate',$auth['user_id'],'Delete Late');
+		function deleteCoreLate(){
+			$auth 			= $this->session->userdata('auth');
+			$late_id 		= $this->uri->segment(3);
+
+			$data = array(
+				'late_id' 			=> $late_id,
+				'deleted_id' 		=> $auth['user_id'],
+				'deleted_on' 		=> date("Y-m-d H:i:s"),
+				'data_state'		=> 1
+			);
+
+			if($this->CoreLate_model->deleteCoreLate($data)){
+				
+				$this->fungsi->set_log($auth['user_id'], $data['late_id'], '3122', 'Application.CoreLate.deleteCoreLate', $data['late_id'], 'Delete Core Late');
+
 				$msg = "<div class='alert alert-success'>                
-							Delete Data Late Successfully
+							Hapus Data Late Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLate');
+				redirect('late');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-							Delete Data Late UnSuccessful
+					Hapus Data Late Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLate');
+				redirect('late');
 			}
 		}
 	}

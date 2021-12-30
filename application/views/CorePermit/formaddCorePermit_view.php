@@ -75,10 +75,25 @@
 							</div>
 							<div class="portlet-body form">
 								<div class="form-body">
-									<?php 
-										echo form_open('CorePermit/processAddCorePermit',array('id' => 'myform', 'class' => 'horizontal-form')); 
-										$data = $this->session->userdata('addCorePermit');
-									?>
+								<?php 
+									echo form_open('permit/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCorePermit-'.$unique['unique']);
+										$permit_token	= $this->session->userdata('CorePermitToken-'.$unique['unique']);
+
+										if(empty($data['permit_code']))
+										{
+											$data['permit_code'] 					= '';
+										}
+
+										if(empty($data['permit_name'])){
+										$data['permit_name'] 					= '';
+									}
+								?>
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
@@ -108,6 +123,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="permit_name" id="permit_name" value="<?php echo $data['permit_name']?>" class="form-control">
+												
+												<input type="hidden" name="permit_token" id="permit_token" class="form-control" value="<?php echo $permit_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<label class="control-label">Nama Izin
 													<span class="required">
 														*

@@ -15,8 +15,26 @@
 			return $this->db->get()->result_array();
 		}
 		
-		
-		public function saveNewCoreAward($data){
+		public function getAwardToken($award_token)
+		{	
+			$this->db->select('core_award.award_token');
+			$this->db->from('core_award');
+			$this->db->where('core_award.award_token', $award_token);
+			$result = $this->db->get()->num_rows();
+			return $result;
+		}
+
+		public function getAwardID($created_id){
+			$this->db->select('core_award.award_id');
+			$this->db->from('core_award');
+			$this->db->where('core_award.created_id', $created_id);
+			$this->db->order_by('core_award.award_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get()->row_array();
+			return $result['award_id'];
+		}
+
+		public function insertCoreAward($data){
 			return $this->db->insert('core_award',$data);
 		}
 		
@@ -27,7 +45,7 @@
 			return $this->db->get()->row_array();
 		}
 		
-		public function saveEditCoreAward($data){
+		public function updateCoreAward($data){
 			$this->db->where('award_id',$data['award_id']);
 			$query = $this->db->update($this->table, $data);
 			if($query){
@@ -37,13 +55,13 @@
 			}
 		}
 		
-		public function deleteCoreAward($AwardID){
-			$this->db->where("award_id",$AwardID);
-			$query = $this->db->update($this->table, array("data_state"=>1));
+		public function deleteCoreAward($data){
+			$this->db->where("core_award.award_id", $data['award_id']);
+			$query = $this->db->update('core_award', $data);
 			if($query){
-			return true;
+				return true;
 			}else{
-			return false;
+				return false;
 			}
 		}
 	}
