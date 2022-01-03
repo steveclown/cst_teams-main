@@ -130,6 +130,8 @@
 
 			$data_deduction = array(
 				'deduction_code'					=> $this->input->post('deduction_code',true),
+				'allowance_id'						=> $this->input->post('allowance_id',true),
+				'deduction_code'					=> $this->input->post('deduction_code',true),
 				'deduction_name'					=> $this->input->post('deduction_name',true),
 				'deduction_type'					=> $this->input->post('deduction_type',true),
 				'deduction_amount'					=> $this->input->post('deduction_amount',true),
@@ -258,6 +260,7 @@
 			if (empty($dataheader)){
 				$data_deduction = array (
 					'deduction_id'						=> $CoreDeduction['deduction_id'],
+					'allowance_id'						=> $CoreDeductionallowance['allowance_id'],
 					'deduction_code'					=> $CoreDeduction['deduction_code'],
 					'deduction_name'					=> $CoreDeduction['deduction_name'],
 					'deduction_amount'					=> $CoreDeduction['deduction_amount'],

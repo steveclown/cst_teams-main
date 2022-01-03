@@ -76,8 +76,23 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 								<?php 
-									echo form_open('corehomeearly/processAddCoreHomeEarly',array('id' => 'myform', 'class' => 'horizontal-form')); 
-									$data = $this->session->userdata('addcorehomeearly');
+									echo form_open('home-early/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+
+										echo $this->session->userdata('message');
+										$this->session->unset_userdata('message');
+
+										$unique 		= $this->session->userdata('unique');
+										$data 			= $this->session->userdata('addCoreHomeEarly-'.$unique['unique']);
+										$home_early_token	= $this->session->userdata('CoreHomeEarlyToken-'.$unique['unique']);
+
+										if(empty($data['home_early_code']))
+										{
+											$data['home_early_code'] 					= '';
+										}
+
+										if(empty($data['home_early_name'])){
+										$data['home_early_name'] 					= '';
+										}
 								?>
 									<div class = "row">
 										<div class="col-md-6">
@@ -114,6 +129,9 @@
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="home_early_name" id="home_early_name" value="<?php echo $data['home_early_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								
+												<input type="hidden" name="home_early_token" id="home_early_token" class="form-control" value="<?php echo $home_early_token?>" onChange="function_elements_add(this.name, this.value);">
+												
 												<label class="control-label">Home Early Name
 													<span class="required">
 														*

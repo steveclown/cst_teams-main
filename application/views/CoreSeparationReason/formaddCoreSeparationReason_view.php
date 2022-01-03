@@ -55,7 +55,7 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 									<?php 
-										echo form_open('separationreason/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+										echo form_open('separation-reason/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
 
 											echo $this->session->userdata('message');
 											$this->session->unset_userdata('message');

@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'separationreason';
+			$menu = 'separation-reason';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
@@ -77,27 +77,27 @@
 						$this->session->set_userdata('message',$msg);
 						$this->session->unset_userdata('addCoreSeparationReason-'.$unique['unique']);
 						$this->session->unset_userdata('CoreSeparationReasonToken-'.$unique['unique']);
-						redirect('separationreason/add');
+						redirect('separation-reason');
 					}else{
 						$msg = "<div class='alert alert-danger'>                
 									Tambah Data SeparationReason Baru Gagal
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
 						$this->session->set_userdata('addCoreSeparationReason',$data);
-						redirect('separationreason/add');
+						redirect('separation-reason/add');
 					}
 				} else {
 					$msg = "<div class='alert alert-danger'>                
 						Tambah Data SeparationReason Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('separationreason/add');
+					redirect('separation-reason/add');
 				}
 			}else{
 				$this->session->set_userdata('addCoreSeparationReason',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('separationreason/add');
+				redirect('separation-reason/add');
 			}
 		}
 
@@ -138,18 +138,18 @@
 								Edit Data SeparationReason Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('separationreason/edit/'.$data['separation_reason_id']);
+					redirect('separation-reason');
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Edit Data SeparationReason Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('separationreason/edit/'.$data['separation_reason_id']);
+					redirect('separation-reason/edit/'.$data['separation_reason_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('separationreason/edit/'.$data['separation_reason_id']);
+				redirect('separation-reason/edit/'.$data['separation_reason_id']);
 			}
 		}
 		
@@ -173,13 +173,13 @@
 							Hapus Data SeparationReason Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('separationreason');
+				redirect('separation-reason');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 					Hapus Data SeparationReason Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('separationreason');
+				redirect('separation-reason');
 			}
 		}
 	}
