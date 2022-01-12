@@ -237,6 +237,7 @@
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
 									<input type="text" name="deduction_late_end_duration" id="deduction_late_end_duration" class="form-control" value="<?php echo $data['deduction_late_end_duration']?>" onChange="function_elements_edit(this.name, this.value);">
+									<input type="hidden" name="deduction_id" value="<?php echo $data['deduction_id']; ?>"/>
 									<label class="control-label">Potongan Keterlambatan akhir</label>
 								</div>
 							</div>
@@ -250,108 +251,16 @@
 								</div>
 							</div>
 						</div>
-
-						<h4>Tunjangan </h4>
-						<br>
-
-						<div class = "row">
-							<div class = "col-md-6">
-								<div class="form-group form-md-line-input">
-									<?php echo form_dropdown('allowance_id', $coreallowance ,set_value('allowance_id',$data['allowance_id']),'id="allowance_id", class="form-control select2me"');?>
-									<label class="control-label">Nama Tunjangan</label>
-								</div>	
-							</div>
-
-							<div class = "col-md-6">
-								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" id="deduction_allowance_ratio" name="deduction_allowance_ratio" value="<?php echo $data['deduction_allowance_ratio'];?>">
-									<label class="control-label">Rasio Tunjangan </label>
-								</div>	
-							</div>
-						</div>
-						
-						<div class = "row">
+						<div class="row">
 							<div class="form-actions right">
-								<input type="button" name="add2" id="buttonAddArrayCoreDeductionAllowance" value="Add" class="btn blue" title="Simpan Data" onClick="processEditArrayCoreDeductionAllowance();">
+								<input type="hidden" name="deduction_id2" id="deduction_id2" value="<?php echo $CoreDeduction['deduction_id'];?>" class="form-control">
+								<button type="button" class="btn red" onClick="reset_edit();"><i class="fa fa-times"></i> Batal</button>
+								<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 							</div>
 						</div>
-						<br>
-						<input type="hidden" name="deduction_id" value="<?php echo $data['deduction_id']; ?>"/>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-<?php 
-	$sesi 					= $this->session->userdata('unique');
-	$CoreDeductionallowance	= $this->session->userdata('editarrayCoreDeductionallowance-'.$sesi['unique']);
-?>
-				
-<div class="portlet box blue">
-	<div class="portlet-title">
-		<div class="caption">
-			<i class="fa fa-reorder"></i>Daftar
-		</div>
-	</div>
-	<div class="portlet-body form">
-		<div class="form-body">
-			<div class="row">
-				<div class="col-md-12">									
-					<div class="table-responsive">
-						<table class="table table-bordered table-advance table-hover">
-							<thead>
-								<tr>
-									<th>No.</th>
-									<th>Nama Tunjangan</th>
-									<th>Rasio Potongan Tunjangan</th>
-									<th>Aksi</th>
-								</tr>
-							</thead>
-							<tbody>
-							<?php
-								$no = 1;
-
-								if(!empty($CoreDeductionallowance)){
-									foreach($CoreDeductionallowance as $key=>$val){
-										echo"
-											<tr class='odd gradeX'>
-												<td style='text-align:center'>$no.</td>
-												<td>".$this->CoreDeduction_model->getAllowanceName($val['allowance_id'])."</td>
-												<td>".$val['deduction_allowance_ratio']."</td>
-												<td style='text-align  : center !important;'>
-													<a href='".base_url().'CoreDeduction/deleteEditArrayCoreDeductionAllowance/'.$data['deduction_id'].'/'.$val['allowance_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
-														<i class='fa fa-trash-o'></i> Delete
-													</a>
-												</td>
-											</tr>
-										";
-										$no++;
-									}
-								}else{
-									echo"
-										<tr class='odd gradeX'>
-											<td colspan='11' style='text-align:center;'>
-												<b>Tidak Ada Data</b>
-											</td>
-										</tr>
-									";
-								}
-							?>		
-							<tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-actions right">
-					<input type="hidden" name="deduction_id2" id="deduction_id2" value="<?php echo $CoreDeduction['deduction_id'];?>" class="form-control">
-					<button type="button" class="btn red" onClick="reset_edit();"><i class="fa fa-times"></i> Batal</button>
-					<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 <?php echo form_close(); ?>

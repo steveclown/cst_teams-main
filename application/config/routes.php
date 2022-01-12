@@ -54,6 +54,19 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
+/*======================================  Recruitment ======================================== */
+
+/* CORE Recruitment */
+$route['recruitment-applicant-data'] 			                    = 'RecruitmentApplicantData';
+$route['recruitment-applicant-data/add'] 			                = 'RecruitmentApplicantData/addRecruitmentApplicantData';
+$route['recruitment-applicant-data/elements-add'] 	                = 'RecruitmentApplicantData/function_elements_add';
+$route['recruitment-applicant-data/reset-add'] 	                    = 'RecruitmentApplicantData/reset_add';
+$route['recruitment-applicant-data/process-add'] 	                = 'RecruitmentApplicantData/processAddRecruitmentApplicantData';
+$route['recruitment-applicant-data/edit/(:num)']	                = 'RecruitmentApplicantData/editRecruitmentApplicantData/$1';
+$route['recruitment-applicant-data/delete/(:num)']	                = 'RecruitmentApplicantData/deleteRecruitmentApplicantData/$1';
+$route['recruitment-applicant-data/process-edit'] 	                = 'RecruitmentApplicantData/processEditRecruitmentApplicantData';
+$route['recruitment-applicant-data/reset-edit/(:num)'] 	            = 'RecruitmentApplicantData/reset_edit/$1';
+
 /*======================================  Organization ======================================== */
 
 /* CORE Region */
@@ -77,6 +90,28 @@ $route['branch/edit/(:num)']	                = 'CoreBranch/editCoreBranch/$1';
 $route['branch/delete/(:num)']	                = 'CoreBranch/deleteCoreBranch/$1';
 $route['branch/process-edit'] 	                = 'CoreBranch/processEditCoreBranch';
 $route['branch/reset-edit/(:num)'] 	            = 'CoreBranch/reset_edit/$1';
+
+/* CORE Location */
+$route['location']		                        = 'CoreLocation';
+$route['location/add'] 			                = 'CoreLocation/addCoreLocation';
+$route['location/elements-add'] 	            = 'CoreLocation/function_elements_add';
+$route['location/reset-add'] 	                = 'CoreLocation/reset_add';
+$route['location/process-add'] 	                = 'CoreLocation/processAddCoreLocation';
+$route['location/edit/(:num)']	                = 'CoreLocation/editCoreLocation/$1';
+$route['location/delete/(:num)']	            = 'CoreLocation/deleteCoreLocation/$1';
+$route['location/process-edit'] 	            = 'CoreLocation/processEditCoreLocation';
+$route['location/reset-edit/(:num)'] 	        = 'CoreLocation/reset_edit/$1';
+
+/* CORE Company */
+$route['company']		                        = 'CoreCompany';
+$route['company/add'] 			                = 'CoreCompany/addCoreCompany';
+$route['company/elements-add'] 	                = 'CoreCompany/function_elements_add';
+$route['company/reset-add'] 	                    = 'CoreCompany/reset_add';
+$route['company/process-add'] 	                = 'CoreCompany/processAddCoreCompany';
+$route['company/edit/(:num)']	                = 'CoreCompany/editCoreCompany/$1';
+$route['company/delete/(:num)']	                = 'CoreCompany/deleteCoreCompany/$1';
+$route['company/process-edit'] 	                = 'CoreCompany/processEditCoreCompany';
+$route['company/reset-edit/(:num)'] 	            = 'CoreCompany/reset_edit/$1';
 
 /* CORE Division */
 $route['division']		                        = 'CoreDivision';
@@ -232,22 +267,22 @@ $route['annual-leave/reset-edit/(:num)'] 	    = 'CoreAnnualLeave/reset_edit/$1';
 $route['extra-leave']		                    = 'CoreExtraleave';
 $route['extra-leave/add'] 			            = 'CoreExtraleave/addCoreExtraleave';
 $route['extra-leave/elements-add'] 	            = 'CoreExtraleave/function_elements_add';
-$route['extra-leave/reset-add'] 	                = 'CoreExtraleave/reset_add';
+$route['extra-leave/reset-add'] 	            = 'CoreExtraleave/reset_add';
 $route['extra-leave/process-add'] 	            = 'CoreExtraleave/processAddCoreExtraleave';
 $route['extra-leave/edit/(:num)']	            = 'CoreExtraleave/editCoreExtraleave/$1';
 $route['extra-leave/delete/(:num)']	            = 'CoreExtraleave/deleteCoreExtraleave/$1';
 $route['extra-leave/process-edit'] 	            = 'CoreExtraleave/processEditCoreExtraleave';
-$route['extra-leave/reset-edit/(:num)'] 	        = 'CoreExtraleave/reset_edit/$1';
+$route['extra-leave/reset-edit/(:num)'] 	    = 'CoreExtraleave/reset_edit/$1';
 
 
 /*=========================================  Overtime  ======================================== */
 
 /* CORE OvertimeType */
 $route['overtime-type']		                    = 'CoreOvertimeType';
-$route['overtime-type/add'] 			            = 'CoreOvertimeType/addCoreOvertimeType';
+$route['overtime-type/add'] 			        = 'CoreOvertimeType/addCoreOvertimeType';
 $route['overtime-type/elements-add'] 	        = 'CoreOvertimeType/function_elements_add';
 $route['overtime-type/reset-add'] 	            = 'CoreOvertimeType/reset_add';
-$route['overtime-type/process-add'] 	            = 'CoreOvertimeType/processAddCoreOvertimeType';
+$route['overtime-type/process-add'] 	        = 'CoreOvertimeType/processAddCoreOvertimeType';
 $route['overtime-type/edit/(:num)']	            = 'CoreOvertimeType/editCoreOvertimeType/$1';
 $route['overtime-type/delete/(:num)']	        = 'CoreOvertimeType/deleteCoreOvertimeType/$1';
 $route['overtime-type/process-edit'] 	        = 'CoreOvertimeType/processEditCoreOvertimeType';
@@ -383,7 +418,18 @@ $route['hroemployeetransfer/delete/(:num)']	            = 'HroEmployeeTransfer/d
 $route['hroemployeetransfer/process-edit'] 	            = 'HroEmployeeTransfer/processEditHroEmployeeTransfer';
 $route['hroemployeetransfer/reset-edit/(:num)'] 	    = 'HroEmployeeTransfer/reset_edit/$1';
 
-/*=========================================  Deduction  ======================================== */
+/*=========================================  Payroll Allowance & Deduction  ======================================== */
+
+/* CORE Allowance */
+$route['allowance']		                                = 'CoreAllowance';
+$route['allowance/add'] 			                    = 'CoreAllowance/addCoreAllowance';
+$route['allowance/elements-add'] 	                    = 'CoreAllowance/function_elements_add';
+$route['allowance/reset-add'] 	                        = 'CoreAllowance/reset_add';
+$route['allowance/process-add'] 	                    = 'CoreAllowance/processAddCoreAllowance';
+$route['allowance/edit/(:num)']	                        = 'CoreAllowance/editCoreAllowance/$1';
+$route['allowance/delete/(:num)']	                    = 'CoreAllowance/deleteCoreAllowance/$1';
+$route['allowance/process-edit'] 	                    = 'CoreAllowance/processEditCoreAllowance';
+$route['allowance/reset-edit/(:num)'] 	                = 'CoreAllowance/reset_edit/$1';
 
 /* CORE Deduction */
 $route['deduction']		                                = 'CoreDeduction';

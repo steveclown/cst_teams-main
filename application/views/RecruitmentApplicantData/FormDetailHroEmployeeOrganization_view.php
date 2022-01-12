@@ -155,6 +155,18 @@
 			</label>
 		</div>
 	</div>
+	<!-- <div class = "col-md-6">
+		<div class="form-group form-md-line-input">
+			<?php
+				echo form_dropdown('company_id', $corecompany,set_value('company_id',$data['company_id']),'id="company_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);"');
+			?>
+			<label class="control-label">Nama Perusahaan
+				<span class="required">
+					*
+				</span>
+			</label>
+		</div>
+	</div> -->
 </div>							
 				
 <div class = "row">

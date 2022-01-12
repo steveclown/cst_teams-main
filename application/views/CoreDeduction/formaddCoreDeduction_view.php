@@ -99,13 +99,12 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label">Tipe Potongan
-												<span class="required">
-												*
-												</span></label>												
-												<?php echo form_dropdown('deduction_type', $deductiontype, $data['deduction_type'], 'id ="deduction_type", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
+												<span class="required">*</span></label>
+												<?php 
+													echo form_dropdown('deduction_type', $deductiontype ,set_value('deduction_type', $data['deduction_type']),'id="deduction_type", class="form-control select2me"');
+												?>
 											</div>
-										</div>
-										
+										</div>										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
 												<input type="text" name="deduction_amount" id="deduction_amount" class="form-control" value="<?php echo $data['deduction_amount']?>" onChange="function_elements_add(this.name, this.value);">

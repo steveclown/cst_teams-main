@@ -81,7 +81,7 @@
 
 			$branch_token 			= $this->CoreBranch_model->getBranchToken($data['branch_token']);
 			
-			$this->form_validation->set_rules('region_id', 'Nama Wilayah', 'required');
+			$this->form_validation->set_rules('region_id', 'Nama Cabang', 'required');
 			$this->form_validation->set_rules('branch_code', 'Kode Cabang', 'required');
 			$this->form_validation->set_rules('branch_name', 'Nama Cabang', 'required');
 			$this->form_validation->set_rules('branch_phone1', 'Nomor HP1 Harus Angka', 'trim|required|regex_match[/^[0-9]/]');
@@ -98,7 +98,7 @@
 						$this->fungsi->set_log($auth['user_id'], $branch_id, '3122', 'Application.CoreBranch.processAddCoreBranch', $branch_id, 'Add New Core Branch');
 
 						$msg = "<div class='alert alert-success'>                
-									Tambah Data Wilayah Baru Berhasil
+									Tambah Data Cabang Baru Berhasil
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
 						$this->session->unset_userdata('addCoreBranch-'.$unique['unique']);
@@ -106,7 +106,7 @@
 						redirect('branch/add');
 					}else{
 						$msg = "<div class='alert alert-danger'>                
-									Tambah Data Wilayah Baru Gagal
+									Tambah Data Cabang Baru Gagal
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
 						$this->session->set_userdata('addCoreBranch',$data);
@@ -114,7 +114,7 @@
 					}
 				} else {
 					$msg = "<div class='alert alert-danger'>                
-						Tambah Data Wilayah Baru Sudah Ada
+						Tambah Data Cabang Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					redirect('branch/add');
@@ -171,13 +171,13 @@
 
 
 					$msg = "<div class='alert alert-success'>                
-								Edit Data Wilayah Berhasil
+								Edit Data Cabang Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					redirect('branch/edit/'.$data['branch_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
-								Edit Data Wilayah Gagal
+								Edit Data Cabang Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					redirect('branch/edit/'.$data['branch_id']);
@@ -206,13 +206,13 @@
 				$this->fungsi->set_log($auth['user_id'], $data['branch_id'], '3122', 'Application.CoreBranch.deleteCoreBranch', $data['branch_id'], 'Delete Core Branch');
 
 				$msg = "<div class='alert alert-success'>                
-							Hapus Data Wilayah Berhasil
+							Hapus Data Cabang Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
 				redirect('branch');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-					Hapus Data Wilayah Gagal
+					Hapus Data Cabang Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
 				redirect('branch');

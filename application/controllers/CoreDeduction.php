@@ -64,63 +64,63 @@
 			redirect('CoreDeduction/addCoreDeduction');
 		}
 
-		public function processAddArrayCoreDeductionAllowance(){
+		// public function processAddArrayCoreDeductionAllowance(){
 
-			$data_deductionallowance = array(
-				'allowance_id'					=> $this->input->post('allowance_id', true),
-				'deduction_allowance_ratio'		=> $this->input->post('deduction_allowance_ratio', true),
-			);
+		// 	$data_deductionallowance = array(
+		// 		'allowance_id'					=> $this->input->post('allowance_id', true),
+		// 		'deduction_allowance_ratio'		=> $this->input->post('deduction_allowance_ratio', true),
+		// 	);
 			
-			$this->form_validation->set_rules('allowance_id', 'Allowance Name', 'required');
-			$this->form_validation->set_rules('deduction_allowance_ratio', 'Deduction Allowance Ratio', 'required');
+		// 	$this->form_validation->set_rules('allowance_id', 'Allowance Name', 'required');
+		// 	$this->form_validation->set_rules('deduction_allowance_ratio', 'Deduction Allowance Ratio', 'required');
 	
-			if($this->form_validation->run()==true){
-				$unique 			= $this->session->userdata('unique');
-				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayCoreDeductionallowance-'.$unique['unique']);
+		// 	if($this->form_validation->run()==true){
+		// 		$unique 			= $this->session->userdata('unique');
+		// 		$session_name 		= $this->input->post('session_name',true);
+		// 		$dataArrayHeader	= $this->session->userdata('addarrayCoreDeductionallowance-'.$unique['unique']);
 				
-				$dataArrayHeader[$data_deductionallowance['allowence_id']] = $data_deductionallowance;
+		// 		$dataArrayHeader[$data_deductionallowance['allowence_id']] = $data_deductionallowance;
 				
-				$this->session->set_userdata('addarrayCoreDeductionallowance-'.$unique['unique'],$dataArrayHeader);
-				$sesi 	= $this->session->userdata('unique');
-				$data_deductionallowance = $this->session->userdata('addCoreDeduction-'.$sesi['unique']);
+		// 		$this->session->set_userdata('addarrayCoreDeductionallowance-'.$unique['unique'],$dataArrayHeader);
+		// 		$sesi 	= $this->session->userdata('unique');
+		// 		$data_deductionallowance = $this->session->userdata('addCoreDeduction-'.$sesi['unique']);
 				
-				$data_deductionallowance['allowance_id'] 								= '';
-				$data_deductionallowance['deduction_allowance_ratio'] 					= '';
+		// 		$data_deductionallowance['allowance_id'] 								= '';
+		// 		$data_deductionallowance['deduction_allowance_ratio'] 					= '';
 				
 				
-				$this->session->set_userdata('addCoreDeduction-'.$sesi['unique'],$data_deductionallowance);
-			}else{
-				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
-				$this->session->set_userdata('message',$msg);
-			}
-		}
+		// 		$this->session->set_userdata('addCoreDeduction-'.$sesi['unique'],$data_deductionallowance);
+		// 	}else{
+		// 		$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
+		// 		$this->session->set_userdata('message',$msg);
+		// 	}
+		// }
 
-		public function deleteArrayCoreDeductionAllowance(){
-			$arrayBaru			= array();
-			$allowance_id 		= $this->uri->segment(3);
-			$session_name		= "addarrayCoreDeductionallowance-";
-			$unique 			= $this->session->userdata('unique');
-			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
-			$unique 			= $this->session->userdata('unique');
+		// public function deleteArrayCoreDeductionAllowance(){
+		// 	$arrayBaru			= array();
+		// 	$allowance_id 		= $this->uri->segment(3);
+		// 	$session_name		= "addarrayCoreDeductionallowance-";
+		// 	$unique 			= $this->session->userdata('unique');
+		// 	$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
+		// 	$unique 			= $this->session->userdata('unique');
 			
-			foreach($dataArrayHeader as $key=>$val){
-				/*print_r("key ");
-				print_r($key);
-				print_r("<BR>");*/
-				if($key != $allowance_id){
-					$arrayBaru[$key] = $val;
-				}
-			}
+		// 	foreach($dataArrayHeader as $key=>$val){
+		// 		/*print_r("key ");
+		// 		print_r($key);
+		// 		print_r("<BR>");*/
+		// 		if($key != $allowance_id){
+		// 			$arrayBaru[$key] = $val;
+		// 		}
+		// 	}
 
-			/*print_r("arrayBaru ");
-			print_r($arrayBaru);
-			exit;*/
+		// 	/*print_r("arrayBaru ");
+		// 	print_r($arrayBaru);
+		// 	exit;*/
 			
-			$this->session->set_userdata('addarrayCoreDeductionallowance-'.$unique['unique'],$arrayBaru);
+		// 	$this->session->set_userdata('addarrayCoreDeductionallowance-'.$unique['unique'],$arrayBaru);
 			
-			redirect('CoreDeduction/addCoreDeduction/');
-		}
+		// 	redirect('CoreDeduction/addCoreDeduction/');
+		// }
 
 		public function processAddCoreDeduction(){
 			$auth 		= $this->session->userdata('auth');
@@ -294,56 +294,56 @@
 			$this->load->view('MainPage_view',$data);
 		}
 
-		public function processEditArrayCoreDeductionAllowance(){
+		// public function processEditArrayCoreDeductionAllowance(){
 
-			$data_deductionallowance = array(
-				'allowance_id'					=> $this->input->post('allowance_id', true),
-				'deduction_allowance_ratio'		=> $this->input->post('deduction_allowance_ratio', true)
-			);
+		// 	$data_deductionallowance = array(
+		// 		'allowance_id'					=> $this->input->post('allowance_id', true),
+		// 		'deduction_allowance_ratio'		=> $this->input->post('deduction_allowance_ratio', true)
+		// 	);
 
-			$this->form_validation->set_rules('allowance_id', 'Allowance Name', 'required');
-			$this->form_validation->set_rules('deduction_allowance_ratio', 'Deduction Allowance Ratio', 'required');
+		// 	$this->form_validation->set_rules('allowance_id', 'Allowance Name', 'required');
+		// 	$this->form_validation->set_rules('deduction_allowance_ratio', 'Deduction Allowance Ratio', 'required');
 	
-			if($this->form_validation->run()==true){
-				$unique 			= $this->session->userdata('unique');
-				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('editarrayCoreDeductionallowance-'.$unique['unique']);
+		// 	if($this->form_validation->run()==true){
+		// 		$unique 			= $this->session->userdata('unique');
+		// 		$session_name 		= $this->input->post('session_name',true);
+		// 		$dataArrayHeader	= $this->session->userdata('editarrayCoreDeductionallowance-'.$unique['unique']);
 
-				$dataArrayHeader[$data_deductionallowance['allowance_id']] = $data_deductionallowance;
+		// 		$dataArrayHeader[$data_deductionallowance['allowance_id']] = $data_deductionallowance;
 				
-				$this->session->set_userdata('editarrayCoreDeductionallowance-'.$unique['unique'],$dataArrayHeader);
-				$sesi 	= $this->session->userdata('unique');
-				$data_deductionallowance = $this->session->userdata('editCoreDeduction-'.$sesi['unique']);
+		// 		$this->session->set_userdata('editarrayCoreDeductionallowance-'.$unique['unique'],$dataArrayHeader);
+		// 		$sesi 	= $this->session->userdata('unique');
+		// 		$data_deductionallowance = $this->session->userdata('editCoreDeduction-'.$sesi['unique']);
 				
-				$data_deductionallowance['allowance_id'] 				= '';
-				$data_deductionallowance['deduction_allowance_ratio'] 	= '';
+		// 		$data_deductionallowance['allowance_id'] 				= '';
+		// 		$data_deductionallowance['deduction_allowance_ratio'] 	= '';
 				
-				$this->session->set_userdata('editCoreDeduction-'.$sesi['unique'],$data_deductionallowance);
-			}else{
-				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
-				$this->session->set_userdata('message',$msg);
-			}
-		}
+		// 		$this->session->set_userdata('editCoreDeduction-'.$sesi['unique'],$data_deductionallowance);
+		// 	}else{
+		// 		$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
+		// 		$this->session->set_userdata('message',$msg);
+		// 	}
+		// }
 
-		public function deleteEditArrayCoreDeductionAllowance(){
-			$arrayBaru			= array();
-			$deduction_id 		= $this->uri->segment(3);
-			$allowance_id 		= $this->uri->segment(4);
-			$session_name		= "editarrayCoreDeductionallowance-";
-			$unique 			= $this->session->userdata('unique');
-			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
-			$unique 			= $this->session->userdata('unique');
+		// public function deleteEditArrayCoreDeductionAllowance(){
+		// 	$arrayBaru			= array();
+		// 	$deduction_id 		= $this->uri->segment(3);
+		// 	$allowance_id 		= $this->uri->segment(4);
+		// 	$session_name		= "editarrayCoreDeductionallowance-";
+		// 	$unique 			= $this->session->userdata('unique');
+		// 	$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
+		// 	$unique 			= $this->session->userdata('unique');
 			
-			foreach($dataArrayHeader as $key=>$val){
-				if($key != $allowance_id){
-					$arrayBaru[$key] = $val;
-				}
-			}
+		// 	foreach($dataArrayHeader as $key=>$val){
+		// 		if($key != $allowance_id){
+		// 			$arrayBaru[$key] = $val;
+		// 		}
+		// 	}
 
-			$this->session->set_userdata('editarrayCoreDeductionallowance-'.$unique['unique'],$arrayBaru);
+		// 	$this->session->set_userdata('editarrayCoreDeductionallowance-'.$unique['unique'],$arrayBaru);
 			
-			redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
-		}
+		// 	redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
+		// }
 		
 		public function processEditCoreDeduction(){			
 			$unique 							= $this->session->userdata('unique');

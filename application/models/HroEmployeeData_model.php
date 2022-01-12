@@ -7,13 +7,10 @@
 			$this->CI = get_instance();
 		}
 		
-		public function getHROEmployeeData($region_id, $branch_id, $location_id,/* $payroll_employee_level,*/ $division_id, $department_id, $section_id)
+		public function getHROEmployeeData(/* $region_id, $branch_id, $location_id, $payroll_employee_level,*/ $division_id, $department_id, $section_id)
 		{
 			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_code, hro_employee_data.employee_name, hro_employee_data.region_id, hro_employee_data.branch_id, hro_employee_data.location_id, hro_employee_data.division_id, hro_employee_data.department_id, hro_employee_data.section_id');
 			$this->db->from('hro_employee_data');
-			$this->db->where('hro_employee_data.region_id', $region_id);
-			$this->db->where('hro_employee_data.branch_id', $branch_id);
-			$this->db->where('hro_employee_data.location_id', $location_id);
 			/*
 			if($payroll_employee_level != 9 ){
 				$this->db->where('hro_employee_data.payroll_employee_level', $payroll_employee_level);

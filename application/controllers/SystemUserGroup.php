@@ -17,7 +17,7 @@
 		}
 		
 		public function addSystemUserGroup(){
-			$data['Main_view']['content']				= 'SystemUserGroup/FormAddSystemUserGroup_view';
+			$data['main_view']['content']				= 'SystemUserGroup/FormAddSystemUserGroup_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -82,8 +82,8 @@
 		
 		function editSystemUserGroup(){
 			$user_group_id = $this->uri->segment(3);
-			$data['Main_view']['systemusergroup']	= $this->SystemUserGroup_model->getSystemUserGroup_Detail($user_group_id);
-			$data['Main_view']['content']			= 'SystemUserGroup/FormEditSystemUserGroup_view';
+			$data['main_view']['systemusergroup']	= $this->SystemUserGroup_model->getSystemUserGroup_Detail($user_group_id);
+			$data['main_view']['content']			= 'SystemUserGroup/FormEditSystemUserGroup_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -116,8 +116,8 @@
 							);
 							$this->SystemUserGroup_model->saveMapping($data2);
 						}
-						$auth = $this->session->userdata('auth');
-						$this->fungsi->set_log($auth['username'],'1007','Application.SystemUserGroup.processEditSystemUserGroup',$auth['username'],'Edit User Group');
+						// $auth = $this->session->userdata('auth');
+						// $this->fungsi->set_log($auth['username'],'1007','Application.SystemUserGroup.processEditSystemUserGroup',$auth['username'],'Edit User Group');
 						$msg = "<div class='alert alert-success'>                
 									Edit Data User Group Successfully
 								</div> ";

@@ -23,9 +23,9 @@
 			$this->session->unset_userdata('HroEmployeeDataToken-'.$unique['unique']);
 
 			$auth 						= $this->session->userdata('auth');
-			$region_id 					= $auth['region_id'];
-			$branch_id 					= $auth['branch_id'];
-			$location_id 				= $auth['location_id'];
+			// $region_id 					= $auth['region_id'];
+			// $branch_id 					= $auth['branch_id'];
+			// $location_id 				= $auth['location_id'];
 		//	$payroll_employee_level 	= $auth['payroll_employee_level'];
 
 			/*print_r($auth);
@@ -41,7 +41,7 @@
 			$data['main_view']['coredepartment']		= create_double($this->HroEmployeeData_model->getCoreDepartment(),'department_id','department_name');
 			$data['main_view']['coresection']			= create_double($this->HroEmployeeData_model->getCoreSection(),'section_id','section_name');
 
-			$data['main_view']['HroEmployeeData']		= $this->HroEmployeeData_model->getHROEmployeeData($region_id, $branch_id, $location_id, /*$payroll_employee_level,*/ $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
+			$data['main_view']['HroEmployeeData']		= $this->HroEmployeeData_model->getHROEmployeeData(/*$region_id, $branch_id, $location_id, $payroll_employee_level,*/ $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
 			$data['main_view']['content']				= 'HroEmployeeData/ListHroEmployeeData_view';
 			$this->load->view('MainPage_view',$data);
 		}
@@ -148,10 +148,10 @@
 		function processAddHROEmployeeData(){
 			$auth 			= $this->session->userdata('auth');
 			$unique 		= $this->session->userdata('unique');
-			$region_id 		= $auth['region_id'];
-			$branch_id 		= $auth['branch_id'];
-			$location_id	= $auth['location_id'];
-			$created_id 	= $auth['user_id'];
+			// $region_id 		= $auth['region_id'];
+			// $branch_id 		= $auth['branch_id'];
+			// $location_id	= $auth['location_id'];
+			// $created_id 	= $auth['user_id'];
 
 			/*$tempat = $this->configuration->PhotoDirectory;
 			$newfilename = md5_file($_FILES['employee_picture']['tmp_name']);
@@ -185,9 +185,9 @@
 					} else {*/
 					
 					$data = array(
-						'region_id'								=> $region_id,
-						'branch_id'								=> $branch_id,
-						'location_id'							=> $location_id,
+						// 'region_id'								=> $region_id,
+						// 'branch_id'								=> $branch_id,
+						// 'location_id'							=> $location_id,
 						'division_id'							=> $this->input->post('division_id',true),
 						'department_id'							=> $this->input->post('department_id',true),
 						'section_id'							=> $this->input->post('section_id',true),
@@ -238,6 +238,11 @@
 						'created_on'							=> date("YmdHis"),
 						'data_state'							=> 0
 					);
+
+					
+			print_r("data ");
+			print_r($data);
+			exit;
 			
 			$employee_token 			= $this->HroEmployeeData_model->getHroEmployeeDataToken($data['employee_token']);
 			
@@ -250,6 +255,7 @@
 			$this->form_validation->set_rules('grade_id', 'Grade Name', 'required');
 			$this->form_validation->set_rules('class_id', 'Class Name', 'required');
 			$this->form_validation->set_rules('marital_status_id', 'Marital Status Name', 'required');
+
 			
 			if($this->form_validation->run()==true){
 				if ($employee_token == 0){
@@ -289,9 +295,9 @@
 		
 		function processEditHroEmployeeData(){
 			$auth 			= $this->session->userdata('auth');
-			$region_id 		= $auth['region_id'];
-			$branch_id 		= $auth['branch_id'];
-			$location_id 	= $auth['location_id'];
+			// $region_id 		= $auth['region_id'];
+			// $branch_id 		= $auth['branch_id'];
+			// $location_id 	= $auth['location_id'];
 
 			/*$tempat = $this->configuration->PhotoDirectory;*/
 			// print_r($tempat);exit;
@@ -330,9 +336,9 @@
 					} else {*/
 						
 						$data = array(
-							'region_id'								=> $region_id,
-							'branch_id'								=> $branch_id,
-							'location_id'							=> $location_id,
+							// 'region_id'								=> $region_id,
+							// 'branch_id'								=> $branch_id,
+							// 'location_id'							=> $location_id,
 							'employee_id'							=> $this->input->post('employee_id',true),
 							'division_id'							=> $this->input->post('division_id',true),
 							'department_id'							=> $this->input->post('department_id',true),

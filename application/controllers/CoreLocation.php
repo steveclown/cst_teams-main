@@ -1,7 +1,13 @@
 <?php
-	Class CoreLocation extends CI_Controller{
+	Class CoreLocation extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'location';
+
+			$this->cekLogin();
+			$this->accessMenu($menu); 
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreLocation_model');
 			$this->load->helper('sistem');
@@ -11,109 +17,191 @@
 		}
 		
 		public function index(){
-			$data['main_view']['CoreLocation']		= $this->CoreLocation_model->getCoreLocation();
-			$data['main_view']['content']			= 'CoreLocation/listCoreLocation_view';
-			$this->load->view('mainpage_view',$data);
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addCoreLocation-'.$unique['unique']);
+			$this->session->unset_userdata('CoreLocationToken-'.$unique['unique']);
+
+			$data['main_view']['corelocation']	= $this->CoreLocation_model->getCoreLocation();
+			$data['main_view']['content']			= 'CoreLocation/ListCoreLocation_view';
+			$this->load->view('MainPage_view',$data);
+		}
+
+		public function function_elements_add(){
+			$unique 	= $this->session->userdata('unique');
+			$name 		= $this->input->post('name',true);
+			$value 		= $this->input->post('value',true);
+			$sessions	= $this->session->userdata('addCoreLocation-'.$unique['unique']);
+			$sessions[$name] = $value;
+			$this->session->set_userdata('addCoreLocation-'.$unique['unique'],$sessions);
+		}
+
+		public function reset_add(){
+			$unique 	= $this->session->userdata('unique');
+
+			$this->session->unset_userdata('addCoreLocation-'.$unique['unique']);
+			$this->session->unset_userdata('CoreLocationToken-'.$unique['unique']);
+			redirect('location/add');
 		}
 		
 		function addCoreLocation(){
-			$data['main_view']['content']			= 'CoreLocation/formaddCoreLocation_view';
-			$this->load->view('mainpage_view',$data);
+			$unique 			= $this->session->userdata('unique');
+			$location_token	= $this->session->userdata('CoreLocationToken-'.$unique['unique']);
+
+			if(empty($location_token)){
+				$location_token = md5(date("YmdHis"));
+				$this->session->set_userdata('CoreLocationToken-'.$unique['unique'], $location_token);
+			}
+
+			$data['main_view']['corebranch']	= create_double($this->CoreLocation_model->getCoreBranch(),'branch_id','branch_name');
+
+			$data['main_view']['content']		= 'CoreLocation/FormAddCoreLocation_view';
+			$this->load->view('MainPage_view',$data);
 		}
 		
 		function processAddCoreLocation(){
+			$auth 		= $this->session->userdata('auth');
+			$unique 	= $this->session->userdata('unique');
+
 			$data = array(
-				'location_code' 		=> $this->input->post('location_code',true),
-				'location_name' 		=> $this->input->post('location_name',true),
-				'data_state'			=> 0
+				'branch_id' 				=> $this->input->post('branch_id',true),
+				'location_code' 			=> $this->input->post('location_code',true),
+				'location_name' 			=> $this->input->post('location_name',true),
+				'location_token' 			=> $this->input->post('location_token',true),
+				'created_id' 				=> $auth['user_id'],
+				'created_on' 				=> date("Y-m-d H:i:s"),
+				'data_state'				=> 0
 			);
+
+			$location_token 			= $this->CoreLocation_model->getLocationToken($data['location_token']);
 			
-			$this->form_validation->set_rules('location_code', 'Location Code', 'required|alpha-numeric');
-			$this->form_validation->set_rules('location_name', 'Location Name', 'required');
-			
+			$this->form_validation->set_rules('branch_id', 'Nama Cabang', 'required');
+			$this->form_validation->set_rules('location_code', 'Kode Cabang', 'required');
+			$this->form_validation->set_rules('location_name', 'Nama Cabang', 'required');
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreLocation_model->saveNewCoreLocation($data)){
-					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.CoreLocation.processAddCoreLocation',$auth['username'],'Add New Location');
-					$msg = "<div class='alert alert-success'>                
-								Add New Location Successfully
-							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-					$this->session->set_userdata('message',$msg);
-					$this->session->unset_userdata('AddLocation');
-					redirect('CoreLocation/addCoreLocation');
-				}else{
+				if ($location_token == 0){
+					if($this->CoreLocation_model->insertCoreLocation($data)){
+						$location_id 		= $this->CoreLocation_model->getLocationID($data['location_id']);
+
+
+						$this->fungsi->set_log($auth['user_id'], $location_id, '3122', 'Application.CoreLocation.processAddCoreLocation', $location_id, 'Add New Core Location');
+
+						$msg = "<div class='alert alert-success'>                
+									Tambah Data Location Baru Berhasil
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->unset_userdata('addCoreLocation-'.$unique['unique']);
+						$this->session->unset_userdata('CoreLocationToken-'.$unique['unique']);
+						redirect('location/add');
+					}else{
+						$msg = "<div class='alert alert-danger'>                
+									Tambah Data Location Baru Gagal
+								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+						$this->session->set_userdata('message',$msg);
+						$this->session->set_userdata('addCoreLocation',$data);
+						redirect('location/add');
+					}
+				} else {
 					$msg = "<div class='alert alert-danger'>                
-								Add New Location UnSuccessful
+						Tambah Data Location Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					$this->session->set_userdata('AddLocation',$data);
-					redirect('CoreLocation/addCoreLocation');
+					redirect('location/add');
 				}
 			}else{
-				$this->session->set_userdata('AddLocation',$data);
-				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
+				$this->session->set_userdata('addCoreLocation',$data);
+				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('addCoreLocation/addCoreLocation');
+				redirect('location/add');
 			}
 		}
 		
 		function editCoreLocation(){
-			$data['main_view']['CoreLocation']	= $this->CoreLocation_model->getCoreLocation_Detail($this->uri->segment(3));
-			$data['main_view']['content']		= 'CoreLocation/formeditCoreLocation_view';
-			$this->load->view('mainpage_view',$data);
+			$location_id 							= $this->uri->segment(3);
+			$data['main_view']['corebranch']		= create_double($this->CoreLocation_model->getCoreBranch(),'branch_id','branch_name');
+			$data['main_view']['corelocation']	= $this->CoreLocation_model->getCoreLocation_Detail($location_id);
+			$data['main_view']['content']			= 'CoreLocation/FormEditCoreLocation_view';
+			$this->load->view('MainPage_view',$data);
+		}
+
+		public function reset_edit(){
+			$unique 		= $this->session->userdata('unique');
+			$location_id	= $this->uri->segment(3);
+
+			redirect('location/edit/'.$location_id);
 		}
 		
 		function processEditCoreLocation(){
+			$auth 		= $this->session->userdata('auth');
+
 			$data = array(
 				'location_id' 			=> $this->input->post('location_id',true),
-				'location_code' 		=> $this->input->post('location_code',true),
-				'location_name' 		=> $this->input->post('location_name',true),
-				'data_state'			=> 0
+				'branch_id' 				=> $this->input->post('branch_id',true),
+				'location_code' 			=> $this->input->post('location_code',true),
+				'location_name' 			=> $this->input->post('location_name',true),
+				'updated_id' 				=> $auth['user_id'],
+				'updated_on' 				=> date("Y-m-d H:i:s"),
 			);
 			
-			$this->form_validation->set_rules('location_code', 'Location Code', 'required|alpha-numeric');
+			$this->form_validation->set_rules('branch_id', 'Nama Cabang', 'required');
+			$this->form_validation->set_rules('location_code', 'Location Code', 'required');
 			$this->form_validation->set_rules('location_name', 'Location Name', 'required');
-			$this->session->set_userdata('Edit',$data);
-			
+
+
 			if($this->form_validation->run()==true){
-				if($this->CoreLocation_model->saveEditCoreLocation($data)==true){
-					$auth 	= $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1077','Application.CoreLocation.Edit',$auth['username'],'Edit Location');
-					$this->fungsi->set_change_log($old_data,$data,$auth['username'],$data['CoreLocation_id']);
+				if($this->CoreLocation_model->updateCoreLocation($data)==true){
+					
+					$this->fungsi->set_log($auth['user_id'], $data['location_id'], '3122', 'Application.CoreLocation.processEditCoreLocation', $data['location_id'], 'Edit Core Location');
+
+
 					$msg = "<div class='alert alert-success'>                
-								Edit Location Successfully
+								Edit Data Location Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLocation/editCoreLocation/'.$data['location_id']);
+					redirect('location/edit/'.$data['location_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
-								Edit Location UnSuccessful
+								Edit Data Location Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLocation/editCoreLocation/'.$data['location_id']);
+					redirect('location/edit/'.$data['location_id']);
 				}
 			}else{
-				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
+				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLocation/editCoreLocation'.$data['location_id']);
+				redirect('location/edit/'.$data['location_id']);
 			}
 		}
 		
+				
 		function deleteCoreLocation(){
-			if($this->CoreLocation_model->deleteCoreLocation($this->uri->segment(3))){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreLocation.delete',$auth['username'],'Delete Location');
+			$auth 			= $this->session->userdata('auth');
+			$location_id 	= $this->uri->segment(3);
+
+			$data = array(
+				'location_id' 	=> $location_id,
+				'deleted_id' 		=> $auth['user_id'],
+				'deleted_on' 		=> date("Y-m-d H:i:s"),
+				'data_state'		=> 1
+			);
+
+			if($this->CoreLocation_model->deleteCoreLocation($data)){
+				
+				$this->fungsi->set_log($auth['user_id'], $data['location_id'], '3122', 'Application.CoreLocation.deleteCoreLocation', $data['location_id'], 'Delete Core Location');
+
 				$msg = "<div class='alert alert-success'>                
-							Delete Location Successfully
+							Hapus Data Location Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLocation');
+				redirect('location');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
-							Delete Location Successfully
+					Hapus Data Location Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLocation');
+				redirect('location');
 			}
 		}
 	}

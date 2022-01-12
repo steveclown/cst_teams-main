@@ -15,9 +15,9 @@
 		}
 
 		public function index(){
-			$data['Main_view']['employeeorganization']	= $this->create_series_employee_organization();
+			$data['main_view']['employeeorganization']	= $this->create_series_employee_organization();
 			
-			$data['Main_view']['content']				= 'Main/Main_view';
+			$data['main_view']['content']				= 'Main/Main_view';
 			$this->load->view('Mainpage_view',$data);
 		}
 		

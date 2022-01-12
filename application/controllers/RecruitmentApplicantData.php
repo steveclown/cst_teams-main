@@ -1,7 +1,13 @@
 <?php
-	Class RecruitmentApplicantData extends CI_Controller{
+	Class RecruitmentApplicantData extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'recruitment-applicant-data';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('RecruitmentApplicantData_model');
 			$this->load->helper('sistem');
@@ -13,57 +19,57 @@
 		
 		public function index(){
 			$auth = $this->session->userdata('auth');
-			$data['Main_view']['RecruitmentApplicantData']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData();
+			$data['main_view']['RecruitmentApplicantData']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData();
 
-			$data['Main_view']['educationtype']					= $this->configuration->EducationType();
-			$data['Main_view']['status']						= $this->configuration->Status();
-			$data['Main_view']['listeningskill']				= $this->configuration->ListeningSkill();
-			$data['Main_view']['readingskill']					= $this->configuration->ReadingSkill();
-			$data['Main_view']['writingskill']					= $this->configuration->WritingSkill();
-			$data['Main_view']['speakingskill']					= $this->configuration->SpeakingSkill();
-			$data['Main_view']['organizationtype']				= $this->configuration->OrganizationType();
-			$data['Main_view']['organizationstatus']			= $this->configuration->OrganizationStatus();
-			$data['Main_view']['separationletter']				= $this->configuration->SeparationLetter();
-			$data['Main_view']['sickopname']					= $this->configuration->SickOpname();
-			$data['Main_view']['colourblind']					= $this->configuration->ColourBlind();
+			$data['main_view']['educationtype']					= $this->configuration->EducationType();
+			$data['main_view']['status']						= $this->configuration->Status();
+			$data['main_view']['listeningskill']				= $this->configuration->ListeningSkill();
+			$data['main_view']['readingskill']					= $this->configuration->ReadingSkill();
+			$data['main_view']['writingskill']					= $this->configuration->WritingSkill();
+			$data['main_view']['speakingskill']					= $this->configuration->SpeakingSkill();
+			$data['main_view']['organizationtype']				= $this->configuration->OrganizationType();
+			$data['main_view']['organizationstatus']			= $this->configuration->OrganizationStatus();
+			$data['main_view']['separationletter']				= $this->configuration->SeparationLetter();
+			$data['main_view']['sickopname']					= $this->configuration->SickOpname();
+			$data['main_view']['colourblind']					= $this->configuration->ColourBlind();
 
-			$data['Main_view']['content']						= 'RecruitmentApplicantData/ListRecruitmentApplicantData_view';
+			$data['main_view']['content']						= 'RecruitmentApplicantData/ListRecruitmentApplicantData_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		public function addRecruitmentApplicantData(){
-			$data['Main_view']['corefamilyrelation']		= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
+			$data['main_view']['corefamilyrelation']		= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
 
-			$data['Main_view']['coremaritalstatus']			= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
+			$data['main_view']['coremaritalstatus']			= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
 
-			$data['Main_view']['coreeducation']				= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
+			$data['main_view']['coreeducation']				= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
 
-			$data['Main_view']['corelanguage']				= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
+			$data['main_view']['corelanguage']				= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
 
-			$data['Main_view']['coreexpertise']				= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
+			$data['main_view']['coreexpertise']				= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
 
-			$data['Main_view']['gender']					= $this->configuration->Gender();
-			$data['Main_view']['bloodtype']					= $this->configuration->BloodType();
-			$data['Main_view']['religion']					= $this->configuration->Religion();
-			$data['Main_view']['residencestatus']			= $this->configuration->ResidenceStatus();
-			$data['Main_view']['nationality']				= $this->configuration->Nationality();
-			$data['Main_view']['idtype']					= $this->configuration->IDType();
-			$data['Main_view']['educationtype']				= $this->configuration->EducationType();
-			$data['Main_view']['listeningskill']			= $this->configuration->ListeningSkill();
-			$data['Main_view']['readingskill']				= $this->configuration->ReadingSkill();
-			$data['Main_view']['writingskill']				= $this->configuration->WritingSkill();
-			$data['Main_view']['speakingskill']				= $this->configuration->SpeakingSkill();
-			$data['Main_view']['subjectsstatus']			= $this->configuration->SubjectsStatus();
-			$data['Main_view']['workingenvironment']		= $this->configuration->WorkingEnvironment();
-			$data['Main_view']['organizationtype']			= $this->configuration->OrganizationType();
-			$data['Main_view']['organizationstatus']		= $this->configuration->OrganizationStatus();
-			$data['Main_view']['monthlist']					= $this->configuration->Month();
-			$data['Main_view']['status']					= $this->configuration->Status();
-			$data['Main_view']['separationletter']			= $this->configuration->SeparationLetter();
-			$data['Main_view']['sickopname']				= $this->configuration->SickOpname();
-			$data['Main_view']['colourblind']				= $this->configuration->ColourBlind();
+			$data['main_view']['gender']					= $this->configuration->Gender();
+			$data['main_view']['bloodtype']					= $this->configuration->BloodType();
+			$data['main_view']['religion']					= $this->configuration->Religion();
+			$data['main_view']['residencestatus']			= $this->configuration->ResidenceStatus();
+			$data['main_view']['nationality']				= $this->configuration->Nationality();
+			$data['main_view']['idtype']					= $this->configuration->IDType();
+			$data['main_view']['educationtype']				= $this->configuration->EducationType();
+			$data['main_view']['listeningskill']			= $this->configuration->ListeningSkill();
+			$data['main_view']['readingskill']				= $this->configuration->ReadingSkill();
+			$data['main_view']['writingskill']				= $this->configuration->WritingSkill();
+			$data['main_view']['speakingskill']				= $this->configuration->SpeakingSkill();
+			$data['main_view']['subjectsstatus']			= $this->configuration->SubjectsStatus();
+			$data['main_view']['workingenvironment']		= $this->configuration->WorkingEnvironment();
+			$data['main_view']['organizationtype']			= $this->configuration->OrganizationType();
+			$data['main_view']['organizationstatus']		= $this->configuration->OrganizationStatus();
+			$data['main_view']['monthlist']					= $this->configuration->Month();
+			$data['main_view']['status']					= $this->configuration->Status();
+			$data['main_view']['separationletter']			= $this->configuration->SeparationLetter();
+			$data['main_view']['sickopname']				= $this->configuration->SickOpname();
+			$data['main_view']['colourblind']				= $this->configuration->ColourBlind();
 			
-			$data['Main_view']['content']					= 'RecruitmentApplicantData/FormAddRecruitmentApplicantData_view';
+			$data['main_view']['content']					= 'RecruitmentApplicantData/FormAddRecruitmentApplicantData_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -679,7 +685,7 @@
 					
 					print_r($session_expectation);
 
-					$this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantData.processAddRecruitmentApplicantData',$auth['username'],'Add New Applicant Data');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantData.processAddRecruitmentApplicantData',$auth['username'],'Add New Applicant Data');
 					$msg = "<div class='alert alert-success'>                
 								Add Applicant Data Success
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>";
@@ -712,7 +718,7 @@
 		public function deleteRecruitmentApplicantData(){
 			if($this->RecruitmentApplicantData_model->deleteRecruitmentApplicantData($this->uri->segment(3))){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Applicant Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -733,46 +739,46 @@
 
 
 			$applicant_id = $this->uri->segment(3);
-			$data['Main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
-			$data['Main_view']['recruitmentapplicanteducation']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantEducation_Detail($applicant_id);
-			$data['Main_view']['recruitmentapplicantfamily']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantFamily_Detail($applicant_id);
-			$data['Main_view']['recruitmentapplicantlanguage']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantLanguage_Detail($applicant_id);
-			$data['Main_view']['recruitmentapplicantexpertise']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExpertise_Detail($applicant_id);
-			$data['Main_view']['recruitmentapplicantexperience']	= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExperience_Detail($applicant_id);
+			$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicanteducation']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantEducation_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantfamily']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantFamily_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantlanguage']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantLanguage_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantexpertise']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExpertise_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantexperience']	= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExperience_Detail($applicant_id);
 
 
-			$data['Main_view']['corefamilyrelation']		= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
+			$data['main_view']['corefamilyrelation']		= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
 
-			$data['Main_view']['coremaritalstatus']			= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
+			$data['main_view']['coremaritalstatus']			= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
 
-			$data['Main_view']['coreeducation']				= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
+			$data['main_view']['coreeducation']				= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
 
-			$data['Main_view']['corelanguage']				= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
+			$data['main_view']['corelanguage']				= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
 
-			$data['Main_view']['coreexpertise']				= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
+			$data['main_view']['coreexpertise']				= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
 
-			$data['Main_view']['gender']					= $this->configuration->Gender();
-			$data['Main_view']['bloodtype']					= $this->configuration->BloodType();
-			$data['Main_view']['religion']					= $this->configuration->Religion();
-			$data['Main_view']['residencestatus']			= $this->configuration->ResidenceStatus();
-			$data['Main_view']['nationality']				= $this->configuration->Nationality();
-			$data['Main_view']['idtype']					= $this->configuration->IDType();
-			$data['Main_view']['educationtype']				= $this->configuration->EducationType();
-			$data['Main_view']['listeningskill']			= $this->configuration->ListeningSkill();
-			$data['Main_view']['readingskill']				= $this->configuration->ReadingSkill();
-			$data['Main_view']['writingskill']				= $this->configuration->WritingSkill();
-			$data['Main_view']['speakingskill']				= $this->configuration->SpeakingSkill();
-			$data['Main_view']['subjectsstatus']			= $this->configuration->SubjectsStatus();
-			$data['Main_view']['workingenvironment']		= $this->configuration->WorkingEnvironment();
-			$data['Main_view']['organizationtype']			= $this->configuration->OrganizationType();
-			$data['Main_view']['organizationstatus']		= $this->configuration->OrganizationStatus();
-			$data['Main_view']['monthlist']					= $this->configuration->Month();
-			$data['Main_view']['status']					= $this->configuration->Status();
-			$data['Main_view']['separationletter']			= $this->configuration->SeparationLetter();
-			$data['Main_view']['sickopname']				= $this->configuration->SickOpname();
-			$data['Main_view']['colourblind']				= $this->configuration->ColourBlind();
+			$data['main_view']['gender']					= $this->configuration->Gender();
+			$data['main_view']['bloodtype']					= $this->configuration->BloodType();
+			$data['main_view']['religion']					= $this->configuration->Religion();
+			$data['main_view']['residencestatus']			= $this->configuration->ResidenceStatus();
+			$data['main_view']['nationality']				= $this->configuration->Nationality();
+			$data['main_view']['idtype']					= $this->configuration->IDType();
+			$data['main_view']['educationtype']				= $this->configuration->EducationType();
+			$data['main_view']['listeningskill']			= $this->configuration->ListeningSkill();
+			$data['main_view']['readingskill']				= $this->configuration->ReadingSkill();
+			$data['main_view']['writingskill']				= $this->configuration->WritingSkill();
+			$data['main_view']['speakingskill']				= $this->configuration->SpeakingSkill();
+			$data['main_view']['subjectsstatus']			= $this->configuration->SubjectsStatus();
+			$data['main_view']['workingenvironment']		= $this->configuration->WorkingEnvironment();
+			$data['main_view']['organizationtype']			= $this->configuration->OrganizationType();
+			$data['main_view']['organizationstatus']		= $this->configuration->OrganizationStatus();
+			$data['main_view']['monthlist']					= $this->configuration->Month();
+			$data['main_view']['status']					= $this->configuration->Status();
+			$data['main_view']['separationletter']			= $this->configuration->SeparationLetter();
+			$data['main_view']['sickopname']				= $this->configuration->SickOpname();
+			$data['main_view']['colourblind']				= $this->configuration->ColourBlind();
 			
-			$data['Main_view']['content']					= 'RecruitmentApplicantData/FormEditRecruitmentApplicantData_view';
+			$data['main_view']['content']					= 'RecruitmentApplicantData/FormEditRecruitmentApplicantData_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -859,7 +865,7 @@
 			
 			if($this->form_validation->run()==true){
 				if($this->RecruitmentApplicantData_model->updateRecruitmentApplicantData($data)){
-					$this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantData.processAddRecruitmentApplicantData',$auth['username'],'Add New Applicant Data');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantData.processAddRecruitmentApplicantData',$auth['username'],'Add New Applicant Data');
 					$msg = "<div class='alert alert-success'>                
 								Edit Applicant Data Success
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>";
@@ -944,7 +950,7 @@
 					$this->session->unset_userdata('editrecruitmentapplicantfamily-'.$unique['unique']);
 
 					$auth 	= $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1077','Application.RecruitmentApplicantData.Add',$auth['username'],'Add Applicant Data');
+					// $this->fungsi->set_log($auth['username'],'1077','Application.RecruitmentApplicantData.Add',$auth['username'],'Add Applicant Data');
 					$msg = "<div class='alert alert-success'>                
 								Add Applicant Family Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -976,7 +982,7 @@
 
 			if($this->RecruitmentApplicantData_model->deleteRecruitmentApplicantFamily($datadelete_recruitmentapplicantfamily)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
 				$msg = "<div class='alert alert-success'>                
 							Delete Applicant Family Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1051,7 +1057,7 @@
 
 					$this->session->unset_userdata('editrecruitmentapplicanteducation-'.$unique['unique']);
 
-					$this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantEducation.processAddRecruitmentApplicantEducation',$auth['username'],'Add New Applicant Education');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantEducation.processAddRecruitmentApplicantEducation',$auth['username'],'Add New Applicant Education');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Applicant Education Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1083,7 +1089,7 @@
 
 			if($this->RecruitmentApplicantData_model->deleteRecruitmentApplicantEducation($datadelete_recruitmentapplicanteducation)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
 				$msg = "<div class='alert alert-success'>                
 							Delete Applicant Education Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1155,7 +1161,7 @@
 					
 					$this->session->unset_userdata('editrecruitmentapplicantexpertise-'.$unique['unique']);
 
-					$this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantExpertise.processAddRecruitmentApplicantExpertise',$auth['username'],'Add New Applicant Expertise');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantExpertise.processAddRecruitmentApplicantExpertise',$auth['username'],'Add New Applicant Expertise');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Applicant Expertise Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1187,7 +1193,7 @@
 
 			if($this->RecruitmentApplicantData_model->deleteRecruitmentApplicantExpertise($datadelete_recruitmentapplicantexpertise)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
 				$msg = "<div class='alert alert-success'>                
 							Delete Applicant Expertise Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1256,7 +1262,7 @@
 					$this->session->unset_userdata('editrecruitmentapplicantexperience-'.$unique['unique']);
 
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantWorking.processAddRecruitmentApplicantWorking',$auth['username'],'Add New Applicant Working');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantWorking.processAddRecruitmentApplicantWorking',$auth['username'],'Add New Applicant Working');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Applicant Experience Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1289,7 +1295,7 @@
 
 			if($this->RecruitmentApplicantData_model->deleteRecruitmentApplicantExperience($datadelete_recruitmentapplicantexperience)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
 				$msg = "<div class='alert alert-success'>                
 							Delete Applicant Experience Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1333,7 +1339,7 @@
 				'applicant_language_read' 			=> $this->input->post('applicant_language_read',true),
 				'applicant_language_write'			=> $this->input->post('applicant_language_write',true),
 				'applicant_language_speak' 			=> $this->input->post('applicant_language_speak',true),
-				'applicant_language_remark'			=> $this->input->post('applicant_language_remark',true),
+				// 'applicant_language_remark'			=> $this->input->post('applicant_language_remark',true),
 				'data_state'						=> 0,
 				'created_id'						=> $auth['user_id'],
 				'created_on'						=> date("Y-m-d H:i:s"),
@@ -1348,7 +1354,7 @@
 					$this->session->unset_userdata('editrecruitmentapplicantlanguage-'.$unique['unique']);					
 					$auth = $this->session->userdata('auth');
 					
-					$this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantLanguage.processAddRecruitmentApplicantLanguage',$auth['username'],'Add New Applicant Language');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.RecruitmentApplicantLanguage.processAddRecruitmentApplicantLanguage',$auth['username'],'Add New Applicant Language');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Applicant Language Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1381,7 +1387,7 @@
 
 			if($this->RecruitmentApplicantData_model->deleteRecruitmentApplicantLanguage($datadelete_recruitmentapplicantlanguage)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.RecruitmentApplicantData.delete',$auth['username'],'Delete RecruitmentApplicantData');
 				$msg = "<div class='alert alert-success'>                
 							Delete Applicant Language Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
@@ -1424,71 +1430,73 @@
 		public function recruitmentApplicantData(){
 			$applicant_id = $this->uri->segment(3);
 
-			$data['Main_view']['coreregion']						= create_double($this->RecruitmentApplicantData_model->getCoreRegion(), 'region_id', 'region_name');
+			$data['main_view']['coreregion']						= create_double($this->RecruitmentApplicantData_model->getCoreRegion(), 'region_id', 'region_name');
 
-			$data['Main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
+			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
 
-			$data['Main_view']['corejobtitle']						= create_double($this->RecruitmentApplicantData_model->getCoreJobTitle(), 'job_title_id', 'job_title_name');
+			$data['main_view']['corecompany']						= create_double($this->RecruitmentApplicantData_model->getCoreCompany(), 'company_id', 'company_name');
 
-			$data['Main_view']['coregrade']							= create_double($this->RecruitmentApplicantData_model->getCoreGrade(), 'grade_id', 'grade_name');
+			$data['main_view']['corejobtitle']						= create_double($this->RecruitmentApplicantData_model->getCoreJobTitle(), 'job_title_id', 'job_title_name');
 
-			$data['Main_view']['coreclass']							= create_double($this->RecruitmentApplicantData_model->getCoreClass(), 'class_id', 'class_name');
+			$data['main_view']['coregrade']							= create_double($this->RecruitmentApplicantData_model->getCoreGrade(), 'grade_id', 'grade_name');
 
-			$data['Main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
+			$data['main_view']['coreclass']							= create_double($this->RecruitmentApplicantData_model->getCoreClass(), 'class_id', 'class_name');
 
-			$data['Main_view']['corebank']							= create_double($this->RecruitmentApplicantData_model->getCoreBank(), 'bank_id', 'bank_name');
+			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
 
-			//$data['Main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
+			$data['main_view']['corebank']							= create_double($this->RecruitmentApplicantData_model->getCoreBank(), 'bank_id', 'bank_name');
 
-			$data['Main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
+			//$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
 
-			$data['Main_view']['recruitmentapplicantfamily']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantFamily_Detail($applicant_id);
+			$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
 
-			$data['Main_view']['recruitmentapplicanteducation']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantEducation_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantfamily']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantFamily_Detail($applicant_id);
 
-			$data['Main_view']['recruitmentapplicantlanguage']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantLanguage_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicanteducation']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantEducation_Detail($applicant_id);
 
-			$data['Main_view']['recruitmentapplicantexpertise']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExpertise_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantlanguage']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantLanguage_Detail($applicant_id);
 
-			$data['Main_view']['recruitmentapplicantexperience']	= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExperience_Detail($applicant_id);
+			$data['main_view']['recruitmentapplicantexpertise']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExpertise_Detail($applicant_id);
+
+			$data['main_view']['recruitmentapplicantexperience']	= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExperience_Detail($applicant_id);
 
 
-			$data['Main_view']['corefamilyrelation']				= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
+			$data['main_view']['corefamilyrelation']				= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
 
-			$data['Main_view']['coremaritalstatus']					= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
+			$data['main_view']['coremaritalstatus']					= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
 
-			$data['Main_view']['coreeducation']						= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
+			$data['main_view']['coreeducation']						= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
 
-			$data['Main_view']['corelanguage']						= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
+			$data['main_view']['corelanguage']						= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
 
-			$data['Main_view']['coreexpertise']						= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
+			$data['main_view']['coreexpertise']						= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
 
 			
 					
 
 
-			$data['Main_view']['path']								= $this->configuration->PhotoDirectory();
-			$data['Main_view']['gender']							= $this->configuration->Gender();
-			$data['Main_view']['religion']							= $this->configuration->Religion();
-			$data['Main_view']['bloodtype']							= $this->configuration->BloodType();
-			$data['Main_view']['workingstatus']						= $this->configuration->WorkingStatus();
-			$data['Main_view']['employeestatus']					= $this->configuration->EmployeeStatus();
-			$data['Main_view']['overtimestatus']					= $this->configuration->OvertimeStatus();	
-			$data['Main_view']['idtype']							= $this->configuration->IDType();
-			$data['Main_view']['payrollemployeelevel']				= $this->configuration->PayrollEmployeeLevel();
-			$data['Main_view']['dayoffstatus']						= $this->configuration->DayOffStatus();
-			$data['Main_view']['educationtype']						= $this->configuration->EducationType();
-			// $data['Main_view']['expertisetype']						= $this->configuration->ExpertiseType();
-			$data['Main_view']['separationletter']					= $this->configuration->SeparationLetter();
-			// $data['Main_view']['languagetype']						= $this->configuration->LanguageType();
-			$data['Main_view']['status']							= $this->configuration->Status();
-			$data['Main_view']['monthlist']							= $this->configuration->Month();
-			$data['Main_view']['listeningskill']					= $this->configuration->ListeningSkill();
-			$data['Main_view']['readingskill']						= $this->configuration->ReadingSkill();
-			$data['Main_view']['writingskill']						= $this->configuration->WritingSkill();
-			$data['Main_view']['speakingskill']						= $this->configuration->SpeakingSkill();
+			$data['main_view']['path']								= $this->configuration->PhotoDirectory();
+			$data['main_view']['gender']							= $this->configuration->Gender();
+			$data['main_view']['religion']							= $this->configuration->Religion();
+			$data['main_view']['bloodtype']							= $this->configuration->BloodType();
+			$data['main_view']['workingstatus']						= $this->configuration->WorkingStatus();
+			$data['main_view']['employeestatus']					= $this->configuration->EmployeeStatus();
+			$data['main_view']['overtimestatus']					= $this->configuration->OvertimeStatus();	
+			$data['main_view']['idtype']							= $this->configuration->IDType();
+			$data['main_view']['payrollemployeelevel']				= $this->configuration->PayrollEmployeeLevel();
+			$data['main_view']['dayoffstatus']						= $this->configuration->DayOffStatus();
+			$data['main_view']['educationtype']						= $this->configuration->EducationType();
+			// $data['main_view']['expertisetype']						= $this->configuration->ExpertiseType();
+			$data['main_view']['separationletter']					= $this->configuration->SeparationLetter();
+			// $data['main_view']['languagetype']						= $this->configuration->LanguageType();
+			$data['main_view']['status']							= $this->configuration->Status();
+			$data['main_view']['monthlist']							= $this->configuration->Month();
+			$data['main_view']['listeningskill']					= $this->configuration->ListeningSkill();
+			$data['main_view']['readingskill']						= $this->configuration->ReadingSkill();
+			$data['main_view']['writingskill']						= $this->configuration->WritingSkill();
+			$data['main_view']['speakingskill']						= $this->configuration->SpeakingSkill();
 			
-			$data['Main_view']['content']							= 'RecruitmentApplicantData/FormDetailRecruitmentApplicantData_view';
+			$data['main_view']['content']							= 'RecruitmentApplicantData/FormDetailRecruitmentApplicantData_view';
 			$this->load->view('MainPage_view',$data);	
 		}
 

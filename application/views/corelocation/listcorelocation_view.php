@@ -52,7 +52,7 @@
 
 		<div class="row">
 				<div class="col-md-12">
-					<div class="portlet box red-flamingo">
+					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="fa fa-reorder"></i>List
@@ -68,6 +68,9 @@
 								<thead>
 									<tr>
 										<th>
+											No
+										</th>
+										<th>
 											Location Code
 										</th>
 										<th>
@@ -79,24 +82,27 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php
-										foreach ($corelocation as $key=>$val){
-											
-											echo"
-												<tr>									
-													<td>$val[location_code]</td>
-													<td>$val[location_name]</td>
-													<td>
-														<a href='".$this->config->item('base_url').'corelocation/editCoreLocation/'.$val[location_id]."' class='btn default btn-xs purple'>
-															<i class='fa fa-edit'></i> Edit
-														</a>
-														<a href='".$this->config->item('base_url').'corelocation/deleteCoreLocation/'.$val[location_id]."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
-															<i class='fa fa-trash-o'></i> Delete
-														</a>
-													</td>
-												</tr>
-											";
-									} ?>
+								<?php
+									$no=1;
+									foreach ($corelocation as $key=>$val){
+										
+										echo"
+											<tr>		
+												<td>".$no."</td>
+												<td>".$val['location_code']."</td>
+												<td>".$val['location_name']."</td>
+												<td>
+													<a href='".$this->config->item('base_url').'CoreLocation/editCoreLocation/'.$val['location_id']."' class='btn default btn-xs purple'>
+														<i class='fa fa-edit'></i> Edit
+													</a>
+													<a href='".$this->config->item('base_url').'CoreLocation/deleteCoreLocation/'.$val['location_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<i class='fa fa-trash-o'></i> Hapus
+													</a>
+												</td>
+											</tr>
+										";
+										$no++;
+								} ?>
 								</tbody>
 							</table>
 						</div>

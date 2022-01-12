@@ -1,7 +1,13 @@
 <?php
-	Class CoreAllowance extends CI_Controller{
+	Class CoreAllowance extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'allowance';
+
+			$this->cekLogin();
+			$this->accessMenu($menu); 
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreAllowance_model');
 			$this->load->helper('sistem');
@@ -11,17 +17,17 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreAllowance']		= $this->CoreAllowance_model->getCoreAllowance();
-			$data['Main_view']['allowancetype']		= $this->configuration->AllowanceType();
-			$data['Main_view']['allowancegroup']	= $this->configuration->AllowanceGroup();
-			$data['Main_view']['content']			= 'CoreAllowance/ListCoreAllowance_view';
+			$data['main_view']['CoreAllowance']		= $this->CoreAllowance_model->getCoreAllowance();
+			$data['main_view']['allowancetype']		= $this->configuration->AllowanceType();
+			$data['main_view']['allowancegroup']	= $this->configuration->AllowanceGroup();
+			$data['main_view']['content']			= 'CoreAllowance/ListCoreAllowance_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		public function addCoreAllowance(){
-			$data['Main_view']['content']			= 'CoreAllowance/FormAddCoreAllowance_view';
-			$data['Main_view']['allowancetype']		= $this->configuration->AllowanceType();
-			$data['Main_view']['allowancegroup']	= $this->configuration->AllowanceGroup();
+			$data['main_view']['content']			= 'CoreAllowance/FormAddCoreAllowance_view';
+			$data['main_view']['allowancetype']		= $this->configuration->AllowanceType();
+			$data['main_view']['allowancegroup']	= $this->configuration->AllowanceGroup();
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -77,11 +83,11 @@
 		public function editCoreAllowance(){
 			$allowance_id = $this->uri->segment(3);
 
-			$data['Main_view']['CoreAllowance']			= $this->CoreAllowance_model->getCoreAllowance_Detail($allowance_id);
+			$data['main_view']['CoreAllowance']			= $this->CoreAllowance_model->getCoreAllowance_Detail($allowance_id);
 
-			$data['Main_view']['allowancetype']			= $this->configuration->AllowanceType();
-			$data['Main_view']['allowancegroup']		= $this->configuration->AllowanceGroup();
-			$data['Main_view']['content']				= 'CoreAllowance/FormEditCoreAllowance_view';
+			$data['main_view']['allowancetype']			= $this->configuration->AllowanceType();
+			$data['main_view']['allowancegroup']		= $this->configuration->AllowanceGroup();
+			$data['main_view']['content']				= 'CoreAllowance/FormEditCoreAllowance_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		

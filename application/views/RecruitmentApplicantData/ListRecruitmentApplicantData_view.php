@@ -48,13 +48,13 @@
 						<tr>
 							<th style='text-align:center' width='5%'>No</th>
 							<th style='text-align:center' width='15%'>Nama</th>
-							<th style='text-align:center' width='5%'>Tanggal pelamar</th>
-							<th style='text-align:center' width='5%'>Tanggal Lahir</th>
+							<th style='text-align:center' width='10%'>Tanggal pelamar</th>
+							<th style='text-align:center' width='10%'>Tanggal Lahir</th>
 							<th style='text-align:center' width='15%'>Alamat</th>
 							<th style='text-align:center' width='15%'>Kota</th>
 							<th style='text-align:center' width='15%'>No Hp </th>
 							<th style='text-align:center' width='15%'>Pendidikan Terakhir</th>
-							<th style='text-align:center' width='20%'>Aksi</th>
+							<th style='text-align:center' width='10%'>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -80,6 +80,8 @@
 												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/editRecruitmentApplicantData/'.$val['applicant_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
+											</td>
+											<td>
 												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/deleteRecruitmentApplicantData/'.$val['applicant_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
@@ -89,6 +91,7 @@
 											</td>
 										</tr>
 									";
+									
 									/* <a href='".base_url().'RecruitmentApplicantData/edit/'.$val['applicant_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a> */

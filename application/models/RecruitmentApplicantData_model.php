@@ -50,6 +50,14 @@
 			return $result;
 		}
 
+		public function getCoreCompany(){
+			$this->db->select('core_company.company_id, core_company.company_name');
+			$this->db->from('core_company');
+			$this->db->where('core_company.data_state', 0);
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+
 		public function getCoreDepartment($division_id){
 			$this->db->select('core_department.department_id, core_department.department_name');
 			$this->db->from('core_department');

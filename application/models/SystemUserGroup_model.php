@@ -57,15 +57,14 @@
 			return $this->db->get()->row_array();
 			return $result;
 		}
-		
+
 		public function isThisMenuInGroup($level, $id_menu){
-			$hasil = $this->db->query("SELECT * FROM system_menu_mapping WHERE user_group_level='$level' AND id_menu='$id_menu'");
-			$hasil = $hasil->row_array();
-			if(count($hasil)>0){
-				return true;
-			}else{
-				return false;
-			}
+			$this->db->select('*');
+			$this->db->from('system_menu_mapping');
+			$this->db->where('user_group_level', $level);
+			$this->db->where('id_menu', $id_menu);
+			$result = $this->db->get()->row_array();
+			return $result;
 		}
 		
 		public function deleteSystemUserGroup($user_group_id){

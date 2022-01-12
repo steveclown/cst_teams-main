@@ -108,25 +108,25 @@ $data = $this->session->userdata('addsystemusergroup');
 									<ul>
 										<?php
 											$auth		= $this->session->userdata('auth');
-											$menulist1 	= $this->systemusergroup_model->getMenuList("_");
+											$menulist1 	= $this->SystemUserGroup_model->getMenuList("_");
 											foreach($menulist1 as $key=>$val){
 												if($val['type']=='folder'){
 													echo "<li>";
 													echo '<label>'.$val['text']."</label>";
 														echo "<ul>";
-															$menulist2 = $this->systemusergroup_model->getMenuList($val['id_menu']."_");
+															$menulist2 = $this->SystemUserGroup_model->getMenuList($val['id_menu']."_");
 															foreach($menulist2 as $key2=>$val2){
 																if($val2['type']=='folder'){
 																	echo "<li>";
 																	echo '<label>'.$val2['text'].'</label>';
 																	echo "<ul>";
-																	$menulist3 = $this->systemusergroup_model->getMenuList($val2['id_menu']."_");
+																	$menulist3 = $this->SystemUserGroup_model->getMenuList($val2['id_menu']."_");
 																	foreach($menulist3 as $key3=>$val3){
 																		if($val3['type']=='folder'){
 																			echo "<li>";
 																			echo '<label>'.$val3['text'].'</label>';
 																			echo "<ul>";
-																			$menulist4 = $this->systemusergroup_model->getMenuList($val3['id_menu']."_");
+																			$menulist4 = $this->SystemUserGroup_model->getMenuList($val3['id_menu']."_");
 																			foreach($menulist4 as $key4=>$val4){
 																					if($val4['type']=='folder'){
 																					echo "<li>";
