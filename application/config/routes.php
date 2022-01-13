@@ -67,6 +67,29 @@ $route['recruitment-applicant-data/delete/(:num)']	                = 'Recruitmen
 $route['recruitment-applicant-data/process-edit'] 	                = 'RecruitmentApplicantData/processEditRecruitmentApplicantData';
 $route['recruitment-applicant-data/reset-edit/(:num)'] 	            = 'RecruitmentApplicantData/reset_edit/$1';
 
+/* CORE Recruitment Data Status */
+$route['recruitment-applicant-data-status'] 			            = 'RecruitmentApplicantDataStatus';
+$route['recruitment-applicant-data-status/add'] 			        = 'RecruitmentApplicantDataStatus/addRecruitmentApplicantDataStatus';
+$route['recruitment-applicant-data-status/elements-add'] 	        = 'RecruitmentApplicantDataStatus/function_elements_add';
+$route['recruitment-applicant-data-status/reset-add'] 	            = 'RecruitmentApplicantDataStatus/reset_add';
+$route['recruitment-applicant-data-status/process-add'] 	        = 'RecruitmentApplicantDataStatus/processAddRecruitmentApplicantDataStatus';
+$route['recruitment-applicant-data-status/edit/(:num)']	            = 'RecruitmentApplicantDataStatus/editRecruitmentApplicantDataStatus/$1';
+$route['recruitment-applicant-data-status/delete/(:num)']	        = 'RecruitmentApplicantDataStatus/deleteRecruitmentApplicantDataStatus/$1';
+$route['recruitment-applicant-data-status/process-edit'] 	        = 'RecruitmentApplicantDataStatus/processEditRecruitmentApplicantDataStatus';
+$route['recruitment-applicant-data-status/reset-edit/(:num)'] 	    = 'RecruitmentApplicantDataStatus/reset_edit/$1';
+
+/* CORE Recruitment Data Status Final*/
+$route['recruitment-applicant-data-status-final'] 			            = 'RecruitmentApplicantDataStatusFinal';
+$route['recruitment-applicant-data-status-final/add'] 			        = 'RecruitmentApplicantDataStatusFinal/addRecruitmentApplicantDataStatusFinal';
+$route['recruitment-applicant-data-status-final/elements-add'] 	        = 'RecruitmentApplicantDataStatusFinal/function_elements_add';
+$route['recruitment-applicant-data-status-final/reset-add'] 	        = 'RecruitmentApplicantDataStatusFinal/reset_add';
+$route['recruitment-applicant-data-status-final/process-add'] 	        = 'RecruitmentApplicantDataStatusFinal/processAddRecruitmentApplicantDataStatusFinal';
+$route['recruitment-applicant-data-status-final/edit/(:num)']	        = 'RecruitmentApplicantDataStatusFinal/editRecruitmentApplicantDataStatusFinal/$1';
+$route['recruitment-applicant-data-status-final/delete/(:num)']	        = 'RecruitmentApplicantDataStatusFinal/deleteRecruitmentApplicantDataStatusFinal/$1';
+$route['recruitment-applicant-data-status-final/process-edit'] 	        = 'RecruitmentApplicantDataStatusFinal/processEditRecruitmentApplicantDataStatusFinal';
+$route['recruitment-applicant-data-status-final/reset-edit/(:num)'] 	= 'RecruitmentApplicantDataStatusFinal/reset_edit/$1';
+
+
 /*======================================  Organization ======================================== */
 
 /* CORE Region */

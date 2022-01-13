@@ -1,6 +1,3 @@
-
-
-
 			<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 			<div class = "page-bar">
 				<ul class="page-breadcrumb">
@@ -35,10 +32,10 @@
 				<div class="caption">
 					<i class="fa fa-reorder"></i>Daftar
 				</div>
-				<div class="actions">
+				<!-- <div class="actions">
 					<a href="<?php echo base_url();?>RecruitmentApplicantData/addRecruitmentApplicantData" class="btn btn-default btn-sm">
 					<i class="fa fa-plus"></i> Tambah pelamar baru</a>
-				</div>
+				</div> -->
 			</div>
 			<div class="portlet-body">
 			<div class="form-body">
@@ -53,8 +50,9 @@
 							<th style='text-align:center' width='15%'>Alamat</th>
 							<th style='text-align:center' width='15%'>Kota</th>
 							<th style='text-align:center' width='15%'>No Hp </th>
-							<th style='text-align:center' width='15%'>Pendidikan Terakhir</th>
-							<th style='text-align:center' width='10%'>Aksi</th>
+							<th style='text-align:center' width='10%'>Pendidikan Terakhir</th>
+							<th style='text-align:center' width='10%'>Status Sekarang</th>
+							<th style='text-align:center' width='5%'>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -76,18 +74,11 @@
 											<td>".$val['applicant_city']."</td>
 											<td>".$val['applicant_mobile_phone']."</td>
 											<td>".$val['applicant_last_education']."</td>
+											<td>".$statusapplicant[$val['applicant_status']]."</td>
 											<td>
 												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/editRecruitmentApplicantData/'.$val['applicant_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-											</td>
-											<td>
-												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/deleteRecruitmentApplicantData/'.$val['applicant_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
-													<i class='fa fa-trash-o'></i> Hapus
-												</a>
-												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/recruitmentApplicantData/'.$val['applicant_id']."' class='btn default btn-xs green-jungle'>
-													<i class='fa fa-bars'></i> Recruitment
-												</a>	
 											</td>
 										</tr>
 									";

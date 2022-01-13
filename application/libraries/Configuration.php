@@ -38,6 +38,11 @@ class Configuration {
 		return $status1;
 	}
 
+	public function StatusApplicant(){
+		$status_applicant 							= array (0 =>"New", 1=>"Interview", 2=>"Test 1", 3=>"Test 2", 4=>"Test 3", 5=>"Finalisasi");
+
+		return $status_applicant;
+	}
 
 	public function skorsingstatus(){
 		$skorsing_status 					= array (0 =>"Unskorsing", 1=>"Skorsing");
@@ -118,13 +123,13 @@ class Configuration {
 	}
 	
 	public function ExpertisePassed(){
-		$expertise_passed 					= array (0=>"Tidal", 1=>"Ya");
+		$expertise_passed 					= array (0=>"Tidak", 1=>"Ya");
 
 		return $expertise_passed;
 	}
 
 	public function ExpertiseCertificate(){
-		$expertise_certificate 				= array (0=>"Tidal", 1=>"Ya");
+		$expertise_certificate 				= array (0=>"Tidak", 1=>"Ya");
 
 		return $expertise_certificate;
 	}

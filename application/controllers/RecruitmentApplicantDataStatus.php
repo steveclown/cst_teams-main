@@ -1,15 +1,15 @@
 <?php
-	Class RecruitmentApplicantData extends MY_Controller{
+	Class RecruitmentApplicantDataStatus extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'recruitment-applicant-data';
+			$menu = 'recruitment-applicant-data-status';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
 
 			$this->load->model('MainPage_model');
-			$this->load->model('RecruitmentApplicantData_model');
+			$this->load->model('RecruitmentApplicantDataStatus_model');
 			$this->load->helper('sistem');
 			$this->load->library('fungsi');
 			$this->load->library('configuration');
@@ -28,8 +28,8 @@
 			$this->session->unset_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
 
 
-			$data['main_view']['recruitmentapplicantdata']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData();
-
+			$data['main_view']['recruitmentapplicantdata']		= $this->RecruitmentApplicantDataStatus_model->getRecruitmentApplicantDataStatus();
+			$data['main_view']['statusapplicant']				= $this->configuration->StatusApplicant();
 			$data['main_view']['educationtype']					= $this->configuration->EducationType();
 			$data['main_view']['status']						= $this->configuration->Status();
 			$data['main_view']['listeningskill']				= $this->configuration->ListeningSkill();
@@ -42,7 +42,7 @@
 			$data['main_view']['sickopname']					= $this->configuration->SickOpname();
 			$data['main_view']['colourblind']					= $this->configuration->ColourBlind();
 
-			$data['main_view']['content']						= 'RecruitmentApplicantData/ListRecruitmentApplicantData_view';
+			$data['main_view']['content']						= 'RecruitmentApplicantDataStatus/ListRecruitmentApplicantDataStatus_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
