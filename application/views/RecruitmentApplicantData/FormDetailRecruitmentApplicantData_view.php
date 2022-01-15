@@ -87,6 +87,12 @@
 				<div class="tabbable-line boxless tabbable-reversed ">
 					<ul class="nav nav-tabs">
 						<?php
+							// if($data['active_tab']=="" || $data['active_tab']=="status"){
+							// 	$tabstatus = "<li class='active'><a href='#tabstatus' name='status' data-toggle='tab' onClick='function_state_recruit(this.name);'><b>Status</b></a></li>";
+							// }else{
+							// 	$tabstatus = "<li><a href='#tabstatus' data-toggle='tab' name='status' onClick='function_state_recruit(this.name);'><b>Status</b></a></li>";
+							// }
+							
 							if($data['active_tab']=="" || $data['active_tab']=="organization"){
 								$taborganization = "<li class='active'><a href='#taborganization' name='organization' data-toggle='tab' onClick='function_state_recruit(this.name);'><b>Organisasi</b></a></li>";
 							}else{
@@ -171,6 +177,7 @@
 								$tabquestion = "<li><a href='#tabquestion' name='question' data-toggle='tab' onClick='function_state_recruit(this.name)'><b>Question</b></a></li>";
 							}
 							
+							// echo $tabstatus;
 							echo $taborganization;
 							echo $tabpersonal;
 							// echo $tabworking;
@@ -183,6 +190,12 @@
 					</ul>
 					<div class="tab-content">
 						<?php
+							// if($data['active_tab']=="" || $data['active_tab']=="status"){
+							// 	$statstatus = "active";
+							// }else{
+							// 	$statstatus = "";
+							// }
+
 							if($data['active_tab']=="" || $data['active_tab']=="organization"){
 								$statorganization = "active";
 							}else{
@@ -230,6 +243,10 @@
 							}else{
 								$statexpertise = "";
 							}
+
+							echo"<div class='tab-pane ".$statstatus."' id='tabstatus'>";
+								$this->load->view("RecruitmentApplicantData/formdetailStatus_view");
+							echo"</div>";
 
 							echo"<div class='tab-pane ".$statorganization."' id='taborganization'>";
 								$this->load->view("RecruitmentApplicantData/formdetailHroEmployeeOrganization_view");

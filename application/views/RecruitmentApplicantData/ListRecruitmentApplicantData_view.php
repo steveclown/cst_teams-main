@@ -85,8 +85,8 @@
 												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/deleteRecruitmentApplicantData/'.$val['applicant_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
-												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/recruitmentApplicantData/'.$val['applicant_id']."' class='btn default btn-xs green-jungle'>
-													<i class='fa fa-bars'></i> Recruitment
+												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/ApplicantDataStatus/'.$val['applicant_id']."' class='btn default btn-xs green-jungle'>
+													<i class='fa fa-pencil'></i> Status
 												</a>	
 											</td>
 										</tr>

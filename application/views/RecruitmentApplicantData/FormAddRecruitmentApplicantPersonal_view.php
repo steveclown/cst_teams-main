@@ -4,7 +4,7 @@
 <?php
 	$sesi 	= $this->session->userdata('unique');
 	$auth	= $this->session->userdata('auth');
-	$data = $this->session->userdata('addRecruitmentApplicantData-'.$sesi['unique']);	
+	$data 	= $this->session->userdata('addRecruitmentApplicantData-'.$sesi['unique']);	
 
 	if (empty($data['applicant_name'])) {
 		$data['applicant_name']="";

@@ -264,7 +264,7 @@
 		}
 
 		public function getRecruitmentApplicantData_Detail($applicant_id){			
-			$this->db->select('recruitment_applicant_data.applicant_id, recruitment_applicant_data.marital_status_id, recruitment_applicant_data.education_id, recruitment_applicant_data.applicant_name, recruitment_applicant_data.applicant_application_date, recruitment_applicant_data.applicant_date_of_birth, recruitment_applicant_data.applicant_place_of_birth, recruitment_applicant_data.applicant_last_education, recruitment_applicant_data.applicant_address, recruitment_applicant_data.applicant_city, recruitment_applicant_data.applicant_postal_code, recruitment_applicant_data.applicant_rt, recruitment_applicant_data.applicant_rw, recruitment_applicant_data.applicant_kecamatan, recruitment_applicant_data.applicant_kelurahan, recruitment_applicant_data.applicant_home_phone, recruitment_applicant_data.applicant_mobile_phone, recruitment_applicant_data.applicant_email_address, recruitment_applicant_data.applicant_residence_address, recruitment_applicant_data.applicant_residence_city, recruitment_applicant_data.applicant_residence_postal_code, recruitment_applicant_data.applicant_residence_rt, recruitment_applicant_data.applicant_residence_rw, recruitment_applicant_data.applicant_residence_kecamatan, recruitment_applicant_data.applicant_residence_kelurahan, recruitment_applicant_data.applicant_residence_status, recruitment_applicant_data.applicant_gender, recruitment_applicant_data.applicant_religion, recruitment_applicant_data.applicant_nationality, recruitment_applicant_data.applicant_blood_type,  recruitment_applicant_data.applicant_heir_name, recruitment_applicant_data.applicant_id_type,  recruitment_applicant_data.applicant_id_number');
+			$this->db->select('*');
 			$this->db->from('recruitment_applicant_data');
 			$this->db->where('recruitment_applicant_data.data_state', 0);
 			$this->db->where('recruitment_applicant_data.applicant_id', $applicant_id);
@@ -388,7 +388,11 @@
 			$this->db->limit(1);
 			$result = $this->db->get()->row_array();
 			return $result['employee_id'];
-		}	
+		}
+		
+		public function insertApplicantStatus($applicantstatusdata){
+			return $this->db->insert('recruitment_applicant_data_status',$applicantstatusdata);
+		}
 		
 		public function insertHROemployeeEducation($data_education){
 			return $this->db->insert('hro_employee_education',$data_education);

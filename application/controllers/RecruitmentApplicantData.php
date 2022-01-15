@@ -1919,6 +1919,119 @@
 				$this->session->set_userdata('message',$msg);
 			}
 		}
-		
+
+		public function ApplicantDataStatus(){
+			$applicant_id = $this->uri->segment(3);
+
+			$data['main_view']['statusapplicant']					= $this->configuration->StatusApplicant();
+
+			$data['main_view']['coreregion']						= create_double($this->RecruitmentApplicantData_model->getCoreRegion(), 'region_id', 'region_name');
+
+			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
+
+			$data['main_view']['corecompany']						= create_double($this->RecruitmentApplicantData_model->getCoreCompany(), 'company_id', 'company_name');
+
+			$data['main_view']['corejobtitle']						= create_double($this->RecruitmentApplicantData_model->getCoreJobTitle(), 'job_title_id', 'job_title_name');
+
+			$data['main_view']['coregrade']							= create_double($this->RecruitmentApplicantData_model->getCoreGrade(), 'grade_id', 'grade_name');
+
+			$data['main_view']['coreclass']							= create_double($this->RecruitmentApplicantData_model->getCoreClass(), 'class_id', 'class_name');
+
+			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
+
+			$data['main_view']['corebank']							= create_double($this->RecruitmentApplicantData_model->getCoreBank(), 'bank_id', 'bank_name');
+
+			//$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
+
+			$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
+
+			$data['main_view']['recruitmentapplicantfamily']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantFamily_Detail($applicant_id);
+
+			$data['main_view']['recruitmentapplicanteducation']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantEducation_Detail($applicant_id);
+
+			$data['main_view']['recruitmentapplicantlanguage']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantLanguage_Detail($applicant_id);
+
+			$data['main_view']['recruitmentapplicantexpertise']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExpertise_Detail($applicant_id);
+
+			$data['main_view']['recruitmentapplicantexperience']	= $this->RecruitmentApplicantData_model->getRecruitmentApplicantExperience_Detail($applicant_id);
+
+
+			$data['main_view']['corefamilyrelation']				= create_double($this->RecruitmentApplicantData_model->getCoreFamilyRelation(),'family_relation_id','family_relation_name');
+
+			$data['main_view']['coremaritalstatus']					= create_double($this->RecruitmentApplicantData_model->getCoreMaritalStatus(),'marital_status_id','marital_status_name');
+
+			$data['main_view']['coreeducation']						= create_double($this->RecruitmentApplicantData_model->getCoreEducation(),'education_id','education_name');
+
+			$data['main_view']['corelanguage']						= create_double($this->RecruitmentApplicantData_model->getCoreLanguage(),'language_id','language_name');
+
+			$data['main_view']['coreexpertise']						= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
+
+
+			$data['main_view']['path']								= $this->configuration->PhotoDirectory();
+			$data['main_view']['gender']							= $this->configuration->Gender();
+			$data['main_view']['religion']							= $this->configuration->Religion();
+			$data['main_view']['bloodtype']							= $this->configuration->BloodType();
+			$data['main_view']['workingstatus']						= $this->configuration->WorkingStatus();
+			$data['main_view']['employeestatus']					= $this->configuration->EmployeeStatus();
+			$data['main_view']['overtimestatus']					= $this->configuration->OvertimeStatus();	
+			$data['main_view']['idtype']							= $this->configuration->IDType();
+			$data['main_view']['payrollemployeelevel']				= $this->configuration->PayrollEmployeeLevel();
+			$data['main_view']['dayoffstatus']						= $this->configuration->DayOffStatus();
+			$data['main_view']['educationtype']						= $this->configuration->EducationType();
+			// $data['main_view']['expertisetype']					= $this->configuration->ExpertiseType();
+			$data['main_view']['separationletter']					= $this->configuration->SeparationLetter();
+			// $data['main_view']['languagetype']					= $this->configuration->LanguageType();
+			$data['main_view']['status']							= $this->configuration->Status();
+			$data['main_view']['monthlist']							= $this->configuration->Month();
+			$data['main_view']['listeningskill']					= $this->configuration->ListeningSkill();
+			$data['main_view']['readingskill']						= $this->configuration->ReadingSkill();
+			$data['main_view']['writingskill']						= $this->configuration->WritingSkill();
+			$data['main_view']['speakingskill']						= $this->configuration->SpeakingSkill();
+			
+			$data['main_view']['content']							= 'RecruitmentApplicantData/FormDetailRecruitmentApplicantDataStatus_view';
+			$this->load->view('MainPage_view',$data);	
+		}
+
+		public function processRecruitmentApplicantStatus(){
+			$auth = $this->session->userdata('auth');
+			$data = array (
+				'applicant_id' 					=> $this->input->post('applicant_id'),
+				'applicant_status'				=> $this->input->post('applicant_status'),
+				'applicant_status_date'			=> tgltodb($this->input->post('applicant_status_date')),
+				'applicant_status_next'			=> $this->input->post('applicant_status_next'),
+				'applicant_status_next_date'	=> tgltodb($this->input->post('applicant_status_next_date')),
+				'applicant_status_remark'		=> $this->input->post('applicant_status_remark'),
+			);
+			
+			$RecruitmentApplicantData 			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($data['applicant_id']);
+
+			if($this->RecruitmentApplicantData_model->updateRecruitmentApplicantData($data)){
+				$applicantstatusdata = array (
+					'applicant_id'							=> $this->input->post('applicant_id',true),
+					'applicant_name'						=> $this->input->post('applicant_name',true),
+					'applicant_application_date'			=> tgltodb($this->input->post('applicant_application_date',true)),
+					'applicant_status'						=> $this->input->post('applicant_status',true),
+					'applicant_status_date'					=> tgltodb($this->input->post('applicant_status_date',true)),
+					'applicant_status_next'					=> $this->input->post('applicant_status_next',true),
+					'applicant_status_next_date'			=> tgltodb($this->input->post('applicant_status_next_date',true)),
+					'created_id'							=> $auth['user_id'],
+					'created_on'							=> date("YmdHis"),
+					'data_state'							=> 0,
+				);
+
+				$this->RecruitmentApplicantData_model->insertApplicantStatus($applicantstatusdata);
+				$msg = "<div class='alert alert-success'>                
+								Recruitment Status Successfully
+							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('RecruitmentApplicantData/');
+			} else {
+				$msg = "<div class='alert alert-danger'>                
+								Recruitment Employee Fail
+							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
+					$this->session->set_userdata('message',$msg);
+					redirect('RecruitmentApplicantData/ApplicantDataStatus/'.$data['applicant_id']);
+			}
+		}
 	}
 ?>
