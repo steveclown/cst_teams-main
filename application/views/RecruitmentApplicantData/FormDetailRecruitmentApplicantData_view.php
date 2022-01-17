@@ -68,7 +68,7 @@
 ?>
 
 <?php 
-	echo form_open('RecruitmentApplicantData/processAddHROEmployeeData_Applicant',array('id' => 'myform', 'class' => 'horizontal-form')); 
+	echo form_open('RecruitmentApplicantDataStatusFinal/processAddHROEmployeeData_Applicant',array('id' => 'myform', 'class' => 'horizontal-form')); 
 ?>
 <div class="row">
 	<div class="col-md-12">
@@ -79,7 +79,7 @@
 					Form Detail Pelamar 
 				</div>
 				<div class="actions">
-					<a href="<?php echo base_url();?>RecruitmentApplicantData" class="btn btn-default btn-sm">
+					<a href="<?php echo base_url();?>RecruitmentApplicantDataStatusFinal" class="btn btn-default btn-sm">
 					<i class="fa fa-angle-left"></i> Kembali</a>
 				</div>
 			</div>

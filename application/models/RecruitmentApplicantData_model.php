@@ -8,8 +8,28 @@
 		}
 		
 		public function getRecruitmentApplicantData(){			
-			$this->db->select('recruitment_applicant_data.applicant_id, recruitment_applicant_data.applicant_name, recruitment_applicant_data.applicant_application_date, recruitment_applicant_data.applicant_date_of_birth, recruitment_applicant_data.applicant_place_of_birth, recruitment_applicant_data.applicant_mobile_phone,recruitment_applicant_data.applicant_last_education, recruitment_applicant_data.applicant_address, recruitment_applicant_data.applicant_city, recruitment_applicant_data.education_id');
+			$this->db->select('recruitment_applicant_data.applicant_id, recruitment_applicant_data.applicant_name, recruitment_applicant_data.applicant_application_date, recruitment_applicant_data.applicant_date_of_birth, recruitment_applicant_data.applicant_place_of_birth, recruitment_applicant_data.applicant_mobile_phone,recruitment_applicant_data.applicant_last_education, recruitment_applicant_data.applicant_address, recruitment_applicant_data.applicant_city, recruitment_applicant_data.education_id, recruitment_applicant_data.applicant_status');
 			$this->db->from('recruitment_applicant_data');
+			$this->db->where('recruitment_applicant_data.data_state', 0);
+			$this->db->order_by('recruitment_applicant_data.applicant_id', 'DESC');
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+		
+		public function getRecruitmentApplicantDataStatus(){			
+			$this->db->select('*');
+			$this->db->from('recruitment_applicant_data');
+			$this->db->where('recruitment_applicant_data.applicant_status <', 5);
+			$this->db->where('recruitment_applicant_data.data_state', 0);
+			$this->db->order_by('recruitment_applicant_data.applicant_id', 'DESC');
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+
+		public function getRecruitmentApplicantDataStatusFinal(){			
+			$this->db->select('*');
+			$this->db->from('recruitment_applicant_data');
+			$this->db->where('recruitment_applicant_data.applicant_status', 5);
 			$this->db->where('recruitment_applicant_data.data_state', 0);
 			$this->db->order_by('recruitment_applicant_data.applicant_id', 'DESC');
 			$result = $this->db->get()->result_array();

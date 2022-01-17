@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'recruitment-applicant-data';
+			$menu	= 'recruitment-applicant-data';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
@@ -19,15 +19,6 @@
 		
 		public function index(){
 			$auth = $this->session->userdata('auth');
-			$unique 	= $this->session->userdata('unique');
-			$this->session->unset_userdata('addRecruitmentApplicantData-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
-
-
 			$data['main_view']['recruitmentapplicantdata']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData();
 
 			$data['main_view']['educationtype']					= $this->configuration->EducationType();
@@ -102,12 +93,12 @@
 		public function reset_add(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addRecruitmentApplicantData-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique']);
-			$this->session->unset_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
-			redirect('recruitment-applicant-data/add');
+			$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
+			$this->session->unset_userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique']);
+			$this->session->unset_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
+			$this->session->unset_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
+			$this->session->unset_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
+			redirect('RecruitmentApplicantDatailufa/addRecruitmentApplicantData');
 		}
 
 
@@ -116,14 +107,14 @@
 			$unique 	= $this->session->userdata('unique');
 			$name 		= $this->input->post('name',true);
 			$value 		= $this->input->post('value',true);
-			$sessions	= $this->session->userdata('-'.$unique['unique']);
+			$sessions	= $this->session->userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
 			$sessions[$name] = $value;
-			$this->session->set_userdata('addRecruitmentApplicantFamily-'.$unique['unique'],$sessions);
+			$this->session->set_userdata('addrecruitmentapplicantfamily-'.$unique['unique'],$sessions);
 		}
 
 		public function reset_add_family(){
 			$unique 	= $this->session->userdata('unique');
-			$this->session->unset_userdata('addRecruitmentApplicantFamily-'.$unique['unique']);
+			$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
 		
@@ -156,10 +147,11 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
 				$dataArrayHeader[$data_family['applicant_family_record_id']] = $data_family;
 								
-				$this->session->set_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique'],$dataArrayHeader);
+				$this->session->set_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique'],$dataArrayHeader);
+				$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
@@ -169,7 +161,7 @@
 		public function deleteArrayRecruitmentApplicantFamily(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addArrayRecruitmentApplicantFamily-";
+			$session_name		= "addarrayrecruitmentapplicantfamily-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -180,7 +172,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique'],$arrayBaru);
 			
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
@@ -494,7 +486,7 @@
 			
 			$created_id = $this->RecruitmentApplicantData_model->getCreatedID($auth['username']);
 			
-			$session_family			= $this->session->userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
+			$session_family			= $this->session->userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
 			$session_education		= $this->session->userdata('addarrayrecruitmentapplicanteduaction-'.$unique['unique']);
 			$session_language		= $this->session->userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
 			$session_expertise		= $this->session->userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
@@ -504,6 +496,7 @@
 			$data = array(
 				'applicant_name'								=> $this->input->post('applicant_name',true),	
 				'applicant_application_date'					=> tgltodb($this->input->post('applicant_application_date',true)),
+				'applicant_status_date'							=> tgltodb($this->input->post('applicant_application_date',true)),
 				'applicant_place_of_birth'						=> $this->input->post('applicant_place_of_birth',true),
 				'applicant_date_of_birth'						=> tgltodb($this->input->post('applicant_date_of_birth',true)),
 				'applicant_last_education'						=> $this->input->post('applicant_last_education',true),
@@ -701,7 +694,7 @@
 
 					$this->session->unset_userdata('addapplicantdata-'.$unique['unique']);
 					$this->session->unset_userdata('addRecruitmentApplicantData-'.$unique['unique']);
-					$this->session->unset_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
+					$this->session->unset_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
 					$this->session->unset_userdata('addarrayrecruitmentapplicanteduaction-'.$unique['unique']);			
 					$this->session->unset_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
 					$this->session->unset_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);			
@@ -1347,7 +1340,7 @@
 				'applicant_language_read' 			=> $this->input->post('applicant_language_read',true),
 				'applicant_language_write'			=> $this->input->post('applicant_language_write',true),
 				'applicant_language_speak' 			=> $this->input->post('applicant_language_speak',true),
-				// 'applicant_language_remark'			=> $this->input->post('applicant_language_remark',true),
+				'applicant_language_remark'			=> $this->input->post('applicant_language_remark',true),
 				'data_state'						=> 0,
 				'created_id'						=> $auth['user_id'],
 				'created_on'						=> date("Y-m-d H:i:s"),
@@ -1441,8 +1434,6 @@
 			$data['main_view']['coreregion']						= create_double($this->RecruitmentApplicantData_model->getCoreRegion(), 'region_id', 'region_name');
 
 			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
-
-			$data['main_view']['corecompany']						= create_double($this->RecruitmentApplicantData_model->getCoreCompany(), 'company_id', 'company_name');
 
 			$data['main_view']['corejobtitle']						= create_double($this->RecruitmentApplicantData_model->getCoreJobTitle(), 'job_title_id', 'job_title_name');
 
@@ -1923,13 +1914,9 @@
 		public function ApplicantDataStatus(){
 			$applicant_id = $this->uri->segment(3);
 
-			$data['main_view']['statusapplicant']					= $this->configuration->StatusApplicant();
-
 			$data['main_view']['coreregion']						= create_double($this->RecruitmentApplicantData_model->getCoreRegion(), 'region_id', 'region_name');
 
 			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
-
-			$data['main_view']['corecompany']						= create_double($this->RecruitmentApplicantData_model->getCoreCompany(), 'company_id', 'company_name');
 
 			$data['main_view']['corejobtitle']						= create_double($this->RecruitmentApplicantData_model->getCoreJobTitle(), 'job_title_id', 'job_title_name');
 
@@ -1966,7 +1953,10 @@
 
 			$data['main_view']['coreexpertise']						= create_double($this->RecruitmentApplicantData_model->getCoreExpertise(),'expertise_id','expertise_name');
 
+			
+					
 
+			$data['main_view']['statusapplicant']								= $this->configuration->StatusApplicant();
 			$data['main_view']['path']								= $this->configuration->PhotoDirectory();
 			$data['main_view']['gender']							= $this->configuration->Gender();
 			$data['main_view']['religion']							= $this->configuration->Religion();
@@ -1978,9 +1968,9 @@
 			$data['main_view']['payrollemployeelevel']				= $this->configuration->PayrollEmployeeLevel();
 			$data['main_view']['dayoffstatus']						= $this->configuration->DayOffStatus();
 			$data['main_view']['educationtype']						= $this->configuration->EducationType();
-			// $data['main_view']['expertisetype']					= $this->configuration->ExpertiseType();
+			// $data['main_view']['expertisetype']						= $this->configuration->ExpertiseType();
 			$data['main_view']['separationletter']					= $this->configuration->SeparationLetter();
-			// $data['main_view']['languagetype']					= $this->configuration->LanguageType();
+			// $data['main_view']['languagetype']						= $this->configuration->LanguageType();
 			$data['main_view']['status']							= $this->configuration->Status();
 			$data['main_view']['monthlist']							= $this->configuration->Month();
 			$data['main_view']['listeningskill']					= $this->configuration->ListeningSkill();
@@ -1996,13 +1986,16 @@
 			$auth = $this->session->userdata('auth');
 			$data = array (
 				'applicant_id' 					=> $this->input->post('applicant_id'),
-				'applicant_status'				=> $this->input->post('applicant_status'),
-				'applicant_status_date'			=> tgltodb($this->input->post('applicant_status_date')),
+				'applicant_status'				=> $this->input->post('applicant_status_next'),
+				'applicant_status_date'			=> tgltodb($this->input->post('applicant_status_next_date')),
 				'applicant_status_next'			=> $this->input->post('applicant_status_next'),
 				'applicant_status_next_date'	=> tgltodb($this->input->post('applicant_status_next_date')),
 				'applicant_status_remark'		=> $this->input->post('applicant_status_remark'),
 			);
 			
+			// print_r("data:");
+			// print_r($data);
+			// exit;
 			$RecruitmentApplicantData 			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($data['applicant_id']);
 
 			if($this->RecruitmentApplicantData_model->updateRecruitmentApplicantData($data)){
@@ -2014,17 +2007,20 @@
 					'applicant_status_date'					=> tgltodb($this->input->post('applicant_status_date',true)),
 					'applicant_status_next'					=> $this->input->post('applicant_status_next',true),
 					'applicant_status_next_date'			=> tgltodb($this->input->post('applicant_status_next_date',true)),
+					'applicant_status_remark'				=> $this->input->post('applicant_status_remark'),
 					'created_id'							=> $auth['user_id'],
 					'created_on'							=> date("YmdHis"),
 					'data_state'							=> 0,
 				);
-
+				// print_r("data:");
+				// print_r($applicantstatusdata);
+				// exit;
 				$this->RecruitmentApplicantData_model->insertApplicantStatus($applicantstatusdata);
 				$msg = "<div class='alert alert-success'>                
 								Recruitment Status Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantData/');
+					redirect('RecruitmentApplicantDataStatus/');
 			} else {
 				$msg = "<div class='alert alert-danger'>                
 								Recruitment Employee Fail
