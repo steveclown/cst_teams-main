@@ -240,9 +240,9 @@
 					);
 
 					
-			print_r("data ");
-			print_r($data);
-			exit;
+			// print_r("data ");
+			// print_r($data);
+			// exit;
 			
 			$employee_token 			= $this->HroEmployeeData_model->getHroEmployeeDataToken($data['employee_token']);
 			

@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'maritalstatus';
+			$menu = 'marital-status';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
@@ -151,18 +151,18 @@
 								Edit Data MaritalStatus Berhasil
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('maritalstatus/edit/'.$data['marital_status_id']);
+					redirect('marital-status/edit/'.$data['marital_status_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Edit Data MaritalStatus Gagal
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('maritalstatus/edit/'.$data['marital_status_id']);
+					redirect('marital-status/edit/'.$data['marital_status_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('maritalstatus/edit/'.$data['marital_status_id']);
+				redirect('marital-status/edit/'.$data['marital_status_id']);
 			}
 		}
 		

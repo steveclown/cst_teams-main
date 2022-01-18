@@ -1434,6 +1434,8 @@
 
 			$data['main_view']['coreregion']						= create_double($this->RecruitmentApplicantData_model->getCoreRegion(), 'region_id', 'region_name');
 
+			$data['main_view']['corecompany']						= create_double($this->RecruitmentApplicantData_model->getCoreCompany(), 'company_id', 'company_name');
+
 			$data['main_view']['coredivision']						= create_double($this->RecruitmentApplicantData_model->getCoreDivision(), 'division_id', 'division_name');
 
 			$data['main_view']['corejobtitle']						= create_double($this->RecruitmentApplicantData_model->getCoreJobTitle(), 'job_title_id', 'job_title_name');
@@ -1564,6 +1566,7 @@
 			$auth = $this->session->userdata('auth');
 			$data = array (
 				'applicant_id' 		=> $this->input->post('applicant_id'),
+				'applicant_status'	=> 6,
 				'data_state'		=> 1,
 			);
 			
@@ -1585,6 +1588,7 @@
 					'region_id'								=> $this->input->post('region_id',true),
 					'branch_id'								=> $this->input->post('branch_id',true),
 					'location_id'							=> $this->input->post('location_id',true),
+					'company_id'							=> $this->input->post('company_id',true),
 					'division_id'							=> $this->input->post('division_id',true),
 					'department_id'							=> $this->input->post('department_id',true),
 					'section_id'							=> $this->input->post('section_id',true),
@@ -1758,8 +1762,27 @@
 							$this->RecruitmentApplicantData_model->insertHROemployeeExperience($employeeexperience);
 						}
 					}
-				}
 
+					$record_to_employee = array(
+						'applicant_id'						=> $this->input->post('applicant_id',true),
+						'applicant_name'					=> $this->input->post('applicant_name',true),
+						'applicant_application_date'		=> tgltodb($this->input->post('applicant_application_date',true)),
+						'applicant_address'					=> $this->input->post('applicant_address',true),
+						'applicant_status'					=> $this->input->post('applicant_status',true),
+						'applicant_status_date'				=> tgltodb($this->input->post('applicant_status_date',true)),
+						'applicant_status_remark'			=> $this->input->post('applicant_status_remark',true),
+						'applicant_status_remark_date'		=> tgltodb($this->input->post('applicant_status_remark_date',true)),
+						'applicant_status_remark_id'		=> $auth['user_id'],
+						'applicant_status_remark_on'		=> date("Y-m-d H:i:s"),
+						'created_id'						=> $auth['user_id'],
+						'created_on'						=> date("Y-m-d H:i:s"),
+					);
+
+					// print_r("data:");
+					// print_r($record_to_employee);
+					// exit();
+					$this->RecruitmentApplicantData_model->insertRecordToEmployee($record_to_employee);
+				}				
 				$msg = "<div class='alert alert-success'>                
 								Recruitment Employee Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";

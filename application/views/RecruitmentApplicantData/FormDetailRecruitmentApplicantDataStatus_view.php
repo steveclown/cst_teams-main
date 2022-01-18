@@ -68,7 +68,7 @@
 ?>
 
 <?php 
-	echo form_open('RecruitmentApplicantData/processRecruitmentApplicantStatus',array('id' => 'myform', 'class' => 'horizontal-form')); 
+	echo form_open('RecruitmentApplicantDataStatus/processRecruitmentApplicantStatus',array('id' => 'myform', 'class' => 'horizontal-form')); 
 ?>
 <div class="row">
 	<div class="col-md-12">

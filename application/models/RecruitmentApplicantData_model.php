@@ -323,6 +323,17 @@
 			return $result;
 		}
 
+
+		public function getRecordStatus($applicant_id){			
+			$this->db->select('*');
+			$this->db->from('recruitment_applicant_data_status');
+			$this->db->where('recruitment_applicant_data_status.applicant_id', $applicant_id);
+			$this->db->order_by('recruitment_applicant_data_status.applicant_status_id', 'DESC');
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+
+
 		public function getRecruitmentApplicantExpertise_Detail($applicant_id){			
 			$this->db->select('recruitment_applicant_expertise.applicant_expertise_id, recruitment_applicant_expertise.applicant_id, recruitment_applicant_expertise.expertise_id, core_expertise.expertise_name, recruitment_applicant_expertise.applicant_expertise_name, recruitment_applicant_expertise.applicant_expertise_city, recruitment_applicant_expertise.applicant_expertise_from_period, recruitment_applicant_expertise.applicant_expertise_to_period, recruitment_applicant_expertise.applicant_expertise_duration, recruitment_applicant_expertise.applicant_expertise_passed, recruitment_applicant_expertise.applicant_expertise_certificate, recruitment_applicant_expertise.applicant_expertise_remark');
 			$this->db->from('recruitment_applicant_expertise');
@@ -398,6 +409,10 @@
 
 		public function insertHROemployeeData($data){
 			return $this->db->insert('hro_employee_data',$data);
+		}
+
+		public function insertRecordToEmployee($record_to_employee){
+			return $this->db->insert('recruitment_applicant_record_to_employee',$record_to_employee);
 		}
 
 		public function getEmployeeID($created_id){

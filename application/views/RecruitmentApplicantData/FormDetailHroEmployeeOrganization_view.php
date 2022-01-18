@@ -155,7 +155,7 @@
 			</label>
 		</div>
 	</div>
-	<!-- <div class = "col-md-6">
+	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
 			<?php
 				echo form_dropdown('company_id', $corecompany,set_value('company_id',$data['company_id']),'id="company_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);"');
@@ -166,7 +166,7 @@
 				</span>
 			</label>
 		</div>
-	</div> -->
+	</div>
 </div>							
 				
 <div class = "row">
@@ -288,6 +288,10 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
+			<input type="hidden" id="applicant_status_remark" name="applicant_status_remark" value="<?php echo $RecruitmentApplicantData['applicant_status_remark'];?>">
+			
+			<input type="hidden" id="applicant_status_remark_date" name="applicant_status_remark_date" value="<?php echo $RecruitmentApplicantData['applicant_status_remark_date'];?>">
+			
 			<?php
 				echo form_dropdown('class_id', $coreclass,set_value('class_id',$data['class_id']),'id="class_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);"');
 			?>

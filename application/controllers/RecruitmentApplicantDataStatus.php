@@ -1931,6 +1931,10 @@
 
 			//$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
 
+
+			$data['main_view']['recordstatus']						= $this->RecruitmentApplicantData_model->getRecordStatus($applicant_id);
+
+
 			$data['main_view']['RecruitmentApplicantData']			= $this->RecruitmentApplicantData_model->getRecruitmentApplicantData_Detail($applicant_id);
 
 			$data['main_view']['recruitmentapplicantfamily']		= $this->RecruitmentApplicantData_model->getRecruitmentApplicantFamily_Detail($applicant_id);
@@ -1986,12 +1990,15 @@
 		public function processRecruitmentApplicantStatus(){
 			$auth = $this->session->userdata('auth');
 			$data = array (
-				'applicant_id' 					=> $this->input->post('applicant_id'),
-				'applicant_status'				=> $this->input->post('applicant_status_next'),
-				'applicant_status_date'			=> tgltodb($this->input->post('applicant_status_next_date')),
-				'applicant_status_next'			=> $this->input->post('applicant_status_next'),
-				'applicant_status_next_date'	=> tgltodb($this->input->post('applicant_status_next_date')),
-				'applicant_status_remark'		=> $this->input->post('applicant_status_remark'),
+				'applicant_id' 						=> $this->input->post('applicant_id'),
+				'applicant_status'					=> $this->input->post('applicant_status_next'),
+				'applicant_status_date'				=> tgltodb($this->input->post('applicant_status_next_date')),
+				'applicant_status_next'				=> $this->input->post('applicant_status_next'),
+				'applicant_status_next_date'		=> tgltodb($this->input->post('applicant_status_next_date')),
+				'applicant_status_remark'			=> $this->input->post('remark'),
+				'applicant_status_remark_date'		=> date("Y-m-d"),
+				'applicant_status_remark_id'		=> $auth['user_id'],
+				'applicant_status_remark_on'		=> date("YmdHis"),
 			);
 			
 			// print_r("data:");
@@ -2008,7 +2015,7 @@
 					'applicant_status_date'					=> tgltodb($this->input->post('applicant_status_date',true)),
 					'applicant_status_next'					=> $this->input->post('applicant_status_next',true),
 					'applicant_status_next_date'			=> tgltodb($this->input->post('applicant_status_next_date',true)),
-					'applicant_status_remark'				=> $this->input->post('applicant_status_remark'),
+					'applicant_status_remark'				=> $this->input->post('remark'),
 					'created_id'							=> $auth['user_id'],
 					'created_on'							=> date("YmdHis"),
 					'data_state'							=> 0,
