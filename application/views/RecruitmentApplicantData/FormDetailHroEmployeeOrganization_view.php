@@ -303,5 +303,57 @@
 		</div>
 	</div>
 </div>
+<br>
+<br>
+<div class="row">
+	<div class = "col-md-3">
+		<div class="form-group form-md-line-input">
+			<input type="text" name="employee_code" id="employee_code" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<label class="control-label">Kode Karyawan
+			<span class="required">*</span>
+			</label>
+		</div>
+	</div>
+
+	<div class = "col-md-3">
+		<div class="form-group form-md-line-input">
+			<input type="text" name="employee_rfid_code" id="employee_rfid_code" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<label class="control-label">Kode Rfid
+			<span class="required">*</span>
+			</label>
+		</div>
+	</div>
+	
+	<div class = "col-md-6">
+		<div class="form-group form-md-line-input">
+			<?php echo form_dropdown('employee_employment_status', $employeestatus ,set_value('employee_employment_status',$data['employee_employment_status']),'id="employee_employment_status", class="form-control select2me"');?>
+			<label class="control-label">Status Pekerjaan
+				<span class="required">
+					*
+				</span>
+			</label>
+			
+		</div>
+	</div>
+
+	<div class = "col-md-6">
+		<div class="form-group form-md-line-input">
+			<?php echo form_dropdown('employee_employment_overtime_status', $overtimestatus ,set_value('employee_employment_overtime_status',$data['employee_employment_overtime_status']),'id="employee_employment_overtime_status", class="form-control select2me"');?>
+			<label class="control-label">Status Lembur
+				<span class="required">
+					*
+				</span>
+			</label>
+		</div>
+	</div>
+
+	<div class = "col-md-6">
+		<div class="form-group form-md-line-input">
+			<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_employment_status_duedate" id="employee_employment_status_duedate"/>
+			<label class="control-label">Tanggal Putus Kontrak
+			</label>
+		</div>
+	</div>
+</div>
 
 										

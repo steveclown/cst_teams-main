@@ -119,10 +119,10 @@
 							</div>
 
 							<div class="actions">
-								<a href="<?php echo base_url();?>HroEmployeeData/addHROEmployeeData" class="btn btn-default sm">
+								<!-- <a href="<?php echo base_url();?>HroEmployeeData/addHROEmployeeData" class="btn btn-default sm">
 									<i class="fa fa-plus"></i>
 									Tambah Data Karyawan
-								</a>
+								</a> -->
 							</div>
 						</div>
 						<div class="portlet-body">

@@ -1584,6 +1584,7 @@
 
 			if($this->RecruitmentApplicantData_model->updateRecruitmentApplicantData($data)){
 				$employeedata = array (
+					'applicant_id' 							=> $this->input->post('applicant_id',true),
 					'marital_status_id'						=> $this->input->post('marital_status_id',true),
 					'region_id'								=> $this->input->post('region_id',true),
 					'branch_id'								=> $this->input->post('branch_id',true),
@@ -1625,21 +1626,22 @@
 					'employee_heir_name'					=> $this->input->post('applicant_heir_name',true),
 					'employee_bank_acct_no'					=> $this->input->post('applicant_bank_acct_no'),
 					'employee_bank_acct_name'				=> $this->input->post('applicant_bank_acct_name'),
-					'employee_rfid_code'					=> $this->input->post('employee_rfid_code',true),
-					'employee_last_day_off'					=> tgltodb($this->input->post('employee_last_day_off',true)),
-					'employee_day_off_cycle' 				=> $this->input->post('employee_day_off_cycle',true),
-					'employee_day_off_status'				=> $this->input->post('employee_day_off_status',true),
-					'employee_employment_working_status'	=> $this->input->post('employee_employment_working_status',true),
+					'employee_code'							=> $this->input->post('employee_code'),
+					'employee_rfid_code'					=> $this->input->post('employee_rfid_code'),
+					// 'employee_last_day_off'					=> tgltodb($this->input->post('employee_last_day_off',true)),
+					// 'employee_day_off_cycle' 				=> $this->input->post('employee_day_off_cycle',true),
+					// 'employee_day_off_status'				=> $this->input->post('employee_day_off_status',true),
+					// 'employee_employment_working_status'	=> $this->input->post('employee_employment_working_status',true),
 					'employee_employment_overtime_status'	=> $this->input->post('employee_employment_overtime_status',true),
 					'employee_employment_status'			=> $this->input->post('employee_employment_status',true),
-					'employee_hire_date'					=> tgltodb($this->input->post('employee_hire_date',true)),
-					'employee_employment_status_date'		=> tgltodb($this->input->post('employee_employment_status_date',true)),
+					'employee_hire_date'					=> date("Y-m-d"),
+					'employee_employment_status_date'		=> date("Y-m-d"),
 					'employee_employment_status_duedate'	=> tgltodb($this->input->post('employee_employment_status_duedate',true)),
 					'created_id'							=> $auth['user_id'],
 					'created_on'							=> date("YmdHis"),
 					'data_state'							=> 0,
 				);
-
+				
 				// print_r("data:");
 				// print_r($employeedata);
 				// exit();
