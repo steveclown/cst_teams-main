@@ -93,37 +93,37 @@ $route['recruitment-applicant-data-status-final/reset-edit/(:num)'] 	= 'Recruitm
 /*======================================  Organization ======================================== */
 
 /* CORE Region */
-$route['region'] 			                    = 'CoreRegion';
-$route['region/add'] 			                = 'CoreRegion/addCoreRegion';
-$route['region/elements-add'] 	                = 'CoreRegion/function_elements_add';
-$route['region/reset-add'] 	                    = 'CoreRegion/reset_add';
-$route['region/process-add'] 	                = 'CoreRegion/processAddCoreRegion';
-$route['region/edit/(:num)']	                = 'CoreRegion/editCoreRegion/$1';
-$route['region/delete/(:num)']	                = 'CoreRegion/deleteCoreRegion/$1';
-$route['region/process-edit'] 	                = 'CoreRegion/processEditCoreRegion';
-$route['region/reset-edit/(:num)'] 	            = 'CoreRegion/reset_edit/$1';
+$route['region'] 			                    ='coreregion';
+$route['region/add'] 			                ='coreregion/addCoreRegion';
+$route['region/elements-add'] 	                ='coreregion/function_elements_add';
+$route['region/reset-add'] 	                    ='coreregion/reset_add';
+$route['region/process-add'] 	                ='coreregion/processAddCoreRegion';
+$route['region/edit/(:num)']	                ='coreregion/editCoreRegion/$1';
+$route['region/delete/(:num)']	                ='coreregion/deleteCoreRegion/$1';
+$route['region/process-edit'] 	                ='coreregion/processEditCoreRegion';
+$route['region/reset-edit/(:num)'] 	            ='coreregion/reset_edit/$1';
 
 /* CORE Branch */
-$route['branch']		                        = 'CoreBranch';
-$route['branch/add'] 			                = 'CoreBranch/addCoreBranch';
-$route['branch/elements-add'] 	                = 'CoreBranch/function_elements_add';
-$route['branch/reset-add'] 	                    = 'CoreBranch/reset_add';
-$route['branch/process-add'] 	                = 'CoreBranch/processAddCoreBranch';
-$route['branch/edit/(:num)']	                = 'CoreBranch/editCoreBranch/$1';
-$route['branch/delete/(:num)']	                = 'CoreBranch/deleteCoreBranch/$1';
-$route['branch/process-edit'] 	                = 'CoreBranch/processEditCoreBranch';
-$route['branch/reset-edit/(:num)'] 	            = 'CoreBranch/reset_edit/$1';
+$route['branch']		                        = 'corebranch';
+$route['branch/add'] 			                = 'corebranch/addCoreBranch';
+$route['branch/elements-add'] 	                = 'corebranch/function_elements_add';
+$route['branch/reset-add'] 	                    = 'corebranch/reset_add';
+$route['branch/process-add'] 	                = 'corebranch/processAddCoreBranch';
+$route['branch/edit/(:num)']	                = 'corebranch/editCoreBranch/$1';
+$route['branch/delete/(:num)']	                = 'corebranch/deleteCoreBranch/$1';
+$route['branch/process-edit'] 	                = 'corebranch/processEditCoreBranch';
+$route['branch/reset-edit/(:num)'] 	            = 'corebranch/reset_edit/$1';
 
 /* CORE Location */
-$route['location']		                        = 'CoreLocation';
-$route['location/add'] 			                = 'CoreLocation/addCoreLocation';
-$route['location/elements-add'] 	            = 'CoreLocation/function_elements_add';
-$route['location/reset-add'] 	                = 'CoreLocation/reset_add';
-$route['location/process-add'] 	                = 'CoreLocation/processAddCoreLocation';
-$route['location/edit/(:num)']	                = 'CoreLocation/editCoreLocation/$1';
-$route['location/delete/(:num)']	            = 'CoreLocation/deleteCoreLocation/$1';
-$route['location/process-edit'] 	            = 'CoreLocation/processEditCoreLocation';
-$route['location/reset-edit/(:num)'] 	        = 'CoreLocation/reset_edit/$1';
+$route['location']		                        = 'corelocation';
+$route['location/add'] 			                = 'corelocation/addCoreLocation';
+$route['location/elements-add'] 	            = 'corelocation/function_elements_add';
+$route['location/reset-add'] 	                = 'corelocation/reset_add';
+$route['location/process-add'] 	                = 'corelocation/processAddCoreLocation';
+$route['location/edit/(:num)']	                = 'corelocation/editCoreLocation/$1';
+$route['location/delete/(:num)']	            = 'corelocation/deleteCoreLocation/$1';
+$route['location/process-edit'] 	            = 'corelocation/processEditCoreLocation';
+$route['location/reset-edit/(:num)'] 	        = 'corelocation/reset_edit/$1';
 
 /* CORE Company */
 $route['company']		                        = 'CoreCompany';

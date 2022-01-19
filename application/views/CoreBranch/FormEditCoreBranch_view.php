@@ -49,7 +49,7 @@ function ulang(){
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreBranch" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>branch" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>
