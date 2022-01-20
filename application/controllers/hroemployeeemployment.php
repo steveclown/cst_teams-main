@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu	 = 'hroemployeeemployment';
+			$menu	 = 'hro-employee-employment';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
@@ -53,19 +53,19 @@
 				'section_id'		=> $this->input->post('section_id',true),
 			);
 			$this->session->set_userdata('filter-hroemployeeemployment',$data);
-			redirect('hroemployeeemployment');
+			redirect('hro-employee-employment');
 		}
 
 		public function reset_search(){
 			$sesi= $this->session->userdata('filter-hroemployeeemployment');
 			$this->session->unset_userdata('filter-hroemployeeemployment');
-			redirect('hroemployeeemployment');
+			redirect('hro-employee-employment');
 		}
 
 		public function reset_session(){
 			$sesi 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('hroemployeeemployment-'.$sesi['unique']);	
-			redirect('hroemployeeemployment');
+			redirect('hro-employee-employment');
 		}
 
 		public function function_state_add(){
@@ -147,18 +147,18 @@
 								Add Employee Employment Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('hroemployeeemployment/addHROEmployeeEmployment/'.$data['employee_id']);
+					redirect('hro-employee-employment/add/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Edit Employee Employment UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('hroemployeeemployment/addHROEmployeeEmployment/'.$data['employee_id']);
+					redirect('hro-employee-employment/add/'.$data['employee_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('hroemployeeemployment/addHROEmployeeEmployment/'.$data['employee_id']);
+				redirect('hro-employee-employment/add/'.$data['employee_id']);
 			}
 		}
 
@@ -173,13 +173,13 @@
 							Delete Data Employee Employment Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('hroemployeeemployment');
+				redirect('hro-employee-employment');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Employment UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('hroemployeeemployment');
+				redirect('hro-employee-employment');
 			}
 		}
 
@@ -202,13 +202,13 @@
 							Hapus Data Award Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('hroemployeeemployment');
+				redirect('hro-employee-employment');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 					Hapus Data Award Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('hroemployeeemployment');
+				redirect('hro-employee-employment');
 			}
 		}
 	}

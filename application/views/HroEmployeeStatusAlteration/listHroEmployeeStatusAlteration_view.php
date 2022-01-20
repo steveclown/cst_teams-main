@@ -185,7 +185,7 @@
 											<td>".$this->HroEmployeeStatusAlteration_model->getSectionName($val['section_id'])."</td>
 											<td>".$employeeemploymentstatus[$val['employee_employment_status']]."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'HroEmployeeStatusAlteration/addHROEmployeeStatusAlteration/'.$val['employee_id']."' class='btn default btn-xs green-jungle'>
+												<a href='".$this->config->item('base_url').'hroemployeestatusalteration/addHROEmployeeStatusAlteration/'.$val['employee_id']."' class='btn default btn-xs green-jungle'>
 													<i class='fa fa-plus'></i> Tambah
 												</a>
 											</td>

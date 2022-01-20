@@ -58,7 +58,7 @@
 								<i class="fa fa-reorder"></i>Daftar
 							</div>
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreWarning/addCoreWarning" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>warning/add" class="btn btn-default btn-sm">
 									<i class="fa fa-plus"></i> Tambah Peringatan Baru
 								</a>
 							</div>
@@ -95,10 +95,10 @@
 													<td>".$val['warning_name']."</td>
 													<td>".$val['warning_remark']."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'CoreWarning/editCoreWarning/'.$val['warning_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'warning/edit/'.$val['warning_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreWarning/deleteCoreWarning/'.$val['warning_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'warning/delete/'.$val['warning_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> hapus
 														</a>
 													</td>

@@ -41,7 +41,7 @@
 						Form Edit
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>coremaritalstatus" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>marital-status" class="btn btn-default btn-sm">
 							<i class="fa fa-angle-left"></i> Kembali
 						</a>
 					</div>

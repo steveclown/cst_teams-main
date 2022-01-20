@@ -48,7 +48,7 @@ function ulang(){
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreOvertimeType" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>overtime-type" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

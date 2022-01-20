@@ -46,7 +46,7 @@
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>coredivision" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>division" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

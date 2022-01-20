@@ -67,7 +67,7 @@
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreLate" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>late" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

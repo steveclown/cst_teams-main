@@ -45,7 +45,7 @@
 									<i class="fa fa-reorder"></i>Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreUnit" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>unit" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

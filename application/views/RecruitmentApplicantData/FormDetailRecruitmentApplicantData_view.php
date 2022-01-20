@@ -79,7 +79,9 @@
 					Form Detail Pelamar 
 				</div>
 				<div class="actions">
-					<a href="<?php echo base_url();?>RecruitmentApplicantDataStatusFinal" class="btn btn-default btn-sm">
+					<a href="<?php
+					$url= $_SERVER['HTTP_REFERER'];
+					echo $url;?>" class="btn btn-default btn-sm">
 					<i class="fa fa-angle-left"></i> Kembali</a>
 				</div>
 			</div>

@@ -34,7 +34,7 @@
 						<i class="fa fa-reorder"></i>Daftar
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreJobTitle/addCoreJobTitle" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>job-title/add" class="btn btn-default btn-sm">
 							<i class="fa fa-plus"></i> Tambah Judul Pekerjaan Baru
 						</a>
 					</div>
@@ -72,10 +72,10 @@
 											<td>".$val['job_title_name']."</td>
 											<td>".$this->CoreJobTitle_model->getJobTitleName($val['job_title_parent_id'])."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'CoreJobTitle/editCoreJobTitle/'.$val['job_title_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'job-title/edit/'.$val['job_title_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-												<a href='".$this->config->item('base_url').'CoreJobTitle/deleteCoreJobTitle/'.$val['job_title_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'job-title/delete/'.$val['job_title_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

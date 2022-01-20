@@ -62,7 +62,7 @@
 		public function reset_data(){
 			$sesi 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addCoreAbsence-'.$sesi['unique']);	
-			redirect('CoreAbsence/addCoreAbsence');
+			redirect('absence/add');
 		}
 		
 		function processAddCoreAbsence(){

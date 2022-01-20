@@ -35,7 +35,7 @@
 						<i class="fa fa-reorder"></i>Daftar
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreDayOff/addCoreDayOff" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>day-off/add" class="btn btn-default btn-sm">
 							<i class="fa fa-plus"></i>Tambah Libur baru
 						</a>
 					</div>
@@ -70,10 +70,10 @@
 											<td>".$val['dayoff_code']."</td>
 											<td>".$val['dayoff_name']."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'CoreDayOff/editCoreDayOff/'.$val['dayoff_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'day-off/edit/'.$val['dayoff_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-												<a href='".$this->config->item('base_url').'CoreDayOff/deleteCoreDayOff/'.$val['dayoff_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'day-off/delete/'.$val['dayoff_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

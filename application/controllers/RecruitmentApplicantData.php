@@ -98,7 +98,7 @@
 			$this->session->unset_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
 			$this->session->unset_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
 			$this->session->unset_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
-			redirect('RecruitmentApplicantDatailufa/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 
@@ -115,7 +115,7 @@
 		public function reset_add_family(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 		
 		public function processAddArrayRecruitmentApplicantFamily(){
@@ -174,7 +174,7 @@
 			
 			$this->session->set_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique'],$arrayBaru);
 			
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 
@@ -190,7 +190,7 @@
 		public function reset_add_education(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addrecruitmentapplicanteducation-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 		public function processAddArrayRecruitmentApplicantEducation(){
@@ -250,7 +250,7 @@
 			
 			$this->session->set_userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique'],$arrayBaru);
 			
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 
@@ -266,7 +266,7 @@
 		public function reset_add_language(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addrecruitmentapplicantlanguage-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 		public function processAddArrayRecruitmentApplicantLanguage(){
@@ -313,7 +313,7 @@
 			
 			$this->session->set_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique'],$arrayBaru);
 			
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/edit');
 		}
 		
 		public function function_elements_add_experience(){
@@ -328,7 +328,7 @@
 		public function reset_add_experience(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addrecruitmentapplicantexperience-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 		
 		public function processAddArrayRecruitmentApplicantExperience(){
@@ -389,7 +389,7 @@
 			
 			$this->session->set_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique'],$arrayBaru);
 			
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 		public function function_elements_add_expertise(){
@@ -404,7 +404,7 @@
 		public function reset_add_expertise(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addrecruitmentapplicantexpertise-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 		
 		public function processAddArrayRecruitmentApplicantExpertise(){
@@ -443,11 +443,11 @@
 				$this->session->set_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicantexpertise-'.$unique['unique']);
 				
-				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+				redirect('recruitment-applicant-data/add');
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message_expertise',$msg);
-				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+				redirect('recruitment-applicant-data/add');
 			}
 		}
 
@@ -467,7 +467,7 @@
 			
 			$this->session->set_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique'],$arrayBaru);
 
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/add');
 		}
 
 
@@ -701,18 +701,18 @@
 					$this->session->unset_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
 					$this->session->unset_userdata('addarrayrecruitmentapplicantexpectation-'.$unique['unique']);
 					
-					redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+					redirect('recruitment-applicant-data/add');
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 							Add Applicant Data Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+					redirect('recruitment-applicant-data/add');
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+				redirect('recruitment-applicant-data/add');
 			}
 		}
 
@@ -724,13 +724,13 @@
 							Delete Data Applicant Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('RecruitmentApplicantData');
+				redirect('recruitment-applicant-data');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Applicant UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('RecruitmentApplicantData');
+				redirect('recruitment-applicant-data');
 			}
 		}
 
@@ -810,7 +810,7 @@
 			$this->session->unset_userdata('editarrayrecruitmentapplicantexpertise-'.$unique['unique']);
 			$this->session->unset_userdata('editarrayrecruitmentapplicantexperience-'.$unique['unique']);
 			$this->session->unset_userdata('editarrayrecruitmentapplicantlanguage-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/edit/'.$applicant_id);
 		}
 
 		public function processEditRecruitmentApplicantData(){
@@ -872,19 +872,19 @@
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>";
 					$this->session->set_userdata('message',$msg);
 
-					$this->session->unset_userdata('editRecruitmentApplicantData-'.$unique['unique']);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data['applicant_id']);
+					$this->session->unset_userdata('edit-'.$unique['unique']);
+					redirect('recruitment-applicant-data/edit/'.$data['applicant_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 							Edit Applicant Data Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data['applicant_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data['applicant_id']);
+				redirect('recruitment-applicant-data/edit/'.$data['applicant_id']);
 			}
 		}
 
@@ -902,7 +902,7 @@
 			$applicant_id 	= $this->uri->segment(3);
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('editrecruitmentapplicantfamily-'.$unique['unique']);	
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/edit/'.$applicant_id);
 		}
 
 		public function processAddRecruitmentApplicantFamily(){
@@ -956,19 +956,19 @@
 								Add Applicant Family Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_family',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantfamily['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantfamily['applicant_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Applicant Family Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_family',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantfamily['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantfamily['applicant_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger alert-dismissable'>
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button>	", '</div>');
 				$this->session->set_userdata('message_family',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantfamily['applicant_id']);
+				redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantfamily['applicant_id']);
 			}
 		}
 
@@ -988,13 +988,13 @@
 							Delete Applicant Family Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_family',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Applicant Family Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_family',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}
 		}
 
@@ -1012,7 +1012,7 @@
 			$applicant_id 	= $this->uri->segment(3);
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('editrecruitmentapplicanteducation-'.$unique['unique']);	
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/edit/'.$applicant_id);
 		}
 
 		public function processAddRecruitmentApplicantEducation(){
@@ -1063,19 +1063,19 @@
 								Add Data Applicant Education Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_education',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicanteducation['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicanteducation['applicant_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Applicant Education UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_education',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicanteducation['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicanteducation['applicant_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message_education',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicanteducation['applicant_id']);
+				redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicanteducation['applicant_id']);
 			}
 		}
 
@@ -1095,13 +1095,13 @@
 							Delete Applicant Education Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_education',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Applicant Education Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_education',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}
 		}
 
@@ -1119,7 +1119,7 @@
 			$applicant_id 	= $this->uri->segment(3);
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('editrecruitmentapplicantexpertise-'.$unique['unique']);	
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/edit/'.$applicant_id);
 		}
 
 		public function processAddRecruitmentApplicantExpertise(){
@@ -1167,19 +1167,19 @@
 								Add Data Applicant Expertise Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_expertise',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantexpertise['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantexpertise['applicant_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Applicant Expertise UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_expertise',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantexpertise['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantexpertise['applicant_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message_expertise',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantexpertise['applicant_id']);
+				redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantexpertise['applicant_id']);
 			}
 		}
 
@@ -1199,13 +1199,13 @@
 							Delete Applicant Expertise Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_expertise',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Applicant Expertise Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_expertise',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}
 		}
 
@@ -1224,7 +1224,7 @@
 			$applicant_id 	= $this->uri->segment(3);
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('editrecruitmentapplicantexperience-'.$unique['unique']);	
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/edit/'.$applicant_id);
 		}
 
 		public function processAddRecruitmentApplicantExperience(){
@@ -1268,20 +1268,20 @@
 								Add Data Applicant Experience Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_experience',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantexperience['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantexperience['applicant_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Applicant Experience UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_experience',$msg);
 					$this->session->set_userdata('AddRecruitmentApplicantWorking',$data_recruitmentapplicantexperience);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantexperience['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantexperience['applicant_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message_experience',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantexperience['applicant_id']);
+				redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantexperience['applicant_id']);
 			}
 		}
 
@@ -1301,13 +1301,13 @@
 							Delete Applicant Experience Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_experience',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Applicant Experience Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_experience',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}
 		}
 
@@ -1326,7 +1326,7 @@
 			$applicant_id 	= $this->uri->segment(3);
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('editrecruitmentapplicantlanguage-'.$unique['unique']);	
-			redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/edit/'.$applicant_id);
 		}
 
 		public function processAddRecruitmentApplicantLanguage(){
@@ -1361,19 +1361,19 @@
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_language',$msg);
 					// $this->session->unset_userdata('AddRecruitmentApplicantLanguage');
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantlanguage['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantlanguage['applicant_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Applicant Language Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message_language',$msg);
-					redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantlanguage['applicant_id']);
+					redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantlanguage['applicant_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message_language',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$data_recruitmentapplicantlanguage['applicant_id']);
+				redirect('recruitment-applicant-data/edit/'.$data_recruitmentapplicantlanguage['applicant_id']);
 			}
 		}
 
@@ -1393,13 +1393,13 @@
 							Delete Applicant Language Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_language',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Applicant Language Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message_language',$msg);
-				redirect('RecruitmentApplicantData/editRecruitmentApplicantData/'.$applicant_id);
+				redirect('recruitment-applicant-data/edit/'.$applicant_id);
 			}
 		}
 
@@ -1425,7 +1425,7 @@
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('recruitRecruitmentApplicantData-'.$unique['unique']);
 			$this->session->unset_userdata('recruitrecruitmentapplicanttab-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/recruitmentApplicantData/'.$applicant_id);
+			redirect('recruitment-applicant-data/recruitmentApplicantData/'.$applicant_id);
 		}
 
 		public function recruitmentApplicantData(){
@@ -1759,13 +1759,13 @@
 								Recruitment Employee Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantData/');
+					redirect('recruitment-applicant-data/');
 			} else {
 				$msg = "<div class='alert alert-danger'>                
 								Recruitment Employee Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantData/recruitmentApplicantData/'.$data['applicant_id']);
+					redirect('recruitment-applicant-data/recruitmentApplicantData/'.$data['applicant_id']);
 			}
 		}
 		
@@ -1793,7 +1793,7 @@
 		public function reset_add_organization(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addrecruitmentapplicantorganization-'.$unique['unique']);
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/addRecruitmentApplicantData');
 		}
 		
 		public function processAddArrayRecruitmentApplicantOrganization(){
@@ -1816,7 +1816,7 @@
 				$this->session->set_userdata('addarrayrecruitmentapplicantorganization-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicantorganization-'.$unique['unique']);
 				$this->session->unset_userdata('addrecruitmentapplicantother-'.$unique['unique']);
-				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+				redirect('recruitment-applicant-data/addRecruitmentApplicantData');
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
@@ -1839,7 +1839,7 @@
 			
 			$this->session->set_userdata('addarrayrecruitmentapplicantorganization-'.$unique['unique'],$arrayBaru);
 			
-			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+			redirect('recruitment-applicant-data/addRecruitmentApplicantData');
 		}
 
 		public function formaddarraypersonality(){
@@ -1904,7 +1904,7 @@
 				$this->session->set_userdata('addarrayrecruitmentapplicantmedical-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addarrayrecruitmentapplicantmedical-'.$unique['unique']);
 				
-				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
+				redirect('recruitment-applicant-data/addRecruitmentApplicantData');
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
@@ -2020,13 +2020,13 @@
 								Recruitment Status Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantDataStatus/');
+					redirect('recruitment-applicant-dataStatus/');
 			} else {
 				$msg = "<div class='alert alert-danger'>                
 								Recruitment Employee Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('RecruitmentApplicantData/ApplicantDataStatus/'.$data['applicant_id']);
+					redirect('recruitment-applicant-data/ApplicantDataStatus/'.$data['applicant_id']);
 			}
 		}
 	}

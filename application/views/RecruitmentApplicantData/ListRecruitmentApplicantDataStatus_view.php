@@ -79,7 +79,7 @@
 											<td>".$val['applicant_last_education']."</td>
 											<td>".$statusapplicant[$val['applicant_status']]."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'RecruitmentApplicantDataStatus/ApplicantDataStatus/'.$val['applicant_id']."' class='btn default btn-xs green-jungle'>
+												<a href='".$this->config->item('base_url').'recruitmentapplicantdatastatus/ApplicantDataStatus/'.$val['applicant_id']."' class='btn default btn-xs green-jungle'>
 													<i class='fa fa-pencil'></i> Status
 												</a>	
 											</td>

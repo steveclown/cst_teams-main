@@ -35,7 +35,7 @@
 								<i class="fa fa-reorder"></i>Daftar
 							</div>
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreDivision/addCoreDivision" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>division/add" class="btn btn-default btn-sm">
 									<i class="fa fa-plus"></i> Tambah Devisi Baru
 								</a>
 							</div>
@@ -69,10 +69,10 @@
 												<td>".$val['division_code']."</td>
 												<td>".$val['division_name']."</td>
 												<td>
-													<a href='".$this->config->item('base_url').'CoreDivision/editCoreDivision/'.$val['division_id']."' class='btn default btn-xs purple'>
+													<a href='".$this->config->item('base_url').'division/edit/'.$val['division_id']."' class='btn default btn-xs purple'>
 														<i class='fa fa-edit'></i> Edit
 													</a>
-													<a href='".$this->config->item('base_url').'CoreDivision/deleteCoreDivision/'.$val['division_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+													<a href='".$this->config->item('base_url').'division/delete/'.$val['division_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 														<i class='fa fa-trash-o'></i> Hapus
 													</a>
 												</td>

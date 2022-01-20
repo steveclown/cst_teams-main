@@ -36,7 +36,7 @@
 					<i class="fa fa-reorder"></i>Daftar
 				</div>
 				<div class="actions">
-					<a href="<?php echo base_url();?>RecruitmentApplicantData/addRecruitmentApplicantData" class="btn btn-default btn-sm">
+					<a href="<?php echo base_url();?>recruitment-applicant-data/add" class="btn btn-default btn-sm">
 					<i class="fa fa-plus"></i> Tambah pelamar baru</a>
 				</div>
 			</div>
@@ -77,12 +77,12 @@
 											<td>".$val['applicant_mobile_phone']."</td>
 											<td>".$val['applicant_last_education']."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/editRecruitmentApplicantData/'.$val['applicant_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'recruitment-applicant-data/edit/'.$val['applicant_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
 											</td>
 											<td>
-												<a href='".$this->config->item('base_url').'RecruitmentApplicantData/deleteRecruitmentApplicantData/'.$val['applicant_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'recruitment-applicant-data/delete/'.$val['applicant_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

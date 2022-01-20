@@ -33,7 +33,7 @@
 							</div>
 							
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreLanguage/addCoreLanguage" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>language/add" class="btn btn-default btn-sm">
 								<i class="fa fa-plus"></i> Tambah Bahasa Baru</a>
 							</div>
 						</div>
@@ -65,10 +65,10 @@
 													<td>".$val['language_code']."</td>
 													<td>".$val['language_name']."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'CoreLanguage/editCoreLanguage/'.$val['language_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'language/edit/'.$val['language_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreLanguage/deleteCoreLanguage/'.$val['language_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'language/delete/'.$val['language_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Delete
 														</a>
 													</td>

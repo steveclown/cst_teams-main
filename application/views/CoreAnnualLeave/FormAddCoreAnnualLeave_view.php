@@ -47,7 +47,7 @@
 									Form Tambah
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreAnnualLeave" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>annual-leave" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

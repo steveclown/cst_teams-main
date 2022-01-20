@@ -35,8 +35,8 @@
 						<i class="fa fa-reorder"></i>List
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreOvertimeType/addCoreOvertimeType" class="btn btn-default btn-sm">
-							<i class="fa fa-plus"></i> Tamba Tipe Lembur
+						<a href="<?php echo base_url();?>overtime-type/add" class="btn btn-default btn-sm">
+							<i class="fa fa-plus"></i> Tambah Tipe Lembur
 						</a>
 					</div>
 				</div>
@@ -85,10 +85,10 @@
 											<td>$val[overtime_type_day_off_ratio2]</td>
 											<td>$val[overtime_type_day_off_ratio2]</td>
 											<td>
-												<a href='".$this->config->item('base_url').'CoreOvertimeType/editCoreOvertimeType/'.$val['overtime_type_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'overtime-type/edit/'.$val['overtime_type_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-												<a href='".$this->config->item('base_url').'CoreOvertimeType/deleteCoreOvertimeType/'.$val['overtime_type_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'overtime-type/delete/'.$val['overtime_type_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

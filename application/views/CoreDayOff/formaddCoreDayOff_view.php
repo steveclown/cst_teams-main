@@ -45,7 +45,7 @@
 									Form Tambah
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreDayOff" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>day-off" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

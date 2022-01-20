@@ -62,7 +62,7 @@
 		public function reset_data(){
 			$sesi 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addCoreHomeEarly-'.$sesi['unique']);	
-			redirect('CoreHomeEarly/addCoreHomeEarly');
+			redirect('home-early/add');
 		}
 		
 		function processAddCoreHomeEarly(){

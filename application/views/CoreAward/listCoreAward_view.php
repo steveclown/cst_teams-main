@@ -34,7 +34,7 @@
 								<i class="fa fa-reorder"></i>Daftar
 							</div>
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreAward/addCoreAward" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>award/add" class="btn btn-default btn-sm">
 									<i class="fa fa-plus"></i> Tambah Penghargaan Baru
 								</a>
 							</div>
@@ -71,10 +71,10 @@
 													<td>".$val['award_name']."</td>
 													<td>".$val['award_remark']."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'CoreAward/editCoreAward/'.$val['award_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'award/edit/'.$val['award_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreAward/deleteCoreAward/'.$val['award_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'award/delete/'.$val['award_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Hapus
 														</a>
 													</td>

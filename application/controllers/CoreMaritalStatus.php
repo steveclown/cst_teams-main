@@ -53,7 +53,7 @@
 
 			$this->session->unset_userdata('addCoreMaritalStatus-'.$unique['unique']);
 			$this->session->unset_userdata('CoreMaritalStatusToken-'.$unique['unique']);
-			redirect('maritalstatus/add');
+			redirect('marital-status/add');
 		}
 		
 		function processAddCoreMaritalStatus(){
@@ -89,27 +89,27 @@
 						$this->session->set_userdata('message',$msg);
 						$this->session->unset_userdata('addCoreMaritalStatus-'.$unique['unique']);
 						$this->session->unset_userdata('CoreMaritalStatusToken-'.$unique['unique']);
-						redirect('maritalstatus/add');
+						redirect('marital-status/add');
 					}else{
 						$msg = "<div class='alert alert-danger'>                
 									Tambah Data MaritalStatus Baru Gagal
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
 						$this->session->set_userdata('addCoreMaritalStatus',$data);
-						redirect('maritalstatus/add');
+						redirect('marital-status/add');
 					}
 				} else {
 					$msg = "<div class='alert alert-danger'>                
 						Tambah Data MaritalStatus Baru Sudah Ada
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('maritalstatus/add');
+					redirect('marital-status/add');
 				}
 			}else{
 				$this->session->set_userdata('addCoreMaritalStatus',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('maritalstatus/add');
+				redirect('marital-status/add');
 			}
 		}
 		
@@ -123,7 +123,7 @@
 			$unique 	= $this->session->userdata('unique');
 			$marital_status_id	= $this->uri->segment(3);
 
-			redirect('marital_tatus/edit/'.$marital_status_id);
+			redirect('marital-status/edit/'.$marital_status_id);
 		}
 		
 		function processEditCoreMaritalStatus(){
@@ -186,13 +186,13 @@
 							Hapus Data MaritalStatus Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('maritalstatus');
+				redirect('marital-status');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 					Hapus Data MaritalStatus Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('maritalstatus');
+				redirect('marital-status');
 			}
 		}
 	}

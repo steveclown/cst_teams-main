@@ -96,7 +96,7 @@
 									
 									<div class = "actions">
 										<div class="actions">
-											<a href="<?php echo base_url();?>HroEmployeeData" class="btn btn-default btn-sm">
+											<a href="<?php echo base_url();?>hro-employee-data" class="btn btn-default btn-sm">
 											<i class="fa fa-angle-left"></i> Kembali</a>
 										</div>
 									</div>

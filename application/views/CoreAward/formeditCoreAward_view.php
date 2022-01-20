@@ -85,7 +85,7 @@ $this->session->unset_userdata('message');
 						Form Edit
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreAward" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>award" class="btn btn-default btn-sm">
 							<i class="fa fa-angle-left"></i> Kembali
 						</a>
 					</div>

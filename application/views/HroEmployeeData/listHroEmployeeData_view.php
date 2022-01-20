@@ -168,7 +168,7 @@
 													<td>".$this->HroEmployeeData_model->getDepartmentName($val['department_id'])."</td>
 													<td>".$this->HroEmployeeData_model->getSectionName($val['section_id'])."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'HroEmployeeData/editHROEmployeeData/'.$val['employee_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'hro-employee-data/edit/'.$val['employee_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
 													</td>

@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'hroemployeedata';
+			$menu = 'hro-employee-data';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
@@ -53,7 +53,7 @@
 				'section_id'		=> $this->input->post('section_id',true),
 			);
 			$this->session->set_userdata('filter-HroEmployeeData',$data);
-			redirect('HroEmployeeData');
+			redirect('hro-employee-data');
 		}
 
 		public function addHROEmployeeData(){
@@ -181,7 +181,7 @@
 							".$this->upload->display_errors('', '')."
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
-						redirect('HroEmployeeData');
+						redirect('hro-employee-data');
 					} else {*/
 					
 					$data = array(
@@ -332,7 +332,7 @@
 							".$this->upload->display_errors('', '')."
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
-						redirect('HroEmployeeData');
+						redirect('hro-employee-data');
 					} else {*/
 						
 						$data = array(
@@ -409,20 +409,20 @@
 									Edit Employee Data Successfully
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
-						redirect('HroEmployeeData/editHROEmployeeData/'.$data['employee_id']);
+						redirect('hro-employee-data/edit/'.$data['employee_id']);
 					}else{
 						$msg = "<div class='alert alert-danger'>                
 									Edit Employee Data UnSuccessful
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
-						redirect('HroEmployeeData/editHROEmployeeData/'.$data['employee_id']);
+						redirect('hro-employee-data/edit/'.$data['employee_id']);
 					}
 				// }
 			}
 			else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeData/editHROEmployeeData/'.$data['employee_id']);
+				redirect('hro-employee-data/edit/'.$data['employee_id']);
 			}
 		}
 
@@ -435,26 +435,26 @@
 							Delete Employee Data Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeData');
+				redirect('hro-employee-data');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Employee Data UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeData');
+				redirect('hro-employee-data');
 			}
 		}
 
 		public function reset_search(){
 			$sesi= $this->session->userdata('filter-HroEmployeeData');
 			$this->session->unset_userdata('filter-HroEmployeeData');
-			redirect('HroEmployeeData');
+			redirect('hro-employee-data');
 		}
 
 		public function reset_session(){
 			$sesi 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addhroemployedata-'.$sesi['unique']);	
-			redirect('HroEmployeeData/addHROEmployeeData');
+			redirect('hro-employee-data/add');
 		}
 		
 		/* function uploadgambar(){
@@ -484,7 +484,7 @@
 							".$this->upload->display_errors('', '')."
 						</div> ";
 						$this->session->set_userdata('message',$msg);
-						redirect('HroEmployeeData');
+						redirect('hro-employee-data');
 					} else {
 						$data['employee_picture'] = $this->upload->file_name;
 					}
@@ -693,7 +693,7 @@
 							</div> ";
 						$this->session->set_userdata('message',$message);
 						$this->session->set_userdata('AddHroEmployeeData',$data);
-						redirect('HroEmployeeData/Add');
+						redirect('hro-employee-data/Add');
 					}
 				}
 				
@@ -703,7 +703,7 @@
 						</div> ";
 					$this->session->set_userdata('message',$message);
 					$this->session->set_userdata('AddHroEmployeeData',$data);
-					redirect('HroEmployeeData/Add');
+					redirect('hro-employee-data/Add');
 				}
 				if($fileSize > 0 || $fileError == 0){
 					try {
@@ -724,7 +724,7 @@
 								</div> ";
 							$this->session->set_userdata('message',$msg);
 							$this->session->set_userdata('AddHroEmployeeData',$data);
-							redirect('HroEmployeeData/Add');
+							redirect('hro-employee-data/Add');
 						}
 					}catch (Exception $msg){
 						$message = "<div class='alert alert-danger'>                
@@ -732,7 +732,7 @@
 							</div> ";
 						$this->session->set_userdata('message',$message);
 						$this->session->set_userdata('AddHroEmployeeData',$data);
-						redirect('HroEmployeeData/Add');
+						redirect('hro-employee-data/Add');
 					}
 				}
 				return $newfilename;

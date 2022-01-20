@@ -67,7 +67,7 @@
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>corehomeearly" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>home-early" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Back
 									</a>
 								</div>

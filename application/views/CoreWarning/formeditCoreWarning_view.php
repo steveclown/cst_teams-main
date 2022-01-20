@@ -62,7 +62,7 @@
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					<a href="<?php echo base_url();?>CoreWarning/editCoreWarning/<?php echo $corewarning['warning_id'];?>">
+					<a href="<?php echo base_url();?>warning/edit/<?php echo $corewarning['warning_id'];?>">
 						Edit Peringatan
 					</a>
 					<i class="fa fa-angle-right"></i>

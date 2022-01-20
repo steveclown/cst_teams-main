@@ -144,7 +144,7 @@
 											<td>".$this->HroEmployeeEmployment_model->getDepartmentName($val['department_id'])."</td>
 											<td>".$this->HroEmployeeEmployment_model->getSectionName($val['section_id'])."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'hroemployeeemployment/addHROEmployeeEmployment/'.$val['employee_id']."' class='btn default btn-xs green-jungle'>
+												<a href='".$this->config->item('base_url').'hro-employee-employment/add/'.$val['employee_id']."' class='btn default btn-xs green-jungle'>
 													<i class='fa fa-plus'></i> Add
 												</a>
 											</td>

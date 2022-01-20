@@ -34,7 +34,7 @@
 								<i class="fa fa-reorder"></i>Daftar
 							</div>
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreExpertise/addCoreExpertise" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>expertise/add" class="btn btn-default btn-sm">
 									<i class="fa fa-plus"></i> Tambah Keahlian Baru
 								</a>
 							</div>
@@ -68,10 +68,10 @@
 													<td>".$val['expertise_code']."</td>
 													<td>".$val['expertise_name']."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'CoreExpertise/editCoreExpertise/'.$val['expertise_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'expertise/edit/'.$val['expertise_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreExpertise/deleteCoreExpertise/'.$val['expertise_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'expertise/delete/'.$val['expertise_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Hapus
 														</a>
 													</td>

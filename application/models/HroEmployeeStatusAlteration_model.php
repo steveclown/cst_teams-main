@@ -32,7 +32,7 @@
 		}
 
 		public function getHROEmployeeData($employee_id){
-			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_name, hro_employee_data.division_id, hro_employee_data.department_id, hro_employee_data.section_id, hro_employee_data.employee_employment_status');
+			$this->db->select('*');
 			$this->db->from('hro_employee_data');
 			$this->db->where('hro_employee_data.data_state', 0);
 			$this->db->where('hro_employee_data.employee_id', $employee_id);

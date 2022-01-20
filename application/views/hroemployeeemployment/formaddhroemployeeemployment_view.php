@@ -56,7 +56,7 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>hroemployeeemployment/AddHROEmployeeEmployment/<?php echo $hroemployeedata['employee_id']?>">
+								<a href="<?php echo base_url();?>hro-employee-employment/add/<?php echo $hroemployeedata['employee_id']?>">
 									Add Employee Data
 								</a>
 								<i class="fa fa-angle-right"></i>

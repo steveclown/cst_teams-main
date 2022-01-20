@@ -241,7 +241,7 @@
 					echo form_dropdown('unit_id', $coreunit,set_value('unit_id',$data['unit_id']),'id="unit_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);"');
 				} else {
 			?>
-				<select name="section_id" id="section_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);">
+				<select name="unit_id" id="unit_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);">
                     <option value=""></option>
                 </select>
            	<?php
@@ -262,7 +262,7 @@
 			<?php
 				echo form_dropdown('job_title_id', $corejobtitle,set_value('job_title_id',$data['job_title_id']),'id="job_title_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);" ');
 			?>
-			<label class="control-label">Nama Judul Pekerjaan
+			<label class="control-label">Nama Jabatan
 				<span class="required">
 					*
 				</span>
@@ -350,7 +350,7 @@
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
 			<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_employment_status_duedate" id="employee_employment_status_duedate"/>
-			<label class="control-label">Tanggal Putus Kontrak
+			<label class="control-label">Tanggal Berakhir
 			</label>
 		</div>
 	</div>

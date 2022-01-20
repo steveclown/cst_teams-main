@@ -45,7 +45,7 @@ $this->session->unset_userdata('message');
 									Form Edit
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreGrade" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>grade" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

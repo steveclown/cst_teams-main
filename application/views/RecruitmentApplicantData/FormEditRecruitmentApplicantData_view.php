@@ -73,7 +73,7 @@
 					Form Edit Data Pelamar
 				</div>
 				<div class="actions">
-					<a href="<?php echo base_url();?>RecruitmentApplicantData" class="btn btn-default btn-sm">
+					<a href="<?php echo base_url();?>recruitment-applicant-data" class="btn btn-default btn-sm">
 					<i class="fa fa-angle-left"></i> Kembali</a>
 				</div>
 			</div>

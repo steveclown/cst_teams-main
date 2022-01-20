@@ -33,7 +33,7 @@
 							</div>
 							
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreEducation/addCoreEducation" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>education/add" class="btn btn-default btn-sm">
 								<i class="fa fa-plus"></i> Tambah Pendidikan Baru</a>
 							</div>
 						</div>
@@ -72,10 +72,10 @@
 													<td>".$coreeducationtype[$val['education_type']]."</td>
 													
 													<td>
-														<a href='".$this->config->item('base_url').'CoreEducation/editCoreEducation/'.$val['education_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'education/edit/'.$val['education_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreEducation/deleteCoreEducation/'.$val['education_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'education/delete/'.$val['education_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Hapus
 														</a>
 													</td>

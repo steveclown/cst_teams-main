@@ -62,7 +62,7 @@
 		public function reset_data(){
 			$sesi 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addCorePermit-'.$sesi['unique']);	
-			redirect('CorePermit/addCorePermit');
+			redirect('permit/add');
 		}
 		
 		function processAddCorePermit(){

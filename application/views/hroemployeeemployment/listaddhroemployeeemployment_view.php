@@ -50,7 +50,7 @@
 														<td>".tgltoview($val['employee_employment_status_duedate'])."</td>
 														<td>".$this->configuration->OvertimeStatus()[$val['employee_employment_overtime_status']]."</td>
 														<td>
-														<a href='".$this->config->item('base_url').'hroemployeeemployment/deleteHROEmployeeEmployment_Data/'.$val['employee_employment_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'hro-employee-employment/delete/'.$val['employee_employment_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Delete
 														</a>";
 														echo"

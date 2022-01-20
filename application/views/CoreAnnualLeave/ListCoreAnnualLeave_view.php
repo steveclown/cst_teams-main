@@ -34,7 +34,7 @@
 						<i class="fa fa-reorder"></i>Daftar
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreAnnualLeave/addCoreAnnualLeave" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>annual-leave/add" class="btn btn-default btn-sm">
 							<i class="fa fa-plus"></i> Tambah Cuti Tahunan Baru
 						</a>
 					</div>
@@ -76,10 +76,10 @@
 											<td>".$val['annual_leave_days']."</td>
 											<td>".$annualleavetype[$val['annual_leave_type']]."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'CoreAnnualLeave/editCoreAnnualLeave/'.$val['annual_leave_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'annual-leave/edit/'.$val['annual_leave_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-												<a href='".$this->config->item('base_url').'CoreAnnualLeave/deleteCoreAnnualLeave/'.$val['annual_leave_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'annual-leave/delete/'.$val['annual_leave_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

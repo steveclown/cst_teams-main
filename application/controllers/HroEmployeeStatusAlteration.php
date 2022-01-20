@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'hroemployeestatusalteration';
+			$menu = 'hro-employee-status-alteration';
 
 			$this->cekLogin();
 			$this->accessMenu($menu);
@@ -54,7 +54,7 @@
 				'section_id'		=> $this->input->post('section_id',true),
 			);
 			$this->session->set_userdata('filter-HroEmployeeStatusAlteration',$data);
-			redirect('HroEmployeeStatusAlteration');
+			redirect('hro-employee-status-alteration');
 		}
 
 		public function function_state_add(){
@@ -78,14 +78,14 @@
 		public function reset_search(){
 			$sesi= $this->session->userdata('filter-HroEmployeeStatusAlteration');
 			$this->session->unset_userdata('filter-HroEmployeeStatusAlteration');
-			redirect('HroEmployeeStatusAlteration');
+			redirect('hro-employee-status-alteration');
 		}
 
 		public function reset_add(){
 			$employee_id 	= $this->uri->segment(3);
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addHroEmployeeStatusAlteration-'.$unique['unique']);	
-			redirect('HroEmployeeStatusAlteration/addHROEmployeeStatusAlteration/'.$employee_id);
+			redirect('hro-employee-status-alteration/add/'.$employee_id);
 		}
 		
 		public function addHROEmployeeStatusAlteration(){
@@ -107,6 +107,20 @@
 			$employee_name = 
 			$data = array(
 				'employee_id' 					=> $this->input->post('employee_id',true),
+				'applicant_id' 					=> $this->input->post('applicant_id',true),
+				'marital_status_id' 			=> $this->input->post('marital_status_id',true),
+				'region_id' 					=> $this->input->post('region_id',true),
+				'branch_id' 					=> $this->input->post('branch_id',true),
+				'company_id' 					=> $this->input->post('company_id',true),
+				'division_id' 					=> $this->input->post('division_id',true),
+				'department_id' 				=> $this->input->post('department_id',true),
+				'section_id' 					=> $this->input->post('section_id',true),
+				'unit_id' 						=> $this->input->post('unit_id',true),
+				'job_title_id' 					=> $this->input->post('job_title_id',true),
+				'grade_id' 						=> $this->input->post('grade_id',true),
+				'class_id' 						=> $this->input->post('class_id',true),
+				'location_id' 					=> $this->input->post('location_id',true),
+				'bank_id' 						=> $this->input->post('bank_id',true),
 				'status_alteration_date' 		=> tgltodb($this->input->post('status_alteration_date',true)),
 				'status_alteration_last_date' 	=> tgltodb($this->input->post('status_alteration_last_date',true)),
 				'status_alteration_description' => $this->input->post('status_alteration_description',true),
@@ -126,6 +140,20 @@
 				if($this->HroEmployeeStatusAlteration_model->insertHROEmployeeStatusAlteration($data)){
 					$data_update = array (
 						'employee_id'							=> $data['employee_id'],
+						'applicant_id' 							=> $this->input->post('applicant_id',true),
+						'marital_status_id' 					=> $this->input->post('marital_status_id',true),
+						'region_id' 							=> $this->input->post('region_id',true),
+						'branch_id' 							=> $this->input->post('branch_id',true),
+						'company_id' 							=> $this->input->post('company_id',true),
+						'division_id' 							=> $this->input->post('division_id',true),
+						'department_id' 						=> $this->input->post('department_id',true),
+						'section_id' 							=> $this->input->post('section_id',true),
+						'unit_id' 								=> $this->input->post('unit_id',true),
+						'job_title_id' 							=> $this->input->post('job_title_id',true),
+						'grade_id' 								=> $this->input->post('grade_id',true),
+						'class_id' 								=> $this->input->post('class_id',true),
+						'location_id' 							=> $this->input->post('location_id',true),
+						'bank_id' 								=> $this->input->post('bank_id',true),
 						'employee_employment_status'			=> $data['employee_employment_status'],
 						'employee_employment_status_date'		=> $data['status_alteration_date'],
 						'employee_employment_status_duedate'	=> $data['status_alteration_last_date'],
@@ -139,21 +167,21 @@
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addHroEmployeeStatusAlteration');
-					redirect('HroEmployeeStatusAlteration/addHROEmployeeStatusAlteration/'.$data['employee_id']);
+					redirect('hroemployeestatusalteration/addHROEmployeeStatusAlteration/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Status Alteration UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('addHroEmployeeStatusAlteration',$data);
-					redirect('HroEmployeeStatusAlteration/addHROEmployeeStatusAlteration/'.$data['employee_id']);
+					redirect('hroemployeestatusalteration/addHROEmployeeStatusAlteration/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
 				$this->session->set_userdata('addHroEmployeeStatusAlteration',$data);
-				redirect('HroEmployeeStatusAlteration');
+				redirect('hroemployeestatusalteration/addHROEmployeeStatusAlterations');
 			}
 		}
 		
@@ -193,18 +221,18 @@
 								Edit Status Alteration Successfully
 							</div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('HroEmployeeStatusAlteration/Edit/'.$data['status_alteration_id']);
+					redirect('hro-employee-status-alteration/Edit/'.$data['status_alteration_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Edit Status Alteration UnSuccessful
 							</div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('HroEmployeeStatusAlteration/Edit/'.$data['status_alteration_id']);
+					redirect('hro-employee-status-alteration/Edit/'.$data['status_alteration_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeStatusAlteration/Edit/'.$data['status_alteration_id']);
+				redirect('hro-employee-status-alteration/Edit/'.$data['status_alteration_id']);
 			}
 		}
 		
@@ -253,13 +281,13 @@
 							Hapus Data Status Alteration Berhasil
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeStatusAlteration');
+				redirect('hro-employee-status-alteration');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 					Hapus Data Status Alteration Gagal
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('HroEmployeeStatusAlteration');
+				redirect('hro-employee-status-alteration');
 			}
 		}
 	}

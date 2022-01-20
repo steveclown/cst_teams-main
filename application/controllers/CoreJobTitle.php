@@ -3,7 +3,7 @@
 		public function __construct(){
 			parent::__construct();
 
-			$menu = 'jobtitle';
+			$menu = 'job-title';
 
 			$this->cekLogin();
 			$this->accessMenu($menu); 

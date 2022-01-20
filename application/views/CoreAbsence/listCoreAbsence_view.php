@@ -34,7 +34,7 @@
 						<i class="fa fa-reorder"></i>Daftar
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreAbsence/addCoreAbsence" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>absence/add" class="btn btn-default btn-sm">
 							<i class="fa fa-plus"></i> Tambah Absensi Baru
 						</a>
 					</div>
@@ -72,10 +72,10 @@
 											<td>".$val['absence_name']."</td>
 											<td>".$val['deduction_name']."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'CoreAbsence/editCoreAbsence/'.$val['absence_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'absence/edit/'.$val['absence_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-												<a href='".$this->config->item('base_url').'CoreAbsence/deleteCoreAbsence/'.$val['absence_id']."' onClick='javascript:return confirm(\"Apakah anda yakin ingin menghapus data ini ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'absence/delete/'.$val['absence_id']."' onClick='javascript:return confirm(\"Apakah anda yakin ingin menghapus data ini ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

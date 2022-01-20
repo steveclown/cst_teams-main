@@ -43,7 +43,7 @@
 			$unique 	= $this->session->userdata('unique');
 
 			$this->session->unset_userdata('addCoreSeparationReason-'.$unique['unique']);			
-			redirect('CoreSeparationReason/addCoreSeparationReason');
+			redirect('separation-reason/add');
 		}
 		
 		function processAddCoreSeparationReason(){
@@ -106,7 +106,7 @@
 			$unique 	= $this->session->userdata('unique');
 
 			$this->session->unset_userdata('addCoreSeparationReason-'.$unique['unique']);			
-			redirect('CoreSeparationReason/editCoreSeparationReason/'.$separation_reason_id);
+			redirect('separation-reason/edit/'.$separation_reason_id);
 		}
 
 		function editCoreSeparationReason(){

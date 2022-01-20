@@ -88,6 +88,7 @@ $route['recruitment-applicant-data-status-final/edit/(:num)']	        = 'Recruit
 $route['recruitment-applicant-data-status-final/delete/(:num)']	        = 'RecruitmentApplicantDataStatusFinal/deleteRecruitmentApplicantDataStatusFinal/$1';
 $route['recruitment-applicant-data-status-final/process-edit'] 	        = 'RecruitmentApplicantDataStatusFinal/processEditRecruitmentApplicantDataStatusFinal';
 $route['recruitment-applicant-data-status-final/reset-edit/(:num)'] 	= 'RecruitmentApplicantDataStatusFinal/reset_edit/$1';
+$route['recruitment-applicant-data-status-final/recruitment-applicant-data/(:num)'] 	= 'RecruitmentApplicantDataStatusFinal/recruitmentApplicantData/$1';
 
 
 /*======================================  Organization ======================================== */
@@ -170,15 +171,15 @@ $route['section/process-edit'] 	                = 'CoreSection/processEditCoreSe
 $route['section/reset-edit/(:num)'] 	        = 'CoreSection/reset_edit/$1';
 
 /* CORE JobTitle */
-$route['jobtitle']		                        = 'CoreJobTitle';
-$route['jobtitle/add'] 			                = 'CoreJobTitle/addCoreJobTitle';
-$route['jobtitle/elements-add'] 	            = 'CoreJobTitle/function_elements_add';
-$route['jobtitle/reset-add'] 	                = 'CoreJobTitle/reset_add';
-$route['jobtitle/process-add'] 	                = 'CoreJobTitle/processAddCoreJobTitle';
-$route['jobtitle/edit/(:num)']	                = 'CoreJobTitle/editCoreJobTitle/$1';
-$route['jobtitle/delete/(:num)']	            = 'CoreJobTitle/deleteCoreJobTitle/$1';
-$route['jobtitle/process-edit'] 	            = 'CoreJobTitle/processEditCoreJobTitle';
-$route['jobtitle/reset-edit/(:num)'] 	        = 'CoreJobTitle/reset_edit/$1';
+$route['job-title']		                        = 'CoreJobTitle';
+$route['job-title/add'] 			                = 'CoreJobTitle/addCoreJobTitle';
+$route['job-title/elements-add'] 	            = 'CoreJobTitle/function_elements_add';
+$route['job-title/reset-add'] 	                = 'CoreJobTitle/reset_add';
+$route['job-title/process-add'] 	                = 'CoreJobTitle/processAddCoreJobTitle';
+$route['job-title/edit/(:num)']	                = 'CoreJobTitle/editCoreJobTitle/$1';
+$route['job-title/delete/(:num)']	            = 'CoreJobTitle/deleteCoreJobTitle/$1';
+$route['job-title/process-edit'] 	            = 'CoreJobTitle/processEditCoreJobTitle';
+$route['job-title/reset-edit/(:num)'] 	        = 'CoreJobTitle/reset_edit/$1';
 
 /* CORE Grade */
 $route['grade']		                            = 'CoreGrade';
@@ -386,10 +387,10 @@ $route['marital-status/reset-edit/(:num)'] 	    = 'CoreMaritalStatus/reset_edit/
 
 /* CORE SeparationReason */
 $route['separation-reason']		                = 'CoreSeparationReason';
-$route['separation-reason/add'] 			        = 'CoreSeparationReason/addCoreSeparationReason';
+$route['separation-reason/add'] 			    = 'CoreSeparationReason/addCoreSeparationReason';
 $route['separation-reason/elements-add'] 	    = 'CoreSeparationReason/function_elements_add';
 $route['separation-reason/reset-add'] 	        = 'CoreSeparationReason/reset_add';
-$route['separation-reason/process-add'] 	        = 'CoreSeparationReason/processAddCoreSeparationReason';
+$route['separation-reason/process-add'] 	    = 'CoreSeparationReason/processAddCoreSeparationReason';
 $route['separation-reason/edit/(:num)']	        = 'CoreSeparationReason/editCoreSeparationReason/$1';
 $route['separation-reason/delete/(:num)']	    = 'CoreSeparationReason/deleteCoreSeparationReason/$1';
 $route['separation-reason/process-edit'] 	    = 'CoreSeparationReason/processEditCoreSeparationReason';
@@ -398,37 +399,37 @@ $route['separation-reason/reset-edit/(:num)'] 	= 'CoreSeparationReason/reset_edi
 /*=========================================  HRO Employee  ======================================== */
 
 /* HRO EmployeeData */
-$route['hroemployeedata']		                = 'HroEmployeeData';
-$route['hroemployeedata/add'] 			        = 'HroEmployeeData/addHroEmployeeData';
-$route['hroemployeedata/elements-add'] 	        = 'HroEmployeeData/function_elements_add';
-$route['hroemployeedata/reset-add'] 	        = 'HroEmployeeData/reset_add';
-$route['hroemployeedata/process-add'] 	        = 'HroEmployeeData/processAddHroEmployeeData';
-$route['hroemployeedata/edit/(:num)']	        = 'HroEmployeeData/editHroEmployeeData/$1';
-$route['hroemployeedata/delete/(:num)']	        = 'HroEmployeeData/deleteHroEmployeeData/$1';
-$route['hroemployeedata/process-edit'] 	        = 'HroEmployeeData/processEditHroEmployeeData';
-$route['hroemployeedata/reset-edit/(:num)'] 	= 'HroEmployeeData/reset_edit/$1';
+$route['hro-employee-data']		                = 'HroEmployeeData';
+$route['hro-employee-data/add'] 			    = 'HroEmployeeData/addHroEmployeeData';
+$route['hro-employee-data/elements-add'] 	    = 'HroEmployeeData/function_elements_add';
+$route['hro-employee-data/reset-add'] 	        = 'HroEmployeeData/reset_add';
+$route['hro-employee-data/process-add'] 	    = 'HroEmployeeData/processAddHroEmployeeData';
+$route['hro-employee-data/edit/(:num)']	        = 'HroEmployeeData/editHroEmployeeData/$1';
+$route['hro-employee-data/delete/(:num)']	    = 'HroEmployeeData/deleteHroEmployeeData/$1';
+$route['hro-employee-data/process-edit'] 	    = 'HroEmployeeData/processEditHroEmployeeData';
+$route['hro-employee-data/reset-edit/(:num)'] 	= 'HroEmployeeData/reset_edit/$1';
 
 /* HRO EmployeeEmployment */
-$route['hroemployeeemployment']		                    = 'HroEmployeeEmployment';
-$route['hroemployeeemployment/add'] 			        = 'HroEmployeeEmployment/addHroEmployeeEmployment';
-$route['hroemployeeemployment/elements-add'] 	        = 'HroEmployeeEmployment/function_elements_add';
-$route['hroemployeeemployment/reset-add'] 	            = 'HroEmployeeEmployment/reset_add';
-$route['hroemployeeemployment/process-add'] 	        = 'HroEmployeeEmployment/processAddHroEmployeeEmployment';
-$route['hroemployeeemployment/edit/(:num)']	            = 'HroEmployeeEmployment/editHroEmployeeEmployment/$1';
-$route['hroemployeeemployment/delete/(:num)']	        = 'HroEmployeeEmployment/deleteHroEmployeeEmployment/$1';
-$route['hroemployeeemployment/process-edit'] 	        = 'HroEmployeeEmployment/processEditHroEmployeeEmployment';
-$route['hroemployeeemployment/reset-edit/(:num)'] 	    = 'HroEmployeeEmployment/reset_edit/$1';
+$route['hro-employee-employment']		                = 'HroEmployeeEmployment';
+$route['hro-employee-employment/add'] 			        = 'HroEmployeeEmployment/addHroEmployeeEmployment';
+$route['hro-employee-employment/elements-add'] 	        = 'HroEmployeeEmployment/function_elements_add';
+$route['hro-employee-employment/reset-add'] 	        = 'HroEmployeeEmployment/reset_add';
+$route['hro-employee-employment/process-add'] 	        = 'HroEmployeeEmployment/processAddHroEmployeeEmployment';
+$route['hro-employee-employment/edit/(:num)']	        = 'HroEmployeeEmployment/editHroEmployeeEmployment/$1';
+$route['hro-employee-employment/delete/(:num)']	        = 'HroEmployeeEmployment/deleteHroEmployeeEmployment/$1';
+$route['hro-employee-employment/process-edit'] 	        = 'HroEmployeeEmployment/processEditHroEmployeeEmployment';
+$route['hro-employee-employment/reset-edit/(:num)'] 	= 'HroEmployeeEmployment/reset_edit/$1';
 
 /* HRO EmployeeStatusAlteration */
-$route['hroemployeestatusalteration']		            = 'HroEmployeeStatusAlteration';
-$route['hroemployeestatusalteration/add'] 			    = 'HroEmployeeStatusAlteration/addHroEmployeeStatusAlteration';
-$route['hroemployeestatusalteration/elements-add'] 	    = 'HroEmployeeStatusAlteration/function_elements_add';
-$route['hroemployeestatusalteration/reset-add'] 	    = 'HroEmployeeStatusAlteration/reset_add';
-$route['hroemployeestatusalteration/process-add'] 	    = 'HroEmployeeStatusAlteration/processAddHroEmployeeStatusAlteration';
-$route['hroemployeestatusalteration/edit/(:num)']	    = 'HroEmployeeStatusAlteration/editHroEmployeeStatusAlteration/$1';
-$route['hroemployeestatusalteration/delete/(:num)']	    = 'HroEmployeeStatusAlteration/deleteHroEmployeeStatusAlteration/$1';
-$route['hroemployeestatusalteration/process-edit'] 	    = 'HroEmployeeStatusAlteration/processEditHroEmployeeStatusAlteration';
-$route['hroemployeestatusalteration/reset-edit/(:num)'] = 'HroEmployeeStatusAlteration/reset_edit/$1';
+$route['hro-employee-status-alteration']		            = 'HroEmployeeStatusAlteration';
+$route['hro-employee-status-alteration/add'] 			    = 'HroEmployeeStatusAlteration/addHroEmployeeStatusAlteration';
+$route['hro-employee-status-alteration/elements-add'] 	    = 'HroEmployeeStatusAlteration/function_elements_add';
+$route['hro-employee-status-alteration/reset-add'] 	        = 'HroEmployeeStatusAlteration/reset_add';
+$route['hro-employee-status-alteration/process-add'] 	    = 'HroEmployeeStatusAlteration/processAddHroEmployeeStatusAlteration';
+$route['hro-employee-status-alteration/edit/(:num)']	    = 'HroEmployeeStatusAlteration/editHroEmployeeStatusAlteration/$1';
+$route['hro-employee-status-alteration/delete/(:num)']	    = 'HroEmployeeStatusAlteration/deleteHroEmployeeStatusAlteration/$1';
+$route['hro-employee-status-alteration/process-edit'] 	    = 'HroEmployeeStatusAlteration/processEditHroEmployeeStatusAlteration';
+$route['hro-employee-status-alteration/reset-edit/(:num)']  = 'HroEmployeeStatusAlteration/reset_edit/$1';
 
 /* HRO EmployeeTransfer */
 $route['hroemployeetransfer']		                    = 'HroEmployeeTransfer';

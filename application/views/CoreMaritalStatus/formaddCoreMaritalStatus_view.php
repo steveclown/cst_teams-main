@@ -38,7 +38,7 @@
 									Form Tambah
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreMaritalStatus" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>marital-status" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>
@@ -46,7 +46,7 @@
 							<div class="portlet-body form">
 								<div class="form-body">
 								<?php 
-									echo form_open('maritalstatus/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
+									echo form_open('marital-status/process-add',array('id' => 'myform', 'class' => 'horizontal-form')); 
 
 										echo $this->session->userdata('message');
 										$this->session->unset_userdata('message');
