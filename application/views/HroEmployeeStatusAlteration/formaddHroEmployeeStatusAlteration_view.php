@@ -265,7 +265,7 @@
 
 						$unique = $this->session->userdata('unique');
 
-						$data 	=  $this->session->userdata('addHroEmployeeStatusAlteration-'.$unique['unique']);	
+						$data 	= $hroemployeestatusalteration_last;	
 
 						if (empty($data['status_alteration_date'])){
 							$data['status_alteration_date'] = date('d-m-Y');
@@ -290,8 +290,8 @@
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
 								<?php 
-								if ($hroemployeestatusalteration_last==true) {
-									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeestatusalteration_last['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
+								if ($data==true) {
+									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$data['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 								} else{
 									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeedata['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 								}
@@ -304,6 +304,8 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
+								<?php print_r($data); ?>
+								
 								<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="status_alteration_date" id="status_alteration_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($data['status_alteration_date']);?>">
 								<label class="control-label">Tanggal Perubahan Status</label>
 							</div>
