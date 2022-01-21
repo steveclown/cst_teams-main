@@ -27,6 +27,22 @@
 	}
 </script>
 
+<script>
+	$(document).ready(function(){
+        $("#region_id").change(function(){
+            var region_id = $("#region_id").val();
+            $.ajax({
+               type : "POST",
+               url  : "<?php echo base_url(); ?>HroEmployeeStatusAlteration/getCoreBranch",
+               data : {region_id: region_id},
+               success: function(data){
+                   $("#branch_id").html(data);                
+               }
+            });
+        });
+    });
+</script>
+
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<div class = "page-bar">
 						<ul class="page-breadcrumb">
@@ -289,11 +305,47 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
+								<?php
+									echo form_dropdown('region_id', $coreregion, set_value('region_id', $data['region_id']),'id="region_id" class="form-control select2me"');
+								?>
+								<label class="control-label">Nama Wilayah
+									<span class="required">
+										*
+									</span>
+								</label>
+							</div>
+						</div>
+
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<?php
+									if (!empty($data['region_id'])){
+										$corebranch = create_double($this->HroEmployeeStatusAlteration_model->getCoreBranchDD($data['region_id']), 'branch_id', 'branch_name');
+
+										echo form_dropdown('branch_id', $corebranch, set_value('branch_id', $data['branch_id']), 'id="branch_id" class="form-control select2me"');	
+									} else {
+								?>
+									<select name="branch_id" id="branch_id" class="form-control select2me" onChange="function_elements_recruit(this.name, this.value);">
+										<option value=""></option>
+									</select>
+								<?php
+									}
+								?>
+								<label class="control-label">Nama Cabang
+									<span class="required">
+										*
+									</span>
+								</label>
+							</div>
+						</div>
+
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
 								<?php 
 								if ($data==true) {
 									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$data['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 								} else{
-									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeedata['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
+									echo form_dropdown('employee_employment_status', $employeeemploymentstatus,'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 								}
 								?>
 								<label class="control-label">Status Pekerjaan</label>

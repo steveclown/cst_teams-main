@@ -147,6 +147,18 @@
 
 			$this->load->view('MainPage_view',$data);
 		}
+
+		public function getCoreBranch(){
+			$region_id = $this->input->post('region_id');
+
+			$item = $this->HroEmployeeStatusAlteration_model->getCoreBranchDD($region_id);
+
+			$data .= "<option value=''>--Choose One--</option>";
+			foreach ($item as $mp){
+				$data .= "<option value='$mp[branch_id]'>$mp[branch_name]</option>\n";	
+			}
+			echo $data;
+		}
 		
 		public function processAddHROEmployeeStatusAlteration(){
 			$auth = $this->session->userdata('auth');

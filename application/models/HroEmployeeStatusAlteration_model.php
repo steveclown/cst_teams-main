@@ -23,6 +23,15 @@
 			return $result->result_array();
 		}
 
+		public function getCoreBranchDD($region_id){
+			$this->db->select('core_branch.branch_id, core_branch.branch_name');
+			$this->db->from('core_branch');
+			$this->db->where('core_branch.data_state', 0);
+			$this->db->where('core_branch.region_id', $region_id);
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+
 		public function getCoreCompany(){
 			$this->db->select('core_company.company_id, core_company.company_name');
 			$this->db->from('core_company');
