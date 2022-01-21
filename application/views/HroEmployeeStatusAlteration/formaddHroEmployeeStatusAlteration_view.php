@@ -59,7 +59,7 @@
 	$this->session->unset_userdata('message');
 ?>
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-5">
 		<div class="portlet box blue">
 			<div class="portlet-title">
 				<div class="caption">
@@ -111,13 +111,98 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<?php 
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getRegionName($hroemployeedata['region_id']);?>" readonly>
+								<label class="control-label">Wilayah</label>
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getBranchName($hroemployeedata['branch_id']);?>" readonly>
+								<label class="control-label">Branch</label>
+							</div>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getLocationName($hroemployeedata['location_id']);?>" readonly>
+								<label class="control-label">Location</label>
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getCompanyName($hroemployeedata['company_id']);?>" readonly>
+								<label class="control-label">Company</label>
+							</div>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getDivisionName($hroemployeedata['division_id']);?>" readonly>
+								<label class="control-label">Divisi</label>
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getDepartmentName($hroemployeedata['department_id']);?>" readonly>
+								<label class="control-label">Department</label>
+							</div>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getSectionName($hroemployeedata['section_id']);?>" readonly>
+								<label class="control-label">Bagian</label>
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getUnitName($hroemployeedata['unit_id']);?>" readonly>
+								<label class="control-label">Unit</label>
+							</div>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getJobTitleName($hroemployeedata['job_title_id']);?>" readonly>
+								<label class="control-label">Jabatan</label>
+							</div>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getGradeName($hroemployeedata['grade_id']);?>" readonly>
+								<label class="control-label">Grade</label>
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getClassName($hroemployeedata['class_id']);?>" readonly>
+								<label class="control-label">Class</label>
+							</div>
+						</div>
+					</div>
+
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class="form-group form-md-line-input">
+								<input type="text" class="form-control" value="<?php echo $employeeemploymentstatus[$hroemployeestatusalteration_last['employee_employment_status']];?>" readonly/>
+								<!-- <?php 
 								if ($hroemployeestatusalteration_last==true) {
 									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeestatusalteration_last['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 								} else{
 									echo form_dropdown('employee_employment_status', $employeeemploymentstatus, set_value('employee_employment_status',$hroemployeedata['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');
 								}
-								?>
+								?> -->
 								<label class="control-label">Status Pekerjaan</label>
 							</div>
 						</div>
@@ -126,14 +211,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="status_alteration_date" id="status_alteration_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($data['status_alteration_date']);?>">
+								<input class="form-control form-control-inline input-medium" type="text" name="" id="" value="<?php echo tgltoview($hroemployeestatusalteration_last['status_alteration_date']);?>" readonly>
 								<label class="control-label">Tanggal Perubahan Status</label>
 							</div>
 						</div>
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="status_alteration_last_date" id="status_alteration_last_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($data['status_alteration_last_date']);?>">
+								<input class="form-control form-control-inline input-medium" type="text" name="" id="" value="<?php echo tgltoview($hroemployeestatusalteration_last['status_alteration_last_date']);?>" readonly>
 								<label class="control-label">Perubahan Status Tanggal Terakhir</label>
 							</div>
 						</div>
@@ -142,7 +227,7 @@
 					<div class = "row">
 						<div class = "col-md-12">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="status_alteration_description" id="status_alteration_description" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" name="" id="" class="form-control" value="<?php echo $hroemployeestatusalteration_last['status_alteration_description'];?>" readonly />
 								<label class="control-label">Deskripsi</label>
 							</div>
 						</div>
@@ -151,22 +236,7 @@
 					<div class = "row">
 						<div class = "col-md-12">
 							<div class="form-group form-md-line-input">
-								<!-- <input type="text" name="employee_id" id="employee_id" value="<?php echo $hroemployeedata['employee_id']?>" class="form-control" readonly>
-								<input type="text" name="applicant_id" id="applicant_id" value="<?php echo $hroemployeedata['applicant_id']?>" class="form-control" readonly>
-								<input type="text" name="marital_status_id" id="marital_status_id" value="<?php echo $hroemployeedata['marital_status_id']?>" class="form-control" readonly>
-								<input type="text" name="region_id" id="region_id" value="<?php echo $hroemployeedata['region_id']?>" class="form-control" readonly>
-								<input type="text" name="branch_id" id="branch_id" value="<?php echo $hroemployeedata['branch_id']?>" class="form-control" readonly>
-								<input type="text" name="company_id" id="company_id" value="<?php echo $hroemployeedata['company_id']?>" class="form-control" readonly>
-								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_id']?>" class="form-control" readonly>
-								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_id']?>" class="form-control" readonly>
-								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_id']?>" class="form-control" readonly>
-								<input type="text" name="unit_id" id="unit_id" value="<?php echo $hroemployeedata['unit_id']?>" class="form-control" readonly>
-								<input type="text" name="job_title_id" id="job_title_id" value="<?php echo $hroemployeedata['job_title_id']?>" class="form-control" readonly>
-								<input type="text" name="grade_id" id="grade_id" value="<?php echo $hroemployeedata['grade_id']?>" class="form-control" readonly>
-								<input type="text" name="class_id" id="class_id" value="<?php echo $hroemployeedata['class_id']?>" class="form-control" readonly>
-								<input type="text" name="location_id" id="location_id" value="<?php echo $hroemployeedata['location_id']?>" class="form-control" readonly>
-								<input type="text" name="bank_id" id="bank_id" value="<?php echo $hroemployeedata['bank_id']?>" class="form-control" readonly>
-								<textarea rows="3" name="status_alteration_remark" id="status_alteration_remark" class="form-control"></textarea> -->
+								<input type="text" name="" id="" class="form-control" value="<?php echo $hroemployeestatusalteration_last['status_alteration_remark'];?>" readonly/>
 								<label class="control-label">Keterangan</label>
 							</div>
 						</div>
@@ -176,7 +246,7 @@
 		</div>
 	</div>
 
-	<div class="col-md-6">
+	<div class="col-md-7">
 		<div class="portlet box blue">
 			<div class="portlet-title">
 				<div class="caption">
@@ -215,6 +285,7 @@
 						}
 
 					?>
+					
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
@@ -258,22 +329,6 @@
 					<div class = "row">
 						<div class = "col-md-12">
 							<div class="form-group form-md-line-input">
-								<!-- <input type="text" name="employee_id" id="employee_id" value="<?php echo $hroemployeedata['employee_id']?>" class="form-control" readonly>
-								<input type="text" name="applicant_id" id="applicant_id" value="<?php echo $hroemployeedata['applicant_id']?>" class="form-control" readonly>
-								<input type="text" name="marital_status_id" id="marital_status_id" value="<?php echo $hroemployeedata['marital_status_id']?>" class="form-control" readonly>
-								<input type="text" name="region_id" id="region_id" value="<?php echo $hroemployeedata['region_id']?>" class="form-control" readonly>
-								<input type="text" name="branch_id" id="branch_id" value="<?php echo $hroemployeedata['branch_id']?>" class="form-control" readonly>
-								<input type="text" name="company_id" id="company_id" value="<?php echo $hroemployeedata['company_id']?>" class="form-control" readonly>
-								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_id']?>" class="form-control" readonly>
-								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_id']?>" class="form-control" readonly>
-								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_id']?>" class="form-control" readonly>
-								<input type="text" name="unit_id" id="unit_id" value="<?php echo $hroemployeedata['unit_id']?>" class="form-control" readonly>
-								<input type="text" name="job_title_id" id="job_title_id" value="<?php echo $hroemployeedata['job_title_id']?>" class="form-control" readonly>
-								<input type="text" name="grade_id" id="grade_id" value="<?php echo $hroemployeedata['grade_id']?>" class="form-control" readonly>
-								<input type="text" name="class_id" id="class_id" value="<?php echo $hroemployeedata['class_id']?>" class="form-control" readonly>
-								<input type="text" name="location_id" id="location_id" value="<?php echo $hroemployeedata['location_id']?>" class="form-control" readonly>
-								<input type="text" name="bank_id" id="bank_id" value="<?php echo $hroemployeedata['bank_id']?>" class="form-control" readonly>
-								<textarea rows="3" name="status_alteration_remark" id="status_alteration_remark" class="form-control"></textarea> -->
 								<label class="control-label">Keterangan</label>
 							</div>
 						</div>

@@ -30,12 +30,32 @@
 				$sesi['employee_id']		= '';	
 			}
 
+			$data['main_view']['coreregion']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreRegion(),'region_id','region_name');
+
+			$data['main_view']['corebranch']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreBranch(),'branch_id','branch_name');
+
+			$data['main_view']['corecompany']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreCompany(),'company_id','company_name');
+
 			$data['main_view']['coredivision']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreDivision(),'division_id','division_name');
 
 			$data['main_view']['coredepartment']					= create_double($this->HroEmployeeStatusAlteration_model->getCoreDepartment(),'department_id','department_name');
 
 			$data['main_view']['coresection']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreSection(),'section_id','section_name');
 
+			$data['main_view']['coreunit']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreUnit(),'unit_id','unit_name');
+
+			$data['main_view']['corejobtitle']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreJobTitle(),'job_title_id','job_title_name');
+
+			$data['main_view']['coregrade']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreGrade(),'grade_id','grade_name');
+
+			$data['main_view']['coreclass']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreClass(),'class_id','class_name');
+
+			$data['main_view']['corelocation']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreLocation(),'location_id','location_name');
+
+
+
+
+			
 			$data['main_view']['hroemployeedata']					= create_double($this->HroEmployeeStatusAlteration_model->getHROEmployeeData_Filter($region_id, $branch_id, $location_id),'employee_id','employee_name');
 
 			$data['main_view']['hroemployeedata_statusalteration']	= $this->HroEmployeeStatusAlteration_model->getHROEmployeeData_StatusAlteration($region_id, $branch_id, $location_id, $sesi['employee_id'], $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
@@ -90,6 +110,32 @@
 		
 		public function addHROEmployeeStatusAlteration(){
 			$employee_id = $this->uri->segment(3);
+
+
+			$data['main_view']['coreregion']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreRegion(), 'region_id', 'region_name');
+
+			$data['main_view']['corebranch']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreBranch(), 'branch_id', 'branch_name');
+
+			$data['main_view']['corecompany']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreCompany(),'company_id','company_name');
+
+			$data['main_view']['coredivision']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreDivision(),'division_id','division_name');
+
+			$data['main_view']['coredepartment']					= create_double($this->HroEmployeeStatusAlteration_model->getCoreDepartment(),'department_id','department_name');
+
+			$data['main_view']['coresection']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreSection(),'section_id','section_name');
+
+			$data['main_view']['coreunit']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreUnit(),'unit_id','unit_name');
+
+			$data['main_view']['corejobtitle']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreJobTitle(),'job_title_id','job_title_name');
+
+			$data['main_view']['coregrade']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreGrade(),'grade_id','grade_name');
+
+			$data['main_view']['coreclass']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreClass(),'class_id','class_name');
+
+			$data['main_view']['corelocation']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreLocation(),'location_id','location_name');
+
+
+
 
 			$data['main_view']['hroemployeedata']				= $this->HroEmployeeStatusAlteration_model->getHROEmployeeData($employee_id);
 
