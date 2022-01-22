@@ -1,4 +1,5 @@
 <?php
+
 	Class HroEmployeeStatusAlteration extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
@@ -132,7 +133,7 @@
 
 			$data['main_view']['coreclass']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreClass(),'class_id','class_name');
 
-			$data['main_view']['corelocation']							= create_double($this->HroEmployeeStatusAlteration_model->getCoreLocation(),'location_id','location_name');
+			$data['main_view']['corelocation']						= create_double($this->HroEmployeeStatusAlteration_model->getCoreLocation(),'location_id','location_name');
 
 
 
@@ -156,6 +157,54 @@
 			$data .= "<option value=''>--Choose One--</option>";
 			foreach ($item as $mp){
 				$data .= "<option value='$mp[branch_id]'>$mp[branch_name]</option>\n";	
+			}
+			echo $data;
+		}
+
+		public function getCoreLocation(){
+			$branch_id = $this->input->post('branch_id');
+
+			$item = $this->HroEmployeeStatusAlteration_model->getCoreLocationDD($branch_id);
+
+			$data .= "<option value=''>--Choose One--</option>";
+			foreach ($item as $mp){
+				$data .= "<option value='$mp[location_id]'>$mp[location_name]</option>\n";	
+			}
+			echo $data;
+		}
+
+		public function getCoreDepartment(){
+			$division_id = $this->input->post('division_id');
+
+			$item = $this->HroEmployeeStatusAlteration_model->getCoreDepartmentDD($division_id);
+
+			$data .= "<option value=''>--Choose One--</option>";
+			foreach ($item as $mp){
+				$data .= "<option value='$mp[department_id]'>$mp[department_name]</option>\n";	
+			}
+			echo $data;
+		}
+
+		public function getCoreSection(){
+			$department_id = $this->input->post('department_id');
+
+			$item = $this->HroEmployeeStatusAlteration_model->getCoreSectionDD($department_id);
+
+			$data .= "<option value=''>--Choose One--</option>";
+			foreach ($item as $mp){
+				$data .= "<option value='$mp[section_id]'>$mp[section_name]</option>\n";	
+			}
+			echo $data;
+		}
+
+		public function getCoreUnit(){
+			$section_id = $this->input->post('section_id');
+
+			$item = $this->HroEmployeeStatusAlteration_model->getCoreUnitDD($section_id);
+
+			$data .= "<option value=''>--Choose One--</option>";
+			foreach ($item as $mp){
+				$data .= "<option value='$mp[unit_id]'>$mp[unit_name]</option>\n";	
 			}
 			echo $data;
 		}
@@ -188,7 +237,9 @@
 				'created_id'					=> $auth['user_id'],
 				'created_on'					=> date("Y-m-d H:i:s")
 			);
-			
+			// print_r("Data:");
+			// print_r($data);
+			// exit();
 			$this->form_validation->set_rules('employee_id', 'Employee Name', 'required');
 			$this->form_validation->set_rules('status_alteration_date', 'Status Alteration Date', 'required');
 			$this->form_validation->set_rules('status_alteration_last_date', 'Status Alteration Last Date', 'required');

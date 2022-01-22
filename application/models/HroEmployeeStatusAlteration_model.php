@@ -56,6 +56,16 @@
 			return $result->result_array();
 		}
 
+		public function getCoreDepartmentDD($division_id){
+			$this->db->select('core_department.department_id, core_department.department_name');
+			$this->db->from('core_department');
+			$this->db->where('core_department.data_state', 0);
+			$this->db->where('core_department.division_id', $division_id);
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+
+
 		public function getCoreSection(){
 			$this->db->select('core_section.section_id, core_section.section_name');
 			$this->db->from('core_section');
@@ -64,12 +74,30 @@
 			return $result->result_array();
 		}
 
+		public function getCoreSectionDD($department_id){
+			$this->db->select('core_section.section_id, core_section.section_name');
+			$this->db->from('core_section');
+			$this->db->where('core_section.data_state', 0);
+			$this->db->where('core_section.department_id', $department_id);
+			$result = $this->db->get()->result_array();
+			return $result;
+		}
+
 		public function getCoreUnit(){
 			$this->db->select('core_unit.unit_id, core_unit.unit_name');
 			$this->db->from('core_unit');
 			$this->db->where('core_unit.data_state',0);
 			$result = $this->db->get();
 			return $result->result_array();
+		}
+
+		public function getCoreUnitDD($section_id){
+			$this->db->select('core_unit.unit_id, core_unit.unit_name');
+			$this->db->from('core_unit');
+			$this->db->where('core_unit.data_state', 0);
+			$this->db->where('core_unit.section_id', $section_id);
+			$result = $this->db->get()->result_array();
+			return $result;
 		}
 
 		public function getCoreJobTitle(){
@@ -102,6 +130,15 @@
 			$this->db->where('core_location.data_state',0);
 			$result = $this->db->get();
 			return $result->result_array();
+		}
+		
+		public function getCoreLocationDD($branch_id){
+			$this->db->select('core_location.location_id, core_location.location_name');
+			$this->db->from('core_location');
+			$this->db->where('core_location.data_state', 0);
+			$this->db->where('core_location.branch_id', $branch_id);
+			$result = $this->db->get()->result_array();
+			return $result;
 		}
 
 		public function getCoreBank(){

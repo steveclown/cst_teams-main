@@ -422,7 +422,7 @@ $route['hro-employee-employment/reset-edit/(:num)'] 	= 'HroEmployeeEmployment/re
 
 /* HRO EmployeeStatusAlteration */
 $route['hro-employee-status-alteration']		            = 'HroEmployeeStatusAlteration';
-$route['hro-employee-status-alteration/add'] 			    = 'HroEmployeeStatusAlteration/addHroEmployeeStatusAlteration';
+$route['hro-employee-status-alteration/add/(:num)'] 		= 'HroEmployeeStatusAlteration/addHROEmployeeStatusAlteration/$1';
 $route['hro-employee-status-alteration/elements-add'] 	    = 'HroEmployeeStatusAlteration/function_elements_add';
 $route['hro-employee-status-alteration/reset-add'] 	        = 'HroEmployeeStatusAlteration/reset_add';
 $route['hro-employee-status-alteration/process-add'] 	    = 'HroEmployeeStatusAlteration/processAddHroEmployeeStatusAlteration';
