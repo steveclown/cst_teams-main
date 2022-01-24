@@ -27,6 +27,9 @@
 			<!-- END PAGE TITLE & BREADCRUMB-->
 			<h1 class="page-title">
 				Employee Employment List
+
+				<?php
+				echo $branch;?>
 			</h1>
 
 <?php echo form_open('hroemployeeemployment/filter',array('id' => 'myform', 'class' => '')); ?>

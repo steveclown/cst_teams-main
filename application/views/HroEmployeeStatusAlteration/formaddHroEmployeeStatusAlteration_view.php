@@ -179,13 +179,13 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getRegionName($hroemployeedata['region_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getRegionName($hroemployeestatusalteration_last['region_id']);?>" readonly>
 								<label class="control-label">Wilayah</label>
 							</div>
 						</div>
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getBranchName($hroemployeedata['branch_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getBranchName($hroemployeestatusalteration_last['branch_id']);?>" readonly>
 								<label class="control-label">Branch</label>
 							</div>
 						</div>
@@ -194,13 +194,13 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getLocationName($hroemployeedata['location_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getLocationName($hroemployeestatusalteration_last['location_id']);?>" readonly>
 								<label class="control-label">Location</label>
 							</div>
 						</div>
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getCompanyName($hroemployeedata['company_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getCompanyName($hroemployeestatusalteration_last['company_id']);?>" readonly>
 								<label class="control-label">Company</label>
 							</div>
 						</div>
@@ -209,7 +209,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getDivisionName($hroemployeedata['division_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getDivisionName($hroemployeestatusalteration_last['division_id']);?>" readonly>
 								<label class="control-label">Divisi</label>
 							</div>
 						</div>
@@ -224,13 +224,13 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getSectionName($hroemployeedata['section_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getSectionName($hroemployeestatusalteration_last['section_id']);?>" readonly>
 								<label class="control-label">Bagian</label>
 							</div>
 						</div>
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getUnitName($hroemployeedata['unit_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getUnitName($hroemployeestatusalteration_last['unit_id']);?>" readonly>
 								<label class="control-label">Unit</label>
 							</div>
 						</div>
@@ -239,7 +239,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getJobTitleName($hroemployeedata['job_title_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getJobTitleName($hroemployeestatusalteration_last['job_title_id']);?>" readonly>
 								<label class="control-label">Jabatan</label>
 							</div>
 						</div>
@@ -248,13 +248,13 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getGradeName($hroemployeedata['grade_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getGradeName($hroemployeestatusalteration_last['grade_id']);?>" readonly>
 								<label class="control-label">Grade</label>
 							</div>
 						</div>
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getClassName($hroemployeedata['class_id']);?>" readonly>
+								<input type="text" name="" id="" class="form-control" value="<?php echo $this->HroEmployeeStatusAlteration_model->getClassName($hroemployeestatusalteration_last['class_id']);?>" readonly>
 								<label class="control-label">Class</label>
 							</div>
 						</div>
@@ -592,7 +592,8 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="status_alteration_last_date" id="status_alteration_last_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo date("d-m-y");?>">
+
+								<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="status_alteration_last_date" id="status_alteration_last_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo date("d-m-Y");?>">
 								<label class="control-label">Perubahan Status Tanggal Terakhir</label>
 							</div>
 						</div>

@@ -263,6 +263,8 @@
 						'class_id' 								=> $this->input->post('class_id',true),
 						'location_id' 							=> $this->input->post('location_id',true),
 						'bank_id' 								=> $this->input->post('bank_id',true),
+						'bank_id' 								=> $this->input->post('bank_id',true),
+						'employee_status'						=> $data['employee_employment_status'],
 						'employee_employment_status'			=> $data['employee_employment_status'],
 						'employee_employment_status_date'		=> $data['status_alteration_date'],
 						'employee_employment_status_duedate'	=> $data['status_alteration_last_date'],
@@ -374,8 +376,24 @@
 				$data_last = $this->HroEmployeeStatusAlteration_model->getHROEmployeeStatusAlteration_Last($employee_id);
 
 				$data_update = array (
-					'employee_id'					=> $data_last['employee_id'],
-					'employee_employment_status'	=> $data_last['employee_employment_status']
+					'employee_id'							=> $data_last['employee_id'],
+					'marital_status_id'						=> $data_last['marital_status_id'],
+					'region_id'								=> $data_last['region_id'],
+					'branch_id'								=> $data_last['branch_id'],
+					'company_id'							=> $data_last['company_id'],
+					'division_id'							=> $data_last['division_id'],
+					'department_id'							=> $data_last['department_id'],
+					'section_id'							=> $data_last['section_id'],
+					'unit_id'								=> $data_last['unit_id'],
+					'job_title_id'							=> $data_last['job_title_id'],
+					'grade_id'								=> $data_last['grade_id'],
+					'class_id'								=> $data_last['class_id'],
+					'location_id'							=> $data_last['location_id'],
+					'bank_id'								=> $data_last['bank_id'],
+					'employee_status'						=> $data_last['employee_employment_status'],
+					'employee_employment_status'			=> $data_last['employee_employment_status'],
+					'employee_employment_status_date'		=> $data_last['status_alteration_date'],
+					'employee_employment_status_duedate'	=> $data_last['status_alteration_last_date']
 				);
 				
 				// print_r("data update :");
