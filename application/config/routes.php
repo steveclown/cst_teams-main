@@ -465,3 +465,27 @@ $route['deduction/edit/(:num)']	                        = 'CoreDeduction/editCor
 $route['deduction/delete/(:num)']	                    = 'CoreDeduction/deleteCoreDeduction/$1';
 $route['deduction/process-edit'] 	                    = 'CoreDeduction/processEditCoreDeduction';
 $route['deduction/reset-edit/(:num)'] 	                = 'CoreDeduction/reset_edit/$1';
+
+/*=========================================  Preference  ======================================== */
+
+/* CORE Allowance */
+$route['allowance']		                                = 'CoreAllowance';
+$route['allowance/add'] 			                    = 'CoreAllowance/addCoreAllowance';
+$route['allowance/elements-add'] 	                    = 'CoreAllowance/function_elements_add';
+$route['allowance/reset-add'] 	                        = 'CoreAllowance/reset_add';
+$route['allowance/process-add'] 	                    = 'CoreAllowance/processAddCoreAllowance';
+$route['allowance/edit/(:num)']	                        = 'CoreAllowance/editCoreAllowance/$1';
+$route['allowance/delete/(:num)']	                    = 'CoreAllowance/deleteCoreAllowance/$1';
+$route['allowance/process-edit'] 	                    = 'CoreAllowance/processEditCoreAllowance';
+$route['allowance/reset-edit/(:num)'] 	                = 'CoreAllowance/reset_edit/$1';
+
+/* System User */
+$route['system-user']		                            = 'SystemUser';
+$route['system-user/add'] 			                    = 'SystemUser/addSystemUser';
+$route['system-user/elements-add'] 	                    = 'SystemUser/function_elements_add';
+$route['system-user/reset-add'] 	                    = 'SystemUser/reset_add';
+$route['system-user/process-add'] 	                    = 'SystemUser/processAddSystemUser';
+$route['system-user/edit/(:num)']	                    = 'SystemUser/editSystemUser/$1';
+$route['system-user/delete/(:num)']	                    = 'SystemUser/deleteSystemUser/$1';
+$route['system-user/process-edit'] 	                    = 'SystemUser/processEditSystemUser';
+$route['system-user/reset-edit/(:num)'] 	            = 'SystemUser/reset_edit/$1';

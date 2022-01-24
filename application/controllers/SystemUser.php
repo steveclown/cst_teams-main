@@ -1,7 +1,13 @@
 <?php
-	Class SystemUser extends CI_Controller{
+	Class SystemUser extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'system-user';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('SystemUser_model');
 			$this->load->helper('sistem');
@@ -43,9 +49,9 @@
 
 		public function userprofile(){
     		$auth   = $this->session->userdata('auth');
-			// $data['Main_view']['hroemployeedata']	= $this->SystemUser_model->getHROEmployeeData_Detail($auth['employee_id']);
-			$data['Main_view']['systemuser']		= $this->SystemUser_model->getSystemUser_Detail($auth['user_id']);
-			$data['Main_view']['content']			= 'SystemUser/formuserprofile_view';
+			// $data['main_view']['hroemployeedata']	= $this->SystemUser_model->getHROEmployeeData_Detail($auth['employee_id']);
+			$data['main_view']['systemuser']		= $this->SystemUser_model->getSystemUser_Detail($auth['user_id']);
+			$data['main_view']['content']			= 'SystemUser/formuserprofile_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -259,10 +265,10 @@
 		}
 
 		public function addSystemUser(){
-			$data['Main_view']['systemusergroup']	= create_double($this->SystemUser_model->getSystemUserGroup(),'user_group_id','user_group_name');
-			$data['Main_view']['coreregion']		= create_double($this->SystemUser_model->getCoreRegion(),'region_id','region_name');
-			$data['Main_view']['coredivision']		= create_double($this->SystemUser_model->getCoreDivision(),'division_id','division_name');
-			$data['Main_view']['content']			= 'SystemUser/FormAddSystemUser_view';
+			$data['main_view']['systemusergroup']	= create_double($this->SystemUser_model->getSystemUserGroup(),'user_group_id','user_group_name');
+			$data['main_view']['coreregion']		= create_double($this->SystemUser_model->getCoreRegion(),'region_id','region_name');
+			$data['main_view']['coredivision']		= create_double($this->SystemUser_model->getCoreDivision(),'division_id','division_name');
+			$data['main_view']['content']			= 'SystemUser/FormAddSystemUser_view';
 			$this->load->view('MainPage_view',$data);
 		}
 
@@ -455,11 +461,11 @@
 		
 		public function editSystemUser(){
 			$user_id = $this->uri->segment(3);
-			$data['Main_view']['systemusergroup']		= create_double($this->SystemUser_model->getSystemUserGroup(),'user_group_id','user_group_name');
-			$data['Main_view']['systemuser']			= $this->SystemUser_model->getSystemUser_DetailEdit($user_id);
-			$data['Main_view']['userstatus']			= $this->configuration->UserStatus();
-			$data['Main_view']['workingstatus']			= $this->configuration->WorkingStatus();
-			$data['Main_view']['content']				= 'SystemUser/FormEditSystemUser_view';
+			$data['main_view']['systemusergroup']		= create_double($this->SystemUser_model->getSystemUserGroup(),'user_group_id','user_group_name');
+			$data['main_view']['systemuser']			= $this->SystemUser_model->getSystemUser_DetailEdit($user_id);
+			$data['main_view']['userstatus']			= $this->configuration->UserStatus();
+			$data['main_view']['workingstatus']			= $this->configuration->WorkingStatus();
+			$data['main_view']['content']				= 'SystemUser/FormEditSystemUser_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -540,11 +546,11 @@
 
 		public function resetPasswordSystemUser(){
 			$user_id = $this->uri->segment(3);
-			$data['Main_view']['systemusergroup']		= create_double($this->SystemUser_model->getSystemUserGroup(),'user_group_id','user_group_name');
-			$data['Main_view']['systemuser']			= $this->SystemUser_model->getSystemUser_DetailEdit($user_id);
-			$data['Main_view']['userstatus']			= $this->configuration->UserStatus;
-			$data['Main_view']['workingstatus']			= $this->configuration->WorkingStatus;
-			$data['Main_view']['content']				= 'SystemUser/FormResetPasswordSystemUser_view';
+			$data['main_view']['systemusergroup']		= create_double($this->SystemUser_model->getSystemUserGroup(),'user_group_id','user_group_name');
+			$data['main_view']['systemuser']			= $this->SystemUser_model->getSystemUser_DetailEdit($user_id);
+			$data['main_view']['userstatus']			= $this->configuration->UserStatus;
+			$data['main_view']['workingstatus']			= $this->configuration->WorkingStatus;
+			$data['main_view']['content']				= 'SystemUser/FormResetPasswordSystemUser_view';
 			$this->load->view('MainPage_view',$data);
 		}
 

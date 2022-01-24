@@ -311,7 +311,7 @@
                                             <i class="icon-lock"></i> Lock Screen </a>
                                     </li> -->
                                     <li>
-                                        <a href="<?php echo base_url();?>validationprocessckp/logout">
+                                        <a href="<?php echo base_url();?>validationprocess/logout">
                                             <i class="icon-logout"></i> Log Out </a>
                                     </li>
                                 </ul>

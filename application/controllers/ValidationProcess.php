@@ -158,7 +158,7 @@
 			$this->load->model('ValidationProcess_model');
 			$auth = $this->session->userdata('auth');
 			/*$this->ValidationProcess_model->getLogout($auth);*/
-			$this->fungsi->set_log($auth['username'],'1002','Application.ValidationProcess.logout',$auth['username'],'Logout System');
+			// $this->fungsi->set_log($auth['username'],'1002','Application.ValidationProcess.logout',$auth['username'],'Logout System');
 			$this->session->unset_userdata('auth');
 			$this->session->sess_destroy();
 			redirect('ValidationProcess');
