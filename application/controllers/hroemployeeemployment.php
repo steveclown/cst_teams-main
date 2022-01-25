@@ -163,27 +163,6 @@
 		}
 
 		function deleteHROEmployeeEmployment(){
-			$employee_id = $this->uri->segment(3);	
-			/*print_r("employee_family_id ".$employee_family_id);
-			exit;*/
-			if($this->HroEmployeeEmployment_model->deleteHROEmployeeEmployment($employee_id)){
-				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.HROEmployeeEmployment.delete',$auth['username'],'Delete HROEmployeeEmployment');
-				$msg = "<div class='alert alert-success'>                
-							Delete Data Employee Employment Successfully
-						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-				$this->session->set_userdata('message',$msg);
-				redirect('hro-employee-employment');
-			}else{
-				$msg = "<div class='alert alert-danger'>                
-							Delete Data Employee Employment UnSuccessful
-						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
-				$this->session->set_userdata('message',$msg);
-				redirect('hro-employee-employment');
-			}
-		}
-
-		function deleteHROEmployeeEmployment_Data(){
 			$auth 						= $this->session->userdata('auth');
 			$employee_employment_id 	= $this->uri->segment(3);
 
@@ -194,7 +173,7 @@
 				'data_state'					=> 1
 			);
 
-			if($this->HroEmployeeEmployment_model->deleteHROEmployeeEmployment_Data($data)){
+			if($this->HroEmployeeEmployment_model->deleteHROEmployeeEmployment($data)){
 				
 				$this->fungsi->set_log($auth['user_id'], $data['employee_employment_id'], '3122', 'Application.HroEmployeeEmployment.deleteHROEmployeeEmployment_Data', $data['employee_employment_id'], 'Delete Core Award');
 

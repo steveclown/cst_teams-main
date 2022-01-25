@@ -1631,7 +1631,7 @@
 					// 'employee_last_day_off'					=> tgltodb($this->input->post('employee_last_day_off',true)),
 					// 'employee_day_off_cycle' 				=> $this->input->post('employee_day_off_cycle',true),
 					// 'employee_day_off_status'				=> $this->input->post('employee_day_off_status',true),
-					// 'employee_employment_working_status'	=> $this->input->post('employee_employment_working_status',true),
+					'employee_employment_working_status'	=> $this->input->post('employee_employment_working_status',true),
 					'employee_employment_overtime_status'	=> $this->input->post('employee_employment_overtime_status',true),
 					'employee_employment_status'			=> $this->input->post('employee_employment_status',true),
 					'employee_hire_date'					=> date("Y-m-d"),

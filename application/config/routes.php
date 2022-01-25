@@ -411,7 +411,7 @@ $route['hro-employee-data/reset-edit/(:num)'] 	= 'HroEmployeeData/reset_edit/$1'
 
 /* HRO EmployeeEmployment */
 $route['hro-employee-employment']		                = 'HroEmployeeEmployment';
-$route['hro-employee-employment/add'] 			        = 'HroEmployeeEmployment/addHroEmployeeEmployment';
+$route['hro-employee-employment/add/(:num)'] 			= 'HroEmployeeEmployment/addHROEmployeeEmployment/$1';
 $route['hro-employee-employment/elements-add'] 	        = 'HroEmployeeEmployment/function_elements_add';
 $route['hro-employee-employment/reset-add'] 	        = 'HroEmployeeEmployment/reset_add';
 $route['hro-employee-employment/process-add'] 	        = 'HroEmployeeEmployment/processAddHroEmployeeEmployment';

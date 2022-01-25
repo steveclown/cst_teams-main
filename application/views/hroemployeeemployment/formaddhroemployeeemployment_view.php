@@ -126,7 +126,7 @@
 									Form Add
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>hroemployeeemployment" class="btn btn-default sm">
+									<a href="<?php echo base_url();?>hro-employee-employment" class="btn btn-default sm">
 										<i class="fa fa-angle-left"></i>
 										Back
 									</a>
@@ -139,14 +139,14 @@
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
 													<?php echo form_dropdown('employee_employment_working_status', $workingstatus ,set_value('employee_employment_working_status',$hroemployeedata['employee_employment_working_status']),'id="employee_employment_working_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
-													<label class="control-label">Working Status</label>
+													<label class="control-label">Status Kerja</label>
 												</div>
 											</div>
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
 													<?php echo form_dropdown('employee_employment_overtime_status', $overtimestatus ,set_value('employee_employment_overtime_status',$hroemployeedata['employee_employment_overtime_status']),'id="employee_employment_overtime_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
-													<label class="control-label">Overtime Status</label>
+													<label class="control-label">Status Lembur</label>
 												</div>
 											</div>
 										</div>
@@ -155,7 +155,7 @@
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
 													<?php echo form_dropdown('employee_employment_status', $employeestatus ,set_value('employee_employment_status',$hroemployeedata['employee_employment_status']),'id="employee_employment_status", class="form-control select2me" onChange="function_elements_add(this.name, this.value);"');?>
-													<label class="control-label">Employment Status</label>
+													<label class="control-label">Status Pegawai</label>
 												</div>
 											</div>
 
@@ -165,7 +165,7 @@
 													
 													<input type="hidden" name="employee_employment_token" id="employee_employment_token" class="form-control" value="<?php echo $employee_employment_token?>" onChange="function_elements_add(this.name, this.value);">
 
-													<label class="control-label">Hire Date
+													<label class="control-label">Tanggal Mendaftar
 														<span class="required">
 															*
 														</span>
@@ -178,7 +178,7 @@
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
 													<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_employment_status_date" id="employee_employment_status_date" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata['employee_employment_status_date']);?>"/>
-													<label class="control-label">Employment Status Date
+													<label class="control-label">Tanggal Satatus Pekerjaan
 														<span class="required">
 															*
 														</span>
@@ -189,7 +189,7 @@
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
 													<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="employee_employment_status_duedate" id="employee_employment_status_duedate" onChange="function_elements_add(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata['employee_employment_status_duedate']);?>"/>
-													<label class="control-label">Employement Status Due Date
+													<label class="control-label">Tanggal Akhir Status Pekerjaan
 														<span class="required">
 															*
 														</span>

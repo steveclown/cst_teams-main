@@ -27,7 +27,6 @@
 											<th>Working Status</th>
 											<th>Hire Date</th>
 											<th>Employment Status</th>
-											<th>Home Early Status</th>
 											<th>Employment Status Date</th>
 											<th>Employment Status Due Date</th>
 											<th>Oveertme Status</th>
@@ -45,7 +44,6 @@
 														<td>".$this->configuration->WorkingStatus()[$val['employee_employment_working_status']]."</td>
 														<td>".tgltoview($val['employee_hire_date'])."</td>
 														<td>".$this->configuration->EmployeeStatus()[$val['employee_employment_status']]."</td>
-														<td>".$this->configuration->HomeEarlyStatus()[$val['employee_employment_homeearly_status']]."</td>
 														<td>".tgltoview($val['employee_employment_status_date'])."</td>
 														<td>".tgltoview($val['employee_employment_status_duedate'])."</td>
 														<td>".$this->configuration->OvertimeStatus()[$val['employee_employment_overtime_status']]."</td>

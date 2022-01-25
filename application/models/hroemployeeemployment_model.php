@@ -178,17 +178,7 @@
 			return $result['section_name'];
 		}
 
-		public function deleteHROEmployeeEmployment($id){
-			$this->db->where("employee_id",$id);
-			$query = $this->db->update('hro_employee_employment', array("data_state"=>1));
-			if($query){
-				return true;
-			}else{
-				return false;
-			}
-		}
-
-		public function deleteHROEmployeeEmployment_Data($data){
+		public function deleteHROEmployeeEmployment($data){
 			$this->db->where("employee_employment_id", $data['employee_employment_id']);
 			$query = $this->db->update('hro_employee_employment', $data);
 			if($query){

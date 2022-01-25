@@ -616,13 +616,13 @@
 								<label class="control-label">Keterangan</label>
 							</div>
 						</div>
-						<div class="form-actions right">
+					</div>
+					<div class="form-actions right">
 							<button type="button" class="btn red" onClick="reset_add();"><i class="fa fa-times"></i> Batal</button>
 							<button type="submit" class="btn green-jungle"><i class="fa fa-check"></i> Simpan</button>
 						</div>
 						<input type="hidden" name="employee_id" value="<?php echo $hroemployeedata['employee_id'] ?>">
 						<?php echo form_close(); ?>
-					</div>
 				</div>
 			</div>
 		</div>

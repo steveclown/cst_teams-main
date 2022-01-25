@@ -324,15 +324,25 @@
 		</div>
 	</div>
 	
-	<div class = "col-md-6">
+	<div class = "col-md-3">
 		<div class="form-group form-md-line-input">
-			<?php echo form_dropdown('employee_employment_status', $employeestatus ,set_value('employee_employment_status',$data['employee_employment_status']),'id="employee_employment_status", class="form-control select2me"');?>
+			<?php echo form_dropdown('employee_employment_status', $workingstatus ,set_value('employee_employment_status',$data['employee_employment_status']),'id="employee_employment_status", class="form-control select2me"');?>
+			<label class="control-label">Status Pegawai
+				<span class="required">
+					*
+				</span>
+			</label>
+		</div>
+	</div>
+
+	<div class = "col-md-3">
+		<div class="form-group form-md-line-input">
+			<?php echo form_dropdown('employee_employment_working_status', $workingstatus ,set_value('employee_employment_working_status',$data['employee_employment_working_status']),'id="employee_employment_working_status", class="form-control select2me"');?>
 			<label class="control-label">Status Pekerjaan
 				<span class="required">
 					*
 				</span>
 			</label>
-			
 		</div>
 	</div>
 
