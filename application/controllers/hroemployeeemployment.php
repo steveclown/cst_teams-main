@@ -99,6 +99,8 @@
 			$data['main_view']['overtimestatus']				= $this->configuration->OvertimeStatus();	
 			$data['main_view']['hroemployeedata']				= $this->HroEmployeeEmployment_model->getHROEmployeeData($employee_id);
 			$data['main_view']['hroemployeeemployment_data']	= $this->HroEmployeeEmployment_model->getHROEmployeeEmployment($employee_id);
+			$data['main_view']['hroemployeeemployment_last']	= $this->HroEmployeeEmployment_model->getHROEmployeeEmployment_Last($employee_id);
+
 			$data['main_view']['content']						= 'hroemployeeemployment/ListAddHroEmployeeEmployment_view';
 			$this->load->view('mainpage_view',$data);
 		}
@@ -165,6 +167,7 @@
 		function deleteHROEmployeeEmployment(){
 			$auth 						= $this->session->userdata('auth');
 			$employee_employment_id 	= $this->uri->segment(3);
+			$employee_id 				= $this->uri->segment(4);
 
 			$data = array(
 				'employee_employment_id' 		=> $employee_employment_id,
@@ -174,6 +177,21 @@
 			);
 
 			if($this->HroEmployeeEmployment_model->deleteHROEmployeeEmployment($data)){
+
+				$data_last = $this->HroEmployeeEmployment_model->getHROEmployeeEmployment_Last($employee_id);
+				// BELUM SELESAI
+				$update_employee = array(
+					'employee_id'							=> $data_last['employee_id'],
+					'employee_employment_working_status'	=> $data_last['employee_employment_working_status'],
+					'employee_employment_overtime_status'	=> $data_last['employee_employment_overtime_status',true],
+					'employee_employment_status'			=> $data_last['employee_employment_status',true],
+					'employee_hire_date'					=> $data_last['employee_hire_date',true],
+					'employee_employment_status_date'		=> $data_last['employee_employment_status_date',true],
+					'employee_employment_status_duedate'	=> $data_last['employee_employment_status_duedate',true],
+				)
+
+				$this->HroEmployeeEmployment_model->updateHROEmployeeDataFromDelete($update_employee);
+
 				
 				$this->fungsi->set_log($auth['user_id'], $data['employee_employment_id'], '3122', 'Application.HroEmployeeEmployment.deleteHROEmployeeEmployment_Data', $data['employee_employment_id'], 'Delete Core Award');
 

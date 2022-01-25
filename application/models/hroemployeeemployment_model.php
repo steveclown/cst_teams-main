@@ -178,9 +178,30 @@
 			return $result['section_name'];
 		}
 
+		public function getHROEmployeeEmployment_Last($employee_id){
+			$this->db->select('*');
+			$this->db->from('hro_employee_status_alteration');
+			$this->db->where('hro_employee_status_alteration.data_state',0);
+			$this->db->where('hro_employee_status_alteration.employee_id', $employee_id);
+			$this->db->order_by('hro_employee_status_alteration.status_alteration_id', 'DESC');
+			$this->db->limit(1);
+			$result = $this->db->get();
+			return $result->row_array();
+		}
+
 		public function deleteHROEmployeeEmployment($data){
 			$this->db->where("employee_employment_id", $data['employee_employment_id']);
 			$query = $this->db->update('hro_employee_employment', $data);
+			if($query){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		public function updateHROEmployeeDataFromDelete($update_employee){
+			$this->db->where('employee_id', $update_employee['employee_id']);
+			$query = $this->db->update("hro_employee_data", $update_employee);
 			if($query){
 				return true;
 			}else{
