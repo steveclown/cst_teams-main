@@ -34,7 +34,7 @@
 							<i class="fa fa-reorder"></i>Daftar
 						</div>
 						<div class="actions">
-							<a href="<?php echo base_url();?>CoreDeduction/addCoreDeduction" class="btn btn-default btn-sm">
+							<a href="<?php echo base_url();?>deduction/add" class="btn btn-default btn-sm">
 								<i class="fa fa-plus"></i> Tambah Potongan baru
 							</a>
 						</div>
@@ -76,10 +76,10 @@
 												<td>".$val['deduction_amount']."</td>
 												<td>".$deductiontype[$val['deduction_type']]."</td>
 												<td>
-													<a href='".$this->config->item('base_url').'CoreDeduction/editCoreDeduction/'.$val['deduction_id']."' class='btn default btn-xs purple'>
+													<a href='".$this->config->item('base_url').'deduction/edit/'.$val['deduction_id']."' class='btn default btn-xs purple'>
 														<i class='fa fa-edit'></i> Edit
 													</a>
-													<a href='".$this->config->item('base_url').'CoreDeduction/deleteCoreDeduction/'.$val['deduction_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+													<a href='".$this->config->item('base_url').'deduction/delete/'.$val['deduction_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 														<i class='fa fa-trash-o'></i> Delete
 													</a>
 												</td>

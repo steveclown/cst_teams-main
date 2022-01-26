@@ -33,7 +33,7 @@
 						<i class="fa fa-reorder"></i>Daftar
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CoreAllowance/addCoreAllowance" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>allowance/add" class="btn btn-default btn-sm">
 							<i class="fa fa-plus"></i> Tambah Tunjangan Baru
 						</a>
 					</div>
@@ -75,10 +75,10 @@
 											<td>".$allowancetype[$val['allowance_type']]."</td>
 											<td>".$allowancegroup[$val['allowance_group']]."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'CoreAllowance/editCoreAllowance/'.$val['allowance_id']."' class='btn default btn-xs purple'>
+												<a href='".$this->config->item('base_url').'allowance/edit/'.$val['allowance_id']."' class='btn default btn-xs purple'>
 													<i class='fa fa-edit'></i> Edit
 												</a>
-												<a href='".$this->config->item('base_url').'CoreAllowance/deleteCoreAllowance/'.$val['allowance_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
+												<a href='".$this->config->item('base_url').'allowance/delete/'.$val['allowance_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 													<i class='fa fa-trash-o'></i> Hapus
 												</a>
 											</td>

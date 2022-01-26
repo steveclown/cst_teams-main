@@ -61,7 +61,7 @@
 			$sesi 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addCoreDeduction-'.$sesi['unique']);	
 			$this->session->unset_userdata('addarrayCoreDeductionallowance-'.$sesi['unique']);	
-			redirect('CoreDeduction/addCoreDeduction');
+			redirect('deduction/add');
 		}
 
 		// public function processAddArrayCoreDeductionAllowance(){
@@ -119,7 +119,7 @@
 			
 		// 	$this->session->set_userdata('addarrayCoreDeductionallowance-'.$unique['unique'],$arrayBaru);
 			
-		// 	redirect('CoreDeduction/addCoreDeduction/');
+		// 	redirect('deduction/add/');
 		// }
 
 		public function processAddCoreDeduction(){
@@ -177,20 +177,20 @@
 					$this->session->unset_userdata('addCoreDeduction-');
 					$this->session->unset_userdata('addCoreDeductionallowance-');
 					$this->session->unset_userdata('addarrayCoreDeductionallowance-'.$unique['unique']);
-					redirect('CoreDeduction/addCoreDeduction/');
+					redirect('deduction/add/');
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Core Deduction Fail
 							button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreDeduction/addCoreDeduction/');
+					redirect('deduction/add/');
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('addCoreDeductionallowance',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreDeduction/addCoreDeduction/');
+				redirect('deduction/add/');
 			}
 		}
 		
@@ -220,7 +220,7 @@
 			$this->session->unset_userdata('editCoreDeductionfirst-'.$sesi['unique']);	
 			$this->session->unset_userdata('editarrayCoreDeductionallowance-'.$sesi['unique']);	
 			$this->session->unset_userdata('editarrayCoreDeductionallowancefirst-'.$sesi['unique']);	
-			redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
+			redirect('deduction/edit/'.$deduction_id);
 		}
 
 		public function editCoreDeduction(){
@@ -342,7 +342,7 @@
 
 		// 	$this->session->set_userdata('editarrayCoreDeductionallowance-'.$unique['unique'],$arrayBaru);
 			
-		// 	redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
+		// 	redirect('deduction/edit/'.$deduction_id);
 		// }
 		
 		public function processEditCoreDeduction(){			
@@ -396,7 +396,7 @@
 							</div> ";
 						$this->session->set_userdata('message',$msg);
 						
-						redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
+						redirect('deduction/edit/'.$deduction_id);
 					}					
 					
 				}else {
@@ -405,14 +405,14 @@
 								Update Data Deduction Fail
 							</div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
+					redirect('deduction/edit/'.$deduction_id);
 				}
 			} else {
 				$data['password']='';
 				$this->session->set_userdata('addCoreDeductionallowance',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreDeduction/editCoreDeduction/'.$deduction_id);
+				redirect('deduction/edit/'.$deduction_id);
 			}
 		}
 				
@@ -425,13 +425,13 @@
 							Delete Data Deduction Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreDeduction');
+				redirect('deduction');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Deduction UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreDeduction');
+				redirect('deduction');
 			}
 		}
 	}

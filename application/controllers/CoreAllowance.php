@@ -61,21 +61,21 @@
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('AddAllowance');
-					redirect('CoreAllowance/addCoreAllowance');
+					redirect('allowance/add');
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Allowance UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('AddAllowance',$data);
-					redirect('CoreAllowance/addCoreAllowance');
+					redirect('allowance/add');
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('AddAllowance',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreAllowance/addCoreAllowance');
+				redirect('allowance/add');
 			}
 		}
 
@@ -130,18 +130,18 @@
 								Edit Allowance Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreAllowance/editCoreAllowance/'.$data['allowance_id']);
+					redirect('allowance/edit/'.$data['allowance_id']);
 				}else{
 					$msg = "<div class='alert alert-error'>                
 								Edit Allowance UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreAllowance/editCoreAllowance/'.$data['allowance_id']);
+					redirect('allowance/edit/'.$data['allowance_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreAllowance/editCoreAllowance/'.$data['allowance_id']);
+				redirect('allowance/edit/'.$data['allowance_id']);
 			}
 		}
 		
@@ -150,18 +150,18 @@
 
 			if($this->CoreAllowance_model->deleteCoreAllowance($allowance_id)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreAllowance.delete',$auth['username'],'Delete Core Allowance');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.CoreAllowance.delete',$auth['username'],'Delete Core Allowance');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Allowance Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreAllowance');
+				redirect('allowance');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Allowance UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreAllowance');
+				redirect('allowance');
 			}
 		}
 
@@ -178,13 +178,13 @@
 							Delete Data Employee Allowance Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreAllowance/editCoreAllowance/'.$allowance_id);
+				redirect('allowance/edit/'.$allowance_id);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Allowance UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreAllowance/editCoreAllowance/'.$allowance_id);
+				redirect('allowance/edit/'.$allowance_id);
 			}
 		}
 
