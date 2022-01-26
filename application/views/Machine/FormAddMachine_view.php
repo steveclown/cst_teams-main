@@ -66,7 +66,7 @@
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_code" id="machine_code" value="<?php echo $data['machine_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="machine_code" id="machine_code" value="<?php echo $data['machine_code'];?>" class="form-control">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf atau angka.
 												</span>
@@ -79,7 +79,7 @@
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_name" id="machine_name" value="<?php echo $data['machine_name'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="machine_name" id="machine_name" value="<?php echo $data['machine_name'];?>" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -91,7 +91,7 @@
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_ip_address" id="machine_ip_address" value="<?php echo $data['machine_ip_address'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="machine_ip_address" id="machine_ip_address" value="<?php echo $data['machine_ip_address'];?>" class="form-control" >
 											</div>
 										</div>
 										
@@ -101,7 +101,7 @@
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_port" id="machine_port" value="<?php echo $data['machine_port'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="machine_port" id="machine_port" value="<?php echo $data['machine_port'];?>" class="form-control">
 											</div>
 										</div>
 									</div>

@@ -99,7 +99,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="warning_code" id="warning_code" onChange="warningcode(warning_code);" value="<?php echo $corewarning['warning_code'];?>" class="form-control">
+									<input type="text" autocomplete="off"  name="warning_code" id="warning_code" onChange="warningcode(warning_code);" value="<?php echo $corewarning['warning_code'];?>" class="form-control">
 									<span class="help-block">
 										 mohon hanya diisi karakter huruf dan angka.
 									</span>
@@ -108,7 +108,7 @@ $this->session->unset_userdata('message');
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo $corewarning['warning_name'];?>" class="form-control">
+									<input type="text" autocomplete="off"  name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo $corewarning['warning_name'];?>" class="form-control">
 									<label class="control-label">Nama Peringatan<span class="required">*</span></label>
 								</div>
 							</div>

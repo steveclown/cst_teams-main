@@ -68,14 +68,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="overtime_request_description" id="overtime_request_description" value="<?php echo $dataovertime['overtime_request_description']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="overtime_request_description" id="overtime_request_description" value="<?php echo $dataovertime['overtime_request_description']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="overtime_request_duration" id="overtime_request_duration" value="<?php echo $dataovertime['overtime_request_duration']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="overtime_request_duration" id="overtime_request_duration" value="<?php echo $dataovertime['overtime_request_duration']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
 			<label class="control-label">Duration</label>
 		</div>
 	</div>

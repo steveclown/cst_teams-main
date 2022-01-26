@@ -98,7 +98,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="lost_item_code" id="lost_item_code" onChange="warningbonuscode(lost_item_code);" value="<?php echo $corelostitem['lost_item_code'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="lost_item_code" id="lost_item_code" onChange="warningbonuscode(lost_item_code);" value="<?php echo $corelostitem['lost_item_code'];?>" class="form-control" >
 									<span class="help-block">
 										Please input only alpha-numerical characters.
 									</span>
@@ -108,7 +108,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="lost_item_name" id="lost_item_name" onChange="warningbonusname(lost_item_name);" value="<?php echo $corelostitem['lost_item_name'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="lost_item_name" id="lost_item_name" onChange="warningbonusname(lost_item_name);" value="<?php echo $corelostitem['lost_item_name'];?>" class="form-control" >
 									<label class="control-label">Lost Item Name<span class="required">*</span></label>
 								</div>
 							</div>

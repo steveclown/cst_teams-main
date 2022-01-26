@@ -119,7 +119,7 @@
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="working_company_name" name="working_company_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_company_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="working_company_name" name="working_company_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_company_name'];?>">
 			<label>Company Name</label>
 		</div>
 	</div>
@@ -135,13 +135,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="working_job_title" name="working_job_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_job_title'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="working_job_title" name="working_job_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_job_title'];?>" >
 			<label>Job Title</label>
 		</div>
 	</div>	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="working_last_salary" name="working_last_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_last_salary'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="working_last_salary" name="working_last_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_last_salary'];?>">
 			<label>Last Salary</label>
 		</div>
 	</div>	
@@ -259,7 +259,7 @@
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_most_impressive" name="applicant_most_impressive" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_most_impressive'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_most_impressive" name="applicant_most_impressive" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_most_impressive'];?>">
 			<label>Most Impressive Company</label>
 		</div>
 	</div>
@@ -283,7 +283,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_has_team_number" name="applicant_has_team_number" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_has_team_number'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_has_team_number" name="applicant_has_team_number" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_has_team_number'];?>">
 			<label>Team Member</label>
 		</div>
 	</div>

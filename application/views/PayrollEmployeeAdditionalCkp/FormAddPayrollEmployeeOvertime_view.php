@@ -94,7 +94,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_additional_overtime_amount_view" id="employee_additional_overtime_amount_view" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_additional_overtime_amount_view" id="employee_additional_overtime_amount_view" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
 
 			<input type="hidden" name="employee_additional_overtime_amount" id="employee_additional_overtime_amount" value="<?php echo $data_overtime['employee_additional_overtime_amount']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
 			<label class="control-label">Total Lembur Tambahan
@@ -109,7 +109,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_additional_overtime_description" id="employee_additional_overtime_description" value="<?php echo $data_overtime['employee_additional_overtime_description']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_additional_overtime_description" id="employee_additional_overtime_description" value="<?php echo $data_overtime['employee_additional_overtime_description']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
 			<label class="control-label">Deskripsi Tambahan Lembur</label>
 		</div>
 	</div>

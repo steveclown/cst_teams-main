@@ -60,7 +60,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="saving_code" id="saving_code" value="<?php echo $coresaving['saving_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="saving_code" id="saving_code" value="<?php echo $coresaving['saving_code']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -74,7 +74,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="saving_name" id="saving_name" value="<?php echo $coresaving['saving_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="saving_name" id="saving_name" value="<?php echo $coresaving['saving_name']?>" class="form-control">
 												<label class="control-label">Saving Name
 													<span class="required">
 														*
@@ -87,7 +87,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="saving_amount" id="saving_amount" value="<?php echo $coresaving['saving_amount']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="saving_amount" id="saving_amount" value="<?php echo $coresaving['saving_amount']?>" class="form-control">
 												<label class="control-label">Saving Name
 													<span class="required">
 														*

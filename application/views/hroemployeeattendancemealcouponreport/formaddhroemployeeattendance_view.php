@@ -78,7 +78,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_rfid_code" id="employee_rfid_code" value="<?php echo $data['employee_rfid_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" autofocus>
+												<input type="text" autocomplete="off"  name="employee_rfid_code" id="employee_rfid_code" value="<?php echo $data['employee_rfid_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" autofocus>
 												<label class="control-label">Employee RFID Code</label>
 											</div>	
 										</div>
@@ -109,7 +109,7 @@
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_code" id="employee_code" value="<?php echo $data['employee_code'];?>" class="form-control" readonly>
+													<input type="text" autocomplete="off"  name="employee_code" id="employee_code" value="<?php echo $data['employee_code'];?>" class="form-control" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -120,7 +120,7 @@
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_name" id="employee_name" value="<?php echo $data['employee_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+													<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $data['employee_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -137,7 +137,7 @@
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="division_name" id="division_name" value="<?php echo $data['division_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+													<input type="text" autocomplete="off"  name="division_name" id="division_name" value="<?php echo $data['division_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -152,7 +152,7 @@
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="department_name" id="department_name" value="<?php echo $data['department_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+													<input type="text" autocomplete="off"  name="department_name" id="department_name" value="<?php echo $data['department_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -169,7 +169,7 @@
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="section_name" id="section_name" value="<?php echo $data['section_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+													<input type="text" autocomplete="off"  name="section_name" id="section_name" value="<?php echo $data['section_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -184,7 +184,7 @@
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="unit_name" id="unit_name" value="<?php echo $data['unit_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+													<input type="text" autocomplete="off"  name="unit_name" id="unit_name" value="<?php echo $data['unit_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -201,7 +201,7 @@
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="job_title_name" id="job_title_name" value="<?php echo $data['job_title_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+													<input type="text" autocomplete="off"  name="job_title_name" id="job_title_name" value="<?php echo $data['job_title_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>

@@ -113,7 +113,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="late_code" id="late_code" value="<?php echo $data['late_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="late_code" id="late_code" value="<?php echo $data['late_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -126,7 +126,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="late_name" id="late_name" value="<?php echo $data['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="late_name" id="late_name" value="<?php echo $data['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												
 												<input type="hidden" name="late_token" id="late_token" class="form-control" value="<?php echo $late_token?>" onChange="function_elements_add(this.name, this.value);">
 												

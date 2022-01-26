@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <h4><?php echo $auth['username']?></h4>
                         <div class="form-group">
                             <!-- <input type="hidden" name="username" value="<?php echo $auth['username']?>"/>  -->
-                            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                            <input class="form-control placeholder-no-fix" type="password"  placeholder="Password" name="password" /> </div>
                         <div class="form-actions">
                             <button type="submit" class="btn red uppercase">Login</button>
                         </div>

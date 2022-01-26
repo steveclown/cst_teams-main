@@ -134,13 +134,13 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label">Shift Code<span class="required">*</span></label>
 							<div class="col-md-6">
-								<input type="text" name="shift_code" id="shift_code" value="<?php echo $data['shift_code'];?>" class="form-control" placeholder="Shift Code">
+								<input type="text" autocomplete="off"  name="shift_code" id="shift_code" value="<?php echo $data['shift_code'];?>" class="form-control" placeholder="Shift Code">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label">Shift Name<span class="required">*</span></label>
 							<div class="col-md-6">
-								<input type="text" name="shift_name" id="shift_name" value="<?php echo $data['shift_name'];?>" class="form-control" placeholder="Shift Name">
+								<input type="text" autocomplete="off"  name="shift_name" id="shift_name" value="<?php echo $data['shift_name'];?>" class="form-control" placeholder="Shift Name">
 							</div>
 						</div>
 					</div>
@@ -163,20 +163,20 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Shift Code<span class="required">*</span></label>
 						<div class="col-md-8">
-							<input type="text" name="shift_code" id="shift_code" value="<?php echo $data['shift_code'];?>" class="form-control" placeholder="Shift Code">
+							<input type="text" autocomplete="off"  name="shift_code" id="shift_code" value="<?php echo $data['shift_code'];?>" class="form-control" placeholder="Shift Code">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Shift Name<span class="required">*</span></label>
 						<div class="col-md-8">
-							<input type="text" name="shift_name" id="shift_name" value="<?php echo $data['shift_name'];?>" class="form-control" placeholder="Shift Name">
+							<input type="text" autocomplete="off"  name="shift_name" id="shift_name" value="<?php echo $data['shift_name'];?>" class="form-control" placeholder="Shift Name">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Start Working Hour<span class="required">*</span></label>
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" id="start_working_hour" name="start_working_hour" value="<?php echo $data['start_working_hour'];?>" class="form-control timepicker timepicker-24">
+								<input type="text" autocomplete="off"  id="start_working_hour" name="start_working_hour" value="<?php echo $data['start_working_hour'];?>" class="form-control timepicker timepicker-24">
 								<span class="input-group-btn">
 									<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 								</span>
@@ -187,7 +187,7 @@
 						<label class="control-label col-md-3">End Working Hour<span class="required">*</span></label>
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" id="end_working_hour" name="end_working_hour" value="<?php echo $data['end_working_hour'];?>" class="form-control timepicker timepicker-24">
+								<input type="text" autocomplete="off"  id="end_working_hour" name="end_working_hour" value="<?php echo $data['end_working_hour'];?>" class="form-control timepicker timepicker-24">
 								<span class="input-group-btn">
 									<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 								</span>
@@ -198,7 +198,7 @@
 						<label class="control-label col-md-3">Start Rest Hour<span class="required">*</span></label>
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" id="start_rest_hour" name="start_rest_hour" value="<?php echo $data['start_rest_hour'];?>" class="form-control timepicker timepicker-24">
+								<input type="text" autocomplete="off"  id="start_rest_hour" name="start_rest_hour" value="<?php echo $data['start_rest_hour'];?>" class="form-control timepicker timepicker-24">
 								<span class="input-group-btn">
 									<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 								</span>
@@ -209,7 +209,7 @@
 						<label class="control-label col-md-3">End Rest Hour<span class="required">*</span></label>
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" id="end_rest_hour" name="end_rest_hour" value="<?php echo $data['end_rest_hour'];?>" class="form-control timepicker timepicker-24">
+								<input type="text" autocomplete="off"  id="end_rest_hour" name="end_rest_hour" value="<?php echo $data['end_rest_hour'];?>" class="form-control timepicker timepicker-24">
 								<span class="input-group-btn">
 									<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 								</span>
@@ -219,7 +219,7 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Due Time Late<span class="required">*</span></label>
 						<div class="col-md-8">
-							<input type="text" name="due_time_late" id="due_time_late" value="<?php echo $data['due_time_late'];?>" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Due Time Late">
+							<input type="text" autocomplete="off"  name="due_time_late" id="due_time_late" value="<?php echo $data['due_time_late'];?>" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Due Time Late">
 						</div>
 					</div>
 					<div class="form-group">

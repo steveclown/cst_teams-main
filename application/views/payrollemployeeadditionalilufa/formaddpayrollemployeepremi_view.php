@@ -97,7 +97,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_deduction_premi_amount" id="employee_deduction_premi_amount" value="<?php echo $data_premi['employee_deduction_premi_amount']?>" class="form-control" onChange="function_elements_add_premi(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_deduction_premi_amount" id="employee_deduction_premi_amount" value="<?php echo $data_premi['employee_deduction_premi_amount']?>" class="form-control" onChange="function_elements_add_premi(this.name, this.value);">
 												<label class="control-label">Amount
 													<span class="required">
 														*
@@ -110,7 +110,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 										<div class="form-group form-md-line-input">
-											<input type="text" name="employee_deduction_premi_description" id="employee_deduction_premi_description" value="<?php echo $data_premi['employee_deduction_premi_description']?>" class="form-control" onChange="function_elements_add_premi(this.name, this.value);">
+											<input type="text" autocomplete="off"  name="employee_deduction_premi_description" id="employee_deduction_premi_description" value="<?php echo $data_premi['employee_deduction_premi_description']?>" class="form-control" onChange="function_elements_add_premi(this.name, this.value);">
 												<label class="control-label">Description
 													<span class="required">
 														*

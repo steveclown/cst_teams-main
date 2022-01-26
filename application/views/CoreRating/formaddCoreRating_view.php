@@ -60,7 +60,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="rating_code" id="rating_code"  value="<?php echo set_value('rating_code',$data['rating_code']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="rating_code" id="rating_code"  value="<?php echo set_value('rating_code',$data['rating_code']);?>"/>
 								<span class="help-block">
 									Mohon hanya diisi karakter huruf dan angka.
 								</span>
@@ -70,7 +70,7 @@
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="rating_name" id="rating_name" value="<?php echo set_value('rating_name',$data['rating_name']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="rating_name" id="rating_name" value="<?php echo set_value('rating_name',$data['rating_name']);?>"/>
 								<label class="control-label">Nama Peringkat<span class="required">*</span></label>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="rating_range1" id="rating_range1" value="<?php echo set_value('rating_range1',$data['rating_range1']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="rating_range1" id="rating_range1" value="<?php echo set_value('rating_range1',$data['rating_range1']);?>"/>
 								<span class="help-block">
 									Mohon hanya diisi angka.
 								</span>
@@ -88,7 +88,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="rating_range2" id="rating_range2" value="<?php echo set_value('rating_range2',$data['rating_range2']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="rating_range2" id="rating_range2" value="<?php echo set_value('rating_range2',$data['rating_range2']);?>"/>
 								<span class="help-block">
 									Mohon hanya diisi angka.
 								</span>
@@ -99,7 +99,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="rating_value" id="rating_value" value="<?php echo set_value('rating_value',$data['rating_value']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="rating_value" id="rating_value" value="<?php echo set_value('rating_value',$data['rating_value']);?>"/>
 								<span class="help-block">
 									Mohon hanya diisi angka.
 								</span>

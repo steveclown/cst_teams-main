@@ -53,7 +53,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="language_code" id="language_code" value="<?php echo $corelanguage['language_code'];?>">
+									<input type="text" autocomplete="off"  class="form-control" name="language_code" id="language_code" value="<?php echo $corelanguage['language_code'];?>">
 									<label for="form_control">Kode Bahasa
 										<span class="required">*</span>
 									</label>
@@ -63,7 +63,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="language_name" id="language_name" value="<?php echo $corelanguage['language_name'];?>">
+									<input type="text" autocomplete="off"  class="form-control" name="language_name" id="language_name" value="<?php echo $corelanguage['language_name'];?>">
 									<label for="form_control">Nama Bahasa
 										<span class="required">*</span>
 									</label>

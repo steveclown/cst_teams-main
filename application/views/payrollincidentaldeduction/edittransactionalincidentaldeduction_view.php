@@ -123,7 +123,7 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label">Deduction Amount</label>
 							<div class="col-md-3">
-								<input type="text" name="incidental_deduction_amount" id="incidental_deduction_amount" onChange="warningamount(this.value);" value="<?php echo $result['incidental_deduction_amount'];?>" class="form-control" placeholder="Deduction Amount">
+								<input type="text" autocomplete="off"  name="incidental_deduction_amount" id="incidental_deduction_amount" onChange="warningamount(this.value);" value="<?php echo $result['incidental_deduction_amount'];?>" class="form-control" placeholder="Deduction Amount">
 							</div>
 						</div>
 						

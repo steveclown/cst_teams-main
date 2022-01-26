@@ -104,7 +104,7 @@ function getdata(value) {
 											<label class="col-md-3 control-label">Transfer Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="employee_transfer_date" id="employee_transfer_date" value="<?php echo tgltoview($result['employee_transfer_date'])?>" class="form-control" placeholder="Transfer Date" readonly>
+													<input type="text" autocomplete="off"  name="employee_transfer_date" id="employee_transfer_date" value="<?php echo tgltoview($result['employee_transfer_date'])?>" class="form-control" placeholder="Transfer Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

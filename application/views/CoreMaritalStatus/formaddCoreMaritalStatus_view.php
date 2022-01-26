@@ -67,7 +67,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="marital_status_code" id="marital_status_code" class="form-control" value="<?php echo $data['marital_status_code']?>" >
+												<input type="text" autocomplete="off"  name="marital_status_code" id="marital_status_code" class="form-control" value="<?php echo $data['marital_status_code']?>" >
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -81,7 +81,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="marital_status_name" id="marital_status_name" class="form-control" value="<?php echo $data['marital_status_name']?>" >
+												<input type="text" autocomplete="off"  name="marital_status_name" id="marital_status_name" class="form-control" value="<?php echo $data['marital_status_name']?>" >
 												
 												<input type="hidden" name="marital_status_token" id="marital_status_token" class="form-control" value="<?php echo $marital_status_token?>" onChange="function_elements_add(this.name, this.value);">
 												

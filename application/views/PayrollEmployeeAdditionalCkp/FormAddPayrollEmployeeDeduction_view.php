@@ -98,7 +98,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_additional_deduction_amount_view" id="employee_additional_deduction_amount_view" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_additional_deduction_amount_view" id="employee_additional_deduction_amount_view" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
 
 			<input type="hidden" name="employee_additional_deduction_amount" id="employee_additional_deduction_amount" value="<?php echo $data_deduction['employee_additional_deduction_amount']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
 			<label class="control-label">Total Potongan Tambahan
@@ -113,7 +113,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_additional_deduction_description" id="employee_additional_deduction_description" value="<?php echo $data_deduction['employee_additional_deduction_description']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_additional_deduction_description" id="employee_additional_deduction_description" value="<?php echo $data_deduction['employee_additional_deduction_description']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
 			<label class="control-label">Deskripsi tambahan potongan </label>
 		</div>
 	</div>

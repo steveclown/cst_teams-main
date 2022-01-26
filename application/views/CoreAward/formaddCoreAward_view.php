@@ -91,7 +91,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="award_code" id="award_code" onChange="warningawardcode(award_code);" value="<?php echo set_value('award_code',$data['award_code']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="award_code" id="award_code" onChange="warningawardcode(award_code);" value="<?php echo set_value('award_code',$data['award_code']);?>"/>
 								<span class="help-block">
 									Mohon hanya isi dengan karakter huruf dan angka.
 								</span>
@@ -100,7 +100,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo set_value('award_name',$data['award_name']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo set_value('award_name',$data['award_name']);?>"/>
 								
 								<input type="hidden" name="award_token" id="award_token" class="form-control" value="<?php echo $award_token?>" onChange="function_elements_add(this.name, this.value);">
 								

@@ -162,7 +162,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="training_title_code" id="training_title_code" class="form-control" value="<?php echo $coretrainingtitle['training_title_code']?>" onChange="function_elements_add(this.name, this.value);" >
+								<input type="text" autocomplete="off"  name="training_title_code" id="training_title_code" class="form-control" value="<?php echo $coretrainingtitle['training_title_code']?>" onChange="function_elements_add(this.name, this.value);" >
 								<span class="help-block">
 									 Please input only alpha-numerical characters.
 								</span>
@@ -172,7 +172,7 @@
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="training_title_name" id="training_title_name" class="form-control" value="<?php echo $coretrainingtitle['training_title_name']?>"  onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="training_title_name" id="training_title_name" class="form-control" value="<?php echo $coretrainingtitle['training_title_name']?>"  onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Training Title Name<span class="required">*</span></label>
 							</div>
 						</div>

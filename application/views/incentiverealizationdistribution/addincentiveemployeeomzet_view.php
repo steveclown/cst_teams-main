@@ -278,14 +278,14 @@
 
 										<div class = "col-md-3">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_omzet_target" name="employee_omzet_target" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_target'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_omzet_target" name="employee_omzet_target" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_target'];?>">
 												<label class="control-label">Omzet Target</label>
 											</div>	
 										</div>
 
 										<div class = "col-md-3">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_omzet_achievement" name="employee_omzet_achievement" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_achievement'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_omzet_achievement" name="employee_omzet_achievement" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_achievement'];?>">
 												<label class="control-label">Omzet Achievement</label>
 											</div>	
 										</div>

@@ -47,14 +47,14 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_code" id="employee_code" value="<?php echo $hroemployeedata['employee_code']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_code" id="employee_code" value="<?php echo $hroemployeedata['employee_code']?>" class="form-control" readonly>
 								<label class="control-label">Employee Code</label>
 							</div>	
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>	
 						</div>

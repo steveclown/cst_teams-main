@@ -78,7 +78,7 @@ $this->session->unset_userdata('message');
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="loan_type_code" id="loan_type_code" value="<?php echo $CoreLoanType['loan_type_code'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="loan_type_code" id="loan_type_code" value="<?php echo $CoreLoanType['loan_type_code'];?>" class="form-control" >
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -91,7 +91,7 @@ $this->session->unset_userdata('message');
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="loan_type_name" id="loan_type_name" value="<?php echo $CoreLoanType['loan_type_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="loan_type_name" id="loan_type_name" value="<?php echo $CoreLoanType['loan_type_name'];?>" class="form-control" >
 												<label class="control-label">Nama Tipe pinjaman
 													<span class="required">
 														*

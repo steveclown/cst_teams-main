@@ -42,7 +42,7 @@
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Employee Expertise Name</label>
-				<input type="text" name="employee_expertise_name" id="employee_expertise_name" value="<?php echo $sesi['employee_expertise_name']?>" class="form-control" placeholder="Employee Expertise Name">
+				<input type="text" autocomplete="off"  name="employee_expertise_name" id="employee_expertise_name" value="<?php echo $sesi['employee_expertise_name']?>" class="form-control" placeholder="Employee Expertise Name">
 			</div>
 		</div>
 	</div>		

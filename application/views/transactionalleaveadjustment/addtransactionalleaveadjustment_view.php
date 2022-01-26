@@ -82,7 +82,7 @@ function ulang(){
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_adjustment_date" id="leave_adjustment_date" value="<?php echo tgltoview($data['leave_adjustment_date'])?>" class="form-control" placeholder="Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_adjustment_date" id="leave_adjustment_date" value="<?php echo tgltoview($data['leave_adjustment_date'])?>" class="form-control" placeholder="Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -92,13 +92,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Annual Days</label>
 											<div class="col-md-3">
-												<input type="text" name="leave_adjustment_annual_days" id="leave_adjustment_annual_days" value="<?php echo $data['leave_adjustment_annual_days']?>" class="form-control" placeholder="Annual Days">
+												<input type="text" autocomplete="off"  name="leave_adjustment_annual_days" id="leave_adjustment_annual_days" value="<?php echo $data['leave_adjustment_annual_days']?>" class="form-control" placeholder="Annual Days">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Extra Days</label>
 											<div class="col-md-3">
-												<input type="text" name="leave_adjustment_extra_days" id="leave_adjustment_extra_days" value="<?php echo $data['leave_adjustment_extra_days']?>" class="form-control" placeholder="Extra Days">
+												<input type="text" autocomplete="off"  name="leave_adjustment_extra_days" id="leave_adjustment_extra_days" value="<?php echo $data['leave_adjustment_extra_days']?>" class="form-control" placeholder="Extra Days">
 											</div>
 										</div>
 										<div class="form-group">

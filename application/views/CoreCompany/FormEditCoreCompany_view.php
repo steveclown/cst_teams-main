@@ -56,14 +56,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="company_code" id="company_code" class="form-control" value="<?php echo $corecompany['company_code']?>">
+									<input type="text" autocomplete="off"  name="company_code" id="company_code" class="form-control" value="<?php echo $corecompany['company_code']?>">
 									
 									<label class="control-label">Kode Perusahaan<span class="required">*</span></label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="company_name" id="company_name" class="form-control" value="<?php echo $corecompany['company_name']?>">
+									<input type="text" autocomplete="off"  name="company_name" id="company_name" class="form-control" value="<?php echo $corecompany['company_name']?>">
 									<label class="control-label">Nama Perusahaan<span class="required">*</span></label>
 								</div>
 							</div>

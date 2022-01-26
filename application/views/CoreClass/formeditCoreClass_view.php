@@ -76,7 +76,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_code" id="class_code" value="<?php echo $coreclass['class_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="class_code" id="class_code" value="<?php echo $coreclass['class_code'];?>" class="form-control">
 												<span class="help-block">
 													Diisi karakter angka dan huruf
 												</span>
@@ -89,7 +89,7 @@ function ulang(){
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_name" id="class_name" value="<?php echo $coreclass['class_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="class_name" id="class_name" value="<?php echo $coreclass['class_name']?>" class="form-control">
 												<label class="control-label">Nama Kelas
 													<span class="required">
 														*
@@ -103,7 +103,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="standard_salary_range1" id="standard_salary_range1" value="<?php echo $coreclass['standard_salary_range1']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="standard_salary_range1" id="standard_salary_range1" value="<?php echo $coreclass['standard_salary_range1']?>" class="form-control">
 												<span class="help-block">
 													 Diisi huruf
 												</span>
@@ -117,7 +117,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $coreclass['standard_salary_range2']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $coreclass['standard_salary_range2']?>" class="form-control">
 												<span class="help-block">
 													 Diisi huruf
 												</span>

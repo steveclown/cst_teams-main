@@ -64,7 +64,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_day_off_cycle" name="employee_day_off_cycle" onChange="function_elements_edit_updatedayoff(this.name, this.value);" value="<?php echo $dataupdatedayoff['employee_day_off_cycle'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="employee_day_off_cycle" name="employee_day_off_cycle" onChange="function_elements_edit_updatedayoff(this.name, this.value);" value="<?php echo $dataupdatedayoff['employee_day_off_cycle'];?>" >
 			<label class="control-label">Siklus Libur</label>
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_update_dayoff_reason" name="employee_update_dayoff_reason" onChange="function_elements_edit_updatedayoff(this.name, this.value);" value="<?php echo $dataupdatedayoff['employee_update_dayoff_reason'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="employee_update_dayoff_reason" name="employee_update_dayoff_reason" onChange="function_elements_edit_updatedayoff(this.name, this.value);" value="<?php echo $dataupdatedayoff['employee_update_dayoff_reason'];?>" >
 			<label class="control-label">Alasan Perbaruan Hari Libur</label>
 		</div>
 	</div>

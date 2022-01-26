@@ -78,7 +78,7 @@ $(document).ready(function(){
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="length_service_code" id="length_service_code" class="form-control" value="<?php echo $CoreLengthService['length_service_code']?>">
+									<input type="text" autocomplete="off"  name="length_service_code" id="length_service_code" class="form-control" value="<?php echo $CoreLengthService['length_service_code']?>">
 									<span class="help-block">
 										Mohon hanya diisi karakter huruf dan angka.
 									</span>
@@ -87,7 +87,7 @@ $(document).ready(function(){
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="length_service_name" id="length_service_name" class="form-control" value="<?php echo $CoreLengthService['length_service_name']?>" >
+									<input type="text" autocomplete="off"  name="length_service_name" id="length_service_name" class="form-control" value="<?php echo $CoreLengthService['length_service_name']?>" >
 									<span class="help-block">
 										Mohon hanya diisi karakter huruf dan angka.
 									</span>
@@ -99,7 +99,7 @@ $(document).ready(function(){
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="length_service_range1" id="length_service_range1" class="form-control" value="<?php echo $CoreLengthService['length_service_range1']?>">
+									<input type="text" autocomplete="off"  name="length_service_range1" id="length_service_range1" class="form-control" value="<?php echo $CoreLengthService['length_service_range1']?>">
 									<span class="help-block">
 										Mohon diisi angka.
 									</span>
@@ -108,7 +108,7 @@ $(document).ready(function(){
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="length_service_range2" id="length_service_range2" class="form-control" value="<?php echo $CoreLengthService['length_service_range2']?>" >
+									<input type="text" autocomplete="off"  name="length_service_range2" id="length_service_range2" class="form-control" value="<?php echo $CoreLengthService['length_service_range2']?>" >
 									<span class="help-block">
 										Mohon diisi angka.
 									</span>

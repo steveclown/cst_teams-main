@@ -40,7 +40,7 @@
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Family Name</label>
-				<input type="text" name="employee_family_name" id="employee_family_name" value="<?php echo $sesi['employee_family_name']?>" class="form-control" placeholder="Company Name">
+				<input type="text" autocomplete="off"  name="employee_family_name" id="employee_family_name" value="<?php echo $sesi['employee_family_name']?>" class="form-control" placeholder="Company Name">
 			</div>
 		</div>
 	</div>			

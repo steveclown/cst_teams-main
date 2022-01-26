@@ -57,7 +57,7 @@ $this->session->unset_userdata('message');
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="asset_code" id="asset_code" value="<?php echo $CoreAsset['asset_code'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="asset_code" id="asset_code" value="<?php echo $CoreAsset['asset_code'];?>" class="form-control" >
 												<span class="help-block">
 													Diisi karakter huruf dan angka
 												</span>
@@ -70,7 +70,7 @@ $this->session->unset_userdata('message');
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="asset_name" id="asset_name" value="<?php echo $CoreAsset['asset_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="asset_name" id="asset_name" value="<?php echo $CoreAsset['asset_name'];?>" class="form-control" >
 												<label class="control-label">Nama Asset
 													<span class="required">
 														*

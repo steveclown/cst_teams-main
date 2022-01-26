@@ -177,7 +177,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_shift_code" id="employee_shift_code" value="<?php echo $ScheduleEmployeeShift['employee_shift_code']; ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_shift_code" id="employee_shift_code" value="<?php echo $ScheduleEmployeeShift['employee_shift_code']; ?>" class="form-control" readonly>
 
 								<input type="hidden" name="employee_shift_id" id="employee_shift_id" value="<?php echo $ScheduleEmployeeShift['employee_shift_id']; ?>" class="form-control" >
 								<label for="form_control">Kode Shift Karyawan </label>
@@ -188,7 +188,7 @@
 								<?php 
 									$ScheduleEmployeeShiftstatus = $this->configuration->ScheduleEmployeeShiftStatus(); 
 								?>
-								<input type="text" name="employee_shift_status" id="employee_shift_status" value="<?php echo $ScheduleEmployeeShiftstatus[$ScheduleEmployeeShift['employee_shift_status']]; ?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="employee_shift_status" id="employee_shift_status" value="<?php echo $ScheduleEmployeeShiftstatus[$ScheduleEmployeeShift['employee_shift_status']]; ?>" class="form-control" >
 								<label for="form_control">Status</label>
 							</div>	
 						</div>
@@ -197,7 +197,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" name="division_name" id="division_name" value="<?php echo $ScheduleEmployeeShift['division_name']; ?>" class="form-control" readonly>
+                                <input type="text" autocomplete="off"  name="division_name" id="division_name" value="<?php echo $ScheduleEmployeeShift['division_name']; ?>" class="form-control" readonly>
 
                                 <input type="hidden" name="division_id" id="division_id" value="<?php echo $ScheduleEmployeeShift['division_id']; ?>" class="form-control">
 								<label for="form_control">Nama Devisi</label>
@@ -206,7 +206,7 @@
 
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" name="location_name" id="location_name" value="<?php echo $ScheduleEmployeeShift['location_name']; ?>" class="form-control" readonly>
+                                <input type="text" autocomplete="off"  name="location_name" id="location_name" value="<?php echo $ScheduleEmployeeShift['location_name']; ?>" class="form-control" readonly>
 
                                 <input type="hidden" name="location_id" id="location_id" value="<?php echo $ScheduleEmployeeShift['location_id']; ?>" class="form-control">
 								<label for="form_control">Nama Lokasi </label>

@@ -130,7 +130,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Medical Disease</label>
 											
-												<input type="text" name="applicant_medical_disease" id="applicant_medical_disease" value="<?php echo $data['applicant_medical_disease'];?>" class="form-control" placeholder="Medical Disease">
+												<input type="text" autocomplete="off"  name="applicant_medical_disease" id="applicant_medical_disease" value="<?php echo $data['applicant_medical_disease'];?>" class="form-control" placeholder="Medical Disease">
 											</div>
 										</div>
 									</div>
@@ -140,7 +140,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Medical Name</label>
 											
-												<input type="text" name="applicant_medical_name" id="applicant_medical_name" value="<?php echo $data['applicant_medical_name'];?>" class="form-control" placeholder="Medical Name">
+												<input type="text" autocomplete="off"  name="applicant_medical_name" id="applicant_medical_name" value="<?php echo $data['applicant_medical_name'];?>" class="form-control" placeholder="Medical Name">
 											</div>
 										</div>
 									</div>

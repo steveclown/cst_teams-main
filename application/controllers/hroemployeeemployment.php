@@ -122,6 +122,10 @@
 				'data_state'							=> 0,
 			);
 
+
+			// print_r($data);
+			// exit();
+
 			
 
 			$this->form_validation->set_rules('employee_employment_working_status', 'Working Status', 'required');
@@ -137,9 +141,15 @@
 
 					$data_update = array(
 						'employee_id'							=> $data['employee_id'],
-						'employee_employment_working_status' 	=> $data['employee_employment_working_status']
+						'employee_employment_working_status' 	=> $data['employee_employment_working_status'],	
+						'employee_employment_overtime_status'	=> $data['employee_employment_overtime_status'],
+						'employee_employment_status'			=> $data['employee_employment_status'],
+						'employee_hire_date'					=> tgltodb($data['employee_hire_date']),
+						'employee_employment_status_date'		=> tgltodb($data['employee_employment_status_date']),
+						'employee_employment_status_duedate'	=> tgltodb($data['employee_employment_status_duedate'])
 					);
-
+					// print_r($data_update);
+					// exit();
 					$this->HroEmployeeEmployment_model->updateHROEmployeeData($data_update);
 					
 					// $auth 	= $this->session->userdata('auth');
@@ -183,13 +193,16 @@
 				$update_employee = array(
 					'employee_id'							=> $data_last['employee_id'],
 					'employee_employment_working_status'	=> $data_last['employee_employment_working_status'],
-					'employee_employment_overtime_status'	=> $data_last['employee_employment_overtime_status',true],
-					'employee_employment_status'			=> $data_last['employee_employment_status',true],
-					'employee_hire_date'					=> $data_last['employee_hire_date',true],
-					'employee_employment_status_date'		=> $data_last['employee_employment_status_date',true],
-					'employee_employment_status_duedate'	=> $data_last['employee_employment_status_duedate',true],
-				)
+					'employee_employment_overtime_status'	=> $data_last['employee_employment_overtime_status'],
+					'employee_employment_status'			=> $data_last['employee_employment_status'],
+					'employee_hire_date'					=> tgltodb($data_last['employee_hire_date']),
+					'employee_employment_status_date'		=> tgltodb($data_last['employee_employment_status_date']),
+					'employee_employment_status_duedate'	=> tgltodb($data_last['employee_employment_status_duedate']),
+				);
 
+				// print_r("DATA AFTER DELETE:");
+				// print_r($data_last);
+				// exit();
 				$this->HroEmployeeEmployment_model->updateHROEmployeeDataFromDelete($update_employee);
 
 				

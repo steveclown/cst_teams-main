@@ -106,7 +106,7 @@ $kings = array ('0' => 'Frame Single Vision', '1' => 'Frame Double Vision');
 									<div class = "row">		
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="glasses_coverage_code" id="glasses_coverage_code" value="<?php echo $data['glasses_coverage_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="glasses_coverage_code" id="glasses_coverage_code" value="<?php echo $data['glasses_coverage_code']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -120,7 +120,7 @@ $kings = array ('0' => 'Frame Single Vision', '1' => 'Frame Double Vision');
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="glasses_coverage_name" id="glasses_coverage_name" value="<?php echo $data['glasses_coverage_name']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="glasses_coverage_name" id="glasses_coverage_name" value="<?php echo $data['glasses_coverage_name']?>" class="form-control" >
 												<label class="control-label">Glasses Coverage Name
 													<span class="required">
 														*
@@ -144,7 +144,7 @@ $kings = array ('0' => 'Frame Single Vision', '1' => 'Frame Double Vision');
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="glasses_coverage_ratio" id="glasses_coverage_ratio" value="<?php echo $data['glasses_coverage_ratio']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="glasses_coverage_ratio" id="glasses_coverage_ratio" value="<?php echo $data['glasses_coverage_ratio']?>" class="form-control">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -160,7 +160,7 @@ $kings = array ('0' => 'Frame Single Vision', '1' => 'Frame Double Vision');
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="glasses_coverage_amount" id="glasses_coverage_amount" value="<?php echo $data['glasses_coverage_amount']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="glasses_coverage_amount" id="glasses_coverage_amount" value="<?php echo $data['glasses_coverage_amount']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

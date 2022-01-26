@@ -60,14 +60,14 @@ function ulang(){
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="overtime_minute_range1" id="overtime_minute_range1" class="form-control" value="<?php echo $coreovertimerounded['overtime_minute_range1']?>" >
+									<input type="text" autocomplete="off"  name="overtime_minute_range1" id="overtime_minute_range1" class="form-control" value="<?php echo $coreovertimerounded['overtime_minute_range1']?>" >
 									<label class="control-label">Overtime Minute Range 1</label>
 								</div>
 							</div>
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="overtime_minute_range2" id="overtime_minute_range2" class="form-control" value="<?php echo $coreovertimerounded['overtime_minute_range2']?>">
+									<input type="text" autocomplete="off"  name="overtime_minute_range2" id="overtime_minute_range2" class="form-control" value="<?php echo $coreovertimerounded['overtime_minute_range2']?>">
 									<label class="control-label">Overtime Minute Range 2</label>
 								</div>
 							</div>
@@ -76,7 +76,7 @@ function ulang(){
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="overtime_minute_rounded" id="overtime_minute_rounded" class="form-control" value="<?php echo $coreovertimerounded['overtime_minute_rounded']?>">
+									<input type="text" autocomplete="off"  name="overtime_minute_rounded" id="overtime_minute_rounded" class="form-control" value="<?php echo $coreovertimerounded['overtime_minute_rounded']?>">
 									<label class="control-label">Overtime Minute Rounded</label>
 								</div>
 							</div>

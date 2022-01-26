@@ -71,7 +71,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_bonus_amount" id="employee_bonus_amount" value="<?php echo $databonus['employee_bonus_amount']?>" class="form-control" onChange="function_elements_add_bonus(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_bonus_amount" id="employee_bonus_amount" value="<?php echo $databonus['employee_bonus_amount']?>" class="form-control" onChange="function_elements_add_bonus(this.name, this.value);">
 			<label class="control-label">Amount
 				<span class="required">
 					*
@@ -84,7 +84,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 	<div class="form-group form-md-line-input">
-		<input type="text" name="employee_bonus_description" id="employee_bonus_description" value="<?php echo $databonus['employee_bonus_description']?>" class="form-control" onChange="function_elements_add_bonus(this.name, this.value);">
+		<input type="text" autocomplete="off"  name="employee_bonus_description" id="employee_bonus_description" value="<?php echo $databonus['employee_bonus_description']?>" class="form-control" onChange="function_elements_add_bonus(this.name, this.value);">
 			<label class="control-label">Description
 				<span class="required">
 					*

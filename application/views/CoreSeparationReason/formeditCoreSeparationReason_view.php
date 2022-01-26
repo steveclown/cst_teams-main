@@ -61,7 +61,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="separation_reason_name" id="separation_reason_name" value="<?php echo $coreseparationreason['separation_reason_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="separation_reason_name" id="separation_reason_name" value="<?php echo $coreseparationreason['separation_reason_name'];?>" class="form-control" >
 												
 												<label class="control-label">Nama alasan pemisahan
 													<span class="required">

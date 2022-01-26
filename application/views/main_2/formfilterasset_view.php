@@ -40,7 +40,7 @@
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Leave Period</label>
-				<input type="text" name="employee_leave_period" id="employee_leave_period" value="<?php echo $data['employee_leave_period'];?>" class="form-control">
+				<input type="text" autocomplete="off"  name="employee_leave_period" id="employee_leave_period" value="<?php echo $data['employee_leave_period'];?>" class="form-control">
 			</div>
 		</div>
 	</div>-->

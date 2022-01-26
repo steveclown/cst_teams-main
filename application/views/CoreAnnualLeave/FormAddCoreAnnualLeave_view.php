@@ -75,7 +75,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_code" id="annual_leave_code" value="<?php echo $data['annual_leave_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="annual_leave_code" id="annual_leave_code" value="<?php echo $data['annual_leave_code']?>" class="form-control" >
 												<span class="help-block">
 												 Please input only alpha-numerical characters.
 												</span>
@@ -89,7 +89,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_name" id="annual_leave_name" value="<?php echo $data['annual_leave_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="annual_leave_name" id="annual_leave_name" value="<?php echo $data['annual_leave_name']?>" class="form-control">
 												<label class="control-label">Nama Cuti tahunan</label>
 											</div>
 										</div>
@@ -98,7 +98,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_days" id="annual_leave_days" value="<?php echo $data['annual_leave_days']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="annual_leave_days" id="annual_leave_days" value="<?php echo $data['annual_leave_days']?>" class="form-control">
 												
 												<input type="hidden" name="annual_leave_token" id="annual_leave_token" class="form-control" value="<?php echo $annual_leave_token?>" onChange="function_elements_add(this.name, this.value);">
 												

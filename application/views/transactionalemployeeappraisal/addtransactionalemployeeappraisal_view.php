@@ -75,13 +75,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Appraisal Value</label>
 											<div class="col-md-8">
-											<input type="text" name="employee_appraisal_value" id="employee_appraisal_value" class="form-control" placeholder="Appraisal Value" value="<?php echo $data['employee_appraisal_value'];?>">
+											<input type="text" autocomplete="off"  name="employee_appraisal_value" id="employee_appraisal_value" class="form-control" placeholder="Appraisal Value" value="<?php echo $data['employee_appraisal_value'];?>">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Appraisal Date</label>
 											<div class="col-md-8">
-											<input type="text" name="employee_appraisal_date" id="employee_appraisal_date" class="form-control" placeholder="Appraisal Date" value="<?php echo $data['employee_appraisal_date'];?>">
+											<input type="text" autocomplete="off"  name="employee_appraisal_date" id="employee_appraisal_date" class="form-control" placeholder="Appraisal Date" value="<?php echo $data['employee_appraisal_date'];?>">
 											</div>
 										</div>
 										<div class="form-group">

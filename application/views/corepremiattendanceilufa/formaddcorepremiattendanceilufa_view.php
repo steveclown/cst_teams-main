@@ -65,7 +65,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_code" id="premi_attendance_code" class="form-control" value="<?php echo $data['premi_attendance_code']?>">
+												<input type="text" autocomplete="off"  name="premi_attendance_code" id="premi_attendance_code" class="form-control" value="<?php echo $data['premi_attendance_code']?>">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -78,7 +78,7 @@ function ulang(){
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_name" id="premi_attendance_name" class="form-control" value="<?php echo $data['premi_attendance_name']?>" >
+												<input type="text" autocomplete="off"  name="premi_attendance_name" id="premi_attendance_name" class="form-control" value="<?php echo $data['premi_attendance_name']?>" >
 												<label class="control-label">Premi Attendance Name</label>
 											</div>
 										</div>
@@ -87,13 +87,13 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_range1" id="premi_attendance_range1" class="form-control" value="<?php echo $data['premi_attendance_range1']?>" >
+												<input type="text" autocomplete="off"  name="premi_attendance_range1" id="premi_attendance_range1" class="form-control" value="<?php echo $data['premi_attendance_range1']?>" >
 												<label class="control-label">Premi Attendance Range 1</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_range2" id="premi_attendance_range2" class="form-control" value="<?php echo $data['premi_attendance_range2']?>">
+												<input type="text" autocomplete="off"  name="premi_attendance_range2" id="premi_attendance_range2" class="form-control" value="<?php echo $data['premi_attendance_range2']?>">
 												<label class="control-label">Premi Attendance Range 2</label>
 											</div>
 										</div>
@@ -102,7 +102,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_amount" id="premi_attendance_amount" class="form-control" value="<?php echo $data['premi_attendance_amount']?>" >
+												<input type="text" autocomplete="off"  name="premi_attendance_amount" id="premi_attendance_amount" class="form-control" value="<?php echo $data['premi_attendance_amount']?>" >
 												<label class="control-label">Premi Attendance Amount</label>
 											</div>
 										</div>

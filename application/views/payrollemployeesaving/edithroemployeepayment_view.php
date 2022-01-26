@@ -62,7 +62,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_bank_name" id="employee_bank_name" value="<?php echo $result['employee_bank_name'];?>" class="form-control" placeholder="Bank Name">
+												<input type="text" autocomplete="off"  name="employee_bank_name" id="employee_bank_name" value="<?php echo $result['employee_bank_name'];?>" class="form-control" placeholder="Bank Name">
 											</div>
 										</div>
 										<div class="form-group">
@@ -71,7 +71,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_bank_acct_name" id="employee_bank_acct_name" value="<?php echo $result['employee_bank_acct_name'];?>" class="form-control" placeholder="Account Name">
+												<input type="text" autocomplete="off"  name="employee_bank_acct_name" id="employee_bank_acct_name" value="<?php echo $result['employee_bank_acct_name'];?>" class="form-control" placeholder="Account Name">
 											</div>
 										</div>
 										<div class="form-group">
@@ -80,7 +80,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_bank_acct_no" id="employee_bank_acct_no" value="<?php echo $result['employee_bank_acct_no'];?>" class="form-control" placeholder="Account Number">
+												<input type="text" autocomplete="off"  name="employee_bank_acct_no" id="employee_bank_acct_no" value="<?php echo $result['employee_bank_acct_no'];?>" class="form-control" placeholder="Account Number">
 											</div>
 										</div>
 								</div>

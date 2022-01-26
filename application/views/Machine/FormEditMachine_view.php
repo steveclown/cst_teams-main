@@ -66,7 +66,7 @@ echo form_open('Machine/processeditMachine',array('id' => 'myform', 'class' => '
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_code" id="machine_code" value="<?php echo $result['machine_code'];?>" class="form-control" placeholder="Machine Code">
+												<input type="text" autocomplete="off"  name="machine_code" id="machine_code" value="<?php echo $result['machine_code'];?>" class="form-control" placeholder="Machine Code">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -79,7 +79,7 @@ echo form_open('Machine/processeditMachine',array('id' => 'myform', 'class' => '
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_name" id="machine_name" value="<?php echo $result['machine_name'];?>" class="form-control" placeholder="Machine Name">
+												<input type="text" autocomplete="off"  name="machine_name" id="machine_name" value="<?php echo $result['machine_name'];?>" class="form-control" placeholder="Machine Name">
 											</div>
 										</div>
 									</div>
@@ -91,7 +91,7 @@ echo form_open('Machine/processeditMachine',array('id' => 'myform', 'class' => '
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_ip_address" id="machine_ip_address" value="<?php echo $result['machine_ip_address'];?>" class="form-control" placeholder="Ip Address">
+												<input type="text" autocomplete="off"  name="machine_ip_address" id="machine_ip_address" value="<?php echo $result['machine_ip_address'];?>" class="form-control" placeholder="Ip Address">
 											</div>
 										</div>
 										
@@ -101,7 +101,7 @@ echo form_open('Machine/processeditMachine',array('id' => 'myform', 'class' => '
 												<span class="required">*</span>
 												</label>
 											
-												<input type="text" name="machine_port" id="machine_port" value="<?php echo $result['machine_port'];?>" class="form-control" placeholder="Port">
+												<input type="text" autocomplete="off"  name="machine_port" id="machine_port" value="<?php echo $result['machine_port'];?>" class="form-control" placeholder="Port">
 											</div>
 										</div>
 									</div>

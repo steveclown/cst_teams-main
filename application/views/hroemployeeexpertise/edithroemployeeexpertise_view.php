@@ -91,36 +91,36 @@ $expertisecertificate = array ('0' => 'No', '1' => 'Yes');
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeexpertise_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeexpertise_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id; ?>" class="form-control" readonly>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Title</label>
 											<div class="col-md-8">
-												<input type="text" name="employee_expertise_name" id="employee_expertise_name" value="<?php echo $result['employee_expertise_name']?>" class="form-control" placeholder="Title">
+												<input type="text" autocomplete="off"  name="employee_expertise_name" id="employee_expertise_name" value="<?php echo $result['employee_expertise_name']?>" class="form-control" placeholder="Title">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">City</label>
 											<div class="col-md-8">
-												<input type="text" name="employee_expertise_city" id="employee_expertise_city" value="<?php echo $result['employee_expertise_city']?>" class="form-control" placeholder="City">
+												<input type="text" autocomplete="off"  name="employee_expertise_city" id="employee_expertise_city" value="<?php echo $result['employee_expertise_city']?>" class="form-control" placeholder="City">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">From Period</label>
 											<div class="col-md-2">
-												<input type="text" name="employee_expertise_from_period" id="employee_expertise_from_period" value="<?php echo $result['employee_expertise_from_period']?>" class="form-control" placeholder="From Period">
+												<input type="text" autocomplete="off"  name="employee_expertise_from_period" id="employee_expertise_from_period" value="<?php echo $result['employee_expertise_from_period']?>" class="form-control" placeholder="From Period">
 											</div>
 											<label class="col-md-2 control-label">To Period</label>
 											<div class="col-md-2">
-												<input type="text" name="employee_expertise_to_period" id="employee_expertise_to_period" value="<?php echo $result['employee_expertise_to_period']?>" class="form-control" placeholder="To Period">
+												<input type="text" autocomplete="off"  name="employee_expertise_to_period" id="employee_expertise_to_period" value="<?php echo $result['employee_expertise_to_period']?>" class="form-control" placeholder="To Period">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Duration</label>
 											<div class="col-md-8">
-												<input type="text" name="employee_expertise_duration" id="employee_expertise_duration" value="<?php echo $result['employee_expertise_duration']?>" class="form-control" placeholder="Duration">
+												<input type="text" autocomplete="off"  name="employee_expertise_duration" id="employee_expertise_duration" value="<?php echo $result['employee_expertise_duration']?>" class="form-control" placeholder="Duration">
 											</div>
 										</div>
 										<div class="form-group">

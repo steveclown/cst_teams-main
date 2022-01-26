@@ -81,7 +81,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeallowance_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeallowance_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id; ?>" class="form-control" readonly>
 											</div>
 										</div>
@@ -91,7 +91,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_allowance_period" id="employee_allowance_period" value="<?php echo $result['employee_allowance_period']?>" class="form-control" placeholder="Period">
+												<input type="text" autocomplete="off"  name="employee_allowance_period" id="employee_allowance_period" value="<?php echo $result['employee_allowance_period']?>" class="form-control" placeholder="Period">
 											</div>
 										</div>
 										<div class="form-group">
@@ -100,7 +100,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_allowance_amount" id="employee_allowance_amount" value="<?php echo $result['employee_allowance_amount']?>" class="form-control" placeholder="Amount">
+												<input type="text" autocomplete="off"  name="employee_allowance_amount" id="employee_allowance_amount" value="<?php echo $result['employee_allowance_amount']?>" class="form-control" placeholder="Amount">
 											</div>
 										</div>
 										<div class="form-group">

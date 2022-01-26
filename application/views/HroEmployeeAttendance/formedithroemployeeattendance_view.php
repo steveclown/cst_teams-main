@@ -189,7 +189,7 @@ $arrayreturn=explode(" ",$result['employee_asset_return_date']);
 												*
 												</span></label>
 											
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeasset_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeasset_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id; ?>" class="form-control" readonly>
 											</div>
 										</div>
@@ -225,7 +225,7 @@ $arrayreturn=explode(" ",$result['employee_asset_return_date']);
 												<label class="control-label">Receive Date</label>
 											
 												<div class="input-group input-medium date date-picker" data-date="<?php date("d-m-Y")?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" class="form-control" name="receipt_date" value="<?php echo tgltoview($result['employee_asset_receipt_date']) ;?>" readonly>
+													<input type="text" autocomplete="off"  class="form-control" name="receipt_date" value="<?php echo tgltoview($result['employee_asset_receipt_date']) ;?>" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -237,7 +237,7 @@ $arrayreturn=explode(" ",$result['employee_asset_return_date']);
 											<div class="form-group">
 												<label class="control-label">Receive Time</label>
 												<div class="input-group">
-													<input type="text" class="form-control timepicker timepicker-24" name="receipt_time" value="<?php echo $arrayreceipt[1];?>">
+													<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="receipt_time" value="<?php echo $arrayreceipt[1];?>">
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>
@@ -252,7 +252,7 @@ $arrayreturn=explode(" ",$result['employee_asset_return_date']);
 												<label class="control-label">Return Date</label>
 											
 												<div class="input-group input-medium date date-picker" data-date="<?php date("d-m-Y")?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" class="form-control" name="return_date" value="<?php echo tgltoview($result['employee_asset_return_date']);?>" readonly>
+													<input type="text" autocomplete="off"  class="form-control" name="return_date" value="<?php echo tgltoview($result['employee_asset_return_date']);?>" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -264,7 +264,7 @@ $arrayreturn=explode(" ",$result['employee_asset_return_date']);
 											<div class="form-group">
 												<label class="control-label">Return Time</label>
 												<div class="input-group">
-													<input type="text" class="form-control timepicker timepicker-24" name="return_time" value="<?php echo $arrayreturn[1];?>">
+													<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="return_time" value="<?php echo $arrayreturn[1];?>">
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>

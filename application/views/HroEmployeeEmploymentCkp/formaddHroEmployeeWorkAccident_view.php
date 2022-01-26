@@ -115,14 +115,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_work_accident_description" id="employee_work_accident_description" value="<?php echo $dataaccident['employee_work_accident_description']?>" class="form-control" onChange="function_elements_add_accident(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_work_accident_description" id="employee_work_accident_description" value="<?php echo $dataaccident['employee_work_accident_description']?>" class="form-control" onChange="function_elements_add_accident(this.name, this.value);">
 			<label class="control-label">Deskripsi</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_work_accident_duration" id="employee_work_accident_duration" value="<?php echo $dataaccident['employee_work_accident_duration']?>" class="form-control" onChange="function_elements_add_accident(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_work_accident_duration" id="employee_work_accident_duration" value="<?php echo $dataaccident['employee_work_accident_duration']?>" class="form-control" onChange="function_elements_add_accident(this.name, this.value);">
 			<label class="control-label">Durasi</label>
 		</div>
 	</div>

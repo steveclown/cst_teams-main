@@ -212,7 +212,7 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label">Total Expense</label>
 							<div class="col-md-3">
-								<input type="text" name="business_trip_total_expense" id="business_trip_total_expense" value="<?php echo $result['business_trip_total_expense'];?>" class="form-control" placeholder="Total Expense">
+								<input type="text" autocomplete="off"  name="business_trip_total_expense" id="business_trip_total_expense" value="<?php echo $result['business_trip_total_expense'];?>" class="form-control" placeholder="Total Expense">
 							</div>
 						</div>
 						
@@ -226,7 +226,7 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label">Approved By</label>
 							<div class="col-md-3">
-								<input type="text" name="business_trip_approved_by" id="business_trip_approved_by" value="<?php echo $result['business_trip_approved_by'];?>" class="form-control" placeholder="Approved By">
+								<input type="text" autocomplete="off"  name="business_trip_approved_by" id="business_trip_approved_by" value="<?php echo $result['business_trip_approved_by'];?>" class="form-control" placeholder="Approved By">
 							</div>
 						</div>
 						

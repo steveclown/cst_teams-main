@@ -70,13 +70,13 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Date</label>
 						<div class="col-md-8">
-							<input type="text" name="applicant_recruitment_date" id="applicant_recruitment_date" value="<?php echo tgltoview($detail['applicant_recruitment_date']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="applicant_recruitment_date" id="applicant_recruitment_date" value="<?php echo tgltoview($detail['applicant_recruitment_date']);?>" class="form-control" readonly>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Due Date</label>
 						<div class="col-md-8">
-							<input type="text" name="applicant_recruitment_due_date" id="applicant_recruitment_due_date" value="<?php echo tgltoview($detail['applicant_recruitment_due_date']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="applicant_recruitment_due_date" id="applicant_recruitment_due_date" value="<?php echo tgltoview($detail['applicant_recruitment_due_date']);?>" class="form-control" readonly>
 						</div>
 					</div>
 					<div class="form-group">

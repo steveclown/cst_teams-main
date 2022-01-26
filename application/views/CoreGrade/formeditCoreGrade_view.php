@@ -58,7 +58,7 @@ $this->session->unset_userdata('message');
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="grade_code" id="grade_code" value="<?php echo $coregrade['grade_code'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="grade_code" id="grade_code" value="<?php echo $coregrade['grade_code'];?>" class="form-control" >
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -71,7 +71,7 @@ $this->session->unset_userdata('message');
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="grade_name" id="grade_name" value="<?php echo $coregrade['grade_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="grade_name" id="grade_name" value="<?php echo $coregrade['grade_name'];?>" class="form-control" >
 												
 												<label class="control-label">Nama Mutu
 													<span class="required">

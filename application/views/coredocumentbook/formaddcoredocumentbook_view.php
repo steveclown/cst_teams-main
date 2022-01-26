@@ -52,7 +52,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" class="form-control" name="document_book_code" id="document_book_code" value="<?php echo $coredocumentbook['document_book_code']?>" >
+                                <input type="text" autocomplete="off"  class="form-control" name="document_book_code" id="document_book_code" value="<?php echo $coredocumentbook['document_book_code']?>" >
 								<label for="form_control">Document Book Code
 									<span class="required">*</span>
 								</label>
@@ -62,7 +62,7 @@
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="document_book_name" id="document_book_name" value="<?php echo $coredocumentbook['document_book_name']?>" >
+								<input type="text" autocomplete="off"  class="form-control" name="document_book_name" id="document_book_name" value="<?php echo $coredocumentbook['document_book_name']?>" >
 								<label for="form_control">Document Book Name
 									<span class="required">*</span>
 								</label>

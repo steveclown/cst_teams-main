@@ -73,7 +73,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="grade_code" id="grade_code" value="<?php echo $data['grade_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="grade_code" id="grade_code" value="<?php echo $data['grade_code'];?>" class="form-control">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -86,7 +86,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="grade_name" id="grade_name" value="<?php echo $data['grade_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="grade_name" id="grade_name" value="<?php echo $data['grade_name'];?>" class="form-control" >
 												
 												<input type="hidden" name="grade_token" id="grade_token" class="form-control" value="<?php echo $grade_token?>" onChange="function_elements_add(this.name, this.value);">
 												

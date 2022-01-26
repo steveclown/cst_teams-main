@@ -47,7 +47,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_name" id="division_name" class="form-control" value="<?php echo $ScheduleShiftAssignment['division_name']; ?>" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="division_name" id="division_name" class="form-control" value="<?php echo $ScheduleShiftAssignment['division_name']; ?>" onChange="function_elements_add(this.name, this.value);">
 								<label for="form_control">Nama Devisi
 									<span class="required">*</span>
 								</label>

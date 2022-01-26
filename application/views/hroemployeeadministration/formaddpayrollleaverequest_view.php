@@ -99,14 +99,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="leave_request_description" id="leave_request_description" value="<?php echo $dataleave['leave_request_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="leave_request_description" id="leave_request_description" value="<?php echo $dataleave['leave_request_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="leave_request_duration" id="leave_request_duration" value="<?php echo $dataleave['leave_request_duration']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="leave_request_duration" id="leave_request_duration" value="<?php echo $dataleave['leave_request_duration']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Duration</label>
 		</div>
 	</div>

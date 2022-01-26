@@ -77,19 +77,19 @@
 										<div class="form-group">
 											<label class="col-md-3 control-label">Balance</label>
 											<div class="col-md-8">
-												<input type="text" name="annual_leave_balance" id="annual_leave_balance" value="<?php echo $result['annual_leave_balance']?>" class="form-control" placeholder="Balance">
+												<input type="text" autocomplete="off"  name="annual_leave_balance" id="annual_leave_balance" value="<?php echo $result['annual_leave_balance']?>" class="form-control" placeholder="Balance">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Total</label>
 											<div class="col-md-8">
-												<input type="text" name="paid_long_leave_total" id="paid_long_leave_total" value="<?php echo $result['paid_long_leave_total']?>" class="form-control" placeholder="Total">
+												<input type="text" autocomplete="off"  name="paid_long_leave_total" id="paid_long_leave_total" value="<?php echo $result['paid_long_leave_total']?>" class="form-control" placeholder="Total">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-8">
-												<input type="text" name="paid_long_leave_date" id="paid_long_leave_date" value="<?php echo $result['paid_long_leave_date']?>" class="form-control" placeholder="Date">
+												<input type="text" autocomplete="off"  name="paid_long_leave_date" id="paid_long_leave_date" value="<?php echo $result['paid_long_leave_date']?>" class="form-control" placeholder="Date">
 											</div>
 										</div>
 										<div class="form-group">

@@ -75,7 +75,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-	                                <input type="text" class="form-control" name="shift_code" id="shift_code" value="<?php echo $CoreShift['shift_code']?>" onChange="function_elements_edit(this.name, this.value);">
+	                                <input type="text" autocomplete="off"  class="form-control" name="shift_code" id="shift_code" value="<?php echo $CoreShift['shift_code']?>" onChange="function_elements_edit(this.name, this.value);">
 									<label for="form_control">kode Shift
 										<span class="required">*</span>
 									</label>
@@ -85,7 +85,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="shift_name" id="shift_name" value="<?php echo $CoreShift['shift_name']?>" onChange="function_elements_edit(this.name, this.value);" >
+									<input type="text" autocomplete="off"  class="form-control" name="shift_name" id="shift_name" value="<?php echo $CoreShift['shift_name']?>" onChange="function_elements_edit(this.name, this.value);" >
 									<label for="form_control">Nama Shift
 										<span class="required">*</span>
 									</label>
@@ -96,7 +96,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-                                    <input type="text" class="form-control timepicker timepicker-24" name="start_working_hour" id="start_working_hour" value="<?php echo $CoreShift['start_working_hour'] ?>" onChange="function_elements_edit(this.name, this.value);" >
+                                    <input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="start_working_hour" id="start_working_hour" value="<?php echo $CoreShift['start_working_hour'] ?>" onChange="function_elements_edit(this.name, this.value);" >
 									<label for="form_control">Start Working Hour
 										<span class="required">*</span>
 									</label>
@@ -105,7 +105,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control timepicker timepicker-24" name="end_working_hour" id="end_working_hour" value="<?php echo $CoreShift['end_working_hour'] ?>"  onChange="function_elements_edit(this.name, this.value);">
+									<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="end_working_hour" id="end_working_hour" value="<?php echo $CoreShift['end_working_hour'] ?>"  onChange="function_elements_edit(this.name, this.value);">
 									<label for="form_control">End Working Hour
 										<span class="required">*</span>
 									</label>
@@ -116,7 +116,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-	                                <input type="text" class="form-control" name="working_hours_start" id="working_hours_start" value="<?php echo $CoreShift['working_hours_start']?>" onChange="function_elements_edit(this.name, this.value);">
+	                                <input type="text" autocomplete="off"  class="form-control" name="working_hours_start" id="working_hours_start" value="<?php echo $CoreShift['working_hours_start']?>" onChange="function_elements_edit(this.name, this.value);">
 									<label for="form_control">Working Hours Start
 										<span class="required">*</span>
 									</label>
@@ -125,7 +125,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="working_hours_end" id="working_hours_end" value="<?php echo $CoreShift['working_hours_end']?>" onChange="function_elements_edit(this.name, this.value);" >
+									<input type="text" autocomplete="off"  class="form-control" name="working_hours_end" id="working_hours_end" value="<?php echo $CoreShift['working_hours_end']?>" onChange="function_elements_edit(this.name, this.value);" >
 									<label for="form_control">Working Hours End
 										<span class="required">*</span>
 									</label>
@@ -147,7 +147,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-12">
 								<div class="form-group form-md-line-input">
-	                                <input type="text" class="form-control" name="shift_remark" id="shift_remark" onChange="function_elements_add(this.name, this.value);" value="<?php echo $CoreShift['shift_remark']?>"  onChange="function_elements_edit(this.name, this.value);">
+	                                <input type="text" autocomplete="off"  class="form-control" name="shift_remark" id="shift_remark" onChange="function_elements_add(this.name, this.value);" value="<?php echo $CoreShift['shift_remark']?>"  onChange="function_elements_edit(this.name, this.value);">
 									<label for="form_control">Keterangan
 									</label>
 								</div>	

@@ -100,7 +100,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bank_code" id="bank_code" value="<?php echo $data['bank_code'];?>" class="form-control" onChange="warningawardcode(award_code);">
+								<input type="text" autocomplete="off"  name="bank_code" id="bank_code" value="<?php echo $data['bank_code'];?>" class="form-control" onChange="warningawardcode(award_code);">
 								<span class="help-block">
 									Diisi karakter angka dan huruf
 								</span>
@@ -114,7 +114,7 @@
 
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bank_name" id="bank_name" value="<?php echo $data['bank_name'];?>" class="form-control" onChange="warningawardcode(award_code);">
+								<input type="text" autocomplete="off"  name="bank_name" id="bank_name" value="<?php echo $data['bank_name'];?>" class="form-control" onChange="warningawardcode(award_code);">
 								<label class="control-label">Nama Bank</label>
 							</div>
 						</div>

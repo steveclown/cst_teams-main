@@ -123,7 +123,7 @@
 									
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="monthly_period_working_days" id="monthly_period_working_days" value="<?php echo $data['monthly_period_working_days']?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="monthly_period_working_days" id="monthly_period_working_days" value="<?php echo $data['monthly_period_working_days']?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Hari Kerja
 													<span class="required">
 														*

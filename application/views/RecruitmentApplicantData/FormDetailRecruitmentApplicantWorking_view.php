@@ -22,7 +22,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_rfid_code" id="employee_rfid_code" value="<?php echo $data['employee_rfid_code'];?>" class="form-control" onChange="function_elements_recruit(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_rfid_code" id="employee_rfid_code" value="<?php echo $data['employee_rfid_code'];?>" class="form-control" onChange="function_elements_recruit(this.name, this.value);">
 			<label class="control-label">Employee RFID Code</label>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_day_off_cycle" id="employee_day_off_cycle" value="<?php echo $data['employee_day_off_cycle'];?>" class="form-control" onChange="function_elements_recruit(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_day_off_cycle" id="employee_day_off_cycle" value="<?php echo $data['employee_day_off_cycle'];?>" class="form-control" onChange="function_elements_recruit(this.name, this.value);">
 			<label class="control-label">Employee Day Off Cycle</label>
 		</div>
 	</div>

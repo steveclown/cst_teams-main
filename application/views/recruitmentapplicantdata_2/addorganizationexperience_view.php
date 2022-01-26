@@ -65,13 +65,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Organization Name</label>
-			<input type="text" class="form-control" id="organization_experience_name" name="organization_experience_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_name'];?>" placeholder="Name">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_experience_name" name="organization_experience_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_name'];?>" placeholder="Name">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Scope</label>
-			<input type="text" class="form-control" id="organization_experience_scope" name="organization_experience_scope" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_scope'];?>" placeholder="Scope">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_experience_scope" name="organization_experience_scope" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_scope'];?>" placeholder="Scope">
 		</div>
 	</div>
 </div>
@@ -79,13 +79,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Period</label>
-			<input type="text" class="form-control" id="organization_experience_period" name="organization_experience_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_period'];?>" placeholder="201501">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_experience_period" name="organization_experience_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_period'];?>" placeholder="201501">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Title</label>
-			<input type="text" class="form-control" id="organization_experience_title" name="organization_experience_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_title'];?>" placeholder="Title">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_experience_title" name="organization_experience_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_experience_title'];?>" placeholder="Title">
 		</div>
 	</div>
 </div>

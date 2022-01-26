@@ -85,7 +85,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_request_title" id="employee_request_title" value="<?php echo $recruitmentemployeerequest['employee_request_title'];?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="employee_request_title" id="employee_request_title" value="<?php echo $recruitmentemployeerequest['employee_request_title'];?>" class="form-control" readonly>
 												<label class="control-label">Title</label>
 											</div>
 										</div>

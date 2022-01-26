@@ -39,11 +39,11 @@
 		<div class="row-form">
 			<div class="span2">IP</div>
 			<div class="span2" style="margin-left:0px !important;">
-				<input type="text" name="ip" value="<?=$sesi['ip']?>" size=15>
+				<input type="text" autocomplete="off"  name="ip" value="<?=$sesi['ip']?>" size=15>
 			</div>
 			<div class="span2">Com Key</div>
 			<div class="span2" >
-				<input type="text" name="comkey" value="<?=$sesi['comkey']?>" size=15>
+				<input type="text" autocomplete="off"  name="comkey" value="<?=$sesi['comkey']?>" size=15>
 			</div>
 			<div class="span3" style="margin-left:60px !important; text-align  : right !important;">
 				<input type="reset" name="Reset" value="Reset" class="btn btn-danger" onClick="ulang();">

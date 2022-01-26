@@ -117,7 +117,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="basic_salary_total" id="basic_salary_total" value="<?php echo $data['basic_salary_total'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="basic_salary_total" id="basic_salary_total" value="<?php echo $data['basic_salary_total'];?>" class="form-control">
 								<label class="control-label">Basic Salary Total
 									<span class="required">
 										*
@@ -128,7 +128,7 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="basic_salary_amount" id="basic_salary_amount" value="<?php echo $data['basic_salary_amount'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="basic_salary_amount" id="basic_salary_amount" value="<?php echo $data['basic_salary_amount'];?>" class="form-control">
 								<label class="control-label">Basic Salary Amount
 									<span class="required">
 										*
@@ -141,7 +141,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="meal_allowance_amount" id="meal_allowance_amount" value="<?php echo $data['meal_allowance_amount'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="meal_allowance_amount" id="meal_allowance_amount" value="<?php echo $data['meal_allowance_amount'];?>" class="form-control">
 								<label class="control-label">Meal Allowance Amount
 									<span class="required">
 										*
@@ -152,7 +152,7 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="transport_allowance_amount" id="transport_allowance_amount" value="<?php echo $data['transport_allowance_amount'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="transport_allowance_amount" id="transport_allowance_amount" value="<?php echo $data['transport_allowance_amount'];?>" class="form-control">
 								<label class="control-label">Transport Allowance Amount
 									<span class="required">
 										*

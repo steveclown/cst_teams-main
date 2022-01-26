@@ -88,7 +88,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_loan_description" id="employee_loan_description" value="<?php echo $data['employee_loan_description']?>" class="form-control" onChange="function_elements_add_loan(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_loan_description" id="employee_loan_description" value="<?php echo $data['employee_loan_description']?>" class="form-control" onChange="function_elements_add_loan(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>
@@ -114,7 +114,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_loan_amount_total" id="employee_loan_amount_total" value="<?php echo $data['employee_loan_amount_total']?>" class="form-control" onChange="function_elements_add_loan(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_loan_amount_total" id="employee_loan_amount_total" value="<?php echo $data['employee_loan_amount_total']?>" class="form-control" onChange="function_elements_add_loan(this.name, this.value);">
 			<label class="control-label">Loan Amount Total
 				<span class="required">
 					*
@@ -125,7 +125,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_loan_amount" id="employee_loan_amount" value="<?php echo $data['employee_loan_amount']?>" class="form-control" onChange="function_elements_add_loan(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_loan_amount" id="employee_loan_amount" value="<?php echo $data['employee_loan_amount']?>" class="form-control" onChange="function_elements_add_loan(this.name, this.value);">
 			<label class="control-label">Loan Amount Per Period
 				<span class="required">
 					*

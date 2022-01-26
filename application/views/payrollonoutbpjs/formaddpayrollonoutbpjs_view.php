@@ -76,14 +76,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->payrollonoutbpjs_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->payrollonoutbpjs_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -92,14 +92,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->payrollonoutbpjs_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->payrollonoutbpjs_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->payrollonoutbpjs_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->payrollonoutbpjs_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -145,7 +145,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_reported_salary" id="bpjs_reported_salary" value="<?php echo $data['bpjs_reported_salary'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="bpjs_reported_salary" id="bpjs_reported_salary" value="<?php echo $data['bpjs_reported_salary'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">BPJS Reported Salary
 									<span class="required">
 										*
@@ -156,7 +156,7 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_total_amount" id="bpjs_total_amount" value="<?php echo $data['bpjs_total_amount'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="bpjs_total_amount" id="bpjs_total_amount" value="<?php echo $data['bpjs_total_amount'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">BPJS Total Amount
 									<span class="required">
 										*
@@ -180,7 +180,7 @@
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_kesehatan_no" id="bpjs_kesehatan_no" value="<?php echo $data['bpjs_kesehatan_no'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="bpjs_kesehatan_no" id="bpjs_kesehatan_no" value="<?php echo $data['bpjs_kesehatan_no'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">BPJS Kesehatan No</label>
 							</div>
 						</div>
@@ -189,14 +189,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_kesehatan_percentage" id="bpjs_kesehatan_percentage" value="<?php echo $data['bpjs_kesehatan_percentage'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="bpjs_kesehatan_percentage" id="bpjs_kesehatan_percentage" value="<?php echo $data['bpjs_kesehatan_percentage'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">BPJS Kesehatan Percentage</label>
 							</div>
 						</div>
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_kesehatan_amount" id="bpjs_kesehatan_amount" value="<?php echo $data['bpjs_kesehatan_amount'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
+								<input type="text" autocomplete="off"  name="bpjs_kesehatan_amount" id="bpjs_kesehatan_amount" value="<?php echo $data['bpjs_kesehatan_amount'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
 								<label class="control-label">BPJS Kesehatan Amount</label>
 							</div>
 						</div>
@@ -216,7 +216,7 @@
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_tenagakerja_no" id="bpjs_tenagakerja_no" value="<?php echo $data['bpjs_tenagakerja_no'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="bpjs_tenagakerja_no" id="bpjs_tenagakerja_no" value="<?php echo $data['bpjs_tenagakerja_no'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">BPJS Tenaga Kerja No</label>
 							</div>
 						</div>
@@ -225,14 +225,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_tenagakerjan_percentage" id="bpjs_tenagakerja_percentage" value="<?php echo $data['bpjs_tenagakerja_percentage'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="bpjs_tenagakerjan_percentage" id="bpjs_tenagakerja_percentage" value="<?php echo $data['bpjs_tenagakerja_percentage'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">BPJS Tenaga Kerja Percentage</label>
 							</div>
 						</div>
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="bpjs_tenagakerja_amount" id="bpjs_tenagakerja_amount" value="<?php echo $data['bpjs_tenagakerja_amount'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
+								<input type="text" autocomplete="off"  name="bpjs_tenagakerja_amount" id="bpjs_tenagakerja_amount" value="<?php echo $data['bpjs_tenagakerja_amount'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
 								<label class="control-label">BPJS Tenaga Kerja Amount</label>
 							</div>
 						</div>

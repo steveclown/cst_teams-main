@@ -62,7 +62,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_code" id="overtime_type_code" value="<?php echo $CoreOvertimeType['overtime_type_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="overtime_type_code" id="overtime_type_code" value="<?php echo $CoreOvertimeType['overtime_type_code']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -76,7 +76,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_name" id="overtime_type_name" value="<?php echo $CoreOvertimeType['overtime_type_name']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="overtime_type_name" id="overtime_type_name" value="<?php echo $CoreOvertimeType['overtime_type_name']?>" class="form-control" >
 												<label class="control-label">Nama Tipe Lembur
 													<span class="required">
 														*
@@ -89,14 +89,14 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_working_day_hour1" id="overtime_type_working_day_hour1" value="<?php echo $CoreOvertimeType['overtime_type_working_day_hour1']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="overtime_type_working_day_hour1" id="overtime_type_working_day_hour1" value="<?php echo $CoreOvertimeType['overtime_type_working_day_hour1']?>" class="form-control">
 												<label class="control-label">jam hari kerja 1</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_working_day_ratio1" id="overtime_type_working_day_ratio1" value="<?php echo $CoreOvertimeType['overtime_type_working_day_ratio1']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="overtime_type_working_day_ratio1" id="overtime_type_working_day_ratio1" value="<?php echo $CoreOvertimeType['overtime_type_working_day_ratio1']?>" class="form-control" >
 												<label class="control-label">Ratio Hari Kerja 1</label>
 											</div>
 										</div>
@@ -105,14 +105,14 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_working_day_hour2" id="overtime_type_working_day_hour2" value="<?php echo $CoreOvertimeType['overtime_type_working_day_hour2']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="overtime_type_working_day_hour2" id="overtime_type_working_day_hour2" value="<?php echo $CoreOvertimeType['overtime_type_working_day_hour2']?>" class="form-control">
 												<label class="control-label">jam hari kerja 2</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_working_day_ratio2" id="overtime_type_working_day_ratio2" value="<?php echo $CoreOvertimeType['overtime_type_working_day_ratio2']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="overtime_type_working_day_ratio2" id="overtime_type_working_day_ratio2" value="<?php echo $CoreOvertimeType['overtime_type_working_day_ratio2']?>" class="form-control" >
 												<label class="control-label">Ratio Hari Kerja 2</label>
 											</div>
 										</div>
@@ -121,14 +121,14 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_day_off_hour1" id="overtime_type_day_off_hour1" value="<?php echo $CoreOvertimeType['overtime_type_day_off_hour1']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="overtime_type_day_off_hour1" id="overtime_type_day_off_hour1" value="<?php echo $CoreOvertimeType['overtime_type_day_off_hour1']?>" class="form-control">
 												<label class="control-label">Jam libur1</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_day_off_ratio1" id="overtime_type_day_off_ratio1" value="<?php echo $CoreOvertimeType['overtime_type_day_off_ratio1']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="overtime_type_day_off_ratio1" id="overtime_type_day_off_ratio1" value="<?php echo $CoreOvertimeType['overtime_type_day_off_ratio1']?>" class="form-control" >
 												<label class="control-label">Ratio Libur 1</label>
 											</div>
 										</div>
@@ -137,14 +137,14 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_day_off_hour2" id="overtime_type_day_off_hour2" value="<?php echo $CoreOvertimeType['overtime_type_day_off_hour2']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="overtime_type_day_off_hour2" id="overtime_type_day_off_hour2" value="<?php echo $CoreOvertimeType['overtime_type_day_off_hour2']?>" class="form-control">
 												<label class="control-label">Jam libur 2</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_type_day_off_ratio2" id="overtime_type_day_off_ratio2" value="<?php echo $CoreOvertimeType['overtime_type_day_off_ratio2']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="overtime_type_day_off_ratio2" id="overtime_type_day_off_ratio2" value="<?php echo $CoreOvertimeType['overtime_type_day_off_ratio2']?>" class="form-control" >
 												<label class="control-label">Ratio Libur 2</label>
 											</div>
 										</div>

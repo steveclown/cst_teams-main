@@ -83,14 +83,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="commission_acc_start_omzet" id="commission_acc_start_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_acc_start_omzet',$CoreCommissionAcc['commission_acc_start_omzet']);?>"/>
+									<input type="text" autocomplete="off"  class="form-control" name="commission_acc_start_omzet" id="commission_acc_start_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_acc_start_omzet',$CoreCommissionAcc['commission_acc_start_omzet']);?>"/>
 									<label class="control-label">Omset Awal<span class="required">*</span></label>
 								</div>
 							</div>
 
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="commission_acc_end_omzet" id="commission_acc_end_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_acc_end_omzet', $CoreCommissionAcc['commission_acc_end_omzet']);?>"/>
+									<input type="text" autocomplete="off"  class="form-control" name="commission_acc_end_omzet" id="commission_acc_end_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_acc_end_omzet', $CoreCommissionAcc['commission_acc_end_omzet']);?>"/>
 									<label class="control-label">Omset Akhir<span class="required">*</span></label>
 								</div>
 							</div>
@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="commission_acc_percentage" id="commission_acc_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_acc_percentage',$CoreCommissionAcc['commission_acc_percentage']);?>"/>
+									<input type="text" autocomplete="off"  class="form-control" name="commission_acc_percentage" id="commission_acc_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_acc_percentage',$CoreCommissionAcc['commission_acc_percentage']);?>"/>
 									<label class="control-label">Prosentase<span class="required">*</span></label>
 								</div>
 							</div>

@@ -116,14 +116,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_allowance_working_start" name="period_allowance_working_start" onChange="function_elements_add_allowance(this.name, this.value);" value="<?php echo $data['period_allowance_working_start'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_allowance_working_start" name="period_allowance_working_start" onChange="function_elements_add_allowance(this.name, this.value);" value="<?php echo $data['period_allowance_working_start'];?>">
 			<label class="control-label">Mulai Bekerja </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_allowance_working_end" name="period_allowance_working_end" onChange="function_elements_add_allowance(this.name, this.value);" value="<?php echo $data['period_allowance_working_end'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_allowance_working_end" name="period_allowance_working_end" onChange="function_elements_add_allowance(this.name, this.value);" value="<?php echo $data['period_allowance_working_end'];?>">
 			<label class="control-label">Selesai Bekerja </label>
 		</div>	
 	</div>
@@ -132,7 +132,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_allowance_amount_monthly" id="period_allowance_amount_monthly" value="<?php echo $data['period_allowance_amount_monthly']?>" class="form-control" onChange="function_elements_add_allowance(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_allowance_amount_monthly" id="period_allowance_amount_monthly" value="<?php echo $data['period_allowance_amount_monthly']?>" class="form-control" onChange="function_elements_add_allowance(this.name, this.value);">
 			<label class="control-label">Jumlah Tunjangan Bulanan
 				<span class="required">
 					*
@@ -143,7 +143,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_allowance_amount_daily" id="period_allowance_amount_daily" value="<?php echo $data['period_allowance_amount_daily']?>" class="form-control" onChange="function_elements_add_allowance(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_allowance_amount_daily" id="period_allowance_amount_daily" value="<?php echo $data['period_allowance_amount_daily']?>" class="form-control" onChange="function_elements_add_allowance(this.name, this.value);">
 			<label class="control-label">Jumlah Tunjangan Harian
 				<span class="required">
 					*
@@ -156,7 +156,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_allowance_description" id="period_allowance_description" value="<?php echo $data['period_allowance_description']?>" class="form-control" onChange="function_elements_add_allowance(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_allowance_description" id="period_allowance_description" value="<?php echo $data['period_allowance_description']?>" class="form-control" onChange="function_elements_add_allowance(this.name, this.value);">
 			<label class="control-label">Deskripsi</label>
 		</div>
 	</div>

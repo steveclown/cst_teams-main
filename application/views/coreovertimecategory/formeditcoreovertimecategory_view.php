@@ -55,7 +55,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_category_name" id="overtime_category_name" value="<?php echo $coreovertimecategory['overtime_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="overtime_category_name" id="overtime_category_name" value="<?php echo $coreovertimecategory['overtime_name']?>" class="form-control">
 												<label class="control-label">Overtime Category Name
 													<span class="required">
 														*

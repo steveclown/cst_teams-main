@@ -56,14 +56,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="region_code" id="region_code" class="form-control" value="<?php echo $coreregion['region_code']?>">
+									<input type="text" autocomplete="off"  name="region_code" id="region_code" class="form-control" value="<?php echo $coreregion['region_code']?>">
 									
 									<label class="control-label">Kode Wilayah<span class="required">*</span></label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="region_name" id="region_name" class="form-control" value="<?php echo $coreregion['region_name']?>">
+									<input type="text" autocomplete="off"  name="region_name" id="region_name" class="form-control" value="<?php echo $coreregion['region_name']?>">
 									<label class="control-label">Nama Wilayah<span class="required">*</span></label>
 								</div>
 							</div>

@@ -78,7 +78,7 @@
 	$unique 				= $this->session->userdata('unique');
 	$data_expertise			= $this->session->userdata('addrecruitmentapplicantexpertise-'.$unique['unique']);
 
-	$recruitmentapplicantexpertise	= $this->session->userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
+	$recruitmentapplicantexpertise	= $this->session->userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);
 ?>			
 								
 <?php 
@@ -103,14 +103,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_expertise_name" id="applicant_expertise_name" value="<?php echo $data_expertise['applicant_expertise_name']?>" class="form-control" onChange="function_elements_add_expertise(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_expertise_name" id="applicant_expertise_name" value="<?php echo $data_expertise['applicant_expertise_name']?>" class="form-control" onChange="function_elements_add_expertise(this.name, this.value);">
 			<label class="control-label">Nama Keahlian</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_expertise_city" id="applicant_expertise_city" value="<?php echo $data_expertise['applicant_expertise_city']?>" class="form-control" onChange="function_elements_add_expertise(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_expertise_city" id="applicant_expertise_city" value="<?php echo $data_expertise['applicant_expertise_city']?>" class="form-control" onChange="function_elements_add_expertise(this.name, this.value);">
 			<label class="control-label">Kota</label>
 		</div>
 	</div>
@@ -154,7 +154,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_expertise_duration" id="applicant_expertise_duration" value="<?php echo $data_expertise['applicant_expertise_duration']?>" class="form-control" onChange="function_elements_add_expertise(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_expertise_duration" id="applicant_expertise_duration" value="<?php echo $data_expertise['applicant_expertise_duration']?>" class="form-control" onChange="function_elements_add_expertise(this.name, this.value);">
 			<label class="control-label">Durasi</label>
 		</div>
 	</div>

@@ -81,14 +81,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_home_early_hour_start" name="period_home_early_hour_start" onChange="function_elements_edit_home_early(this.name, this.value);" value="<?php echo $data['period_home_early_hour_start'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_home_early_hour_start" name="period_home_early_hour_start" onChange="function_elements_edit_home_early(this.name, this.value);" value="<?php echo $data['period_home_early_hour_start'];?>">
 			<label class="control-label">Home Early Hour Start</label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_home_early_hour_end" name="period_home_early_hour_end" onChange="function_elements_edit_home_early(this.name, this.value);" value="<?php echo $data['period_home_early_hour_end'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_home_early_hour_end" name="period_home_early_hour_end" onChange="function_elements_edit_home_early(this.name, this.value);" value="<?php echo $data['period_home_early_hour_end'];?>">
 			<label class="control-label">Home Early Hour End </label>
 		</div>	
 	</div>

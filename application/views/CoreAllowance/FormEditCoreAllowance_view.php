@@ -73,7 +73,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="allowance_code" id="allowance_code" value="<?php echo $CoreAllowance['allowance_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="allowance_code" id="allowance_code" value="<?php echo $CoreAllowance['allowance_code'];?>" class="form-control">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -86,7 +86,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="allowance_name" id="allowance_name" value="<?php echo $CoreAllowance['allowance_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="allowance_name" id="allowance_name" value="<?php echo $CoreAllowance['allowance_name'];?>" class="form-control" >
 												<label class="control-label">Nama Tunjangan
 													<span class="required">
 														*

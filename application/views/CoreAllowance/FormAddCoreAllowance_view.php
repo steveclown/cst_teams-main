@@ -88,7 +88,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="allowance_code" id="allowance_code" value="<?php echo $data['allowance_code'];?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="allowance_code" id="allowance_code" value="<?php echo $data['allowance_code'];?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -102,7 +102,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="allowance_name" id="allowance_name" value="<?php echo $data['allowance_name'];?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="allowance_name" id="allowance_name" value="<?php echo $data['allowance_name'];?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Tunjangan
 													<span class="required">
 														*

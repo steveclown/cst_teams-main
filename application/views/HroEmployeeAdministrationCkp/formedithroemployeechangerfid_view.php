@@ -43,7 +43,7 @@
 <div class = "row">		
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_rfid_code_old" name="employee_rfid_code_old" onChange="function_elements_edit_rfidcode(this.name, this.value);" value="<?php echo $hroemployeedata_rfidcode['employee_rfid_code'];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_rfid_code_old" name="employee_rfid_code_old" onChange="function_elements_edit_rfidcode(this.name, this.value);" value="<?php echo $hroemployeedata_rfidcode['employee_rfid_code'];?>" readonly>
 			<label class="control-label">RFID Code Old</label>
 		</div>
 	</div>
@@ -52,14 +52,14 @@
 <div class = "row">		
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_change_rfid_reason" name="employee_change_rfid_reason" onChange="function_elements_edit_rfidcode(this.name, this.value);" value="<?php echo $datarfidcode['employee_change_rfid_reason'];?>" autofocus>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_change_rfid_reason" name="employee_change_rfid_reason" onChange="function_elements_edit_rfidcode(this.name, this.value);" value="<?php echo $datarfidcode['employee_change_rfid_reason'];?>" autofocus>
 			<label class="control-label">Change RFID Reason</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_rfid_code" name="employee_rfid_code" onChange="function_elements_edit_rfidcode(this.name, this.value);" value="<?php echo $datarfidcode['employee_rfid_code'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="employee_rfid_code" name="employee_rfid_code" onChange="function_elements_edit_rfidcode(this.name, this.value);" value="<?php echo $datarfidcode['employee_rfid_code'];?>" >
 			<label class="control-label">RFID Code
 				<span class="required">
 					*

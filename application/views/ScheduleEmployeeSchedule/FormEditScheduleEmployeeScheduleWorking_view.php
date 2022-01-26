@@ -48,7 +48,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $ScheduleEmployeeScheduleitem['employee_name']; ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $ScheduleEmployeeScheduleitem['employee_name']; ?>" class="form-control" readonly>
 
 								<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $ScheduleEmployeeScheduleitem['employee_id']; ?>" class="form-control" readonly>
 
@@ -62,7 +62,7 @@
 
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_schedule_item_date" id="employee_schedule_item_date" value="<?php echo tgltoview($ScheduleEmployeeScheduleitem['employee_schedule_item_date']); ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_schedule_item_date" id="employee_schedule_item_date" value="<?php echo tgltoview($ScheduleEmployeeScheduleitem['employee_schedule_item_date']); ?>" class="form-control" readonly>
 								<label for="form_control">Jadwal Tanggal Barang</label>
 							</div>	
 						</div>
@@ -71,14 +71,14 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_shift_code" id="employee_shift_code" value="<?php echo $ScheduleEmployeeScheduleitem['employee_shift_code']; ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_shift_code" id="employee_shift_code" value="<?php echo $ScheduleEmployeeScheduleitem['employee_shift_code']; ?>" class="form-control" readonly>
 								<label for="form_control">Kode Shift Karyawan</label>
 							</div>	
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="shift_name" id="shift_name" value="<?php echo $ScheduleEmployeeScheduleitem['shift_name']; ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="shift_name" id="shift_name" value="<?php echo $ScheduleEmployeeScheduleitem['shift_name']; ?>" class="form-control" readonly>
 								<label for="form_control">Nama Shift</label>
 							</div>	
 						</div>
@@ -87,14 +87,14 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_schedule_item_in_start_date_old" id="employee_schedule_item_in_start_date_old" value="<?php echo $ScheduleEmployeeScheduleitem['employee_schedule_item_in_start_date']; ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_schedule_item_in_start_date_old" id="employee_schedule_item_in_start_date_old" value="<?php echo $ScheduleEmployeeScheduleitem['employee_schedule_item_in_start_date']; ?>" class="form-control" readonly>
 								<label for="form_control">Jadwal Di Tanggal Lama</label>
 							</div>	
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_schedule_item_in_start_date" id="employee_schedule_item_in_start_date" value="<?php echo $ScheduleEmployeeScheduleitem['employee_schedule_item_in_start_date']; ?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="employee_schedule_item_in_start_date" id="employee_schedule_item_in_start_date" value="<?php echo $ScheduleEmployeeScheduleitem['employee_schedule_item_in_start_date']; ?>" class="form-control" >
 								<label for="form_control">Jadwal Dalam Tanggal</label>
 							</div>	
 						</div>
@@ -108,7 +108,7 @@
 										$ScheduleEmployeeScheduleitem['employee_schedule_working_reason']=" ";
 									}
 								?>
-								<input type="text" name="employee_schedule_working_reason" id="employee_schedule_working_reason" value="<?php echo $ScheduleEmployeeScheduleitem['employee_schedule_working_reason']; ?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="employee_schedule_working_reason" id="employee_schedule_working_reason" value="<?php echo $ScheduleEmployeeScheduleitem['employee_schedule_working_reason']; ?>" class="form-control" >
 								<label for="form_control">Alasan Jadwal Bekerja</label>
 							</div>	
 						</div>

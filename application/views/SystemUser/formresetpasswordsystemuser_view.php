@@ -95,14 +95,14 @@
 						<div class = "row">
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="region_name" id="region_name"  value="<?php echo $this->systemuser_model->getRegionName($systemuser['region_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="region_name" id="region_name"  value="<?php echo $this->systemuser_model->getRegionName($systemuser['region_id']);?>" readonly/>
 									<label class="control-label">Region Name</label>
 								</div>
 							</div>
 
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="branch_name" id="branch_name"  value="<?php echo $this->systemuser_model->getBranchName($systemuser['branch_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="branch_name" id="branch_name"  value="<?php echo $this->systemuser_model->getBranchName($systemuser['branch_id']);?>" readonly/>
 									<label class="control-label">Branch Name</label>
 								</div>
 							</div>
@@ -111,14 +111,14 @@
 						<div class = "row">
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="location_name" id="location_name"  value="<?php echo $this->systemuser_model->getLocationName($systemuser['location_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="location_name" id="location_name"  value="<?php echo $this->systemuser_model->getLocationName($systemuser['location_id']);?>" readonly/>
 									<label class="control-label">Location Name</label>
 								</div>
 							</div>
 
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="division_name" id="division_name"  value="<?php echo $this->systemuser_model->getDivisionName($systemuser['division_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="division_name" id="division_name"  value="<?php echo $this->systemuser_model->getDivisionName($systemuser['division_id']);?>" readonly/>
 									<label class="control-label">Division Name</label>
 								</div>
 							</div>
@@ -127,14 +127,14 @@
 						<div class = "row">
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="department_name" id="department_name"  value="<?php echo $this->systemuser_model->getDepartmentName($systemuser['department_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="department_name" id="department_name"  value="<?php echo $this->systemuser_model->getDepartmentName($systemuser['department_id']);?>" readonly/>
 									<label class="control-label">Department Name</label>
 								</div>
 							</div>
 
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="section_name" id="section_name"  value="<?php echo $this->systemuser_model->getSectionName($systemuser['section_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="section_name" id="section_name"  value="<?php echo $this->systemuser_model->getSectionName($systemuser['section_id']);?>" readonly/>
 									<label class="control-label">Section Name</label>
 								</div>
 							</div>
@@ -143,7 +143,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="username" id="username"  value="<?php echo $systemuser['username'];?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="username" id="username"  value="<?php echo $systemuser['username'];?>" readonly/>
 									<label class="control-label">User Name</label>
 								</div>
 							</div>
@@ -152,14 +152,14 @@
 						<div class = "row">
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="user_group_name" id="user_group_name"  value="<?php echo $this->systemuser_model->getUserGroupName($systemuser['user_group_id']);?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="user_group_name" id="user_group_name"  value="<?php echo $this->systemuser_model->getUserGroupName($systemuser['user_group_id']);?>" readonly/>
 									<label class="control-label">User Group Name</label>
 								</div>
 							</div>
 
 							<div class = "col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="employee_employment_working_status" id="employee_employment_working_status"  value="<?php echo $this->configuration->WorkingStatus[$systemuser['employee_employment_working_status']];?>" readonly/>
+									<input type="text" autocomplete="off"  class="form-control" name="employee_employment_working_status" id="employee_employment_working_status"  value="<?php echo $this->configuration->WorkingStatus[$systemuser['employee_employment_working_status']];?>" readonly/>
 									<label class="control-label">Working Status</label>
 								</div>
 							</div>

@@ -67,7 +67,7 @@ function ulang(){
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="sub_asset_code" id="sub_asset_code"  value="<?php echo set_value('sub_asset_code',$data['sub_asset_code']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="sub_asset_code" id="sub_asset_code"  value="<?php echo set_value('sub_asset_code',$data['sub_asset_code']);?>"/>
 								<span class="help-block">
 									Please input only alpha-numerical characters.
 								</span>
@@ -76,7 +76,7 @@ function ulang(){
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="sub_asset_name" id="sub_asset_name" value="<?php echo set_value('sub_asset_name',$data['sub_asset_name']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="sub_asset_name" id="sub_asset_name" value="<?php echo set_value('sub_asset_name',$data['sub_asset_name']);?>"/>
 								<label class="control-label">Sub Asset Name<span class="required">*</span></label>
 							</div>
 						</div>

@@ -82,14 +82,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="region_code" id="region_code" class="form-control" value="<?php echo $data['region_code']?>" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="region_code" id="region_code" class="form-control" value="<?php echo $data['region_code']?>" onChange="function_elements_add(this.name, this.value);">
 
 									<label class="control-label">Kode Wilayah<span class="required">*</span></label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="region_name" id="region_name" class="form-control" value="<?php echo $data['region_name']?>" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="region_name" id="region_name" class="form-control" value="<?php echo $data['region_name']?>" onChange="function_elements_add(this.name, this.value);">
 
 									<input type="hidden" name="region_token" id="region_token" class="form-control" value="<?php echo $region_token?>" onChange="function_elements_add(this.name, this.value);">
 

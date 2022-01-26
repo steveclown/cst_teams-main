@@ -111,7 +111,7 @@ function check(value) {
 						*
 						</span></label>
 						<div class="col-md-8">
-							<input type="text" name="employee_name" id="employee_name" value="<?php echo $employee;?>" class="form-control" placeholder="Employee Name" readonly>
+							<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $employee;?>" class="form-control" placeholder="Employee Name" readonly>
 						</div>
 						<input type="hidden" name="employee_id" value="<?php echo $this->session->userdata("employee_id"); ?>"/>
 					</div>
@@ -126,7 +126,7 @@ function check(value) {
 						<label class="control-label col-md-3">Adjustment Date</label>
 						<div class="col-md-3">
 							<div class="input-group input-medium date date-picker" data-date="<?php date("d-m-Y")?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-								<input type="text" class="form-control" name="medical_adjustment_date" value="<?php if($data[medical_adjustment_date]=="")echo date('d-m-Y'); else echo tgltoview($data['medical_adjustment_date']);?>" readonly>
+								<input type="text" autocomplete="off"  class="form-control" name="medical_adjustment_date" value="<?php if($data[medical_adjustment_date]=="")echo date('d-m-Y'); else echo tgltoview($data['medical_adjustment_date']);?>" readonly>
 									<span class="input-group-btn">
 										<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 									</span>
@@ -136,7 +136,7 @@ function check(value) {
 					<div class="form-group">
 						<label class="col-md-3 control-label">Amount</label>
 						<div class="col-md-8">
-							<input type="text" name="medical_adjustment_amount_view" id="medical_adjustment_amount_view" value="<?php echo nominal($data['medical_coverage_amount']);?>" class="form-control" placeholder="Amount" onchange="check(this.value)">
+							<input type="text" autocomplete="off"  name="medical_adjustment_amount_view" id="medical_adjustment_amount_view" value="<?php echo nominal($data['medical_coverage_amount']);?>" class="form-control" placeholder="Amount" onchange="check(this.value)">
 							<input type="hidden" name="medical_adjustment_amount" id="medical_adjustment_amount" value="<?php echo $data['medical_coverage_amount'];?>" class="form-control" placeholder="Amount">
 							<span class="help-block">
 								Please input only numbers.

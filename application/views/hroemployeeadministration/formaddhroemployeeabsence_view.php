@@ -91,7 +91,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_absence_description" name="employee_absence_description" onChange="function_elements_add_absence(this.name, this.value);" value="<?php echo $dataabsence['employee_absence_description'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_absence_description" name="employee_absence_description" onChange="function_elements_add_absence(this.name, this.value);" value="<?php echo $dataabsence['employee_absence_description'];?>">
 			<label class="control-label">Absence Description </label>
 		</div>	
 	</div>

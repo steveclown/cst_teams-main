@@ -60,7 +60,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_deduction_amount" id="employee_deduction_amount" value="<?php echo $data['employee_deduction_amount']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_deduction_amount" id="employee_deduction_amount" value="<?php echo $data['employee_deduction_amount']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
 			<label class="control-label">Amount
 				<span class="required">
 					*
@@ -73,7 +73,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_deduction_description" id="employee_deduction_description" value="<?php echo $data['employee_deduction_description']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_deduction_description" id="employee_deduction_description" value="<?php echo $data['employee_deduction_description']?>" class="form-control" onChange="function_elements_add_deduction(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>

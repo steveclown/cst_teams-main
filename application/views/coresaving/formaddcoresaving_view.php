@@ -70,7 +70,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="saving_code" id="saving_code" value="<?php echo $data['saving_code']?>" onChange="function_elements_add(this.name, this.value);" class="form-control">
+												<input type="text" autocomplete="off"  name="saving_code" id="saving_code" value="<?php echo $data['saving_code']?>" onChange="function_elements_add(this.name, this.value);" class="form-control">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -83,7 +83,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="saving_name" id="saving_name" value="<?php echo $data['saving_name']?>" onChange="function_elements_add(this.name, this.value);" class="form-control">
+												<input type="text" autocomplete="off"  name="saving_name" id="saving_name" value="<?php echo $data['saving_name']?>" onChange="function_elements_add(this.name, this.value);" class="form-control">
 												<label class="control-label">Saving Name
 													<span class="required">
 														*
@@ -96,7 +96,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="saving_amount" id="saving_amount" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['saving_amount']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="saving_amount" id="saving_amount" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['saving_amount']?>" class="form-control">
 												<label class="control-label">Saving Amount
 													<span class="required">
 														*

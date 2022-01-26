@@ -96,7 +96,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="realization_percentage_min" id="realization_percentage_min" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_min',$data['realization_percentage_min']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="realization_percentage_min" id="realization_percentage_min" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_min',$data['realization_percentage_min']);?>"/>
 												<label class="control-label">Realization Percentage Min
 													<span class="required">
 													*
@@ -106,7 +106,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="realization_percentage_max" id="realization_percentage_max" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_max',$data['realization_percentage_max']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="realization_percentage_max" id="realization_percentage_max" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_max',$data['realization_percentage_max']);?>"/>
 												<label class="control-label">Realization Percentage Max
 													<span class="required">
 														*
@@ -119,7 +119,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="realization_percentage_omzet" id="realization_percentage_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_omzet',$data['realization_percentage_omzet']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="realization_percentage_omzet" id="realization_percentage_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_omzet',$data['realization_percentage_omzet']);?>"/>
 												<label class="control-label">Realization Percentage Omzet
 													<span class="required">
 													*
@@ -129,7 +129,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="realization_percentage_share" id="realization_percentage_share" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_share',$data['realization_percentage_share']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="realization_percentage_share" id="realization_percentage_share" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('realization_percentage_share',$data['realization_percentage_share']);?>"/>
 												<label class="control-label">Realization Percentage Share
 													<span class="required">
 													*

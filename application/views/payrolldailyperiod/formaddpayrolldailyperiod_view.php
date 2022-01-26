@@ -95,7 +95,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="daily_period_working_days" id="daily_period_working_days" value="<?php echo $data['daily_period_working_days']?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="daily_period_working_days" id="daily_period_working_days" value="<?php echo $data['daily_period_working_days']?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Working Days
 													<span class="required">
 														*

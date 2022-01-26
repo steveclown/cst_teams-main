@@ -70,7 +70,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="location_code" id="location_code" value="<?php echo $corelocation['location_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="location_code" id="location_code" value="<?php echo $corelocation['location_code'];?>" class="form-control">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -83,7 +83,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="location_name" id="location_name" value="<?php echo $corelocation['location_name'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="location_name" id="location_name" value="<?php echo $corelocation['location_name'];?>" class="form-control">
 												<label class="control-label">Nama Location
 													<span class="required">
 													*

@@ -120,7 +120,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="day_off_name" id="day_off_name" value="<?php echo $ScheduleDayOff['day_off_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="day_off_name" id="day_off_name" value="<?php echo $ScheduleDayOff['day_off_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Hari Libur
 													<span class="required">
 														*

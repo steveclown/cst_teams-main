@@ -72,7 +72,7 @@ $this->session->unset_userdata('message');
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="expertise_code" id="expertise_code" value="<?php echo set_value('expertise_code',$data['expertise_code']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="expertise_code" id="expertise_code" value="<?php echo set_value('expertise_code',$data['expertise_code']);?>"/>
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -86,7 +86,7 @@ $this->session->unset_userdata('message');
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$data['expertise_name']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$data['expertise_name']);?>"/>
 												<input type="hidden" name="expertise_token" id="expertise_token" class="form-control" value="<?php echo $expertise_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Keahlian
 													<span class="required">

@@ -69,7 +69,7 @@
 											<div class="form-group">
 												<label class="control-label">Period</label>
 											
-												<input type="text" name="social_security_period" id="social_security_period" class="form-control" value="<?php echo $data['social_security_period']?>" placeholder="Period">
+												<input type="text" autocomplete="off"  name="social_security_period" id="social_security_period" class="form-control" value="<?php echo $data['social_security_period']?>" placeholder="Period">
 											</div>
 										</div>
 									</div>
@@ -79,7 +79,7 @@
 											<div class="form-group">
 												<label class="control-label">JKM</label>
 											
-												<input type="text" name="social_security_jkm" id="social_security_jkm" class="form-control" value="<?php echo $data['social_security_jkm']?>" placeholder="JKM">
+												<input type="text" autocomplete="off"  name="social_security_jkm" id="social_security_jkm" class="form-control" value="<?php echo $data['social_security_jkm']?>" placeholder="JKM">
 											</div>
 										</div>
 										
@@ -87,7 +87,7 @@
 											<div class="form-group">
 												<label class="control-label">JKK</label>
 											
-												<input type="text" name="social_security_jkk" id="social_security_jkk" class="form-control" value="<?php echo $data['social_security_jkk']?>" placeholder="JKK">
+												<input type="text" autocomplete="off"  name="social_security_jkk" id="social_security_jkk" class="form-control" value="<?php echo $data['social_security_jkk']?>" placeholder="JKK">
 											</div>
 										</div>
 									</div>
@@ -97,7 +97,7 @@
 											<div class="form-group">
 												<label class="control-label">JHT Employee</label>
 											
-												<input type="text" name="social_security_jht_employee" id="social_security_jht_employee" class="form-control" value="<?php echo $data['social_security_jht_employee']?>" placeholder="JHT Employee">
+												<input type="text" autocomplete="off"  name="social_security_jht_employee" id="social_security_jht_employee" class="form-control" value="<?php echo $data['social_security_jht_employee']?>" placeholder="JHT Employee">
 											</div>
 										</div>
 										
@@ -105,7 +105,7 @@
 											<div class="form-group">
 												<label class="control-label">JHT Company</label>
 											
-												<input type="text" name="social_security_jht_company" id="social_security_jht_company" class="form-control" value="<?php echo $data['social_security_jht_company']?>" placeholder="JHT Company">
+												<input type="text" autocomplete="off"  name="social_security_jht_company" id="social_security_jht_company" class="form-control" value="<?php echo $data['social_security_jht_company']?>" placeholder="JHT Company">
 											</div>
 										</div>
 									</div>
@@ -115,7 +115,7 @@
 											<div class="form-group">
 												<label class="control-label">Medical Employee</label>
 											
-												<input type="text" name="social_security_medical_employee" id="social_security_medical_employee" class="form-control" value="<?php echo $data['social_security_medical_employee']?>" placeholder="Medical Employee">
+												<input type="text" autocomplete="off"  name="social_security_medical_employee" id="social_security_medical_employee" class="form-control" value="<?php echo $data['social_security_medical_employee']?>" placeholder="Medical Employee">
 											</div>
 										</div>
 										
@@ -123,7 +123,7 @@
 											<div class="form-group">
 												<label class="control-label">Medical Company</label>
 											
-												<input type="text" name="social_security_medical_company" id="social_security_medical_company" class="form-control" value="<?php echo $data['social_security_medical_company']?>" placeholder="Medical Company">
+												<input type="text" autocomplete="off"  name="social_security_medical_company" id="social_security_medical_company" class="form-control" value="<?php echo $data['social_security_medical_company']?>" placeholder="Medical Company">
 											</div>
 										</div>
 									</div>

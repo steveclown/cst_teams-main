@@ -67,7 +67,7 @@
 									<div class="row">
 										<div class="col-md-6">	
 											<div class="form-group form-md-line-input">
-												<input type="text" name="customer_code" id="customer_code" value="<?php echo $data['customer_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="customer_code" id="customer_code" value="<?php echo $data['customer_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Customer Code<span class="required">*</span></label>
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
@@ -76,7 +76,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="customer_name" id="customer_name" value="<?php echo $data['customer_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="customer_name" id="customer_name" value="<?php echo $data['customer_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Customer Name<span class="required">*</span></label>
 											</div>
 										</div>
@@ -92,7 +92,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="customer_city" id="customer_city" value="<?php echo $data['customer_city']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="customer_city" id="customer_city" value="<?php echo $data['customer_city']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Customer City<span class="required">*</span></label>
 											</div>
 										</div>

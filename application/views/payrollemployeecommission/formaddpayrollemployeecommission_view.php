@@ -77,14 +77,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division Name</label>
 							</div>	
 						</div>
@@ -93,14 +93,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department Name</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section Name</label>
 							</div>	
 						</div>
@@ -159,7 +159,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_omzet_mmc" id="employee_commission_omzet_mmc" value="<?php echo $data['employee_commission_omzet_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_omzet_mmc" id="employee_commission_omzet_mmc" value="<?php echo $data['employee_commission_omzet_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Omzet 
 													<span class="required">
 														*
@@ -170,7 +170,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_quantity_mmc" id="employee_commission_quantity_mmc" value="<?php echo $data['employee_commission_quantity_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_quantity_mmc" id="employee_commission_quantity_mmc" value="<?php echo $data['employee_commission_quantity_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Quantity 
 													<span class="required">
 														*
@@ -183,7 +183,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_omzet_acc" id="employee_commission_omzet_acc" value="<?php echo $data['employee_commission_omzet_acc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_omzet_acc" id="employee_commission_omzet_acc" value="<?php echo $data['employee_commission_omzet_acc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Omzet Acc
 													<span class="required">
 														*
@@ -194,7 +194,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_total_omzet" id="employee_commission_total_omzet" value="<?php echo $data['employee_commission_total_omzet']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_total_omzet" id="employee_commission_total_omzet" value="<?php echo $data['employee_commission_total_omzet']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Total Omzet
 													<span class="required">
 														*
@@ -207,7 +207,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_amount_mmc" id="employee_commission_amount_mmc" value="<?php echo $data['employee_commission_amount_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_amount_mmc" id="employee_commission_amount_mmc" value="<?php echo $data['employee_commission_amount_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label"> Commission
 													<span class="required">
 														*
@@ -218,7 +218,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_amount_acc" id="employee_commission_amount_acc" value="<?php echo $data['employee_commission_amount_acc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_amount_acc" id="employee_commission_amount_acc" value="<?php echo $data['employee_commission_amount_acc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Acc Commission
 													<span class="required">
 														*
@@ -231,7 +231,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_commission_total_amount" id="employee_commission_total_amount" value="<?php echo $data['employee_commission_total_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_commission_total_amount" id="employee_commission_total_amount" value="<?php echo $data['employee_commission_total_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Total Commission
 													<span class="required">
 														*

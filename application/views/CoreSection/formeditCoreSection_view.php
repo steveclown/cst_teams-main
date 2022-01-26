@@ -71,7 +71,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="section_code" id="section_code" value="<?php echo $coresection['section_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="section_code" id="section_code" value="<?php echo $coresection['section_code']?>" class="form-control" >
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -85,7 +85,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="section_name" id="section_name" value="<?php echo $coresection['section_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="section_name" id="section_name" value="<?php echo $coresection['section_name']?>" class="form-control">
 												<label class="control-label">Nama Bagian
 													<span class="required">
 														*

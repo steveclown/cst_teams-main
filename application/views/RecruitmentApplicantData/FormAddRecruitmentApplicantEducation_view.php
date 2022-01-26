@@ -98,13 +98,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_name" name="applicant_education_name" onChange="function_elements_add_education(this.name, this.value);" value="<?php echo $data_education['applicant_education_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_name" name="applicant_education_name" onChange="function_elements_add_education(this.name, this.value);" value="<?php echo $data_education['applicant_education_name'];?>">
 			<label>Nama Pendidikan</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_city" name="applicant_education_city" onChange="function_elements_add_education(this.name, this.value);" value="<?php echo $data_education['applicant_education_city'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_city" name="applicant_education_city" onChange="function_elements_add_education(this.name, this.value);" value="<?php echo $data_education['applicant_education_city'];?>">
 			<label>Kota</label>
 		</div>
 	</div>
@@ -146,7 +146,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_duration" name="applicant_education_duration" onChange="function_elements_add_education(this.name, this.value);" value="<?php echo $data_education['applicant_education_duration'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_duration" name="applicant_education_duration" onChange="function_elements_add_education(this.name, this.value);" value="<?php echo $data_education['applicant_education_duration'];?>">
 			<label>Durasi</label>
 		</div>
 	</div>
@@ -191,7 +191,7 @@
 <br>
 <?php 
 	$unique 						= $this->session->userdata('unique');
-	$recruitmentapplicanteducation	= $this->session->userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique']);
+	$recruitmentapplicanteducation	= $this->session->userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique']);
 ?>
 
 			<div class="row">

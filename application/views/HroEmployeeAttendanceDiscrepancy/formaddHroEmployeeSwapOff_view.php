@@ -70,7 +70,7 @@
 <div class = "row">		
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_swap_off_date" name="employee_swap_off_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($dataswapoff['employee_swap_off_date']);?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_swap_off_date" name="employee_swap_off_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($dataswapoff['employee_swap_off_date']);?>" readonly>
 			<label class="control-label">Tanggal Tukar Libur
 				<span class="required">
 					*
@@ -94,7 +94,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_swap_off_description" name="employee_swap_off_description" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $dataswapoff['employee_swap_off_description'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_swap_off_description" name="employee_swap_off_description" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $dataswapoff['employee_swap_off_description'];?>">
 			<label class="control-label">Tukar Deskripsi </label>
 		</div>	
 	</div>

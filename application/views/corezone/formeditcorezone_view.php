@@ -66,7 +66,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="zone_code" id="zone_code" value="<?php echo $corezone['zone_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="zone_code" id="zone_code" value="<?php echo $corezone['zone_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -75,7 +75,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="zone_name" id="zone_name" value="<?php echo $corezone['zone_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="zone_name" id="zone_name" value="<?php echo $corezone['zone_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Zone Name<span class="required">*</span></label>
 											</div>
 										</div>

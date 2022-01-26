@@ -209,7 +209,7 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_code" id="employee_code" value="<?php echo $hroemployeedata['employee_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_code" id="employee_code" value="<?php echo $hroemployeedata['employee_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<span class="help-block">
 														 Please input only alpha-numerical characters.
 													</span>
@@ -224,7 +224,7 @@ function ulang(){
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
+													<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
 
 													<label class="control-label">Employee Name
 														<span class="required">
@@ -245,14 +245,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_city" id="employee_city" value="<?php echo $hroemployeedata['employee_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_city" id="employee_city" value="<?php echo $hroemployeedata['employee_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">City</label>
 												</div>
 											</div>
 										
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_postal_code" id="employee_postal_code" value="<?php echo $hroemployeedata['employee_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_postal_code" id="employee_postal_code" value="<?php echo $hroemployeedata['employee_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Postal Code</label>
 												</div>
 											</div>
@@ -261,14 +261,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_rt" id="employee_rt" value="<?php echo $hroemployeedata['employee_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_rt" id="employee_rt" value="<?php echo $hroemployeedata['employee_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">RT</label>
 												</div>
 											</div>
 										
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_rw" id="employee_rw" value="<?php echo $hroemployeedata['employee_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_rw" id="employee_rw" value="<?php echo $hroemployeedata['employee_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">RW</label>
 												</div>
 											</div>
@@ -277,14 +277,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_kelurahan" id="employee_kelurahan" value="<?php echo $hroemployeedata['employee_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_kelurahan" id="employee_kelurahan" value="<?php echo $hroemployeedata['employee_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Kelurahan</label>
 												</div>
 											</div>
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_kecamatan" id="employee_kecamatan" value="<?php echo $hroemployeedata['employee_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_kecamatan" id="employee_kecamatan" value="<?php echo $hroemployeedata['employee_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Kecamatan</label>
 												</div>
 											</div>
@@ -293,14 +293,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_home_phone" id="employee_home_phone" value="<?php echo $hroemployeedata['employee_home_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_home_phone" id="employee_home_phone" value="<?php echo $hroemployeedata['employee_home_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Home Phone</label>
 												</div>
 											</div>
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $hroemployeedata['employee_mobile_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $hroemployeedata['employee_mobile_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Mobile Phone</label>
 												</div>
 											</div>
@@ -309,7 +309,7 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_email_address" id="employee_email_address" value="<?php echo $hroemployeedata['employee_email_address'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_email_address" id="employee_email_address" value="<?php echo $hroemployeedata['employee_email_address'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Email Address</label>
 												</div>
 											</div>
@@ -338,7 +338,7 @@ function ulang(){
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_place_of_birth" id="employee_place_of_birth" value="<?php echo $hroemployeedata['employee_place_of_birth'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_place_of_birth" id="employee_place_of_birth" value="<?php echo $hroemployeedata['employee_place_of_birth'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Place Of Birth</label>
 												</div>
 											</div>
@@ -356,7 +356,7 @@ function ulang(){
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_id_number" id="employee_id_number" value="<?php echo $hroemployeedata['employee_id_number'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_id_number" id="employee_id_number" value="<?php echo $hroemployeedata['employee_id_number'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">ID Number</label>
 												</div>
 											</div>
@@ -389,14 +389,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_residential_city" id="employee_residential_city" value="<?php echo $hroemployeedata['employee_residential_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_residential_city" id="employee_residential_city" value="<?php echo $hroemployeedata['employee_residential_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Residential City</label>
 												</div>
 											</div>
 										
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_residential_postal_code" id="employee_residential_postal_code" value="<?php echo $hroemployeedata['employee_residential_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_residential_postal_code" id="employee_residential_postal_code" value="<?php echo $hroemployeedata['employee_residential_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Residential Postal Code</label>
 												</div>
 											</div>
@@ -405,14 +405,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_residential_rt" id="employee_residential_rt" value="<?php echo $hroemployeedata['employee_residential_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_residential_rt" id="employee_residential_rt" value="<?php echo $hroemployeedata['employee_residential_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Residential RT</label>
 												</div>
 											</div>
 										
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_residential_rw" id="employee_residential_rw" value="<?php echo $hroemployeedata['employee_residential_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_residential_rw" id="employee_residential_rw" value="<?php echo $hroemployeedata['employee_residential_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Residential RW</label>
 												</div>
 											</div>
@@ -421,14 +421,14 @@ function ulang(){
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_residential_kelurahan" id="employee_residential_kelurahan" value="<?php echo $hroemployeedata['employee_residential_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_residential_kelurahan" id="employee_residential_kelurahan" value="<?php echo $hroemployeedata['employee_residential_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Residential Kelurahan</label>
 												</div>
 											</div>
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_residential_kecamatan" id="employee_residential_kecamatan" value="<?php echo $hroemployeedata['employee_residential_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_residential_kecamatan" id="employee_residential_kecamatan" value="<?php echo $hroemployeedata['employee_residential_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Residential Kecamatan</label>
 												</div>
 											</div>
@@ -444,7 +444,7 @@ function ulang(){
 
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" name="employee_heir_name" id="employee_heir_name" value="<?php echo $hroemployeedata['employee_heir_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+													<input type="text" autocomplete="off"  name="employee_heir_name" id="employee_heir_name" value="<?php echo $hroemployeedata['employee_heir_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 													<label class="control-label">Heir Name</label>
 												</div>
 											</div>

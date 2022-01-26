@@ -74,7 +74,7 @@ $data = $this->session->userdata('addshift');
 											<div class="form-group">
 												<label class="col-md-3 control-label">Shift Code</label>
 											
-												<input type="text" name="shift_code" id="shift_code" class="form-control" value="<?php echo $data['shift_code']?>" placeholder="Shift Code">
+												<input type="text" autocomplete="off"  name="shift_code" id="shift_code" class="form-control" value="<?php echo $data['shift_code']?>" placeholder="Shift Code">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -85,7 +85,7 @@ $data = $this->session->userdata('addshift');
 											<div class="form-group">
 												<label class="col-md-3 control-label">Shift Name</label>
 												
-												<input type="text" name="shift_name" id="shift_name" class="form-control" value="<?php echo $data['shift_name']?>" placeholder="Shift Name">
+												<input type="text" autocomplete="off"  name="shift_name" id="shift_name" class="form-control" value="<?php echo $data['shift_name']?>" placeholder="Shift Name">
 											</div>
 										</div>
 									</div>
@@ -96,7 +96,7 @@ $data = $this->session->userdata('addshift');
 												<label class="control-label ">Start Working Hour</label>
 												
 												<div class="input-group">
-													<input type="text" name="start_working_hour" id="start_working_hour" value="<?php echo $data['start_working_hour']?>" class="form-control timepicker timepicker-24">
+													<input type="text" autocomplete="off"  name="start_working_hour" id="start_working_hour" value="<?php echo $data['start_working_hour']?>" class="form-control timepicker timepicker-24">
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>
@@ -109,7 +109,7 @@ $data = $this->session->userdata('addshift');
 												<label class="control-label">End Working Hour</label>
 											
 												<div class="input-group">
-													<input type="text" name="end_working_hour" id="end_working_hour" value="<?php echo $data['end_working_hour']?>" class="form-control timepicker timepicker-24">
+													<input type="text" autocomplete="off"  name="end_working_hour" id="end_working_hour" value="<?php echo $data['end_working_hour']?>" class="form-control timepicker timepicker-24">
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>
@@ -124,7 +124,7 @@ $data = $this->session->userdata('addshift');
 												<label class="control-label">Start Rest Hour</label>
 											
 												<div class="input-group">
-													<input type="text" name="start_rest_hour" id="start_rest_hour" value="<?php echo $data['start_rest_hour']?>" class="form-control timepicker timepicker-24">
+													<input type="text" autocomplete="off"  name="start_rest_hour" id="start_rest_hour" value="<?php echo $data['start_rest_hour']?>" class="form-control timepicker timepicker-24">
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>
@@ -137,7 +137,7 @@ $data = $this->session->userdata('addshift');
 												<label class="control-label">End Rest Hour</label>
 											
 												<div class="input-group">
-													<input type="text" name="end_rest_hour" id="end_rest_hour" value="<?php echo $data['end_rest_hour']?>" class="form-control timepicker timepicker-24">
+													<input type="text" autocomplete="off"  name="end_rest_hour" id="end_rest_hour" value="<?php echo $data['end_rest_hour']?>" class="form-control timepicker timepicker-24">
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 													</span>
@@ -151,7 +151,7 @@ $data = $this->session->userdata('addshift');
 											<div class="form-group">
 												<label class="col-md-3 control-label">Due Time Late</label>
 											
-												<input type="text" name="due_time_late" id="due_time_late" class="form-control" value="<?php echo $data['due_time_late']?>" placeholder="Due Time Late">
+												<input type="text" autocomplete="off"  name="due_time_late" id="due_time_late" class="form-control" value="<?php echo $data['due_time_late']?>" placeholder="Due Time Late">
 											</div>
 										</div>
 									</div>

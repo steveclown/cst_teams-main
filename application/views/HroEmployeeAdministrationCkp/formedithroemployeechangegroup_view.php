@@ -70,7 +70,7 @@
 <div class = "row">	
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="location_name_old" name="location_name_old" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $hroemployeedata_shiftgroup['location_name'];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="location_name_old" name="location_name_old" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $hroemployeedata_shiftgroup['location_name'];?>" readonly>
 
 			<input type="hidden" class="form-control" id="location_id_old" name="location_id_old" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $hroemployeedata_shiftgroup['location_id'];?>" readonly>
 			<label class="control-label">Location Name Old
@@ -83,7 +83,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_shift_code_old" name="employee_shift_code_old" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $hroemployeedata_shiftgroup['employee_shift_code'];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_shift_code_old" name="employee_shift_code_old" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $hroemployeedata_shiftgroup['employee_shift_code'];?>" readonly>
 
 			<input type="hidden" class="form-control" id="employee_shift_id_old" name="employee_shift_id_old" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $hroemployeedata_shiftgroup['employee_shift_id'];?>" readonly>
 			<label class="control-label">Employee Shift Group Old
@@ -126,7 +126,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_change_group_reason" name="employee_change_group_reason" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $datachangegroup['employee_change_group_reason'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="employee_change_group_reason" name="employee_change_group_reason" onChange="function_elements_edit_changegroup(this.name, this.value);" value="<?php echo $datachangegroup['employee_change_group_reason'];?>" >
 			<label class="control-label">Change Group Reason
 				<span class="required">
 					*

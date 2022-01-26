@@ -99,7 +99,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_lost_item_amount" id="employee_lost_item_amount" value="<?php echo $data_lostitem['employee_lost_item_amount']?>" class="form-control" onChange="function_elements_add_lostitem(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_lost_item_amount" id="employee_lost_item_amount" value="<?php echo $data_lostitem['employee_lost_item_amount']?>" class="form-control" onChange="function_elements_add_lostitem(this.name, this.value);">
 												<label class="control-label">Amount
 													<span class="required">
 														*
@@ -112,7 +112,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 										<div class="form-group form-md-line-input">
-											<input type="text" name="employee_lost_item_description" id="employee_lost_item_description" value="<?php echo $data_lostitem['employee_lost_item_description']?>" class="form-control" onChange="function_elements_add_lostitem(this.name, this.value);">
+											<input type="text" autocomplete="off"  name="employee_lost_item_description" id="employee_lost_item_description" value="<?php echo $data_lostitem['employee_lost_item_description']?>" class="form-control" onChange="function_elements_add_lostitem(this.name, this.value);">
 												<label class="control-label">Description
 													<span class="required">
 														*

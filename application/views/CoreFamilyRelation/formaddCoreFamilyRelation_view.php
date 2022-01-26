@@ -58,7 +58,7 @@
 										<div class = "row">
 											<div class="col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" class="form-control" name="family_relation_code" id="family_relation_code" >
+													<input type="text" autocomplete="off"  class="form-control" name="family_relation_code" id="family_relation_code" >
 													<label for="form_control">Kode Hubungan Keluarga
 														<span class="required">*</span>
 													</label>
@@ -68,7 +68,7 @@
 											
 											<div class="col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" class="form-control" name="family_relation_name" id="family_relation_name" >
+													<input type="text" autocomplete="off"  class="form-control" name="family_relation_name" id="family_relation_name" >
 													<label for="form_control">Nama Hubungan Keluarga
 														<span class="required">*</span>
 													</label>

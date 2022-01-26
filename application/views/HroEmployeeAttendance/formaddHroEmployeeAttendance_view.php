@@ -82,7 +82,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_rfid_code" id="employee_rfid_code" value="<?php echo $data['employee_rfid_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" autofocus>
+												<input type="text" autocomplete="off"  name="employee_rfid_code" id="employee_rfid_code" value="<?php echo $data['employee_rfid_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" autofocus>
 												<label class="control-label">Kode RFID Karyawan</label>
 											</div>	
 										</div>

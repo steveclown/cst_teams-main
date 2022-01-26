@@ -84,7 +84,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="location_code" id="location_code" value="<?php echo $data['location_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="location_code" id="location_code" value="<?php echo $data['location_code']?>" class="form-control">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -97,7 +97,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="location_name" id="location_name" value="<?php echo $data['location_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="location_name" id="location_name" value="<?php echo $data['location_name']?>" class="form-control">
 												<input type="hidden" name="location_token" id="location_token" class="form-control" value="<?php echo $location_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Location
 													<span class="required">

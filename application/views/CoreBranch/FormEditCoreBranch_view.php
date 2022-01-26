@@ -70,7 +70,7 @@ function ulang(){
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="branch_code" id="branch_code" value="<?php echo $corebranch['branch_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="branch_code" id="branch_code" value="<?php echo $corebranch['branch_code'];?>" class="form-control">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -79,7 +79,7 @@ function ulang(){
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="branch_name" id="branch_name" value="<?php echo $corebranch['branch_name'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="branch_name" id="branch_name" value="<?php echo $corebranch['branch_name'];?>" class="form-control">
 												<label class="control-label">Nama Cabang<span class="required">*</span></label>
 											</div>
 										</div>
@@ -95,13 +95,13 @@ function ulang(){
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">												
-												<input type="text" name="branch_contact_person" id="branch_contact_person" value="<?php echo $corebranch['branch_contact_person'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="branch_contact_person" id="branch_contact_person" value="<?php echo $corebranch['branch_contact_person'];?>" class="form-control">
 												<label class="control-label">Contact Person<span class="required">*</span></label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="branch_phone1" id="branch_phone1" value="<?php echo $corebranch['branch_phone1'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="branch_phone1" id="branch_phone1" value="<?php echo $corebranch['branch_phone1'];?>" class="form-control">
 												<label class="control-label">No Hp Cabang 1<span class="required">*</span></label>
 											</div>
 										</div>
@@ -109,13 +109,13 @@ function ulang(){
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="branch_phone2" id="branch_phone2" value="<?php echo $corebranch['branch_phone2'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="branch_phone2" id="branch_phone2" value="<?php echo $corebranch['branch_phone2'];?>" class="form-control">
 												<label class="control-label">No Hp Cabang 2</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="branch_email" id="branch_email" value="<?php echo $corebranch['branch_email'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="branch_email" id="branch_email" value="<?php echo $corebranch['branch_email'];?>" class="form-control">
 												<label class="control-label">Email Cabang<span class="required">*</span></label>
 											</div>
 										</div>

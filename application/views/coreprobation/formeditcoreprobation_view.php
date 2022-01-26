@@ -58,7 +58,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="probation_code" id="probation_code" value="<?php echo $coreprobation['probation_code'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="probation_code" id="probation_code" value="<?php echo $coreprobation['probation_code'];?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -71,7 +71,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="probation_name" id="probation_name" value="<?php echo $coreprobation['probation_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="probation_name" id="probation_name" value="<?php echo $coreprobation['probation_name'];?>" class="form-control" >
 												
 												<label class="control-label">Probation Name
 													<span class="required">

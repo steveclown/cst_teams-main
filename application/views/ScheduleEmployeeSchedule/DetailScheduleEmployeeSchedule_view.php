@@ -34,7 +34,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="shift_pattern_name" id="shift_pattern_name" value="<?php echo $scheduleemployeeschedule['shift_pattern_name']; ?>" class="form-control" disabled>
+								<input type="text" autocomplete="off"  name="shift_pattern_name" id="shift_pattern_name" value="<?php echo $scheduleemployeeschedule['shift_pattern_name']; ?>" class="form-control" disabled>
 								<label for="form_control">Nama Pola Shift</label>
 							</div>	
 						</div>

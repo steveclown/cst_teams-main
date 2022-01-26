@@ -54,7 +54,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="education_code" id="education_code" value="<?php echo $coreeducation['education_code']?>" >
+									<input type="text" autocomplete="off"  class="form-control" name="education_code" id="education_code" value="<?php echo $coreeducation['education_code']?>" >
 									<label for="form_control">Kode Pendidikan
 										<span class="required">*</span>
 									</label>
@@ -64,7 +64,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="education_name" id="education_name" value="<?php echo $coreeducation['education_name']?>" >
+									<input type="text" autocomplete="off"  class="form-control" name="education_name" id="education_name" value="<?php echo $coreeducation['education_name']?>" >
 									<label for="form_control">Nama Pendidikan
 										<span class="required">*</span>
 									</label>

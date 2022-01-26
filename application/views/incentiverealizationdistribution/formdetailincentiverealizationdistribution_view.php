@@ -64,14 +64,14 @@
 												$year 	= substr($incentiverealizationdistribution['realization_distribution_period'], 0, 4);
 											?>
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="month_period" name="month_period" readonly value="<?php echo $this->configuration->Month[$month];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="month_period" name="month_period" readonly value="<?php echo $this->configuration->Month[$month];?>">
 												<label class="control-label">Month Name</label>
 											</div>	
 										</div>
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="year_period" name="year_period" readonly value="<?php echo $year;?>">
+												<input type="text" autocomplete="off"  class="form-control" id="year_period" name="year_period" readonly value="<?php echo $year;?>">
 												<label class="control-label">Year</label>
 											</div>		
 										</div>
@@ -80,14 +80,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['branch_name'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['branch_name'];?>">
 												<label class="control-label">Branch Name</label>
 											</div>	
 										</div>
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="year_period" name="year_period" readonly value="<?php echo $incentiverealizationdistribution['location_name'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="year_period" name="year_period" readonly value="<?php echo $incentiverealizationdistribution['location_name'];?>">
 												<label class="control-label">Location Name</label>
 											</div>		
 										</div>
@@ -96,14 +96,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['realization_distribution_branch_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['realization_distribution_branch_percentage'];?>">
 												<label class="control-label">Branch Percentage</label>
 											</div>	
 										</div>
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="year_period" name="year_period" readonly value="<?php echo nominal($incentiverealizationdistribution['realization_distribution_branch_amount']);?>">
+												<input type="text" autocomplete="off"  class="form-control" id="year_period" name="year_period" readonly value="<?php echo nominal($incentiverealizationdistribution['realization_distribution_branch_amount']);?>">
 												<label class="control-label">Branch Amount</label>
 											</div>		
 										</div>
@@ -112,14 +112,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['realization_distribution_group_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['realization_distribution_group_percentage'];?>">
 												<label class="control-label">Group Percentage</label>
 											</div>	
 										</div>
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="year_period" name="year_period" readonly value="<?php echo nominal($incentiverealizationdistribution['realization_distribution_group_amount']);?>">
+												<input type="text" autocomplete="off"  class="form-control" id="year_period" name="year_period" readonly value="<?php echo nominal($incentiverealizationdistribution['realization_distribution_group_amount']);?>">
 												<label class="control-label">Group Amount</label>
 											</div>		
 										</div>
@@ -128,14 +128,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['realization_distribution_individual_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="month_period" name="month_period" readonly value="<?php echo $incentiverealizationdistribution['realization_distribution_individual_percentage'];?>">
 												<label class="control-label">Individual Percentage</label>
 											</div>	
 										</div>
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="year_period" name="year_period" readonly value="<?php echo nominal($incentiverealizationdistribution['realization_distribution_individual_amount']);?>">
+												<input type="text" autocomplete="off"  class="form-control" id="year_period" name="year_period" readonly value="<?php echo nominal($incentiverealizationdistribution['realization_distribution_individual_amount']);?>">
 												<label class="control-label">Individual Amount</label>
 											</div>		
 										</div>

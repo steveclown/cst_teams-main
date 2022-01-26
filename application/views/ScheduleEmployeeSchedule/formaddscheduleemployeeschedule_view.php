@@ -50,7 +50,7 @@ $this->session->unset_userdata('message');
 								<input type="hidden" name="shift_pattern_weekly" id="shift_pattern_weekly" value="<?php echo $scheduleshiftassignment['shift_pattern_weekly']; ?>" class="form-control" readonly>
 								<input type="hidden" name="shift_pattern_cycle" id="shift_pattern_cycle" value="<?php echo $scheduleshiftassignment['shift_pattern_cycle']; ?>" class="form-control" readonly>
 								<input type="hidden" name="shift_assignment_start_date" id="shift_assignment_start_date" value="<?php echo $scheduleshiftassignment['shift_assignment_start_date']; ?>" class="form-control" readonly>
-								<input type="text" name="shift_pattern_name" id="shift_pattern_name" value="<?php echo $scheduleshiftassignment['shift_pattern_name']; ?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="shift_pattern_name" id="shift_pattern_name" value="<?php echo $scheduleshiftassignment['shift_pattern_name']; ?>" class="form-control" readonly>
 								<label for="form_control">Shift Pattern Name</label>
 							</div>	
 						</div>
@@ -65,13 +65,13 @@ $this->session->unset_userdata('message');
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" name="shift_pattern_weekly" id="shift_pattern_weekly" value="<?php echo $scheduleshiftassignment['shift_pattern_weekly']; ?>" class="form-control" readonly>
+                                <input type="text" autocomplete="off"  name="shift_pattern_weekly" id="shift_pattern_weekly" value="<?php echo $scheduleshiftassignment['shift_pattern_weekly']; ?>" class="form-control" readonly>
 								<label for="form_control">Shift Pattern Weekly</label>
 							</div>	
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" name="shift_pattern_cycle" id="shift_pattern_cycle" value="<?php echo $scheduleshiftassignment['shift_pattern_cycle']; ?>" class="form-control" readonly>
+                                <input type="text" autocomplete="off"  name="shift_pattern_cycle" id="shift_pattern_cycle" value="<?php echo $scheduleshiftassignment['shift_pattern_cycle']; ?>" class="form-control" readonly>
 								<label for="form_control">Shift Pattern Cycle</label>
 							</div>	
 						</div>

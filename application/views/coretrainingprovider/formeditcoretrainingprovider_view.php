@@ -90,7 +90,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_code" id="training_provider_code" value="<?php echo $coretrainingprovider['training_provider_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_code" id="training_provider_code" value="<?php echo $coretrainingprovider['training_provider_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -104,7 +104,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_name" id="training_provider_name" value="<?php echo $coretrainingprovider['training_provider_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_name" id="training_provider_name" value="<?php echo $coretrainingprovider['training_provider_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Name
 										<span class="required">
 											*
@@ -126,14 +126,14 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_city" id="training_provider_city" value="<?php echo $coretrainingprovider['training_provider_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_city" id="training_provider_city" value="<?php echo $coretrainingprovider['training_provider_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider City</label>
 								</div>
 							</div>
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_home_phone" id="training_provider_home_phone" value="<?php echo $coretrainingprovider['training_provider_home_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_home_phone" id="training_provider_home_phone" value="<?php echo $coretrainingprovider['training_provider_home_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Home Phone</label>
 								</div>
 							</div>
@@ -142,14 +142,14 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_mobile_phone" id="training_provider_mobile_phone" value="<?php echo $coretrainingprovider['training_provider_mobile_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_mobile_phone" id="training_provider_mobile_phone" value="<?php echo $coretrainingprovider['training_provider_mobile_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Mobile Phone</label>
 								</div>
 							</div>
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_fax_number" id="training_provider_fax_number" value="<?php echo $coretrainingprovider['training_provider_fax_number'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_fax_number" id="training_provider_fax_number" value="<?php echo $coretrainingprovider['training_provider_fax_number'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Fax Number</label>
 								</div>
 							</div>
@@ -158,14 +158,14 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_email" id="training_provider_email" value="<?php echo $coretrainingprovider['training_provider_email'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_email" id="training_provider_email" value="<?php echo $coretrainingprovider['training_provider_email'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Email</label>
 								</div>
 							</div>
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_contact_person" id="training_provider_contact_person" value="<?php echo $coretrainingprovider['training_provider_contact_person'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_contact_person" id="training_provider_contact_person" value="<?php echo $coretrainingprovider['training_provider_contact_person'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Contact Person</label>
 								</div>
 							</div>

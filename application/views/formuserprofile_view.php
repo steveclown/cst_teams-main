@@ -1046,26 +1046,26 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <form role="form" action="#">
                                                                         <div class="form-group">
                                                                             <label class="control-label">First Name</label>
-                                                                            <input type="text" placeholder="John" class="form-control" /> </div>
+                                                                            <input type="text" autocomplete="off"  placeholder="John" class="form-control" /> </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label">Last Name</label>
-                                                                            <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                                                            <input type="text" autocomplete="off"  placeholder="Doe" class="form-control" /> </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label">Mobile Number</label>
-                                                                            <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
+                                                                            <input type="text" autocomplete="off"  placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label">Interests</label>
-                                                                            <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
+                                                                            <input type="text" autocomplete="off"  placeholder="Design, Web etc." class="form-control" /> </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label">Occupation</label>
-                                                                            <input type="text" placeholder="Web Developer" class="form-control" /> </div>
+                                                                            <input type="text" autocomplete="off"  placeholder="Web Developer" class="form-control" /> </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label">About</label>
                                                                             <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label">Website Url</label>
-                                                                            <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
+                                                                            <input type="text" autocomplete="off"  placeholder="http://www.mywebsite.com" class="form-control" /> </div>
                                                                         <div class="margiv-top-10">
                                                                             <a href="javascript:;" class="btn green"> Save Changes </a>
                                                                             <a href="javascript:;" class="btn default"> Cancel </a>
@@ -1457,7 +1457,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                                 <div class="page-quick-sidebar-chat-user-form">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Type a message here...">
+                                        <input type="text" autocomplete="off"  class="form-control" placeholder="Type a message here...">
                                         <div class="input-group-btn">
                                             <button type="button" class="btn green">
                                                 <i class="icon-paper-clip"></i>

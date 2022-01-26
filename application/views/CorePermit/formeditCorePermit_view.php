@@ -93,7 +93,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="permit_code" id="permit_code" value="<?php echo $corepermit['permit_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="permit_code" id="permit_code" value="<?php echo $corepermit['permit_code']?>" class="form-control" >
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -107,7 +107,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="permit_name" id="permit_name" value="<?php echo $corepermit['permit_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="permit_name" id="permit_name" value="<?php echo $corepermit['permit_name']?>" class="form-control">
 												<label class="control-label">Nama Izin
 													<span class="required">
 														*

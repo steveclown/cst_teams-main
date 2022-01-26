@@ -77,14 +77,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division Name</label>
 							</div>	
 						</div>
@@ -93,14 +93,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department Name</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section Name</label>
 							</div>	
 						</div>
@@ -170,7 +170,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_bonus_amount" id="employee_bonus_amount" value="<?php echo $data['employee_bonus_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_bonus_amount" id="employee_bonus_amount" value="<?php echo $data['employee_bonus_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Amount
 													<span class="required">
 														*
@@ -183,7 +183,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 										<div class="form-group form-md-line-input">
-											<input type="text" name="employee_bonus_description" id="employee_bonus_description" value="<?php echo $data['employee_bonus_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+											<input type="text" autocomplete="off"  name="employee_bonus_description" id="employee_bonus_description" value="<?php echo $data['employee_bonus_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Description
 													<span class="required">
 														*

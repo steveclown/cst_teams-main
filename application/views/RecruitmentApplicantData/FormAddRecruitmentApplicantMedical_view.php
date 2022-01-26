@@ -215,13 +215,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_weight" name="applicant_weight" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_weight'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_weight" name="applicant_weight" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_weight'];?>" >
 			<label>Berat Badan</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_height" name="applicant_height" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_height'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_height" name="applicant_height" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_height'];?>" >
 			<label>Tinggi Badan</label>
 		</div>
 	</div>
@@ -237,7 +237,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_sick_disease" name="applicant_sick_disease" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_disease'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_sick_disease" name="applicant_sick_disease" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_disease'];?>">
 			<label>Nama Penyakit </label>
 		</div>
 	</div>
@@ -245,13 +245,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_sick_how_long" name="applicant_sick_how_long" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_how_long'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_sick_how_long" name="applicant_sick_how_long" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_how_long'];?>" >
 			<label>Lama Sakit</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_sick_year" name="applicant_sick_year" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_year'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_sick_year" name="applicant_sick_year" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_year'];?>" >
 			<label>Tahun</label>
 		</div>
 	</div>
@@ -259,7 +259,7 @@
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_sick_hospital" name="applicant_sick_hospital" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_hospital'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_sick_hospital" name="applicant_sick_hospital" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_sick_hospital'];?>">
 			<label>Rumah Sakit</label>
 		</div>
 	</div>
@@ -284,7 +284,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_medical_disease" name="applicant_medical_disease" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_medical_disease'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_medical_disease" name="applicant_medical_disease" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_medical_disease'];?>">
 			<label>Nama Penyakit</label>
 		</div>
 	</div>
@@ -292,7 +292,7 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_medical_name" name="applicant_medical_name" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_medical_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_medical_name" name="applicant_medical_name" onChange="function_elements_add_medical_detail(this.name, this.value);" value="<?php echo $data['applicant_medical_name'];?>">
 			<label>Nama Keluarga</label>
 		</div>
 	</div>
@@ -462,14 +462,14 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_strength_remark" name="applicant_strength_remark" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_strength_remark'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_strength_remark" name="applicant_strength_remark" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_strength_remark'];?>">
 			<label>Kelebihan</label>
 		</div>
 	</div>
 
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_weakness_remark" name="applicant_weakness_remark" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_weakness_remark'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_weakness_remark" name="applicant_weakness_remark" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_weakness_remark'];?>">
 			<label>Kelemahan</label>
 		</div>
 	</div>
@@ -537,13 +537,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_coworker_name1" name="applicant_coworker_name1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_name1'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_coworker_name1" name="applicant_coworker_name1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_name1'];?>">
 			<label>Nama Rekan Kerja 1</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_coworker_section1" name="applicant_coworker_section1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_section1'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_coworker_section1" name="applicant_coworker_section1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_section1'];?>">
 			<label>Bagian Rekan Kerja 1</label>
 		</div>
 	</div>
@@ -551,7 +551,7 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_coworker_relation1" name="applicant_coworker_relation1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_relation1'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_coworker_relation1" name="applicant_coworker_relation1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_relation1'];?>" >
 			<label>Hubungan Rekan Kerja 1</label>
 		</div>
 	</div>
@@ -559,13 +559,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_coworker_name2" name="applicant_coworker_name2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_name2'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_coworker_name2" name="applicant_coworker_name2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_name2'];?>">
 			<label>Nama Rekan Kerja 2</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_coworker_section2" name="applicant_coworker_section2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_section2'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_coworker_section2" name="applicant_coworker_section2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_section2'];?>">
 			<label>Bagian Rekan Kerja 2</label>
 		</div>
 	</div>
@@ -573,7 +573,7 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_coworker_relation2" name="applicant_coworker_relation2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_relation2'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_coworker_relation2" name="applicant_coworker_relation2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_coworker_relation2'];?>" >
 			<label>Hubungan Rekan Kerja 2</label>
 		</div>
 	</div>
@@ -582,14 +582,14 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_emergency_name" name="applicant_emergency_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_emergency_name" name="applicant_emergency_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_name'];?>">
 			<label>Nama Darurat </label>
 		</div>
 	</div>
 
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_emergency_address" name="applicant_emergency_address" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_address'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_emergency_address" name="applicant_emergency_address" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_address'];?>" >
 			<label>Alamat</label>
 		</div>
 	</div>	
@@ -597,7 +597,7 @@
 <div class = "row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_emergency_relationship" name="applicant_emergency_relationship" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_relationship'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_emergency_relationship" name="applicant_emergency_relationship" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_relationship'];?>">
 			<label>Hubungan</label>
 		</div>
 	</div>
@@ -605,13 +605,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_emergency_home_phone" name="applicant_emergency_home_phone" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_home_phone'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_emergency_home_phone" name="applicant_emergency_home_phone" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_home_phone'];?>">
 			<label>Telp Rumah</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_emergency_mobile_phone" name="applicant_emergency_mobile_phone" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_mobile_phone'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_emergency_mobile_phone" name="applicant_emergency_mobile_phone" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_emergency_mobile_phone'];?>">
 			<label>No HP </label>
 		</div>
 	</div>
@@ -619,13 +619,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_daily_transportation_brand1" name="applicant_daily_transportation_brand1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_brand1'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_daily_transportation_brand1" name="applicant_daily_transportation_brand1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_brand1'];?>" >
 			<label>Kendaraan 1</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_daily_transportation_year1" name="applicant_daily_transportation_year1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_year1'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_daily_transportation_year1" name="applicant_daily_transportation_year1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_year1'];?>">
 			<label>Tahun Kendaraan 1</label>
 		</div>
 	</div>
@@ -633,7 +633,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_daily_transportation_owner1" name="applicant_daily_transportation_owner1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_owner1'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_daily_transportation_owner1" name="applicant_daily_transportation_owner1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_owner1'];?>">
 			<label>Pemilik 1</label>
 		</div>
 	</div>
@@ -641,13 +641,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_daily_transportation_brand2" name="applicant_daily_transportation_brand2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_brand2'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_daily_transportation_brand2" name="applicant_daily_transportation_brand2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_brand2'];?>" >
 			<label>Kendaraan 2</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_daily_transportation_year2" name="applicant_daily_transportation_year2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_year2'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_daily_transportation_year2" name="applicant_daily_transportation_year2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_year2'];?>">
 			<label>Tahun Kendaraan 2</label>
 		</div>
 	</div>
@@ -655,7 +655,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_daily_transportation_owner2" name="applicant_daily_transportation_owner2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_owner2'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_daily_transportation_owner2" name="applicant_daily_transportation_owner2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_daily_transportation_owner2'];?>">
 			<label>Pemilik 2</label>
 		</div>
 	</div>
@@ -681,7 +681,7 @@
 	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_law_location" name="applicant_law_location" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_law_location'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_law_location" name="applicant_law_location" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_law_location'];?>">
 			<label>Lokasi</label>
 		</div>
 	</div>
@@ -778,7 +778,7 @@
 	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_interview_location" name="applicant_interview_location" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_interview_location'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_interview_location" name="applicant_interview_location" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_interview_location'];?>">
 			<label>Lokasi</label>
 		</div>
 	</div>

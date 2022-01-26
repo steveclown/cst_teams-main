@@ -74,14 +74,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->payrollemployeeincentive_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->payrollemployeeincentive_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -90,14 +90,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->payrollemployeeincentive_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->payrollemployeeincentive_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->payrollemployeeincentive_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->payrollemployeeincentive_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -168,7 +168,7 @@
 									
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_incentive_amount" id="employee_incentive_amount" value="<?php echo $data['employee_incentive_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_incentive_amount" id="employee_incentive_amount" value="<?php echo $data['employee_incentive_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Amount
 													<span class="required">
 														*
@@ -181,7 +181,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 										<div class="form-group form-md-line-input">
-											<input type="text" name="employee_incentive_description" id="employee_incentive_description" value="<?php echo $data['employee_incentive_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+											<input type="text" autocomplete="off"  name="employee_incentive_description" id="employee_incentive_description" value="<?php echo $data['employee_incentive_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Description
 													<span class="required">
 														*

@@ -60,7 +60,7 @@
 								<div class="form-group">
 									<label class="control-label">Nationality Code</label>
 								
-									<input type="text" name="nationality_code" id="nationality_code" class="form-control" value="<?php echo $result['nationality_code']?>" >
+									<input type="text" autocomplete="off"  name="nationality_code" id="nationality_code" class="form-control" value="<?php echo $result['nationality_code']?>" >
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -71,7 +71,7 @@
 								<div class="form-group">
 									<label class="control-label">Nationality Name</label>
 								
-									<input type="text" name="nationality_name" id="nationality_name" class="form-control" value="<?php echo $result['nationality_name']?>" >
+									<input type="text" autocomplete="off"  name="nationality_name" id="nationality_name" class="form-control" value="<?php echo $result['nationality_name']?>" >
 								</div>
 							</div>
 						</div>

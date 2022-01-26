@@ -55,7 +55,7 @@
                     <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
                     <form class="search-form" action="extra_search.html" method="GET">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search..." name="query">
+                            <input type="text" autocomplete="off"  class="form-control" placeholder="Search..." name="query">
                             <span class="input-group-btn">
                                 <a href="javascript:;" class="btn submit">
                                     <i class="icon-magnifier"></i>
@@ -691,7 +691,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Probation Date</label>
-					<input type="text" name="employee_probation_date" id="employee_probation_date" class="form-control" value="-" readonly >
+					<input type="text" autocomplete="off"  name="employee_probation_date" id="employee_probation_date" class="form-control" value="-" readonly >
 				</div>
 			</div>
 		</div>
@@ -707,7 +707,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Effective Date</label>
-					<input type="text" name="employee_effective_date" id="employee_effective_date" class="form-control" value="-" readonly >
+					<input type="text" autocomplete="off"  name="employee_effective_date" id="employee_effective_date" class="form-control" value="-" readonly >
 				</div>
 			</div>
 		</div>
@@ -723,7 +723,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Employee Status</label>
-					<input type="text" name="employee_status" id="employee_status" class="form-control" value="Permanent" readonly >
+					<input type="text" autocomplete="off"  name="employee_status" id="employee_status" class="form-control" value="Permanent" readonly >
 				</div>
 			</div>
 		</div>
@@ -731,7 +731,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Status Date</label>
-					<input type="text" name="employee_status_date" id="employee_status_date" class="form-control" value="-" readonly >
+					<input type="text" autocomplete="off"  name="employee_status_date" id="employee_status_date" class="form-control" value="-" readonly >
 				</div>
 			</div>
 		</div>
@@ -739,7 +739,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Status Count</label>
-					<input type="text" name="employee_status_count" id="employee_status_count" class="form-control" value="0" readonly >
+					<input type="text" autocomplete="off"  name="employee_status_count" id="employee_status_count" class="form-control" value="0" readonly >
 				</div>
 			</div>
 		</div>
@@ -747,7 +747,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Status Due Date</label>
-					<input type="text" name="employee_status_due_date" id="employee_status_due_date" class="form-control" value="-" readonly >
+					<input type="text" autocomplete="off"  name="employee_status_due_date" id="employee_status_due_date" class="form-control" value="-" readonly >
 				</div>
 			</div>
 		</div>
@@ -755,7 +755,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Working Status</label>
-					<input type="text" name="employee_working_status" id="employee_working_status" class="form-control" value="Monthly" readonly >
+					<input type="text" autocomplete="off"  name="employee_working_status" id="employee_working_status" class="form-control" value="Monthly" readonly >
 				</div>
 			</div>
 		</div>
@@ -763,7 +763,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Overtime Status</label>
-					<input type="text" name="employee_overtime_status" id="employee_overtime_status" class="form-control" value="Automatic" readonly >
+					<input type="text" autocomplete="off"  name="employee_overtime_status" id="employee_overtime_status" class="form-control" value="Automatic" readonly >
 				</div>
 			</div>
 		</div>
@@ -771,7 +771,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-6">Has Leave Permission</label>
-					<input type="text" name="has_leave_permission" id="has_leave_permission" class="form-control" value="No" readonly >
+					<input type="text" autocomplete="off"  name="has_leave_permission" id="has_leave_permission" class="form-control" value="No" readonly >
 				</div>
 			</div>
 		</div>
@@ -785,7 +785,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Region</label>
-					<input type="text" name="region_id" id="region_id" class="form-control" value="Bekonang" readonly>
+					<input type="text" autocomplete="off"  name="region_id" id="region_id" class="form-control" value="Bekonang" readonly>
 				</div>
 			</div>
 		</div>
@@ -793,7 +793,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Branch:</label>
-					<input type="text" name="branch_id" id="branch_id" class="form-control" value="Santren" readonly >
+					<input type="text" autocomplete="off"  name="branch_id" id="branch_id" class="form-control" value="Santren" readonly >
 				</div>
 			</div>
 		</div>
@@ -801,7 +801,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Division:</label>
-					<input type="text" name="division_id" id="division_id" class="form-control" value="Finance" readonly >
+					<input type="text" autocomplete="off"  name="division_id" id="division_id" class="form-control" value="Finance" readonly >
 				</div>
 			</div>
 		</div>
@@ -809,7 +809,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Department:</label>
-					<input type="text" name="department_id" id="department_id" class="form-control" value="Telemarketing" readonly >
+					<input type="text" autocomplete="off"  name="department_id" id="department_id" class="form-control" value="Telemarketing" readonly >
 				</div>
 			</div>
 		</div>
@@ -817,7 +817,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Section:</label>
-					<input type="text" name="section_id" id="section_id" class="form-control" value="Kanvas" readonly >
+					<input type="text" autocomplete="off"  name="section_id" id="section_id" class="form-control" value="Kanvas" readonly >
 				</div>
 			</div>
 		</div>
@@ -825,7 +825,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Job Title:</label>
-					<input type="text" name="job_title_id" id="job_title_id" class="form-control" value="Executor" readonly >
+					<input type="text" autocomplete="off"  name="job_title_id" id="job_title_id" class="form-control" value="Executor" readonly >
 				</div>
 			</div>
 		</div>
@@ -833,7 +833,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Grade:</label>
-					<input type="text" name="grade_id" id="grade_id" class="form-control" value="Premium" readonly >
+					<input type="text" autocomplete="off"  name="grade_id" id="grade_id" class="form-control" value="Premium" readonly >
 				</div>
 			</div>
 		</div>
@@ -841,7 +841,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Class:</label>
-					<input type="text" name="class_id" id="class_id" class="form-control" value="Class1" readonly >
+					<input type="text" autocomplete="off"  name="class_id" id="class_id" class="form-control" value="Class1" readonly >
 				</div>
 			</div>
 		</div>
@@ -849,7 +849,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Location:</label>
-					<input type="text" name="location_id" id="location_id" class="form-control" value="Solo" readonly >
+					<input type="text" autocomplete="off"  name="location_id" id="location_id" class="form-control" value="Solo" readonly >
 				</div>
 			</div>
 		</div>
@@ -857,7 +857,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label col-md-3">Shift:</label>
-					<input type="text" name="shift_id" id="shift_id" class="form-control" value="Shift Pagi" readonly >
+					<input type="text" autocomplete="off"  name="shift_id" id="shift_id" class="form-control" value="Shift Pagi" readonly >
 				</div>
 			</div>
 		</div>
@@ -900,7 +900,7 @@ function setselectedtab(value) {
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Leave Period</label>
-				<input type="text" name="employee_leave_period" id="employee_leave_period" value="" class="form-control">
+				<input type="text" autocomplete="off"  name="employee_leave_period" id="employee_leave_period" value="" class="form-control">
 			</div>
 		</div>
 	</div>-->
@@ -1068,7 +1068,7 @@ function setselectedtab(value) {
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Leave Period</label>
-				<input type="text" name="employee_leave_period" id="employee_leave_period" value="" class="form-control">
+				<input type="text" autocomplete="off"  name="employee_leave_period" id="employee_leave_period" value="" class="form-control">
 			</div>
 		</div>
 	</div>-->
@@ -1223,7 +1223,7 @@ function setselectedtab(value) {
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Leave Period</label>
-				<input type="text" name="employee_leave_period" id="employee_leave_period" value="" class="form-control">
+				<input type="text" autocomplete="off"  name="employee_leave_period" id="employee_leave_period" value="" class="form-control">
 			</div>
 		</div>
 	</div>-->
@@ -1355,7 +1355,7 @@ function setselectedtab(value) {
 				<div class="col-md-12">
 					<div class="form-group">
 						<label class="control-label">Employee Code</label>
-						<input type="text" name="employee_code" id="employee_code" value="Tifa" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_code" id="employee_code" value="Tifa" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1364,14 +1364,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Employee Name<span class="required">*</span></label>
-						<input type="text" name="employee_name" id="employee_name" value="Tifa" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="Tifa" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Nick Name</label>
-						<input type="text" name="employee_nick_name" id="employee_nick_name" value="Tifa" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_nick_name" id="employee_nick_name" value="Tifa" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1381,7 +1381,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Gender</label>
-						<input type="text" name="employee_gender" id="employee_gender" value="Female" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_gender" id="employee_gender" value="Female" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1398,14 +1398,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Place Of Birth</label>
-						<input type="text" name="place_of_birth" id="place_of_birth" value="Jakarta" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="place_of_birth" id="place_of_birth" value="Jakarta" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Religion</label>
-						<input type="text" name="employee_religion" id="employee_religion" value="Christian" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_religion" id="employee_religion" value="Christian" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1415,7 +1415,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Blood Type</label>
-						<input type="text" name="employee_blood_type" id="employee_blood_type" value="O" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_blood_type" id="employee_blood_type" value="O" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1432,7 +1432,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Marital Status</label>
-							<input type="text" name="marital_status_id" id="marital_status_id" value="asdfg" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="marital_status_id" id="marital_status_id" value="asdfg" class="form-control" readonly>
 
 					</div>
 				</div>
@@ -1440,7 +1440,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Heir Name</label>
-						<input type="text" name="employee_heir_name" id="employee_heir_name" value="George" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_heir_name" id="employee_heir_name" value="George" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1450,7 +1450,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label">Heir Occupation</label>
-						<input type="text" name="employee_heir_occupation" id="employee_heir_occupation" value="SPV" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_heir_occupation" id="employee_heir_occupation" value="SPV" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1461,7 +1461,7 @@ function setselectedtab(value) {
 				<div class="col-md-12 ">
 					<div class="form-group">
 						<label>Address</label>
-						<input type="text" name="employee_address" id="employee_address" value="Purwasari" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_address" id="employee_address" value="Purwasari" class="form-control" readonly>
 					</div>
 				</div>
 			</div>
@@ -1469,14 +1469,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>City</label>
-						<input type="text" name="employee_city" id="employee_city" value="Solo" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_city" id="employee_city" value="Solo" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Zip Code</label>
-						<input type="text" name="employee_zip_code" id="employee_zip_code" value="57134" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_zip_code" id="employee_zip_code" value="57134" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1486,14 +1486,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>RT</label>
-						<input type="text" name="employee_rt" id="employee_rt" value="01" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_rt" id="employee_rt" value="01" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Kelurahan</label>
-						<input type="text" name="employee_kelurahan" id="employee_kelurahan" value="Purwasari" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_kelurahan" id="employee_kelurahan" value="Purwasari" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1502,14 +1502,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>RW</label>
-						<input type="text" name="employee_rw" id="employee_rw" value="03" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_rw" id="employee_rw" value="03" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Kecamatan</label>
-						<input type="text" name="employee_kecamatan" id="employee_kecamatan" value="Laweyan" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_kecamatan" id="employee_kecamatan" value="Laweyan" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1519,14 +1519,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Home Phone</label>
-						<input type="text" name="employee_home_phone" id="employee_home_phone" value="023923092" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_home_phone" id="employee_home_phone" value="023923092" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Mobile Phone</label>
-						<input type="text" name="employee_mobile_phone" id="employee_mobile_phone" value="3203239" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_mobile_phone" id="employee_mobile_phone" value="3203239" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1535,7 +1535,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Email</label>
-						<input type="text" name="employee_email_address" id="employee_email_address" value="tifa@tifa.com" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_email_address" id="employee_email_address" value="tifa@tifa.com" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1545,7 +1545,7 @@ function setselectedtab(value) {
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>Residence ID</label>
-						<input type="text" name="employee_id_number" id="employee_id_number" value="83830382038939" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_id_number" id="employee_id_number" value="83830382038939" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1554,7 +1554,7 @@ function setselectedtab(value) {
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>Residence Address</label>
-						<input type="text" name="employee_residence_address" id="employee_residence_address" value="Purwasari" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_address" id="employee_residence_address" value="Purwasari" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1563,14 +1563,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Residence City</label>
-						<input type="text" name="employee_residence_city" id="employee_residence_city" value="Solo" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_city" id="employee_residence_city" value="Solo" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Residence Zip Code</label>
-						<input type="text" name="employee_residence_zip_code" id="employee_residence_zip_code" value="32321" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_zip_code" id="employee_residence_zip_code" value="32321" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1579,14 +1579,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Residence RT</label>
-						<input type="text" name="employee_residence_rt" id="employee_residence_rt" value="09" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_rt" id="employee_residence_rt" value="09" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Residence Kelurahan</label>
-						<input type="text" name="employee_residence_kelurahan" id="employee_residence_kelurahan" value="Purwasari" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_kelurahan" id="employee_residence_kelurahan" value="Purwasari" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1595,14 +1595,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Residence RW</label>
-						<input type="text" name="employee_residence_rw" id="employee_residence_rw" value="09" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_rw" id="employee_residence_rw" value="09" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Residence Kecamatan</label>
-						<input type="text" name="employee_residence_kecamatan" id="employee_residence_kecamatan" value="Laweyan" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_residence_kecamatan" id="employee_residence_kecamatan" value="Laweyan" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1612,14 +1612,14 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Driving License A</label>
-						<input type="text" name="employee_driving_licenseA" id="employee_driving_licenseA" value="y" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_driving_licenseA" id="employee_driving_licenseA" value="y" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Driving License B</label>
-						<input type="text" name="employee_driving_licenseB" id="employee_driving_licenseB" value="y" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_driving_licenseB" id="employee_driving_licenseB" value="y" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1628,7 +1628,7 @@ function setselectedtab(value) {
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Driving License B1</label>
-						<input type="text" name="employee_driving_licenseB1" id="employee_driving_licenseB1" value="n" class="form-control" readonly>
+						<input type="text" autocomplete="off"  name="employee_driving_licenseB1" id="employee_driving_licenseB1" value="n" class="form-control" readonly>
 					</div>
 				</div>
 				<!--/span-->
@@ -1670,7 +1670,7 @@ function setselectedtab(value) {
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Family Name</label>
-				<input type="text" name="employee_family_name" id="employee_family_name" value="" class="form-control" placeholder="Company Name">
+				<input type="text" autocomplete="off"  name="employee_family_name" id="employee_family_name" value="" class="form-control" placeholder="Company Name">
 			</div>
 		</div>
 	</div>			
@@ -1793,14 +1793,14 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Bank Name</label>
-					<input type="text" name="employee_bank_name" id="employee_bank_name" class="form-control" placeholder="Bank Name" value="BNI" readonly>
+					<input type="text" autocomplete="off"  name="employee_bank_name" id="employee_bank_name" class="form-control" placeholder="Bank Name" value="BNI" readonly>
 				</div>
 			</div>
 			<!--/span-->
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Account Number</label>
-					<input type="text" name="employee_bank_acct_no" id="employee_bank_acct_no" class="form-control" placeholder="Account Number"  value="0390239" readonly>
+					<input type="text" autocomplete="off"  name="employee_bank_acct_no" id="employee_bank_acct_no" class="form-control" placeholder="Account Number"  value="0390239" readonly>
 				</div>
 			</div>
 			<!--/span-->
@@ -1809,7 +1809,7 @@ function setselectedtab(value) {
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Account Name</label>
-					<input type="text" name="employee_bank_acct_name" id="employee_bank_acct_name" class="form-control" placeholder="Account Name"  value="Tifa" readonly>
+					<input type="text" autocomplete="off"  name="employee_bank_acct_name" id="employee_bank_acct_name" class="form-control" placeholder="Account Name"  value="Tifa" readonly>
 				</div>
 			</div>
 			<!--/span-->
@@ -2726,7 +2726,7 @@ function setselectedtab(value) {
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Employee Expertise Name</label>
-				<input type="text" name="employee_expertise_name" id="employee_expertise_name" value="" class="form-control" placeholder="Employee Expertise Name">
+				<input type="text" autocomplete="off"  name="employee_expertise_name" id="employee_expertise_name" value="" class="form-control" placeholder="Employee Expertise Name">
 			</div>
 		</div>
 	</div>		
@@ -2914,7 +2914,7 @@ function setselectedtab(value) {
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Company Name</label>
-				<input type="text" name="company_name" id="company_name" value="" class="form-control" placeholder="Company Name">
+				<input type="text" autocomplete="off"  name="company_name" id="company_name" value="" class="form-control" placeholder="Company Name">
 			</div>
 		</div>
 	</div>		
@@ -3029,7 +3029,7 @@ function setselectedtab(value) {
 					<div class="row">
 						<div class="col-md-12">
 							<label class="control-label">Employee Name</label>
-							<input type="text" name="filter_employee_name" id="filter_employee_name" class="form-control" placeholder="Name" value="">
+							<input type="text" autocomplete="off"  name="filter_employee_name" id="filter_employee_name" class="form-control" placeholder="Name" value="">
 						</div>
 					</div>
 				<div class="modal-footer">

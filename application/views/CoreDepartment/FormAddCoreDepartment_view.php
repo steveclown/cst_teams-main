@@ -84,7 +84,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="department_code" id="department_code" value="<?php echo $data['department_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="department_code" id="department_code" value="<?php echo $data['department_code']?>" class="form-control">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -97,7 +97,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="department_name" id="department_name" value="<?php echo $data['department_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="department_name" id="department_name" value="<?php echo $data['department_name']?>" class="form-control">
 												<input type="hidden" name="department_token" id="department_token" class="form-control" value="<?php echo $department_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Departemen
 													<span class="required">

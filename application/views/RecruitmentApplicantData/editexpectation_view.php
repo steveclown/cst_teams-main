@@ -40,13 +40,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_application_position" name="applicant_application_position" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_application_position'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_application_position" name="applicant_application_position" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_application_position'];?>">
 			<label>Application Position</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_expected_salary" name="applicant_expected_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_expected_salary'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_expected_salary" name="applicant_expected_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_expected_salary'];?>">
 			<label>Expected Salary</label>
 		</div>
 	</div>
@@ -134,7 +134,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_working_environment_other" name="applicant_working_environment_other" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_working_environment_other'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_working_environment_other" name="applicant_working_environment_other" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_working_environment_other'];?>">
 			<label>Working Environment Other </label>
 		</div>
 	</div>
@@ -142,13 +142,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_working_like" name="applicant_working_like" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_working_like'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_working_like" name="applicant_working_like" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_working_like'];?>">
 			<label>Most Favorit Job</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_working_dislike" name="applicant_working_dislike" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_working_dislike'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_working_dislike" name="applicant_working_dislike" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_working_dislike'];?>">
 			<label>Most Unpopular Job </label>
 		</div>
 	</div>

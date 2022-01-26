@@ -78,7 +78,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_name" name="applicant_family_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_name" name="applicant_family_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_name'];?>">
 			<label for = "form-control">Family Name</label>
 		</div>
 	</div>
@@ -95,7 +95,7 @@
 	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_age" name="applicant_family_age" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_age'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_age" name="applicant_family_age" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_age'];?>">
 			<label for = "form-control">Family Age</label>
 		</div>
 	</div>
@@ -104,13 +104,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_education" name="applicant_family_education" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_education'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_education" name="applicant_family_education" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_education'];?>" >
 			<label for = "form-control">Education</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_occupation" name="applicant_family_occupation" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_occupation'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_occupation" name="applicant_family_occupation" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_occupation'];?>">
 			<label for = "form-control">Ocupation</label>
 		</div>
 	</div>

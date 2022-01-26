@@ -89,7 +89,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="incentive_code" id="incentive_code" class="form-control" value="<?php echo $data['incentive_code']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="incentive_code" id="incentive_code" class="form-control" value="<?php echo $data['incentive_code']?>" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Mohon diisi karakter huruf dan angka.
 												</span>
@@ -102,7 +102,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="incentive_name" id="incentive_name" class="form-control" value="<?php echo $data['incentive_name']?>" onChange="function_elements_add(this.name, this.value);" >
+												<input type="text" autocomplete="off"  name="incentive_name" id="incentive_name" class="form-control" value="<?php echo $data['incentive_name']?>" onChange="function_elements_add(this.name, this.value);" >
 												<label class="control-label">Nama Insentif</label>
 											</div>
 										</div>
@@ -111,7 +111,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="incentive_amount" id="incentive_amount" class="form-control" value="<?php echo $data['incentive_amount']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="incentive_amount" id="incentive_amount" class="form-control" value="<?php echo $data['incentive_amount']?>" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 mohon hanya diisi dengan angka.
 												</span>

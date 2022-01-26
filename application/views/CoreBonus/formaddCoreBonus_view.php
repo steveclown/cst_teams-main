@@ -110,7 +110,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="bonus_code" id="bonus_code" onChange="warningbonuscode(bonus_code); function_elements_add(this.name, this.value);" value="<?php echo set_value('bonus_code',$data['bonus_code']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="bonus_code" id="bonus_code" onChange="warningbonuscode(bonus_code); function_elements_add(this.name, this.value);" value="<?php echo set_value('bonus_code',$data['bonus_code']);?>"/>
 								<span class="help-block">
 									 Diisi karakter huruf dan angka
 								</span>
@@ -119,7 +119,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="bonus_name" id="bonus_name" onChange="warningbonusname(bonus_name); function_elements_add(this.name, this.value);" value="<?php echo set_value('bonus_name',$data['bonus_name']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="bonus_name" id="bonus_name" onChange="warningbonusname(bonus_name); function_elements_add(this.name, this.value);" value="<?php echo set_value('bonus_name',$data['bonus_name']);?>"/>
 								<label class="control-label">Nama Bonus<span class="required">*</span></label>
 							</div>
 						</div>

@@ -124,7 +124,7 @@
 
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_appraisal_detail_value" name="employee_appraisal_detail_value" onChange="function_elements_add_detail(this.name, this.value);" value="<?php echo $dataappraisaldetail['employee_appraisal_detail_value'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_appraisal_detail_value" name="employee_appraisal_detail_value" onChange="function_elements_add_detail(this.name, this.value);" value="<?php echo $dataappraisaldetail['employee_appraisal_detail_value'];?>">
 			<label>Appraisal Value</label>
 		</div>
 	</div>

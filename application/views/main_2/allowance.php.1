@@ -96,7 +96,7 @@ $.ajax({
 					<div class="row">
 						<div class="col-md-6">
 							<label class="control-label">Amount</label><span class="required">*</span></label>
-							<input type="text" name="employee_allowance_amount" id="employee_allowance_amount" value="<?php echo $EmployeeAllowanceData['employee_allowance_amount'];?>" class="form-control">							
+							<input type="text" autocomplete="off"  name="employee_allowance_amount" id="employee_allowance_amount" value="<?php echo $EmployeeAllowanceData['employee_allowance_amount'];?>" class="form-control">							
 						</div>
 					</div>
 					<div class="row">
@@ -164,7 +164,7 @@ echo form_close();
 					<div class="row">
 						<div class="col-md-6">
 							<label class="control-label">Allowance Amount</label><span class="required">*</span></label>
-							<input type="text" name="insert_employee_allowance_amount" id="insert_employee_allowance_amount" value="<?php echo $EmployeeAllowanceData['insert_employee_allowance_amount'];?>" class="form-control">
+							<input type="text" autocomplete="off"  name="insert_employee_allowance_amount" id="insert_employee_allowance_amount" value="<?php echo $EmployeeAllowanceData['insert_employee_allowance_amount'];?>" class="form-control">
 							<span class="help-block">
 								Please input only numbers.
 							</span>

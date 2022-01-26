@@ -79,7 +79,7 @@
 											<label class="col-md-3 control-label">Status Alteration Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="status_alteration_date" id="status_alteration_date" value="<?php echo tgltoview($result['status_alteration_date'])?>" class="form-control" placeholder="Status Alteration Date" readonly>
+													<input type="text" autocomplete="off"  name="status_alteration_date" id="status_alteration_date" value="<?php echo tgltoview($result['status_alteration_date'])?>" class="form-control" placeholder="Status Alteration Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -101,7 +101,7 @@
 											<label class="col-md-3 control-label">Status Alteration Due Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="status_alteration_due_date" id="status_alteration_due_date" value="<?php echo tgltoview($result['status_alteration_due_date'])?>" class="form-control" placeholder="Status Alteration Due Date" readonly>
+													<input type="text" autocomplete="off"  name="status_alteration_due_date" id="status_alteration_due_date" value="<?php echo tgltoview($result['status_alteration_due_date'])?>" class="form-control" placeholder="Status Alteration Due Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

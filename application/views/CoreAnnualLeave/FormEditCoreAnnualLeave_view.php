@@ -60,7 +60,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_code" id="annual_leave_code" value="<?php echo $coreannualleave['annual_leave_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="annual_leave_code" id="annual_leave_code" value="<?php echo $coreannualleave['annual_leave_code']?>" class="form-control">
 												<span class="help-block">
 													Please input only alpha-numerical characters.
 												</span>
@@ -74,7 +74,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_name" id="annual_leave_name" value="<?php echo $coreannualleave['annual_leave_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="annual_leave_name" id="annual_leave_name" value="<?php echo $coreannualleave['annual_leave_name']?>" class="form-control">
 												<label class="control-label">Nama Cuti tahunan</label>
 											</div>
 										</div>
@@ -83,7 +83,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="annual_leave_days" id="annual_leave_days" value="<?php echo $coreannualleave['annual_leave_days']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="annual_leave_days" id="annual_leave_days" value="<?php echo $coreannualleave['annual_leave_days']?>" class="form-control" >
 												<span class="help-block">
 													Please input only numbers.
 												</span>

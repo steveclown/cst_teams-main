@@ -85,7 +85,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="section_code" id="section_code" value="<?php echo $data['section_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="section_code" id="section_code" value="<?php echo $data['section_code']?>" class="form-control">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -98,7 +98,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="section_name" id="section_name" value="<?php echo $data['section_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="section_name" id="section_name" value="<?php echo $data['section_name']?>" class="form-control">
 												<input type="hidden" name="section_token" id="section_token" class="form-control" value="<?php echo $section_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Bagian
 													<span class="required">

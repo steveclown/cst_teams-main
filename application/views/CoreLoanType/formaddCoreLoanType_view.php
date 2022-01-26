@@ -80,7 +80,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="loan_type_code" id="asset_code" value="<?php echo set_value('loan_type_code',$data['loan_type_code']);?>" onChange="function_elements_add(this.name, this.value);"/>
+												<input type="text" autocomplete="off"  class="form-control" name="loan_type_code" id="asset_code" value="<?php echo set_value('loan_type_code',$data['loan_type_code']);?>" onChange="function_elements_add(this.name, this.value);"/>
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -93,7 +93,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="loan_type_name" id="loan_type_name" value="<?php echo set_value('loan_type_name',$data['loan_type_name']);?>" onChange="function_elements_add(this.name, this.value);"/>
+												<input type="text" autocomplete="off"  class="form-control" name="loan_type_name" id="loan_type_name" value="<?php echo set_value('loan_type_name',$data['loan_type_name']);?>" onChange="function_elements_add(this.name, this.value);"/>
 												<label class="control-label">Nama Tipe pinjaman
 													<span class="required">
 														*

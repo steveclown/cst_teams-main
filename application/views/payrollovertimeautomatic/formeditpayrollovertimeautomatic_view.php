@@ -149,7 +149,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="overtime_automatic_duration" id="overtime_automatic_duration" value="<?php echo $payrollovertimeautomatic_data[overtime_automatic_duration];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="overtime_automatic_duration" id="overtime_automatic_duration" value="<?php echo $payrollovertimeautomatic_data[overtime_automatic_duration];?>" class="form-control">
 								<label class="control-label">Duration
 									<span class="required">
 										*

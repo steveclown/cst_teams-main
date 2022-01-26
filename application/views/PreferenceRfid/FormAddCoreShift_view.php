@@ -132,7 +132,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="shift_code" id="shift_code" value="<?php if($data['shift_code'] != '') { echo set_value('shift_code',$data['shift_code']); } ?>"  class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="shift_code" id="shift_code" value="<?php if($data['shift_code'] != '') { echo set_value('shift_code',$data['shift_code']); } ?>"  class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<input type="hidden" name="shift_token" id="shift_token" value="<?php echo $token; ?>"  class="form-control" onChange="function_elements_add(this.name, this.value);">
 
 								<label class="control-label">Kode Kelas
@@ -142,7 +142,7 @@
 					
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="shift_name" id="shift_name" value="<?php echo $data['shift_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="shift_name" id="shift_name" value="<?php echo $data['shift_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 
 								<input class="form-control" type="hidden" name="shift_token" id="shift_token" value="<?php echo $token;?>"/>
 
@@ -156,9 +156,9 @@
 						<div class="col-md-6">							
 							<div class="form-group form-md-line-input">												
 								
-								<input type="text" class="form-control timepicker timepicker-24" name="shift_start_hour" id="shift_start_hour" value="<?php echo date('h:i'); ?>" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="shift_start_hour" id="shift_start_hour" value="<?php echo date('h:i'); ?>" onChange="function_elements_add(this.name, this.value);">
 								
-								<!-- <input type="text" name="shift_start_hour" id="shift_start_hour" placeholder="09:15" class="form-control" onChange="function_elements_add(this.name, this.value);"> -->
+								<!-- <input type="text" autocomplete="off"  name="shift_start_hour" id="shift_start_hour" placeholder="09:15" class="form-control" onChange="function_elements_add(this.name, this.value);"> -->
 
 								<label class="control-label">Jam Mulai
 									<span class="required">
@@ -171,7 +171,7 @@
 						<div class="col-md-6">							
 							<div class="form-group form-md-line-input">
 								
-								<input type="text" class="form-control timepicker timepicker-24" name="shift_end_hour" id="shift_end_hour" value="<?php echo date('h:i'); ?>" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="shift_end_hour" id="shift_end_hour" value="<?php echo date('h:i'); ?>" onChange="function_elements_add(this.name, this.value);">
 																		
 								<label class="control-label">Jam Selesai
 									<span class="required">
@@ -185,7 +185,7 @@
 						<div class="col-md-6">							
 							<div class="form-group form-md-line-input">												
 								
-								<input type="text" class="form-control timepicker timepicker-24" name="shift_rest_start_hour" id="shift_rest_start_hour" value="<?php echo date('h:i:s'); ?>" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="shift_rest_start_hour" id="shift_rest_start_hour" value="<?php echo date('h:i:s'); ?>" onChange="function_elements_add(this.name, this.value);">
 
 								<label class="control-label">Jam Istirahat Mulai
 									<span class="required">
@@ -198,7 +198,7 @@
 						<div class="col-md-6">							
 							<div class="form-group form-md-line-input">
 								
-								<input type="text" class="form-control timepicker timepicker-24" name="shift_rest_end_hour" id="shift_rest_end_hour" value="<?php echo date('h:i:s'); ?>" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  class="form-control timepicker timepicker-24" name="shift_rest_end_hour" id="shift_rest_end_hour" value="<?php echo date('h:i:s'); ?>" onChange="function_elements_add(this.name, this.value);">
 																		
 								<label class="control-label">Jam Istirahat Selesai
 									<span class="required">

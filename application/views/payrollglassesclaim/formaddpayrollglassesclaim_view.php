@@ -125,14 +125,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->payrollglassesclaim_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->payrollglassesclaim_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -141,14 +141,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->payrollglassesclaim_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->payrollglassesclaim_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->payrollglassesclaim_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->payrollglassesclaim_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -194,7 +194,7 @@
 					<div class = "row">
 						<div class = "col-md-12">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="glasses_claim_description" id="glasses_claim_description" value="<?php echo $data[glasses_claim_description];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="glasses_claim_description" id="glasses_claim_description" value="<?php echo $data[glasses_claim_description];?>" class="form-control">
 								<label class="control-label">Glasses Claim Description
 									<span class="required">
 										*
@@ -218,7 +218,7 @@
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="glasses_claim_opening_balance_view" id="glasses_claim_opening_balance_view" value="<?php echo nominal($data[glasses_coverage_last_balance]);?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="glasses_claim_opening_balance_view" id="glasses_claim_opening_balance_view" value="<?php echo nominal($data[glasses_coverage_last_balance]);?>" class="form-control" readonly>
 								<input type="hidden" name="glasses_claim_opening_balance" id="glasses_claim_opening_balance" value="<?php echo $data[glasses_coverage_last_balance];?>" class="form-control" placeholder="Opening Balance" readonly>
 								<label class="control-label">Opening Balance</label>
 							</div>
@@ -228,7 +228,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="glasses_claim_amount_view" id="glasses_claim_amount_view" value="<?php echo $data['glasses_claim_amount_view'];?>" class="form-control" onchange="calculateGlassesClaimAmount(this.value)">
+								<input type="text" autocomplete="off"  name="glasses_claim_amount_view" id="glasses_claim_amount_view" value="<?php echo $data['glasses_claim_amount_view'];?>" class="form-control" onchange="calculateGlassesClaimAmount(this.value)">
 								<input type="hidden" name="glasses_claim_amount" id="glasses_claim_amount" value="<?php echo $data['glasses_claim_amount'];?>" class="form-control">
 								<span class="help-block">
 									 Please input only numbers.
@@ -239,7 +239,7 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="glasses_claim_last_balance_view" id="glasses_claim_last_balance_view" value="<?php echo nominal($data[glasses_coverage_last_balance]);?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="glasses_claim_last_balance_view" id="glasses_claim_last_balance_view" value="<?php echo nominal($data[glasses_coverage_last_balance]);?>" class="form-control" readonly>
 								<input type="hidden" name="glasses_claim_last_balance" id="glasses_claim_last_balance" value="<?php echo $data[glasses_coverage_last_balance];?>" class="form-control" placeholder="Last Balance">
 								<label class="control-label">Last Balance</label>
 							</div>

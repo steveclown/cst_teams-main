@@ -75,7 +75,7 @@
 <?php
 	$unique			= $this->session->userdata('unique');
 	$auth			= $this->session->userdata('auth');
-	$data_family 	= $this->session->userdata('addrecruitmentapplicantfamily-'.$unique['unique']);	
+	$data_family 	= $this->session->userdata('addRecruitmentApplicantFamily-'.$unique['unique']);	
 
 	if($data_family['applicant_family_date_of_birth'] == '' || empty($data_family['applicant_family_date_of_birth'])){
 		$data_family['applicant_family_date_of_birth'] = date("Y-m-d");
@@ -147,7 +147,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_name" name="applicant_family_name" onChange="function_elements_add_family(this.name, this.value);" value="<?php echo $data_family['applicant_family_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_name" name="applicant_family_name" onChange="function_elements_add_family(this.name, this.value);" value="<?php echo $data_family['applicant_family_name'];?>">
 			<label for = "form-control">Nama Keluarga</label>
 		</div>
 	</div>
@@ -165,14 +165,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_city" id="applicant_family_city" value="<?php echo $data_family['applicant_family_city']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_city" id="applicant_family_city" value="<?php echo $data_family['applicant_family_city']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">Kota</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_postal_code" id="applicant_family_postal_code" value="<?php echo $data_family['applicant_family_postal_code']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_postal_code" id="applicant_family_postal_code" value="<?php echo $data_family['applicant_family_postal_code']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">Kode Pos</label>
 		</div>
 	</div>
@@ -181,14 +181,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_rt" id="applicant_family_rt" value="<?php echo $data_family['applicant_family_rt']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_rt" id="applicant_family_rt" value="<?php echo $data_family['applicant_family_rt']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">RT</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_rw" id="applicant_family_rw" value="<?php echo $data_family['applicant_family_rw']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_rw" id="applicant_family_rw" value="<?php echo $data_family['applicant_family_rw']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">RW</label>
 		</div>
 	</div>
@@ -197,14 +197,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_kelurahan" id="applicant_family_kelurahan" value="<?php echo $data_family['applicant_family_kelurahan']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_kelurahan" id="applicant_family_kelurahan" value="<?php echo $data_family['applicant_family_kelurahan']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">Kelurahan</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_kecamatan" id="applicant_family_kecamatan" value="<?php echo $data_family['applicant_family_kecamatan']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_kecamatan" id="applicant_family_kecamatan" value="<?php echo $data_family['applicant_family_kecamatan']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">Kecamatan</label>
 		</div>
 	</div>
@@ -213,14 +213,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_home_phone" id="applicant_family_home_phone" value="<?php echo $data_family['applicant_family_home_phone']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_home_phone" id="applicant_family_home_phone" value="<?php echo $data_family['applicant_family_home_phone']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">Telp Rumah</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_mobile_phone" id="applicant_family_mobile_phone" value="<?php echo $data_family['applicant_family_mobile_phone']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="applicant_family_mobile_phone" id="applicant_family_mobile_phone" value="<?php echo $data_family['applicant_family_mobile_phone']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);">
 			<label class="control-label">No HP</label>
 		</div>
 	</div>
@@ -260,7 +260,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="applicant_family_place_of_birth" id="applicant_family_place_of_birth" value="<?php echo $data_family['applicant_family_place_of_birth']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);" >
+			<input type="text" autocomplete="off"  name="applicant_family_place_of_birth" id="applicant_family_place_of_birth" value="<?php echo $data_family['applicant_family_place_of_birth']?>" class="form-control" onChange="function_elements_add_family(this.name, this.value);" >
 			<label class="control-label">Tempat Lahir</label>
 		</div>
 	</div>
@@ -269,13 +269,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_education" name="applicant_family_education" onChange="function_elements_add_family(this.name, this.value);" value="<?php echo $data_family['applicant_family_education'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_education" name="applicant_family_education" onChange="function_elements_add_family(this.name, this.value);" value="<?php echo $data_family['applicant_family_education'];?>" >
 			<label for = "form-control">Pendidikan</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_family_occupation" name="applicant_family_occupation" onChange="function_elements_add_family(this.name, this.value);" value="<?php echo $data_family['applicant_family_occupation'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_occupation" name="applicant_family_occupation" onChange="function_elements_add_family(this.name, this.value);" value="<?php echo $data_family['applicant_family_occupation'];?>">
 			<label for = "form-control">Pekerjaan</label>
 		</div>
 	</div>
@@ -302,7 +302,7 @@
 
 <?php 
 	$unique 					= $this->session->userdata('unique');
-	$recruitmentapplicantfamily	= $this->session->userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
+	$recruitmentapplicantfamily	= $this->session->userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
 ?>
 <div class="row">
 				<div class="col-md-12">

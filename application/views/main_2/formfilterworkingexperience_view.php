@@ -65,7 +65,7 @@
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="control-label">Company Name</label>
-				<input type="text" name="company_name" id="company_name" value="<?php echo $sesi['company_name']?>" class="form-control" placeholder="Company Name">
+				<input type="text" autocomplete="off"  name="company_name" id="company_name" value="<?php echo $sesi['company_name']?>" class="form-control" placeholder="Company Name">
 			</div>
 		</div>
 	</div>		

@@ -81,7 +81,7 @@ function ulang(){
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="user_group_code" id="user_group_code" class="form-control" value="<?php echo $systemusergroup['user_group_code']?>">
+									<input type="text" autocomplete="off"  name="user_group_code" id="user_group_code" class="form-control" value="<?php echo $systemusergroup['user_group_code']?>">
 									<label class="control-label">
 										User Group Code
 										<span class="required">*</span>
@@ -94,7 +94,7 @@ function ulang(){
 
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="user_group_name" id="user_group_name" class="form-control" value="<?php echo $systemusergroup['user_group_name']?>">
+									<input type="text" autocomplete="off"  name="user_group_name" id="user_group_name" class="form-control" value="<?php echo $systemusergroup['user_group_name']?>">
 									<label class="control-label">
 										User Group Name
 										<span class="required">*</span>

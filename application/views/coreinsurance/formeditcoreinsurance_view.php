@@ -68,7 +68,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_code" id="insurance_code" value="<?php echo $coreinsurance['insurance_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="insurance_code" id="insurance_code" value="<?php echo $coreinsurance['insurance_code']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -82,7 +82,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_name" id="insurance_name" value="<?php echo $coreinsurance['insurance_name']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="insurance_name" id="insurance_name" value="<?php echo $coreinsurance['insurance_name']?>" class="form-control" >
 												<label class="control-label">Insurance Name
 													<span class="required">
 														*
@@ -108,7 +108,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_city" id="insurance_city" value="<?php echo $coreinsurance['insurance_city']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="insurance_city" id="insurance_city" value="<?php echo $coreinsurance['insurance_city']?>" class="form-control">
 												<label class="control-label">Insurance City
 													<span class="required">
 														*
@@ -119,7 +119,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_contact_person" id="insurance_contact_person" value="<?php echo $coreinsurance['insurance_contact_person']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="insurance_contact_person" id="insurance_contact_person" value="<?php echo $coreinsurance['insurance_contact_person']?>" class="form-control">
 												<label class="control-label">Insurance Contact Person
 													<span class="required">
 														*
@@ -132,7 +132,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_home_phone" id="insurance_home_phone" value="<?php echo $coreinsurance['insurance_home_phone']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="insurance_home_phone" id="insurance_home_phone" value="<?php echo $coreinsurance['insurance_home_phone']?>" class="form-control">
 												<label class="control-label">Insurance Home Phone
 													<span class="required">
 														*
@@ -143,7 +143,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_mobile_phone" id="insurance_mobile_phone" value="<?php echo $coreinsurance['insurance_mobile_phone']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="insurance_mobile_phone" id="insurance_mobile_phone" value="<?php echo $coreinsurance['insurance_mobile_phone']?>" class="form-control">
 												<label class="control-label">Insurance Mobile Phone
 													<span class="required">
 														*

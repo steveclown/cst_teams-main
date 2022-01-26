@@ -272,7 +272,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_omzet_target" name="employee_omzet_target" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_target'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_omzet_target" name="employee_omzet_target" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_target'];?>">
 												<label class="control-label">Employee Omzet </label>
 											</div>	
 										</div>

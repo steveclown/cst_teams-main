@@ -68,7 +68,7 @@
 							<div class="form-group">
 								<label class="control-label">Shift Code<span class="required">*</span></label>
 							
-								<input type="text" name="shift_code" id="shift_code" class="form-control" value="<?php echo $data['shift_code']?>" placeholder="Shift Code">
+								<input type="text" autocomplete="off"  name="shift_code" id="shift_code" class="form-control" value="<?php echo $data['shift_code']?>" placeholder="Shift Code">
 								<span class="help-block">
 									Please input only alpha-numerical characters.
 								</span>
@@ -79,7 +79,7 @@
 							<div class="form-group">
 								<label class="control-label">Shift Name<span class="required">*</span></label>
 							
-								<input type="text" name="shift_name" id="shift_name" class="form-control" value="<?php echo $data['shift_name']?>" placeholder="Shift Name">
+								<input type="text" autocomplete="off"  name="shift_name" id="shift_name" class="form-control" value="<?php echo $data['shift_name']?>" placeholder="Shift Name">
 							</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 								<label class="control-label">Start Working Hour<span class="required">*</span></label>
 							
 								<div class="input-group">
-									<input type="text" id="start_working_hour" name="start_working_hour" value="<?php echo $data['start_working_hour'];?>" class="form-control timepicker timepicker-24">
+									<input type="text" autocomplete="off"  id="start_working_hour" name="start_working_hour" value="<?php echo $data['start_working_hour'];?>" class="form-control timepicker timepicker-24">
 									<span class="input-group-btn">
 										<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 									</span>
@@ -103,7 +103,7 @@
 								<label class="control-label">End Working Hour<span class="required">*</span></label>
 							
 								<div class="input-group">
-									<input type="text" id="end_working_hour" name="end_working_hour" value="<?php echo $data['end_working_hour'];?>" class="form-control timepicker timepicker-24">
+									<input type="text" autocomplete="off"  id="end_working_hour" name="end_working_hour" value="<?php echo $data['end_working_hour'];?>" class="form-control timepicker timepicker-24">
 									<span class="input-group-btn">
 										<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 									</span>
@@ -118,7 +118,7 @@
 								<label class="control-label">Start Rest Hour<span class="required">*</span></label>
 							
 								<div class="input-group">
-									<input type="text" id="start_rest_hour" name="start_rest_hour" value="<?php echo $data['start_rest_hour'];?>" class="form-control timepicker timepicker-24">
+									<input type="text" autocomplete="off"  id="start_rest_hour" name="start_rest_hour" value="<?php echo $data['start_rest_hour'];?>" class="form-control timepicker timepicker-24">
 									<span class="input-group-btn">
 										<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 									</span>
@@ -131,7 +131,7 @@
 								<label class="control-label">End Rest Hour<span class="required">*</span></label>
 							
 								<div class="input-group">
-									<input type="text" id="end_rest_hour" name="end_rest_hour" value="<?php echo $data['end_rest_hour'];?>" class="form-control timepicker timepicker-24">
+									<input type="text" autocomplete="off"  id="end_rest_hour" name="end_rest_hour" value="<?php echo $data['end_rest_hour'];?>" class="form-control timepicker timepicker-24">
 									<span class="input-group-btn">
 										<button class="btn default" type="button"><i class="fa fa-clock-o"></i></button>
 									</span>
@@ -145,7 +145,7 @@
 							<div class="form-group">
 								<label class="control-label">Due Time Late<span class="required">*</span></label>
 							
-								<input type="text" name="due_time_late" id="due_time_late" value="<?php echo $data['due_time_late'];?>" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Due Time Late">
+								<input type="text" autocomplete="off"  name="due_time_late" id="due_time_late" value="<?php echo $data['due_time_late'];?>" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Due Time Late">
 							</div>
 						</div>
 					</div>

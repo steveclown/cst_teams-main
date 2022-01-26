@@ -26,7 +26,7 @@
 			<div class="block-fluid">                        
 				<div class="row-form">
 					<div class="span3">Nama Perusahaan:</div>
-					<div class="span9"><input type="text" name="company_name" id="company_name" placeholder="Nama Perusahaan" value="<?php echo $result['company_name'];?>"/></div>
+					<div class="span9"><input type="text" autocomplete="off"  name="company_name" id="company_name" placeholder="Nama Perusahaan" value="<?php echo $result['company_name'];?>"/></div>
 					<div class="clear"></div>
 				</div> 
 				
@@ -38,29 +38,29 @@
 				
 				<div class="row-form">
 					<div class="span3">Kota:</div>
-					<div class="span2"><input type="text" name="company_city" id="company_city" placeholder="Kota" value="<?php echo $result['company_city'];?>"/></div>
+					<div class="span2"><input type="text" autocomplete="off"  name="company_city" id="company_city" placeholder="Kota" value="<?php echo $result['company_city'];?>"/></div>
 					<div class="span1">Negara:</div>
-					<div class="span2"><input type="text" name="company_state" id="company_state" placeholder="Negara" value="<?php echo $result['company_state'];?>"/></div>
+					<div class="span2"><input type="text" autocomplete="off"  name="company_state" id="company_state" placeholder="Negara" value="<?php echo $result['company_state'];?>"/></div>
 					<div class="span1">Kode Pos:</div>
-					<div class="span2"><input type="text" name="company_postal_code" id="company_postal_code" placeholder="Kode Pos" value="<?php echo $result['company_postal_code'];?>"/></div>					
+					<div class="span2"><input type="text" autocomplete="off"  name="company_postal_code" id="company_postal_code" placeholder="Kode Pos" value="<?php echo $result['company_postal_code'];?>"/></div>					
 					<div class="clear"></div>
 				</div>
 				
 				<div class="row-form">
 					<div class="span3">Kontak Perusahaan:</div>
-					<div class="span3"><input type="text" name="company_phone" id="company_phone" placeholder="No. HP/Telp." value="<?php echo $result['company_phone'];?>"/></div>
+					<div class="span3"><input type="text" autocomplete="off"  name="company_phone" id="company_phone" placeholder="No. HP/Telp." value="<?php echo $result['company_phone'];?>"/></div>
 					<div class="clear"></div>
 				</div>
 				
 				<div class="row-form">
 					<div class="span3">Website Perusahaan:</div>
-					<div class="span3"><input type="text" name="company_website" id="company_website" placeholder="No HP/Telp." value="<?php echo $result['company_website'];?>"/></div>
+					<div class="span3"><input type="text" autocomplete="off"  name="company_website" id="company_website" placeholder="No HP/Telp." value="<?php echo $result['company_website'];?>"/></div>
 					<div class="clear"></div>
 				</div>
 				
 				<div class="row-form">
 					<div class="span3">Email Perusahaan:</div>
-					<div class="span9"><input type="text" name="company_email" id="company_email" placeholder="Imel mu beroww,.." value="<?php echo $result['company_email'];?>"/></div>
+					<div class="span9"><input type="text" autocomplete="off"  name="company_email" id="company_email" placeholder="Imel mu beroww,.." value="<?php echo $result['company_email'];?>"/></div>
 					<div class="clear"></div>
 				</div>
 				

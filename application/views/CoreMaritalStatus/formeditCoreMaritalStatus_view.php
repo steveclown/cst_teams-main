@@ -54,7 +54,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="marital_status_code" id="marital_status_code" class="form-control" value="<?php echo $coremaritalstatus['marital_status_code']?>" >
+									<input type="text" autocomplete="off"  name="marital_status_code" id="marital_status_code" class="form-control" value="<?php echo $coremaritalstatus['marital_status_code']?>" >
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -68,7 +68,7 @@
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="marital_status_name" id="marital_status_name" class="form-control" value="<?php echo $coremaritalstatus['marital_status_name']?>">
+									<input type="text" autocomplete="off"  name="marital_status_name" id="marital_status_name" class="form-control" value="<?php echo $coremaritalstatus['marital_status_name']?>">
 									<label class="control-label">Nama Status Pernikahan</label>
 								</div>
 							</div>

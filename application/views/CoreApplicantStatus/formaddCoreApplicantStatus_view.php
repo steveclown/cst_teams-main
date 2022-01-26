@@ -61,7 +61,7 @@
 										<div class = "row">
 											<div class = "col-md-6">
 												<div class="form-group form-md-line-input">
-                                                    <input type="text" class="form-control" name="applicant_status_code" id="applicant_status_code" value="<?php echo $data['applicant_status_code']?>" >
+                                                    <input type="text" autocomplete="off"  class="form-control" name="applicant_status_code" id="applicant_status_code" value="<?php echo $data['applicant_status_code']?>" >
                                                     <label for="form_control">Kode Status Lamaran
                                                         <span class="required">*</span>
                                                     </label>
@@ -71,7 +71,7 @@
 											
 											<div class="col-md-6">
 												<div class="form-group form-md-line-input">
-													<input type="text" class="form-control" name="applicant_status_name" id="applicant_status_name" class="form-control" value="<?php echo $data['applicant_status_name']?>" >
+													<input type="text" autocomplete="off"  class="form-control" name="applicant_status_name" id="applicant_status_name" class="form-control" value="<?php echo $data['applicant_status_name']?>" >
 													<label class="form_control">Nama Status Lamaran</label>
 												</div>
 											</div>

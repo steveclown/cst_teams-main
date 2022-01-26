@@ -98,7 +98,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="late_code" id="late_code" value="<?php echo $corelate['late_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="late_code" id="late_code" value="<?php echo $corelate['late_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -112,7 +112,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="late_name" id="late_name" value="<?php echo $corelate['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="late_name" id="late_name" value="<?php echo $corelate['late_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Terlambat
 													<span class="required">
 														*

@@ -429,7 +429,7 @@ function setselectedtab(value) {
 					<div class="row">
 						<div class="col-md-12">
 							<label class="control-label">Employee Name</label>
-							<input type="text" name="filter_employee_name" id="filter_employee_name" class="form-control" placeholder="Name" value="<?php echo $sesi['filter_employee_name'];?>">
+							<input type="text" autocomplete="off"  name="filter_employee_name" id="filter_employee_name" class="form-control" placeholder="Name" value="<?php echo $sesi['filter_employee_name'];?>">
 						</div>
 					</div>
 				<div class="modal-footer">

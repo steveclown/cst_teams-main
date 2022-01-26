@@ -143,14 +143,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_name" id="division_name" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_name" id="division_name" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 
 								<input type="hidden" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_id']?>" class="form-control" readonly>
@@ -161,7 +161,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_name" id="department_name" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_name" id="department_name" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 
 								<input type="hidden" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_id']?>" class="form-control" readonly>
@@ -170,7 +170,7 @@
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_name" id="section_name" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_name" id="section_name" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 
 								<input type="hidden" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_id']?>" class="form-control" readonly>
@@ -181,7 +181,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="job_title_name" id="job_title_name" value="<?php echo $hroemployeedata['job_title_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="job_title_name" id="job_title_name" value="<?php echo $hroemployeedata['job_title_name']?>" class="form-control" readonly>
 								<label class="control-label">Job Title</label>
 
 								<input type="hidden" name="job_title_id" id="job_title_id" value="<?php echo $hroemployeedata['job_title_id']?>" class="form-control" readonly>
@@ -232,7 +232,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="business_trip_destination" name="business_trip_destination" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['business_trip_destination'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="business_trip_destination" name="business_trip_destination" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['business_trip_destination'];?>">
 												<label class="control-label">Business Trip Destination </label>
 											</div>	
 										</div>
@@ -252,7 +252,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="business_trip_amount" name="business_trip_amount" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['business_trip_amount'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="business_trip_amount" name="business_trip_amount" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['business_trip_amount'];?>">
 												<label class="control-label">Business Trip Amount </label>
 											</div>	
 										</div>

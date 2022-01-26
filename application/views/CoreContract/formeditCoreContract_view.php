@@ -58,7 +58,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="contract_code" id="contract_code" value="<?php echo $corecontract['contract_code'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="contract_code" id="contract_code" value="<?php echo $corecontract['contract_code'];?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -71,7 +71,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="contract_name" id="contract_name" value="<?php echo $corecontract['contract_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="contract_name" id="contract_name" value="<?php echo $corecontract['contract_name'];?>" class="form-control" >
 												
 												<label class="control-label">Contract Name
 													<span class="required">

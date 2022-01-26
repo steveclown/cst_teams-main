@@ -87,14 +87,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -103,14 +103,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -119,14 +119,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_hire_date" id="employee_hire_date" value="<?php echo tgltoview($hroemployeedata['employee_hire_date'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_hire_date" id="employee_hire_date" value="<?php echo tgltoview($hroemployeedata['employee_hire_date'])?>" class="form-control" readonly>
 								<label class="control-label">Hire Date</label>
 							</div>	
 						</div>
 					
 						<!-- <div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->payrollemployeemonthlyspa_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div> -->
@@ -170,7 +170,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_start_date" id="employee_monthly_start_date" value="<?php echo tgltoview($payrollmonthlyperiod['monthly_period_start_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_start_date" id="employee_monthly_start_date" value="<?php echo tgltoview($payrollmonthlyperiod['monthly_period_start_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Start Date
 												</label>
 											</div>
@@ -178,7 +178,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_end_date" id="employee_monthly_end_date" value="<?php echo tgltoview($payrollmonthlyperiod['monthly_period_end_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_end_date" id="employee_monthly_end_date" value="<?php echo tgltoview($payrollmonthlyperiod['monthly_period_end_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">End Date
 												</label>
 											</div>
@@ -189,7 +189,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="bank_name" id="bank_name" value="<?php echo $this->payrollemployeemonthlyspa_model->getBankName($payrollemployeepayment['bank_id'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="bank_name" id="bank_name" value="<?php echo $this->payrollemployeemonthlyspa_model->getBankName($payrollemployeepayment['bank_id'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Bank Name
 												</label>
 											</div>
@@ -197,7 +197,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_bank_acct_no" id="employee_monthly_bank_acct_no" value="<?php echo $payrollemployeepayment['payment_bank_acct_no']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_bank_acct_no" id="employee_monthly_bank_acct_no" value="<?php echo $payrollemployeepayment['payment_bank_acct_no']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Bank Acct No
 												</label>
 											</div>
@@ -207,7 +207,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_bank_acct_name" id="employee_monthly_bank_acct_name" value="<?php echo $payrollemployeepayment['payment_bank_acct_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_bank_acct_name" id="employee_monthly_bank_acct_name" value="<?php echo $payrollemployeepayment['payment_bank_acct_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Bank Acct Name
 												</label>
 											</div>
@@ -217,7 +217,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_basic_salary_view" id="employee_monthly_basic_salary_view" value="<?php echo nominal($payrollemployeepayment['payment_basic_salary'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_basic_salary_view" id="employee_monthly_basic_salary_view" value="<?php echo nominal($payrollemployeepayment['payment_basic_salary'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<input type="hidden" name="employee_monthly_basic_salary" id="employee_monthly_basic_salary" value="<?php echo $payrollemployeepayment['payment_basic_salary']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Basic Salary
 												</label>
@@ -226,7 +226,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_basic_salary_view" id="employee_monthly_basic_salary_view" value="<?php echo nominal($payrollemployeepayment['payment_basic_overtime'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_basic_salary_view" id="employee_monthly_basic_salary_view" value="<?php echo nominal($payrollemployeepayment['payment_basic_overtime'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<input type="hidden" name="employee_monthly_basic_salary" id="employee_monthly_basic_salary" value="<?php echo $payrollemployeepayment['payment_basic_overtime']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Basic Overtime
 												</label>
@@ -237,7 +237,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_bpjs_amount_view" id="employee_monthly_bpjs_amount_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_bpjs_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_bpjs_amount_view" id="employee_monthly_bpjs_amount_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_bpjs_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<input type="hidden" name="employee_monthly_bpjs_amount" id="employee_monthly_bpjs_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_bpjs_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">BPJS Amount
 												</label>
@@ -248,7 +248,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_bpjs_kesehatan_amount_view" id="employee_monthly_bpjs_kesehatan_amount_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_bpjs_kesehatan_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_bpjs_kesehatan_amount_view" id="employee_monthly_bpjs_kesehatan_amount_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_bpjs_kesehatan_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<input type="hidden" name="employee_monthly_bpjs_kesehatan_amount" id="employee_monthly_bpjs_kesehatan_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_bpjs_kesehatan_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">BPJS Kesehatan Amount
 												</label>
@@ -257,7 +257,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_bpjs_tenagakerja_amount_view" id="employee_monthly_bpjs_tenagakerja_amount_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_bpjs_tenagakerja_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_bpjs_tenagakerja_amount_view" id="employee_monthly_bpjs_tenagakerja_amount_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_bpjs_tenagakerja_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<input type="hidden" name="employee_monthly_bpjs_tenagakerja_amount" id="employee_monthly_bpjs_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_bpjs_tenagakerja_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">BPJS Tenaga Kerja Amount
 												</label>
@@ -279,7 +279,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_working_days" id="employee_monthly_working_days" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_working_days']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_working_days" id="employee_monthly_working_days" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_working_days']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Working Days
 													<span class="required">
 														*
@@ -292,7 +292,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_month" id="length_service_month" value="<?php echo $payrollemployeemonthlyspa['length_service_month']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="length_service_month" id="length_service_month" value="<?php echo $payrollemployeemonthlyspa['length_service_month']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Length Service Month
 												</label>
 											</div>
@@ -300,7 +300,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_length_service_amount" id="employee_length_service_amount" value="<?php echo nominal($payrollemployeemonthlyspa['employee_length_service_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_length_service_amount" id="employee_length_service_amount" value="<?php echo nominal($payrollemployeemonthlyspa['employee_length_service_amount'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Length Service Amount
 											</div>
 										</div>
@@ -309,7 +309,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_premi_attendance" id="employee_monthly_premi_attendance" value="<?php echo $payrollemployeemonthlyspa['employee_premi_attendance_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_premi_attendance" id="employee_monthly_premi_attendance" value="<?php echo $payrollemployeemonthlyspa['employee_premi_attendance_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Premi Attendance Amount
 												</label>
 											</div>
@@ -317,7 +317,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_incentive_amount" id="employee_monthly_incentive_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_incentive_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_incentive_amount" id="employee_monthly_incentive_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_incentive_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Incentive Amount
 												</label>
 											</div>
@@ -327,7 +327,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_business_trip_amount" id="employee_monthly_business_trip_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_business_trip_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_business_trip_amount" id="employee_monthly_business_trip_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_business_trip_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Business Trip Amount
 												</label>
 											</div>
@@ -337,7 +337,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_allowance_other" id="employee_monthly_allowance_other" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_allowance_other']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_allowance_other" id="employee_monthly_allowance_other" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_allowance_other']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Allowance Other Amount
 												</label>
 											</div>
@@ -345,7 +345,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_allowance_description" id="employee_monthly_allowance_description" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_allowance_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_allowance_description" id="employee_monthly_allowance_description" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_allowance_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Allowance Other Description
 												</label>
 											</div>
@@ -355,7 +355,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_deduction_other" id="employee_monthly_deduction_other" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_deduction_other']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_deduction_other" id="employee_monthly_deduction_other" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_deduction_other']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Other Amount
 												</label>
 											</div>
@@ -363,7 +363,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_deduction_description" id="employee_monthly_deduction_description" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_deduction_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_deduction_description" id="employee_monthly_deduction_description" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_deduction_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Other Description
 												</label>
 											</div>
@@ -373,7 +373,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_loan_amount" id="employee_monthly_loan_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_loan_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="employee_monthly_loan_amount" id="employee_monthly_loan_amount" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_loan_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Loan Amount
 												</label>
 											</div>
@@ -381,7 +381,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_monthly_salary_total_view" id="employee_monthly_salary_total_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_salary_total'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+												<input type="text" autocomplete="off"  name="employee_monthly_salary_total_view" id="employee_monthly_salary_total_view" value="<?php echo nominal($payrollemployeemonthlyspa['employee_monthly_salary_total'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<input type="hidden" name="employee_monthly_salary_total" id="employee_monthly_salary_total" value="<?php echo $payrollemployeemonthlyspa['employee_monthly_salary_total']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 												<label class="control-label">Total Salary
 												</label>
@@ -459,7 +459,7 @@
 							</div>
 
 							<div class="col-md-6" align="right">
-								<input type="text" name="employee_monthly_allowance_total" id="employee_monthly_allowance_total"  value="<?php echo nominal($employee_monthly_allowance_total)?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+								<input type="text" autocomplete="off"  name="employee_monthly_allowance_total" id="employee_monthly_allowance_total"  value="<?php echo nominal($employee_monthly_allowance_total)?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 							</div>
 						</div>
 
@@ -506,7 +506,7 @@
 								</table>
 							</div>
 							<div class="col-md-6" align="right">
-								<input type="text" name="employee_monthly_deduction_total" id="employee_monthly_deduction_total"  value="<?php echo nominal($employee_monthly_deduction_total)?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+								<input type="text" autocomplete="off"  name="employee_monthly_deduction_total" id="employee_monthly_deduction_total"  value="<?php echo nominal($employee_monthly_deduction_total)?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 							</div>
 						</div>
 					</div>
@@ -599,7 +599,7 @@
 								</table>
 							</div>
 							<div class="col-md-6" align="right">
-								<input type="text" name="employee_monthly_home_early_total" id="employee_monthly_home_early_total"  value="<?php echo nominal($employee_monthly_home_early_total)?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+								<input type="text" autocomplete="off"  name="employee_monthly_home_early_total" id="employee_monthly_home_early_total"  value="<?php echo nominal($employee_monthly_home_early_total)?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 							</div>
 						</div>
 					</div>

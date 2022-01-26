@@ -103,7 +103,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="job_title_code" id="job_title_code" class="form-control" value="<?php echo $data['job_title_code']?>">
+												<input type="text" autocomplete="off"  name="job_title_code" id="job_title_code" class="form-control" value="<?php echo $data['job_title_code']?>">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -112,7 +112,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="job_title_name" id="job_title_name" class="form-control" value="<?php echo $data['job_title_name']?>">
+												<input type="text" autocomplete="off"  name="job_title_name" id="job_title_name" class="form-control" value="<?php echo $data['job_title_name']?>">
 												<label class="control-label">Nama Judul Pekerjaan</label>
 											</div>
 										</div>

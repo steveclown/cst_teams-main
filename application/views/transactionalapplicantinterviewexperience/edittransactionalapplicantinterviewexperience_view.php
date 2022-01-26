@@ -85,7 +85,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Period</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_interview_experience_period" id="applicant_interview_experience_period" value="<?php echo $result['applicant_interview_experience_period'];?>" class="form-control" placeholder="Period">
+												<input type="text" autocomplete="off"  name="applicant_interview_experience_period" id="applicant_interview_experience_period" value="<?php echo $result['applicant_interview_experience_period'];?>" class="form-control" placeholder="Period">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -94,7 +94,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Location</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_interview_location" id="applicant_interview_location" value="<?php echo $result['applicant_interview_location'];?>" class="form-control" placeholder="Location">
+												<input type="text" autocomplete="off"  name="applicant_interview_location" id="applicant_interview_location" value="<?php echo $result['applicant_interview_location'];?>" class="form-control" placeholder="Location">
 											</div>
 										</div>
 										<div class="form-group">

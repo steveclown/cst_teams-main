@@ -64,7 +64,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="extra_leave_code" id="extra_leave_code" class="form-control" value="<?php echo $data['extra_leave_code']?>" >
+												<input type="text" autocomplete="off"  name="extra_leave_code" id="extra_leave_code" class="form-control" value="<?php echo $data['extra_leave_code']?>" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -78,7 +78,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="extra_leave_name" id="extra_leave_name" class="form-control" value="<?php echo $data['extra_leave_name']?>" >
+												<input type="text" autocomplete="off"  name="extra_leave_name" id="extra_leave_name" class="form-control" value="<?php echo $data['extra_leave_name']?>" >
 												<label class="control-label">Extra Leave Name</label>
 											</div>
 										</div>
@@ -87,7 +87,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="extra_leave_range1" id="extra_leave_range1" class="form-control" value="<?php echo $data['extra_leave_range1']?>" >
+												<input type="text" autocomplete="off"  name="extra_leave_range1" id="extra_leave_range1" class="form-control" value="<?php echo $data['extra_leave_range1']?>" >
 												<span class="help-block">
 													Please input only numbers.
 												</span>
@@ -97,7 +97,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="extra_leave_range2" id="extra_leave_range2" class="form-control" value="<?php echo $data['extra_leave_range2']?>" >
+												<input type="text" autocomplete="off"  name="extra_leave_range2" id="extra_leave_range2" class="form-control" value="<?php echo $data['extra_leave_range2']?>" >
 												<span class="help-block">
 													Please input only numbers.
 												</span>
@@ -109,7 +109,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="extra_leave_days" id="extra_leave_days" class="form-control" value="<?php echo $data['extra_leave_days']?>" >
+												<input type="text" autocomplete="off"  name="extra_leave_days" id="extra_leave_days" class="form-control" value="<?php echo $data['extra_leave_days']?>" >
 												<span class="help-block">
 													Please input only numbers.
 												</span>

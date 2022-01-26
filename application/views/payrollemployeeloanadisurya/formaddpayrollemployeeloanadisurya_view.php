@@ -83,14 +83,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $payrollemployeeloanrequisition['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $payrollemployeeloanrequisition['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $payrollemployeeloanrequisition['division_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $payrollemployeeloanrequisition['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -99,14 +99,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $payrollemployeeloanrequisition['department_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $payrollemployeeloanrequisition['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $payrollemployeeloanrequisition['section_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $payrollemployeeloanrequisition['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -140,7 +140,7 @@
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
 								<input type="hidden" name="loan_type_id" id="loan_type_id" value="<?php echo $payrollemployeeloanrequisition['loan_type_id']?>">
-								<input type="text" name="loan_type_name" id="loan_type_name" value="<?php echo $payrollemployeeloanrequisition['loan_type_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="loan_type_name" id="loan_type_name" value="<?php echo $payrollemployeeloanrequisition['loan_type_name']?>" class="form-control" readonly>
 								<label class="control-label">Loan Type Name
 									<span class="required">
 										*
@@ -164,7 +164,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_loan_description" id="employee_loan_description" value="<?php echo $payrollemployeeloanrequisition['employee_loan_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="employee_loan_description" id="employee_loan_description" value="<?php echo $payrollemployeeloanrequisition['employee_loan_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Description</label>
 							</div>
 						</div>
@@ -190,7 +190,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_loan_amount_total" id="employee_loan_amount_total" value="<?php echo $payrollemployeeloanrequisition['employee_loan_amount_total']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_loan_amount_total" id="employee_loan_amount_total" value="<?php echo $payrollemployeeloanrequisition['employee_loan_amount_total']?>" class="form-control" readonly>
 								<label class="control-label">Loan Amount Total
 									<span class="required">
 										*
@@ -201,7 +201,7 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_total_period" id="employee_total_period" value="<?php echo $payrollemployeeloanrequisition['employee_total_period']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_total_period" id="employee_total_period" value="<?php echo $payrollemployeeloanrequisition['employee_total_period']?>" class="form-control" readonly>
 								<label class="control-label">Total Period
 									<span class="required">
 										*
@@ -214,7 +214,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_loan_amount" id="employee_loan_amount" value="<?php echo $payrollemployeeloanrequisition['employee_loan_amount']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_loan_amount" id="employee_loan_amount" value="<?php echo $payrollemployeeloanrequisition['employee_loan_amount']?>" class="form-control" readonly>
 								<label class="control-label">Loan Amount Per Period
 									<span class="required">
 										*

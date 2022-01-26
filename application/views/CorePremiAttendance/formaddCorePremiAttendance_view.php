@@ -80,7 +80,7 @@ $(document).ready(function(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_code" id="premi_attendance_code" class="form-control" value="<?php echo $data['premi_attendance_code']?>">
+												<input type="text" autocomplete="off"  name="premi_attendance_code" id="premi_attendance_code" class="form-control" value="<?php echo $data['premi_attendance_code']?>">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -93,7 +93,7 @@ $(document).ready(function(){
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_name" id="premi_attendance_name" class="form-control" value="<?php echo $data['premi_attendance_name']?>" >
+												<input type="text" autocomplete="off"  name="premi_attendance_name" id="premi_attendance_name" class="form-control" value="<?php echo $data['premi_attendance_name']?>" >
 												<label class="control-label">Nama Premi Kehadiran</label>
 											</div>
 										</div>
@@ -102,13 +102,13 @@ $(document).ready(function(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_range1" id="premi_attendance_range1" class="form-control" value="<?php echo $data['premi_attendance_range1']?>" >
+												<input type="text" autocomplete="off"  name="premi_attendance_range1" id="premi_attendance_range1" class="form-control" value="<?php echo $data['premi_attendance_range1']?>" >
 												<label class="control-label">Range Premi Kehadiran 1</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="premi_attendance_range2" id="premi_attendance_range2" class="form-control" value="<?php echo $data['premi_attendance_range2']?>">
+												<input type="text" autocomplete="off"  name="premi_attendance_range2" id="premi_attendance_range2" class="form-control" value="<?php echo $data['premi_attendance_range2']?>">
 												<label class="control-label">Range Premi Kehadiran 2</label>
 											</div>
 										</div>

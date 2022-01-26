@@ -109,7 +109,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="permit_code" id="permit_code" value="<?php echo $data['permit_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="permit_code" id="permit_code" value="<?php echo $data['permit_code']?>" class="form-control">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -122,7 +122,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="permit_name" id="permit_name" value="<?php echo $data['permit_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="permit_name" id="permit_name" value="<?php echo $data['permit_name']?>" class="form-control">
 												
 												<input type="hidden" name="permit_token" id="permit_token" class="form-control" value="<?php echo $permit_token?>" onChange="function_elements_add(this.name, this.value);">
 												

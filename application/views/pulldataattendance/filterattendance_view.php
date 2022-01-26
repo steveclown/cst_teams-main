@@ -60,14 +60,14 @@ function hyde(){
 						<label class="control-label col-md-3">IP Address
 						</label>
 						<div class="col-md-4">
-							<input type="text" class="form-control" name="ip_address" id="ip_address"  value="<?php if($sesi[ip_address]=="")echo date('192.168.0.10'); else echo $sesi[ip_address];?>"/>
+							<input type="text" autocomplete="off"  class="form-control" name="ip_address" id="ip_address"  value="<?php if($sesi[ip_address]=="")echo date('192.168.0.10'); else echo $sesi[ip_address];?>"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Port
 						</label>
 						<div class="col-md-4">
-							<input type="text" class="form-control" name="port" id="port"  value="<?php if($sesi[port]=="")echo "4370"; else echo $sesi[port];?>"/>
+							<input type="text" autocomplete="off"  class="form-control" name="port" id="port"  value="<?php if($sesi[port]=="")echo "4370"; else echo $sesi[port];?>"/>
 						</div>
 					</div>
 					-->

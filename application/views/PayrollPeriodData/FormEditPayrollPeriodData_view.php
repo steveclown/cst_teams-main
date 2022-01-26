@@ -134,7 +134,7 @@
 					<div class = "row">		
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" id="payroll_period" name="payroll_period" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $payrollperiod['payroll_period'];?>" readonly>
+								<input type="text" autocomplete="off"  class="form-control" id="payroll_period" name="payroll_period" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $payrollperiod['payroll_period'];?>" readonly>
 
 								<input type="hidden" class="form-control" id="payroll_period_id" name="payroll_period_id" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $payrollperiod['payroll_period_id'];?>" readonly>
 								<label>Periode</label>

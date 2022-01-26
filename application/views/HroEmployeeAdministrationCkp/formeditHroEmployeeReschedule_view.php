@@ -41,7 +41,7 @@
 <div class = "row">		
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="shift_assignment_cycle" id="shift_assignment_cycle" class="form-control" value="<?php echo $datashiftassignment['shift_assignment_cycle']; ?>" onChange="function_elements_add_shiftassignment(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="shift_assignment_cycle" id="shift_assignment_cycle" class="form-control" value="<?php echo $datashiftassignment['shift_assignment_cycle']; ?>" onChange="function_elements_add_shiftassignment(this.name, this.value);">
 			<label for="form_control">Siklus Shift Penugasan
 				<span class="required">*</span>
 			</label>

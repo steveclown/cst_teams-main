@@ -308,7 +308,7 @@
 <div class="row">
 	<div class = "col-md-3">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_code" id="employee_code" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_code" id="employee_code" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kode Karyawan
 			<span class="required">*</span>
 			</label>
@@ -317,7 +317,7 @@
 
 	<div class = "col-md-3">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_rfid_code" id="employee_rfid_code" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_rfid_code" id="employee_rfid_code" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kode Rfid
 			<span class="required">*</span>
 			</label>

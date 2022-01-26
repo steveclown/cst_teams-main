@@ -137,7 +137,7 @@ function ulang(){
 												<div class="form-group">
 													<label class="col-md-3 control-label">Period</label>
 												
-													<input type="text" name="accident_experience_period" id="accident_experience_period" value="<?php echo $data['accident_experience_period'];?>" class="form-control" placeholder="Period">
+													<input type="text" autocomplete="off"  name="accident_experience_period" id="accident_experience_period" value="<?php echo $data['accident_experience_period'];?>" class="form-control" placeholder="Period">
 													<span class="help-block">
 														 Please input only numbers.
 													</span>

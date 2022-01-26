@@ -94,7 +94,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_permit_description" name="employee_permit_description" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $datapermit['employee_permit_description'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_permit_description" name="employee_permit_description" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $datapermit['employee_permit_description'];?>">
 			<label class="control-label">Permit Description </label>
 		</div>	
 	</div>

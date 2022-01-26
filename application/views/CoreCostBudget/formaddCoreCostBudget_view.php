@@ -62,7 +62,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="cost_budget_code" id="cost_budget_code" value="<?php echo $data['cost_budget_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="cost_budget_code" id="cost_budget_code" value="<?php echo $data['cost_budget_code'];?>" class="form-control">
 												<span class="help-block">
 													Mohon hanya isi dengan karakter huruf dan angka saja.
 												</span>
@@ -76,7 +76,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="cost_budget_name" id="cost_budget_name" value="<?php echo $data['cost_budget_name'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="cost_budget_name" id="cost_budget_name" value="<?php echo $data['cost_budget_name'];?>" class="form-control">
 												<label class="control-label">Nama Anggaran Biaya
 													<span class="required">
 														*
@@ -89,7 +89,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="cost_budget_amount" id="cost_budget_amount" value="<?php echo $data['cost_budget_amount'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="cost_budget_amount" id="cost_budget_amount" value="<?php echo $data['cost_budget_amount'];?>" class="form-control">
 												<label class="control-label">Jumlah Anggaran Biaya
 													<span class="required">
 														*

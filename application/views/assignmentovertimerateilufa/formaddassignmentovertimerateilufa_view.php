@@ -152,14 +152,14 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_rate_amount" id="overtime_rate_amount" value="<?php echo $data['overtime_rate_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="overtime_rate_amount" id="overtime_rate_amount" value="<?php echo $data['overtime_rate_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Overtime Rate Amount (Day)<span class="required">*</span></label>
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_rate_trip_amount" id="overtime_rate_trip_amount" value="<?php echo $data['overtime_rate_trip_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="overtime_rate_trip_amount" id="overtime_rate_trip_amount" value="<?php echo $data['overtime_rate_trip_amount']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Overtime Rate Amount<span class="required">*</span></label>
 											</div>
 										</div>
@@ -168,7 +168,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_rate_description" id="overtime_rate_description" value="<?php echo $data['overtime_rate_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
+												<input type="text" autocomplete="off"  name="overtime_rate_description" id="overtime_rate_description" value="<?php echo $data['overtime_rate_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" >
 												<label class="control-label">Overtime Rate Description<span class="required">*</span></label>
 											</div>
 										</div>

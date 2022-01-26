@@ -48,7 +48,7 @@
 									<div class="row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="zone_id" id="zone_id" value="<?php echo $this->assignmentovertimerate_model->getZoneName($assignmentovertimerate['zone_id'])?>" class="form-control" onChange="function_elements_add(this.name, this.value)" readonly>
+												<input type="text" autocomplete="off"  name="zone_id" id="zone_id" value="<?php echo $this->assignmentovertimerate_model->getZoneName($assignmentovertimerate['zone_id'])?>" class="form-control" onChange="function_elements_add(this.name, this.value)" readonly>
 
 												<label class="control-label">Zone Name
 													<span class="required">
@@ -60,7 +60,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_rate_effective_date" id="overtime_rate_effective_date" value="<?php echo tgltoview($assignmentovertimerate['overtime_rate_effective_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value)" readonly>
+												<input type="text" autocomplete="off"  name="overtime_rate_effective_date" id="overtime_rate_effective_date" value="<?php echo tgltoview($assignmentovertimerate['overtime_rate_effective_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value)" readonly>
 
 												<label class="control-label">Effective Date
 													<span class="required">
@@ -73,7 +73,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="overtime_rate_description" id="overtime_rate_description" value="<?php echo $assignmentovertimerate['overtime_rate_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" readonly>
+												<input type="text" autocomplete="off"  name="overtime_rate_description" id="overtime_rate_description" value="<?php echo $assignmentovertimerate['overtime_rate_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value)" readonly>
 												<label class="control-label">Overtime Rate Description<span class="required">*</span></label>
 											</div>
 										</div>

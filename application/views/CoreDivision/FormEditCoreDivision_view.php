@@ -59,7 +59,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-													<input type="text" name="division_code" id="division_code" value="<?php echo $coredivision['division_code'];?>" class="form-control" >
+													<input type="text" autocomplete="off"  name="division_code" id="division_code" value="<?php echo $coredivision['division_code'];?>" class="form-control" >
 													<label class="control-label">Division Code
 														<span class="required">
 															*
@@ -73,7 +73,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="division_name" id="division_name" value="<?php echo $coredivision['division_name'];?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="division_name" id="division_name" value="<?php echo $coredivision['division_name'];?>" class="form-control" >
 												<label class="control-label">Division Name
 													<span class="required">
 													*

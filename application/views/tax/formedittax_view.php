@@ -74,7 +74,7 @@
 								<div class="form-group">
 									<label class="control-label">Tax Period</label>
 									
-									<input type="text" name="tax_period" id="tax_period" class="form-control" value="<?php echo $result['tax_period']?>" placeholder="Tax Period">
+									<input type="text" autocomplete="off"  name="tax_period" id="tax_period" class="form-control" value="<?php echo $result['tax_period']?>" placeholder="Tax Period">
 								</div>
 							</div>
 						
@@ -82,7 +82,7 @@
 								<div class="form-group">
 									<label class="control-label">Tax Type</label>
 								
-									<input type="text" name="tax_type" id="tax_type" class="form-control" value="<?php echo $result['tax_type']?>" placeholder="Tax Type">
+									<input type="text" autocomplete="off"  name="tax_type" id="tax_type" class="form-control" value="<?php echo $result['tax_type']?>" placeholder="Tax Type">
 								</div>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 								<div class="form-group">
 									<label class="control-label">Tax Non Taxable Income</label>
 								
-									<input type="text" name="tax_non_taxable_income" id="tax_non_taxable_income" class="form-control" value="<?php echo $result['tax_non_taxable_income']?>" placeholder="Tax Non Taxable Income">
+									<input type="text" autocomplete="off"  name="tax_non_taxable_income" id="tax_non_taxable_income" class="form-control" value="<?php echo $result['tax_non_taxable_income']?>" placeholder="Tax Non Taxable Income">
 								</div>
 							</div>
 						</div>

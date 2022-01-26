@@ -90,7 +90,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_code" id="class_code" value="<?php echo $data['class_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="class_code" id="class_code" value="<?php echo $data['class_code'];?>" class="form-control">
 												<span class="help-block">
 													 Diisi karakter angka dan huruf
 												</span>
@@ -103,7 +103,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_name" id="class_name" value="<?php echo $data['class_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="class_name" id="class_name" value="<?php echo $data['class_name']?>" class="form-control">
 												<label class="control-label">Nama Kelas
 													<span class="required">
 														*
@@ -115,7 +115,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="standard_salary_range1" id="standard_salary_range1" value="<?php echo $data['standard_salary_range1']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="standard_salary_range1" id="standard_salary_range1" value="<?php echo $data['standard_salary_range1']?>" class="form-control">
 												<span class="help-block">
 													Diisi angka
 												</span>
@@ -128,7 +128,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $data['standard_salary_range2']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="standard_salary_range2" id="standard_salary_range2" value="<?php echo $data['standard_salary_range2']?>" class="form-control">
 												
 												<input type="hidden" name="class_token" id="class_token" class="form-control" onChange="function_elements_add(this.name, this.value);" value="<?php echo $class_token?>">
 												

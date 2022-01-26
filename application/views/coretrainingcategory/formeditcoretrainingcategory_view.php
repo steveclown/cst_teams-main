@@ -63,7 +63,7 @@ $this->session->unset_userdata('message');
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="training_category_code" id="training_category_code" value="<?php echo $coretrainingcategory['training_category_code'];?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="training_category_code" id="training_category_code" value="<?php echo $coretrainingcategory['training_category_code'];?>" class="form-control" >
 								<span class="help-block">
 									 Please input only alpha-numerical characters.
 								</span>
@@ -73,7 +73,7 @@ $this->session->unset_userdata('message');
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="training_category_name" id="training_category_name" value="<?php echo $coretrainingcategory['training_category_name'];?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="training_category_name" id="training_category_name" value="<?php echo $coretrainingcategory['training_category_name'];?>" class="form-control" >
 								<label class="control-label">Training Category Name<span class="required">*</span></label>
 							</div>
 						</div>

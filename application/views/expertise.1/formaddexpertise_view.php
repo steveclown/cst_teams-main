@@ -72,7 +72,7 @@
 								<div class="col-md-4">
 									<div class="input-icon right">
 										<i class="fa"></i>
-										<input type="text" class="form-control" name="expertise_code" id="expertise_code"  value="<?php echo set_value('expertise_code',$data['expertise_code']);?>"/>
+										<input type="text" autocomplete="off"  class="form-control" name="expertise_code" id="expertise_code"  value="<?php echo set_value('expertise_code',$data['expertise_code']);?>"/>
 									</div>	
 								</div>
 							</div>
@@ -85,7 +85,7 @@
 								<div class="col-md-4">
 									<div class="input-icon right">
 										<i class="fa"></i>
-										<input type="text" class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$data['expertise_name']);?>"/>
+										<input type="text" autocomplete="off"  class="form-control" name="expertise_name" id="expertise_name" value="<?php echo set_value('expertise_name',$data['expertise_name']);?>"/>
 									</div>	
 								</div>
 							</div>

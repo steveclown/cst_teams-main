@@ -94,7 +94,7 @@ function ulang(){
 										<label class="control-label col-md-3">Claim Date</label>
 											<div class="col-md-3">
 														<div class="input-group input-medium date date-picker" data-date="<?php date("d-m-Y")?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-															<input type="text" class="form-control" name="hospital_claim_date" value="<?php echo tgltoview($data['hospital_claim_date']);?>" readonly>
+															<input type="text" autocomplete="off"  class="form-control" name="hospital_claim_date" value="<?php echo tgltoview($data['hospital_claim_date']);?>" readonly>
 															<span class="input-group-btn">
 																<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 															</span>
@@ -104,7 +104,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Opening Balance</label>
 											<div class="col-md-8">
-												<input type="text" name="hospital_claim_opening_balance" id="hospital_claim_opening_balance" value="<?php echo $data['hospital_claim_opening_balance'];?>" class="form-control" placeholder="Opening Balance">
+												<input type="text" autocomplete="off"  name="hospital_claim_opening_balance" id="hospital_claim_opening_balance" value="<?php echo $data['hospital_claim_opening_balance'];?>" class="form-control" placeholder="Opening Balance">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -113,7 +113,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Amount</label>
 											<div class="col-md-8">
-												<input type="text" name="hospital_claim_amount" id="hospital_claim_amount" value="<?php echo $data['hospital_claim_amount'];?>" class="form-control" placeholder="Amount">
+												<input type="text" autocomplete="off"  name="hospital_claim_amount" id="hospital_claim_amount" value="<?php echo $data['hospital_claim_amount'];?>" class="form-control" placeholder="Amount">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -122,7 +122,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Last Balance</label>
 											<div class="col-md-8">
-												<input type="text" name="hospital_claim_last_balance" id="hospital_claim_last_balance" value="<?php echo $data['hospital_claim_last_balance'];?>" class="form-control" placeholder="Last Balance">
+												<input type="text" autocomplete="off"  name="hospital_claim_last_balance" id="hospital_claim_last_balance" value="<?php echo $data['hospital_claim_last_balance'];?>" class="form-control" placeholder="Last Balance">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

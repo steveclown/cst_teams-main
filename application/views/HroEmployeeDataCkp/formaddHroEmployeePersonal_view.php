@@ -125,7 +125,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_code" id="employee_code" value="<?php echo $data['employee_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_code" id="employee_code" value="<?php echo $data['employee_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<span class="help-block">
 				Mohon hanya diisi karakter huruf dan angka.
 			</span>
@@ -140,7 +140,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_name" id="employee_name" value="<?php echo $data['employee_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
+			<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $data['employee_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);" >
 
 			<label class="control-label">Nama Karyawan
 				<span class="required">
@@ -161,14 +161,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_city" id="employee_city" value="<?php echo $data['employee_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_city" id="employee_city" value="<?php echo $data['employee_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kota</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_postal_code" id="employee_postal_code" value="<?php echo $data['employee_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_postal_code" id="employee_postal_code" value="<?php echo $data['employee_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kode Pos</label>
 		</div>
 	</div>
@@ -177,14 +177,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_rt" id="employee_rt" value="<?php echo $data['employee_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_rt" id="employee_rt" value="<?php echo $data['employee_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">RT</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_rw" id="employee_rw" value="<?php echo $data['employee_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_rw" id="employee_rw" value="<?php echo $data['employee_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">RW</label>
 		</div>
 	</div>
@@ -193,14 +193,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_kelurahan" id="employee_kelurahan" value="<?php echo $data['employee_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_kelurahan" id="employee_kelurahan" value="<?php echo $data['employee_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kelurahan</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_kecamatan" id="employee_kecamatan" value="<?php echo $data['employee_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_kecamatan" id="employee_kecamatan" value="<?php echo $data['employee_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kecamatan</label>
 		</div>
 	</div>
@@ -209,14 +209,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_home_phone" id="employee_home_phone" value="<?php echo $data['employee_home_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_home_phone" id="employee_home_phone" value="<?php echo $data['employee_home_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Telp Rumah</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $data['employee_mobile_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $data['employee_mobile_phone'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">No HP</label>
 		</div>
 	</div>
@@ -225,7 +225,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_email_address" id="employee_email_address" value="<?php echo $data['employee_email_address'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_email_address" id="employee_email_address" value="<?php echo $data['employee_email_address'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Email</label>
 		</div>
 	</div>
@@ -254,7 +254,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_place_of_birth" id="employee_place_of_birth" value="<?php echo $data['employee_place_of_birth'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_place_of_birth" id="employee_place_of_birth" value="<?php echo $data['employee_place_of_birth'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Tempat Lahir</label>
 		</div>
 	</div>
@@ -272,7 +272,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_id_number" id="employee_id_number" value="<?php echo $data['employee_id_number'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_id_number" id="employee_id_number" value="<?php echo $data['employee_id_number'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Nomor ID</label>
 		</div>
 	</div>
@@ -305,14 +305,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_residential_city" id="employee_residential_city" value="<?php echo $data['employee_residential_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_residential_city" id="employee_residential_city" value="<?php echo $data['employee_residential_city'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kota Tempat Tinggal</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_residential_postal_code" id="employee_residential_postal_code" value="<?php echo $data['employee_residential_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_residential_postal_code" id="employee_residential_postal_code" value="<?php echo $data['employee_residential_postal_code'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kode Pos Tempat Tinggal</label>
 		</div>
 	</div>
@@ -321,14 +321,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_residential_rt" id="employee_residential_rt" value="<?php echo $data['employee_residential_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_residential_rt" id="employee_residential_rt" value="<?php echo $data['employee_residential_rt'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">RT Tempat Tinggal</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_residential_rw" id="employee_residential_rw" value="<?php echo $data['employee_residential_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_residential_rw" id="employee_residential_rw" value="<?php echo $data['employee_residential_rw'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">RW Tempat Tinggal</label>
 		</div>
 	</div>
@@ -337,14 +337,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_residential_kelurahan" id="employee_residential_kelurahan" value="<?php echo $data['employee_residential_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_residential_kelurahan" id="employee_residential_kelurahan" value="<?php echo $data['employee_residential_kelurahan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kelurahan Tempat Tinggal</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_residential_kecamatan" id="employee_residential_kecamatan" value="<?php echo $data['employee_residential_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_residential_kecamatan" id="employee_residential_kecamatan" value="<?php echo $data['employee_residential_kecamatan'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Kecamatan Tempat Tinggal</label>
 		</div>
 	</div>
@@ -360,7 +360,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_heir_name" id="employee_heir_name" value="<?php echo $data['employee_heir_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_heir_name" id="employee_heir_name" value="<?php echo $data['employee_heir_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Nama Ahli Waris </label>
 		</div>
 	</div>
@@ -380,14 +380,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_bank_acct_no" id="employee_bank_acct_no" value="<?php echo $data['employee_bank_acct_no'];?>" class="form-control" onChange="function_elements_edit(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_bank_acct_no" id="employee_bank_acct_no" value="<?php echo $data['employee_bank_acct_no'];?>" class="form-control" onChange="function_elements_edit(this.name, this.value);">
 			<label class="control-label">No Rekening Bank</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_bank_acct_name" id="employee_bank_acct_name" value="<?php echo $data['employee_bank_acct_name'];?>" class="form-control" onChange="function_elements_edit(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_bank_acct_name" id="employee_bank_acct_name" value="<?php echo $data['employee_bank_acct_name'];?>" class="form-control" onChange="function_elements_edit(this.name, this.value);">
 			<label class="control-label">Nama Akun Bank</label>
 		</div>
 	</div>

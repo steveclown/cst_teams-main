@@ -100,7 +100,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="medical_coverage_code" id="medical_coverage_code" value="<?php echo $data['medical_coverage_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="medical_coverage_code" id="medical_coverage_code" value="<?php echo $data['medical_coverage_code']?>" class="form-control">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -114,7 +114,7 @@
 									
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="medical_coverage_name" id="medical_coverage_name" value="<?php echo $data['medical_coverage_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="medical_coverage_name" id="medical_coverage_name" value="<?php echo $data['medical_coverage_name']?>" class="form-control">
 												<label class="control-label">Medical Coverage Name
 													<span class="required">
 														*
@@ -127,7 +127,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="medical_coverage_ratio" id="medical_coverage_ratio" value="<?php echo $data['medical_coverage_ratio']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="medical_coverage_ratio" id="medical_coverage_ratio" value="<?php echo $data['medical_coverage_ratio']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -141,7 +141,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="medical_coverage_amount" id="medical_coverage_amount" value="<?php echo $data['medical_coverage_amount']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="medical_coverage_amount" id="medical_coverage_amount" value="<?php echo $data['medical_coverage_amount']?>" class="form-control">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

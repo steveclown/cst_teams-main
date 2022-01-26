@@ -115,7 +115,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="absence_code" id="absence_code" value="<?php echo $data['absence_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="absence_code" id="absence_code" value="<?php echo $data['absence_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -128,7 +128,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="absence_name" id="absence_name" value="<?php echo $data['absence_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="absence_name" id="absence_name" value="<?php echo $data['absence_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								
 												<input type="hidden" name="absence_token" id="absence_token" class="form-control" value="<?php echo $absence_token?>" onChange="function_elements_add(this.name, this.value);">
 												

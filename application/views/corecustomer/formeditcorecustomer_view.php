@@ -68,7 +68,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="customer_code" id="customer_code" value="<?php echo $corecustomer['customer_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="customer_code" id="customer_code" value="<?php echo $corecustomer['customer_code'];?>" class="form-control">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -77,7 +77,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">											
-												<input type="text" name="customer_name" id="customer_name" value="<?php echo $corecustomer['customer_name'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="customer_name" id="customer_name" value="<?php echo $corecustomer['customer_name'];?>" class="form-control">
 												<label class="control-label">Customer Name<span class="required">*</span></label>
 											</div>
 										</div>
@@ -93,7 +93,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">												
-												<input type="text" name="customer_city" id="customer_city" value="<?php echo $corecustomer['customer_city'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="customer_city" id="customer_city" value="<?php echo $corecustomer['customer_city'];?>" class="form-control">
 												<label class="control-label">Customer City<span class="required">*</span></label>
 											</div>
 										</div>

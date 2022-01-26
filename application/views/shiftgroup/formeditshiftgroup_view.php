@@ -86,7 +86,7 @@
 												*
 												</span></label>
 											
-												<input type="text" name="shift_group_code" id="shift_group_code" value="<?php echo $result['shift_group_code']?>" class="form-control" placeholder="Shift Group Code">
+												<input type="text" autocomplete="off"  name="shift_group_code" id="shift_group_code" value="<?php echo $result['shift_group_code']?>" class="form-control" placeholder="Shift Group Code">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -100,7 +100,7 @@
 												*
 												</span></label>
 											
-												<input type="text" name="shift_group_name" id="shift_group_name" value="<?php echo $result['shift_group_name']?>" class="form-control" placeholder="Shift Group Name">
+												<input type="text" autocomplete="off"  name="shift_group_name" id="shift_group_name" value="<?php echo $result['shift_group_name']?>" class="form-control" placeholder="Shift Group Name">
 											</div>
 										</div>
 									</div>

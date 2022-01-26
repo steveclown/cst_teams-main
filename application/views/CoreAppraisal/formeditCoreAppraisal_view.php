@@ -70,7 +70,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="appraisal_code" id="appraisal_code" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_code'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="appraisal_code" id="appraisal_code" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_code'];?>" class="form-control" >
 									<span class="help-block">
 										Mohon diisi karakter huruf dan angka
 									</span>
@@ -80,7 +80,7 @@
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="appraisal_name" id="appraisal_name" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_name'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="appraisal_name" id="appraisal_name" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_name'];?>" class="form-control" >
 									<label class="control-label">Nama Penilaian<span class="required">*</span></label>
 								</div>
 							</div>
@@ -89,14 +89,14 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="appraisal_start_value" id="appraisal_start_value" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_start_value'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="appraisal_start_value" id="appraisal_start_value" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_start_value'];?>" class="form-control" >
 									<label class="control-label">Nilai Penilaian Awal<span class="required">*</span></label>
 								</div>
 							</div>
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="appraisal_end_value" id="appraisal_end_value" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_end_value'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="appraisal_end_value" id="appraisal_end_value" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $coreappraisal['appraisal_end_value'];?>" class="form-control" >
 									<label class="control-label">Nilai Penilaian Akhir<span class="required">*</span></label>
 								</div>
 							</div>

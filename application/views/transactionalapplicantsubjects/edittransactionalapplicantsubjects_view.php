@@ -89,7 +89,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Applicant Subjects Name</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_subjects_name" id="applicant_subjects_name" value="<?php echo $result['applicant_subjects_name'];?>" class="form-control" placeholder="Applicant Subjects Name">
+												<input type="text" autocomplete="off"  name="applicant_subjects_name" id="applicant_subjects_name" value="<?php echo $result['applicant_subjects_name'];?>" class="form-control" placeholder="Applicant Subjects Name">
 											</div>
 										</div>
 										<div class="form-group">

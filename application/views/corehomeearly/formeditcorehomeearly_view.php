@@ -98,7 +98,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="home_early_code" id="home_early_code" value="<?php echo $corehomeearly['home_early_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="home_early_code" id="home_early_code" value="<?php echo $corehomeearly['home_early_code']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -112,7 +112,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="home_early_name" id="home_early_name" value="<?php echo $corehomeearly['home_early_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="home_early_name" id="home_early_name" value="<?php echo $corehomeearly['home_early_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Home Early Name
 													<span class="required">
 														*

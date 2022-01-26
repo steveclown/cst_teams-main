@@ -82,14 +82,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_payment_working_start" name="period_payment_working_start" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['period_payment_working_start'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_payment_working_start" name="period_payment_working_start" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['period_payment_working_start'];?>">
 			<label class="control-label">Mulai Bekerja </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_payment_working_end" name="period_payment_working_end" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['period_payment_working_end'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_payment_working_end" name="period_payment_working_end" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['period_payment_working_end'];?>">
 			<label class="control-label">Selesai Bekerja </label>
 		</div>	
 	</div>
@@ -98,14 +98,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="basic_salary_monthly" name="basic_salary_monthly" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['basic_salary_monthly'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="basic_salary_monthly" name="basic_salary_monthly" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['basic_salary_monthly'];?>">
 			<label class="control-label">Gaji Pokok Bulanan</label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="basic_salary_daily" name="basic_salary_daily" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['basic_salary_daily'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="basic_salary_daily" name="basic_salary_daily" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['basic_salary_daily'];?>">
 			<label class="control-label">Gaji Pokok Harian </label>
 		</div>	
 	</div>
@@ -114,14 +114,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="meal_subvention_monthly" name="meal_subvention_monthly" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['meal_subvention_monthly'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="meal_subvention_monthly" name="meal_subvention_monthly" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['meal_subvention_monthly'];?>">
 			<label class="control-label">Meal Subvention Bulanan </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="meal_subvention_daily" name="meal_subvention_daily" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['meal_subvention_daily'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="meal_subvention_daily" name="meal_subvention_daily" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['meal_subvention_daily'];?>">
 			<label class="control-label">Meal Subvention Harian </label>
 		</div>	
 	</div>
@@ -130,7 +130,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="basic_overtime" name="basic_overtime" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['basic_overtime'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="basic_overtime" name="basic_overtime" onChange="function_elements_edit_payment(this.name, this.value);" value="<?php echo $data['basic_overtime'];?>">
 			<label class="control-label">Dasar Lembur</label>
 		</div>	
 	</div>

@@ -90,7 +90,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="incentive_code" id="incentive_code" class="form-control" value="<?php echo $CoreIncentive['incentive_code']?>" >
+									<input type="text" autocomplete="off"  name="incentive_code" id="incentive_code" class="form-control" value="<?php echo $CoreIncentive['incentive_code']?>" >
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -104,7 +104,7 @@
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="incentive_name" id="incentive_name" class="form-control" value="<?php echo $CoreIncentive['incentive_name']?>" >
+									<input type="text" autocomplete="off"  name="incentive_name" id="incentive_name" class="form-control" value="<?php echo $CoreIncentive['incentive_name']?>" >
 									<label class="control-label"> Nama Insentif</label>
 								</div>
 							</div>
@@ -113,7 +113,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-									<input type="text" name="incentive_amount" id="incentive_amount" class="form-control" value="<?php echo $CoreIncentive['incentive_amount']?>">
+									<input type="text" autocomplete="off"  name="incentive_amount" id="incentive_amount" class="form-control" value="<?php echo $CoreIncentive['incentive_amount']?>">
 									<label class="control-label"> Total Insentif</label>
 								</div>
 							</div>

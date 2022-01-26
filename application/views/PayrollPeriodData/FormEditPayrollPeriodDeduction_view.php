@@ -86,14 +86,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_deduction_working_start" name="period_deduction_working_start" onChange="function_elements_edit_deduction(this.name, this.value);" value="<?php echo $data['period_deduction_working_start'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_deduction_working_start" name="period_deduction_working_start" onChange="function_elements_edit_deduction(this.name, this.value);" value="<?php echo $data['period_deduction_working_start'];?>">
 			<label class="control-label">Working Start </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_deduction_working_end" name="period_deduction_working_end" onChange="function_elements_edit_deduction(this.name, this.value);" value="<?php echo $data['period_deduction_working_end'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_deduction_working_end" name="period_deduction_working_end" onChange="function_elements_edit_deduction(this.name, this.value);" value="<?php echo $data['period_deduction_working_end'];?>">
 			<label class="control-label">Working End </label>
 		</div>	
 	</div>
@@ -102,7 +102,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_deduction_amount_monthly" id="period_deduction_amount_monthly" value="<?php echo $data['period_deduction_amount_monthly']?>" class="form-control" onChange="function_elements_edit_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_deduction_amount_monthly" id="period_deduction_amount_monthly" value="<?php echo $data['period_deduction_amount_monthly']?>" class="form-control" onChange="function_elements_edit_deduction(this.name, this.value);">
 			<label class="control-label">Deduction Amount Monthly
 				<span class="required">
 					*
@@ -113,7 +113,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_deduction_amount_daily" id="period_deduction_amount_daily" value="<?php echo $data['period_deduction_amount_daily']?>" class="form-control" onChange="function_elements_edit_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_deduction_amount_daily" id="period_deduction_amount_daily" value="<?php echo $data['period_deduction_amount_daily']?>" class="form-control" onChange="function_elements_edit_deduction(this.name, this.value);">
 			<label class="control-label">Deduction Amount Daily
 				<span class="required">
 					*
@@ -126,7 +126,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_deduction_description" id="period_deduction_description" value="<?php echo $data['period_deduction_description']?>" class="form-control" onChange="function_elements_edit_deduction(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_deduction_description" id="period_deduction_description" value="<?php echo $data['period_deduction_description']?>" class="form-control" onChange="function_elements_edit_deduction(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>

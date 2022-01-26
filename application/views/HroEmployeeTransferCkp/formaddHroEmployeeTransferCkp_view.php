@@ -76,14 +76,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Nama Karyawan</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->HroEmployeeTransferCkp_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->HroEmployeeTransferCkp_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Devisi</label>
 							</div>	
 						</div>
@@ -92,14 +92,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->HroEmployeeTransferCkp_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->HroEmployeeTransferCkp_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Departemen</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->HroEmployeeTransferCkp_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->HroEmployeeTransferCkp_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Bagian </label>
 							</div>	
 						</div>
@@ -185,7 +185,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="region_id_last" id="region_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getRegionName($HroEmployeeTransferCkp_last['region_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="region_id_last" id="region_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getRegionName($HroEmployeeTransferCkp_last['region_id'])?>" class="form-control" readonly>
 												<label class="control-label">Wilayah Terakhir  </label>
 											</div>
 										</div>
@@ -205,7 +205,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="branch_id_last" id="branch_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getBranchName($HroEmployeeTransferCkp_last['branch_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="branch_id_last" id="branch_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getBranchName($HroEmployeeTransferCkp_last['branch_id'])?>" class="form-control" readonly>
 												<label class="control-label">Cabang Terakhir </label>
 											</div>
 										</div>
@@ -225,7 +225,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="location_id_last" id="location_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getLocationName($HroEmployeeTransferCkp_last['location_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="location_id_last" id="location_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getLocationName($HroEmployeeTransferCkp_last['location_id'])?>" class="form-control" readonly>
 												<label class="control-label">Lokasi Terakhir </label>
 											</div>
 										</div>	
@@ -245,7 +245,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="division_id_last" id="division_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getSectionName($HroEmployeeTransferCkp_last['division_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="division_id_last" id="division_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getSectionName($HroEmployeeTransferCkp_last['division_id'])?>" class="form-control" readonly>
 												<label class="control-label">Devisi Terakhir</label>
 											</div>
 										</div>	
@@ -265,7 +265,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="department_id_last" id="department_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getDepartmentName($HroEmployeeTransferCkp_last['department_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="department_id_last" id="department_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getDepartmentName($HroEmployeeTransferCkp_last['department_id'])?>" class="form-control" readonly>
 												<label class="control-label">Departemen Terakhir </label>
 											</div>
 										</div>		
@@ -285,7 +285,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="section_id_last" id="section_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getSectionName($HroEmployeeTransferCkp_last['section_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="section_id_last" id="section_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getSectionName($HroEmployeeTransferCkp_last['section_id'])?>" class="form-control" readonly>
 												<label class="control-label">Bagian Terakhir</label>
 											</div>
 										</div>	
@@ -305,7 +305,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="unit_id_last" id="unit_id_last" value="<?php echo $coreunit[$HroEmployeeTransferCkp_last['unit_id']]?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="unit_id_last" id="unit_id_last" value="<?php echo $coreunit[$HroEmployeeTransferCkp_last['unit_id']]?>" class="form-control" readonly>
 												<label class="control-label">Satuan Terakhir</label>
 											</div>
 										</div>	
@@ -325,7 +325,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="job_title_id_last" id="job_title_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getJobTitleName($HroEmployeeTransferCkp_last['job_title_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="job_title_id_last" id="job_title_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getJobTitleName($HroEmployeeTransferCkp_last['job_title_id'])?>" class="form-control" readonly>
 												<label class="control-label">Pekerjaan Terakhir</label>
 											</div>
 										</div>	
@@ -345,7 +345,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="grade_id_last" id="grade_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getGradeName($HroEmployeeTransferCkp_last['grade_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="grade_id_last" id="grade_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getGradeName($HroEmployeeTransferCkp_last['grade_id'])?>" class="form-control" readonly>
 												<label class="control-label">Tingkat Terakhir</label>
 											</div>
 										</div>
@@ -365,7 +365,7 @@
 									<div class = "row">
 										<div class ="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="class_id_last" id="class_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getClassName($HroEmployeeTransferCkp_last['class_id'])?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="class_id_last" id="class_id_last" value="<?php echo $this->HroEmployeeTransferCkp_model->getClassName($HroEmployeeTransferCkp_last['class_id'])?>" class="form-control" readonly>
 												<label class="control-label">Kelas Terakhir </label>
 											</div>
 										</div>

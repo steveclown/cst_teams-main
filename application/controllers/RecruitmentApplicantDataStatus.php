@@ -94,11 +94,11 @@
 		public function reset_add(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addRecruitmentApplicantData-'.$unique['unique']);
-			$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
-			$this->session->unset_userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique']);
-			$this->session->unset_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
-			$this->session->unset_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
-			$this->session->unset_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
+			$this->session->unset_userdata('addRecruitmentApplicantFamily-'.$unique['unique']);
+			$this->session->unset_userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique']);
+			$this->session->unset_userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);
+			$this->session->unset_userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique']);
+			$this->session->unset_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
 			redirect('RecruitmentApplicantDatailufa/addRecruitmentApplicantData');
 		}
 
@@ -108,14 +108,14 @@
 			$unique 	= $this->session->userdata('unique');
 			$name 		= $this->input->post('name',true);
 			$value 		= $this->input->post('value',true);
-			$sessions	= $this->session->userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
+			$sessions	= $this->session->userdata('addRecruitmentApplicantFamily-'.$unique['unique']);
 			$sessions[$name] = $value;
-			$this->session->set_userdata('addrecruitmentapplicantfamily-'.$unique['unique'],$sessions);
+			$this->session->set_userdata('addRecruitmentApplicantFamily-'.$unique['unique'],$sessions);
 		}
 
 		public function reset_add_family(){
 			$unique 	= $this->session->userdata('unique');
-			$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
+			$this->session->unset_userdata('addRecruitmentApplicantFamily-'.$unique['unique']);
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
 		
@@ -148,11 +148,11 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
 				$dataArrayHeader[$data_family['applicant_family_record_id']] = $data_family;
 								
-				$this->session->set_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique'],$dataArrayHeader);
-				$this->session->unset_userdata('addrecruitmentapplicantfamily-'.$unique['unique']);
+				$this->session->set_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique'],$dataArrayHeader);
+				$this->session->unset_userdata('addRecruitmentApplicantFamily-'.$unique['unique']);
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
@@ -162,7 +162,7 @@
 		public function deleteArrayRecruitmentApplicantFamily(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addarrayrecruitmentapplicantfamily-";
+			$session_name		= "addArrayRecruitmentApplicantFamily-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -173,7 +173,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique'],$arrayBaru);
 			
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
@@ -224,10 +224,10 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique']);
 				$dataArrayHeader[$data_education['applicant_education_record_id']] = $data_education;
 				
-				$this->session->set_userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique'],$dataArrayHeader);
+				$this->session->set_userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicanteducation-'.$unique['unique']);
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
@@ -238,7 +238,7 @@
 		public function deleteArrayRecruitmentApplicantEducation(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addarrayrecruitmentapplicanteducation-";
+			$session_name		= "addArrayRecruitmentApplicantEducation-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -249,7 +249,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique'],$arrayBaru);
 			
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
@@ -286,10 +286,10 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
 				$dataArrayHeader[$data_language['applicant_language_record_id']] = $data_language;
 				
-				$this->session->set_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique'],$dataArrayHeader);
+				$this->session->set_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicantlanguage-'.$unique['unique']);
 
 			}else{
@@ -301,7 +301,7 @@
 		public function deleteArrayRecruitmentApplicantLanguage(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addarrayrecruitmentapplicantlanguage-";
+			$session_name		= "addArrayRecruitmentApplicantLanguage-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -312,7 +312,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique'],$arrayBaru);
 			
 			redirect('RecruitmentApplicantData/editRecruitmentApplicantData');
 		}
@@ -363,10 +363,10 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique']);
 				$dataArrayHeader[$data_experience['applicant_experience_record_id']] = $data_experience;
 				
-				$this->session->set_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique'],$dataArrayHeader);
+				$this->session->set_userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicantexperience-'.$unique['unique']);
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
@@ -377,7 +377,7 @@
 		public function deleteArrayRecruitmentApplicantExperience(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addarrayrecruitmentapplicantexperience-";
+			$session_name		= "addArrayRecruitmentApplicantExperience-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -388,7 +388,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique'],$arrayBaru);
 			
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
@@ -437,11 +437,11 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);
 				
 				$dataArrayHeader[$data_recruitmentapplicantexpertise['record_id']] = $data_recruitmentapplicantexpertise;
 				
-				$this->session->set_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique'],$dataArrayHeader);
+				$this->session->set_userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicantexpertise-'.$unique['unique']);
 				
 				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
@@ -455,7 +455,7 @@
 		public function deleteArrayRecruitmentApplicantExpertise(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addarrayrecruitmentapplicantexpertise-";
+			$session_name		= "addArrayRecruitmentApplicantExpertise-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -466,7 +466,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique'],$arrayBaru);
 
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
@@ -487,11 +487,11 @@
 			
 			$created_id = $this->RecruitmentApplicantData_model->getCreatedID($auth['username']);
 			
-			$session_family			= $this->session->userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
-			$session_education		= $this->session->userdata('addarrayrecruitmentapplicanteduaction-'.$unique['unique']);
-			$session_language		= $this->session->userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
-			$session_expertise		= $this->session->userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);
-			$session_experience		= $this->session->userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
+			$session_family			= $this->session->userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
+			$session_education		= $this->session->userdata('addArrayRecruitmentApplicantEduaction-'.$unique['unique']);
+			$session_language		= $this->session->userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
+			$session_expertise		= $this->session->userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);
+			$session_experience		= $this->session->userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique']);
 
 			
 			$data = array(
@@ -695,12 +695,12 @@
 
 					$this->session->unset_userdata('addapplicantdata-'.$unique['unique']);
 					$this->session->unset_userdata('addRecruitmentApplicantData-'.$unique['unique']);
-					$this->session->unset_userdata('addarrayrecruitmentapplicantfamily-'.$unique['unique']);
-					$this->session->unset_userdata('addarrayrecruitmentapplicanteduaction-'.$unique['unique']);			
-					$this->session->unset_userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
-					$this->session->unset_userdata('addarrayrecruitmentapplicantexpertise-'.$unique['unique']);			
-					$this->session->unset_userdata('addarrayrecruitmentapplicantexperience-'.$unique['unique']);
-					$this->session->unset_userdata('addarrayrecruitmentapplicantexpectation-'.$unique['unique']);
+					$this->session->unset_userdata('addArrayRecruitmentApplicantFamily-'.$unique['unique']);
+					$this->session->unset_userdata('addArrayRecruitmentApplicantEduaction-'.$unique['unique']);			
+					$this->session->unset_userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
+					$this->session->unset_userdata('addArrayRecruitmentApplicantExpertise-'.$unique['unique']);			
+					$this->session->unset_userdata('addArrayRecruitmentApplicantExperience-'.$unique['unique']);
+					$this->session->unset_userdata('addArrayRecruitmentApplicantExpectation-'.$unique['unique']);
 					
 					redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 				}else{
@@ -737,7 +737,7 @@
 
 		public function editRecruitmentApplicantData(){
 			$unique 						= $this->session->userdata('unique');
-			$this->session->unset_userdata('addarrayrecruitmentapplicanteducation-'.$unique['unique']);
+			$this->session->unset_userdata('addArrayRecruitmentApplicantEducation-'.$unique['unique']);
 
 
 			$applicant_id = $this->uri->segment(3);
@@ -1811,10 +1811,10 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantorganization-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantOrganization-'.$unique['unique']);
 				$dataArrayHeader[$data_organization['applicant_organization_record_id']] = $data_organization;
 				
-				$this->session->set_userdata('addarrayrecruitmentapplicantorganization-'.$unique['unique'],$dataArrayHeader);
+				$this->session->set_userdata('addArrayRecruitmentApplicantOrganization-'.$unique['unique'],$dataArrayHeader);
 				$this->session->unset_userdata('addrecruitmentapplicantorganization-'.$unique['unique']);
 				$this->session->unset_userdata('addrecruitmentapplicantother-'.$unique['unique']);
 				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
@@ -1827,7 +1827,7 @@
 		public function deleteArrayRecruitmentApplicantOrganization(){
 			$arrayBaru			= array();
 			$var_to 			= $this->uri->segment(3);
-			$session_name		= "addarrayrecruitmentapplicantorganization-";
+			$session_name		= "addArrayRecruitmentApplicantOrganization-";
 			$unique 			= $this->session->userdata('unique');
 			$dataArrayHeader	= $this->session->userdata($session_name.$unique['unique']);
 			$unique 			= $this->session->userdata('unique');
@@ -1838,7 +1838,7 @@
 				}
 			}
 			
-			$this->session->set_userdata('addarrayrecruitmentapplicantorganization-'.$unique['unique'],$arrayBaru);
+			$this->session->set_userdata('addArrayRecruitmentApplicantOrganization-'.$unique['unique'],$arrayBaru);
 			
 			redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 		}
@@ -1899,11 +1899,11 @@
 			if($this->form_validation->run()==true){
 				$unique 			= $this->session->userdata('unique');
 				$session_name 		= $this->input->post('session_name',true);
-				$dataArrayHeader	= $this->session->userdata('addarrayrecruitmentapplicantmedical-'.$unique['unique']);
+				$dataArrayHeader	= $this->session->userdata('addArrayRecruitmentApplicantMedical-'.$unique['unique']);
 				$dataArrayHeader[$data_medical['applicant_medical_record_id']] = $data_medical;
 				
-				$this->session->set_userdata('addarrayrecruitmentapplicantmedical-'.$unique['unique'],$dataArrayHeader);
-				$this->session->unset_userdata('addarrayrecruitmentapplicantmedical-'.$unique['unique']);
+				$this->session->set_userdata('addArrayRecruitmentApplicantMedical-'.$unique['unique'],$dataArrayHeader);
+				$this->session->unset_userdata('addArrayRecruitmentApplicantMedical-'.$unique['unique']);
 				
 				redirect('RecruitmentApplicantData/addRecruitmentApplicantData');
 			}else{

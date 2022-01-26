@@ -244,28 +244,28 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Training Schedule Name</label>
 											<div class="col-md-3">
-												<input type="text" name="training_schedule_name" id="training_schedule_name" onChange="warningname(training_schedule_name);" value="<?php echo $result['training_schedule_name'];?>" class="form-control" placeholder="Schedule Name">
+												<input type="text" autocomplete="off"  name="training_schedule_name" id="training_schedule_name" onChange="warningname(training_schedule_name);" value="<?php echo $result['training_schedule_name'];?>" class="form-control" placeholder="Schedule Name">
 											</div>
 										</div>
 										
 										<div class="form-group">
 											<label class="col-md-3 control-label">Training Schedule Capacity</label>
 											<div class="col-md-3">
-												<input type="text" name="training_schedule_capacity" id="training_schedule_capacity" onChange="warningcapacity(this.value);" value="<?php echo $result['training_schedule_capacity'];?>" class="form-control" placeholder="Schedule Capacity">
+												<input type="text" autocomplete="off"  name="training_schedule_capacity" id="training_schedule_capacity" onChange="warningcapacity(this.value);" value="<?php echo $result['training_schedule_capacity'];?>" class="form-control" placeholder="Schedule Capacity">
 											</div>
 										</div>
 										
 										<div class="form-group">
 											<label class="col-md-3 control-label">Training Schedule Duration</label>
 											<div class="col-md-3">
-												<input type="text" name="training_schedule_duration" id="training_schedule_duration" onChange="warningduration(this.value);" value="<?php echo $result['training_schedule_duration'];?>" class="form-control" placeholder="Schedule Duration">
+												<input type="text" autocomplete="off"  name="training_schedule_duration" id="training_schedule_duration" onChange="warningduration(this.value);" value="<?php echo $result['training_schedule_duration'];?>" class="form-control" placeholder="Schedule Duration">
 											</div>
 										</div>
 										
 										<div class="form-group">
 											<label class="col-md-3 control-label">Training Schedule Location</label>
 											<div class="col-md-3">
-												<input type="text" name="training_schedule_location" id="training_schedule_location" onChange="warninglocation(training_schedule_location);" value="<?php echo $result['training_schedule_location'];?>" class="form-control" placeholder="Schedule Location">
+												<input type="text" autocomplete="off"  name="training_schedule_location" id="training_schedule_location" onChange="warninglocation(training_schedule_location);" value="<?php echo $result['training_schedule_location'];?>" class="form-control" placeholder="Schedule Location">
 											</div>
 										</div>
 										

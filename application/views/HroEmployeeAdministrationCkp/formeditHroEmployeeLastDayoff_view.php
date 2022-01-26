@@ -42,14 +42,14 @@
 <div class = "row">		
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_last_day_off_old" name="employee_last_day_off_old" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata_lastdayoff['employee_last_day_off']);?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_last_day_off_old" name="employee_last_day_off_old" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo tgltoview($hroemployeedata_lastdayoff['employee_last_day_off']);?>" readonly>
 			<label class="control-label">Libur Terakhir Lama</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_day_off_cycle_old" name="employee_day_off_cycle_old" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo $hroemployeedata_lastdayoff['employee_day_off_cycle'];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_day_off_cycle_old" name="employee_day_off_cycle_old" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo $hroemployeedata_lastdayoff['employee_day_off_cycle'];?>" readonly>
 			<label class="control-label">Siklus Libur Lama</label>
 		</div>
 	</div>
@@ -58,7 +58,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_day_off_status_old" name="employee_day_off_status_old" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo $dayoffstatus[$hroemployeedata_lastdayoff['employee_day_off_status']];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_day_off_status_old" name="employee_day_off_status_old" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo $dayoffstatus[$hroemployeedata_lastdayoff['employee_day_off_status']];?>" readonly>
 			<label class="control-label">Status Libur Lama</label>
 		</div>	
 	</div>
@@ -78,7 +78,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_day_off_cycle" name="employee_day_off_cycle" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo $datalastdayoff['employee_day_off_cycle'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="employee_day_off_cycle" name="employee_day_off_cycle" onChange="function_elements_edit_lastdayoff(this.name, this.value);" value="<?php echo $datalastdayoff['employee_day_off_cycle'];?>" >
 			<label class="control-label">Siklus Libur</label>
 		</div>
 	</div>

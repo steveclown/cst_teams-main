@@ -114,7 +114,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_item_name" id="training_provider_item_name" value="<?php echo $coretrainingprovideritem['training_provider_item_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_item_name" id="training_provider_item_name" value="<?php echo $coretrainingprovideritem['training_provider_item_name'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -128,7 +128,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_item_cost" id="training_provider_item_cost" value="<?php echo $coretrainingprovideritem['training_provider_item_cost'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_item_cost" id="training_provider_item_cost" value="<?php echo $coretrainingprovideritem['training_provider_item_cost'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Item Cost
 										<span class="required">
 											*
@@ -141,7 +141,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="training_provider_item_duration" id="training_provider_item_duration" value="<?php echo $coretrainingprovideritem['training_provider_item_duration'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="training_provider_item_duration" id="training_provider_item_duration" value="<?php echo $coretrainingprovideritem['training_provider_item_duration'];?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 									<label class="control-label">Training Provider Item Duration</label>
 								</div>
 							</div>

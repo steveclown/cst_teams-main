@@ -58,7 +58,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="leave_request_date" id="leave_request_date" value="<?php echo tgltoview($dataleave['leave_request_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+			<input type="text" autocomplete="off"  name="leave_request_date" id="leave_request_date" value="<?php echo tgltoview($dataleave['leave_request_date'])?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 			<label class="control-label">Leave Request Date
 				<span class="required">
 					*
@@ -80,7 +80,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="leave_request_description" id="leave_request_description" value="<?php echo $dataleave['leave_request_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="leave_request_description" id="leave_request_description" value="<?php echo $dataleave['leave_request_description']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>

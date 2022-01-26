@@ -115,7 +115,7 @@
 <br>
 <?php 
 	$unique							= $this->session->userdata('unique');
-	$recruitmentapplicantlanguage	= $this->session->userdata('addarrayrecruitmentapplicantlanguage-'.$unique['unique']);
+	$recruitmentapplicantlanguage	= $this->session->userdata('addArrayRecruitmentApplicantLanguage-'.$unique['unique']);
 ?>
 
 

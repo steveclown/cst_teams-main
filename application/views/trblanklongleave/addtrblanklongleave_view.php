@@ -78,13 +78,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Total</label>
 											<div class="col-md-3">
-												<input type="text" name="blank_long_leave_total" id="blank_long_leave_total" value="<?php echo $data['blank_long_leave_total']?>" class="form-control" placeholder="Total">
+												<input type="text" autocomplete="off"  name="blank_long_leave_total" id="blank_long_leave_total" value="<?php echo $data['blank_long_leave_total']?>" class="form-control" placeholder="Total">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-3">
-												<input type="text" name="blank_long_leave_date" id="blank_long_leave_date" value="<?php echo $data['blank_long_leave_date']?>" class="form-control" placeholder="Date">
+												<input type="text" autocomplete="off"  name="blank_long_leave_date" id="blank_long_leave_date" value="<?php echo $data['blank_long_leave_date']?>" class="form-control" placeholder="Date">
 											</div>
 										</div>
 										<div class="form-group">

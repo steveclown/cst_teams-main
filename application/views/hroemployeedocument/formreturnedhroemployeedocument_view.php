@@ -55,14 +55,14 @@
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
 								<input type="hidden" name="employee_document_id" id="employee_document_id" value="<?php echo $hroemployeedocument['employee_document_id']?>" class="form-control" readonly>
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedocument['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedocument['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="document_book_code" id="document_book_code" value="<?php echo $hroemployeedocument['document_book_code']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="document_book_code" id="document_book_code" value="<?php echo $hroemployeedocument['document_book_code']?>" class="form-control" readonly>
 								<label class="control-label">Document Book Code</label>
 							</div>	
 						</div>
@@ -71,7 +71,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_document_item_name" id="employee_document_item_name" value="<?php echo $hroemployeedocumentitem['employee_document_item_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_document_item_name" id="employee_document_item_name" value="<?php echo $hroemployeedocumentitem['employee_document_item_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Document Name </label>
 							</div>	
 						</div>

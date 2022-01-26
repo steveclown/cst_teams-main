@@ -84,14 +84,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->hroemployeehomeearly_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->hroemployeehomeearly_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -100,14 +100,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->hroemployeehomeearly_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->hroemployeehomeearly_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->hroemployeehomeearly_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->hroemployeehomeearly_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -166,7 +166,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_home_early_hour" name="employee_home_early_hour" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_home_early_hour'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_home_early_hour" name="employee_home_early_hour" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_home_early_hour'];?>">
 												<label class="control-label">Home Early Hour </label>
 											</div>	
 										</div>
@@ -175,7 +175,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_home_early_description" name="employee_home_early_description" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_home_early_description'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_home_early_description" name="employee_home_early_description" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_home_early_description'];?>">
 												<label class="control-label">Home Early Description </label>
 											</div>	
 										</div>
@@ -184,7 +184,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_home_early_reason" name="employee_home_early_reason" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_home_early_reason'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_home_early_reason" name="employee_home_early_reason" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_home_early_reason'];?>">
 												<label class="control-label">Home Early Reason </label>
 											</div>	
 										</div>

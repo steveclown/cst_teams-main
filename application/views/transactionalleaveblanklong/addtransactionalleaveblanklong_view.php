@@ -87,7 +87,7 @@ function ulang(){
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_blank_long_date" id="leave_blank_long_date" value="<?php echo tgltoview($data['leave_blank_long_date'])?>" class="form-control" placeholder="Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_blank_long_date" id="leave_blank_long_date" value="<?php echo tgltoview($data['leave_blank_long_date'])?>" class="form-control" placeholder="Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

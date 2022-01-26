@@ -75,7 +75,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_premi_code" id="insurance_premi_code" value="<?php echo $data['insurance_premi_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="insurance_premi_code" id="insurance_premi_code" value="<?php echo $data['insurance_premi_code']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -89,7 +89,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="insurance_premi_amount" id="insurance_premi_amount" value="<?php echo $data['insurance_premi_amount']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="insurance_premi_amount" id="insurance_premi_amount" value="<?php echo $data['insurance_premi_amount']?>" class="form-control" >
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

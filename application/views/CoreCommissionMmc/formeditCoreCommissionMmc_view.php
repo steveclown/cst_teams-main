@@ -83,14 +83,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="commission_mmc_start_omzet" id="commission_mmc_start_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_mmc_start_omzet',$corecommissionmmc['commission_mmc_start_omzet']);?>"/>
+									<input type="text" autocomplete="off"  class="form-control" name="commission_mmc_start_omzet" id="commission_mmc_start_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_mmc_start_omzet',$corecommissionmmc['commission_mmc_start_omzet']);?>"/>
 									<label class="control-label">Omzet Awal<span class="required">*</span></label>
 								</div>
 							</div>
 
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="commission_mmc_end_omzet" id="commission_mmc_end_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_mmc_end_omzet', $corecommissionmmc['commission_mmc_end_omzet']);?>"/>
+									<input type="text" autocomplete="off"  class="form-control" name="commission_mmc_end_omzet" id="commission_mmc_end_omzet" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_mmc_end_omzet', $corecommissionmmc['commission_mmc_end_omzet']);?>"/>
 									<label class="control-label">Omzet Akhir<span class="required">*</span></label>
 								</div>
 							</div>
@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" class="form-control" name="commission_mmc_unit" id="commission_mmc_unit" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_mmc_unit',$corecommissionmmc['commission_mmc_unit']);?>"/>
+									<input type="text" autocomplete="off"  class="form-control" name="commission_mmc_unit" id="commission_mmc_unit" onChange="function_elements_add(this.name, this.value);" value="<?php echo set_value('commission_mmc_unit',$corecommissionmmc['commission_mmc_unit']);?>"/>
 									<label class="control-label">Unit<span class="required">*</span></label>
 								</div>
 							</div>

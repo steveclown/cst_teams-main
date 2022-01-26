@@ -65,7 +65,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="day_off_date_status" name="day_off_date_status" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $employeeattendanceovertimestatus[$employee_attendance_overtime_dayoff];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="day_off_date_status" name="day_off_date_status" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $employeeattendanceovertimestatus[$employee_attendance_overtime_dayoff];?>" readonly>
 
 			<input type="hidden" class="form-control" id="employee_attendance_overtime_dayoff" name="employee_attendance_overtime_dayoff" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $employee_attendance_overtime_dayoff; ?>" readonly>
 
@@ -79,7 +79,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="working_date_status" name="working_date_status" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $employeeattendanceovertimestatus[$dataovertime['employee_attendance_date_status']];?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="working_date_status" name="working_date_status" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $employeeattendanceovertimestatus[$dataovertime['employee_attendance_date_status']];?>" readonly>
 
 			<label class="control-label">Status Tanggal Kerja</label>
 		</div>
@@ -89,7 +89,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="overtime_request_date" name="overtime_request_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($dataovertime['overtime_request_date']);?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="overtime_request_date" name="overtime_request_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($dataovertime['overtime_request_date']);?>" readonly>
 			<label class="control-label">Tanggal Permintaan Lembur
 				<span class="required">
 					*
@@ -111,14 +111,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="overtime_request_hours" id="overtime_request_hours" value="<?php echo $dataovertime['employee_attendance_overtime_hours']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);" >
+			<input type="text" autocomplete="off"  name="overtime_request_hours" id="overtime_request_hours" value="<?php echo $dataovertime['employee_attendance_overtime_hours']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);" >
 			<label class="control-label">Jam lembur</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="overtime_request_minutes" id="overtime_request_minutes" value="<?php echo $dataovertime['employee_attendance_overtime_minutes']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);" >
+			<input type="text" autocomplete="off"  name="overtime_request_minutes" id="overtime_request_minutes" value="<?php echo $dataovertime['employee_attendance_overtime_minutes']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);" >
 			<label class="control-label">Menit lembur</label>
 		</div>
 	</div>
@@ -127,7 +127,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="overtime_request_description" id="overtime_request_description" value="<?php echo $dataovertime['overtime_request_description']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="overtime_request_description" id="overtime_request_description" value="<?php echo $dataovertime['overtime_request_description']?>" class="form-control" onChange="function_elements_add_overtime(this.name, this.value);">
 			<label class="control-label">Deskripsi</label>
 		</div>
 	</div>

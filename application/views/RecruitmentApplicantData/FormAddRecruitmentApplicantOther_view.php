@@ -115,14 +115,14 @@
 
 <?php
 	$unique 							= $this->session->userdata('unique');
-	$recruitmentapplicantorganization	= $this->session->userdata('addarrayrecruitmentapplicantorganization-'.$unique['unique']);
+	$recruitmentapplicantorganization	= $this->session->userdata('addArrayRecruitmentApplicantOrganization-'.$unique['unique']);
 	$data_organization 					= $this->session->userdata('addrecruitmentapplicantorganization-'.$unique['unique']);	
 ?>
 
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="organization_name" name="organization_name" onChange="function_elements_add_organization(this.name, this.value);" value="<?php echo $data_organization['organization_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_name" name="organization_name" onChange="function_elements_add_organization(this.name, this.value);" value="<?php echo $data_organization['organization_name'];?>">
 			<label>Nama Organisasi</label>
 		</div>
 	</div>
@@ -146,7 +146,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="organization_title" name="organization_title" onChange="function_elements_add_organization(this.name, this.value);" value="<?php echo $data_organization['organization_title'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_title" name="organization_title" onChange="function_elements_add_organization(this.name, this.value);" value="<?php echo $data_organization['organization_title'];?>">
 			<label>Jabatan</label>
 		</div>
 	</div>

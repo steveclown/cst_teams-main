@@ -62,7 +62,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<!-- <input type="text" name="employee_delivery_days" id="employee_delivery_days" value="<?php echo $data_delivery['employee_delivery_days']?>" class="form-control" onChange="function_elements_add_delivery(this.name, this.value);"> -->
+			<!-- <input type="text" autocomplete="off"  name="employee_delivery_days" id="employee_delivery_days" value="<?php echo $data_delivery['employee_delivery_days']?>" class="form-control" onChange="function_elements_add_delivery(this.name, this.value);"> -->
 			<?php
 				echo form_dropdown('employee_delivery_days', $deliverydays, set_value('employee_delivery_days', $data_delivery['employee_delivery_days']),'id="employee_delivery_days" class="form-control select2me" ');
 			?>
@@ -83,7 +83,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_delivery_description" id="employee_delivery_description" value="<?php echo $data_delivery['employee_delivery_description']?>" class="form-control" onChange="function_elements_add_delivery(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_delivery_description" id="employee_delivery_description" value="<?php echo $data_delivery['employee_delivery_description']?>" class="form-control" onChange="function_elements_add_delivery(this.name, this.value);">
 			<label class="control-label">Deskripsi Pengiriman 
 				<span class="required">
 					*

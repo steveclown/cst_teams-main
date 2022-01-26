@@ -126,7 +126,7 @@
 									<div class="row">
 										<div class="col-md-6">	
 											<div class="form-group form-md-line-input">
-												<input type="text" name="branch_code" id="branch_code" value="<?php echo $data['branch_code']?>" class="form-control" autocomplete="off" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="branch_code" id="branch_code" value="<?php echo $data['branch_code']?>" class="form-control"  onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Kode Cabang<span class="required">*</span></label>
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka saja.
@@ -135,7 +135,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="branch_name" id="branch_name" value="<?php echo $data['branch_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="branch_name" id="branch_name" value="<?php echo $data['branch_name']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Cabang<span class="required">*</span></label>
 											</div>
 										</div>
@@ -151,13 +151,13 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="branch_contact_person" id="branch_contact_person" value="<?php echo $data['branch_contact_person']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="branch_contact_person" id="branch_contact_person" value="<?php echo $data['branch_contact_person']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Contact Person<span class="required">*</span></label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">										
-												<input type="text" name="branch_phone1" id="branch_phone1" value="<?php echo $data['branch_phone1']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="branch_phone1" id="branch_phone1" value="<?php echo $data['branch_phone1']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">No Hp Cabang 1<span class="required">*</span></label>
 											</div>
 										</div>
@@ -165,13 +165,13 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="branch_phone2" id="branch_phone2" value="<?php echo $data['branch_phone2']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="branch_phone2" id="branch_phone2" value="<?php echo $data['branch_phone2']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">No Hp Cabang 2</label>		
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">										
-												<input type="text" name="branch_email" id="branch_email" value="<?php echo $data['branch_email']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="branch_email" id="branch_email" value="<?php echo $data['branch_email']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 
 												<input type="hidden" name="branch_token" id="branch_token" class="form-control" onChange="function_elements_add(this.name, this.value);" value="<?php echo $branch_token?>">
 

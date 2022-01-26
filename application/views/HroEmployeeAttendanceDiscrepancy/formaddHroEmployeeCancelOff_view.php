@@ -64,7 +64,7 @@
 <div class = "row">		
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_cancel_off_date" name="employee_cancel_off_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($datacanceloff['employee_cancel_off_date']);?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_cancel_off_date" name="employee_cancel_off_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($datacanceloff['employee_cancel_off_date']);?>" readonly>
 			<label class="control-label">Tanggal Batal Libur
 				<span class="required">
 					*
@@ -75,7 +75,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_cancel_off_description" name="employee_cancel_off_description" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $datacanceloff['employee_cancel_off_description'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_cancel_off_description" name="employee_cancel_off_description" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo $datacanceloff['employee_cancel_off_description'];?>">
 			<label class="control-label">Deskripsi Batal Libur </label>
 		</div>	
 	</div>

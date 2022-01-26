@@ -79,14 +79,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_shift_code" name="employee_shift_code"  value="<?php echo $payrollemployeemonthly['employee_shift_code'];?>" readonly>
+												<input type="text" autocomplete="off"  class="form-control" id="employee_shift_code" name="employee_shift_code"  value="<?php echo $payrollemployeemonthly['employee_shift_code'];?>" readonly>
 												<label class="control-label">Employee Shift Code</label>
 											</div>	
 										</div>
 										
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_monthly_period" name="employee_monthly_period"  value="<?php echo $payrollemployeemonthly['employee_monthly_period'];?>" readonly>
+												<input type="text" autocomplete="off"  class="form-control" id="employee_monthly_period" name="employee_monthly_period"  value="<?php echo $payrollemployeemonthly['employee_monthly_period'];?>" readonly>
 												<label class="control-label">Monthly Period</label>
 											</div>	
 										</div>
@@ -95,14 +95,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_monthly_start_date" name="employee_monthly_start_date"  value="<?php echo tgltoview($payrollemployeemonthly['employee_monthly_start_date']);?>" readonly>
+												<input type="text" autocomplete="off"  class="form-control" id="employee_monthly_start_date" name="employee_monthly_start_date"  value="<?php echo tgltoview($payrollemployeemonthly['employee_monthly_start_date']);?>" readonly>
 												<label class="control-label">Monthly Period Start Date</label>
 											</div>	
 										</div>
 										
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_monthly_end_date" name="employee_monthly_end_date"  value="<?php echo tgltoview($payrollemployeemonthly['employee_monthly_end_date']);?>" readonly>
+												<input type="text" autocomplete="off"  class="form-control" id="employee_monthly_end_date" name="employee_monthly_end_date"  value="<?php echo tgltoview($payrollemployeemonthly['employee_monthly_end_date']);?>" readonly>
 												<label class="control-label">Monthly Period End Date</label>
 											</div>	
 										</div>

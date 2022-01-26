@@ -59,7 +59,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Disease</label>
-			<input type="text" class="form-control" id="applicant_medical_disease" name="applicant_medical_disease" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_medical_disease'];?>" placeholder="Disease">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_medical_disease" name="applicant_medical_disease" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_medical_disease'];?>" placeholder="Disease">
 		</div>
 	</div>
 </div>
@@ -67,7 +67,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Name</label>
-			<input type="text" class="form-control" id="applicant_medical_name" name="applicant_medical_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_medical_name'];?>" placeholder="Name">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_medical_name" name="applicant_medical_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_medical_name'];?>" placeholder="Name">
 		</div>
 	</div>
 </div>

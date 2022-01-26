@@ -70,7 +70,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="department_code" id="department_code" value="<?php echo $coredepartment['department_code'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="department_code" id="department_code" value="<?php echo $coredepartment['department_code'];?>" class="form-control">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -83,7 +83,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="department_name" id="department_name" value="<?php echo $coredepartment['department_name'];?>" class="form-control">
+												<input type="text" autocomplete="off"  name="department_name" id="department_name" value="<?php echo $coredepartment['department_name'];?>" class="form-control">
 												<label class="control-label">Nama Departemen
 													<span class="required">
 													*

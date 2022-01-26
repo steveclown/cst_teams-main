@@ -182,7 +182,7 @@
 
 						<div class = "col-md-4">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_commission_mmc_omzet" id="employee_commission_mmc_omzet" value="<?php echo $data['employee_commission_mmc_omzet']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+								<input type="text" autocomplete="off"  name="employee_commission_mmc_omzet" id="employee_commission_mmc_omzet" value="<?php echo $data['employee_commission_mmc_omzet']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 								<label class="control-label">Start Date
 									<span class="required">
 										*
@@ -193,7 +193,7 @@
 
 						<div class = "col-md-4">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_commission_mmc_omzet" id="employee_commission_mmc_omzet" value="<?php echo $data['employee_commission_mmc_omzet']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
+								<input type="text" autocomplete="off"  name="employee_commission_mmc_omzet" id="employee_commission_mmc_omzet" value="<?php echo $data['employee_commission_mmc_omzet']?>" class="form-control" onChange="function_elements_add(this.name, this.value);" readonly>
 								<label class="control-label">End Date
 									<span class="required">
 										*
@@ -248,7 +248,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_commission_omzet_mmc" id="employee_commission_omzet_mmc" value="<?php echo $data['employee_commission_omzet_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="employee_commission_omzet_mmc" id="employee_commission_omzet_mmc" value="<?php echo $data['employee_commission_omzet_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Omzet MMC
 									<span class="required">
 										*
@@ -259,7 +259,7 @@
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_commission_quantity_mmc" id="employee_commission_quantity_mmc" value="<?php echo $data['employee_commission_quantity_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="employee_commission_quantity_mmc" id="employee_commission_quantity_mmc" value="<?php echo $data['employee_commission_quantity_mmc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Quantity MMC
 									<span class="required">
 										*
@@ -272,7 +272,7 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_commission_omzet_acc" id="employee_commission_omzet_acc" value="<?php echo $data['employee_commission_omzet_acc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+								<input type="text" autocomplete="off"  name="employee_commission_omzet_acc" id="employee_commission_omzet_acc" value="<?php echo $data['employee_commission_omzet_acc']?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Omzet Acc
 									<span class="required">
 										*

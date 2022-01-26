@@ -167,7 +167,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Name</label>
 											
-												<input type="text" name="applicant_education_name" id="applicant_education_name" value="<?php echo $data['applicant_education_name'];?>" class="form-control" placeholder="Applicant Education Name">
+												<input type="text" autocomplete="off"  name="applicant_education_name" id="applicant_education_name" value="<?php echo $data['applicant_education_name'];?>" class="form-control" placeholder="Applicant Education Name">
 											</div>
 										</div>
 										
@@ -175,7 +175,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">City</label>
 											
-												<input type="text" name="applicant_education_city" id="applicant_education_city" value="<?php echo $data['applicant_education_city'];?>" class="form-control" placeholder="City">
+												<input type="text" autocomplete="off"  name="applicant_education_city" id="applicant_education_city" value="<?php echo $data['applicant_education_city'];?>" class="form-control" placeholder="City">
 											</div>
 										</div>
 									</div>
@@ -185,7 +185,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">From Period</label>
 											
-												<input type="text" name="applicant_education_from_period" id="applicant_education_from_period" value="<?php echo $data['applicant_education_from_period'];?>" class="form-control" placeholder="From Period">
+												<input type="text" autocomplete="off"  name="applicant_education_from_period" id="applicant_education_from_period" value="<?php echo $data['applicant_education_from_period'];?>" class="form-control" placeholder="From Period">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -196,7 +196,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">To Period</label>
 											
-												<input type="text" name="applicant_education_to_period" id="applicant_education_to_period" value="<?php echo $data['applicant_education_to_period'];?>" class="form-control" placeholder="To Period">
+												<input type="text" autocomplete="off"  name="applicant_education_to_period" id="applicant_education_to_period" value="<?php echo $data['applicant_education_to_period'];?>" class="form-control" placeholder="To Period">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -209,7 +209,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Duration</label>
 											
-												<input type="text" name="applicant_education_duration" id="applicant_education_duration" value="<?php echo $data['applicant_education_duration'];?>" class="form-control" placeholder="Duration">
+												<input type="text" autocomplete="off"  name="applicant_education_duration" id="applicant_education_duration" value="<?php echo $data['applicant_education_duration'];?>" class="form-control" placeholder="Duration">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

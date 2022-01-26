@@ -82,14 +82,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="company_code" id="company_code" class="form-control" value="<?php echo $data['company_code']?>" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="company_code" id="company_code" class="form-control" value="<?php echo $data['company_code']?>" onChange="function_elements_add(this.name, this.value);">
 
 									<label class="control-label">Kode Perusahaan<span class="required">*</span></label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="company_name" id="company_name" class="form-control" value="<?php echo $data['company_name']?>" onChange="function_elements_add(this.name, this.value);">
+									<input type="text" autocomplete="off"  name="company_name" id="company_name" class="form-control" value="<?php echo $data['company_name']?>" onChange="function_elements_add(this.name, this.value);">
 
 									<input type="hidden" name="company_token" id="company_token" class="form-control" value="<?php echo $company_token?>" onChange="function_elements_add(this.name, this.value);">
 

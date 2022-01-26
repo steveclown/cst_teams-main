@@ -95,7 +95,7 @@ function ulang(){
 											<label class="col-md-3 control-label">Start Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_request_start_date" id="leave_request_start_date" value="<?php echo tgltoview($data['leave_request_start_date'])?>" class="form-control" placeholder="Start Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_request_start_date" id="leave_request_start_date" value="<?php echo tgltoview($data['leave_request_start_date'])?>" class="form-control" placeholder="Start Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -106,7 +106,7 @@ function ulang(){
 											<label class="col-md-3 control-label">End Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_request_end_date" id="leave_request_end_date" value="<?php echo tgltoview($data['leave_request_end_date'])?>" class="form-control" placeholder="End Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_request_end_date" id="leave_request_end_date" value="<?php echo tgltoview($data['leave_request_end_date'])?>" class="form-control" placeholder="End Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

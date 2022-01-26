@@ -158,7 +158,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label">Item Binded Memo No</label>
-										<input type="text" class="form-control" id="item_binded_memo_no" name="item_binded_memo_no" value="<?php echo $val['item_binded_memo_no'];?>" placeholder="Item Binded Memo No">
+										<input type="text" autocomplete="off"  class="form-control" id="item_binded_memo_no" name="item_binded_memo_no" value="<?php echo $val['item_binded_memo_no'];?>" placeholder="Item Binded Memo No">
 										
 								
 									</div>								
@@ -169,7 +169,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label">Quantity</label>
-										<input type="text" class="form-control" id="item_composition_quantity" name="item_composition_quantity" value="<?php echo $data['item_composition_quantity'];?>" placeholder="">
+										<input type="text" autocomplete="off"  class="form-control" id="item_composition_quantity" name="item_composition_quantity" value="<?php echo $data['item_composition_quantity'];?>" placeholder="">
 									</div>								
 								</div>
 								
@@ -178,7 +178,7 @@
 								<button type='button' id='buttonaddarrayitem' class='btn default btn-xs green' onClick="formaddarraitembinded();"><i class='fa fa-plus'></i> Add</button>
 							</div>
 							<!--<div class="odd gradeX" id="onspinspinwarehouse" style="display:none;">
-								<input type="text" class="form-control spinner" value="Processing ..." readonly>
+								<input type="text" autocomplete="off"  class="form-control spinner" value="Processing ..." readonly>
 							</div>-->
 							<label></label>
 							<div class="table-scrollable">
@@ -209,7 +209,7 @@
 										</tr>
 										<tr class="odd gradeX" id="onspinspinwarehouse" style="display:none;">
 											<td colspan="8">
-												<input type="text" class="form-control spinner" value="Processing ..." readonly>
+												<input type="text" autocomplete="off"  class="form-control spinner" value="Processing ..." readonly>
 											</td>
 										</tr>-->
 										<?php

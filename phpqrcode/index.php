@@ -90,9 +90,9 @@
         
     echo '</select>&nbsp;
 		Rows:&nbsp;
-		<input type="text" name="rows" value="'.$rows.'">&nbsp;
+		<input type="text" autocomplete="off"  name="rows" value="'.$rows.'">&nbsp;
 		Cols:&nbsp;
-		<input type="text" name="cols" value="'.$cols.'">&nbsp;
+		<input type="text" autocomplete="off"  name="cols" value="'.$cols.'">&nbsp;
         <input type="submit" value="GENERATE"></form><hr/>';
 	
     if (isset($_REQUEST['data'])) { 

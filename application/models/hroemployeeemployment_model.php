@@ -49,7 +49,7 @@
 		}
 
 		public function getHROEmployeeData($employee_id){
-			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_name, hro_employee_data.division_id, hro_employee_data.department_id, hro_employee_data.section_id, hro_employee_data.employee_hire_date, hro_employee_data.employee_employment_status_date, hro_employee_data.employee_employment_status_duedate');
+			$this->db->select('hro_employee_data.employee_id, hro_employee_data.employee_name, hro_employee_data.division_id, hro_employee_data.department_id, hro_employee_data.section_id, hro_employee_data.employee_employment_working_status, hro_employee_data.employee_employment_overtime_status, hro_employee_data.employee_employment_status, hro_employee_data.employee_hire_date, hro_employee_data.employee_employment_status_date, hro_employee_data.employee_employment_status_duedate');
 			$this->db->from('hro_employee_data');
 			$this->db->where('hro_employee_data.data_state',0);
 			$this->db->where('hro_employee_data.employee_id', $employee_id);
@@ -180,10 +180,10 @@
 
 		public function getHROEmployeeEmployment_Last($employee_id){
 			$this->db->select('*');
-			$this->db->from('hro_employee_status_alteration');
-			$this->db->where('hro_employee_status_alteration.data_state',0);
-			$this->db->where('hro_employee_status_alteration.employee_id', $employee_id);
-			$this->db->order_by('hro_employee_status_alteration.status_alteration_id', 'DESC');
+			$this->db->from('hro_employee_employment');
+			$this->db->where('hro_employee_employment.data_state',0);
+			$this->db->where('hro_employee_employment.employee_id', $employee_id);
+			$this->db->order_by('hro_employee_employment.employee_employment_id', 'DESC');
 			$this->db->limit(1);
 			$result = $this->db->get();
 			return $result->row_array();

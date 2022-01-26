@@ -90,7 +90,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-                                                <input type="text" class="form-control" name="language_code" id="language_code" value="<?php echo $data['language_code']?>" >
+                                                <input type="text" autocomplete="off"  class="form-control" name="language_code" id="language_code" value="<?php echo $data['language_code']?>" >
 												<label for="form_control">Kode Bahasa
 													<span class="required">*</span>
 												</label>
@@ -100,7 +100,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="language_name" id="language_name" value="<?php echo $data['language_name']?>" >
+												<input type="text" autocomplete="off"  class="form-control" name="language_name" id="language_name" value="<?php echo $data['language_name']?>" >
 												<input type="hidden" name="language_token" id="language_token" class="form-control" value="<?php echo $language_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label for="form_control">Nama Bahasa
 													<span class="required">*</span>

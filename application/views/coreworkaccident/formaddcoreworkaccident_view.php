@@ -60,7 +60,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="work_accident_name" id="work_accident_name" value="<?php echo $data['work_accident_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="work_accident_name" id="work_accident_name" value="<?php echo $data['work_accident_name']?>" class="form-control">
 												<label class="control-label">Work Accident Name</label>
 											</div>
 										</div>

@@ -78,32 +78,32 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeworkingexperience_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeworkingexperience_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id; ?>" class="form-control" readonly>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Company Name</label>
 											<div class="col-md-8">
-												<input type="text" name="company_name" id="company_name" value="<?php echo $result['company_name']?>" class="form-control" placeholder="Company Name">
+												<input type="text" autocomplete="off"  name="company_name" id="company_name" value="<?php echo $result['company_name']?>" class="form-control" placeholder="Company Name">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Company address</label>
 											<div class="col-md-8">
-												<input type="text" name="company_address" id="company_address" value="<?php echo $result['company_address']?>" class="form-control" placeholder="Company address">
+												<input type="text" autocomplete="off"  name="company_address" id="company_address" value="<?php echo $result['company_address']?>" class="form-control" placeholder="Company address">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Job Title</label>
 											<div class="col-md-8">
-												<input type="text" name="working_experience_job_title" id="working_experience_job_title" value="<?php echo $result['working_experience_job_title']?>" class="form-control" placeholder="Job Title">
+												<input type="text" autocomplete="off"  name="working_experience_job_title" id="working_experience_job_title" value="<?php echo $result['working_experience_job_title']?>" class="form-control" placeholder="Job Title">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">From Period</label>
 											<div class="col-md-8">
-												<input type="text" name="working_experience_from_period" id="working_experience_from_period" value="<?php echo $result['working_experience_from_period']?>" class="form-control" placeholder="From Period"><span class="help-block">
+												<input type="text" autocomplete="off"  name="working_experience_from_period" id="working_experience_from_period" value="<?php echo $result['working_experience_from_period']?>" class="form-control" placeholder="From Period"><span class="help-block">
 													 Please input only Numbers.
 												</span>
 											</div>
@@ -111,7 +111,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">To Period</label>
 											<div class="col-md-8">
-												<input type="text" name="working_experience_to_period" id="working_experience_to_period" value="<?php echo $result['working_experience_to_period']?>" class="form-control" placeholder="To Period"><span class="help-block">
+												<input type="text" autocomplete="off"  name="working_experience_to_period" id="working_experience_to_period" value="<?php echo $result['working_experience_to_period']?>" class="form-control" placeholder="To Period"><span class="help-block">
 													 Please input only Numbers.
 												</span>
 											</div>
@@ -119,7 +119,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Last Salary</label>
 											<div class="col-md-8">
-												<input type="text" name="working_experience_last_salary" id="working_experience_last_salary" value="<?php echo $result['working_experience_last_salary']?>" class="form-control" placeholder="Last Salary"><span class="help-block">
+												<input type="text" autocomplete="off"  name="working_experience_last_salary" id="working_experience_last_salary" value="<?php echo $result['working_experience_last_salary']?>" class="form-control" placeholder="Last Salary"><span class="help-block">
 													 Please input only Numbers.
 												</span>
 											</div>
@@ -127,7 +127,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Resign Reason</label>
 											<div class="col-md-8">
-												<input type="text" name="working_experience_resign_reason" id="working_experience_resign_reason" value="<?php echo $result['working_experience_resign_reason']?>" class="form-control" placeholder="Resign Reason">
+												<input type="text" autocomplete="off"  name="working_experience_resign_reason" id="working_experience_resign_reason" value="<?php echo $result['working_experience_resign_reason']?>" class="form-control" placeholder="Resign Reason">
 											</div>
 										</div>
 										<div class="form-group">

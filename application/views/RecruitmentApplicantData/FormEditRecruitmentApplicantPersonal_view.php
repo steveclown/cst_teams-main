@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_name" name="applicant_name" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_name" name="applicant_name" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_name'];?>">
 			<label for="form-control">Nama
 				<span class="required">*</span>
 			</label>
@@ -26,7 +26,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_place_of_birth" name="applicant_place_of_birth" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_place_of_birth'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_place_of_birth" name="applicant_place_of_birth" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_place_of_birth'];?>">
 			<label for="form-control">Tempat Lahir
 				<span class="required">*</span>
 			</label>
@@ -46,7 +46,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_last_education" name="applicant_last_education" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_last_education'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_last_education" name="applicant_last_education" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_last_education'];?>">
 			<label for="form-control">Pendidikan Terakhir
 			</label>
 		</div>
@@ -63,7 +63,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_city" name="applicant_city" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_city'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_city" name="applicant_city" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_city'];?>">
 			<label for="form-control">Kota
 				<span class="required">*</span>
 			</label>
@@ -71,7 +71,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_postal_code" name="applicant_postal_code" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_postal_code'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_postal_code" name="applicant_postal_code" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_postal_code'];?>">
 			<label for="form-control">Kode Pos</label>
 		</div>
 	</div>
@@ -79,14 +79,14 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_rt" name="applicant_rt" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_rt'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_rt" name="applicant_rt" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_rt'];?>" >
 			
 			<label for="form-control">RT</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input ">
-			<input type="text" class="form-control" id="applicant_rw" name="applicant_rw" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_rw'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_rw" name="applicant_rw" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_rw'];?>" >
 			<label for="form-control">RW</label>
 		</div>
 	</div>
@@ -94,13 +94,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input ">
-			<input type="text" class="form-control" id="applicant_kelurahan" name="applicant_kelurahan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_kelurahan'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_kelurahan" name="applicant_kelurahan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_kelurahan'];?>">
 			<label for="form-control">Kelurahan</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_kecamatan" name="applicant_kecamatan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_kecamatan'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_kecamatan" name="applicant_kecamatan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_kecamatan'];?>" >
 			<label for="form-control">Kecamatan</label>
 		</div>
 	</div>
@@ -108,13 +108,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_home_phone" name="applicant_home_phone" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_home_phone'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_home_phone" name="applicant_home_phone" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_home_phone'];?>" >
 			<label for="form-control"> Telp Rumah</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_mobile_phone" name="applicant_mobile_phone" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_mobile_phone'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_mobile_phone" name="applicant_mobile_phone" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_mobile_phone'];?>" >
 			<label for="form-control">No HP</label>
 		</div>
 	</div>
@@ -122,7 +122,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_email_address" name="applicant_email_address" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_email_address'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_email_address" name="applicant_email_address" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_email_address'];?>">
 			<label for="form-control">Email</label>
 		</div>
 	</div>
@@ -138,13 +138,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_residence_city" name="applicant_residence_city" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_city'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_residence_city" name="applicant_residence_city" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_city'];?>">
 			<label for="form-control">Kota Tempat Tinggal</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_residence_postal_code" name="applicant_residence_postal_code" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_postal_code'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_residence_postal_code" name="applicant_residence_postal_code" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_postal_code'];?>">
 			<label for="form-control">Kode Pos Tempat Tinggal </label>
 		</div>
 	</div>
@@ -152,13 +152,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_residence_rt" name="applicant_residence_rt" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_rt'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_residence_rt" name="applicant_residence_rt" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_rt'];?>">
 			<label for="form-control">RT Tempat Tinggal</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_residence_rw" name="applicant_residence_rw" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_rw'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_residence_rw" name="applicant_residence_rw" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_rw'];?>">
 			<label for="form-control">RW Tempat Tinggal</label>
 		</div>
 	</div>
@@ -166,13 +166,13 @@
 <div class="row">	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_residence_kelurahan" name="applicant_residence_kelurahan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_kelurahan'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_residence_kelurahan" name="applicant_residence_kelurahan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_kelurahan'];?>">
 			<label for="form-control">Kelurahan Tempat Tinggal</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_residence_kecamatan" name="applicant_residence_kecamatan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_kecamatan'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_residence_kecamatan" name="applicant_residence_kecamatan" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_residence_kecamatan'];?>">
 			<label for="form-control"> Kecamatan Tempat Tinggal</label>
 		</div>
 	</div>
@@ -226,7 +226,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_heir_name" name="applicant_heir_name" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_heir_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_heir_name" name="applicant_heir_name" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_heir_name'];?>">
 			<label for="form-control">Nama Ahli Waris</label>
 		</div>
 	</div>
@@ -252,7 +252,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_id_number" name="applicant_id_number" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_id_number'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_id_number" name="applicant_id_number" onChange="function_elements_edit(this.name, this.value);" value="<?php echo $RecruitmentApplicantData['applicant_id_number'];?>" >
 			<label for="form-control">Nomor ID</label>
 		</div>
 	</div>

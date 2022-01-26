@@ -78,7 +78,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Name</label>
-			<input type="text" class="form-control" id="applicant_family_name" name="applicant_family_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_name'];?>" placeholder="Name">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_name" name="applicant_family_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_name'];?>" placeholder="Name">
 		</div>
 	</div>
 </div>
@@ -94,13 +94,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>City</label>
-			<input type="text" class="form-control" id="applicant_family_city" name="applicant_family_city" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_city'];?>" placeholder="City">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_city" name="applicant_family_city" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_city'];?>" placeholder="City">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>ZIP Code</label>
-			<input type="text" class="form-control" id="applicant_family_zip_code" name="applicant_family_zip_code" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_zip_code'];?>" placeholder="ZIP Code">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_zip_code" name="applicant_family_zip_code" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_zip_code'];?>" placeholder="ZIP Code">
 		</div>
 	</div>
 </div>
@@ -108,13 +108,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>RT</label>
-			<input type="text" class="form-control" id="applicant_family_rt" name="applicant_family_rt" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_rt'];?>" placeholder="RT">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_rt" name="applicant_family_rt" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_rt'];?>" placeholder="RT">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>RW</label>
-			<input type="text" class="form-control" id="applicant_family_rw" name="applicant_family_rw" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_rw'];?>" placeholder="RW">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_rw" name="applicant_family_rw" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_rw'];?>" placeholder="RW">
 		</div>
 	</div>
 </div>
@@ -122,13 +122,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Kelurahan</label>
-			<input type="text" class="form-control" id="applicant_family_kelurahan" name="applicant_family_kelurahan" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_kelurahan'];?>" placeholder="Kelurahan">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_kelurahan" name="applicant_family_kelurahan" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_kelurahan'];?>" placeholder="Kelurahan">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Kecamatan</label>
-			<input type="text" class="form-control" id="applicant_family_kecamatan" name="applicant_family_kecamatan" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_kecamatan'];?>" placeholder="Kecamatan">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_kecamatan" name="applicant_family_kecamatan" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_kecamatan'];?>" placeholder="Kecamatan">
 		</div>
 	</div>
 </div>
@@ -136,13 +136,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Home Phone</label>
-			<input type="text" class="form-control" id="applicant_family_home_phone" name="applicant_family_home_phone" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_home_phone'];?>" placeholder="Home Phone">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_home_phone" name="applicant_family_home_phone" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_home_phone'];?>" placeholder="Home Phone">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Mobile Phone 1</label>
-			<input type="text" class="form-control" id="applicant_family_mobile_phone1" name="applicant_family_mobile_phone1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_mobile_phone1'];?>" placeholder="Mobile Phone">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_mobile_phone1" name="applicant_family_mobile_phone1" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_mobile_phone1'];?>" placeholder="Mobile Phone">
 		</div>
 	</div>
 </div>
@@ -150,7 +150,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Mobile Phone 2</label>
-			<input type="text" class="form-control" id="applicant_family_mobile_phone2" name="applicant_family_mobile_phone2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_mobile_phone2'];?>" placeholder="Mobile Phone 2">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_mobile_phone2" name="applicant_family_mobile_phone2" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_mobile_phone2'];?>" placeholder="Mobile Phone 2">
 		</div>
 	</div>
 	<div class="col-md-6">
@@ -181,7 +181,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Place of Bhirth</label>
-			<input type="text" class="form-control" id="applicant_family_place_of_birth" name="applicant_family_place_of_birth" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_place_of_birth'];?>" placeholder="Place of Bhirth">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_place_of_birth" name="applicant_family_place_of_birth" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_place_of_birth'];?>" placeholder="Place of Bhirth">
 		</div>
 	</div>
 </div>
@@ -189,13 +189,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Education</label>
-			<input type="text" class="form-control" id="applicant_family_education" name="applicant_family_education" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_education'];?>" placeholder="Education">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_education" name="applicant_family_education" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_education'];?>" placeholder="Education">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Ocupation</label>
-			<input type="text" class="form-control" id="applicant_family_occupation" name="applicant_family_occupation" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_occupation'];?>" placeholder="Ocupation">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_family_occupation" name="applicant_family_occupation" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_family_occupation'];?>" placeholder="Ocupation">
 		</div>
 	</div>
 </div>

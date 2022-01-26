@@ -63,7 +63,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="service_pay_code" id="service_pay_code" class="form-control" value="<?php echo $coreservicepay['service_pay_code']?>">
+									<input type="text" autocomplete="off"  name="service_pay_code" id="service_pay_code" class="form-control" value="<?php echo $coreservicepay['service_pay_code']?>">
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -72,7 +72,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="service_pay_name" id="service_pay_name" class="form-control" value="<?php echo $coreservicepay['service_pay_name']?>" >
+									<input type="text" autocomplete="off"  name="service_pay_name" id="service_pay_name" class="form-control" value="<?php echo $coreservicepay['service_pay_name']?>" >
 									<label class="control-label">Service Pay Name</label>
 								</div>
 							</div>
@@ -81,13 +81,13 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="service_pay_range1" id="service_pay_range1" class="form-control" value="<?php echo $coreservicepay['service_pay_range1']?>">
+									<input type="text" autocomplete="off"  name="service_pay_range1" id="service_pay_range1" class="form-control" value="<?php echo $coreservicepay['service_pay_range1']?>">
 									<label class="control-label">Service Pay Range 1</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="service_pay_range2" id="service_pay_range2" class="form-control" value="<?php echo $coreservicepay['service_pay_range2']?>" >
+									<input type="text" autocomplete="off"  name="service_pay_range2" id="service_pay_range2" class="form-control" value="<?php echo $coreservicepay['service_pay_range2']?>" >
 									<label class="control-label">Service Pay Range 2</label>
 								</div>
 							</div>
@@ -96,7 +96,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="service_pay_ratio" id="service_pay_ratio" class="form-control" value="<?php echo $coreservicepay['service_pay_ratio']?>" >
+									<input type="text" autocomplete="off"  name="service_pay_ratio" id="service_pay_ratio" class="form-control" value="<?php echo $coreservicepay['service_pay_ratio']?>" >
 									<label class="control-label">Service Pay Ratio</label>
 								</div>
 							</div>

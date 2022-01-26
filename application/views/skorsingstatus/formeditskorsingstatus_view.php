@@ -72,7 +72,7 @@
 										</span>
 									</label>
 								
-									<input type="text" name="skorsing_status_code" id="skorsing_status_code" class="form-control" value="<?php echo $result['skorsing_status_code']?>" placeholder="Skorsing Status Code">
+									<input type="text" autocomplete="off"  name="skorsing_status_code" id="skorsing_status_code" class="form-control" value="<?php echo $result['skorsing_status_code']?>" placeholder="Skorsing Status Code">
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -83,7 +83,7 @@
 								<div class="form-group">
 									<label class="control-label">Skorsing Status Name</label>
 								
-									<input type="text" name="skorsing_status_name" id="skorsing_status_name" class="form-control" value="<?php echo $result['skorsing_status_name']?>" placeholder="Skorsing Status Name">
+									<input type="text" autocomplete="off"  name="skorsing_status_name" id="skorsing_status_name" class="form-control" value="<?php echo $result['skorsing_status_name']?>" placeholder="Skorsing Status Name">
 								</div>
 							</div>
 						</div>

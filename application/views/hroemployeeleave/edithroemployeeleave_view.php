@@ -91,7 +91,7 @@
 											<label class="control-label col-md-3">Leave Period</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="employee_leave_period" class="form-control" value="<?php echo tgltoview($result['employee_leave_period'])?>" readonly>
+													<input type="text" autocomplete="off"  name="employee_leave_period" class="form-control" value="<?php echo tgltoview($result['employee_leave_period'])?>" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -107,7 +107,7 @@
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_leave_days" id="employee_leave_days" value="<?php echo $result['employee_leave_days']?>" class="form-control" placeholder="Employee Leave Days">
+												<input type="text" autocomplete="off"  name="employee_leave_days" id="employee_leave_days" value="<?php echo $result['employee_leave_days']?>" class="form-control" placeholder="Employee Leave Days">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -119,7 +119,7 @@
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_leave_taken" id="employee_leave_taken" value="<?php echo $result['employee_leave_taken']?>" class="form-control" placeholder="Employee Leave Taken">
+												<input type="text" autocomplete="off"  name="employee_leave_taken" id="employee_leave_taken" value="<?php echo $result['employee_leave_taken']?>" class="form-control" placeholder="Employee Leave Taken">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -131,7 +131,7 @@
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_leave_last_balance" id="employee_leave_last_balance" value="<?php echo $result['employee_leave_last_balance']?>" class="form-control" placeholder="Employee Leave Last Balance">
+												<input type="text" autocomplete="off"  name="employee_leave_last_balance" id="employee_leave_last_balance" value="<?php echo $result['employee_leave_last_balance']?>" class="form-control" placeholder="Employee Leave Last Balance">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

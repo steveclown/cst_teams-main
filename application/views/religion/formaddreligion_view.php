@@ -61,7 +61,7 @@
 											<div class="form-group">
 												<label class="control-label">Religion Code</label>
 											
-												<input type="text" name="religion_code" id="religion_code" class="form-control" value="<?php echo $data['religion_code']?>" >
+												<input type="text" autocomplete="off"  name="religion_code" id="religion_code" class="form-control" value="<?php echo $data['religion_code']?>" >
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -72,7 +72,7 @@
 											<div class="form-group">
 												<label class="control-label">Religion Name</label>
 											
-												<input type="text" name="religion_name" id="religion_name" class="form-control" value="<?php echo $data['religion_name']?>" >
+												<input type="text" autocomplete="off"  name="religion_name" id="religion_name" class="form-control" value="<?php echo $data['religion_name']?>" >
 											</div>
 										</div>
 									</div>

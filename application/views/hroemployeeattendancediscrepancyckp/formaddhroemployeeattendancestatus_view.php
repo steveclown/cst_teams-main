@@ -45,7 +45,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_attendance_date" name="employee_attendance_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($dataattendance['employee_attendance_date']);?>" readonly>
+			<input type="text" autocomplete="off"  class="form-control" id="employee_attendance_date" name="employee_attendance_date" onChange="function_elements_add_permit(this.name, this.value);" value="<?php echo tgltoview($dataattendance['employee_attendance_date']);?>" readonly>
 			<label class="control-label">Employee Attendance Date
 				<span class="required">
 					*
@@ -56,7 +56,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_attendance_date_status_old_view" id="employee_attendance_date_status_old_view" value="<?php echo $this->configuration->EmployeeAttendanceDateStatus[$employee_attendance_date_status_old]; ?>" class="form-control" onChange="function_elements_add_attendance(this.name, this.value);" readonly>
+			<input type="text" autocomplete="off"  name="employee_attendance_date_status_old_view" id="employee_attendance_date_status_old_view" value="<?php echo $this->configuration->EmployeeAttendanceDateStatus[$employee_attendance_date_status_old]; ?>" class="form-control" onChange="function_elements_add_attendance(this.name, this.value);" readonly>
 			<input type="hidden" name="employee_attendance_date_status_old" id="employee_attendance_date_status_old" value="<?php echo $employee_attendance_date_status_old ?>" class="form-control" onChange="function_elements_add_attendance(this.name, this.value);" readonly>
 			<label class="control-label">Attendance Date Status Old</label>
 		</div>
@@ -77,7 +77,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_attendance_status_description" id="employee_attendance_status_description" value="<?php echo $dataattendance['employee_attendance_status_description']?>" class="form-control" onChange="function_elements_add_attendance(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_attendance_status_description" id="employee_attendance_status_description" value="<?php echo $dataattendance['employee_attendance_status_description']?>" class="form-control" onChange="function_elements_add_attendance(this.name, this.value);">
 			<label class="control-label">Description</label>
 		</div>
 	</div>

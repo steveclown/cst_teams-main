@@ -93,14 +93,14 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-3">
-												<input type="text" name="leave_emerge_long_date" id="leave_emerge_long_date" value="<?php echo $data['leave_emerge_long_date']?>" class="form-control" placeholder="Date">
+												<input type="text" autocomplete="off"  name="leave_emerge_long_date" id="leave_emerge_long_date" value="<?php echo $data['leave_emerge_long_date']?>" class="form-control" placeholder="Date">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Start Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_emerge_long_start_date" id="leave_emerge_long_start_date" value="<?php echo tgltoview($data['leave_emerge_long_start_date'])?>" class="form-control" placeholder="Start Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_emerge_long_start_date" id="leave_emerge_long_start_date" value="<?php echo tgltoview($data['leave_emerge_long_start_date'])?>" class="form-control" placeholder="Start Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -111,7 +111,7 @@ function ulang(){
 											<label class="col-md-3 control-label">End Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_emerge_long_end_date" id="leave_emerge_long_end_date" value="<?php echo tgltoview($data['leave_emerge_long_end_date'])?>" class="form-control" placeholder="End Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_emerge_long_end_date" id="leave_emerge_long_end_date" value="<?php echo tgltoview($data['leave_emerge_long_end_date'])?>" class="form-control" placeholder="End Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

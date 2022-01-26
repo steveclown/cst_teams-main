@@ -93,7 +93,7 @@ function ulang(){
 											<label class="col-md-3 control-label">Employee Suspend Date</label>
 											<div class="col-md-8">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="employee_skorsing_date" id="employee_skorsing_date" class="form-control" placeholder="Employee Skorsing Date" value="<?php echo tgltoview($result['employee_skorsing_date']);?>" readonly >
+													<input type="text" autocomplete="off"  name="employee_skorsing_date" id="employee_skorsing_date" class="form-control" placeholder="Employee Skorsing Date" value="<?php echo tgltoview($result['employee_skorsing_date']);?>" readonly >
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -103,7 +103,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Salary Percentage</label>
 											<div class="col-md-8">
-											<input type="text" name="employee_salary_percentage" id="employee_salary_percentage" class="form-control" placeholder="Salary Percentage" value="<?php echo $result['employee_salary_percentage'];?>">
+											<input type="text" autocomplete="off"  name="employee_salary_percentage" id="employee_salary_percentage" class="form-control" placeholder="Salary Percentage" value="<?php echo $result['employee_salary_percentage'];?>">
 											</div>
 										</div>
 										<div class="form-group">
@@ -124,7 +124,7 @@ function ulang(){
 											<label class="col-md-3 control-label">Employee Suspend Status Date</label>
 											<div class="col-md-8">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="employee_skorsing_status_date" id="employee_skorsing_status_date" class="form-control" placeholder="Employee Skorsing Status Date" value="<?php echo $result['employee_skorsing_status_date'];?>" readonly >
+													<input type="text" autocomplete="off"  name="employee_skorsing_status_date" id="employee_skorsing_status_date" class="form-control" placeholder="Employee Skorsing Status Date" value="<?php echo $result['employee_skorsing_status_date'];?>" readonly >
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

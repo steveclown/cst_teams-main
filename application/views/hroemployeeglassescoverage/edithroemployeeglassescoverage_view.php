@@ -73,7 +73,7 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="glasses_coverage_name" id="glasses_coverage_name" value="<?php echo $this->hroemployeeglassescoverage_model->getglassescoveragename($result[glasses_coverage_id])?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="glasses_coverage_name" id="glasses_coverage_name" value="<?php echo $this->hroemployeeglassescoverage_model->getglassescoveragename($result[glasses_coverage_id])?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="glasses_coverage_id" id="glasses_coverage_id" value="<?php echo $result[glasses_coverage_id]; ?>" class="form-control" readonly>
 												<?php //echo form_dropdown('glasses_coverage_id', $glassescoverage, $result['glasses_coverage_id'], 'id ="glasses_coverage_id", class="form-control select2me"');?>
 											</div>
@@ -84,14 +84,14 @@ function ulang(){
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeglassescoverage_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $this->hroemployeeglassescoverage_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id; ?>" class="form-control" readonly>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Period</label>
 											<div class="col-md-8">
-												<input type="text" name="glasses_coverage_period" id="glasses_coverage_period" value="<?php echo $result['glasses_coverage_period'];?>" class="form-control" placeholder="Coverage Period">
+												<input type="text" autocomplete="off"  name="glasses_coverage_period" id="glasses_coverage_period" value="<?php echo $result['glasses_coverage_period'];?>" class="form-control" placeholder="Coverage Period">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -100,7 +100,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Amount</label>
 											<div class="col-md-8">
-												<input type="text" name="glasses_coverage_amount" id="glasses_coverage_amount" value="<?php echo $result['glasses_coverage_amount'];?>" class="form-control" placeholder="Coverage Amount">
+												<input type="text" autocomplete="off"  name="glasses_coverage_amount" id="glasses_coverage_amount" value="<?php echo $result['glasses_coverage_amount'];?>" class="form-control" placeholder="Coverage Amount">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -109,7 +109,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Claimed</label>
 											<div class="col-md-8">
-												<input type="text" name="glasses_coverage_claimed" id="glasses_coverage_claimed" value="<?php echo $result['glasses_coverage_claimed'];?>" class="form-control" placeholder="Coverage Claimed">
+												<input type="text" autocomplete="off"  name="glasses_coverage_claimed" id="glasses_coverage_claimed" value="<?php echo $result['glasses_coverage_claimed'];?>" class="form-control" placeholder="Coverage Claimed">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -118,7 +118,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Last Balance</label>
 											<div class="col-md-8">
-												<input type="text" name="glasses_coverage_last_balance" id="glasses_coverage_last_balance" value="<?php echo $result['glasses_coverage_last_balance'];?>" class="form-control" placeholder="Coverage Last Balance">
+												<input type="text" autocomplete="off"  name="glasses_coverage_last_balance" id="glasses_coverage_last_balance" value="<?php echo $result['glasses_coverage_last_balance'];?>" class="form-control" placeholder="Coverage Last Balance">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>

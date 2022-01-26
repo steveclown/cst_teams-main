@@ -90,14 +90,14 @@
 								$year 	= substr($incentiveomzettarget['omzet_target_period'], 0, 4);
 							?>
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" id="month_period" name="month_period" readonly value="<?php echo $this->configuration->Month[$month];?>">
+								<input type="text" autocomplete="off"  class="form-control" id="month_period" name="month_period" readonly value="<?php echo $this->configuration->Month[$month];?>">
 								<label class="control-label">Month Name</label>
 							</div>	
 						</div>
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" id="year_period" name="year_period" readonly value="<?php echo $year;?>">
+								<input type="text" autocomplete="off"  class="form-control" id="year_period" name="year_period" readonly value="<?php echo $year;?>">
 								<label class="control-label">Year</label>
 							</div>		
 						</div>

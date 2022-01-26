@@ -51,7 +51,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_separation_description" name="employee_separation_description" onChange="function_elements_add_separation(this.name, this.value);" value="<?php echo $dataseparation['employee_separation_description'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_separation_description" name="employee_separation_description" onChange="function_elements_add_separation(this.name, this.value);" value="<?php echo $dataseparation['employee_separation_description'];?>">
 			<label class="control-label">Separation Description </label>
 		</div>	
 	</div>

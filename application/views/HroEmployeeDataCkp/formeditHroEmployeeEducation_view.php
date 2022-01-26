@@ -150,14 +150,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_education_name" id="employee_education_name" value="<?php echo $data['employee_education_name']?>" class="form-control" onChange="function_elements_edit_education(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_education_name" id="employee_education_name" value="<?php echo $data['employee_education_name']?>" class="form-control" onChange="function_elements_edit_education(this.name, this.value);">
 			<label class="control-label">Education Name</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_education_city" id="employee_education_city" value="<?php echo $data['employee_education_city']?>" class="form-control" onChange="function_elements_edit_education(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_education_city" id="employee_education_city" value="<?php echo $data['employee_education_city']?>" class="form-control" onChange="function_elements_edit_education(this.name, this.value);">
 			<label class="control-label">City</label>
 		</div>
 	</div>
@@ -201,7 +201,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_education_duration" id="employee_education_duration" value="<?php echo $data['employee_education_duration']?>" class="form-control" onChange="function_elements_edit_education(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="employee_education_duration" id="employee_education_duration" value="<?php echo $data['employee_education_duration']?>" class="form-control" onChange="function_elements_edit_education(this.name, this.value);">
 			<label class="control-label">Duration</label>
 		</div>
 	</div>

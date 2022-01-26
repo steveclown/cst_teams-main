@@ -36,13 +36,13 @@
 					<div class="span2">Nama</div>
 					<div class="span1">:</div>
 					<div class="span4" style="margin-left:5px;">
-						<input type="text" name="name" id="name" value="<?php echo $item['name'];?>" readonly />
+						<input type="text" autocomplete="off"  name="name" id="name" value="<?php echo $item['name'];?>" readonly />
 						
 					</div>
 					<div class="span1">User ID</div>
 					<div class="span1">:</div>
 					<div class="span3" style="margin-left:5px;">
-						<input type="text" name="user_id" id="user_id" value="<?php echo $item['user_id'];?>" readonly />
+						<input type="text" autocomplete="off"  name="user_id" id="user_id" value="<?php echo $item['user_id'];?>" readonly />
 						
 					</div>
 					
@@ -73,7 +73,7 @@
 					<div class="span2">No. KTP</div>
 					<div class="span1">:</div>
 					<div class="span5" style="margin-left:5px;">
-						<input type="text" name="employee_ktp" id="employee_ktp" value="<?php echo $item['employee_ktp'];?>"/>
+						<input type="text" autocomplete="off"  name="employee_ktp" id="employee_ktp" value="<?php echo $item['employee_ktp'];?>"/>
 					</div>
 					<div class="clear"></div>
 				</div>

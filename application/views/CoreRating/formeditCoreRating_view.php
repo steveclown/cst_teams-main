@@ -58,7 +58,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="rating_code" id="rating_code" value="<?php echo $CoreRating['rating_code'];?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="rating_code" id="rating_code" value="<?php echo $CoreRating['rating_code'];?>" class="form-control" >
 								<span class="help-block">
 									Mohon hanya diisi karakter huruf dan angka.
 								</span>
@@ -68,7 +68,7 @@
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="rating_name" id="rating_name" value="<?php echo $CoreRating['rating_name'];?>" class="form-control" >
+								<input type="text" autocomplete="off"  name="rating_name" id="rating_name" value="<?php echo $CoreRating['rating_name'];?>" class="form-control" >
 								<label class="control-label">Nama peringkat<span class="required">*</span></label>
 							</div>
 						</div>
@@ -77,7 +77,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="rating_range1" id="rating_range1" value="<?php echo $CoreRating['rating_range1'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="rating_range1" id="rating_range1" value="<?php echo $CoreRating['rating_range1'];?>" class="form-control">
 								<span class="help-block">
 									Mohon hanya diisi angka.
 								</span>
@@ -87,7 +87,7 @@
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="rating_range2" id="rating_range2" value="<?php echo $CoreRating['rating_range2'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="rating_range2" id="rating_range2" value="<?php echo $CoreRating['rating_range2'];?>" class="form-control">
 								<span class="help-block">
 									Mohon hanya diisi angka.
 								</span>
@@ -99,7 +99,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="rating_value" id="rating_value" value="<?php echo $CoreRating['rating_value'];?>" class="form-control">
+								<input type="text" autocomplete="off"  name="rating_value" id="rating_value" value="<?php echo $CoreRating['rating_value'];?>" class="form-control">
 								<span class="help-block">
 									Mohon hanya diisi angka.
 								</span>

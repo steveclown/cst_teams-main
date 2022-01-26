@@ -91,7 +91,7 @@
 							<div class="form-group form-md-line-input">
 								<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $hroemployeedata['employee_id']?>">
 								<input type="hidden" class="form-control" name="employee_employment_status" id="employee_employment_status" value="<?php echo $hroemployeedata['employee_employment_status'] ?>" readonly>
-                                <input type="text" class="form-control" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" readonly>
+                                <input type="text" autocomplete="off"  class="form-control" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" readonly>
 								<label for="form_control">Employee Name
 									<span class="required">*</span>
 								</label>
@@ -99,7 +99,7 @@
 						</div>
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -108,13 +108,13 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -123,7 +123,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" class="form-control" name="employee_employment_status2" id="employee_employment_status2" value="<?php echo $employeestatus[$hroemployeedata['employee_employment_status']] ?>" readonly>
+                                <input type="text" autocomplete="off"  class="form-control" name="employee_employment_status2" id="employee_employment_status2" value="<?php echo $employeestatus[$hroemployeedata['employee_employment_status']] ?>" readonly>
 								<label for="form_control">Employment Status
 									<span class="required">*</span>
 								</label>
@@ -198,7 +198,7 @@
 								$salaryamount = $salary['basic_salary_total']+$allowance;
 								// print_r($salaryamount);
 								?>
-                                <input type="text" class="form-control" name="employee_total_salary_amount" id="employee_total_salary_amount" value="<?php echo $salaryamount; ?>" readonly>
+                                <input type="text" autocomplete="off"  class="form-control" name="employee_total_salary_amount" id="employee_total_salary_amount" value="<?php echo $salaryamount; ?>" readonly>
 								<label for="form_control">Salary Amount
 									<span class="required">*</span>
 								</label>
@@ -206,7 +206,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" class="form-control" name="employee_loan_amount_total" id="employee_loan_amount_total" value="" >
+                                <input type="text" autocomplete="off"  class="form-control" name="employee_loan_amount_total" id="employee_loan_amount_total" value="" >
 								<label for="form_control">Employee Loan Amount Total</label>
 							</div>	
 						</div>
@@ -216,7 +216,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="employee_total_period" id="employee_total_period" onchange="hit()">
+								<input type="text" autocomplete="off"  class="form-control" name="employee_total_period" id="employee_total_period" onchange="hit()">
 								<label for="form_control">Total Period
 									<span class="required">*</span>
 								</label>
@@ -224,7 +224,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-                                <input type="text" class="form-control" name="employee_loan_amount" id="employee_loan_amount" readonly>
+                                <input type="text" autocomplete="off"  class="form-control" name="employee_loan_amount" id="employee_loan_amount" readonly>
 								<label for="form_control">Employee Loan Amount</label>
 							</div>	
 						</div>

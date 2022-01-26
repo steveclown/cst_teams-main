@@ -316,21 +316,21 @@
 									<div class = "row">
 										<div class = "col-md-4">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="realization_distribution_branch_percentage" name="realization_distribution_branch_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['realization_distribution_branch_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="realization_distribution_branch_percentage" name="realization_distribution_branch_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['realization_distribution_branch_percentage'];?>">
 												<label class="control-label">Branch Percentage </label>
 											</div>	
 										</div>
 
 										<div class = "col-md-4">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="realization_distribution_group_percentage" name="realization_distribution_group_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['realization_distribution_group_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="realization_distribution_group_percentage" name="realization_distribution_group_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['realization_distribution_group_percentage'];?>">
 												<label class="control-label">Group Percentage </label>
 											</div>	
 										</div>
 
 										<div class = "col-md-4">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="realization_distribution_individual_percentage" name="realization_distribution_individual_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['realization_distribution_individual_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="realization_distribution_individual_percentage" name="realization_distribution_individual_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['realization_distribution_individual_percentage'];?>">
 												<label class="control-label">Individual Percentage </label>
 											</div>	
 										</div>
@@ -378,21 +378,21 @@
 									<div class = "row">
 										<div class = "col-md-4">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="title_distribution_branch_percentage" name="title_distribution_branch_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['title_distribution_branch_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="title_distribution_branch_percentage" name="title_distribution_branch_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['title_distribution_branch_percentage'];?>">
 												<label class="control-label">Branch Percentage </label>
 											</div>	
 										</div>
 
 										<div class = "col-md-4">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="title_distribution_group_percentage" name="title_distribution_group_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['title_distribution_group_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="title_distribution_group_percentage" name="title_distribution_group_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['title_distribution_group_percentage'];?>">
 												<label class="control-label">Group Percentage </label>
 											</div>	
 										</div>
 
 										<div class = "col-md-4">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="title_distribution_individual_percentage" name="title_distribution_individual_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['title_distribution_individual_percentage'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="title_distribution_individual_percentage" name="title_distribution_individual_percentage" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['title_distribution_individual_percentage'];?>">
 												<label class="control-label">Individual Percentage </label>
 											</div>	
 										</div>
@@ -587,7 +587,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="employee_omzet_target" name="employee_omzet_target" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_target'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="employee_omzet_target" name="employee_omzet_target" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['employee_omzet_target'];?>">
 												<label class="control-label">Employee Omzet </label>
 											</div>	
 										</div>

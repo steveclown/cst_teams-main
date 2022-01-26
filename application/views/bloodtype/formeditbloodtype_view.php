@@ -60,7 +60,7 @@
 								<div class="form-group">
 									<label class="control-label">Blood Type Code</label>
 								
-									<input type="text" name="blood_type_code" id="blood_type_code" class="form-control" value="<?php echo $result['blood_type_code']?>" >
+									<input type="text" autocomplete="off"  name="blood_type_code" id="blood_type_code" class="form-control" value="<?php echo $result['blood_type_code']?>" >
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>

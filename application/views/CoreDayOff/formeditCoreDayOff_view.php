@@ -59,7 +59,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="dayoff_code" id="dayoff_code" value="<?php echo $coredayoff['dayoff_code']?>" class="form-control" >
+												<input type="text" autocomplete="off"  name="dayoff_code" id="dayoff_code" value="<?php echo $coredayoff['dayoff_code']?>" class="form-control" >
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -73,7 +73,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="dayoff_name" id="dayoff_name" value="<?php echo $coredayoff['dayoff_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="dayoff_name" id="dayoff_name" value="<?php echo $coredayoff['dayoff_name']?>" class="form-control">
 												<label class="control-label">Nama Libur
 													<span class="required">
 														*

@@ -93,7 +93,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_code" id="deduction_code" class="form-control" value="<?php echo $data['deduction_code']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_code" id="deduction_code" class="form-control" value="<?php echo $data['deduction_code']?>" onChange="function_elements_add(this.name, this.value);">
 												<span class="help-block">
 													Please input only alpha-numerical characters.
 												</span>
@@ -106,7 +106,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_name" id="deduction_name" class="form-control" value="<?php echo $data['deduction_name']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_name" id="deduction_name" class="form-control" value="<?php echo $data['deduction_name']?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Name</label>
 											</div>
 										</div>
@@ -126,7 +126,7 @@
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_amount" id="deduction_amount" class="form-control" value="<?php echo $data['deduction_amount']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_amount" id="deduction_amount" class="form-control" value="<?php echo $data['deduction_amount']?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Amount</label>
 											</div>
 										</div>
@@ -135,14 +135,14 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_premi_attendance_ratio" id="deduction_premi_attendance_ratio" class="form-control" value="<?php echo $data['deduction_premi_attendance_ratio']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_premi_attendance_ratio" id="deduction_premi_attendance_ratio" class="form-control" value="<?php echo $data['deduction_premi_attendance_ratio']?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Premi Attendance Ratio</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_basic_salary_ratio" id="deduction_basic_salary_ratio" class="form-control" value="<?php echo $data['deduction_basic_salary_ratio']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_basic_salary_ratio" id="deduction_basic_salary_ratio" class="form-control" value="<?php echo $data['deduction_basic_salary_ratio']?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Basic Salary Ratio</label>
 											</div>
 										</div>
@@ -151,14 +151,14 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_late_start_duration" id="deduction_late_start_duration" class="form-control" value="<?php echo $data['deduction_late_start_duration']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_late_start_duration" id="deduction_late_start_duration" class="form-control" value="<?php echo $data['deduction_late_start_duration']?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Late Start</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="deduction_late_end_duration" id="deduction_late_end_duration" class="form-control" value="<?php echo $data['deduction_late_end_duration']?>" onChange="function_elements_add(this.name, this.value);">
+												<input type="text" autocomplete="off"  name="deduction_late_end_duration" id="deduction_late_end_duration" class="form-control" value="<?php echo $data['deduction_late_end_duration']?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Deduction Late End</label>
 											</div>
 										</div>
@@ -186,7 +186,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="deduction_allowance_ratio" name="deduction_allowance_ratio" value="<?php echo $data['deduction_allowance_ratio'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="deduction_allowance_ratio" name="deduction_allowance_ratio" value="<?php echo $data['deduction_allowance_ratio'];?>">
 												<label class="control-label">Allowance Ratio </label>
 											</div>	
 										</div>

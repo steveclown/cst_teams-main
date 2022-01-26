@@ -92,7 +92,7 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label">Business Trip Name</label>
 							<div class="col-md-8">
-								<input type="text" name="expense_business_trip_name" id="expense_business_trip_name" onChange="warningname(expense_business_trip_name);" value="<?php echo $data['expense_business_trip_name'];?>" class="form-control" placeholder="Business Trip Name">
+								<input type="text" autocomplete="off"  name="expense_business_trip_name" id="expense_business_trip_name" onChange="warningname(expense_business_trip_name);" value="<?php echo $data['expense_business_trip_name'];?>" class="form-control" placeholder="Business Trip Name">
 							</div>
 						</div>
 				</div>

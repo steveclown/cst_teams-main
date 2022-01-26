@@ -280,14 +280,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="username" id="username"  value="<?php echo set_value('username',$data['username']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="username" id="username"  value="<?php echo set_value('username',$data['username']);?>"/>
 								<label class="control-label">User Name</label>
 							</div>
 						</div>
 
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="password" id="password"  value="<?php echo set_value('password',$data['password']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="password" id="password"  value="<?php echo set_value('password',$data['password']);?>"/>
 								<label class="control-label">Password</label>
 							</div>
 						</div>

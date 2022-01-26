@@ -70,7 +70,7 @@ function ulang(){
 												*
 												</span></label>
 											
-												<input type="text" name="loan_type_code" id="loan_type_code" value="<?php echo $result['loan_type_code'];?>" class="form-control" placeholder="Loan Type Code">
+												<input type="text" autocomplete="off"  name="loan_type_code" id="loan_type_code" value="<?php echo $result['loan_type_code'];?>" class="form-control" placeholder="Loan Type Code">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -84,7 +84,7 @@ function ulang(){
 												*
 												</span></label>
 											
-												<input type="text" name="loan_type_name" id="loan_type_name" value="<?php echo $result['loan_type_name'];?>" class="form-control" placeholder="Loan Type Name">
+												<input type="text" autocomplete="off"  name="loan_type_name" id="loan_type_name" value="<?php echo $result['loan_type_name'];?>" class="form-control" placeholder="Loan Type Name">
 											</div>
 										</div>
 									</div>

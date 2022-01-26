@@ -68,7 +68,7 @@ $this->session->unset_userdata('message');
 								*
 								</span></label>
 								<div class="col-md-8">
-									<input type="text" name="expertise_code" id="expertise_code" value="<?php echo $result['expertise_code'];?>" class="form-control" placeholder="Expertise Code">
+									<input type="text" autocomplete="off"  name="expertise_code" id="expertise_code" value="<?php echo $result['expertise_code'];?>" class="form-control" placeholder="Expertise Code">
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -80,7 +80,7 @@ $this->session->unset_userdata('message');
 								*
 								</span></label>
 								<div class="col-md-8">
-									<input type="text" name="expertise_name" id="expertise_name" value="<?php echo $result['expertise_name'];?>" class="form-control" placeholder="Expertise Name">
+									<input type="text" autocomplete="off"  name="expertise_name" id="expertise_name" value="<?php echo $result['expertise_name'];?>" class="form-control" placeholder="Expertise Name">
 								</div>
 							</div>
 							<div class="form-group">

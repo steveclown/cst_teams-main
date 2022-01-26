@@ -91,17 +91,17 @@
 												$data = $this->session->userdata('addaward');
 											?>
                                                 <div class="form-group form-md-line-input">
-													<input type="text" class="form-control" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name'];?>" readonly/>
+													<input type="text" autocomplete="off"  class="form-control" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name'];?>" readonly/>
 													<label class="control-label">Employee Name<span class="required">*</span></label>
 												</div>		
 
 												<div class="form-group form-md-line-input">
-													<input type="text" class="form-control" name="username" id="username" value="<?php echo $systemuser['username'];?>" />
+													<input type="text" autocomplete="off"  class="form-control" name="username" id="username" value="<?php echo $systemuser['username'];?>" />
 													<label class="control-label">Username<span class="required">*</span></label>
 												</div>
 
 												<div class="form-group form-md-line-input">
-													<input type="text" class="form-control" name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $hroemployeedata['employee_mobile_phone'];?>" />
+													<input type="text" autocomplete="off"  class="form-control" name="employee_mobile_phone" id="employee_mobile_phone" value="<?php echo $hroemployeedata['employee_mobile_phone'];?>" />
 													<label class="control-label">Mobile Phone</label>
 												</div>
 

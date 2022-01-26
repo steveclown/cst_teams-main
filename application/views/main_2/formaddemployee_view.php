@@ -156,7 +156,7 @@
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_name" class="form-control" value="<?php echo $data[employee_name]; ?>">
+												<input type="text" autocomplete="off"  name="employee_name" class="form-control" value="<?php echo $data[employee_name]; ?>">
 											</div>
 										</div>
 									</div>

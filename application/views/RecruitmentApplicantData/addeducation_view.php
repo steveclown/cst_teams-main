@@ -150,13 +150,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_name" name="applicant_education_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_name" name="applicant_education_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_name'];?>">
 			<label>Education Name</label>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_city" name="applicant_education_city" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_city'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_city" name="applicant_education_city" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_city'];?>">
 			<label>City</label>
 		</div>
 	</div>
@@ -164,14 +164,14 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_from_period" name="applicant_education_from_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_from_period'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_from_period" name="applicant_education_from_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_from_period'];?>">
 			<label>From Period</label>
 			<span class="help-block">yyyymm</span>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_to_period" name="applicant_education_to_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_to_period'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_to_period" name="applicant_education_to_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_to_period'];?>">
 			<label>To Period</label>
 			<span class="help-block">yyyymm</span>
 		</div>
@@ -180,7 +180,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_duration" name="applicant_education_duration" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_duration'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_duration" name="applicant_education_duration" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_duration'];?>">
 			<label>Duration</label>
 		</div>
 	</div>
@@ -426,7 +426,7 @@
 <div class="row">	
 	<div class="col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_education_cost" name="applicant_education_cost" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_cost'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_cost" name="applicant_education_cost" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_cost'];?>">
 			<label>Education Cost</label>
 		</div>
 	</div>
@@ -444,7 +444,7 @@
 
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_champion_major" name="applicant_champion_major" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_champion_major'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_champion_major" name="applicant_champion_major" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_champion_major'];?>" >
 			<label>Have you ever be a champion</label>
 		</div>
 	</div>
@@ -461,7 +461,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_grade_fail_period" name="applicant_grade_fail_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_grade_fail_period'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_grade_fail_period" name="applicant_grade_fail_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_grade_fail_period'];?>">
 			<label>Fail Period</label>
 			<span class="help-block">201701</span>
 		</div>
@@ -512,7 +512,7 @@
 
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="applicant_subjects_name" name="applicant_subjects_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_subjects_name'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_subjects_name" name="applicant_subjects_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_subjects_name'];?>" >
 			<label>Subjects Name</label>
 		</div>
 	</div>

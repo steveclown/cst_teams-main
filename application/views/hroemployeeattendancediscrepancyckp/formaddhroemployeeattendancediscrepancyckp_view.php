@@ -110,14 +110,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $hroemployeedata['division_name']?>" class="form-control" readonly>
 								<label class="control-label">Division Name</label>
 							</div>	
 						</div>
@@ -126,14 +126,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $hroemployeedata['department_name']?>" class="form-control" readonly>
 								<label class="control-label">Department Name</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $hroemployeedata['section_name']?>" class="form-control" readonly>
 								<label class="control-label">Section Name</label>
 							</div>	
 						</div>
@@ -143,14 +143,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="unit_id" id="unit_id" value="<?php echo $hroemployeedata['unit_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="unit_id" id="unit_id" value="<?php echo $hroemployeedata['unit_name']?>" class="form-control" readonly>
 								<label class="control-label">Unit Name</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="job_title_name" id="job_title_name" value="<?php echo $hroemployeedata['job_title_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="job_title_name" id="job_title_name" value="<?php echo $hroemployeedata['job_title_name']?>" class="form-control" readonly>
 								<label class="control-label">Job Title Name </label>
 							</div>	
 						</div>

@@ -61,7 +61,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="employee_warning_description" name="employee_warning_description" onChange="function_elements_add_warning(this.name, this.value);" value="<?php echo $datawarning['employee_warning_description'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="employee_warning_description" name="employee_warning_description" onChange="function_elements_add_warning(this.name, this.value);" value="<?php echo $datawarning['employee_warning_description'];?>">
 			<label class="control-label">Deskripsi peringatan  </label>
 		</div>	
 	</div>

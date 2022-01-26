@@ -83,7 +83,7 @@
 											*
 											</span></label>
 											<div class="col-md-8">
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $this->hroemployeelanguage_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $this->hroemployeelanguage_model->getemployeename($employee_id)?>" class="form-control" placeholder="Employee Name" readonly>
 												<input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id; ?>" class="form-control" readonly>
 											</div>
 										</div>

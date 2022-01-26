@@ -112,7 +112,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="warning_code" id="warning_code"  onChange="warningcode(warning_code);" value="<?php echo set_value('warning_code',$data['warning_code']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="warning_code" id="warning_code"  onChange="warningcode(warning_code);" value="<?php echo set_value('warning_code',$data['warning_code']);?>"/>
 								<span class="help-block">
 									Mohon hanya diisi karakter huruf dan angka.
 								</span>
@@ -122,7 +122,7 @@
 						
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">	
-								<input type="text" class="form-control" name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo set_value('warning_name',$data['warning_name']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="warning_name" id="warning_name" onChange="warningname(warning_name);" value="<?php echo set_value('warning_name',$data['warning_name']);?>"/>
 								<input type="hidden" name="warning_token" id="warning_token" class="form-control" value="<?php echo $warning_token?>" onChange="function_elements_add(this.name, this.value);">
 								<label class="control-label">Nama Peringatan<span class="required">*</span></label>
 							</div>

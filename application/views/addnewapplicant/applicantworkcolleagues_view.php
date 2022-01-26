@@ -122,7 +122,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Colleague Name</label>
 												
-												<input type="text" name="applicant_work_colleagues_name" id="applicant_work_colleagues_name" value="<?php echo $data['applicant_work_colleagues_name'];?>" class="form-control" placeholder="Colleague Name">
+												<input type="text" autocomplete="off"  name="applicant_work_colleagues_name" id="applicant_work_colleagues_name" value="<?php echo $data['applicant_work_colleagues_name'];?>" class="form-control" placeholder="Colleague Name">
 											</div>
 										</div>
 										
@@ -130,7 +130,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Section</label>
 											
-												<input type="text" name="applicant_work_colleagues_section" id="applicant_work_colleagues_section" value="<?php echo $data['applicant_work_colleagues_section'];?>" class="form-control" placeholder="Section">
+												<input type="text" autocomplete="off"  name="applicant_work_colleagues_section" id="applicant_work_colleagues_section" value="<?php echo $data['applicant_work_colleagues_section'];?>" class="form-control" placeholder="Section">
 											</div>
 										</div>
 									</div>
@@ -140,7 +140,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Relationship</label>
 											
-												<input type="text" name="applicant_work_colleagues_relatioship" id="applicant_work_colleagues_relatioship" value="<?php echo $data['applicant_work_colleagues_relatioship'];?>" class="form-control" placeholder="Relationship">
+												<input type="text" autocomplete="off"  name="applicant_work_colleagues_relatioship" id="applicant_work_colleagues_relatioship" value="<?php echo $data['applicant_work_colleagues_relatioship'];?>" class="form-control" placeholder="Relationship">
 											</div>
 										</div>
 									</div>

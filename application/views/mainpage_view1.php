@@ -2197,7 +2197,7 @@
                                         <div class="portlet-input input-inline input-small ">
                                             <div class="input-icon right">
                                                 <i class="icon-magnifier"></i>
-                                                <input type="text" class="form-control form-control-solid input-circle" placeholder="search..."> </div>
+                                                <input type="text" autocomplete="off"  class="form-control form-control-solid input-circle" placeholder="search..."> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -3693,7 +3693,7 @@
                                 </div>
                                 <div class="page-quick-sidebar-chat-user-form">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Type a message here...">
+                                        <input type="text" autocomplete="off"  class="form-control" placeholder="Type a message here...">
                                         <div class="input-group-btn">
                                             <button type="button" class="btn green">
                                                 <i class="icon-paper-clip"></i>

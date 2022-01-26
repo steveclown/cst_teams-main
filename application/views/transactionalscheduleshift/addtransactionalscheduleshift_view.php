@@ -98,7 +98,7 @@ function ulang(){
 										<label class="control-label col-md-3">Start Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php date("d-m-Y")?>" data-date-format="dd--mm-yyyy" data-date-viewmode="years">
-													<input type="text" class="form-control" name="schedule_shift_start_date" value="<?php echo tgltoview($data['schedule_shift_start_date']);?>" readonly>
+													<input type="text" autocomplete="off"  class="form-control" name="schedule_shift_start_date" value="<?php echo tgltoview($data['schedule_shift_start_date']);?>" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -109,7 +109,7 @@ function ulang(){
 										<label class="control-label col-md-3">End Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php date("d-m-Y")?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" class="form-control" name="schedule_shift_end_date" value="<?php echo tgltoview($data['schedule_shift_end_date']);?>" readonly>
+													<input type="text" autocomplete="off"  class="form-control" name="schedule_shift_end_date" value="<?php echo tgltoview($data['schedule_shift_end_date']);?>" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>

@@ -58,7 +58,7 @@
 							<?php 
 							if(is_array($header)){
 							?>
-							<input type="text" name="region_name" value="<?php echo $this->transactionalselectionemployee_model->getregionname($header['region_id']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="region_name" value="<?php echo $this->transactionalselectionemployee_model->getregionname($header['region_id']);?>" class="form-control" readonly>
 							<input type="hidden" name="region_id" value="<?php echo $header['region_id'];?>" readonly>
 							<?php
 							}else{
@@ -73,7 +73,7 @@
 							<?php 
 							if(is_array($header)){
 							?>
-							<input type="text" name="branch_name" value="<?php echo $this->transactionalselectionemployee_model->getbranchname($header['branch_id']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="branch_name" value="<?php echo $this->transactionalselectionemployee_model->getbranchname($header['branch_id']);?>" class="form-control" readonly>
 							<input type="hidden" name="branch_id" value="<?php echo $header['branch_id'];?>" readonly>
 							<?php
 							}else{
@@ -88,7 +88,7 @@
 							<?php 
 							if(is_array($header)){
 							?>
-							<input type="text" name="division_name" value="<?php echo $this->transactionalselectionemployee_model->getdivisionname($header['division_id']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="division_name" value="<?php echo $this->transactionalselectionemployee_model->getdivisionname($header['division_id']);?>" class="form-control" readonly>
 							<input type="hidden" name="division_id" value="<?php echo $header['division_id'];?>" readonly>
 							<?php
 							}else{
@@ -103,7 +103,7 @@
 							<?php 
 							if(is_array($header)){
 							?>
-							<input type="text" name="department_name" value="<?php echo $this->transactionalselectionemployee_model->getdepartmentname($header['department_id']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="department_name" value="<?php echo $this->transactionalselectionemployee_model->getdepartmentname($header['department_id']);?>" class="form-control" readonly>
 							<input type="hidden" name="department_id" value="<?php echo $header['department_id'];?>" readonly>
 							<?php
 							}else{
@@ -118,7 +118,7 @@
 							<?php 
 							if(is_array($header)){
 							?>
-							<input type="text" name="section_name" value="<?php echo $this->transactionalselectionemployee_model->getsectionname($header['section_id']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="section_name" value="<?php echo $this->transactionalselectionemployee_model->getsectionname($header['section_id']);?>" class="form-control" readonly>
 							<input type="hidden" name="section_id" value="<?php echo $header['section_id'];?>" readonly>
 							<?php
 							}else{
@@ -133,7 +133,7 @@
 							<?php 
 							if(is_array($header)){
 							?>
-							<input type="text" name="location_name" value="<?php echo $this->transactionalselectionemployee_model->getlocationname($header['location_id']);?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="location_name" value="<?php echo $this->transactionalselectionemployee_model->getlocationname($header['location_id']);?>" class="form-control" readonly>
 							<input type="hidden" name="location_id" value="<?php echo $header['location_id'];?>" readonly>
 							<?php
 							}else{

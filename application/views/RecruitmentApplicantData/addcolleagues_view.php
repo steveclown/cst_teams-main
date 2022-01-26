@@ -44,13 +44,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Colleagues Name</label>
-			<input type="text" class="form-control" id="applicant_work_colleagues_name" name="applicant_work_colleagues_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_work_colleagues_name'];?>" placeholder="Name">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_work_colleagues_name" name="applicant_work_colleagues_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_work_colleagues_name'];?>" placeholder="Name">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Section</label>
-			<input type="text" class="form-control" id="applicant_work_colleagues_section" name="applicant_work_colleagues_section" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_work_colleagues_section'];?>" placeholder="Section">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_work_colleagues_section" name="applicant_work_colleagues_section" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_work_colleagues_section'];?>" placeholder="Section">
 		</div>
 	</div>
 </div>
@@ -58,7 +58,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Relationship</label>
-			<input type="text" class="form-control" id="applicant_work_colleagues_relatioship" name="applicant_work_colleagues_relatioship" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_work_colleagues_relatioship'];?>" placeholder="Relationship">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_work_colleagues_relatioship" name="applicant_work_colleagues_relatioship" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_work_colleagues_relatioship'];?>" placeholder="Relationship">
 		</div>
 	</div>
 </div>

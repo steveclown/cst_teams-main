@@ -52,7 +52,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Name</label>
-			<input type="text" class="form-control" id="applicant_subjects_name" name="applicant_subjects_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_subjects_name'];?>" placeholder="Name">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_subjects_name" name="applicant_subjects_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_subjects_name'];?>" placeholder="Name">
 		</div>
 	</div>
 </div>

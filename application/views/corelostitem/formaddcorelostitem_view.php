@@ -110,7 +110,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="lost_item_code" id="lost_item_code" onChange="warninglostitemcode(lost_item_code); function_elements_add(this.name, this.value);" value="<?php echo set_value('lost_item_code',$data['lost_item_code']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="lost_item_code" id="lost_item_code" onChange="warninglostitemcode(lost_item_code); function_elements_add(this.name, this.value);" value="<?php echo set_value('lost_item_code',$data['lost_item_code']);?>"/>
 								<span class="help-block">
 									 Please input only alpha-numerical characters.
 								</span>
@@ -119,7 +119,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" class="form-control" name="lost_item_name" id="lost_item_name" onChange="warninglostitemname(lost_item_name); function_elements_add(this.name, this.value);" value="<?php echo set_value('lost_item_name',$data['lost_item_name']);?>"/>
+								<input type="text" autocomplete="off"  class="form-control" name="lost_item_name" id="lost_item_name" onChange="warninglostitemname(lost_item_name); function_elements_add(this.name, this.value);" value="<?php echo set_value('lost_item_name',$data['lost_item_name']);?>"/>
 								<label class="control-label">Lost Item Name<span class="required">*</span></label>
 							</div>
 						</div>

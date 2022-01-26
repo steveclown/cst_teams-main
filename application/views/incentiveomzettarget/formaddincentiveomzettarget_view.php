@@ -228,7 +228,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="omzet_target_amount1" name="omzet_target_amount1" onChange="omzetTargetAmount(this.value)" value="<?php echo $data['omzet_target_amount1'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="omzet_target_amount1" name="omzet_target_amount1" onChange="omzetTargetAmount(this.value)" value="<?php echo $data['omzet_target_amount1'];?>">
 
 
 												<input type="hidden" class="form-control" id="omzet_target_amount" name="omzet_target_amount" value="<?php echo $data['omzet_target_amount'];?>">
@@ -238,7 +238,7 @@
 
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="omzet_achievement_amount1" name="omzet_achievement_amount1" onChange="omzetAchievementAmount(this.value)" value="<?php echo $data['omzet_achievement_amount1'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="omzet_achievement_amount1" name="omzet_achievement_amount1" onChange="omzetAchievementAmount(this.value)" value="<?php echo $data['omzet_achievement_amount1'];?>">
 
 
 												<input type="hidden" class="form-control" id="omzet_achievement_amount" name="omzet_achievement_amount" value="<?php echo $data['omzet_achievement_amount'];?>">

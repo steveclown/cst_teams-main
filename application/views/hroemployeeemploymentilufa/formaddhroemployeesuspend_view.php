@@ -61,7 +61,7 @@
 <div class = "row">
 	<div class = "col-md-12">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_suspend_description" id="employee_suspend_description" class="form-control" onChange="function_elements_add_suspend(this.name, this.value);" value="<?php echo $datasuspend['employee_suspend_description'];?>">
+			<input type="text" autocomplete="off"  name="employee_suspend_description" id="employee_suspend_description" class="form-control" onChange="function_elements_add_suspend(this.name, this.value);" value="<?php echo $datasuspend['employee_suspend_description'];?>">
 			<label class="control-label">Suspend Description</label>
 		</div>
 	</div>
@@ -70,14 +70,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_suspend_days" id="employee_suspend_days" class="form-control" onChange="function_elements_add_suspend(this.name, this.value);" value="<?php echo $datasuspend['employee_suspend_days'];?>">
+			<input type="text" autocomplete="off"  name="employee_suspend_days" id="employee_suspend_days" class="form-control" onChange="function_elements_add_suspend(this.name, this.value);" value="<?php echo $datasuspend['employee_suspend_days'];?>">
 			<label class="control-label">Suspend Days</label>
 		</div>
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="employee_suspend_salary_percentage" id="employee_suspend_salary_percentage" class="form-control" onChange="function_elements_add_suspend(this.name, this.value);" value="<?php echo $datasuspend['employee_suspend_salary_percentage'];?>">
+			<input type="text" autocomplete="off"  name="employee_suspend_salary_percentage" id="employee_suspend_salary_percentage" class="form-control" onChange="function_elements_add_suspend(this.name, this.value);" value="<?php echo $datasuspend['employee_suspend_salary_percentage'];?>">
 			<label class="control-label">Salary Percentage</label>
 		</div>
 	</div>

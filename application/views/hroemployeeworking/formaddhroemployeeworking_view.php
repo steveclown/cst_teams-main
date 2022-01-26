@@ -84,14 +84,14 @@
 					<div class = "row">
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $hroemployeedata['employee_name']?>" class="form-control" readonly>
 								<label class="control-label">Employee Name</label>
 							</div>
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="division_id" id="division_id" value="<?php echo $this->hroemployeeworking_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="division_id" id="division_id" value="<?php echo $this->hroemployeeworking_model->getDivisionName($hroemployeedata['division_id'])?>" class="form-control" readonly>
 								<label class="control-label">Division</label>
 							</div>	
 						</div>
@@ -100,14 +100,14 @@
 						
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="department_id" id="department_id" value="<?php echo $this->hroemployeeworking_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="department_id" id="department_id" value="<?php echo $this->hroemployeeworking_model->getDepartmentName($hroemployeedata['department_id'])?>" class="form-control" readonly>
 								<label class="control-label">Department</label>
 							</div>	
 						</div>
 					
 						<div class = "col-md-6">
 							<div class="form-group form-md-line-input">
-								<input type="text" name="section_id" id="section_id" value="<?php echo $this->hroemployeeworking_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
+								<input type="text" autocomplete="off"  name="section_id" id="section_id" value="<?php echo $this->hroemployeeworking_model->getSectionName($hroemployeedata['section_id'])?>" class="form-control" readonly>
 								<label class="control-label">Section </label>
 							</div>	
 						</div>
@@ -178,7 +178,7 @@
 									<div class="row">		
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="working_company_name" name="working_company_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_company_name'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="working_company_name" name="working_company_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_company_name'];?>">
 												<label>Company Name</label>
 											</div>
 										</div>
@@ -194,13 +194,13 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="working_job_title" name="working_job_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_job_title'];?>" >
+												<input type="text" autocomplete="off"  class="form-control" id="working_job_title" name="working_job_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_job_title'];?>" >
 												<label>Job Title</label>
 											</div>
 										</div>	
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="working_last_salary" name="working_last_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_last_salary'];?>">
+												<input type="text" autocomplete="off"  class="form-control" id="working_last_salary" name="working_last_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_last_salary'];?>">
 												<label>Last Salary</label>
 											</div>
 										</div>	

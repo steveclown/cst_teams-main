@@ -125,7 +125,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Experience Name</label>
 											
-												<input type="text" name="organization_experience_name" id="organization_experience_name" value="<?php echo $data['organization_experience_name'];?>" class="form-control" placeholder="Experience Name">
+												<input type="text" autocomplete="off"  name="organization_experience_name" id="organization_experience_name" value="<?php echo $data['organization_experience_name'];?>" class="form-control" placeholder="Experience Name">
 											</div>
 										</div>
 										
@@ -133,7 +133,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Scope</label>
 											
-												<input type="text" name="organization_experience_scope" id="organization_experience_scope" value="<?php echo $data['organization_experience_scope'];?>" class="form-control" placeholder="Scope">
+												<input type="text" autocomplete="off"  name="organization_experience_scope" id="organization_experience_scope" value="<?php echo $data['organization_experience_scope'];?>" class="form-control" placeholder="Scope">
 											</div>
 										</div>
 									</div>
@@ -143,7 +143,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Period</label>
 											
-												<input type="text" name="organization_experience_period" id="organization_experience_period" value="<?php echo $data['organization_experience_period'];?>" class="form-control" placeholder="Period">
+												<input type="text" autocomplete="off"  name="organization_experience_period" id="organization_experience_period" value="<?php echo $data['organization_experience_period'];?>" class="form-control" placeholder="Period">
 											</div>
 										</div>
 										
@@ -151,7 +151,7 @@ function ulang(){
 											<div class="form-group">
 												<label class="col-md-3 control-label">Title</label>
 											
-												<input type="text" name="organization_experience_title" id="organization_experience_title" value="<?php echo $data['organization_experience_title'];?>" class="form-control" placeholder="Title">
+												<input type="text" autocomplete="off"  name="organization_experience_title" id="organization_experience_title" value="<?php echo $data['organization_experience_title'];?>" class="form-control" placeholder="Title">
 											</div>
 										</div>
 									</div>

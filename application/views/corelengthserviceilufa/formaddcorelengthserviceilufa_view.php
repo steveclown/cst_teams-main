@@ -63,7 +63,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_code" id="length_service_code" class="form-control" value="<?php echo $data['length_service_code']?>">
+												<input type="text" autocomplete="off"  name="length_service_code" id="length_service_code" class="form-control" value="<?php echo $data['length_service_code']?>">
 												<span class="help-block">
 													 Please input only alpha-numerical characters.
 												</span>
@@ -77,7 +77,7 @@ function ulang(){
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_name" id="length_service_name" class="form-control" value="<?php echo $data['length_service_name']?>">
+												<input type="text" autocomplete="off"  name="length_service_name" id="length_service_name" class="form-control" value="<?php echo $data['length_service_name']?>">
 												<label class="control-label">Length of Service Name</label>
 											</div>
 										</div>
@@ -86,14 +86,14 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_range1" id="length_service_range1" class="form-control" value="<?php echo $data['length_service_range1']?>" >
+												<input type="text" autocomplete="off"  name="length_service_range1" id="length_service_range1" class="form-control" value="<?php echo $data['length_service_range1']?>" >
 												<label class="control-label">Length of Service Range 1</label>
 											</div>
 										</div>
 										
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_range2" id="length_service_range2" class="form-control" value="<?php echo $data['length_service_range2']?>" >
+												<input type="text" autocomplete="off"  name="length_service_range2" id="length_service_range2" class="form-control" value="<?php echo $data['length_service_range2']?>" >
 												<label class="control-label">Length of Service Range 2</label>
 											</div>
 										</div>
@@ -102,7 +102,7 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_amount" id="length_service_amount" class="form-control" value="<?php echo $data['length_service_amount']?>" >
+												<input type="text" autocomplete="off"  name="length_service_amount" id="length_service_amount" class="form-control" value="<?php echo $data['length_service_amount']?>" >
 												<label class="control-label">Length of Service Amount</label>
 											</div>
 										</div>
@@ -111,14 +111,14 @@ function ulang(){
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_amount_multiply" id="length_service_amount_multiply" class="form-control" value="<?php echo $data['length_service_amount_multiply']?>" >
+												<input type="text" autocomplete="off"  name="length_service_amount_multiply" id="length_service_amount_multiply" class="form-control" value="<?php echo $data['length_service_amount_multiply']?>" >
 												<label class="control-label">Length of Service Amount Multiply</label>
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="length_service_min_saving" id="length_service_min_saving" class="form-control" value="<?php echo $data['length_service_min_saving']?>" >
+												<input type="text" autocomplete="off"  name="length_service_min_saving" id="length_service_min_saving" class="form-control" value="<?php echo $data['length_service_min_saving']?>" >
 												<label class="control-label">Length of Service Min Saving</label>
 											</div>
 										</div>

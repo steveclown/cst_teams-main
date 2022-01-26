@@ -86,14 +86,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_bpjs_working_start" name="period_bpjs_working_start" onChange="function_elements_edit_bpjs(this.name, this.value);" value="<?php echo $data['period_bpjs_working_start'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_bpjs_working_start" name="period_bpjs_working_start" onChange="function_elements_edit_bpjs(this.name, this.value);" value="<?php echo $data['period_bpjs_working_start'];?>">
 			<label class="control-label">Working Start </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="period_bpjs_working_end" name="period_bpjs_working_end" onChange="function_elements_edit_bpjs(this.name, this.value);" value="<?php echo $data['period_bpjs_working_end'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="period_bpjs_working_end" name="period_bpjs_working_end" onChange="function_elements_edit_bpjs(this.name, this.value);" value="<?php echo $data['period_bpjs_working_end'];?>">
 			<label class="control-label">Working End </label>
 		</div>	
 	</div>
@@ -102,7 +102,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_bpjs_kesehatan_amount" id="period_bpjs_kesehatan_amount" value="<?php echo $data['period_bpjs_kesehatan_amount']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_bpjs_kesehatan_amount" id="period_bpjs_kesehatan_amount" value="<?php echo $data['period_bpjs_kesehatan_amount']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
 			<label class="control-label">BPJS Kesehatan Amount
 				<span class="required">
 					*
@@ -113,7 +113,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="period_bpjs_tenagakerja_amount" id="period_bpjs_tenagakerja_amount" value="<?php echo $data['period_bpjs_tenagakerja_amount']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="period_bpjs_tenagakerja_amount" id="period_bpjs_tenagakerja_amount" value="<?php echo $data['period_bpjs_tenagakerja_amount']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
 			<label class="control-label">BPJS Tenaga Kerja Amount
 				<span class="required">
 					*
@@ -126,7 +126,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="bpjs_tenagakerja_subvention_monthly" id="bpjs_tenagakerja_subvention_monthly" value="<?php echo $data['bpjs_tenagakerja_subvention_monthly']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="bpjs_tenagakerja_subvention_monthly" id="bpjs_tenagakerja_subvention_monthly" value="<?php echo $data['bpjs_tenagakerja_subvention_monthly']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
 			<label class="control-label">BPJS Tenaga Kerja Subvention Monthly
 				<span class="required">
 					*
@@ -137,7 +137,7 @@
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" name="bpjs_tenagakerja_subvention_daily" id="bpjs_tenagakerja_subvention_daily" value="<?php echo $data['bpjs_tenagakerja_subvention_daily']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="bpjs_tenagakerja_subvention_daily" id="bpjs_tenagakerja_subvention_daily" value="<?php echo $data['bpjs_tenagakerja_subvention_daily']?>" class="form-control" onChange="function_elements_edit_bpjs(this.name, this.value);">
 			<label class="control-label">BPJS Tenaga Kerja Subvention Daily
 				<span class="required">
 					*

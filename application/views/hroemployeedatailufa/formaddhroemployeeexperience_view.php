@@ -148,7 +148,7 @@
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="experience_company_name" name="experience_company_name" onChange="function_elements_add_experience(this.name, this.value);" value="<?php echo $data['experience_company_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="experience_company_name" name="experience_company_name" onChange="function_elements_add_experience(this.name, this.value);" value="<?php echo $data['experience_company_name'];?>">
 			<label>Company Name</label>
 		</div>
 	</div>
@@ -164,13 +164,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="experience_job_title" name="experience_job_title" onChange="function_elements_add_experience(this.name, this.value);" value="<?php echo $data['experience_job_title'];?>" >
+			<input type="text" autocomplete="off"  class="form-control" id="experience_job_title" name="experience_job_title" onChange="function_elements_add_experience(this.name, this.value);" value="<?php echo $data['experience_job_title'];?>" >
 			<label>Job Title</label>
 		</div>
 	</div>	
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="experience_last_salary" name="experience_last_salary" onChange="function_elements_add_experience(this.name, this.value);" value="<?php echo $data['experience_last_salary'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="experience_last_salary" name="experience_last_salary" onChange="function_elements_add_experience(this.name, this.value);" value="<?php echo $data['experience_last_salary'];?>">
 			<label>Last Salary</label>
 		</div>
 	</div>	

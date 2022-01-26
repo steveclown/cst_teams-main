@@ -103,7 +103,7 @@
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="organization_name" name="organization_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_name" name="organization_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_name'];?>">
 			<label>Organization Name</label>
 		</div>
 	</div>
@@ -127,7 +127,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="organization_title" name="organization_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_title'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="organization_title" name="organization_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['organization_title'];?>">
 			<label>Title</label>
 		</div>
 	</div>

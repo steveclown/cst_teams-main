@@ -55,14 +55,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="payment_basic_salary" name="payment_basic_salary" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_basic_salary'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="payment_basic_salary" name="payment_basic_salary" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_basic_salary'];?>">
 			<label class="control-label">Basic Salary </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="payment_basic_overtime" name="payment_basic_overtime" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_basic_overtime'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="payment_basic_overtime" name="payment_basic_overtime" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_basic_overtime'];?>">
 			<label class="control-label">Basic Overtime </label>
 		</div>	
 	</div>
@@ -80,14 +80,14 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="payment_bank_acct_name" name="payment_bank_acct_name" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_bank_acct_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="payment_bank_acct_name" name="payment_bank_acct_name" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_bank_acct_name'];?>">
 			<label class="control-label">Bank Account Name </label>
 		</div>	
 	</div>
 
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="payment_bank_acct_no" name="payment_bank_acct_no" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_bank_acct_no'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="payment_bank_acct_no" name="payment_bank_acct_no" onChange="function_elements_add_payment(this.name, this.value);" value="<?php echo $data['payment_bank_acct_no'];?>">
 			<label class="control-label">Bank Account No </label>
 		</div>	
 	</div>

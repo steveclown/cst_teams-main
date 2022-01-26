@@ -64,14 +64,14 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="employee_name" id="employee_name" value="<?php echo $assignmentbusinesstrip['employee_name']?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="employee_name" id="employee_name" value="<?php echo $assignmentbusinesstrip['employee_name']?>" class="form-control" readonly>
 												<label class="control-label">Employee Name</label>
 											</div>
 										</div>
 									
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="division_id_detail" id="division_id_detail" value="<?php echo $assignmentbusinesstrip['division_name']?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="division_id_detail" id="division_id_detail" value="<?php echo $assignmentbusinesstrip['division_name']?>" class="form-control" readonly>
 												<label class="control-label">Division</label>
 											</div>	
 										</div>
@@ -80,14 +80,14 @@
 										
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="department_id_detail" id="department_id_detail" value="<?php echo $assignmentbusinesstrip['department_name']?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="department_id_detail" id="department_id_detail" value="<?php echo $assignmentbusinesstrip['department_name']?>" class="form-control" readonly>
 												<label class="control-label">Department</label>
 											</div>	
 										</div>
 									
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="section_id_detail" id="section_id_detail" value="<?php echo $assignmentbusinesstrip['section_name']?>" class="form-control" readonly>
+												<input type="text" autocomplete="off"  name="section_id_detail" id="section_id_detail" value="<?php echo $assignmentbusinesstrip['section_name']?>" class="form-control" readonly>
 												<label class="control-label">Section </label>
 											</div>	
 										</div>
@@ -132,7 +132,7 @@
 									<div class = "row">
 										<div class = "col-md-12">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="business_trip_purpose" name="business_trip_purpose" onChange="function_elements_add(this.name, this.value);" value="<?php echo $assignmentbusinesstrip['business_trip_purpose'];?>" readonly>
+												<input type="text" autocomplete="off"  class="form-control" id="business_trip_purpose" name="business_trip_purpose" onChange="function_elements_add(this.name, this.value);" value="<?php echo $assignmentbusinesstrip['business_trip_purpose'];?>" readonly>
 												<label class="control-label">Business Trip Purpose </label>
 											</div>	
 										</div>
@@ -141,7 +141,7 @@
 									<div class = "row">
 										<div class = "col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" id="overtime_rate_description" name="overtime_rate_description" onChange="function_elements_add(this.name, this.value);" value="<?php echo $assignmentbusinesstrip['overtime_rate_description'];?>" readonly>
+												<input type="text" autocomplete="off"  class="form-control" id="overtime_rate_description" name="overtime_rate_description" onChange="function_elements_add(this.name, this.value);" value="<?php echo $assignmentbusinesstrip['overtime_rate_description'];?>" readonly>
 												<label class="control-label">Overtime Rate Description </label>
 											</div>
 										</div>

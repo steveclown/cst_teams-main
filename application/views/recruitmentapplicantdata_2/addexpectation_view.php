@@ -57,7 +57,7 @@
 <div class="row">		
 	<div class="col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" class="form-control" id="company_name" name="company_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['company_name'];?>">
+			<input type="text" autocomplete="off"  class="form-control" id="company_name" name="company_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['company_name'];?>">
 			<label>Company Name sadsasdsadsadsa</label>
 		</div>
 	</div>
@@ -74,13 +74,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Job Title</label>
-			<input type="text" class="form-control" id="working_experience_job_title" name="working_experience_job_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_job_title'];?>" placeholder="Job Title">
+			<input type="text" autocomplete="off"  class="form-control" id="working_experience_job_title" name="working_experience_job_title" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_job_title'];?>" placeholder="Job Title">
 		</div>
 	</div>	
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Last Salary</label>
-			<input type="text" class="form-control" id="working_experience_last_salary" name="working_experience_last_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_last_salary'];?>" placeholder="Last Salary">
+			<input type="text" autocomplete="off"  class="form-control" id="working_experience_last_salary" name="working_experience_last_salary" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_last_salary'];?>" placeholder="Last Salary">
 		</div>
 	</div>	
 </div>
@@ -88,13 +88,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>From Period</label>
-			<input type="text" class="form-control" id="working_experience_from_period" name="working_experience_from_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_from_period'];?>" placeholder="From Period">
+			<input type="text" autocomplete="off"  class="form-control" id="working_experience_from_period" name="working_experience_from_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_from_period'];?>" placeholder="From Period">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>To Period</label>
-			<input type="text" class="form-control" id="working_experience_to_period" name="working_experience_to_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_to_period'];?>" placeholder="TO Period">
+			<input type="text" autocomplete="off"  class="form-control" id="working_experience_to_period" name="working_experience_to_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['working_experience_to_period'];?>" placeholder="TO Period">
 		</div>
 	</div>
 </div>

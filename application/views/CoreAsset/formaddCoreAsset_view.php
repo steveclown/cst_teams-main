@@ -58,7 +58,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="asset_code" id="asset_code"  value="<?php echo set_value('asset_code',$data['asset_code']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="asset_code" id="asset_code"  value="<?php echo set_value('asset_code',$data['asset_code']);?>"/>
 												<span class="help-block">
 													Diisi karakter huruf dan angka.
 												</span>
@@ -71,7 +71,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" class="form-control" name="asset_name" id="asset_name" value="<?php echo set_value('asset_name',$data['asset_name']);?>"/>
+												<input type="text" autocomplete="off"  class="form-control" name="asset_name" id="asset_name" value="<?php echo set_value('asset_name',$data['asset_name']);?>"/>
 												<label class="control-label">Nama Asset
 													<span class="required">
 														*

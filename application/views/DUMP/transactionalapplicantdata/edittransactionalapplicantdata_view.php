@@ -161,14 +161,14 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Applicant Name</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_name" id="applicant_name" value="<?php echo $result['applicant_name'];?>" class="form-control" placeholder="Applicant Name">
+												<input type="text" autocomplete="off"  name="applicant_name" id="applicant_name" value="<?php echo $result['applicant_name'];?>" class="form-control" placeholder="Applicant Name">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-8">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("Y-m-d");?>" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
-													<input type="text" name="applicant_application_date" class="form-control" value="<?php echo $result['applicant_application_date']?>" readonly>
+													<input type="text" autocomplete="off"  name="applicant_application_date" class="form-control" value="<?php echo $result['applicant_application_date']?>" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
@@ -187,55 +187,55 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">City</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_city" id="applicant_city" value="<?php echo $result['applicant_city'];?>" class="form-control" placeholder="City">
+												<input type="text" autocomplete="off"  name="applicant_city" id="applicant_city" value="<?php echo $result['applicant_city'];?>" class="form-control" placeholder="City">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Zip Code</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_zip_code" id="applicant_zip_code" value="<?php echo $result['applicant_zip_code'];?>" class="form-control" placeholder="Zip Code">
+												<input type="text" autocomplete="off"  name="applicant_zip_code" id="applicant_zip_code" value="<?php echo $result['applicant_zip_code'];?>" class="form-control" placeholder="Zip Code">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">RT</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_rt" id="applicant_rt" value="<?php echo $result['applicant_rt'];?>" class="form-control" placeholder="RT">
+												<input type="text" autocomplete="off"  name="applicant_rt" id="applicant_rt" value="<?php echo $result['applicant_rt'];?>" class="form-control" placeholder="RT">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">RW</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_rw" id="applicant_rw" value="<?php echo $result['applicant_rw'];?>" class="form-control" placeholder="RW">
+												<input type="text" autocomplete="off"  name="applicant_rw" id="applicant_rw" value="<?php echo $result['applicant_rw'];?>" class="form-control" placeholder="RW">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Kelurahan</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_kelurahan" id="applicant_kelurahan" value="<?php echo $result['applicant_kelurahan'];?>" class="form-control" placeholder="Kelurahan">
+												<input type="text" autocomplete="off"  name="applicant_kelurahan" id="applicant_kelurahan" value="<?php echo $result['applicant_kelurahan'];?>" class="form-control" placeholder="Kelurahan">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Kecamatan</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_kecamatan" id="applicant_kecamatan" value="<?php echo $result['applicant_kecamatan'];?>" class="form-control" placeholder="Kecamatan">
+												<input type="text" autocomplete="off"  name="applicant_kecamatan" id="applicant_kecamatan" value="<?php echo $result['applicant_kecamatan'];?>" class="form-control" placeholder="Kecamatan">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Home Phone</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_home_phone" id="applicant_home_phone" value="<?php echo $result['applicant_home_phone'];?>" class="form-control" placeholder="Home Phone">
+												<input type="text" autocomplete="off"  name="applicant_home_phone" id="applicant_home_phone" value="<?php echo $result['applicant_home_phone'];?>" class="form-control" placeholder="Home Phone">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Mobile Phone</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_mobile_phone" id="applicant_mobile_phone" value="<?php echo $result['applicant_mobile_phone'];?>" class="form-control" placeholder="Mobile Phone">
+												<input type="text" autocomplete="off"  name="applicant_mobile_phone" id="applicant_mobile_phone" value="<?php echo $result['applicant_mobile_phone'];?>" class="form-control" placeholder="Mobile Phone">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Email Address</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_email_address" id="applicant_email_address" value="<?php echo $result['applicant_email_address'];?>" class="form-control" placeholder="Email Address">
+												<input type="text" autocomplete="off"  name="applicant_email_address" id="applicant_email_address" value="<?php echo $result['applicant_email_address'];?>" class="form-control" placeholder="Email Address">
 											</div>
 										</div>
 										<div class="form-group">
@@ -247,37 +247,37 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Residence City</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_residence_city" id="applicant_residence_city" value="<?php echo $result['applicant_residence_city'];?>" class="form-control" placeholder="Residence City">
+												<input type="text" autocomplete="off"  name="applicant_residence_city" id="applicant_residence_city" value="<?php echo $result['applicant_residence_city'];?>" class="form-control" placeholder="Residence City">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Residence Zip Code</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_residence_zip_code" id="applicant_residence_zip_code" value="<?php echo $result['applicant_residence_zip_code'];?>" class="form-control" placeholder="Residence Zip Code">
+												<input type="text" autocomplete="off"  name="applicant_residence_zip_code" id="applicant_residence_zip_code" value="<?php echo $result['applicant_residence_zip_code'];?>" class="form-control" placeholder="Residence Zip Code">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Residence RT</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_residence_rt" id="applicant_residence_rt" value="<?php echo $result['applicant_residence_rt'];?>" class="form-control" placeholder="Residence RT">
+												<input type="text" autocomplete="off"  name="applicant_residence_rt" id="applicant_residence_rt" value="<?php echo $result['applicant_residence_rt'];?>" class="form-control" placeholder="Residence RT">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Residence RW</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_residence_rw" id="applicant_residence_rw" value="<?php echo $result['applicant_residence_rw'];?>" class="form-control" placeholder="Residence RW">
+												<input type="text" autocomplete="off"  name="applicant_residence_rw" id="applicant_residence_rw" value="<?php echo $result['applicant_residence_rw'];?>" class="form-control" placeholder="Residence RW">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Residence Kelurahan</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_residence_kelurahan" id="applicant_residence_kelurahan" value="<?php echo $result['applicant_residence_kelurahan'];?>" class="form-control" placeholder="Residence Kelurahan">
+												<input type="text" autocomplete="off"  name="applicant_residence_kelurahan" id="applicant_residence_kelurahan" value="<?php echo $result['applicant_residence_kelurahan'];?>" class="form-control" placeholder="Residence Kelurahan">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Residence Kecamatan</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_residence_kecamatan" id="applicant_residence_kecamatan" value="<?php echo $result['applicant_residence_kecamatan'];?>" class="form-control" placeholder="Residence Kecamatan">
+												<input type="text" autocomplete="off"  name="applicant_residence_kecamatan" id="applicant_residence_kecamatan" value="<?php echo $result['applicant_residence_kecamatan'];?>" class="form-control" placeholder="Residence Kecamatan">
 											</div>
 										</div>
 										<div class="form-group">
@@ -295,7 +295,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Nationality</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_nationality" id="applicant_nationality" value="<?php echo $result['applicant_nationality'];?>" class="form-control" placeholder="Nationality">
+												<input type="text" autocomplete="off"  name="applicant_nationality" id="applicant_nationality" value="<?php echo $result['applicant_nationality'];?>" class="form-control" placeholder="Nationality">
 											</div>
 										</div>
 										<div class="form-group">
@@ -307,13 +307,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">ID Number</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_id_number" id="applicant_id_number" value="<?php echo $result['applicant_id_number'];?>" class="form-control" placeholder="ID Number">
+												<input type="text" autocomplete="off"  name="applicant_id_number" id="applicant_id_number" value="<?php echo $result['applicant_id_number'];?>" class="form-control" placeholder="ID Number">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Education Cost</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_education_cost" id="applicant_education_cost" value="<?php echo $result['applicant_education_cost'];?>" class="form-control" placeholder="Education Cost">
+												<input type="text" autocomplete="off"  name="applicant_education_cost" id="applicant_education_cost" value="<?php echo $result['applicant_education_cost'];?>" class="form-control" placeholder="Education Cost">
 											</div>
 										</div>
 										<div class="form-group">
@@ -361,7 +361,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Further Study Period</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_further_study_period" id="applicant_further_study_period" value="<?php echo $result['applicant_further_study_period'];?>" class="form-control" placeholder="Further Study Period">
+												<input type="text" autocomplete="off"  name="applicant_further_study_period" id="applicant_further_study_period" value="<?php echo $result['applicant_further_study_period'];?>" class="form-control" placeholder="Further Study Period">
 											</div>
 										</div>
 										<div class="form-group">
@@ -373,7 +373,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Team Member</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_team_member" id="applicant_team_member" value="<?php echo $result['applicant_team_member'];?>" class="form-control" placeholder="Team Member">
+												<input type="text" autocomplete="off"  name="applicant_team_member" id="applicant_team_member" value="<?php echo $result['applicant_team_member'];?>" class="form-control" placeholder="Team Member">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -412,13 +412,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Application Position</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_application_position" id="applicant_application_position" value="<?php echo $result['applicant_application_position'];?>" class="form-control" placeholder="Application Position">
+												<input type="text" autocomplete="off"  name="applicant_application_position" id="applicant_application_position" value="<?php echo $result['applicant_application_position'];?>" class="form-control" placeholder="Application Position">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Expected Salary</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_expected_salary" id="applicant_expected_salary" value="<?php echo $result['applicant_expected_salary'];?>" class="form-control" placeholder="Application Position">
+												<input type="text" autocomplete="off"  name="applicant_expected_salary" id="applicant_expected_salary" value="<?php echo $result['applicant_expected_salary'];?>" class="form-control" placeholder="Application Position">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -475,13 +475,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Work Environment</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_environment" id="applicant_work_environment" value="<?php echo $result['applicant_work_environment'];?>" class="form-control" placeholder="Work Environment">
+												<input type="text" autocomplete="off"  name="applicant_work_environment" id="applicant_work_environment" value="<?php echo $result['applicant_work_environment'];?>" class="form-control" placeholder="Work Environment">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Work Environment Other</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_environment_other" id="applicant_work_environment_other" value="<?php echo $result['applicant_work_environment_other'];?>" class="form-control" placeholder="Work Environment Other">
+												<input type="text" autocomplete="off"  name="applicant_work_environment_other" id="applicant_work_environment_other" value="<?php echo $result['applicant_work_environment_other'];?>" class="form-control" placeholder="Work Environment Other">
 											</div>
 										</div>
 										<div class="form-group">
@@ -535,7 +535,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Weight</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_weight" id="applicant_weight" value="<?php echo $result['applicant_weight'];?>" class="form-control" placeholder="Weight">
+												<input type="text" autocomplete="off"  name="applicant_weight" id="applicant_weight" value="<?php echo $result['applicant_weight'];?>" class="form-control" placeholder="Weight">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -544,7 +544,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Height</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_height" id="applicant_height" value="<?php echo $result['applicant_height'];?>" class="form-control" placeholder="Height">
+												<input type="text" autocomplete="off"  name="applicant_height" id="applicant_height" value="<?php echo $result['applicant_height'];?>" class="form-control" placeholder="Height">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -559,7 +559,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Sick Disease</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_sick_disease" id="applicant_sick_disease" value="<?php echo $result['applicant_sick_disease'];?>" class="form-control" placeholder="Sick Disease">
+												<input type="text" autocomplete="off"  name="applicant_sick_disease" id="applicant_sick_disease" value="<?php echo $result['applicant_sick_disease'];?>" class="form-control" placeholder="Sick Disease">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -568,7 +568,7 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Sick Duration</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_sick_duration" id="applicant_sick_duration" value="<?php echo $result['applicant_sick_duration'];?>" class="form-control" placeholder="Sick Duration">
+												<input type="text" autocomplete="off"  name="applicant_sick_duration" id="applicant_sick_duration" value="<?php echo $result['applicant_sick_duration'];?>" class="form-control" placeholder="Sick Duration">
 												<span class="help-block">
 													 Please input only numbers.
 												</span>
@@ -577,13 +577,13 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Sick Year</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_sick_year" id="applicant_sick_year" value="<?php echo $result['applicant_sick_year'];?>" class="form-control" placeholder="Sick Year">
+												<input type="text" autocomplete="off"  name="applicant_sick_year" id="applicant_sick_year" value="<?php echo $result['applicant_sick_year'];?>" class="form-control" placeholder="Sick Year">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Sick Hospital</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_sick_hospital" id="applicant_sick_hospital" value="<?php echo $result['applicant_sick_hospital'];?>" class="form-control" placeholder="Sick Hospital">
+												<input type="text" autocomplete="off"  name="applicant_sick_hospital" id="applicant_sick_hospital" value="<?php echo $result['applicant_sick_hospital'];?>" class="form-control" placeholder="Sick Hospital">
 											</div>
 										</div>
 										<div class="form-group">
@@ -595,43 +595,43 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Friend Name 1</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_friend_name1" id="applicant_work_friend_name1" value="<?php echo $result['applicant_work_friend_name1'];?>" class="form-control" placeholder="Friend Name 1">
+												<input type="text" autocomplete="off"  name="applicant_work_friend_name1" id="applicant_work_friend_name1" value="<?php echo $result['applicant_work_friend_name1'];?>" class="form-control" placeholder="Friend Name 1">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Friend Section 1</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_friend_section1" id="applicant_work_friend_section1" value="<?php echo $result['applicant_work_friend_section1'];?>" class="form-control" placeholder="Friend Section 1">
+												<input type="text" autocomplete="off"  name="applicant_work_friend_section1" id="applicant_work_friend_section1" value="<?php echo $result['applicant_work_friend_section1'];?>" class="form-control" placeholder="Friend Section 1">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Friend Relationship 1</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_friend_relationship1" id="applicant_work_friend_relationship1" value="<?php echo $result['applicant_work_friend_relationship1'];?>" class="form-control" placeholder="Friend Relationship 1">
+												<input type="text" autocomplete="off"  name="applicant_work_friend_relationship1" id="applicant_work_friend_relationship1" value="<?php echo $result['applicant_work_friend_relationship1'];?>" class="form-control" placeholder="Friend Relationship 1">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Friend Name 2</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_friend_name2" id="applicant_work_friend_name2" value="<?php echo $result['applicant_work_friend_name2'];?>" class="form-control" placeholder="Friend Name 2">
+												<input type="text" autocomplete="off"  name="applicant_work_friend_name2" id="applicant_work_friend_name2" value="<?php echo $result['applicant_work_friend_name2'];?>" class="form-control" placeholder="Friend Name 2">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Friend Section 2</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_friend_section2" id="applicant_work_friend_section2" value="<?php echo $result['applicant_work_friend_section2'];?>" class="form-control" placeholder="Friend Section 2">
+												<input type="text" autocomplete="off"  name="applicant_work_friend_section2" id="applicant_work_friend_section2" value="<?php echo $result['applicant_work_friend_section2'];?>" class="form-control" placeholder="Friend Section 2">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Friend Relationship 2</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_work_friend_relationship2" id="applicant_work_friend_relationship2" value="<?php echo $result['applicant_work_friend_relationship2'];?>" class="form-control" placeholder="Friend Relationship 2">
+												<input type="text" autocomplete="off"  name="applicant_work_friend_relationship2" id="applicant_work_friend_relationship2" value="<?php echo $result['applicant_work_friend_relationship2'];?>" class="form-control" placeholder="Friend Relationship 2">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Emergency Name</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_emergency_name" id="applicant_emergency_name" value="<?php echo $result['applicant_emergency_name'];?>" class="form-control" placeholder="Emergency Name">
+												<input type="text" autocomplete="off"  name="applicant_emergency_name" id="applicant_emergency_name" value="<?php echo $result['applicant_emergency_name'];?>" class="form-control" placeholder="Emergency Name">
 											</div>
 										</div>
 										<div class="form-group">
@@ -643,55 +643,55 @@ function ulang(){
 										<div class="form-group">
 											<label class="col-md-3 control-label">Emergency Mobile Phone</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_emergency_mobile_phone" id="applicant_emergency_mobile_phone" value="<?php echo $result['applicant_emergency_mobile_phone'];?>" class="form-control" placeholder="Emergency Mobile Phone">
+												<input type="text" autocomplete="off"  name="applicant_emergency_mobile_phone" id="applicant_emergency_mobile_phone" value="<?php echo $result['applicant_emergency_mobile_phone'];?>" class="form-control" placeholder="Emergency Mobile Phone">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Emergency Home Phone</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_emergency_home_phone" id="applicant_emergency_home_phone" value="<?php echo $result['applicant_emergency_home_phone'];?>" class="form-control" placeholder="Emergency Home Phone">
+												<input type="text" autocomplete="off"  name="applicant_emergency_home_phone" id="applicant_emergency_home_phone" value="<?php echo $result['applicant_emergency_home_phone'];?>" class="form-control" placeholder="Emergency Home Phone">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Emergency Relationship</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_emergency_relationship" id="applicant_emergency_relationship" value="<?php echo $result['applicant_emergency_relationship'];?>" class="form-control" placeholder="Emergency Relationship">
+												<input type="text" autocomplete="off"  name="applicant_emergency_relationship" id="applicant_emergency_relationship" value="<?php echo $result['applicant_emergency_relationship'];?>" class="form-control" placeholder="Emergency Relationship">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Daily Transportation Name 1</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_daily_transportation_name1" id="applicant_daily_transportation_name1" value="<?php echo $result['applicant_daily_transportation_name1'];?>" class="form-control" placeholder="Daily Transportation Name 1">
+												<input type="text" autocomplete="off"  name="applicant_daily_transportation_name1" id="applicant_daily_transportation_name1" value="<?php echo $result['applicant_daily_transportation_name1'];?>" class="form-control" placeholder="Daily Transportation Name 1">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Daily Transportation Year 1</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_daily_transportation_year1" id="applicant_daily_transportation_year1" value="<?php echo $result['applicant_daily_transportation_year1'];?>" class="form-control" placeholder="Daily Transportation Year 1">
+												<input type="text" autocomplete="off"  name="applicant_daily_transportation_year1" id="applicant_daily_transportation_year1" value="<?php echo $result['applicant_daily_transportation_year1'];?>" class="form-control" placeholder="Daily Transportation Year 1">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Daily Transportation Owned 1</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_daily_transportation_owned1" id="applicant_daily_transportation_owned1" value="<?php echo $result['applicant_daily_transportation_owned1'];?>" class="form-control" placeholder="Daily Transportation Owned 1">
+												<input type="text" autocomplete="off"  name="applicant_daily_transportation_owned1" id="applicant_daily_transportation_owned1" value="<?php echo $result['applicant_daily_transportation_owned1'];?>" class="form-control" placeholder="Daily Transportation Owned 1">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Daily Transportation Name 2</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_daily_transportation_name2" id="applicant_daily_transportation_name2" value="<?php echo $result['applicant_daily_transportation_name2'];?>" class="form-control" placeholder="Daily Transportation Name 2">
+												<input type="text" autocomplete="off"  name="applicant_daily_transportation_name2" id="applicant_daily_transportation_name2" value="<?php echo $result['applicant_daily_transportation_name2'];?>" class="form-control" placeholder="Daily Transportation Name 2">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Daily Transportation Year 2</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_daily_transportation_year2" id="applicant_daily_transportation_year2" value="<?php echo $result['applicant_daily_transportation_year2'];?>" class="form-control" placeholder="Daily Transportation Year 2">
+												<input type="text" autocomplete="off"  name="applicant_daily_transportation_year2" id="applicant_daily_transportation_year2" value="<?php echo $result['applicant_daily_transportation_year2'];?>" class="form-control" placeholder="Daily Transportation Year 2">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Daily Transportation Owned 2</label>
 											<div class="col-md-8">
-												<input type="text" name="applicant_daily_transportation_owned2" id="applicant_daily_transportation_owned2" value="<?php echo $result['applicant_daily_transportation_owned2'];?>" class="form-control" placeholder="Daily Transportation Owned 2">
+												<input type="text" autocomplete="off"  name="applicant_daily_transportation_owned2" id="applicant_daily_transportation_owned2" value="<?php echo $result['applicant_daily_transportation_owned2'];?>" class="form-control" placeholder="Daily Transportation Owned 2">
 											</div>
 										</div>
 										<div class="form-group">

@@ -61,7 +61,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="diagnose_code" id="diagnose_code" class="form-control" value="<?php echo $corediagnose['diagnose_code']?>" >
+									<input type="text" autocomplete="off"  name="diagnose_code" id="diagnose_code" class="form-control" value="<?php echo $corediagnose['diagnose_code']?>" >
 									<span class="help-block">
 										 Please input only alpha-numerical characters.
 									</span>
@@ -71,7 +71,7 @@
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="diagnose_name" id="diagnose_name" class="form-control" value="<?php echo $corediagnose['diagnose_name']?>" >
+									<input type="text" autocomplete="off"  name="diagnose_name" id="diagnose_name" class="form-control" value="<?php echo $corediagnose['diagnose_name']?>" >
 									<label class="control-label">Diagnose Name</label>
 								</div>
 							</div>

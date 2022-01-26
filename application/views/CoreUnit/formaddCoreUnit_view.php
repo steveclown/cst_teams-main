@@ -84,7 +84,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="unit_code" id="unit_code" value="<?php echo $data['unit_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="unit_code" id="unit_code" value="<?php echo $data['unit_code']?>" class="form-control">
 												<span class="help-block">
 													Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -97,7 +97,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="unit_name" id="unit_name" value="<?php echo $data['unit_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="unit_name" id="unit_name" value="<?php echo $data['unit_name']?>" class="form-control">
 												<input type="hidden" name="unit_token" id="unit_token" class="form-control" value="<?php echo $unit_token?>" onChange="function_elements_add(this.name, this.value);">
 												<label class="control-label">Nama Satuan
 													<span class="required">

@@ -98,7 +98,7 @@ $this->session->unset_userdata('message');
 						<div class = "row">
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="award_code" id="award_code" onChange="warningawardcode(award_code);" value="<?php echo $coreaward['award_code'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="award_code" id="award_code" onChange="warningawardcode(award_code);" value="<?php echo $coreaward['award_code'];?>" class="form-control" >
 									<span class="help-block">
 										Mohon hanya isi dengan karakter huruf dan angka.
 									</span>
@@ -108,7 +108,7 @@ $this->session->unset_userdata('message');
 							
 							<div class="col-md-6">
 								<div class="form-group form-md-line-input">
-									<input type="text" name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo $coreaward['award_name'];?>" class="form-control" >
+									<input type="text" autocomplete="off"  name="award_name" id="award_name" onChange="warningawardname(award_name);" value="<?php echo $coreaward['award_name'];?>" class="form-control" >
 									<label class="control-label">Nama Penghargaan<span class="required">*</span></label>
 								</div>
 							</div>

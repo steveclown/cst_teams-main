@@ -74,7 +74,7 @@
 									<div class = "row">
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="dayoff_code" id="dayoff_code" value="<?php echo $data['dayoff_code']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="dayoff_code" id="dayoff_code" value="<?php echo $data['dayoff_code']?>" class="form-control">
 												<span class="help-block">
 													 Mohon hanya diisi karakter huruf dan angka.
 												</span>
@@ -87,7 +87,7 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-md-line-input">
-												<input type="text" name="dayoff_name" id="dayoff_name" value="<?php echo $data['dayoff_name']?>" class="form-control">
+												<input type="text" autocomplete="off"  name="dayoff_name" id="dayoff_name" value="<?php echo $data['dayoff_name']?>" class="form-control">
 												
 												<input type="hidden" name="dayoff_token" id="dayoff_token" class="form-control" value="<?php echo $dayoff_token?>" onChange="function_elements_add(this.name, this.value);">
 												

@@ -63,13 +63,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Period</label>
-			<input type="text" class="form-control" id="applicant_law_experience_period" name="applicant_law_experience_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_law_experience_period'];?>" placeholder="Period">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_law_experience_period" name="applicant_law_experience_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_law_experience_period'];?>" placeholder="Period">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Location</label>
-			<input type="text" class="form-control" id="applicant_law_location" name="applicant_law_location" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_law_location'];?>" placeholder="Location">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_law_location" name="applicant_law_location" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_law_location'];?>" placeholder="Location">
 		</div>
 	</div>
 </div>

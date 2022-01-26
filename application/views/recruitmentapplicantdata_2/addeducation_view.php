@@ -80,13 +80,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Name</label>
-			<input type="text" class="form-control" id="applicant_education_name" name="applicant_education_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_name'];?>" placeholder="Name">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_name" name="applicant_education_name" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_name'];?>" placeholder="Name">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>City</label>
-			<input type="text" class="form-control" id="applicant_education_city" name="applicant_education_city" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_city'];?>" placeholder="City">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_city" name="applicant_education_city" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_city'];?>" placeholder="City">
 		</div>
 	</div>
 </div>
@@ -94,13 +94,13 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>From Period</label>
-			<input type="text" class="form-control" id="applicant_education_from_period" name="applicant_education_from_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_from_period'];?>" placeholder="201501">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_from_period" name="applicant_education_from_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_from_period'];?>" placeholder="201501">
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>To Period</label>
-			<input type="text" class="form-control" id="applicant_education_to_period" name="applicant_education_to_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_to_period'];?>" placeholder="201512">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_to_period" name="applicant_education_to_period" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_to_period'];?>" placeholder="201512">
 		</div>
 	</div>
 </div>
@@ -108,7 +108,7 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label>Duration</label>
-			<input type="text" class="form-control" id="applicant_education_duration" name="applicant_education_duration" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_duration'];?>" placeholder="Duration">
+			<input type="text" autocomplete="off"  class="form-control" id="applicant_education_duration" name="applicant_education_duration" onChange="function_elements_add(this.name, this.value);" value="<?php echo $data['applicant_education_duration'];?>" placeholder="Duration">
 		</div>
 	</div>
 	<div class="col-md-6">

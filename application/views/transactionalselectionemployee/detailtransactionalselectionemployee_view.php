@@ -71,13 +71,13 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Date</label>
 						<div class="col-md-8">
-							<input type="text" name="applicant_selection_date" id="applicant_selection_date" value="<?php echo $detail['applicant_selection_date'];?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="applicant_selection_date" id="applicant_selection_date" value="<?php echo $detail['applicant_selection_date'];?>" class="form-control" readonly>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Interview Date</label>
 						<div class="col-md-8">
-							<input type="text" name="applicant_selection_interview_date" id="applicant_selection_interview_date" value="<?php echo $detail['applicant_selection_interview_date'];?>" class="form-control" readonly>
+							<input type="text" autocomplete="off"  name="applicant_selection_interview_date" id="applicant_selection_interview_date" value="<?php echo $detail['applicant_selection_interview_date'];?>" class="form-control" readonly>
 						</div>
 					</div>
 					<div class="form-group">

@@ -230,7 +230,7 @@
 					<div class = "row">
 						<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-	                           <input type="text" name="employee_document_item_name" id="employee_document_item_name" value="<?php echo $data['employee_document_item_name']; ?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
+	                           <input type="text" autocomplete="off"  name="employee_document_item_name" id="employee_document_item_name" value="<?php echo $data['employee_document_item_name']; ?>" class="form-control" onChange="function_elements_add(this.name, this.value);">
 								<label for="form_control">Employee Document Book Name
 									<span class="required">*</span>
 								</label>

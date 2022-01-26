@@ -18,7 +18,7 @@
 		<div class="form-group form-md-line-input">
 			<input type="hidden" name="applicant_status" id="applicant_status" class="form-control" value="<?php echo $RecruitmentApplicantData['applicant_status'];?>" readonly>
 
-			<input type="text" name="" id="" class="form-control" value="<?php echo $statusapplicant[$RecruitmentApplicantData['applicant_status']];?>" readonly>
+			<input type="text" autocomplete="off"  name="" id="" class="form-control" value="<?php echo $statusapplicant[$RecruitmentApplicantData['applicant_status']];?>" readonly>
 			
 			<label class="control-label">Status Sekarang</label>
 		</div>

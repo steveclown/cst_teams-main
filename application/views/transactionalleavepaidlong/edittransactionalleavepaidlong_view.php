@@ -81,20 +81,20 @@
 										<div class="form-group">
 											<label class="col-md-3 control-label">Annual Leave Balance</label>
 											<div class="col-md-3">
-												<input type="text" name="annual_leave_balance" id="annual_leave_balance" value="<?php echo $data['annual_leave_balance']?>" class="form-control" placeholder="Annual Leave Balance">
+												<input type="text" autocomplete="off"  name="annual_leave_balance" id="annual_leave_balance" value="<?php echo $data['annual_leave_balance']?>" class="form-control" placeholder="Annual Leave Balance">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Total</label>
 											<div class="col-md-3">
-												<input type="text" name="leave_paid_long_total" id="leave_paid_long_total" value="<?php echo $data['leave_paid_long_total']?>" class="form-control" placeholder="Total">
+												<input type="text" autocomplete="off"  name="leave_paid_long_total" id="leave_paid_long_total" value="<?php echo $data['leave_paid_long_total']?>" class="form-control" placeholder="Total">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-3 control-label">Date</label>
 											<div class="col-md-3">
 												<div class="input-group input-medium date date-picker" data-date="<?php echo date("d-m-Y");?>" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-													<input type="text" name="leave_paid_long_date" id="leave_paid_long_date" value="<?php echo tgltoview($data['leave_paid_long_date'])?>" class="form-control" placeholder="Date" readonly>
+													<input type="text" autocomplete="off"  name="leave_paid_long_date" id="leave_paid_long_date" value="<?php echo tgltoview($data['leave_paid_long_date'])?>" class="form-control" placeholder="Date" readonly>
 													<span class="input-group-btn">
 														<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 													</span>
