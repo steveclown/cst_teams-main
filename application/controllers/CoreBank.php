@@ -1,7 +1,13 @@
 <?php
-	Class CoreBank extends CI_Controller{
+	Class CoreBank extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'bank';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreBank_model');
 			$this->load->helper('sistem');
@@ -11,13 +17,13 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreBank']		= $this->CoreBank_model->getCoreBank();
-			$data['Main_view']['content']		= 'CoreBank/listCoreBank_view';
+			$data['main_view']['CoreBank']		= $this->CoreBank_model->getCoreBank();
+			$data['main_view']['content']		= 'CoreBank/listCoreBank_view';
 			$this->load->view('mainpage_view',$data);
 		}
 
 		public function addCoreBank(){
-			$data['Main_view']['content']		= 'CoreBank/formaddCoreBank_view';
+			$data['main_view']['content']		= 'CoreBank/formaddCoreBank_view';
 			$this->load->view('mainpage_view',$data);
 		}
 		
@@ -35,32 +41,32 @@
 			if($this->form_validation->run()==true){
 				if($this->CoreBank_model->saveNewCoreBank($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.Bank.processAddCoreBank',$auth['user_id'],'Add New Bank');
+					// $this->fungsi->set_log($auth['user_id'],'1003','Application.Bank.processAddCoreBank',$auth['user_id'],'Add New Bank');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Bank Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addbank');
-					redirect('CoreBank/addCoreBank');
+					redirect('bank/add');
 				}else{
 					$msg = "<div class='alert alert-error'>                
 								Add Data Bank UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreBank/addCoreBank');
+					redirect('bank/add');
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('addbank',$data);
 				$msg = validation_errors("<div class='alert alert-error'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreBank/addCoreBank');
+				redirect('bank/add');
 			}
 		}
 		
 		public function editCoreBank(){
-			$data['Main_view']['CoreBank']	= $this->CoreBank_model->getCoreBank_Detail($this->uri->segment(3));
-			$data['Main_view']['content']	= 'CoreBank/formeditCoreBank_view';
+			$data['main_view']['CoreBank']	= $this->CoreBank_model->getCoreBank_Detail($this->uri->segment(3));
+			$data['main_view']['content']	= 'CoreBank/formeditCoreBank_view';
 			$this->load->view('mainpage_view',$data);
 		}
 		
@@ -85,18 +91,18 @@
 								Edit bank Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreBank/editCoreBank/'.$data['bank_id']);
+					redirect('bank/edit/'.$data['bank_id']);
 				}else{
 					$msg = "<div class='alert alert-error'>                
 								Edit bank UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreBank/editCoreBank/'.$data['bank_id']);
+					redirect('bank/edit/'.$data['bank_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreBank/editCoreBank/'.$data['bank_id']);
+				redirect('bank/edit/'.$data['bank_id']);
 			}
 		}
 		
@@ -104,18 +110,18 @@
 		function deleteCoreBank(){
 			if($this->CoreBank_model->deleteCoreBank($this->uri->segment(3))){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.Bank.deleteCoreBank',$auth['user_id'],'Delete Bank');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.Bank.deleteCoreBank',$auth['user_id'],'Delete Bank');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data core_bank Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreBank');
+				redirect('bank');
 			}else{
 				$msg = "<div class='alert alert-error'>                
 							Delete Data core_bank UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreBank');
+				redirect('bank');
 			}
 		}
 	}

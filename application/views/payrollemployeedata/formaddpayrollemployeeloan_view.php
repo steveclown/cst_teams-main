@@ -148,7 +148,7 @@
 									<td>".$val['employee_loan_start_period']."</td>
 									<td>".nominal($val['employee_loan_amount_total'])."</td>
 									<td>".nominal($val['employee_loan_amount'])."</td>
-									<td>".$this->configuration->EmployeeLoanStatus[$val['employee_loan_status']]."</td>
+									<td>".$this->configuration->EmployeeLoanStatus()[$val['employee_loan_status']]."</td>
 									<td>
 										<a href='".$this->config->item('base_url').'payrollemployeedata/deletePayrollEmployeeLoan/'.$val['employee_id']."/".$val['employee_loan_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>
 											<i class='fa fa-trash-o'></i> Delete

@@ -466,6 +466,64 @@ $route['deduction/delete/(:num)']	                    = 'CoreDeduction/deleteCor
 $route['deduction/process-edit'] 	                    = 'CoreDeduction/processEditCoreDeduction';
 $route['deduction/reset-edit/(:num)'] 	                = 'CoreDeduction/reset_edit/$1';
 
+/* CORE LengthService */
+$route['length-service']		                        = 'CoreLengthService';
+$route['length-service/add'] 			                = 'CoreLengthService/addCoreLengthService';
+$route['length-service/elements-add'] 	                = 'CoreLengthService/function_elements_add';
+$route['length-service/reset-add'] 	                    = 'CoreLengthService/reset_add';
+$route['length-service/process-add'] 	                = 'CoreLengthService/processAddCoreLengthService';
+$route['length-service/edit/(:num)']	                = 'CoreLengthService/editCoreLengthService/$1';
+$route['length-service/delete/(:num)']	                = 'CoreLengthService/deleteCoreLengthService/$1';
+$route['length-service/process-edit'] 	                = 'CoreLengthService/processEditCoreLengthService';
+$route['length-service/reset-edit/(:num)'] 	            = 'CoreLengthService/reset_edit/$1';
+
+/* CORE PremiAttendance */
+$route['premi-attendance']		                        = 'CorePremiAttendance';
+$route['premi-attendance/add'] 			                = 'CorePremiAttendance/addCorePremiAttendance';
+$route['premi-attendance/elements-add'] 	            = 'CorePremiAttendance/function_elements_add';
+$route['premi-attendance/reset-add'] 	                = 'CorePremiAttendance/reset_add';
+$route['premi-attendance/process-add'] 	                = 'CorePremiAttendance/processAddCorePremiAttendance';
+$route['premi-attendance/edit/(:num)']	                = 'CorePremiAttendance/editCorePremiAttendance/$1';
+$route['premi-attendance/delete/(:num)']	            = 'CorePremiAttendance/deleteCorePremiAttendance/$1';
+$route['premi-attendance/process-edit'] 	            = 'CorePremiAttendance/processEditCorePremiAttendance';
+$route['premi-attendance/reset-edit/(:num)'] 	        = 'CorePremiAttendance/reset_edit/$1';
+
+
+/* CORE LoanType */
+$route['loan-type']		                                = 'CoreLoanType';
+$route['loan-type/add'] 			                    = 'CoreLoanType/addCoreLoanType';
+$route['loan-type/elements-add'] 	                    = 'CoreLoanType/function_elements_add';
+$route['loan-type/reset-add'] 	                        = 'CoreLoanType/reset_add';
+$route['loan-type/process-add'] 	                    = 'CoreLoanType/processAddCoreLoanType';
+$route['loan-type/edit/(:num)']	                        = 'CoreLoanType/editCoreLoanType/$1';
+$route['loan-type/delete/(:num)']	                    = 'CoreLoanType/deleteCoreLoanType/$1';
+$route['loan-type/process-edit'] 	                    = 'CoreLoanType/processEditCoreLoanType';
+$route['loan-type/reset-edit/(:num)'] 	                = 'CoreLoanType/reset_edit/$1';
+
+/* CORE Bank */
+$route['bank']		                                = 'CoreBank';
+$route['bank/add'] 			                        = 'CoreBank/addCoreBank';
+$route['bank/elements-add'] 	                    = 'CoreBank/function_elements_add';
+$route['bank/reset-add'] 	                        = 'CoreBank/reset_add';
+$route['bank/process-add'] 	                        = 'CoreBank/processAddCoreBank';
+$route['bank/edit/(:num)']	                        = 'CoreBank/editCoreBank/$1';
+$route['bank/delete/(:num)']	                    = 'CoreBank/deleteCoreBank/$1';
+$route['bank/process-edit'] 	                    = 'CoreBank/processEditCoreBank';
+$route['bank/reset-edit/(:num)'] 	                = 'CoreBank/reset_edit/$1';
+
+/*=========================================  Payroll  ======================================== */
+
+/* PayrollEmployeeData */
+$route['payroll-employee-data']		                            = 'PayrollEmployeeData';
+$route['payroll-employee-data/add/(:num)'] 			            = 'PayrollEmployeeData/addPayrollEmployeeData/$1';
+$route['payroll-employee-data/elements-add'] 	                = 'PayrollEmployeeData/function_elements_add';
+$route['payroll-employee-data/reset-add'] 	                    = 'PayrollEmployeeData/reset_add';
+$route['payroll-employee-data/process-add'] 	                = 'PayrollEmployeeData/processAddPayrollEmployeeData';
+$route['payroll-employee-data/edit/(:num)']	                    = 'PayrollEmployeeData/editPayrollEmployeeData/$1';
+$route['payroll-employee-data/delete/(:num)']	                = 'PayrollEmployeeData/deletePayrollEmployeeData/$1';
+$route['payroll-employee-data/process-edit'] 	                = 'PayrollEmployeeData/processEditPayrollEmployeeData';
+$route['payroll-employee-data/reset-edit/(:num)'] 	            = 'PayrollEmployeeData/reset_edit/$1';
+
 /*=========================================  Preference  ======================================== */
 
 /* System User */

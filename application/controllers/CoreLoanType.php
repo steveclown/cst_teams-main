@@ -1,7 +1,13 @@
 <?php
-	Class CoreLoanType extends CI_Controller{
+	Class CoreLoanType extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'loan-type';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreLoanType_model');
 			$this->load->helper('sistem');
@@ -11,13 +17,13 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreLoanType']		= $this->CoreLoanType_model->getCoreLoanType();
-			$data['Main_view']['content']			= 'CoreLoanType/listCoreLoanType_view';
+			$data['main_view']['CoreLoanType']		= $this->CoreLoanType_model->getCoreLoanType();
+			$data['main_view']['content']			= 'CoreLoanType/listCoreLoanType_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		public function addCoreLoanType(){
-			$data['Main_view']['content']			= 'CoreLoanType/formaddCoreLoanType_view';
+			$data['main_view']['content']			= 'CoreLoanType/formaddCoreLoanType_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -37,33 +43,33 @@
 					$loan_type_id = $this->CoreLoanType_model->getLoanTypeID();
 					$auth = $this->session->userdata('auth');
 
-					$this->fungsi->set_log($auth['user_id'], $auth['username'],'4132','Application.coreLoanType.processAddCoreLoanType', $loan_type_id,'Add New Core Loan Type');
+					// $this->fungsi->set_log($auth['user_id'], $auth['username'],'4132','Application.coreLoanType.processAddCoreLoanType', $loan_type_id,'Add New Core Loan Type');
 
 					$msg = "<div class='alert alert-success'>                
 								Add Data Loan Type Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addCoreLoanType');
-					redirect('CoreLoanType/addCoreLoanType');
+					redirect('loan-type/add');
 				}else{
 					$msg = "<div class='alert alert-error'>                
 								Add Data Loan Type UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLoanType/addCoreLoanType');
+					redirect('loan-type/add');
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('addCoreLoanType',$data);
 				$msg = validation_errors("<div class='alert alert-error'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLoanType/addCoreLoanType');
+				redirect('loan-type/add');
 			}
 		}
 		public function editCoreLoanType(){
 			$loan_type_id = $this->uri->segment(3);
-			$data['Main_view']['CoreLoanType']	= $this->CoreLoanType_model->getCoreLoanType_Detail($loan_type_id);
-			$data['Main_view']['content']		= 'CoreLoanType/formeditCoreLoanType_view';
+			$data['main_view']['CoreLoanType']	= $this->CoreLoanType_model->getCoreLoanType_Detail($loan_type_id);
+			$data['main_view']['content']		= 'CoreLoanType/formeditCoreLoanType_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -93,18 +99,18 @@
 								Edit Asset Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLoanType/editCoreLoanType/'.$data['loan_type_id']);
+					redirect('loan-type/edit/'.$data['loan_type_id']);
 				}else{
 					$msg = "<div class='alert alert-error'>                
 								Edit Asset UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLoanType/editCoreLoanType/'.$data['loan_type_id']);
+					redirect('loan-type/edit/'.$data['loan_type_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ");
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLoanType/editCoreLoanType/'.$data['loan_type_id']);
+				redirect('loan-type/edit/'.$data['loan_type_id']);
 			}
 		}
 		
@@ -114,19 +120,19 @@
 			if($this->CoreLoanType_model->deleteCoreLoanType($loan_type_id)){
 				$auth = $this->session->userdata('auth');
 
-				$this->fungsi->set_log($auth['user_id'], $auth['username'],'4134','Application.coreLoanType.processDeleteCoreLoanType', $loan_type_id,'Delete Core Loan Type');
+				// $this->fungsi->set_log($auth['user_id'], $auth['username'],'4134','Application.coreLoanType.processDeleteCoreLoanType', $loan_type_id,'Delete Core Loan Type');
 
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Asset Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLoanType');
+				redirect('loan-type');
 			}else{
 				$msg = "<div class='alert alert-error'>                
 							Delete Data Asset UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLoanType');
+				redirect('loan-type');
 			}
 		}
 	}

@@ -32,7 +32,7 @@
 								<i class="fa fa-reorder"></i>Daftar
 							</div>
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreLoanType/addCoreLoanType" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>loan-type/add" class="btn btn-default btn-sm">
 									<i class="fa fa-plus"></i> Tambah tipe pinjaman baru
 								</a>
 							</div>
@@ -65,10 +65,10 @@
 													<td>".$val['loan_type_code']."</td>
 													<td>".$val['loan_type_name']."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'CoreLoanType/editCoreLoanType/'.$val['loan_type_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'loan-type/edit/'.$val['loan_type_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreLoanType/deleteCoreLoanType/'.$val['loan_type_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'loan-type/delete/'.$val['loan_type_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Hapus
 														</a>
 													</td>

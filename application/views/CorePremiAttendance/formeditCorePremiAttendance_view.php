@@ -5,6 +5,21 @@
 		document.getElementById("premi_attendance_name").value = "<?php echo $CorePremiAttendance['premi_attendance_name'] ?>";
 		
 	}
+	$(document).ready(function(){
+        $("#premi_attendance_range2").change(function(){
+       	  var premi_attendance_range2 	= $("#premi_attendance_range2").val();
+          var premi_attendance_range1  	= $("#premi_attendance_range1").val();
+           
+
+          var premi_attendance_amount = parseFloat(premi_attendance_range2) + parseFloat(premi_attendance_range1);
+
+          
+          document.getElementById('premi_attendance_range1').value				= premi_attendance_range1;
+		  document.getElementById('premi_attendance_amount').value				= premi_attendance_amount;
+			
+		
+        });
+    });
 </script>
 
 
@@ -49,7 +64,7 @@
 						Form Edit
 					</div>
 					<div class="actions">
-						<a href="<?php echo base_url();?>CorePremiAttendance" class="btn btn-default btn-sm">
+						<a href="<?php echo base_url();?>premi-attendance" class="btn btn-default btn-sm">
 							<i class="fa fa-angle-left"></i> Kembali
 						</a>
 					</div>
@@ -98,7 +113,7 @@
 						<div class = "row">
 							<div class="col-md-6">
 							<div class="form-group form-md-line-input">
-									<input type="text" autocomplete="off"  name="premi_attendance_amount" id="premi_attendance_amount" class="form-control" value="<?php echo $CorePremiAttendance['premi_attendance_amount']?>">
+									<input type="text" autocomplete="off" readonly name="premi_attendance_amount" id="premi_attendance_amount" class="form-control" value="<?php echo $CorePremiAttendance['premi_attendance_amount']?>">
 									<label class="control-label">Total Premi Kehadiran</label>
 								</div>
 							</div>

@@ -16,6 +16,15 @@
 			return $result;
 		}
 
+		public function getDivisionName($division_id){
+			$this->db->select('core_division.division_name');
+			$this->db->from('core_division');
+			$this->db->where('core_division.division_id', $division_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['division_name'];
+		}
+
 		public function getCoreDepartment($division_id){
 			$this->db->select('core_department.department_id, core_department.department_name');
 			$this->db->from('core_department');
@@ -23,6 +32,15 @@
 			$this->db->where('core_department.data_state', 0);
 			$result = $this->db->get()->result_array();
 			return $result;
+		}
+		
+		public function getDepartmentName($department_id){
+			$this->db->select('core_department.department_name');
+			$this->db->from('core_department');
+			$this->db->where('core_department.department_id', $department_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['department_name'];
 		}
 
 		public function getCoreSection($department_id){
@@ -32,6 +50,15 @@
 			$this->db->where('core_section.data_state', 0);
 			$result = $this->db->get()->result_array();
 			return $result;
+		}
+
+		public function getSectionName($section_id){
+			$this->db->select('core_section.section_name');
+			$this->db->from('core_section');
+			$this->db->where('core_section.section_id', $section_id);
+			$this->db->where('data_state',0);
+			$result=$this->db->get()->row_array();
+			return $result['section_name'];
 		}
 
 		public function getSystemUserBranch($user_id){
@@ -170,7 +197,7 @@
 			$this->db->join('core_bank', 'payroll_employee_payment.bank_id = core_bank.bank_id');
 			$this->db->where('payroll_employee_payment.data_state', 0);
 			$this->db->where('payroll_employee_payment.employee_id', $employee_id);
-			$this->db->order_by('payroll_employee_payment.employee_payment_id', DESC);
+			$this->db->order_by('payroll_employee_payment.employee_payment_id', 'DESC');
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -181,7 +208,7 @@
 			$this->db->join('core_allowance', 'payroll_employee_allowance.allowance_id = core_allowance.allowance_id');
 			$this->db->where('payroll_employee_allowance.data_state', 0);
 			$this->db->where('payroll_employee_allowance.employee_id', $employee_id);
-			$this->db->order_by('payroll_employee_allowance.employee_allowance_id', DESC);
+			$this->db->order_by('payroll_employee_allowance.employee_allowance_id', 'DESC');
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -192,7 +219,7 @@
 			$this->db->join('core_deduction', 'payroll_employee_deduction.deduction_id = core_deduction.deduction_id');
 			$this->db->where('payroll_employee_deduction.data_state', 0);
 			$this->db->where('payroll_employee_deduction.employee_id', $employee_id);
-			$this->db->order_by('payroll_employee_deduction.employee_deduction_id', DESC);
+			$this->db->order_by('payroll_employee_deduction.employee_deduction_id', 'DESC');
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -203,7 +230,7 @@
 			$this->db->join('core_premi_attendance', 'payroll_employee_premi_attendance.premi_attendance_id = core_premi_attendance.premi_attendance_id');
 			$this->db->where('payroll_employee_premi_attendance.data_state',0);
 			$this->db->where('payroll_employee_premi_attendance.employee_id', $employee_id);
-			$this->db->order_by('payroll_employee_premi_attendance.employee_premi_attendance_id', DESC);
+			$this->db->order_by('payroll_employee_premi_attendance.employee_premi_attendance_id', 'DESC');
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -213,7 +240,7 @@
 			$this->db->from('payroll_employee_bpjs');
 			$this->db->where('payroll_employee_bpjs.data_state', 0);
 			$this->db->where('payroll_employee_bpjs.employee_id', $employee_id);
-			$this->db->order_by('payroll_employee_bpjs.employee_bpjs_id', DESC);
+			$this->db->order_by('payroll_employee_bpjs.employee_bpjs_id', 'DESC');
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -224,7 +251,7 @@
 			$this->db->join('core_loan_type', 'payroll_employee_loan.loan_type_id = core_loan_type.loan_type_id');
 			$this->db->where('payroll_employee_loan.data_state', 0);
 			$this->db->where('payroll_employee_loan.employee_id', $employee_id);
-			$this->db->order_by('payroll_employee_loan.employee_loan_id', DESC);
+			$this->db->order_by('payroll_employee_loan.employee_loan_id', 'DESC');
 			$result = $this->db->get()->result_array();
 			return $result;
 		}
@@ -301,7 +328,7 @@
 		}
 
 
-		public function insertPayrollOnOutBPJS($data){
+		public function insertPayrollEmployeeBPJS($data){
 			return $this->db->insert('payroll_employee_bpjs',$data);
 		}
 		

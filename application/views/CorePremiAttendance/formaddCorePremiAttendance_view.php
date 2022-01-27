@@ -66,7 +66,7 @@ $(document).ready(function(){
 									Form Tambah
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CorePremiAttendance" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>premi-attendance" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> Kembali
 									</a>
 								</div>

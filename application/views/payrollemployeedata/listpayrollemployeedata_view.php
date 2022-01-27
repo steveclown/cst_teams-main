@@ -235,7 +235,7 @@
 											<td>".$val['branch_name']."</td>
 											<td>".$val['location_name']."</td>
 											<td>
-												<a href='".$this->config->item('base_url').'payrollemployeedata/addPayrollEmployeeData/'.$val['employee_id']."' class='btn default btn-xs green-jungle'>
+												<a href='".$this->config->item('base_url').'payroll-employee-data/add/'.$val['employee_id']."' class='btn default btn-xs green-jungle'>
 													<i class='fa fa-plus'></i> Add
 												</a>
 											</td>

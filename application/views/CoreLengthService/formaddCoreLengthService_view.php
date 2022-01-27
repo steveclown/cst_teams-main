@@ -64,7 +64,7 @@ $(document).ready(function(){
 									Form Tambah
 								</div>
 								<div class="actions">
-									<a href="<?php echo base_url();?>CoreLengthService" class="btn btn-default btn-sm">
+									<a href="<?php echo base_url();?>length-service" class="btn btn-default btn-sm">
 										<i class="fa fa-angle-left"></i> kembali
 									</a>
 								</div>

@@ -1,7 +1,13 @@
 <?php
-	Class CoreLengthService extends CI_Controller{
+	Class CoreLengthService extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'length-service';
+
+			$this->cekLogin();
+			$this->accessMenu($menu); 
+
 			$this->load->model('MainPage_model');
 			$this->load->model('CoreLengthService_model');
 			$this->load->helper('sistem');
@@ -11,13 +17,13 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CoreLengthService']		= $this->CoreLengthService_model->getCoreLengthService();
-			$data['Main_view']['content']				= 'CoreLengthService/listCoreLengthService_view';
+			$data['main_view']['CoreLengthService']		= $this->CoreLengthService_model->getCoreLengthService();
+			$data['main_view']['content']				= 'CoreLengthService/listCoreLengthService_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function addCoreLengthService(){
-			$data['Main_view']['content']				= 'CoreLengthService/formaddCoreLengthService_view';
+			$data['main_view']['content']				= 'CoreLengthService/formaddCoreLengthService_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -41,33 +47,33 @@
 			if($this->form_validation->run()==true){
 				if($this->CoreLengthService_model->saveNewCoreLengthService($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.CoreLengthService.processaddCoreLengthService',$auth['username'],'Add New Length Service');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.CoreLengthService.processaddCoreLengthService',$auth['username'],'Add New Length Service');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Length Service Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addCoreLengthService');
-					redirect('CoreLengthService/addCoreLengthService');
+					redirect('length-service/add');
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Length Service UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('addCoreLengthService',$data);
-					redirect('CoreLengthService/addCoreLengthService');
+					redirect('length-service/add');
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('addCoreLengthService',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLengthService/addCoreLengthService');
+				redirect('length-service/add');
 			}
 		}
 		
 		function editCoreLengthService(){
-			$data['Main_view']['CoreLengthService']		= $this->CoreLengthService_model->getCoreLengthService_Detail($this->uri->segment(3));
-			$data['Main_view']['content']				= 'CoreLengthService/formeditCoreLengthService_view';
+			$data['main_view']['CoreLengthService']		= $this->CoreLengthService_model->getCoreLengthService_Detail($this->uri->segment(3));
+			$data['main_view']['content']				= 'CoreLengthService/formeditCoreLengthService_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -102,16 +108,16 @@
 								Edit Length Service Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLengthService/editCoreLengthService/'.$data['length_service_id']);
+					redirect('length-service/edit/'.$data['length_service_id']);
 				}else{
 					$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 					$this->session->set_userdata('message',$msg);
-					redirect('CoreLengthService/editCoreLengthService/'.$data['length_service_id']);
+					redirect('length-service/edit/'.$data['length_service_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLengthService/editCoreLengthService/'.$data['length_service_id']);
+				redirect('length-service/edit/'.$data['length_service_id']);
 			}
 		}
 		
@@ -119,18 +125,18 @@
 		function deleteCoreLengthService(){
 			if($this->CoreLengthService_model->deleteCoreLengthService($this->uri->segment(3))){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CoreLengthService.delete',$auth['username'],'Delete Length Service');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.CoreLengthService.delete',$auth['username'],'Delete Length Service');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Length Service Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLengthService');
+				redirect('length-service');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Length Service UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CoreLengthService');
+				redirect('length-service');
 			}
 		}
 	}

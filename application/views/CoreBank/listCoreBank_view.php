@@ -33,7 +33,7 @@
 								Daftar
 							</div>
 							<div class="actions">
-								<a href="<?php echo base_url();?>CoreBank/addCoreBank" class="btn btn-default btn-sm">
+								<a href="<?php echo base_url();?>bank/add" class="btn btn-default btn-sm">
 									<i class="fa fa-plus"></i>
 									Tambah Bank Baru
 								</a>
@@ -63,10 +63,10 @@
 													<td>".$val['bank_code']."</td>
 													<td>".$val['bank_name']."</td>
 													<td>
-														<a href='".$this->config->item('base_url').'CoreBank/editCoreBank/'.$val['bank_id']."' class='btn default btn-xs purple'>
+														<a href='".$this->config->item('base_url').'bank/edit/'.$val['bank_id']."' class='btn default btn-xs purple'>
 															<i class='fa fa-edit'></i> Edit
 														</a>
-														<a href='".$this->config->item('base_url').'CoreBank/deleteCoreBank/'.$val['bank_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+														<a href='".$this->config->item('base_url').'bank/delete/'.$val['bank_id']."' onClick='javascript:return confirm(\"apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 															<i class='fa fa-trash-o'></i> Hapus
 														</a>
 													</td>

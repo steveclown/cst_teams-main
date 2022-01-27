@@ -35,7 +35,7 @@
 							<i class="fa fa-reorder"></i>Daftar
 						</div>
 						<div class="actions">
-							<a href="<?php echo base_url();?>CorePremiAttendance/addCorePremiAttendance" class="btn btn-default btn-sm">
+							<a href="<?php echo base_url();?>premi-attendance/add" class="btn btn-default btn-sm">
 								<i class="fa fa-plus"></i> Tambah Premi Kehadiran baru
 							</a>
 						</div>
@@ -81,11 +81,11 @@
 												<td>$val[premi_attendance_range2]</td>
 												<td>".nominal($val['premi_attendance_amount'])."</td>
 												<td>
-													<a href='".$this->config->item('base_url').'CorePremiAttendance/editCorePremiAttendance/'.$val['premi_attendance_id']."' class='btn default btn-xs purple'>
+													<a href='".$this->config->item('base_url').'premi-attendance/edit/'.$val['premi_attendance_id']."' class='btn default btn-xs purple'>
 														<i class='fa fa-edit'></i> Edit
 													</a>
 
-													<a href='".$this->config->item('base_url').'CorePremiAttendance/deleteCorePremiAttendance/'.$val['premi_attendance_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
+													<a href='".$this->config->item('base_url').'premi-attendance/delete/'.$val['premi_attendance_id']."' onClick='javascript:return confirm(\"Apakah yakin ingin dihapus ?\")' class='btn default btn-xs red'>
 														<i class='fa fa-trash-o'></i> Hapus
 													</a>
 												</td>

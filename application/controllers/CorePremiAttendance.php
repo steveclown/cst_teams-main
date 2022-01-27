@@ -1,7 +1,13 @@
 <?php
-	Class CorePremiAttendance extends CI_Controller{
+	Class CorePremiAttendance extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'premi-attendance';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+			
 			$this->load->model('MainPage_model');
 			$this->load->model('CorePremiAttendance_model');
 			$this->load->helper('sistem');
@@ -11,13 +17,13 @@
 		}
 		
 		public function index(){
-			$data['Main_view']['CorePremiAttendance']		= $this->CorePremiAttendance_model->getCorePremiAttendance();
-			$data['Main_view']['content']					= 'CorePremiAttendance/listCorePremiAttendance_view';
+			$data['main_view']['CorePremiAttendance']		= $this->CorePremiAttendance_model->getCorePremiAttendance();
+			$data['main_view']['content']					= 'CorePremiAttendance/listCorePremiAttendance_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
 		function addCorePremiAttendance(){
-			$data['Main_view']['content']					= 'CorePremiAttendance/formaddCorePremiAttendance_view';
+			$data['main_view']['content']					= 'CorePremiAttendance/formaddCorePremiAttendance_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -41,33 +47,33 @@
 			if($this->form_validation->run()==true){
 				if($this->CorePremiAttendance_model->saveNewCorePremiAttendance($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['username'],'1003','Application.CorePremiAttendance.processAddCorep=PremiAttendance',$auth['username'],'Add New Premi Attendance');
+					// $this->fungsi->set_log($auth['username'],'1003','Application.CorePremiAttendance.processAddCorep=PremiAttendance',$auth['username'],'Add New Premi Attendance');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Premi Attendance Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addCorePremiAttendance');
-					redirect('CorePremiAttendance/addCorePremiAttendance');
+					redirect('premi-attendance/add');
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Premi Attendance UnSuccessful
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('addCorePremiAttendance',$data);
-					redirect('CorePremiAttendance/addCorePremiAttendance');
+					redirect('premi-attendance/add');
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('addCorePremiAttendance',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CorePremiAttendance/addCorePremiAttendance');
+				redirect('premi-attendance/add');
 			}
 		}
 		
 		function editCorePremiAttendance(){
-			$data['Main_view']['CorePremiAttendance']	= $this->CorePremiAttendance_model->getCorePremiAttendance_Detail($this->uri->segment(3));
-			$data['Main_view']['content']				= 'CorePremiAttendance/formeditCorePremiAttendance_view';
+			$data['main_view']['CorePremiAttendance']	= $this->CorePremiAttendance_model->getCorePremiAttendance_Detail($this->uri->segment(3));
+			$data['main_view']['content']				= 'CorePremiAttendance/formeditCorePremiAttendance_view';
 			$this->load->view('MainPage_view',$data);
 		}
 		
@@ -102,16 +108,16 @@
 								Edit Premi Attendance Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('CorePremiAttendance/editCorePremiAttendance/'.$data['premi_attendance_id']);
+					redirect('premi-attendance/edit/'.$data['premi_attendance_id']);
 				}else{
 					$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 					$this->session->set_userdata('message',$msg);
-					redirect('CorePremiAttendance/editCorePremiAttendance/'.$data['premi_attendance_id']);
+					redirect('premi-attendance/edit/'.$data['premi_attendance_id']);
 				}
 			}else{
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
-				redirect('CorePremiAttendance/editCorePremiAttendance/'.$data['premi_attendance_id']);
+				redirect('premi-attendance/edit/'.$data['premi_attendance_id']);
 			}
 		}
 		
@@ -119,18 +125,18 @@
 		function deleteCorePremiAttendance(){
 			if($this->CorePremiAttendance_model->deleteCorePremiAttendance($this->uri->segment(3))){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['username'],'1005','Application.CorePremiAttendance.delete',$auth['username'],'Delete Premi Attendance');
+				// $this->fungsi->set_log($auth['username'],'1005','Application.CorePremiAttendance.delete',$auth['username'],'Delete Premi Attendance');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Premi Attendance Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CorePremiAttendance');
+				redirect('premi-attendance');
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Premi Attendance UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('CorePremiAttendance');
+				redirect('premi-attendance');
 			}
 		}
 	}

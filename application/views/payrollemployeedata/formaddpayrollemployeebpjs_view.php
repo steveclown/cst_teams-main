@@ -36,7 +36,7 @@
 
 
 <?php 
-	echo form_open('payrollemployeedata/processAddPayrollOnOutBPJS',array('id' => 'myform', 'class' => 'horizontal-form'));
+	echo form_open('payrollemployeedata/processAddPayrollEmployeeBPJS',array('id' => 'myform', 'class' => 'horizontal-form'));
 
 	$unique 				= $this->session->userdata('unique');
 	$data 					= $this->session->userdata('addpayrollemployeebpjs-'.$unique['unique']);
@@ -44,6 +44,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
+			
 			<input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" type="text" name="bpjs_in_date" id="bpjs_in_date" onChange="function_elements_add_bpjs(this.name, this.value);" value="<?php echo tgltoview($data['bpjs_in_date']);?>">
 			<label class="control-label">BPJS In Date
 				<span class="required">
@@ -137,7 +138,7 @@
 <div class = "row">
 	<div class = "col-md-6">
 		<div class="form-group form-md-line-input">
-			<input type="text" autocomplete="off"  name="bpjs_tenagakerjan_percentage" id="bpjs_tenagakerja_percentage" value="<?php echo $data['bpjs_tenagakerja_percentage'];?>" class="form-control" onChange="function_elements_add_bpjs(this.name, this.value);">
+			<input type="text" autocomplete="off"  name="bpjs_tenagakerja_percentage" id="bpjs_tenagakerja_percentage" value="<?php echo $data['bpjs_tenagakerja_percentage'];?>" class="form-control" onChange="function_elements_add_bpjs(this.name, this.value);">
 			<label class="control-label">BPJS Tenaga Kerja Percentage</label>
 		</div>
 	</div>
@@ -222,11 +223,11 @@
 									<td>".tgltoview($val['bpjs_in_date'])."</td>
 									<td>".nominal($val['bpjs_reported_salary'])."</td>
 									<td>".nominal($val['bpjs_total_amount'])."</td>
-									<td>".$this->configuration->BPJSStatus[$val['bpjs_kesehatan_status']]."</td>
+									<td>".$this->configuration->BPJSStatus()[$val['bpjs_kesehatan_status']]."</td>
 									<td>".nominal($val['bpjs_kesehatan_amount'])."</td>
-									<td>".$this->configuration->BPJSStatus[$val['bpjs_tenagakerja_status']]."</td>
+									<td>".$this->configuration->BPJSStatus()[$val['bpjs_tenagakerja_status']]."</td>
 									<td>".nominal($val['bpjs_tenagakerja_amount'])."</td>
-									<td>".$this->configuration->BPJSStatus[$val['bpjs_out_status']]."</td>
+									<td>".$this->configuration->BPJSStatus()[$val['bpjs_out_status']]."</td>
 									<td>".tgltoview($val['bpjs_out_date'])."</td>
 									<td>
 										<a href='".$this->config->item('base_url').'payrollemployeedata/deletePayrollEmployeeBPJS/'.$val['employee_id']."/".$val['employee_bpjs_id']."' onClick='javascript:return confirm(\"Are you sure you want to delete this entry ?\")' class='btn default btn-xs red'>

@@ -1,11 +1,19 @@
 <?php
-	Class payrollemployeedata extends CI_Controller{
+	Class PayrollEmployeeData extends MY_Controller{
 		public function __construct(){
 			parent::__construct();
+
+			$menu = 'payroll-employee-data';
+
+			$this->cekLogin();
+			$this->accessMenu($menu);
+
+			$this->load->model('MainPage_model');
 			$this->load->model('payrollemployeedata_model');
 			$this->load->helper('sistem');
 			$this->load->library('fungsi');
 			$this->load->library('configuration');
+			$this->load->database('default');
 		}
 		
 		public function index(){
@@ -25,13 +33,13 @@
 				$sesi['branch_id']			= '';
 			}
 
-			$systemuserbranch								= $this->payrollemployeedata_model->getSystemUserBranch($user_id);
+			// $systemuserbranch								= $this->payrollemployeedata_model->getSystemUserBranch($user_id);
 
 			$data['main_view']['coredivision']				= create_double($this->payrollemployeedata_model->getCoreDivision(),'division_id','division_name');
 
 			$data['main_view']['corebranch']				= create_double($this->payrollemployeedata_model->getCoreBranch($branch_status, $systemuserbranch), 'branch_id', 'branch_name');
 
-			$data['main_view']['hroemployeedata_daily']		= $this->payrollemployeedata_model->getHROEmployeeData_Daily($region_id, $systemuserbranch, $branch_status, $sesi['branch_id'], $payroll_employee_level, $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
+			$data['main_view']['hroemployeedata_daily']		= $this->payrollemployeedata_model->getHROEmployeeData_Daily($region_id, $branch_id, $branch_status, $sesi['branch_id'], $payroll_employee_level, $sesi['division_id'], $sesi['department_id'] , $sesi['section_id']);
 
 			/*$data['main_view']['hroemployeedatailufa']	= $this->hroemployeedatailufa_model->getHROEmployeeData($region_id, $systemuserbranch, $branch_status, $sesi['branch_id'], $payroll_employee_level, $sesi['division_id'], $sesi['department_id'], $sesi['section_id']);
 */
@@ -47,7 +55,7 @@
 				'branch_id'			=> $this->input->post('branch_id',true),
 			);
 			$this->session->set_userdata('filter-payrollemployeedata', $data);
-			redirect('payrollemployeedata');
+			redirect('payroll-employee-data');
 		}
 
 		public function getCoreDepartment(){
@@ -79,7 +87,7 @@
 		public function reset_search(){
 			$sesi= $this->session->userdata('filter-payrollemployeedata');
 			$this->session->unset_userdata('filter-payrollemployeedata');
-			redirect('payrollemployeedata');
+			redirect('payroll-employee-data');
 		}
 
 		public function function_state_add(){
@@ -103,14 +111,20 @@
 		public function reset_add(){
 			$unique 	= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeedata-'.$unique['unique']);	
-			redirect('payrollemployeedata');
+			redirect('payroll-employee-data');
 		}
 		
 		public function addPayrollEmployeeData(){
 			$employee_id = $this->uri->segment(3);	
+			$this->session->unset_userdata('addpayrollemployeepayment-'.$unique['unique']);
+			$this->session->unset_userdata('addpayrollemployeeallowance-'.$unique['unique']);
+			$this->session->unset_userdata('addpayrollemployeededuction-'.$unique['unique']);
+			$this->session->unset_userdata('addpayrollemployeepremi-'.$unique['unique']);
+			$this->session->unset_userdata('addpayrollemployeebpjs-'.$unique['unique']);	
+			$this->session->unset_userdata('addpayrollemployeeloan-'.$unique['unique']);	
 
 			$data['main_view']['hroemployeedata']					= $this->payrollemployeedata_model->getHROEmployeeData_Detail($employee_id);
-
+			
 			$data['main_view']['corebank']							= create_double($this->payrollemployeedata_model->getCoreBank(),'bank_id','bank_name');
 
 			$data['main_view']['coreallowance']						= create_double($this->payrollemployeedata_model->getCoreAllowance(),'allowance_id', 'allowance_name');
@@ -119,11 +133,11 @@
 
 			$data['main_view']['corepremiattendance']				= create_double($this->payrollemployeedata_model->getCorePremiAttendance(),'premi_attendance_id','premi_attendance_name');
 
-			$data['main_view']['bpjsstatus']						= $this->configuration->BPJSStatus;
+			$data['main_view']['bpjsstatus']						= $this->configuration->BPJSStatus();
 
 			$data['main_view']['coreloantype']						= create_double($this->payrollemployeedata_model->getCoreLoanType(),'loan_type_id','loan_type_name');
 
-			$data['main_view']['monthlist']							= $this->configuration->Month;
+			$data['main_view']['monthlist']							= $this->configuration->Month();
 
 			$data['main_view']['payrollemployeepayment']			= $this->payrollemployeedata_model->getPayrollEmployeePayment_Detail($employee_id);
 
@@ -155,7 +169,7 @@
 			$employee_id 	= $this->uri->segment(3);	
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeepayment-'.$unique['unique']);	
-			redirect('payrollemployeedata/addPayrollEmployeeData/'.$employee_id);
+			redirect('payroll-employee-data/add/'.$employee_id);
 		}
 
 		public function processAddPayrollEmployeePayment(){
@@ -187,20 +201,20 @@
 				if($this->payrollemployeedata_model->checkPaymentBankAcctNo($data['payment_bank_acct_no'])){
 					if($this->payrollemployeedata_model->insertPayrollEmployeePayment($data)){
 						$auth = $this->session->userdata('auth');
-						$this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeePayment.processAddPayrollEmployeePayment',$auth['user_id'],'Add New Employee Payment');
+						// $this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeePayment.processAddPayrollEmployeePayment',$auth['user_id'],'Add New Employee Payment');
 						$msg = "<div class='alert alert-success'>                
 									Add Data Employee Payment Successfully
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
 						$this->session->unset_userdata('addpayrollemployeepayment-'.$unique['unique']);	
-						redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+						redirect('payroll-employee-data/add/'.$data['employee_id']);
 					}else{
 						$msg = "<div class='alert alert-danger'>                
 									Add Data Employee Payment Fail
 								<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 						$this->session->set_userdata('message',$msg);
 						$this->session->set_userdata('Addpayrollemployeepayment',$data);
-						redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+						redirect('payroll-employee-data/add/'.$data['employee_id']);
 					}
 				}else{
 					$this->session->set_userdata('Addpayrollemployeepayment',$data);
@@ -209,14 +223,14 @@
 								Bank Account No Already Exist
 							</div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
 				$this->session->set_userdata('Addpayrollemployeepayment',$data);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -232,18 +246,18 @@
 
 			if($this->payrollemployeedata_model->deletePayrollEmployeePayment($data)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeePayment_Data.delete',$auth['user_id'],'Delete Employee Payment');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeePayment_Data.delete',$auth['user_id'],'Delete Employee Payment');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Employee Payment Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Payment Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -261,7 +275,7 @@
 			$employee_id 	= $this->uri->segment(3);	
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeeallowance-'.$unique['unique']);	
-			redirect('payrollemployeedata/addPayrollEmployeeData/'.$employee_id);
+			redirect('payroll-employee-data/add/'.$employee_id);
 		}
 
 		public function processAddPayrollEmployeeAllowance(){
@@ -287,28 +301,28 @@
 			if($this->form_validation->run()==true){
 				if($this->payrollemployeedata_model->insertPayrollEmployeeAllowance($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeeAllowance.processAddPayrollEmployeeAllowance',$auth['user_id'],'Add New Employee Allowance');
+					// $this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeeAllowance.processAddPayrollEmployeeAllowance',$auth['user_id'],'Add New Employee Allowance');
 
 					$msg = "<div class='alert alert-success'>                
 								Add Data Employee Allowance Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addpayrollemployeeallowance-'.$unique['unique']);	
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Employee Allowance Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('Addpayrollemployeeallowance',$data);
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
 				$this->session->set_userdata('Addpayrollemployeeallowance',$data);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -324,18 +338,18 @@
 
 			if($this->payrollemployeedata_model->deletePayrollEmployeeAllowance($data)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeeAllowance_Data.delete',$auth['user_id'],'Delete Employee Allowance');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeeAllowance_Data.delete',$auth['user_id'],'Delete Employee Allowance');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Employee Allowance Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Allowance UnSuccessful
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -353,7 +367,7 @@
 			$employee_id 	= $this->uri->segment(3);	
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeededuction-'.$unique['unique']);	
-			redirect('payrollemployeedata/addPayrollEmployeeData/'.$employee_id);
+			redirect('payroll-employee-data/add/'.$employee_id);
 		}
 
 		public function processAddPayrollEmployeeDeduction(){
@@ -378,27 +392,27 @@
 			if($this->form_validation->run()==true){
 				if($this->payrollemployeedata_model->insertPayrollEmployeeDeduction($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeeDeduction.processAddPayrollEmployeeDeduction',$auth['user_id'],'Add New Employee Deduction');
+					// $this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeeDeduction.processAddPayrollEmployeeDeduction',$auth['user_id'],'Add New Employee Deduction');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Employee Deduction Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addpayrollemployeededuction-'.$unique['unique']);	
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Employee Deduction Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('Addpayrollemployeededuction',$data);
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
 				$this->session->set_userdata('Addpayrollemployeededuction',$data);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -414,18 +428,18 @@
 
 			if($this->payrollemployeedata_model->deletePayrollEmployeeDeduction($data)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeeDeduction_Data.delete',$auth['user_id'],'Delete Employee Deduction');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeeDeduction_Data.delete',$auth['user_id'],'Delete Employee Deduction');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Employee Deduction Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Deduction Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -443,7 +457,7 @@
 			$employee_id 	= $this->uri->segment(3);	
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeepremi-'.$unique['unique']);	
-			redirect('payrollemployeedata/addPayrollEmployeeData/'.$employee_id);
+			redirect('payroll-employee-data/add/'.$employee_id);
 		}
 
 		public function processAddPayrollEmployeePremiAttendance(){
@@ -470,27 +484,27 @@
 			if($this->form_validation->run()==true){
 				if($this->payrollemployeedata_model->insertPayrollEmployeePremiAttendance($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeePremiAttendance.processAddPayrollEmployeePremiAttendance',$auth['user_id'],'Add New Employee Premi Attendance');
+					// $this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeePremiAttendance.processAddPayrollEmployeePremiAttendance',$auth['user_id'],'Add New Employee Premi Attendance');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Employee Premi Attendance Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addpayrollemployeepremi-'.$unique['unique']);	
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Employee Premi Attendance Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('Addpayrollemployeepremiattendance',$data);
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
 				$this->session->set_userdata('Addpayrollemployeepremiattendance',$data);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -506,18 +520,18 @@
 
 			if($this->payrollemployeedata_model->deletePayrollEmployeePremiAttendance($data)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeePremiAttendance_Data.delete',$auth['user_id'],'Delete Employee Premi Attendance');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeePremiAttendance_Data.delete',$auth['user_id'],'Delete Employee Premi Attendance');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Employee Premi Attendance Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Premi Attendance Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -535,7 +549,7 @@
 			$employee_id 	= $this->uri->segment(3);	
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeebpjs-'.$unique['unique']);	
-			redirect('payrollemployeedata/addPayrollEmployeeData/'.$employee_id);
+			redirect('payroll-employee-data/add/'.$employee_id);
 		}
 
 		public function processAddPayrollEmployeeBPJS(){
@@ -557,7 +571,7 @@
 				'bpjs_tenagakerja_amount' 			=> $this->input->post('bpjs_tenagakerja_amount',true),
 				'bpjs_remark'			 			=> $this->input->post('bpjs_remark',true),
 				'bpjs_out_status'		 			=> $this->input->post('bpjs_out_status',true),
-				'bpjs_out_date' 					=> tgltodb($this->input->post('bpjs_tenagakerja_amount',true)),
+				'bpjs_out_date' 					=> tgltodb($this->input->post('bpjs_out_date',true)),
 				'bpjs_out_id' 						=> $auth['user_id'],
 				'bpjs_out_on'						=> date("Y-m-d H:i:s"),
 				'data_state'						=> 0,
@@ -565,33 +579,32 @@
 				'created_on'						=> date("Y-m-d H:i:s")
 			);
 			
-			$this->form_validation->set_rules('employee_id', 'Employee Name', 'required');
 			$this->form_validation->set_rules('bpjs_reported_salary', 'Reportd Salary', 'required');
 			$this->form_validation->set_rules('bpjs_total_amount', 'BPJS Total Amount', 'required');
 
 			if($this->form_validation->run()==true){
-				if($this->payrollonoutbpjs_model->insertPayrollEmployeeBPJS($data)){
+				if($this->payrollemployeedata_model->insertPayrollEmployeeBPJS($data)){
 					$auth = $this->session->userdata('auth');
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollOnOutBPJS.processAddPayrollOnOutBPJS',$auth['user_id'],'Add New Payroll On Out BPJS');
+					// $this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollOnOutBPJS.processAddPayrollOnOutBPJS',$auth['user_id'],'Add New Payroll On Out BPJS');
 					$msg = "<div class='alert alert-success'>                
 								Add Data Payroll Employee BPJS Successfully
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addpayrollemployeebpjs-'.$unique['unique']);	
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Payroll Employee BPJS Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$this->session->set_userdata('addpayrollonoutbpjs',$data);
 				$msg = validation_errors("<div class='alert alert-danger'>", "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div>");
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -605,20 +618,20 @@
 				'data_state'		=> 1
 			);
 
-			if($this->payrollonoutbpjs_model->deletePayrollEmployeeBPJS($data)){
+			if($this->payrollemployeedata_model->deletePayrollEmployeeBPJS($data)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.payrollonoutbpjs.deletePayrollOnOutBPJS_Data',$auth['user_id'],'Delete Payroll On Out BPJS');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.payrollonoutbpjs.deletePayrollOnOutBPJS_Data',$auth['user_id'],'Delete Payroll On Out BPJS');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Employee BPJS Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrolleemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee BPJS Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrolleemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -636,7 +649,7 @@
 			$employee_id 	= $this->uri->segment(3);	
 			$unique 		= $this->session->userdata('unique');
 			$this->session->unset_userdata('addpayrollemployeeloan-'.$unique['unique']);	
-			redirect('payrollemployeedata/addPayrollEmployeeData/'.$employee_id);
+			redirect('payroll-employee-data/add/'.$employee_id);
 		}
 
 		public function processAddPayrollEmployeeLoan(){
@@ -676,7 +689,7 @@
 
 					$employee_loan_id = $this->payrollemployeedata_model->getEmployeeLoanID($data['created_id']);
 
-					$this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeeLoan.processAddPayrollEmployeeLoan',$employee_loan_id,'Add New Employee Loan');
+					// $this->fungsi->set_log($auth['user_id'],'1003','Application.PayrollEmployeeLoan.processAddPayrollEmployeeLoan',$employee_loan_id,'Add New Employee Loan');
 
 					$mod 			= $employee_loan_amount_total % $employee_loan_amount;
 					$count 			= floor($employee_loan_amount_total / $employee_loan_amount);
@@ -741,21 +754,21 @@
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->unset_userdata('addpayrollemployeeloan-'.$unique['unique']);	
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}else{
 					$msg = "<div class='alert alert-danger'>                
 								Add Data Employee Allowance Fail
 							<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 					$this->session->set_userdata('message',$msg);
 					$this->session->set_userdata('addpayrollemployeeloan',$data);
-					redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+					redirect('payroll-employee-data/add/'.$data['employee_id']);
 				}
 			}else{
 				$data['password']='';
 				$msg = validation_errors("<div class='alert alert-danger'>", '</div>');
 				$this->session->set_userdata('message',$msg);
 				$this->session->set_userdata('addpayrollemployeeloan',$data);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
@@ -771,18 +784,18 @@
 
 			if($this->payrollemployeedata_model->deletePayrollEmployeeLoan($data)){
 				$auth = $this->session->userdata('auth');
-				$this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeeAllowance_Data.delete',$auth['user_id'],'Delete Employee Allowance');
+				// $this->fungsi->set_log($auth['user_id'],'1005','Application.PayrollEmployeeAllowance_Data.delete',$auth['user_id'],'Delete Employee Allowance');
 				$msg = "<div class='alert alert-success'>                
 							Delete Data Employee Loan Successfully
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}else{
 				$msg = "<div class='alert alert-danger'>                
 							Delete Data Employee Loan Fail
 						<button type='button' class='close' data-dismiss='alert' aria-hidden='true'></button></div> ";
 				$this->session->set_userdata('message',$msg);
-				redirect('payrollemployeedata/addPayrollEmployeeData/'.$data['employee_id']);
+				redirect('payroll-employee-data/add/'.$data['employee_id']);
 			}
 		}
 
