@@ -573,3 +573,71 @@ $route['system-user/edit/(:num)']                        = 'SystemUser/editSyste
 $route['system-user/delete/(:num)']                        = 'SystemUser/deleteSystemUser/$1';
 $route['system-user/process-edit']                         = 'SystemUser/processEditSystemUser';
 $route['system-user/reset-edit/(:num)']                 = 'SystemUser/reset_edit/$1';
+
+/*=========================================  Schedule  ======================================== */
+
+/* Shift */
+$route['shift']                                    = 'CoreShift';
+$route['shift/add']                                 = 'CoreShift/addCoreShift';
+$route['shift/elements-add']                         = 'CoreShift/function_elements_add';
+$route['shift/reset-add']                         = 'CoreShift/reset_add';
+$route['shift/process-add']                         = 'CoreShift/processAddCoreShift';
+$route['shift/edit/(:num)']                        = 'CoreShift/editCoreShift/$1';
+$route['shift/delete/(:num)']                        = 'CoreShift/deleteCoreShift/$1';
+$route['shift/process-edit']                         = 'CoreShift/processEditCoreShift';
+$route['shift/reset-edit/(:num)']                 = 'CoreShift/reset_edit/$1';
+
+/* ScheduleDayOff */
+$route['schedule-day-off']                                    = 'ScheduleDayOff';
+$route['schedule-day-off/add']                                 = 'ScheduleDayOff/addScheduleDayOff';
+$route['schedule-day-off/elements-add']                         = 'ScheduleDayOff/function_elements_add';
+$route['schedule-day-off/reset-add']                         = 'ScheduleDayOff/reset_add';
+$route['schedule-day-off/process-add']                         = 'ScheduleDayOff/processAddScheduleDayOff';
+$route['schedule-day-off/edit/(:num)']                        = 'ScheduleDayOff/editScheduleDayOff/$1';
+$route['schedule-day-off/delete/(:num)']                        = 'ScheduleDayOff/deleteScheduleDayOff/$1';
+$route['schedule-day-off/process-edit']                         = 'ScheduleDayOff/processEditScheduleDayOff';
+$route['schedule-day-off/reset-edit/(:num)']                 = 'ScheduleDayOff/reset_edit/$1';
+
+/* ScheduleEmployeeShift */
+$route['schedule-employee-shift']                                    = 'ScheduleEmployeeShift';
+$route['schedule-employee-shift/add']                                 = 'ScheduleEmployeeShift/addScheduleEmployeeShift';
+$route['schedule-employee-shift/elements-add']                         = 'ScheduleEmployeeShift/function_elements_add';
+$route['schedule-employee-shift/reset-add']                         = 'ScheduleEmployeeShift/reset_add';
+$route['schedule-employee-shift/process-add']                         = 'ScheduleEmployeeShift/processAddScheduleEmployeeShift';
+$route['schedule-employee-shift/edit/(:num)']                        = 'ScheduleEmployeeShift/editScheduleEmployeeShift/$1';
+$route['schedule-employee-shift/delete/(:num)']                        = 'ScheduleEmployeeShift/deleteScheduleEmployeeShift/$1';
+$route['schedule-employee-shift/process-edit']                         = 'ScheduleEmployeeShift/processEditScheduleEmployeeShift';
+$route['schedule-employee-shift/reset-edit/(:num)']                 = 'ScheduleEmployeeShift/reset_edit/$1';
+
+/* ScheduleShiftPattern */
+$route['schedule-shift-pattern']                                    = 'ScheduleShiftPattern';
+$route['schedule-shift-pattern/add']                                 = 'ScheduleShiftPattern/addScheduleShiftPattern';
+$route['schedule-shift-pattern/elements-add']                         = 'ScheduleShiftPattern/function_elements_add';
+$route['schedule-shift-pattern/reset-add']                         = 'ScheduleShiftPattern/reset_add';
+$route['schedule-shift-pattern/process-add']                         = 'ScheduleShiftPattern/processAddScheduleShiftPattern';
+$route['schedule-shift-pattern/edit/(:num)']                        = 'ScheduleShiftPattern/editScheduleShiftPattern/$1';
+$route['schedule-shift-pattern/delete/(:num)']                        = 'ScheduleShiftPattern/deleteScheduleShiftPattern/$1';
+$route['schedule-shift-pattern/process-edit']                         = 'ScheduleShiftPattern/processEditScheduleShiftPattern';
+$route['schedule-shift-pattern/reset-edit/(:num)']                 = 'ScheduleShiftPattern/reset_edit/$1';
+
+/* ScheduleShiftAssignment */
+$route['schedule-shift-assignment']                                    = 'ScheduleShiftAssignment';
+$route['schedule-shift-assignment/add']                                 = 'ScheduleShiftAssignment/addScheduleShiftAssignment';
+$route['schedule-shift-assignment/elements-add']                         = 'ScheduleShiftAssignment/function_elements_add';
+$route['schedule-shift-assignment/reset-add']                         = 'ScheduleShiftAssignment/reset_add';
+$route['schedule-shift-assignment/process-add']                         = 'ScheduleShiftAssignment/processAddScheduleShiftAssignment';
+$route['schedule-shift-assignment/edit/(:num)']                        = 'ScheduleShiftAssignment/editScheduleShiftAssignment/$1';
+$route['schedule-shift-assignment/delete/(:num)']                        = 'ScheduleShiftAssignment/deleteScheduleShiftAssignment/$1';
+$route['schedule-shift-assignment/process-edit']                         = 'ScheduleShiftAssignment/processEditScheduleShiftAssignment';
+$route['schedule-shift-assignment/reset-edit/(:num)']                 = 'ScheduleShiftAssignment/reset_edit/$1';
+
+/* ScheduleEmployeeSchedule */
+$route['schedule-employee-schedule']                                    = 'ScheduleEmployeeSchedule';
+$route['schedule-employee-schedule/add']                                 = 'ScheduleEmployeeSchedule/addScheduleEmployeeSchedule';
+$route['schedule-employee-schedule/elements-add']                         = 'ScheduleEmployeeSchedule/function_elements_add';
+$route['schedule-employee-schedule/reset-add']                         = 'ScheduleEmployeeSchedule/reset_add';
+$route['schedule-employee-schedule/process-add']                         = 'ScheduleEmployeeSchedule/processAddScheduleEmployeeSchedule';
+$route['schedule-employee-schedule/edit/(:num)']                        = 'ScheduleEmployeeSchedule/editScheduleEmployeeSchedule/$1';
+$route['schedule-employee-schedule/delete/(:num)']                        = 'ScheduleEmployeeSchedule/deleteScheduleEmployeeSchedule/$1';
+$route['schedule-employee-schedule/process-edit']                         = 'ScheduleEmployeeSchedule/processEditScheduleEmployeeSchedule';
+$route['schedule-employee-schedule/reset-edit/(:num)']                 = 'ScheduleEmployeeSchedule/reset_edit/$1';
